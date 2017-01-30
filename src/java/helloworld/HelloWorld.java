@@ -2,9 +2,9 @@ package helloworld;
 
 public class HelloWorld 
 { 
-    public static void foo()
+    public static String foo()
     {
-        System.out.println("Hello World FROM ATA HQ!");
+        return "Hello World FROM ATA HQ!";
     }
     
     public static void main(String args[])
