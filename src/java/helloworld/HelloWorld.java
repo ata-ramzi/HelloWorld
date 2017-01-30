@@ -9,6 +9,6 @@ public class HelloWorld
     
     public static void main(String args[])
     {
-        System.out.println("Hello World FROM ATA HQ!");
+        System.out.println("zzzz");
     }  
 }
