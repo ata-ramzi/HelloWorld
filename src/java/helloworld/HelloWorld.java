@@ -4,7 +4,7 @@ public class HelloWorld
 { 
     public static String foo()
     {
-        return "Hello World FROM ATA HQ!";
+        return "Testing updated JSP.";
     }
     
     public static void main(String args[])
