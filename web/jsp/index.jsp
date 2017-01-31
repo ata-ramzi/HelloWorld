@@ -13,6 +13,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%= "sssss" + HelloWorld.foo() %>
+        <%= "Bye John. sssss" + HelloWorld.foo() %>
     </body>
 </html>
