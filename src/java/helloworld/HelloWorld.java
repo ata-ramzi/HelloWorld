@@ -5,12 +5,11 @@ import org.hibernate.cfg.AnnotationConfiguration;
 
 public class HelloWorld 
 { 
-    private static SessionFactory factory; 
 
     public static String foo()
     {
         try{
-         factory = new AnnotationConfiguration(). 
+         ManageEmployee.factory = new AnnotationConfiguration(). 
                    configure("./hibernate.cfg.xml").
                    //addPackage("com.xyz") //add package if used.
                    addAnnotatedClass(Employee.class).
