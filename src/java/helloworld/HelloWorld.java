@@ -21,7 +21,22 @@ public class HelloWorld
       ManageEmployee ME = new ManageEmployee();
 
         
-        String s = "Bombshooty. Hello John. Testing updated JSP.\n:";
+      String s = "";
+
+      /* Add few employee records in database */
+      Integer empID1 = ME.addEmployee("Zara", "Ali", 1000);
+      Integer empID2 = ME.addEmployee("Daisy", "Das", 5000);
+      Integer empID3 = ME.addEmployee("John", "Paul", 10000);
+
+      /* List down all the employees */
+      ME.listEmployees();
+
+      /* Update employee's records */
+      ME.updateEmployee(empID1, 5000);
+
+      /* Delete an employee from the database */
+      ME.deleteEmployee(empID2);
+        
         s += ME.listEmployees();
         return s; 
     }
