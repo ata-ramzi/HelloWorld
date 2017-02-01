@@ -12,7 +12,7 @@
       jdbc:postgresql://localhost:5432/atadatabase
    </property>
    <property name="hibernate.connection.username">postgres</property>
-   <property name="hibernate.connection.password">admin</property>
+   <property name="hibernate.connection.password">postgres</property>
        <property name="hibernate.hbm2ddl.auto">create</property>
 
 
