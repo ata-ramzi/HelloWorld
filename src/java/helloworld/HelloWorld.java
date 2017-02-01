@@ -10,8 +10,8 @@ public class HelloWorld
     public static String foo()
     {
         try{
-         factory = new AnnotationConfiguration().
-                   configure("/usr/share/tomcat/webapps/HelloWorld/WEB-INF/classes/hibernate.cfg.xml").
+         factory = new AnnotationConfiguration(). 
+                   configure("helloworld/hibernate.cfg.xml").
                    //addPackage("com.xyz") //add package if used.
                    addAnnotatedClass(Employee.class).
                    buildSessionFactory();
