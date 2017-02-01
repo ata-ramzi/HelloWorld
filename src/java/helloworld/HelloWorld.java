@@ -11,7 +11,7 @@ public class HelloWorld
     {
         try{
          factory = new AnnotationConfiguration().
-                   configure("hibernate.cfg.xml").
+                   configure("/usr/share/tomcat/webapps/HelloWorld/WEB-INF/classes/hibernate.cfg.xml").
                    //addPackage("com.xyz") //add package if used.
                    addAnnotatedClass(Employee.class).
                    buildSessionFactory();
