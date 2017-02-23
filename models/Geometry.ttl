@@ -1,0 +1,3698 @@
+# baseURI: http://www.faa.gov/DRS/Geometry
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+
+@prefix : <http://www.faa.gov/DRS/Geometry#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.faa.gov/DRS/Geometry>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dcterms: ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:A-Line
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIM - EUROC    Aeronautical Information Lexicon, FAA-IMS Interface Management System, European Air Traffic Management, EUROCONTROL, no date given"^^xsd:string ;
+  dcterms:bibliographicCitation "EUROCONTROL  European Organization for the Safety of Air Navigation: EUROCONTROL; European Air Traffic Management, Aeronautical Information Lexicon - FAA; no date provided in document"^^xsd:string ;
+  rdfs:label "A-Line"^^xsd:string ;
+  rdfs:subClassOf :Adapted_Line_Segment ;
+  skos:broader :Adapted_Line_Segment ;
+  skos:definition "An adapted line segment that causes a program search for an applicable PAR when intersected by a direct route segment for an arriving flight.  [EUROCONTROL] [AIM - EUROC]"^^xsd:string ;
+  skos:prefLabel "A-Line"^^xsd:string ;
+.
+:Active_Flight_Trajectory
+  rdf:type owl:Class ;
+  rdfs:label "Active Flight Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Flight_Trajectory ;
+  skos:broader :Flight_Trajectory ;
+  skos:narrower :Four-D_Trajectory ;
+  skos:prefLabel "Active Flight Trajectory"^^xsd:string ;
+.
+:Active_Monitored_Zone_Polygon
+  rdf:type owl:Class ;
+  rdfs:label "Active Monitored Zone Polygon"^^xsd:string ;
+  rdfs:subClassOf :Zone_Polygon ;
+  skos:broader :Zone_Polygon ;
+  skos:narrower :Active_Monitored_Zone_Spatial_Location_Polygon ;
+  skos:prefLabel "Active Monitored Zone Polygon"^^xsd:string ;
+.
+:Active_Monitored_Zone_Spatial_Location_Polygon
+  rdf:type :Active_Monitored_Zone_Polygon ;
+  dcterms:bibliographicCitation "NAS EA OV-7 [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-013015]"^^xsd:string ;
+  dcterms:isPartOf "Active_Monitored_Zone_Information"^^xsd:string ;
+  rdfs:label "Active Monitored Zone Spatial Location Polygon"^^xsd:string ;
+  skos:broader :Active_Monitored_Zone_Polygon ;
+  skos:definition "The Oracle Spatial Location value for the point.   Defines the AMZ geographical surface.  [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Active Monitored Zone Spatial Location Polygon"^^xsd:string ;
+.
+:Actual_Trajectory
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Point-v4 0-013015]"^^xsd:string ;
+  rdfs:label "Actual Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Flight_Trajectory ;
+  skos:altLabel "Actual Flight Trajectory"^^xsd:string ;
+  skos:broader :Flight_Trajectory ;
+  skos:definition "The actual trajectory as flown by the Aircraft (or Formation).   [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Actual Trajectory"^^xsd:string ;
+.
+:Adapted_Line_Segment
+  rdf:type owl:Class ;
+  rdfs:label "Adapted Line Segment"^^xsd:string ;
+  rdfs:subClassOf :Line_Segment ;
+  skos:broader :Line_Segment ;
+  skos:narrower :A-Line ;
+  skos:narrower :B-Line ;
+  skos:narrower :D-Line ;
+  skos:narrower :S-Line ;
+  skos:prefLabel "Adapted Line Segment"^^xsd:string ;
+.
+:Aerodrome_Boundary
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "extracted from FAA Logical Model - Cadastral Class, Data Dictionary Workbook - Data Definitions"^^xsd:string ;
+  rdfs:label "Aerodrome Boundary"^^xsd:string ;
+  rdfs:subClassOf :Boundary ;
+  skos:broader :Boundary ;
+  skos:definition "A polygon, or a set of polygons, encompassing all property owned or controlled by the airport for aviation purposes.   [FAA]"^^xsd:string ;
+  skos:prefLabel "Aerodrome Boundary"^^xsd:string ;
+  skos:scopeNote "SENSITIVE SECURITY INFORMATION"^^xsd:string ;
+.
+:Aerodrome_Geometry
+  rdf:type owl:Class ;
+  rdfs:label "Aerodrome Geometry"^^xsd:string ;
+  rdfs:subClassOf :Geometry ;
+  skos:broader :Geometry ;
+  skos:hasTopConcept :Geometry ;
+  skos:narrower :Aerodrome_Surface_Structure_Geometry ;
+  skos:prefLabel "Aerodrome Geometry"^^xsd:string ;
+.
+:Aerodrome_Surface_Structure_Geometry
+  rdf:type owl:Class ;
+  rdfs:label "Aerodrome Surface Structure Geometry"^^xsd:string ;
+  rdfs:subClassOf :Aerodrome_Geometry ;
+  skos:broader :Aerodrome_Geometry ;
+  skos:narrower :Runway_Geometry ;
+  skos:prefLabel "Aerodrome Surface Structure Geometry"^^xsd:string ;
+.
+:Agreed_4D_Trajectory
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Doc 9965 AN/483, Manual on Flight and Flow - information for a Collaborative Environment (FF-ICE), First Edition - 2012"^^xsd:string ;
+  dcterms:hasFormat "4D Trajectory"^^xsd:string ;
+  dcterms:references "Fixm.FlightObject.Flight.FlightData.Flight.agreed"^^xsd:string ;
+  dcterms:references "Route - Agreed To"^^xsd:string ;
+  dcterms:references "Route-Agreed_To"^^xsd:string ;
+  :dataElementLabelFIXM "agreed"^^xsd:string ;
+  rdfs:label "Agreed 4-D Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Four-D_Trajectory ;
+  skos:altLabel "Agreed 4D Trajectory"^^xsd:string ;
+  skos:altLabel "Route - Agreed To"^^xsd:string ;
+  skos:broader :Four-D_Trajectory ;
+  skos:definition "This trajectory expresses the 4D trajectory agreed to between the airspace user and the airspace navigation service providers (ANSP) after collaboration or imposition of pre-collaborated rules.    [FIXM 3.0]"^^xsd:string ;
+  skos:prefLabel "Agreed 4-D Trajectory"^^xsd:string ;
+  skos:scopeNote "It is closely associated with the \"Route-Agreed To\" Data Element.  [FIXM 3.0]"^^xsd:string ;
+  skos:scopeNote "This agreed 4D trajectory includes all amendments made as the flight progresses.  [FIXM 3.0]"^^xsd:string ;
+.
+:Air_Traffic_Control_Climb_Gradient
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dtype:code "ATC"^^xsd:anySimpleType ;
+  dtype:literal "Air Traffic Control"^^xsd:string ;
+  vaem:abbreviation "ATC Climb Gradient"^^xsd:string ;
+  rdfs:label "Air Traffic Control Climb Gradient"^^xsd:string ;
+  rdfs:subClassOf :Climb_Gradient ;
+  skos:broader :Climb_Gradient ;
+  skos:definition "A Climb Gradient, as defined or managed by Air Traffic Control.   [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Air Traffic Control Climb Gradient"^^xsd:string ;
+.
+:Air_Traffic_Control_Vector
+  rdf:type owl:Class ;
+  rdfs:label "Air Traffic Control Vector"^^xsd:string ;
+  rdfs:subClassOf :Vector ;
+  skos:broader :Vector ;
+  skos:narrower :Off-Route_Vector ;
+  skos:prefLabel "Air Traffic Control Vector"^^xsd:string ;
+.
+:Aircraft_Trajectory
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Conveyance_Trajectory ;
+  skos:broader :Conveyance_Trajectory ;
+  skos:narrower :Flight_Trajectory ;
+  skos:narrower :Trajectory_or_Profile ;
+  skos:prefLabel "Aircraft Trajectory"^^xsd:string ;
+.
+:Airport_Business_Trajectory
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "SESAR Airport Definitions Team"^^xsd:string ;
+  vaem:acronym "ABT"^^xsd:string ;
+  rdfs:label "Airport Business Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Business_Trajectory ;
+  skos:broader :Business_Trajectory ;
+  skos:definition """the description of the \"\"visit\"\" of an aircraft to the airport. It consists of three separate sections:
+-The final approach and \"\"surface-in\"\" ground section of the inbound flight,
+-The turn-round process section in which the inbound and the outbound flights are linked,
+-The \"\"surface-out\"\" ground section and the initial climb segment of the outbound flight.  [SESAR]"""^^xsd:string ;
+  skos:prefLabel "Airport Business Trajectory"^^xsd:string ;
+.
+:Airport_Reference_Point
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA PCG  Pilot/Controller Glossary (P/CG) Effective 2-9-12; part of AIM Order JO 7110.10 Flight Services and 7110.65, Air Traffic Control;  extracted from FAA web site on February 17, 2012"^^xsd:string ;
+  vaem:acronym "ARP"^^xsd:string ;
+  rdfs:label "Airport Reference Point"^^xsd:string ;
+  rdfs:subClassOf :Reference_Point ;
+  skos:broader :Reference_Point ;
+  skos:definition "The approximate geometric center of all usable runway surfaces. [PCG]"^^xsd:string ;
+  skos:prefLabel "Airport Reference Point"^^xsd:string ;
+.
+:Airspace_Boundary
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "AirspaceBoundary"^^xsd:string ;
+  rdfs:label "Airspace Boundary"^^xsd:string ;
+  rdfs:subClassOf :Boundary ;
+  skos:broader :Boundary ;
+  skos:definition "Modelling the choice between the three ways of describing the horizontal projection of an AirspaceVolume.   [AIXM]"^^xsd:string ;
+  skos:prefLabel "Airspace Boundary"^^xsd:string ;
+.
+:Airspace_Corridor
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "AirspaceCorridor"^^xsd:string ;
+  rdfs:label "Airspace Corridor"^^xsd:string ;
+  rdfs:subClassOf :Airspace_Volume ;
+  skos:definition "The horizontal projection of the AirspaceVolume of type 'corridor', described with a centerline and a width value.    [AIXM 5.0]"^^xsd:string ;
+  skos:prefLabel "Airspace Corridor"^^xsd:string ;
+.
+:Airspace_Geometric_Area
+  rdf:type owl:Class ;
+  rdfs:label "Airspace Geometric Area"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Area ;
+  skos:broader :Geometric_Area ;
+  skos:prefLabel "Airspace Geometric Area"^^xsd:string ;
+.
+:Airspace_Geometry
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "AirspaceGeometry"^^xsd:string ;
+  rdfs:label "Airspace Geometry"^^xsd:string ;
+  rdfs:subClassOf :Geometry ;
+  skos:broader :Geometry ;
+  skos:definition "The definition of the volume occupied by the airspace.    [AIXM 5.0]"^^xsd:string ;
+  skos:hasTopConcept :Geometry ;
+  skos:narrower :Airspace_Geometry_Component ;
+  skos:narrower :Airspace_Volume ;
+  skos:prefLabel "Airspace Geometry"^^xsd:string ;
+.
+:Airspace_Geometry_Component
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM 5.1 retrieved on 11-18-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM_FeaturesObjects worksheet as of 06-30-11"^^xsd:string ;
+  :dataElementLabelAIXM "AirspaceGeometryComponent"^^xsd:string ;
+  rdfs:label "Airspace Geometry Component"^^xsd:string ;
+  rdfs:subClassOf :Airspace_Geometry ;
+  skos:broader :Airspace_Geometry ;
+  skos:definition "The role of the component in the airspace geometry. If the geometry of an airspace is composed of single volume, then the attributes of this association class may be left empty.    [AIXM 5.0] [AIXM] [AIXM 5.1]"^^xsd:string ;
+  skos:prefLabel "Airspace Geometry Component"^^xsd:string ;
+.
+:Airspace_Model
+  rdf:type owl:Class ;
+  rdfs:label "Airspace Model"^^xsd:string ;
+  rdfs:subClassOf :Model ;
+  skos:broader :Model ;
+  skos:prefLabel "Airspace Model"^^xsd:string ;
+.
+:Airspace_Volume
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM 5.1 retrieved on 11-18-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM_FeaturesObjects worksheet as of 06-30-11"^^xsd:string ;
+  :dataElementLabelAIXM "AirspaceVolume"^^xsd:string ;
+  rdfs:label "Airspace Volume"^^xsd:string ;
+  rdfs:subClassOf :Volume ;
+  skos:broader :Airspace_Geometry ;
+  skos:broader :Volume ;
+  skos:definition "A defined volume in the air, described as horizontal projection with vertical limits.   [AIXM 5.1]"^^xsd:string ;
+  skos:definition "The geometry of the airspace when described as horizontal projection with vertical limits.   [AIXM 5.0]"^^xsd:string ;
+  skos:editorialNote "This term is also found in: (a) \"AT-Atmosphere-Airspace\" which is concerned with a specific area of the airspace; (b) the \"AT-Measures\" ontology which is concerned with determining the amount of airspace area."^^xsd:string ;
+  skos:prefLabel "Airspace Volume"^^xsd:string ;
+.
+:Alternative_Trajectory
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "EUROCONTROL, EATM glossary 2004"^^xsd:string ;
+  rdfs:label "Alternative Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Flight_Trajectory ;
+  skos:broader :Flight_Trajectory ;
+  skos:definition "A trajectory which is calculated based on constraints which do not currently apply to the flight.   [EUROCONTROL]"^^xsd:string ;
+  skos:prefLabel "Alternative Trajectory"^^xsd:string ;
+.
+:Angle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  :dataElementLabelFIXM "angle"^^xsd:string ;
+  rdfs:label "Angle"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Figure ;
+  skos:definition "1: a corner whether constituting a projecting part or a partially enclosed space  2 a: the figure formed by two lines entending from the same point; also DEHEDRAL ANGLE  b : a measure of an angle or of the amount of turning necessary to bring one line or plane into coincidence with or parallel to another  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Angle_Offset ;
+  skos:narrower :Angle_of_Coverage ;
+  skos:narrower :Elevation_Angle ;
+  skos:narrower :Glide_Path_Angle ;
+  skos:narrower :Magnetic_Variation ;
+  skos:narrower :Plane_Angle ;
+  skos:narrower :Slope ;
+  skos:narrower :Solid_Angle ;
+  skos:narrower :Tolerance_Angle ;
+  skos:narrower :Vertical_Descent_Angle ;
+  skos:prefLabel "Angle"^^xsd:string ;
+.
+:Angle_Offset
+  rdf:type owl:Class ;
+  rdfs:label "Angle Offset"^^xsd:string ;
+  rdfs:subClassOf :Angle ;
+  skos:broader :Angle ;
+  skos:narrower :Localizer_Offset ;
+  skos:prefLabel "Angle Offset"^^xsd:string ;
+.
+:Angle_of_Coverage
+  rdf:type owl:Class ;
+  rdfs:label "Angle of Coverage"^^xsd:string ;
+  rdfs:subClassOf :Angle ;
+  skos:prefLabel "Angle of Coverage"^^xsd:string ;
+.
+:Angle_of_Coverage_A
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-103"^^xsd:string ;
+  dcterms:source "ICAO (AN 6/I, AN 6/II)"^^xsd:string ;
+  rdfs:label "Angle of Coverage A"^^xsd:string ;
+  rdfs:subClassOf :Angle_of_Coverage ;
+  skos:definition "a) Angle of coverage A is formed by two intersecting vertical planes making angles of 70 degrees to the right and 70 degrees to the left respectively, looking aft along the longitudinal axis to a vertical plane passing through the longitudinal axis.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Angle of Coverage A"^^xsd:string ;
+.
+:Angle_of_Coverage_F
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-103"^^xsd:string ;
+  dcterms:source "ICAO (AN 6/I, AN 6/II)"^^xsd:string ;
+  rdfs:label "Angle of Coverage F"^^xsd:string ;
+  rdfs:subClassOf :Angle_of_Coverage ;
+  skos:definition "b) Angle of coverage F is formed by two intersecting vertical planes making angles of 110 degrees to the right and 110 degrees to the left respectively, looking forward along the longitudinal axis to a vertical plane passing through the longitudinal axis.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Angle of Coverage F"^^xsd:string ;
+.
+:Angle_of_Coverage_L
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-103"^^xsd:string ;
+  dcterms:source "ICAO (AN 6/I, AN 6/II)"^^xsd:string ;
+  rdfs:label "Angle of Coverage L"^^xsd:string ;
+  rdfs:subClassOf :Angle_of_Coverage ;
+  skos:definition "c) Angle of coverage L is formed by two intersecting vertical planes, one parallel to the longitudinal axis of the aeroplane, and the other 110 degrees to the left of the first, whenlooking forward along the longitudinal axis.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Angle of Coverage L"^^xsd:string ;
+.
+:Angle_of_Coverage_R
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-103"^^xsd:string ;
+  dcterms:source "ICAO (AN 6/I, AN 6/II)"^^xsd:string ;
+  rdfs:label "Angle of Coverage R"^^xsd:string ;
+  rdfs:subClassOf :Angle_of_Coverage ;
+  skos:definition "d) Angle of coverage R is formed by two intersecting vertical planes, one parallel to the longitudinal axis of the aeroplane, and the other 110 degrees to the right of the first, when looking forward along the longitudinal axis.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Angle of Coverage R"^^xsd:string ;
+.
+:Angles
+  rdf:type owl:Class ;
+  rdfs:label "Angles"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Angles"^^xsd:string ;
+.
+:Angles_of_Coverage
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-103"^^xsd:string ;
+  dcterms:source "ICAO (AN 6/I, AN 6/II)"^^xsd:string ;
+  rdfs:label "Angles of Coverage"^^xsd:string ;
+  rdfs:subClassOf :Angles ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Angle_of_Coverage_A
+            :Angle_of_Coverage_F
+            :Angle_of_Coverage_L
+            :Angle_of_Coverage_R
+          ) ;
+      ]
+    ) ;
+  skos:prefLabel "Angles of Coverage"^^xsd:string ;
+.
+:Arc
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA PCG  Pilot/Controller Glossary (P/CG) Effective 2-9-12; part of AIM Order JO 7110.10 Flight Services and 7110.65, Air Traffic Control;  extracted from FAA web site on February 17, 2012"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Arc"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass <http://www.opengis.net/ont/gml#Arc> ;
+  skos:broader :Circle ;
+  skos:broader :Curve ;
+  skos:broader :Curved_Line ;
+  skos:definition "4: a continuous portion (as a circle or elipse of a curved line [WEBSTER]"^^xsd:string ;
+  skos:definition "The geometry of a  closed segment of a differentiable curve in the two-dimensional plane; for example, a circular arc is a segment of the circumference of a circle.    [NAS EA OV-7]"^^xsd:string ;
+  skos:definition "The track over the ground of an aircraft flying at a constant distance from a navigational aid by reference to distance measuring equipment (DME).    [FAA PCG]"^^xsd:string ;
+  skos:narrower :Geometric_Arc ;
+  skos:prefLabel "Arc"^^xsd:string ;
+  skos:related :Polygon ;
+  skos:scopeNote "A sector of Airspace used in evaluating and  establishing air flight procedures.  [NAS EA OV-7]"^^xsd:string ;
+.
+:Area
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Area"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Surface ;
+  skos:definition "2: the surface inlcuded within a set of lines; specif : the number of unit squares equal in measure to the surface  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Geometric_Area ;
+  skos:narrower :Spatial_Area ;
+  skos:narrower :Surface_Area ;
+  skos:prefLabel "Area"^^xsd:string ;
+.
+:Area_Polygon
+  rdf:type owl:Class ;
+  rdfs:label "Area Polygon"^^xsd:string ;
+  rdfs:subClassOf :Polygon ;
+  skos:broader :Polygon ;
+  skos:narrower :Flow_Constraint_Area_Polygon ;
+  skos:prefLabel "Area Polygon"^^xsd:string ;
+.
+:Automated_Problem_Detection_Boundary
+  rdf:type :Problem_Detection_Boundary ;
+  dcterms:bibliographicCitation "FAA PCG  Pilot/Controller Glossary (P/CG) Effective 2-9-12; part of AIM Order JO 7110.10 Flight Services and 7110.65, Air Traffic Control;  extracted from FAA web site on February 17, 2012"^^xsd:string ;
+  dcterms:references "See USER REQUEST EVALUATION TOOL."^^xsd:string ;
+  dtype:code "APB"^^xsd:anySimpleType ;
+  rdfs:label "Automated Problem Detection Boundary"^^xsd:string ;
+  skos:definition "The adapted distance beyond a facilities boundary defining the airspace within which URET performs conflict detection.   [FAA PCG]"^^xsd:string ;
+  skos:prefLabel "Automated Problem Detection Boundary"^^xsd:string ;
+.
+:Average_Slope
+  rdf:type owl:Class ;
+  rdfs:label "Average Slope"^^xsd:string ;
+  rdfs:subClassOf :Slope ;
+  skos:broader :Slope ;
+  skos:narrower :Gradient ;
+  skos:prefLabel "Average Slope"^^xsd:string ;
+.
+:Axes
+  rdf:type owl:Class ;
+  rdfs:label "Axes"^^xsd:string ;
+  rdfs:subClassOf :Lines ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Axis
+    ) ;
+  skos:broader :Lines ;
+  skos:prefLabel "Axes"^^xsd:string ;
+.
+:Axis
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Axis"^^xsd:string ;
+  rdfs:subClassOf :Axes ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Axes ;
+  skos:broader :Reference_Line ;
+  skos:broader :Straight_Line ;
+  skos:definition "1 a: a straight line about which a body or a geometric figure rotates or may be supposed to rotate  b: a straight line with respect to which a body or figure is symmetrical - called also axis of symmetry  c: a straight line that bisects at right angles a system of parallel chords of a curve and divides the curve into two symmetrical parts  d: one of the reference lines of a coordinate system  [WEBSTER] "^^xsd:string ;
+  skos:definition "7 : any of three fixed lines of reference in an aircraft that run in the longitudinal, lateral, and vertical directions, are mutually perpendicular, and usually pass through the aircraft's center of gravity   [WEBSTER]"^^xsd:string ;
+  skos:narrower :Intercept ;
+  skos:prefLabel "Axis"^^xsd:string ;
+.
+:B-Line
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIM - EUROC   Aeronautical Information Lexicon, FAA-IMS Interface Management System, European Air Traffic Management, EUROCONTROL, no date given"^^xsd:string ;
+  dcterms:bibliographicCitation "EUROCONTROL  European Organization for the Safety of Air Navigation: EUROCONTROL; European Air Traffic Management, Aeronautical Information Lexicon - FAA; no date provided in document"^^xsd:string ;
+  rdfs:label "B-Line"^^xsd:string ;
+  rdfs:subClassOf :Adapted_Line_Segment ;
+  skos:broader :Adapted_Line_Segment ;
+  skos:definition "An adapted line segment that may generate a fix posting when intersected by a direct route segment.    [FAA] [AIM - EUROC]"^^xsd:string ;
+  skos:prefLabel "B-Line"^^xsd:string ;
+.
+:Boundary
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "EC  COMMISSION REGULATION (EC) No 2082/2000 of 6 September 2000 adopting Eurocontrol standards and amending Directive 97/15/EC, adopting Eurocontrol standards and amending Council Directive 93/65/EEC"^^xsd:string ;
+  dcterms:bibliographicCitation "EUROCONTROL   European Organization for the Safety of Air Navigation: EUROCONTROL; European Air Traffic Management, Aeronautical Information Lexicon - FAA; no date provided in document"^^xsd:string ;
+  dcterms:bibliographicCitation "FAA-IMS  Aeronautical Information Lexicon, FAA-IMS Interface Management System, European Air Traffic Management, EUROCONTROL, no date given"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  vaem:abbreviation "BDRY"^^xsd:string ;
+  rdfs:label "Boundary"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Extent ;
+  skos:definition ": something that indicates or fixes a limit or extent  [WEBSTER]"^^xsd:string ;
+  skos:definition "Definition to be determined.  [FAA-IMS]  [EUROCONTROL]"^^xsd:string ;
+  skos:definition "The planes (lateral and vertical) delineating the area of responsibility of an ATC unit.   [EC]"^^xsd:string ;
+  skos:narrower :Aerodrome_Boundary ;
+  skos:narrower :Airspace_Boundary ;
+  skos:narrower :Perimeter ;
+  skos:narrower :Problem_Boundary ;
+  skos:prefLabel "Boundary"^^xsd:string ;
+.
+:Business_Trajectory
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "SESAR Consortium, Air Transport Framework, The Performance Target, Deliverable 2 at a glance"^^xsd:string ;
+  vaem:acronym "BT"^^xsd:string ;
+  rdfs:label "Business Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Proposed_Flight_Trajectory ;
+  skos:broader :Proposed_Flight_Trajectory ;
+  skos:definition "the representation of an airspace userâ€™s intention with respect to a given flight. It is aimed at guaranteeing the best outcome for the flight as seen from the airspace userâ€™s perspective.   [SESAR]"^^xsd:string ;
+  skos:narrower :Airport_Business_Trajectory ;
+  skos:narrower :Reference_Business_Trajectory ;
+  skos:narrower :Shared_Business_Trajectory ;
+  skos:prefLabel "Business Trajectory"^^xsd:string ;
+  skos:scopeNote "At the airspace userâ€™s discretion this outcome may be with respect to the minimum time for the flight, the minimum cost, or any other  characteristic of the trajectory. [SESAR]"^^xsd:string ;
+.
+:Cartesian_Coordinate
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Cartesian Coordinate"^^xsd:string ;
+  rdfs:subClassOf :Coordinate ;
+  skos:definition """1 : either of two coordinates that locate a point on a plane and measure its distance from either of two intersecting straight-line axes along a line parallel to the other axis 
+2 : any of three coordinates that locate a point in space and measure its distance from any of three intersecting coordinate planes measured parallel to that one of three straight-line axes that is the intersection of the other two planes   [WEBSTER]"""^^xsd:string ;
+  skos:definition "A positioning system that expresses a Location using the X, Y, and (optionally) Z axes, all originating from the same origin (Reference Datum). It specifies each point uniquely in a plane by a pair of numerical coordinates and optionally the height through the Z axis.   [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Cartesian Coordinate"^^xsd:string ;
+.
+:Cartesian_Coordinate_System
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Cartesian Coordinate System"^^xsd:string ;
+  rdfs:subClassOf :Coordinate_System ;
+  skos:broader :Coordinate_System ;
+  skos:definition "Cartesian. A 1-, 2-, or 3-dimensional coordinate system.   [NAS EA OV-7]"^^xsd:string ;
+  skos:narrower :Cartesian_Coordinate ;
+  skos:prefLabel "Cartesian Coordinate System"^^xsd:string ;
+  skos:scopeNote "A Cartesian CS may be associated with one or more geocentric, projected or engineering CRSs.  [NAS EA OV-7]"^^xsd:string ;
+  skos:scopeNote "In the 1-dimensional case it contains a single straight axis.   [NAS EA OV-7]"^^xsd:string ;
+  skos:scopeNote "In the 2- and 3-dimensional cases it gives the position of points relative to orthogonal straight axes.   [NAS EA OV-7]"^^xsd:string ;
+  skos:scopeNote "In the multi-dimensional cases, all axes shall have the same unit of measure.   [NAS EA OV-7]"^^xsd:string ;
+.
+:Catenary
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA AC 150/5300-18B,  Appendix A"^^xsd:string ;
+  rdfs:label "Catenary"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Curve ;
+  skos:definition "The curve theoretically formed by a perfectly flexible, uniformly dense and thick, inextensible cable suspended from two points. Also a cable suspended between two points having the approximate shape of a catenary.  [FAA AC 150/530018B]"^^xsd:string ;
+  skos:prefLabel "Catenary"^^xsd:string ;
+.
+:Center
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Center"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Point ;
+  skos:definition "1 a : the point around which a circle or sphere is described; broadly : a point that is related to a geometrical figure in such a way that for any point on the figure there is another point on the figure such that a straight line joining the two points is bisected by the original point  called also center of symmetry b : the center of the circle inscribed in a regular polygon   [WEBSTER]"^^xsd:string ;
+  skos:narrower :Center_Point ;
+  skos:narrower :Center_of_Gravity ;
+  skos:narrower :Center_of_Mass ;
+  skos:narrower :Center_of_Symmetry ;
+  skos:narrower :Circle_Center ;
+  skos:prefLabel "Center"^^xsd:string ;
+.
+:Center_Point
+  rdf:type owl:Class ;
+  rdfs:label "Center Point"^^xsd:string ;
+  rdfs:subClassOf :Center ;
+  rdfs:subClassOf :Point ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Center
+            :Point
+          ) ;
+      ]
+    ) ;
+  skos:broader :Center ;
+  skos:broader :Point ;
+  skos:prefLabel "Center Point"^^xsd:string ;
+.
+:Center_of_Gravity
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  vaem:abbreviation "C.G."^^xsd:string ;
+  rdfs:label "Center of Gravity"^^xsd:string ;
+  rdfs:subClassOf :Center ;
+  skos:broader :Center ;
+  skos:definition "2 : the point at which the entire weight of a body may be considered as concentrated so that if supported at this point the body would remain in equilibrium in any position   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Center of Gravity"^^xsd:string ;
+.
+:Center_of_Gravity_Range
+  rdf:type owl:Class ;
+  rdfs:label "Center of Gravity Range"^^xsd:string ;
+  rdfs:subClassOf :Center_of_Gravity ;
+  rdfs:subClassOf :Points_Range ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Center_of_Gravity
+            :Points_Range
+          ) ;
+      ]
+    ) ;
+  skos:altLabel "C. G. Range"^^xsd:string ;
+  skos:altLabel "C.G. Range"^^xsd:string ;
+  skos:broader :Center_of_Gravity ;
+  skos:broader :Points_Range ;
+  skos:prefLabel "Center of Gravity Range"^^xsd:string ;
+.
+:Center_of_Mass
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Center of Mass"^^xsd:string ;
+  rdfs:subClassOf :Center ;
+  skos:broader :Center ;
+  skos:definition ": the point in a body or system of bodies at which the whole mass may be considered as concentrated  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Center of Mass"^^xsd:string ;
+.
+:Center_of_Symmetry
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Center of Symmetry"^^xsd:string ;
+  rdfs:subClassOf :Center ;
+  skos:broader :Center ;
+  skos:definition "a point that is related to a geometrical figure in such a way that for any point on the figure there is another point on the figure such that a straight line joining the two points is bisected by the original point   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Center of Symmetry"^^xsd:string ;
+.
+:Circle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "TFM1  FlowInfo CommonMsgType"^^xsd:string ;
+  :dataElementLabelTMXM "circle"^^xsd:string ;
+  rdfs:label "Circle"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass <http://www.opengis.net/ont/gml#Circle> ;
+  skos:altLabel "FCA Circle"^^xsd:string ;
+  skos:altLabel "Flow Constraint Area Circle"^^xsd:string ;
+  skos:broader :Closed_Plane ;
+  skos:broader :Geometric_Shape ;
+  skos:broader :Plane_Surface ;
+  skos:definition "1 b: a closed plane curve every point of which is equidistant from a fixed point within the curve c: the plane surface bounded by such a curve  3: something in the shape of a circle or section of a circle  [WEBSTER]"^^xsd:string ;
+  skos:definition "Data elements for a circle FEA/FCA.  [TFM1]"^^xsd:string ;
+  skos:definition "FCA is defined as a circle.  [TFM1]"^^xsd:string ;
+  skos:narrower :Circle_Sector ;
+  skos:narrower :Flow_Constraint_Area_Circle ;
+  skos:narrower :Geometric_Circle ;
+  skos:narrower :Quadrant ;
+  skos:prefLabel "Circle"^^xsd:string ;
+  skos:related :Polygon ;
+.
+:Circle_Center
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "TFM1  FlowInfo CommonMsgType"^^xsd:string ;
+  dcterms:hasFormat "Level 6: element, Required and sequenced: 5"^^xsd:string ;
+  rdfs:label "Circle Center"^^xsd:string ;
+  rdfs:subClassOf :Center ;
+  rdfs:subClassOf :Circle ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Circle
+            :Center
+          ) ;
+      ]
+    ) ;
+  skos:broader :Center ;
+  skos:broader :Circle ;
+  skos:definition "The center of the circle.  [TFM1]"^^xsd:string ;
+  skos:narrower :Circle_Center-Latitude_Longitude ;
+  skos:narrower :Circle_Center_Point ;
+  skos:prefLabel "Circle Center"^^xsd:string ;
+  skos:scopeNote "centerType"^^xsd:string ;
+.
+:Circle_Center-Latitude_Longitude
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "TFM1  FlowInfo CommonMsgType"^^xsd:string ;
+  dcterms:hasFormat "Level 6: element, Required and sequenced: 5"^^xsd:string ;
+  rdfs:label "Circle Center-Latitude Longitude"^^xsd:string ;
+  rdfs:subClassOf :Circle_Center ;
+  skos:broader :Circle_Center ;
+  skos:definition "The points of point of the circle: latitude and longitude.   [TFM1]"^^xsd:string ;
+  skos:prefLabel "Circle Center-Latitude Longitude"^^xsd:string ;
+.
+:Circle_Center_Point
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "TMXM Model Specification [in TMXMDoc.pdf, created 7/11/13 at 4:01PM]"^^xsd:string ;
+  dcterms:isPartOf "Flow Area Circle"^^xsd:string ;
+  dcterms:references "GM_Point"^^xsd:string ;
+  rdfs:label "Circle Center Point"^^xsd:string ;
+  rdfs:subClassOf :Circle_Center ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Circle_Center
+            :Point
+          ) ;
+      ]
+    ) ;
+  skos:broader :Circle_Center ;
+  skos:prefLabel "Circle Center Point"^^xsd:string ;
+.
+:Circle_Radius
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "TFM1  FlowInfo CommonMsgType"^^xsd:string ;
+  dcterms:hasFormat "Level 6: element, Required and sequenced: 5"^^xsd:string ;
+  dcterms:hasFormat "Level 7: simpleType,  maxInclusive: 9999 minInclusive: 1"^^xsd:string ;
+  dcterms:hasFormat "restriction-xsd:integer"^^xsd:string ;
+  dcterms:hasFormat "xsd:integer"^^xsd:string ;
+  rdfs:label "Circle Radius"^^xsd:string ;
+  rdfs:subClassOf :Radius ;
+  skos:broader :Circle ;
+  skos:broader :Radius ;
+  skos:definition "The radius of the circle in nautical miles.   [TFM1]"^^xsd:string ;
+  skos:definition "The radius of the circle.  [TFM1]"^^xsd:string ;
+  skos:narrower :Flow_Constraint_Area_Circle_Radius ;
+  skos:prefLabel "Circle Radius"^^xsd:string ;
+.
+:Circle_Sector
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM 5.1 retrieved on 11-28-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  :dataElementLabelAIXM "CircleSector"^^xsd:string ;
+  rdfs:label "Circle Sector"^^xsd:string ;
+  rdfs:subClassOf :Circle ;
+  rdfs:subClassOf :Sector ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Circle
+            :Sector
+          ) ;
+      ]
+    ) ;
+  skos:broader :Circle ;
+  skos:broader :Sector ;
+  skos:definition "A group of properties that help describe a 3D pattern based on start angle, stop angle, inner distance, outer distance and upper/lower altitude.    [AIXM 5.0]   [AIXM 5.1]"^^xsd:string ;
+  skos:prefLabel "Circle Sector"^^xsd:string ;
+.
+:Climb_Gradient
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Climb Gradient"^^xsd:string ;
+  rdfs:subClassOf :Gradient ;
+  owl:oneOf (
+      "ATC"^^xsd:string
+      "Obstacle"^^xsd:string
+    ) ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Air_Traffic_Control_Climb_Gradient
+            :Obstacle_Climb_Gradient
+          ) ;
+      ]
+    ) ;
+  skos:altLabel "REFERENCE CLIMB GRADIENT TYPE"^^xsd:string ;
+  skos:broader :Gradient ;
+  skos:definition "The climb gradient is determined or defined either by ATC or is based upon Obstacle clearance requirements.   [NAS EA OV-7]"^^xsd:string ;
+  skos:narrower :Air_Traffic_Control_Climb_Gradient ;
+  skos:narrower :Obstacle_Climb_Gradient ;
+  skos:prefLabel "Climb Gradient"^^xsd:string ;
+.
+:Climb_Gradient_Type
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Climb Gradient Type"^^xsd:string ;
+  rdfs:subClassOf :Climb_Gradient ;
+  skos:altLabel "REFERENCE CLIMB GRADIENT TYPE"^^xsd:string ;
+  skos:broader :Climb_Gradient ;
+  skos:definition "The climb gradient is determined or defined either by ATC or is based upon Obstacle clearance requirements.   [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Climb Gradient Type"^^xsd:string ;
+.
+:Closed_Figure
+  rdf:type owl:Class ;
+  rdfs:label "Closed Figure"^^xsd:string ;
+  rdfs:subClassOf :Figure ;
+  skos:broader :Figure ;
+  skos:prefLabel "Closed Figure"^^xsd:string ;
+.
+:Closed_Plane
+  rdf:type owl:Class ;
+  rdfs:label "Closed Plane"^^xsd:string ;
+  rdfs:subClassOf :Plane ;
+  skos:broader :Plane ;
+  skos:prefLabel "Closed Plane"^^xsd:string ;
+.
+:Collection
+  rdf:type owl:Class ;
+  rdfs:label "Collection"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:prefLabel "Collection"^^xsd:string ;
+.
+:Compound_Coordinate_Reference_System
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dcterms:bibliographicCitation "OGP Publication 373-7-1 - Geomatics Guidance Note number 7, part 1 - August 2012 (4.2.1 Coordinate Reference system subtypes g), page 11)"^^xsd:string ;
+  vaem:acronym "CCRS"^^xsd:string ;
+  rdfs:label "Compound Coordinate Reference System"^^xsd:string ;
+  rdfs:subClassOf :Coordinate_Reference_System ;
+  skos:broader :Coordinate_Reference_System ;
+  skos:definition "The coordinate reference system to which these 2D+1D coordinates are referenced combines the separate horizontal and vertical coordinate reference systems of the horizontal and vertical coordinates. Such a system is called a compound coordinate reference system (CCRS). It consists of a non-repeating sequence of two or more single coordinate reference systems.  [OGP]  [NAS EA OV-7]"^^xsd:string ;
+  skos:historyNote "In historic geodetic practice, horizontal and vertical positions were determined independently. It is established practice to combine the horizontal coordinates of a point with a height or depth from a different coordinate reference system. This has resulted in coordinate reference systems that are horizontal (2D) and vertical (1D) in nature, as opposed to truly 3-dimensional.  [OGP]  [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Compound Coordinate Reference System"^^xsd:string ;
+.
+:Cone
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Cone"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Closed_Plane ;
+  skos:broader :Geometric_Shape ;
+  skos:broader :Solid ;
+  skos:broader :Surface ;
+  skos:definition "1 a: a solid generated by rotating a right triangle about one of its legs - called also a right circular cone    b: a solid bounded by a circular or other closed plane base and the surface formed by line segments joining every point of the boundary of the base to a common vertex  c: a surface traced by a moving straight line a fixed vertex    [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Cone"^^xsd:string ;
+.
+:Converted_Segment
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Aeronautical Information Lexicon, FAA-IMS Interface Management System, European Air Traffic Management, EUROCONTROL, no date given"^^xsd:string ;
+  dcterms:bibliographicCitation "EUROCONTROL  European Organization for the Safety of Air Navigation: EUROCONTROL; European Air Traffic Management, Aeronautical Information Lexicon - FAA; no date provided in document"^^xsd:string ;
+  rdfs:label "Converted Segment"^^xsd:string ;
+  rdfs:subClassOf :Line_Segment ;
+  skos:broader :Line_Segment ;
+  skos:definition "Two converted fixes and the line between them.  [FAA] [EUROCONTROL]"^^xsd:string ;
+  skos:prefLabel "Converted Segment"^^xsd:string ;
+.
+:Conveyance_Trajectory
+  rdf:type owl:Class ;
+  rdfs:label "Conveyance Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Trajectory ;
+  skos:broader :Trajectory ;
+  skos:narrower :Aircraft_Trajectory ;
+  skos:narrower :Trajectory_Options_Set ;
+  skos:prefLabel "Conveyance Trajectory"^^xsd:string ;
+.
+:Coordinate
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Coordinate"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Coordinates ;
+  skos:broader :Point ;
+  skos:definition "1 a: any of a set of numbers used in specifying the location of a point on a line, on a surface, or in space   [WEBSTER]"^^xsd:string ;
+  skos:definition "1 b : any one of a set of variables used in specifying the state of a substance or the motion of a particle or momentum [WEBSTER]"^^xsd:string ;
+  skos:definition "A general entity that provides information about the position of something on, below, or above the surface of the Earth.  [NAS EA OV-7]"^^xsd:string ;
+  skos:narrower :Geodetic_Coordinate ;
+  skos:narrower :Intercept ;
+  skos:narrower :x-Coordinate ;
+  skos:narrower :y-Coordinate ;
+  skos:narrower :z-Coordinate ;
+  skos:prefLabel "Coordinate"^^xsd:string ;
+.
+:Coordinate_Axis
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Coordinate Axis"^^xsd:string ;
+  rdfs:subClassOf :Axis ;
+  skos:definition "One of a set of lines or curves used to define a coordinate system; the value of one of the coordinates uniquely determines the location of a point on the axis.  [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Coordinate Axis"^^xsd:string ;
+.
+:Coordinate_Axis_Order
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Coordinate Axis Order"^^xsd:string ;
+  rdfs:subClassOf :Coordinate_Axis ;
+  skos:definition "Defines the order that a specific value should be included in a coordinate... [NAS EA OV-7]"^^xsd:string ;
+  skos:example "...for instance a Cartesian coordinate system traditional identifies (x,y) points where the coordinate axis order number for \"x\" is 1 and \"y\" is 2.   [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Coordinate Axis Order"^^xsd:string ;
+.
+:Coordinate_Reference_System
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dcterms:bibliographicCitation "SeaZone  An Introduction to Coordinate Reference Systems (SeaZone)"^^xsd:string ;
+  rdfs:label "Coordinate Reference System"^^xsd:string ;
+  rdfs:subClassOf :Coordinate_System ;
+  skos:broader :Coordinate_System ;
+  skos:definition "A Coordinate Reference System (CRS) associates a coordinate system with an object by means of a datum. Therefore, a CRS definition must encompass a definition of a coordinate system and a datum. In the context of ISO 19111 a CRS is defined by its datum.   [SeaZone]  [NAS EA OV-7]"^^xsd:string ;
+  skos:narrower :Compound_Coordinate_Reference_System ;
+  skos:narrower :Coordinate_Reference_System_Sequence ;
+  skos:narrower :Coordinate_Reference_System_Usage ;
+  skos:narrower :Geodetic_Coordinate_Reference_System ;
+  skos:narrower :Projected_Coordinate_Reference_System ;
+  skos:narrower :Vertical_Coordinate_Reference_System ;
+  skos:prefLabel "Coordinate Reference System"^^xsd:string ;
+  skos:scopeNote "It is the definition of the CRS that must be supplied with a spatial dataset in order that a full understanding of the meaning of the coordinates in the data can be gained. By extension the CRS should also be expressed in full on any map products that are produced.  [SeaZone]  [NAS EA OV-7]"^^xsd:string ;
+  skos:scopeNote """The three primary types are:
+- Geodetic CRS - a CRS based on a geodetic datum (e.g. WGS 8411 or OSGB 193612 - note that both these names are also names of geodetic datums)
+- Projected CRS - a CRS derived from a geodetic CRS by means of a map projection. The datum is expressed by the geodetic datum of the base geodetic CRS from which the projected CRS is derived (e.g. British National Grid13)
+- Vertical CRS - a one dimensional CRS based on a vertical datum (e.g. MSL Depth14)
+[SeaZone]  [NAS EA OV-7]"""^^xsd:string ;
+.
+:Coordinate_Reference_System_Sequence
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Coordinate Reference System Sequence"^^xsd:string ;
+  rdfs:subClassOf :Coordinate_Reference_System ;
+  skos:broader :Coordinate_Reference_System ;
+  skos:definition "Used to collect data on the ordering of coordinate reference systems within a compound coordinate reference system. The order of the CRS within a compound CRS will indicate the order that ordinals will appear in a combined coordinate.  [NAS EA OV-7]"^^xsd:string ;
+  skos:example "For example, a compound CRS defines the WGS-84 2D CRS is first and the EGM-96 vertical CRS is second. The WGS-84 2D contains a latitude then a longitude value, and the EGM-96 contains only an elevation. The resulting coordinate will be (latitude, longitude, elevation).  [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Coordinate Reference System Sequence"^^xsd:string ;
+.
+:Coordinate_Reference_System_Type
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Coordinate Reference System Type"^^xsd:string ;
+  rdfs:subClassOf :Coordinate_Reference_System ;
+  skos:altLabel "REFERENCE COORDINATE REFERENCE SYSTEM TYPE"^^xsd:string ;
+  skos:broader :Coordinate_Reference_System ;
+  skos:prefLabel "Coordinate Reference System Type"^^xsd:string ;
+.
+:Coordinate_Reference_System_Usage
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Coordinate Reference System Usage"^^xsd:string ;
+  rdfs:subClassOf :Coordinate_Reference_System ;
+  skos:broader :Coordinate_Reference_System ;
+  skos:definition "Provides information on why the FAA is using a coordinate reference system within the organization. For instance, the FAA may designate that WGS-84 is used as the standard for building instrument flight procedures.  [NAS EA OV-7]"^^xsd:string ;
+  skos:narrower :Coordinate_Reference_System_Usage_Context ;
+  skos:prefLabel "Coordinate Reference System Usage"^^xsd:string ;
+.
+:Coordinate_Reference_System_Usage_Context
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Coordinate Reference System Usage Context"^^xsd:string ;
+  rdfs:subClassOf :Coordinate_Reference_System_Usage ;
+  skos:altLabel "REFERENCE COORDINATE REFERENCE SYSTEM USAGE CONTEXT"^^xsd:string ;
+  skos:broader :Coordinate_Reference_System_Usage ;
+  skos:prefLabel "Coordinate Reference System Usage Context"^^xsd:string ;
+.
+:Coordinate_System
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dcterms:bibliographicCitation "SeaZone  An Introduction to Coordinate Reference Systems (SeaZone)"^^xsd:string ;
+  rdfs:label "Coordinate System"^^xsd:string ;
+  rdfs:subClassOf :Coordinates ;
+  skos:broader :Coordinates ;
+  skos:definition "A coordinate system is expressed by a set of properties that enable the meaning of the coordinates within the system to be determined. [SeaZone]  [NAS EA OV-7]"^^xsd:string ;
+  skos:narrower :Cartesian_Coordinate_System ;
+  skos:narrower :Coordinate_Reference_System ;
+  skos:narrower :Coordinate_System_Type ;
+  skos:prefLabel "Coordinate System"^^xsd:string ;
+  skos:scopeNote """The properties that define a coordinate system are (Iliffe and Lott 2008):
+The dimension
+- defines the number of axes associated with the system
+
+For each axis: 
+- The name of the axis (e.g. Easting, Geodetic Latitude)
+- The sequence of the axis (i.e. the position of the axis in an ordered list)
+
+- The direction in which coordinates increase along the axis (e.g. positive up for vertical coordinate systems)
+- The units of measure of the axis   [SeaZone]  [NAS EA OV-7]"""^^xsd:string ;
+.
+:Coordinate_System_Type
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Coordinate System Type"^^xsd:string ;
+  rdfs:subClassOf :Coordinate_System ;
+  skos:altLabel "REFERENCE COORDINATE SYSTEM TYPE"^^xsd:string ;
+  skos:broader :Coordinate_System ;
+  skos:prefLabel "Coordinate System Type"^^xsd:string ;
+.
+:Coordinate_Type
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Coordinate Type"^^xsd:string ;
+  rdfs:subClassOf :Coordinate ;
+  skos:altLabel "REFERENCE COORDINATE TYPE"^^xsd:string ;
+  skos:broader :Coordinate ;
+  skos:prefLabel "Coordinate Type"^^xsd:string ;
+.
+:Coordinates
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA PCG   FAA Pilot/Controller Glossary (P/CG) Effective 2-9-12; part of AIM Order JO 7110.10 Flight Services and 7110.65, Air Traffic Control;  extracted from FAA web site on February 17, 2012"^^xsd:string ;
+  rdfs:label "Coordinates"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Coordinate
+    ) ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :x-Coordinate
+            :y-Coordinate
+            :z-Coordinate
+          ) ;
+      ]
+    ) ;
+  skos:broader :Intersection ;
+  skos:definition "The intersection of lines of reference, usually expressed in degrees/minutes/seconds of latitude and longitude, used to determine position or location.    [FAA PCG]"^^xsd:string ;
+  skos:narrower :Coordinate ;
+  skos:narrower :Coordinate_System ;
+  skos:narrower :Geodetic_Coordinates ;
+  skos:narrower :Geographic_Coordinates ;
+  skos:narrower :System_Coordinates ;
+  skos:prefLabel "Coordinates"^^xsd:string ;
+.
+:Coverage_Geometry
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Doc 9881, Guidelines for Electronic Terrain, Obstacle and Aerodrome Mapping Information"^^xsd:string ;
+  rdfs:label "Coverage Geometry"^^xsd:string ;
+  rdfs:subClassOf :Geometry ;
+  skos:broader :Geometry ;
+  skos:definition "Configuration of the spatiotemporal domain of a coverage described in terms of coordinates.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Coverage Geometry"^^xsd:string ;
+.
+:Crossing_Point_for_Constrained_Airspace
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Crossing Point for Constrained Airspace"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "The point at which teh flight is expected to cross a designated Constrained Airspace.   [FIXM 3.0, DD p.341]"^^xsd:string ;
+  skos:prefLabel "Crossing Point for Constrained Airspace"^^xsd:string ;
+.
+:Crossover_Altitude
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Crossover Altitude"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "The point in climb or descent where the aircraft will transition between Mach and Initial AIrspeed (IAS) control.    [FIXM 3.0, DD p.340]"^^xsd:string ;
+  skos:prefLabel "Crossover Altitude"^^xsd:string ;
+.
+:Cube
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Cube"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Geometric_Shape ;
+  skos:broader :Solid ;
+  skos:definition "1: the regular solid of a six equal sides   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Cube"^^xsd:string ;
+.
+:Curve
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM 5.1 retrieved on 11-28-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  :dataElementLabelAIXM "Curve"^^xsd:string ;
+  rdfs:label "Curve"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass <http://www.opengis.net/ont/gml#Curve> ;
+  skos:broader :Curved_Line ;
+  skos:definition "1 a: a line esp. when curved: as (1) the path of a moving point (2) : a line defined by an equation so that the coordinates of its points are functions fo a single independent variable or parameter  b: the graph of a variable  [WEBSTER]"^^xsd:string ;
+  skos:definition "A one dimensional Geometric Element  that is defined by a set of points connected by segments in an ordered sequence.   [NAS EA OV-7]"^^xsd:string ;
+  skos:definition "An AIXM curve derived from GM_Curve and extended to include Horizontal Accuracy Properties     [AIXM 5.0]  [AIXM 5.1]"^^xsd:string ;
+  skos:narrower :Catenary ;
+  skos:narrower :Curve_Segment ;
+  skos:narrower :Elevated_Curve ;
+  skos:narrower :Geometric_Curve ;
+  skos:prefLabel "Curve"^^xsd:string ;
+.
+:Curve_Segment
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Curve Segment"^^xsd:string ;
+  rdfs:subClassOf :Curve ;
+  skos:broader :Curve ;
+  skos:prefLabel "Curve Segment"^^xsd:string ;
+.
+:Curved_Line
+  rdf:type owl:Class ;
+  rdfs:label "Curved Line"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:broader :Line ;
+  skos:narrower :Arc ;
+  skos:prefLabel "Curved Line"^^xsd:string ;
+.
+:Cylinder
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Cylinder"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Geometric_Shape ;
+  skos:broader :Solid ;
+  skos:broader :Surface ;
+  skos:definition "1 a: the surface traced by a straight line moving parallel to a fixed straight line and intersecting a fixed planar closed curve  b: a solid or surface bounded by a cylinder and two parallel planes cutting all its elements [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Cylinder"^^xsd:string ;
+.
+:D-Line
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIM - EUROC   Aeronautical Information Lexicon, FAA-IMS Interface Management System, European Air Traffic Management, EUROCONTROL, no date given"^^xsd:string ;
+  dcterms:bibliographicCitation "EUROCONTROL  European Organization for the Safety of Air Navigation: EUROCONTROL; European Air Traffic Management, Aeronautical Information Lexicon - FAA; no date provided in document"^^xsd:string ;
+  rdfs:label "D-Line"^^xsd:string ;
+  rdfs:subClassOf :Adapted_Line_Segment ;
+  skos:broader :Adapted_Line_Segment ;
+  skos:definition "An adapted line segment that causes a program search for an applicable PDR when intersected by a direct route segment for a departing flight.  [AIM - EUROC]"^^xsd:string ;
+  skos:prefLabel "D-Line"^^xsd:string ;
+.
+:Date_Line
+  rdf:type owl:Class ;
+  rdfs:label "Date Line"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:altLabel "Dateline"^^xsd:string ;
+  skos:broader :Line ;
+  skos:narrower :International_Date_Line ;
+  skos:prefLabel "Date Line"^^xsd:string ;
+.
+:Directed_Line
+  rdf:type owl:Class ;
+  rdfs:label "Directed Line"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Line
+            :Direction
+          ) ;
+      ]
+    ) ;
+  skos:broader :Line ;
+  skos:narrower :Directed_Line_Segment ;
+  skos:narrower :Direction ;
+  skos:prefLabel "Directed Line"^^xsd:string ;
+.
+:Directed_Line_Segment
+  rdf:type owl:Class ;
+  rdfs:label "Directed Line Segment"^^xsd:string ;
+  rdfs:subClassOf :Line_Segment ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Line_Segment
+            :Direction
+          ) ;
+      ]
+    ) ;
+  skos:broader :Directed_Line ;
+  skos:broader :Line_Segment ;
+  skos:narrower :Vector ;
+  skos:prefLabel "Directed Line Segment"^^xsd:string ;
+.
+:Direction
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Direction"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Directed_Line ;
+  skos:broader :Vector ;
+  skos:definition "4: the line or course on which something is moving or is aimed to move or along which something is pointing or facing  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Direction"^^xsd:string ;
+.
+:Elevated_Curve
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM 5.1 retrieved on 11-28-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  :dataElementLabelAIXM "ElevatedCurve"^^xsd:string ;
+  rdfs:label "Elevated Curve"^^xsd:string ;
+  rdfs:subClassOf :Curve ;
+  skos:broader :Curve ;
+  skos:definition "An AIXM elevated curve derived from, which extends curve with properties that represent the vertical position (elevation, datum, accuracy).     [AIXM 5.0]"^^xsd:string ;
+  skos:prefLabel "Elevated Curve"@en ;
+.
+:Elevated_Point
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM 5.1 generated on 2009-02-03; retrieved on 11-29-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  :dataElementLabelAIXM "ElevatedPoint"^^xsd:string ;
+  rdfs:label "Elevated Point"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Point ;
+  skos:broader :Geometric_Point ;
+  skos:definition "An AIXM Point derived from GM_Point that includes properties for describing a point with elevation and vertical extent.   [AIXM 5.0]   [AIXM 5.1]"^^xsd:string ;
+  skos:prefLabel "Elevated Point"^^xsd:string ;
+.
+:Elevated_Surface
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM 5.1 generated on 2009-02-03; retrieved on 11-29-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  :dataElementLabelAIXM "ElevatedSurface"^^xsd:string ;
+  rdfs:label "Elevated Surface"^^xsd:string ;
+  rdfs:subClassOf :Surface ;
+  skos:broader :Surface ;
+  skos:definition "An AIXM elevated surface derived from, which extends Surface with properties that represent the vertical position (elevation, datum, accuracy).    [AIXM 5.0]  [AIXM 5.1]"^^xsd:string ;
+  skos:prefLabel "Elevated Surface"^^xsd:string ;
+.
+:Elevation_Angle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "EUROCONTROL, SASS-C Glossary"^^xsd:string ;
+  rdfs:label "Elevation Angle"^^xsd:string ;
+  rdfs:subClassOf :Angle ;
+  skos:definition "the angle between the vector going from the radar head to the horizon on the one hand and the vector joining the radar head to a particular target on the other hand.  [EUROCONTROL]"^^xsd:string ;
+  skos:prefLabel "Elevation Angle"^^xsd:string ;
+.
+:Elevation_Coordinate
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dcterms:references "Elevation"^^xsd:string ;
+  dcterms:references "Reference_Point"^^xsd:string ;
+  rdfs:label "Elevation Coordinate"^^xsd:string ;
+  rdfs:subClassOf :Coordinate ;
+  skos:broader :Coordinate ;
+  skos:definition "Information about a measured distance in elevation above a Reference Point.  [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Elevation Coordinate"^^xsd:string ;
+.
+:Ellipsoid
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA AC 150/5300-18B,  Appendix A"^^xsd:string ;
+  dcterms:bibliographicCitation "Merrian-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Ellipsoid"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Figure ;
+  rdfs:subClassOf :Shape ;
+  skos:broader :Geometric_Figure ;
+  skos:broader :Shape ;
+  skos:definition ": a surface all plane sections of which are ellipses or circle  [WEBSTER]"^^xsd:string ;
+  skos:definition "A three-dimensional, closed geometric shape called an ellipsoid of revolution, which is created by rotating an ellipse about its semi-minor axis.   [NAS EA OV-7]"^^xsd:string ;
+  skos:narrower :Reference_Ellipsoid ;
+  skos:prefLabel "Ellipsoid"^^xsd:string ;
+  skos:scopeNote """This reference ellipsoid, which is used as a surface of reference for geodetic surveys, is defined to closely approximate the dimensions of the GEOID, which is the theoretical surface of the earth that coincides everywhere with approximate mean sea-level.
+[NAS EA OV-7]"""^^xsd:string ;
+  skos:scopeNote "When used as a component of a geodetic datum the semi-major axis of the ellipsoid of revolution is aligned with the earth’s equator and the semi-minor axis is aligned with the earth’s axis of rotation.   [NAS EA OV-7]"^^xsd:string ;
+.
+:Ellipsoid_Coordinate
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dcterms:references "Latitude"^^xsd:string ;
+  dcterms:references "Longitude"^^xsd:string ;
+  rdfs:label "Ellipsoid Coordinate"^^xsd:string ;
+  rdfs:subClassOf :Coordinate ;
+  skos:broader :Coordinate ;
+  skos:definition "Position on the globe expressed in latitude, longitude, and (optionally) height above the Ellipsoid.  [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Ellipsoid Coordinate"^^xsd:string ;
+.
+:Ellipsoidal_Coordinate_System
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dcterms:references "Ellipsoidal_Height"^^xsd:string ;
+  dcterms:references "Geodetic_Latitude"^^xsd:string ;
+  dcterms:references "Geodetic_Longitude"^^xsd:string ;
+  rdfs:label "Ellipsoidal Coordinate System"^^xsd:string ;
+  rdfs:subClassOf :Coordinate_System ;
+  skos:broader :Coordinate_System ;
+  skos:definition "A 2- or 3-dimensional coordinate system in which position is specified by geodetic latitude, geodetic longitude and (in the three-dimensional case) ellipsoidal height. The ellipsoidal height direction is exactly perpendicular to the surface of the ellipsoid.  [NAS EA OV-7]"^^xsd:string ;
+  skos:narrower :Ellipsoid_Coordinate ;
+  skos:prefLabel "Ellipsoidal Coordinate System"^^xsd:string ;
+  skos:scopeNote "An ellipsoidal CS may be associated with one or more geographic CRSs.  [NAS EA OV-7]"^^xsd:string ;
+.
+:End_of_Descent
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "End of Descent"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "The point in the trajectory where the descent procedure ends.   [FIXM 3.0, DD p.340]"^^xsd:string ;
+  skos:prefLabel "End of Descent"^^xsd:string ;
+.
+:Enter_Hold
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Enter Hold"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "Indicates the point at which the flight enters a hold.  [FIXM 3.0, DD p.341]"^^xsd:string ;
+  skos:prefLabel "Enter Hold"^^xsd:string ;
+.
+:Entry_Point_into_Special_Activity_Airspace
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Entry Point into Special Activity Airspace"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "The point at which the flight is projected to enter Special Activity Airspace.    [FIXM 3.0, DD p.340]"^^xsd:string ;
+  skos:prefLabel "Entry Point into Special Activity Airspace"^^xsd:string ;
+.
+:Estimated_Point
+  rdf:type owl:Class ;
+  rdfs:label "Estimated Point"^^xsd:string ;
+  rdfs:subClassOf :Point ;
+  skos:broader :Point ;
+  skos:definition "is a type of point that has altitude, intersect, distance, etc. "^^xsd:string ;
+  skos:prefLabel "Estimated Point"^^xsd:string ;
+  skos:scopeNote "based on definition of term \"point\""^^xsd:string ;
+.
+:Exact_Point
+  rdf:type owl:Class ;
+  rdfs:label "Exact Point"^^xsd:string ;
+  rdfs:subClassOf :Point ;
+  skos:broader :Point ;
+  skos:definition "is a type of point that has a relevant Latitude and Longitude   "^^xsd:string ;
+  skos:editorialNote "based on definition of term \"point\""^^xsd:string ;
+  skos:prefLabel "Exact Point"^^xsd:string ;
+.
+:Exit_Hold
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Exit Hold"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "Indicates the piont at which the flight exits a hold.  [FIXM 3.0, DD p.341]"^^xsd:string ;
+  skos:prefLabel "Exit Hold"^^xsd:string ;
+.
+:Exit_Point_from_Special_Activity_Airspace
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Exit Point from Special Activity Airspace"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "The point at which the flight is projected to exit Special Activity Airspace.    [FIXM 3.0, DD p.340]"^^xsd:string ;
+  skos:prefLabel "Exit Point from Special Activity Airspace"^^xsd:string ;
+.
+:Extent
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  rdfs:label "Extent"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Magnitude ;
+  skos:broader :Space ;
+  skos:broader :Surface ;
+  skos:definition "3 a: the range over which something extends: SCOPE  b: the point, degree, or limit to which something extends  c: the amount of space or surface that something occupies or the distance over which it extends: MAGNITUDE  [WEBSTER]"^^xsd:string ;
+  skos:editorialNote "extend: 1: to spread or stretch out: UNBEND  2 a: to stretch out to fullest length  [WEBSTER]"^^xsd:string ;
+  skos:hasTopConcept :Space ;
+  skos:narrower :Horizontal_Extent ;
+  skos:narrower :Marking_Extent ;
+  skos:narrower :Spatial_Extent ;
+  skos:narrower :Vertical_Extent ;
+  skos:prefLabel "Extent"^^xsd:string ;
+.
+:Figure
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Figure"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Geometric_Form ;
+  skos:definition "2 a: a geometric form (as a line, triangle, or sphere) esp. when considered as a set of geometric elements (as points) in space of a given number of dimentions c: an object noticeable only as a shape or form esp. of a person  3 a: the graphic representation of a form esp. of a person or geometric entity [WEBSTER]"^^xsd:string ;
+  skos:narrower :Angle ;
+  skos:narrower :Closed_Figure ;
+  skos:narrower :Geometric_Figure ;
+  skos:narrower :Polygon ;
+  skos:prefLabel "Figure"^^xsd:string ;
+.
+:Filed_Segment
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Aeronautical Information Lexicon, FAA-IMS Interface Management System, European Air Traffic Management, EUROCONTROL, no date given"^^xsd:string ;
+  dcterms:bibliographicCitation "EUROCONTROL  European Organization for the Safety of Air Navigation: EUROCONTROL; European Air Traffic Management, Aeronautical Information Lexicon - FAA; no date provided in document"^^xsd:string ;
+  rdfs:label "Filed Segment"^^xsd:string ;
+  rdfs:subClassOf :Line_Segment ;
+  skos:broader :Line_Segment ;
+  skos:definition "Two fixes, filed or implied, and the route between them.   [FAA] [EUROCONTROL]"^^xsd:string ;
+  skos:prefLabel "Filed Segment"^^xsd:string ;
+.
+:Flight_Path_Vector
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "FPV"^^xsd:string ;
+  rdfs:label "Flight Path Vector"^^xsd:string ;
+  rdfs:subClassOf :Flight_Vector ;
+  skos:broader :Flight_Vector ;
+  skos:prefLabel "Flight Path Vector"^^xsd:string ;
+.
+:Flight_Trajectory
+  rdf:type owl:Class ;
+  rdfs:label "Flight Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_Trajectory ;
+  skos:broader :Aircraft_Trajectory ;
+  skos:narrower :Active_Flight_Trajectory ;
+  skos:narrower :Actual_Trajectory ;
+  skos:narrower :Alternative_Trajectory ;
+  skos:narrower :Proposed_Flight_Trajectory ;
+  skos:narrower :User_Preferred_Trajectory ;
+  skos:prefLabel "Flight Trajectory"^^xsd:string ;
+.
+:Flight_Vector
+  rdf:type owl:Class ;
+  rdfs:label "Flight Vector"^^xsd:string ;
+  rdfs:subClassOf :Vector ;
+  skos:broader :Vector ;
+  skos:narrower :Flight_Path_Vector ;
+  skos:narrower :Off-Route_Vector ;
+  skos:prefLabel "Flight Vector"^^xsd:string ;
+.
+:Flow_Constraint_Area_Circle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "TMXM Model Specification [in TMXMDoc.pdf, created 7/11/13 at 4:01PM]"^^xsd:string ;
+  dcterms:isPartOf "Flow Area Definition"^^xsd:string ;
+  rdfs:label "Flow Constraint Area Circle"^^xsd:string ;
+  rdfs:subClassOf :Circle ;
+  skos:altLabel "FCA Circle"^^xsd:string ;
+  skos:definition "is a class   [TMXM]"^^xsd:string ;
+  skos:prefLabel "Flow Constraint Area Circle"^^xsd:string ;
+.
+:Flow_Constraint_Area_Circle_Radius
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "TMXM Model Specification [in TMXMDoc.pdf, created 7/11/13 at 4:01PM]"^^xsd:string ;
+  dcterms:isPartOf "Flow Area Circle"^^xsd:string ;
+  dcterms:references "ValDistanceType"^^xsd:string ;
+  :dataElementLabelTMXM "radius"^^xsd:string ;
+  rdfs:label "Flow Constraint Area Circle Radius"^^xsd:string ;
+  rdfs:subClassOf :Circle_Radius ;
+  skos:altLabel "FCA Circle Radius"^^xsd:string ;
+  skos:broader :Circle_Radius ;
+  skos:definition "radius in nmi  [TMXM]"^^xsd:string ;
+  skos:prefLabel "Flow Constraint Area Circle Radius"^^xsd:string ;
+.
+:Flow_Constraint_Area_Line
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "TFM1  FlowInfo CommonMsgType"^^xsd:string ;
+  dcterms:bibliographicCitation "TMXM Model Specification [in TMXMDoc.pdf, created 7/11/13 at 4:01PM]"^^xsd:string ;
+  :dataElementLabelTMXM "FCALine"^^xsd:string ;
+  rdfs:label "Flow Constraint Area Line"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:altLabel "FCA Line"^^xsd:string ;
+  skos:definition "FCA is defined as an line.  [TFM1]"^^xsd:string ;
+  skos:prefLabel "Flow Constraint Area Line"^^xsd:string ;
+.
+:Flow_Constraint_Area_Line_Segment_Points
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "TFM1  FlowInfo CommonMsgType"^^xsd:string ;
+  dcterms:hasFormat "Level 6: element; pointsType; Required and sequenced: 5"^^xsd:string ;
+  rdfs:label "Flow Constraint Area Line Segment Points"^^xsd:string ;
+  rdfs:subClassOf :Line_Segment_Points ;
+  owl:intersectionOf (
+      :Line_Segment_Points
+      :Flow_Constraint_Area_Line
+    ) ;
+  skos:definition "The points of the line segments that define the shape of the FCA.   [TFM1]"^^xsd:string ;
+  skos:prefLabel "Flow Constraint Area Line Segment Points"^^xsd:string ;
+.
+:Flow_Constraint_Area_Polygon
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "TFM1  FlowInfo CommonMsgType"^^xsd:string ;
+  dcterms:bibliographicCitation "TMXM Model Specification [in TMXMDoc.pdf, created 7/11/13 at 4:01PM]"^^xsd:string ;
+  dcterms:hasFormat "Level 3: element; Optional All: 2"^^xsd:string ;
+  dcterms:hasFormat "Level 4: complexType"^^xsd:string ;
+  dcterms:hasFormat "Level 5: all"^^xsd:string ;
+  dcterms:isPartOf "Flow Area Definition"^^xsd:string ;
+  dcterms:isPartOf "Flow Constraint Area Polygon"^^xsd:string ;
+  :dataElementLabelTMXM "FCAPolygon"^^xsd:string ;
+  rdfs:label "Flow Constraint Area Polygon"^^xsd:string ;
+  rdfs:subClassOf :Area_Polygon ;
+  skos:altLabel "FCA Polygon"^^xsd:string ;
+  skos:broader :Area_Polygon ;
+  skos:definition "FCA is defined as an area defined by a polygon.   [TFM1]"^^xsd:string ;
+  skos:definition "is a class   [TMXM]"^^xsd:string ;
+  skos:prefLabel "Flow Constraint Area Polygon"^^xsd:string ;
+  skos:scopeNote "GM_LineString"^^xsd:string ;
+.
+:Flow_Constraint_Area_Polygon_Points
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "TFM1  FlowInfo CommonMsgType"^^xsd:string ;
+  dcterms:hasFormat "Level 6: element; All: 5;  Required and sequenced: 5"^^xsd:string ;
+  rdfs:label "Flow Constraint Area Polygon Points"^^xsd:string ;
+  rdfs:subClassOf :Polygon_Points ;
+  owl:intersectionOf (
+      :Polygon_Points
+      :Flow_Constraint_Area_Polygon
+    ) ;
+  skos:definition "The points of the polygon that define the shape of the FCA.   [TFM1]"^^xsd:string ;
+  skos:prefLabel "Flow Constraint Area Polygon Points"^^xsd:string ;
+  skos:scopeNote "fcaPointType, pointsType  [TFM1]"^^xsd:string ;
+.
+:Form
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate Dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Form"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Object ;
+  skos:definition "1 a : the shape and structure of something as distinguished from its material  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Shape ;
+  skos:narrower :Structure ;
+  skos:prefLabel "Form"^^xsd:string ;
+.
+:Four-D_Point
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  dcterms:bibliographicCitation "Flight and Flow Information for a Collaborative Environment - A Concept (Version 1.0), Nov 22, 2010"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Global Air Navigation Plan, ASBU-Block 1, ICAO DOC 9750, 4th Edition 2013"^^xsd:string ;
+  dcterms:hasFormat "Record"^^xsd:string ;
+  dcterms:isPartOf "Trajectory Point"^^xsd:string ;
+  dcterms:references "Fixm.FlightObject.Flight.Trajectory.Point4D"^^xsd:string ;
+  dcterms:references "Fixm.FlightObject.Flight.Trajectory.TrajectoryPoint.point"^^xsd:string ;
+  :dataElementLabelFIXM "point"^^xsd:string ;
+  rdfs:label "4-D Point"^^xsd:string ;
+  rdfs:subClassOf :Point ;
+  skos:altLabel "4D Point"^^xsd:string ;
+  skos:altLabel "Four D Point"^^xsd:string ;
+  skos:altLabel "Four D Trajectory Point"^^xsd:string ;
+  skos:altLabel "Four-D Point"^^xsd:string ;
+  skos:altLabel "Four-D Trajectory Point"^^xsd:string ;
+  skos:broader :Four-D_Trajectory ;
+  skos:broader :Trajectory_Point ;
+  skos:definition "Identifies the location, altitude and time of a trajectory point.   [FIXM 3.0]"^^xsd:string ;
+  skos:prefLabel "4-D Point"^^xsd:string ;
+  skos:related :Trajectory_Point ;
+  skos:scopeNote "Data type includes latitude, longitude, altitude, and time.  [FIXM 3.0]"^^xsd:string ;
+.
+:Four-D_Trajectory
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  dcterms:bibliographicCitation "SESAR  Extracted from SESAR website on July 26, 2011"^^xsd:string ;
+  dcterms:hasFormat "Array"^^xsd:string ;
+  dcterms:hasPart "4D Point"^^xsd:string ;
+  dcterms:hasPart "Four_D_Point"^^xsd:string ;
+  dcterms:hasPart "Trajectory Point"^^xsd:string ;
+  dcterms:hasPart "Trajectory_Point"^^xsd:string ;
+  dcterms:source "SESAR Consortium (2007) CONOPS Acronyms and Definitions, Task 2.2.2 - Milestone 3, Document Number: DLT-0612-222-02-00"^^xsd:string ;
+  rdfs:label "4-D Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Active_Flight_Trajectory ;
+  skos:altLabel "Four D Trajector"^^xsd:string ;
+  skos:altLabel "Four-D Trajectory"^^xsd:string ;
+  skos:altLabel "Four-Dimensional Trajectory"^^xsd:string ;
+  skos:broader :Trajectory ;
+  skos:definition "A construct containing the four-dimensional (x, y. z, and time) trajector of an aircraft from gate-to-gate, at the leel of fidelity required or attaining the agreed ATM system performance levels.  [FIXM 3.0]"^^xsd:string ;
+  skos:definition "A set of consecutive segments linking waypoints and/or points computed by FMS (airborne) or by TP (ground) to build the vertical profile and the lateral transitions; each point defined by a longitude, a latitude, a level and a time.   [SESAR]"^^xsd:string ;
+  skos:narrower :Agreed_4D_Trajectory ;
+  skos:narrower :Four-D_Point ;
+  skos:narrower :Military_Mission_Trajectory ;
+  skos:narrower :Negotiating_Four-D_Trajectory ;
+  skos:narrower :Ranked_Four-D_Trajectory ;
+  skos:narrower :Trajectory_Point ;
+  skos:prefLabel "4-D Trajectory"^^xsd:string ;
+  skos:scopeNote "For FIXM v3.0, this data type only covers the airborne segment.  However, future versions of FIXM will cover gate-to-gate operations.  [FIXM 3.0]"^^xsd:string ;
+.
+:Frame_of_Reference
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Frame of Reference"^^xsd:string ;
+  rdfs:subClassOf :Axes ;
+  skos:broader :Axes ;
+  skos:definition "1 : an arbitrary set of axes with reference to which the position or motion of something is described or physical laws are formulated  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Frame of Reference"^^xsd:string ;
+.
+:Fringe_Envelope
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "EUROCONTROL (1997) Radar Sensor Performance Analysis, doc. SUR.ET1.ST03.1000-STD-01-01"^^xsd:string ;
+  rdfs:label "Fringe Envelope"^^xsd:string ;
+  rdfs:subClassOf :Intersection ;
+  skos:broader :Intersection ;
+  skos:broader :Vertical_Plane ;
+  skos:definition "the intersection of the vertical plane passing from the Radar Sensor and the actual coverage. It defines the limits within which the system satisfies the specified performance and availability requirements.   [EUROCONTROL]"^^xsd:string ;
+  skos:prefLabel "Fringe Envelope"^^xsd:string ;
+.
+:Geocentric_Coordinate_Reference_System
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dcterms:bibliographicCitation "OGP Publication 373-7-1 - Geomatics Guidance Note number 7, part 1 - August 2012 (4.2.1 Coordinate Reference system subtypes a) and b), page 11)"^^xsd:string ;
+  rdfs:label "Geocentric Coordinate Reference System"^^xsd:string ;
+  rdfs:subClassOf :Geodetic_Coordinate_Reference_System ;
+  skos:broader :Geodetic_Coordinate_Reference_System ;
+  skos:definition "A coordinate reference system based on a geodetic datum that deals with the Earth’s curvature by taking the 3D spatial view, which obviates the need to model the curvature. The origin of a geocentric CRS is at the center of mass of the Earth.  [OGP]  [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Geocentric Coordinate Reference System"^^xsd:string ;
+.
+:Geodesic
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  dcterms:bibliographicCitation "Webster's dictionary"^^xsd:string ;
+  rdfs:label "Geodesic"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:broader :Line ;
+  skos:definition ": the shortest line between two points that lies in a given surface    [WEBSTER]"^^xsd:string ;
+  skos:narrower :Geometric_Geodesic ;
+  skos:prefLabel "Geodesic"^^xsd:string ;
+.
+:Geodesy
+  rdf:type rdfs:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Geodesy"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:definition ": a branch of applied mathematics concerned with the determination of the size and shape of the earth and the exact positions of points on its surface and with the description of variations of its gravity field   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Geodesy"^^xsd:string ;
+.
+:Geodetic_Coordinate
+  rdf:type owl:Class ;
+  rdfs:label "Geodetic Coordinate"^^xsd:string ;
+  rdfs:subClassOf :Coordinate ;
+  skos:prefLabel "Geodetic Coordinate"^^xsd:string ;
+.
+:Geodetic_Coordinate_Reference_System
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dcterms:bibliographicCitation "OGP Publication 373-7-1 - Geomatics Guidance Note number 7, part 1 - August 2012 (4.2.1 Coordinate Reference system subtypes a) and b), page 11)"^^xsd:string ;
+  rdfs:label "Geodetic Coordinate Reference System "^^xsd:string ;
+  rdfs:subClassOf :Coordinate_Reference_System ;
+  skos:broader :Coordinate_Reference_System ;
+  skos:definition """A code used to identify a Geodetic Coordinate Reference System (CRS), which by ISO 19111 includes the following sub types.  
+
+Geographic - A coordinate reference system based on a geodetic datum and using an ellipsoidal (including spherical) model of the Earth.
+
+Geocentric - A coordinate reference system based on a geodetic datum that deals with the Earth’s curvature by taking the 3D spatial view, which obviates the need to model the curvature. The origin of a geocentric CRS is at the center of mass of the Earth.  [OGP]  [NAS EA OV-7]"""^^xsd:string ;
+  skos:definition "Geodetic CRS - a CRS based on a geodetic datum (e.g. WGS 8411 or OSGB 193612 - note that both these names are also names of geodetic datums)"^^xsd:string ;
+  skos:narrower :Geocentric_Coordinate_Reference_System ;
+  skos:narrower :Geographic_Coordinate_Reference_System ;
+  skos:prefLabel "Geodetic Coordinate Reference System "^^xsd:string ;
+.
+:Geodetic_Coordinates
+  rdf:type owl:Class ;
+  rdfs:label "Geodetic Coordinates"^^xsd:string ;
+  rdfs:subClassOf :Coordinates ;
+  owl:unionOf (
+      :Geodetic_Coordinate
+    ) ;
+  skos:broader :Coordinates ;
+  skos:prefLabel "Geodetic Coordinates"^^xsd:string ;
+.
+:Geographic_Coordinate
+  rdf:type owl:Class ;
+  rdfs:label "Geographic Coordinate"^^xsd:string ;
+  rdfs:subClassOf :Coordinate ;
+  skos:prefLabel "Geographic Coordinate"^^xsd:string ;
+.
+:Geographic_Coordinate_Reference_System
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dcterms:bibliographicCitation "OGP Publication 373-7-1 - Geomatics Guidance Note number 7, part 1 - August 2012 (4.2.1 Coordinate Reference system subtypes a) and b), page 11)"^^xsd:string ;
+  dcterms:source "OGP Publication 373-7-1 - Geomatics Guidance Note number 7, part 1 - August 2012 (4.2.1 Coordinate Reference system subtypes a) and b), page 11)"^^xsd:string ;
+  rdfs:label "Geographic Coordinate Reference System"^^xsd:string ;
+  rdfs:subClassOf :Geodetic_Coordinate_Reference_System ;
+  skos:broader :Geodetic_Coordinate_Reference_System ;
+  skos:definition "A coordinate reference system based on a geodetic datum and using an ellipsoidal (including spherical) model of the Earth.   [OGP]  [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Geographic Coordinate Reference System"^^xsd:string ;
+.
+:Geographic_Coordinates
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Doc 9881, Guidelines for Electronic Terrain, Obstacle and Aerodrome Mapping Information"^^xsd:string ;
+  dcterms:references "See Geographic Coordinates in AT-Measures ontology."^^xsd:string ;
+  rdfs:label "Geographic Coordinates"^^xsd:string ;
+  rdfs:subClassOf :Coordinates ;
+  owl:unionOf (
+      :Geographic_Coordinate
+    ) ;
+  skos:broader :Coordinates ;
+  skos:definition "The values of latitude, longitude, and height that define the position of a point on the surface of the Earth with respect to a reference datum.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Geographic Coordinates"^^xsd:string ;
+.
+:Geographic_Model
+  rdf:type owl:Class ;
+  rdfs:label "Geographic Model"^^xsd:string ;
+  rdfs:subClassOf :Model ;
+  skos:prefLabel "Geographic Model"^^xsd:string ;
+.
+:Geometric_Arc
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "GM_Arc"^^xsd:string ;
+  rdfs:label "Geometric Arc"^^xsd:string ;
+  rdfs:subClassOf :Arc ;
+  skos:broader :Arc ;
+  skos:definition "[no definition specified]    [AIXM 5.1]"^^xsd:string ;
+  skos:narrower :Geometric_Arc_String ;
+  skos:narrower :Meter_Fix_Arc ;
+  skos:narrower :Outer_Fix_Arc ;
+  skos:prefLabel "Geometric Arc"^^xsd:string ;
+.
+:Geometric_Arc_String
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "GM_ArcString"^^xsd:string ;
+  rdfs:label "Geometric Arc String"@en ;
+  rdfs:subClassOf :Geometric_Arc ;
+  owl:equivalentClass <http://www.opengis.net/ont/gml#ArcString> ;
+  skos:altLabel "Arc String"^^xsd:string ;
+  skos:broader :Geometric_Arc ;
+  skos:definition "[no definition specified]  [AIXM 5.0]"^^xsd:string ;
+  skos:prefLabel "Geometric Arc String"@en ;
+.
+:Geometric_Area
+  rdf:type owl:Class ;
+  rdfs:label "Geometric Area"^^xsd:string ;
+  rdfs:subClassOf :Area ;
+  skos:broader :Area ;
+  skos:narrower :Airspace_Geometric_Area ;
+  skos:narrower :Structure_Geometric_Area ;
+  skos:prefLabel "Geometric Area"^^xsd:string ;
+.
+:Geometric_Bounding_Shape
+  rdf:type owl:Class ;
+  rdfs:label "Geometric Bounding Shape"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Shape ;
+  skos:broader :Geometric_Shape ;
+  skos:narrower :Geometric_Bounding_Shape_Type ;
+  skos:prefLabel "Geometric Bounding Shape"^^xsd:string ;
+.
+:Geometric_Bounding_Shape_Type
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "GM_BoundingShapeType"^^xsd:string ;
+  rdfs:label "Geometric Bounding Shape Type"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Bounding_Shape ;
+  skos:broader :Geometric_Bounding_Shape ;
+  skos:definition "[no definition specified]  [AIXM]"^^xsd:string ;
+  skos:prefLabel "Geometric Bounding Shape Type"^^xsd:string ;
+.
+:Geometric_Circle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "GM_Circle"^^xsd:string ;
+  rdfs:label "Geometric Circle"^^xsd:string ;
+  rdfs:subClassOf :Circle ;
+  skos:broader :Circle ;
+  skos:broader :Geometric_Shape ;
+  skos:definition "[no definition specified]    [AIXM 5.0]"^^xsd:string ;
+  skos:prefLabel "Geometric Circle"^^xsd:string ;
+.
+:Geometric_Curve
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "GM_Curve"^^xsd:string ;
+  rdfs:label "Geometric Curve"^^xsd:string ;
+  rdfs:subClassOf :Curve ;
+  skos:broader :Curve ;
+  skos:definition "[no definition specified]     [AIXM 5.0]"^^xsd:string ;
+  skos:narrower :Geometric_Curve_Segment ;
+  skos:narrower :Geometric_Multi-Curve ;
+  skos:prefLabel "Geometric Curve"^^xsd:string ;
+.
+:Geometric_Curve_Segment
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "GM_CurveSegment"^^xsd:string ;
+  rdfs:label "Geometric Curve Segment"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Curve ;
+  skos:broader :Geometric_Curve ;
+  skos:definition "[no definition specified]  [AIXM 5.0]"^^xsd:string ;
+  skos:prefLabel "Geometric Curve Segment"^^xsd:string ;
+.
+:Geometric_Element
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Geometric Element"^^xsd:string ;
+  rdfs:subClassOf :Geometry ;
+  skos:broader :Geometry ;
+  skos:definition "A geometric shape, such as a point, curve, or polygon.  [NAS EA OV-7]"^^xsd:string ;
+  skos:narrower :Point ;
+  skos:prefLabel "Geometric Element"^^xsd:string ;
+.
+:Geometric_Element_Type
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Geometric Element Type"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Element ;
+  skos:altLabel "REFERENCE GEOMETRY ELEMENT TYPE"^^xsd:string ;
+  skos:broader :Geometric_Element ;
+  skos:prefLabel "Geometric Element Type"^^xsd:string ;
+.
+:Geometric_Figure
+  rdf:type owl:Class ;
+  rdfs:label "Geometric Figure"^^xsd:string ;
+  rdfs:subClassOf :Figure ;
+  skos:broader :Figure ;
+  skos:narrower :Ellipsoid ;
+  skos:prefLabel "Geometric Figure"^^xsd:string ;
+.
+:Geometric_Form
+  rdf:type owl:Class ;
+  rdfs:label "Geometric Form"^^xsd:string ;
+  rdfs:subClassOf :Geometry ;
+  skos:broader :Form ;
+  skos:broader :Geometry ;
+  skos:narrower :Figure ;
+  skos:narrower :Line ;
+  skos:narrower :Sphere ;
+  skos:narrower :Triangle ;
+  skos:prefLabel "Geometric Form"^^xsd:string ;
+.
+:Geometric_Geodesic
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "GM_Geodesic"^^xsd:string ;
+  rdfs:label "Geometric Geodesic"^^xsd:string ;
+  rdfs:subClassOf :Geodesic ;
+  skos:broader :Geodesic ;
+  skos:definition "[no definition specified]    [AIXM 5.0]"^^xsd:string ;
+  skos:narrower :Geometric_Geodesic_String ;
+  skos:prefLabel "Geometric Geodesic"^^xsd:string ;
+.
+:Geometric_Geodesic_String
+  rdf:type owl:Class ;
+  :dataElementLabelAIXM "GM_GeodesicString"^^xsd:string ;
+  rdfs:label "Geometric Geodesic String"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Geodesic ;
+  skos:broader :Geometric_Geodesic ;
+  skos:definition "[no definition specified]   [AIXM 5.0]"^^xsd:string ;
+  skos:prefLabel "Geometric Geodesic String"^^xsd:string ;
+.
+:Geometric_Line
+  rdf:type owl:Class ;
+  :dataElementLabelAIXM "GM_Line"^^xsd:string ;
+  rdfs:label "Geometric Line"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:broader :Line ;
+  skos:narrower :Geometric_Line_String ;
+  skos:prefLabel "Geometric Line [@en}"^^xsd:string ;
+.
+:Geometric_Line_String
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "GM_LineString"^^xsd:string ;
+  rdfs:label "Geometric Line String"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Line ;
+  skos:broader :Geometric_Line ;
+  skos:definition "[no definition specified]  [AIXM 5.0]"^^xsd:string ;
+  skos:prefLabel "Geometric Line String"^^xsd:string ;
+.
+:Geometric_Model
+  rdf:type owl:Class ;
+  rdfs:label "Geometric Model"^^xsd:string ;
+  rdfs:subClassOf :Model ;
+  skos:prefLabel "Geometric Model"^^xsd:string ;
+.
+:Geometric_Multi-Curve
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "GM_MultiCurve"^^xsd:string ;
+  rdfs:label "Geometric Multi-Curve"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Curve ;
+  skos:broader :Curve ;
+  skos:broader :Geometric_Curve ;
+  skos:definition "[no definition specified]    [AIXM 5.0]"^^xsd:string ;
+  skos:prefLabel "Geometric Multi-Curve"^^xsd:string ;
+.
+:Geometric_Multi-Point
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "GM_MultiPoint"^^xsd:string ;
+  rdfs:label "Geometric Multi-Point"^^xsd:string ;
+  rdfs:subClassOf :Point ;
+  owl:unionOf (
+      :Geometric_Point
+    ) ;
+  skos:altLabel "Geometric Multi-point"^^xsd:string ;
+  skos:altLabel "Geometric Multipoint"^^xsd:string ;
+  skos:broader :Geometric_Point ;
+  skos:broader :Point ;
+  skos:definition "[no definition specified]   [AIXM 5.0]"^^xsd:string ;
+  skos:prefLabel "Geometric Multi-Point"@en ;
+.
+:Geometric_Multi-Surface
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "GM_MultiSurface"^^xsd:string ;
+  rdfs:label "Geometric Multi-Surface"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Surface ;
+  skos:altLabel "Geometric Multi-surface"^^xsd:string ;
+  skos:altLabel "Geometric Multiple Surfaces"^^xsd:string ;
+  skos:altLabel "Geometric Multisurface"^^xsd:string ;
+  skos:broader :Surface ;
+  skos:definition "[no definition specified]   [AIXM 5.0]"^^xsd:string ;
+  skos:prefLabel "Geometric Multi-Surface"@en ;
+.
+:Geometric_Point
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "GM_Point"^^xsd:string ;
+  rdfs:label "Geometric Point"^^xsd:string ;
+  rdfs:subClassOf :Point ;
+  skos:broader :Point ;
+  skos:definition "[no definition specified]  [AIXM 5.0]"^^xsd:string ;
+  skos:narrower :Elevated_Point ;
+  skos:narrower :Geometric_Multi-Point ;
+  skos:prefLabel "Geometric Point"^^xsd:string ;
+.
+:Geometric_Polygon
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "GM_Polygon"^^xsd:string ;
+  rdfs:label "Geometric Polygon"^^xsd:string ;
+  rdfs:subClassOf :Polygon ;
+  skos:broader :Polygon ;
+  skos:definition "[no definition specified]   [AIXM 5.0]"^^xsd:string ;
+  skos:prefLabel "Geometric Polygon"^^xsd:string ;
+.
+:Geometric_Shape
+  rdf:type owl:Class ;
+  rdfs:label "Geometric Shape"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Form ;
+  skos:broader :Geometric_Form ;
+  skos:broader :Shape ;
+  skos:narrower :Geometric_Bounding_Shape ;
+  skos:prefLabel "Geometric Shape"^^xsd:string ;
+.
+:Geometric_Surface
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "GM_Surface"^^xsd:string ;
+  rdfs:label "Geometric Surface"^^xsd:string ;
+  rdfs:subClassOf :Surface ;
+  skos:broader :Surface ;
+  skos:definition "[no definition specified]   [AIXM 5.0]"^^xsd:string ;
+  skos:narrower :Geometric_Multi-Surface ;
+  skos:narrower :Geometric_Surface_Patch ;
+  skos:prefLabel "Geometric Surface"^^xsd:string ;
+.
+:Geometric_Surface_Patch
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "GM_SurfacePatch"^^xsd:string ;
+  rdfs:label "Geometric Surface Patch"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Surface ;
+  skos:broader :Geometric_Surface ;
+  skos:definition "[no definition specified]   [AIXM 5.0]"^^xsd:string ;
+  skos:prefLabel "Geometric Surface Patch"^^xsd:string ;
+.
+:Geometry
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  rdfs:label "Geometry"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:equivalentClass <http://www.opengis.net/ont/geosparql#Geometry> ;
+  skos:broader :Geometry_Collection ;
+  skos:definition "1 a : a branch of mathematics that deals with the measurement, properties, and relationships of points, lines, angles, surfaces, and solids;  broadly   : the study of properties of given elements that remain invariant under specified transformations  b : a particular type or system of geometry  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Aerodrome_Geometry ;
+  skos:narrower :Airspace_Geometry ;
+  skos:narrower :Coverage_Geometry ;
+  skos:narrower :Geometric_Element ;
+  skos:narrower :Geometric_Form ;
+  skos:narrower :Spherical_Geometry ;
+  skos:narrower :Structure_Geometry ;
+  skos:prefLabel "Geometry"^^xsd:string ;
+.
+:Geometry_Collection
+  rdf:type owl:Class ;
+  rdfs:label "Geometry Collection"^^xsd:string ;
+  rdfs:subClassOf :Collection ;
+  owl:unionOf (
+      :Geometry
+    ) ;
+  skos:broader :Space ;
+  skos:hasTopConcept :Space ;
+  skos:narrower :Geometry ;
+  skos:prefLabel "Geometry Collection"^^xsd:string ;
+.
+:Glide_Path_Angle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "GPA"^^xsd:string ;
+  rdfs:label "Glide Path Angle"^^xsd:string ;
+  rdfs:subClassOf :Angle ;
+  skos:broader :Angle ;
+  skos:narrower :Instrument_Landing_System_Glide_Path_Angle ;
+  skos:prefLabel "Glide Path Angle"^^xsd:string ;
+.
+:Gradient
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Gradient"^^xsd:string ;
+  rdfs:subClassOf :Average_Slope ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Average_Slope ;
+  skos:definition """1 a : the rate of regular or graded ascent or descent : INCLINATION b : a part sloping upward or downward 
+2 : change in the value of a quantity (as temperature, pressure, or concentration) with change in a given variable and especially per unit distance in a specified direction 
+3 : the vector sum of the partial derivatives with respect to the three coordinate variables x, y, and z of a scalar quantity whose value varies from point to point    [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Climb_Gradient ;
+  skos:narrower :Runway_Gradient ;
+  skos:prefLabel "Gradient"^^xsd:string ;
+.
+:Heliport_Reference_Point
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA PCG  Pilot/Controller Glossary (P/CG) Effective 2-9-12; part of AIM Order JO 7110.10 Flight Services and 7110.65, Air Traffic Control;  extracted from FAA web site on February 17, 2012"^^xsd:string ;
+  vaem:acronym "HRP"^^xsd:string ;
+  rdfs:label "Heliport Reference Point"^^xsd:string ;
+  rdfs:subClassOf :Reference_Point ;
+  skos:broader :Reference_Point ;
+  skos:definition "The geographic center of a heliport.  [PCG]"^^xsd:string ;
+  skos:prefLabel "Heliport Reference Point"^^xsd:string ;
+.
+:Horizontal_Coordinate
+  rdf:type owl:Class ;
+  rdfs:label "Horizontal Coordinate"^^xsd:string ;
+  rdfs:subClassOf :Coordinate ;
+  skos:altLabel "Lateral Coordinate"^^xsd:string ;
+  skos:prefLabel "Horizontal Coordinate"^^xsd:string ;
+.
+:Horizontal_Extent
+  rdf:type owl:Class ;
+  rdfs:label "Horizontal Extent"^^xsd:string ;
+  rdfs:subClassOf :Extent ;
+  skos:broader :Extent ;
+  skos:prefLabel "Horizontal Extent"^^xsd:string ;
+.
+:Horizontal_Plane
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-312"^^xsd:string ;
+  dcterms:source "ICAO  (AN 6/II)"^^xsd:string ;
+  rdfs:label "Horizontal Plane"^^xsd:string ;
+  rdfs:subClassOf :Plane ;
+  skos:definition "The plane containing the longitudinal axis and perpendicular to the plane of symmetry of the aeroplane.  [ICAO]"^^xsd:string ;
+  skos:prefLabel "Horizontal Plane"^^xsd:string ;
+.
+:Imaginary_Surface
+  rdf:type owl:Class ;
+  rdfs:label "Imaginary Surface"^^xsd:string ;
+  rdfs:subClassOf :Surface ;
+  skos:broader :Surface ;
+  skos:narrower :Obstacle_Assessment_Surface ;
+  skos:prefLabel "Imaginary Surface"^^xsd:string ;
+.
+:Initial_Prediction_Point
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Initial Prediction Point"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "Indicates the starting point of the prediction.  [FIXM 3.0, DD p.341]"^^xsd:string ;
+  skos:prefLabel "Initial Prediction Point"^^xsd:string ;
+.
+:Instrument_Landing_System_Glide_Path_Angle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO (2010) Official term and definition added to Annex 15 by Amdt 36 (2010)"^^xsd:string ;
+  dcterms:source "AIFDD Aeronautical Information Feature Data Dictionary (AIFDD)"^^xsd:string ;
+  rdfs:label "Instrument Landing System Glide Path Angle"^^xsd:string ;
+  rdfs:subClassOf :Glide_Path_Angle ;
+  skos:definition "The angle between a straight line which represents the mean of the Instrument Landing System (ILS) glide path and the horizontal plane at the base of the glide slope antenna.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Instrument Landing System Glide Path Angle"^^xsd:string ;
+.
+:Intended_Trajectory
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Intended Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Predicted_Flight_Trajectory ;
+  skos:broader :Flight_Trajectory ;
+  skos:definition "The current predicted trajectory for a Flight as it traverses the NAS   [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Intended Trajectory"^^xsd:string ;
+.
+:Intercept
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ED."^^xsd:string ;
+  rdfs:label "Intercept"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Axis ;
+  skos:broader :Coordinate ;
+  skos:broader :Point ;
+  skos:definition "1 : the distance from the origin to a point where a graph crosses a coordinate axis [WEBSTER] "^^xsd:string ;
+  skos:prefLabel "Intercept"^^xsd:string ;
+.
+:Intermediate_Point
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "EUROCONTROL/EUROCAE (2006) FLIGHT OBJECT INTEROPERABILITY PROPOSED STANDARD (FOIPS) STUDY, FOIPS D7, Document Reference: FOIPS_MOD-D7-MsWord Issue 1.4 Released"^^xsd:string ;
+  rdfs:label "Intermediate Point"^^xsd:string ;
+  rdfs:subClassOf :Point ;
+  skos:definition "A specific kind of point of the trajectory that represents no significant point, only a point that will be overflown.   [EUROCONTROL]"^^xsd:string ;
+  skos:prefLabel "Intermediate Point"^^xsd:string ;
+  skos:scopeNote "These points can serve for other modules, like the conflict detection.   [EUROCONTROL]"^^xsd:string ;
+.
+:International_Date_Line
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "International Date Line"^^xsd:string ;
+  rdfs:subClassOf :Date_Line ;
+  skos:altLabel "International Dateline"^^xsd:string ;
+  skos:broader :Date_Line ;
+  skos:definition " : an arbitrary line approximately along the 180th meridian designated as the place where each calendar day begins  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "International Date Line"^^xsd:string ;
+.
+:Intersection
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  vaem:abbreviation "INT"^^xsd:string ;
+  rdfs:label "Intersection"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Point ;
+  skos:definition """2 : a place or area where two or more things (as streets) intersect 
+3 a : the set of elements common to two or more sets; especially : the set of points common to two geometric configurations b : the operation of finding the intersection of two or more sets   [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Fringe_Envelope ;
+  skos:prefLabel "Intersection"^^xsd:string ;
+.
+:Isogonal
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Annex 4, Aeronautical Charts"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-343"^^xsd:string ;
+  dcterms:source "ICAO (AN 4)"^^xsd:string ;
+  rdfs:label "Isogonal"^^xsd:string ;
+  rdfs:subClassOf :Map_Line ;
+  skos:broader :Map_Line ;
+  skos:definition "A line on a map or chart on which all points have the same magnetic variation for a specified epoch.  [ICAO]"^^xsd:string ;
+  skos:prefLabel "Isogonal"^^xsd:string ;
+.
+:Isogriv
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Annex 4, Aeronautical Charts"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-344"^^xsd:string ;
+  dcterms:source "ICAO (AN 4)"^^xsd:string ;
+  rdfs:label "Isogriv"^^xsd:string ;
+  rdfs:subClassOf :Map_Line ;
+  skos:broader :Map_Line ;
+  skos:definition "A line on a map or chart which joins points of equal angular difference between the North of the navigation grid and Magnetic North.  [ICAO]"^^xsd:string ;
+  skos:prefLabel "Isogriv"^^xsd:string ;
+.
+:Level-off
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Level-off"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "The point in climb or descent where a flight level segment begins.    [FIXM 3.0, DD p.340]"^^xsd:string ;
+  skos:prefLabel "Level-off"^^xsd:string ;
+.
+:Line
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Doc 9881, Guidelines for Electronic Terrain, Obstacle and Aerodrome Mapping Information"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "RTCA/DO-276B.  User Requirements for Terrain and Obstacle Data, Draft; February 17, 2011"^^xsd:string ;
+  dcterms:bibliographicCitation "TFM1  FlowInfo CommonMsgType"^^xsd:string ;
+  rdfs:label "Line"^^xsd:string ;
+  rdfs:subClassOf :Lines ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Figure ;
+  skos:broader :Geometric_Element ;
+  skos:broader :Lines ;
+  skos:definition """8 : a straight or curved geometric element that is generated by a moving point and that has extension only along the path of the point : CURVE 
+9 a : a defining outline : CONTOUR b : a general plan : MODEL  usually used in plural [WEBSTER]"""^^xsd:string ;
+  skos:definition "A connected sequence of points.  [RTCA]  [ICAO]"^^xsd:string ;
+  skos:narrower :Curved_Line ;
+  skos:narrower :Date_Line ;
+  skos:narrower :Directed_Line ;
+  skos:narrower :Flow_Constraint_Area_Line ;
+  skos:narrower :Geodesic ;
+  skos:narrower :Geometric_Line ;
+  skos:narrower :Line-of-Position ;
+  skos:narrower :Line_Segment ;
+  skos:narrower :Map_Line ;
+  skos:narrower :Reference_Line ;
+  skos:narrower :Straight_Line ;
+  skos:narrower :Time_Line ;
+  skos:narrower :Transition_Line ;
+  skos:narrower :Trim_Line ;
+  skos:narrower :Vertical_Line ;
+  skos:prefLabel "Line"^^xsd:string ;
+.
+:Line-of-Position
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "LOP"^^xsd:string ;
+  vaem:acronym "LoP"^^xsd:string ;
+  rdfs:label "Line-of-Position"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:broader :Line ;
+  skos:prefLabel "Line-of-Position"^^xsd:string ;
+.
+:Line_Points
+  rdf:type owl:Class ;
+  rdfs:label "Line Points"^^xsd:string ;
+  rdfs:subClassOf :Points ;
+  skos:prefLabel "Line Points"^^xsd:string ;
+.
+:Line_Segment
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIM - EUROC   Aeronautical Information Lexicon, FAA-IMS Interface Management System, European Air Traffic Management, EUROCONTROL, no date given"^^xsd:string ;
+  rdfs:label "Line Segment"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:broader :Line ;
+  skos:definition "Two nodes and the straight line connecting them.  Segments of A-lines, D-lines, B-lines, and S-lines can be defined by nodes and/or fixes and the straight lines connecting them.  [AIM - EUROC]"^^xsd:string ;
+  skos:narrower :Adapted_Line_Segment ;
+  skos:narrower :Converted_Segment ;
+  skos:narrower :Directed_Line_Segment ;
+  skos:narrower :Filed_Segment ;
+  skos:prefLabel "Line Segment"^^xsd:string ;
+.
+:Line_Segment_Points
+  rdf:type owl:Class ;
+  rdfs:label "Line Segment Points"^^xsd:string ;
+  rdfs:subClassOf :Line_Points ;
+  skos:prefLabel "Line Segment Points"^^xsd:string ;
+.
+:Line_of_Sight
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Line of Sight"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:definition """1 : a line from an observer's eye to a distant point 
+2 : the line between two points; specifically : the straight path between a transmitting antenna (as for radio or television signals) and a receiving antenna when unobstructed by the horizon   [WEBSTER]"""^^xsd:string ;
+  skos:editorialNote "From a Geometry point of view, Line of Sight is a line between two points.  From a perception or vision point of view, Line of Sight is the distance that one can see without having any obstructions or obscurations blocking the view forward. The former is found in the Geometry ontology and the later is found in the Activiites ontology under the concept of \"Sight\"."^^xsd:string ;
+  skos:prefLabel "Line of Sight"^^xsd:string ;
+.
+:Lines
+  rdf:type owl:Class ;
+  rdfs:label "Lines"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Line
+    ) ;
+  skos:broader :Figure ;
+  skos:narrower :Geodesic ;
+  skos:prefLabel "Lines"^^xsd:string ;
+.
+:Localizer_Offset
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA PCG  Pilot/Controller Glossary (P/CG) Effective 2-9-12; part of AIM Order JO 7110.10 Flight Services and 7110.65, Air Traffic Control;  extracted from FAA web site on February 17, 2012"^^xsd:string ;
+  rdfs:label "Localizer Offset"^^xsd:string ;
+  rdfs:subClassOf :Angle_Offset ;
+  skos:broader :Localizer_Offset ;
+  skos:definition "An angular offset of the localizer from the runway extended centerline in a direction away from the no transgression zone (NTZ) that increases the normal operating zone (NOZ) width. An offset requires a 50 foot increase in DH and is not authorized for CAT II and CAT III approaches.   [PCG]"^^xsd:string ;
+  skos:prefLabel "Localizer Offset"^^xsd:string ;
+.
+:Location_Polygon
+  rdf:type owl:Class ;
+  dcterms:hasPart "Active_Monitored_Zone_Polygon"^^xsd:string ;
+  rdfs:label "Location Polygon"^^xsd:string ;
+  rdfs:subClassOf :Polygon ;
+  skos:broader :Polygon ;
+  skos:prefLabel "Location Polygon"^^xsd:string ;
+.
+:Longitudinal_Axis
+  rdf:type owl:Class ;
+  rdfs:label "Longitudinal Axis"^^xsd:string ;
+  rdfs:subClassOf :Axis ;
+  skos:prefLabel "Longitudinal Axis"^^xsd:string ;
+.
+:Longitudinal_Axis_of_the_Airplane
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-362"^^xsd:string ;
+  dcterms:source "ICAO (AN 6/I; AN 6/II)"^^xsd:string ;
+  rdfs:label "Longitudinal Axis of the Aeroplane"@en ;
+  rdfs:label "Longitudinal Axis of the Airplane"@en-US ;
+  rdfs:subClassOf :Longitudinal_Axis ;
+  skos:definition "A selected axis parallel to the direction of flight at a normal cruising speed, and passing through the centre of gravity of the aeroplane.    [ICAO]"^^xsd:string ;
+  skos:prefLabel "Longitudinal Axis of the Aeroplane"@en ;
+  skos:prefLabel "Longitudinal Axis of the Airplane"@en-US ;
+.
+:Magnetic_Variation
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Annex 4, Aeronautical Charts"^^xsd:string ;
+  rdfs:label "Magnetic Variation"^^xsd:string ;
+  rdfs:subClassOf :Angle ;
+  skos:broader :Angle ;
+  skos:definition "The angular difference between True North and Magnetic North.  [ICAO]"^^xsd:string ;
+  skos:prefLabel "Magnetic Variation"^^xsd:string ;
+.
+:Magnitude
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Magnitude"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Form ;
+  skos:definition "1 a: great size or extent  b: 91) spatial quality: SIZE, (2) QUANTITY, NUMBER 2: the importance, quality, or caliber of something  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Extent ;
+  skos:prefLabel "Magnitude"^^xsd:string ;
+.
+:Map_Line
+  rdf:type owl:Class ;
+  rdfs:label "Map Line"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:altLabel "Line on Map"^^xsd:string ;
+  skos:broader :Line ;
+  skos:narrower :Isogonal ;
+  skos:narrower :Isogriv ;
+  skos:prefLabel "Map Line"^^xsd:string ;
+.
+:Marking_Extent
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM 5.1 generated on 2009-02-03; retrieved on 11-29-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM_FeaturesObjects worksheet as of 06-30-11"^^xsd:string ;
+  dcterms:references "Marking Element"^^xsd:string ;
+  :dataElementLabelAIXM "MarkingExtent"^^xsd:string ;
+  rdfs:label "Marking Extent"^^xsd:string ;
+  rdfs:subClassOf :Extent ;
+  skos:broader :Extent ;
+  skos:definition "A link class that allows selecting between a point, a curve or a surface to define the geometry of a Marking Element  [AIXM 5.0]   [AIXM]  [AIXM 5.1]"^^xsd:string ;
+  skos:prefLabel "Marking Extent"^^xsd:string ;
+.
+:Meter_Fix_Arc
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA PCG  Pilot/Controller Glossary (P/CG) Effective 2-9-12; part of AIM Order JO 7110.10 Flight Services and 7110.65, Air Traffic Control;  extracted from FAA web site on February 17, 2012"^^xsd:string ;
+  rdfs:label "Meter Fix Arc"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Arc ;
+  skos:broader :Geometric_Arc ;
+  skos:definition "A semicircle, equidistant from a meter fix, usually in low altitude relatively close to the meter fix, used to help CTAS/HOST calculate a meter time, and determine appropriate sector meter list assignments for aircraft not on an established arrival route or assigned a meter fix.  [FAA PCG]"^^xsd:string ;
+  skos:prefLabel "Meter Fix Arc"^^xsd:string ;
+.
+:Metric_Space
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Metric Space"^^xsd:string ;
+  rdfs:subClassOf :Space ;
+  skos:broader :Space ;
+  skos:definition ": a mathematical set for which a metric is defined for any pair of elements [WEBSTER]"^^xsd:string ;
+  skos:hasTopConcept :Space ;
+  skos:prefLabel "Metric Space"^^xsd:string ;
+.
+:Military_Mission_Trajectory
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "EUROCONTROL, 2008, SESAR Definition Phase The Concept of Operations at a glance, URL: http://www.eurocontrol.int/sesar/gallery/content/public/docs/ConceptofOperations_02.pdf"^^xsd:string ;
+  rdfs:label "Military Mission Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Four-D_Trajectory ;
+  skos:broader :Four-D_Trajectory ;
+  skos:definition "...a 4D trajectory more complex than a civil business trajectory. (It)  will usually consist of a transit to and from an airspace reservation with mission specific dimensions and characteristics    [EUROCONTROL]"^^xsd:string ;
+  skos:prefLabel "Military Mission Trajectory"^^xsd:string ;
+  skos:scopeNote "Additionally, a single airspace reservation could be approached and departed by individual aircraft or formation flights on different trajectories.   [EUROCONTROL]"^^xsd:string ;
+  skos:scopeNote "Outside of and inside an airspace reservation, a single trajectory could be used by multiple aircraft (e.g. formation flights, air refuelling) demanding increased separation requirements.   [EUROCONTROL]"^^xsd:string ;
+.
+:Model
+  rdf:type owl:Class ;
+  rdfs:label "Model"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Space ;
+  skos:hasTopConcept :Space ;
+  skos:prefLabel "Model"^^xsd:string ;
+.
+:Multi-Ring_Polygon
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Doc 9881, Guidelines for Electronic Terrain, Obstacle and Aerodrome Mapping Information"^^xsd:string ;
+  rdfs:label "Multi-Ring Polygon"^^xsd:string ;
+  rdfs:subClassOf :Polygon ;
+  skos:broader :Polygon ;
+  skos:definition "One or more polygons located inside another polygon that excludes the area of the inner polygons (e.g. doughnut, figure eight).  [ICAO]"^^xsd:string ;
+  skos:prefLabel "Multi-Ring Polygon"^^xsd:string ;
+.
+:Multi-Segment_Line
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "TFM1  FlowInfo CommonMsgType"^^xsd:string ;
+  rdfs:label "Multi-Segment Line"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:definition "Data elements for a multi-segment line FEA/FCA.  [TFM1]"^^xsd:string ;
+  skos:prefLabel "Multi-Segment Line"^^xsd:string ;
+.
+:Negotiating_Four-D_Trajectory
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Doc 9965 AN/483, Manual on Flight and Flow - information for a Collaborative Environment (FF-ICE), First Edition - 2012"^^xsd:string ;
+  dcterms:hasFormat "4D Trajectory"^^xsd:string ;
+  dcterms:references "Fixm.FlightObject.Flight.FlightData.Flight.negotiating"^^xsd:string ;
+  dcterms:references "Negotiating Route"^^xsd:string ;
+  rdfs:label "Negotiating 4D Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Four-D_Trajectory ;
+  skos:altLabel "Negotiating Four-D Trajectory"^^xsd:string ;
+  skos:broader :Four-D_Trajectory ;
+  skos:definition "The 4D Trajectory used during the collaboration between the airspace user and the airspace provider to agree on a 4D trajectory. This trajectory is intended to be transitory.    [FIXM 3.0]"^^xsd:string ;
+  skos:prefLabel "Negotiating 4D Trajectory"^^xsd:string ;
+  skos:scopeNote "During negotiation, the trajectory construct is to be associated with a sequence number such that the receiver of the trajectory can confirm there has been a logical progression in the negotiation process and no message which contains the trajectory construct has been lost or received out of order.  It is assumed this sequence number will be incorporated into the message protocol.   [FIXM 3.0]"^^xsd:string ;
+  skos:scopeNote "Multiple versions of the trajectory may be required during the negotation process.  [FIXM 3.0]"^^xsd:string ;
+  skos:scopeNote "This trajectory's route of flight is within the \"Negotiating Route\" DE.   [FIXM 3.0]"^^xsd:string ;
+.
+:Object
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Object"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Space ;
+  skos:definition "1 a: something material that may be perceived by the senses  4: a thing that forms an element of or constitutes the subject matter of an investigation or science  [WEBSTER]"^^xsd:string ;
+  skos:hasTopConcept :Space ;
+  skos:narrower :Form ;
+  skos:prefLabel "Object"^^xsd:string ;
+.
+:Obstacle_Assessment_Surface
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "RTCA/DO-276B.  User Requirements for Terrain and Obstacle Data, Draft; February 17, 2011"^^xsd:string ;
+  rdfs:label "Obstacle Assessment Surface"^^xsd:string ;
+  rdfs:subClassOf :Imaginary_Surface ;
+  skos:broader :Elevated_Surface ;
+  skos:broader :Imaginary_Surface ;
+  skos:definition "An imaginary surface used to identify obstacles.   [RTCA]"^^xsd:string ;
+  skos:prefLabel "Obstacle Assessment Surface"^^xsd:string ;
+.
+:Obstacle_Climb_Gradient
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dtype:code "Obstacle"^^xsd:anySimpleType ;
+  dtype:literal "Obstacle"^^xsd:string ;
+  rdfs:label "Obstacle Climb Gradient"^^xsd:string ;
+  rdfs:subClassOf :Climb_Gradient ;
+  skos:broader :Climb_Gradient ;
+  skos:definition "A Climb Gradient, as defined or a Procedure based on the height of an Obstacle.  [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Obstacle Climb Gradient"^^xsd:string ;
+.
+:Off-Route_Vector
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA PCG  Pilot/Controller Glossary (P/CG) Effective 2-9-12; part of AIM Order JO 7110.10 Flight Services and 7110.65, Air Traffic Control;  extracted from FAA web site on February 17, 2012"^^xsd:string ;
+  rdfs:label "Off-Route Vector"^^xsd:string ;
+  rdfs:subClassOf :Air_Traffic_Control_Vector ;
+  skos:broader :Air_Traffic_Control_Vector ;
+  skos:definition "A vector by ATC which takes an aircraft off a previously assigned route. Altitudes assigned by ATC during such vectors provide required obstacle clearance.    [FAA PCG]"^^xsd:string ;
+  skos:prefLabel "Off-Route Vector"^^xsd:string ;
+.
+:Outer_Fix_Arc
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA PCG  Pilot/Controller Glossary (P/CG) Effective 2-9-12; part of AIM Order JO 7110.10 Flight Services and 7110.65, Air Traffic Control;  extracted from FAA web site on February 17, 2012"^^xsd:string ;
+  rdfs:label "Outer Fix Arc"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Arc ;
+  skos:broader :Geometric_Arc ;
+  skos:definition "A semicircle, usually about a 50-70 mile radius from a meter fix, usually in high altitude, which is used by CTAS/HOST to calculate outer fix times and determine appropriate sector meter list assignments for aircraft on an established arrival route that will traverse the arc.   [PCG]"^^xsd:string ;
+  skos:prefLabel "Outer Fix Arc"^^xsd:string ;
+.
+:Perimeter
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Perimeter"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Boundary ;
+  skos:definition """1 a : the boundary of a closed plane figure b : the length of a perimeter 
+2 : a line or strip bounding or protecting an area 
+3 : outer limits  often used in plural 
+4 : the part of a basketball court outside the three-point line  [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Perimeter"^^xsd:string ;
+.
+:Plane
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  rdfs:label "Plane"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Surface ;
+  skos:definition "1 : a surface in which if any two points are chosen a straight line joining them lies whollly in that surface b: a flat or level surface   3 a: one of the main supporting surfaces of an airsplane  b: [by shortening] AIRPLANE  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Closed_Plane ;
+  skos:narrower :Horizontal_Plane ;
+  skos:narrower :Plane_Surface ;
+  skos:narrower :Polygon ;
+  skos:narrower :System_Plane ;
+  skos:narrower :Vertical_Plane ;
+  skos:prefLabel "Plane"^^xsd:string ;
+.
+:Plane_Angle
+  rdf:type owl:Class ;
+  rdfs:label "Plane Angle"^^xsd:string ;
+  rdfs:subClassOf :Angle ;
+  skos:broader :Angle ;
+  skos:narrower :Radian ;
+  skos:prefLabel "Plane Angle"^^xsd:string ;
+.
+:Plane_Surface
+  rdf:type owl:Class ;
+  rdfs:label "Plane Surface"^^xsd:string ;
+  rdfs:subClassOf :Plane ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Surface
+            :Plane
+          ) ;
+      ]
+    ) ;
+  skos:broader :Geometric_Surface ;
+  skos:broader :Plane ;
+  skos:prefLabel "Plane Surface"^^xsd:string ;
+.
+:Planes
+  rdf:type owl:Class ;
+  rdfs:label "Planes"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Planes"^^xsd:string ;
+.
+:Planning_Trajectory
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Planning Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Proposed_Flight_Trajectory ;
+  skos:broader :Proposed_Flight_Trajectory ;
+  skos:definition "Specific information relating to the intended, proposed, Options, or cleared flight path of an aircraft.  [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Planning Trajectory"^^xsd:string ;
+  skos:scopeNote "May be filed orally or in writing with an FSS or an ATC facility.  [NAS EA OV-7]"^^xsd:string ;
+.
+:Point
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM 5.1 generated on 2009-02-03; retrieved on 11-29-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  dcterms:bibliographicCitation "Aeronautical Information Lexicon, FAA-IMS Interface Management System, European Air Traffic Management, EUROCONTROL, no date given"^^xsd:string ;
+  dcterms:bibliographicCitation "EUROCONTROL  European Organization for the Safety of Air Navigation: EUROCONTROL; European Air Traffic Management, Aeronautical Information Lexicon - FAA; no date provided in document"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Doc 9881, Guidelines for Electronic Terrain, Obstacle and Aeronautical Mapping Information"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dcterms:bibliographicCitation "RTCA/DO-276B.  User Requirements for Terrain and Obstacle Data, Draft; February 17, 2011"^^xsd:string ;
+  :dataElementLabelAIXM "Point"^^xsd:string ;
+  rdfs:label "Point"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass <http://www.opengis.net/ont/gml#Point> ;
+  owl:equivalentClass <http://www.w3.org/2003/01/geo/wgs84_pos#Point> ;
+  skos:broader :Geometric_Element ;
+  skos:broader :Line ;
+  skos:definition "4 a : a geometric element that has zero dimensions and a location determinable by an ordered set of coordinates [WEBSTER]"^^xsd:string ;
+  skos:definition "A point describes a specific object within a given space that consists of neither volume, area, length, nor any other higher dimensional analogue.  Defined as either an exact point with a relevant Latitude and Longitude, or as an estimated point with an a [missing remainder of definition - extracted from FAA Point Model]"^^xsd:string ;
+  skos:definition "A zero-dimensional Geometric Element.   [NAS EA OV-7]"^^xsd:string ;
+  skos:definition "AIXM Point containing horizontal accuracy data. In AIXM horizontal accuracy is considered a property of the geometry.    [AIXM 5.0]   [AIXM 5.1]"^^xsd:string ;
+  skos:definition "The smallest unit of geometry which has no spatial extent. Points are described by two dimensional (2D) or three-dimensional (3D) coordinates.   [RTCA]"^^xsd:string ;
+  skos:definition "The smallest unit of geometry which has no spatial extent. Points are described by two-dimensional (2D) or three-dimensional (3D) coordinates.   [ICAO]"^^xsd:string ;
+  skos:narrower :Estimated_Point ;
+  skos:narrower :Exact_Point ;
+  skos:narrower :Geometric_Point ;
+  skos:narrower :Intercept ;
+  skos:narrower :Point-in-Space ;
+  skos:narrower :Point_Reference ;
+  skos:narrower :Point_Use ;
+  skos:narrower :Point_of_Presence ;
+  skos:narrower :Point_of_Termination ;
+  skos:narrower :Reference_Point ;
+  skos:narrower :Vertex ;
+  skos:prefLabel "Point"^^xsd:string ;
+.
+:Point-in-Space
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "PinS"^^xsd:string ;
+  rdfs:label "Point-in-Space"^^xsd:string ;
+  rdfs:subClassOf :Point ;
+  skos:altLabel "Point in Space"^^xsd:string ;
+  skos:broader :Point ;
+  skos:prefLabel "Point-in-Space"^^xsd:string ;
+.
+:Point_Abeam
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO (2010) Official term and definition added to Annex 15 by Amdt 36 (2010)"^^xsd:string ;
+  dcterms:source "AIFDD  Aeronautical Information Feature Data Dictionary (AIFDD)"^^xsd:string ;
+  rdfs:label "Point Abeam"^^xsd:string ;
+  rdfs:subClassOf :Point ;
+  skos:definition "The point on a line that is nearest to a point that is off-line.  [ICAO]"^^xsd:string ;
+  skos:example "For example, a point on the runway centerline is 'abeam' the Glide Slope Antenna when the distance from the centerline point to the antenna is a minimum.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Point Abeam"^^xsd:string ;
+.
+:Point_Curve_Segment
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Point Curve Segment"^^xsd:string ;
+  rdfs:subClassOf :Curve_Segment ;
+  skos:broader :Curve_Segment ;
+  skos:definition "An association of a Point and a Curve Segment that are used to form a Curve.   The association of a Curve and the Points that comprise the Curve.  [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Point Curve Segment"^^xsd:string ;
+.
+:Point_Reference
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM 5.1 generated on 2009-02-03; retrieved on 11-29-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  :dataElementLabelAIXM "PointReference"^^xsd:string ;
+  rdfs:label "Point Reference"^^xsd:string ;
+  rdfs:subClassOf :Point ;
+  skos:broader :Point ;
+  skos:definition "Defines the location of a designated point using a combination of angles and distances based on the guidance service.  The set of angles and distances must not under specify the location. The indications that are part of the PointReference must locate the same designated point.  [AIXM 5.0]  [AIXM 5.1]"^^xsd:string ;
+  skos:prefLabel "Point Reference"^^xsd:string ;
+.
+:Point_Use
+  rdf:type owl:Class ;
+  rdfs:label "Point Use"^^xsd:string ;
+  rdfs:subClassOf :Point ;
+  skos:broader :Point ;
+  skos:definition "represents how a segment point is defined for use on a procedure"^^xsd:string ;
+  skos:prefLabel "Point Use"^^xsd:string ;
+.
+:Point_of_Presence
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "POP"^^xsd:string ;
+  vaem:acronym "PoP"^^xsd:string ;
+  rdfs:label "Point of Presence"^^xsd:string ;
+  rdfs:subClassOf :Point ;
+  skos:broader :Point ;
+  skos:prefLabel "Point of Presence"^^xsd:string ;
+.
+:Point_of_Termination
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "POT"^^xsd:string ;
+  vaem:acronym "PoT"^^xsd:string ;
+  rdfs:label "Point of Termination"^^xsd:string ;
+  rdfs:subClassOf :Point ;
+  skos:altLabel "Termination Point"^^xsd:string ;
+  skos:broader :Point ;
+  skos:prefLabel "Point of Termination"^^xsd:string ;
+.
+:Points
+  rdf:type owl:Class ;
+  rdfs:label "Points"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Point
+    ) ;
+  skos:broader :Line ;
+  skos:prefLabel "Points"^^xsd:string ;
+.
+:Points_Range
+  rdf:type owl:Class ;
+  rdfs:label "Points Range"^^xsd:string ;
+  rdfs:subClassOf :Points ;
+  skos:broader :Points ;
+  skos:prefLabel "Points Range"^^xsd:string ;
+.
+:Points_Type
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "TFM1  FlowInfo CommonMsgType"^^xsd:string ;
+  dcterms:hasFormat "Level 2: sequence"^^xsd:string ;
+  :dataElementLabelTMXM "pointsType"^^xsd:string ;
+  rdfs:label "Points Type"^^xsd:string ;
+  rdfs:subClassOf :Points ;
+  skos:prefLabel "Points Type"^^xsd:string ;
+.
+:Polar_Coordinate
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Polar Coordinate"^^xsd:string ;
+  rdfs:subClassOf :Coordinate ;
+  rdfs:subClassOf :Polar_Coordinate_System ;
+  skos:broader :Coordinate ;
+  skos:broader :Polar_Coordinate_System ;
+  skos:definition "A system that  that locates a point on a plane by its distance from a fixed pole and its angle from a fixed line passing through the pole.   [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Polar Coordinate"^^xsd:string ;
+  skos:scopeNote "A point in \"\"polar coordinate system\"\", is typically expressed as a distance (from a fixed point) and an angle (radius, angle)   [NAS EA OV-7]"^^xsd:string ;
+.
+:Polar_Coordinate_System
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dcterms:bibliographicCitation "OPENGIS   http://docs.geotools.org/latest/userguide/library/opengis/cs.html"^^xsd:string ;
+  rdfs:label "Polar Coordinate System"^^xsd:string ;
+  rdfs:subClassOf :Coordinate_System ;
+  skos:broader :Coordinate_System ;
+  skos:definition "A 2-dimensional coordinate system in which position is specified by distance to the origin and the angle between the line from origin to point and a reference direction.  [OPENGIS]  [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Polar Coordinate System"^^xsd:string ;
+.
+:Polygon
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Doc 9881, Guidelines for Electronic Terrain, Obstacle and Aerodrome Mapping Information"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "RTCA/DO-276B.  User Requirements for Terrain and Obstacle Data, Draft; February 17, 2011"^^xsd:string ;
+  dcterms:isPartOf "Active_Monitored_Zone"^^xsd:string ;
+  rdfs:label "Polygon"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass <http://www.opengis.net/ont/gml#Polygon> ;
+  skos:broader :Closed_Figure ;
+  skos:broader :Closed_Plane ;
+  skos:definition "1: a closed plane figure bounded by straight lines  2: a closed figure on a sphere bounded by arcs of great circles  [WEBSTER]"^^xsd:string ;
+  skos:definition "A surface or area described by a closed line.   [RTCA]  [ICAO]"^^xsd:string ;
+  skos:narrower :Area_Polygon ;
+  skos:narrower :Geometric_Polygon ;
+  skos:narrower :Multi-Ring_Polygon ;
+  skos:narrower :Spherical_Polygon ;
+  skos:narrower :Triangle ;
+  skos:narrower :Zone_Polygon ;
+  skos:prefLabel "Polygon"^^xsd:string ;
+  skos:related :Arc ;
+  skos:related :Circle ;
+  skos:related :Sphere ;
+.
+:Polygon_Points
+  rdf:type owl:Class ;
+  rdfs:label "Polygon Points"^^xsd:string ;
+  rdfs:subClassOf :Points ;
+  skos:prefLabel "Polygon Points"^^xsd:string ;
+.
+:Polygon_Points_Type
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "TFM1 FlowInfo CommonMsgType"^^xsd:string ;
+  dcterms:hasFormat "Level 1: complexType"^^xsd:string ;
+  rdfs:label "Polygon Points Type"^^xsd:string ;
+  rdfs:subClassOf :Points_Type ;
+  skos:definition "The points of the polygon that defines the shape of the FEA/FCA. Up to sixty points.   [TFM1]"^^xsd:string ;
+  skos:prefLabel "Polygon Points Type"^^xsd:string ;
+.
+:Polyhedral_Surface
+  rdf:type owl:Class ;
+  rdfs:label "Polyhedral Surface"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Surface ;
+  owl:equivalentClass <http://www.opengis.net/ont/gml#PolyhedralSurface> ;
+  skos:broader :Surface ;
+  skos:prefLabel "Polyhedral Surface"^^xsd:string ;
+.
+:Polyhedron
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Polyhedron"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Closed_Figure ;
+  skos:broader :Solid ;
+  skos:definition ": a solid formed by plane faces [WEBSTER]"^^xsd:string ;
+  skos:narrower :Pyramid ;
+  skos:narrower :Sphere ;
+  skos:prefLabel "Polyhedron"^^xsd:string ;
+.
+:Predicted_Flight_Trajectory
+  rdf:type owl:Class ;
+  rdfs:label "Predicted Flight Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Flight_Trajectory ;
+  skos:prefLabel "Predicted Flight Trajectory"^^xsd:string ;
+.
+:Problem_Boundary
+  rdf:type owl:Class ;
+  rdfs:label "Problem Boundary"^^xsd:string ;
+  rdfs:subClassOf :Boundary ;
+  skos:broader :Boundary ;
+  skos:narrower :Problem_Detection_Boundary ;
+  skos:prefLabel "Problem Boundary"^^xsd:string ;
+.
+:Problem_Detection_Boundary
+  rdf:type owl:Class ;
+  rdfs:label "Problem Detection Boundary"^^xsd:string ;
+  rdfs:subClassOf :Problem_Boundary ;
+  skos:broader :Problem_Boundary ;
+  skos:prefLabel "Problem Detection Boundary"^^xsd:string ;
+.
+:Projected_Coordinate_Reference_System
+  rdf:type owl:Class ;
+  vaem:abbreviation "Projected CRS"^^xsd:string ;
+  rdfs:label "Projected Coordinate Reference System"^^xsd:string ;
+  rdfs:subClassOf :Coordinate_Reference_System ;
+  skos:altLabel "Projected CRS"^^xsd:string ;
+  skos:broader :Coordinate_Reference_System ;
+  skos:definition "A projected coordinate system provides various mechanisms to project maps of the earth's spherical surface onto a two dimensional Cartesian coordinate plane. Projected coordinate systems are sometimes referred to as map projections.   [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Projected Coordinate Reference System"^^xsd:string ;
+  skos:scopeNote "Projected CRS - a CRS derived from a geodetic CRS by means of a map projection. [NAS EA OV-7]"^^xsd:string ;
+  skos:scopeNote "The datum is expressed by the geodetic datum of the base geodetic CRS from which the projected CRS is derived (e.g. British National Grid13)  [NAS EA OV-7]"^^xsd:string ;
+.
+:Proposed_Flight_Trajectory
+  rdf:type owl:Class ;
+  rdfs:label "Proposed Flight Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Flight_Trajectory ;
+  skos:broader :Flight_Trajectory ;
+  skos:narrower :Business_Trajectory ;
+  skos:narrower :Planning_Trajectory ;
+  skos:prefLabel "Proposed Flight Trajectory"^^xsd:string ;
+.
+:Pyramid
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Pyramid"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Geometric_Shape ;
+  skos:broader :Polyhedron ;
+  skos:definition "2: a polyhedron having for its base a polygon and for faces triangles with a common vertex  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Polygon ;
+  skos:narrower :Triangle ;
+  skos:narrower :Vertex ;
+  skos:prefLabel "Pyramid"^^xsd:string ;
+.
+:Quadrant
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA PCG  Pilot/Controller Glossary (P/CG) Effective 2-9-12; part of AIM Order JO 7110.10 Flight Services and 7110.65, Air Traffic Control;  extracted from FAA web site on February 17, 2012"^^xsd:string ;
+  rdfs:label "Quadrant"^^xsd:string ;
+  rdfs:subClassOf :Circle ;
+  skos:broader :Circle ;
+  skos:definition "A quarter part of a circle, centered on a NAVAID, oriented clockwise from magnetic north as follows: NE quadrant 000-089, SE quadrant 090-179, SW quadrant 180-269, NW quadrant 270-359.   [FAA PCG]"^^xsd:string ;
+  skos:prefLabel "Quadrant"^^xsd:string ;
+.
+:Radial
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "EUROCONTROL (1997) \"Radar Sensor Performance Analysis\", doc. SUR.ET1.ST03.1000-STD-01-01"^^xsd:string ;
+  dcterms:bibliographicCitation "TFM2  TFM DataCoreElements"^^xsd:string ;
+  dcterms:hasFormat "Level 4: attribute; use: required nillable: "^^xsd:string ;
+  :dataElementLabelTMXM "radial"^^xsd:string ;
+  rdfs:label "Radial"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Angle ;
+  skos:broader :Straight_Line ;
+  skos:definition "A straight line of constant azimuth from the radar sensor site. A radial test flight would follow such a line.  [EUROCONTROL]"^^xsd:string ;
+  skos:definition "Radial or angle from true north providing the heading towards the point being described.  [TFM2]"^^xsd:string ;
+  skos:prefLabel "Radial"^^xsd:string ;
+  skos:scopeNote "radialDegreesType"^^xsd:string ;
+.
+:Radial_Degrees_Type
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "TFM2  TFM DataCoreElements"^^xsd:string ;
+  dcterms:hasFormat "Level 1:  simpleType; maxInclusive: 360 minInclusive: 0; pattern: [0-9]{1,3}"^^xsd:string ;
+  dcterms:hasFormat "restriction-xsd:integer"^^xsd:string ;
+  dcterms:references "fixRadialDistanceType"^^xsd:string ;
+  :dataElementLabelTMXM "radialDistanceType"^^xsd:string ;
+  rdfs:label "Radial Degrees Type"^^xsd:string ;
+  rdfs:subClassOf :Radial ;
+  skos:broader :Circle ;
+  skos:broader :Radial ;
+  skos:definition "Simple type used to place constraints on the number of degrees in a circle. Used primarily by fixRadialDistanceType data.  [TFM2]"^^xsd:string ;
+  skos:prefLabel "Radial Degrees Type"^^xsd:string ;
+.
+:Radian
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Annex 5, Units of Measurement to be Used in Air and Ground Operations"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-452"^^xsd:string ;
+  dcterms:source "ICAO (AN 5)"^^xsd:string ;
+  vaem:abbreviation "rad"^^xsd:string ;
+  rdfs:label "Radian"^^xsd:string ;
+  rdfs:subClassOf :Plane_Angle ;
+  skos:broader :Plane_Angle ;
+  skos:definition "The plane angle between two radii of a circle which cut off on circumference an arc equal in length to the radius.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Radian"^^xsd:string ;
+.
+:Radius
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Radius"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Circle ;
+  skos:broader :Line_Segment ;
+  skos:broader :Sphere ;
+  skos:definition """1 : a line segment extending from the center of a circle or sphere to the circumference or bounding surface 
+3 a : the length of a radius <a truck with a short turning radius> b : the circular area defined by a stated radius c : a bounded or circumscribed area 
+4 : a radial part 
+5 : the distance from a center line or point to an axis of rotation   [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Circle_Radius ;
+  skos:prefLabel "Radius"^^xsd:string ;
+.
+:Ranked_Four-D_Trajectory
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Doc 9965 AN/483, Manual on Flight and Flow - information for a Collaborative Environment (FF-ICE), First Edition - 2012"^^xsd:string ;
+  dcterms:hasFormat "4D Trajectory"^^xsd:string ;
+  dcterms:hasPart "Ranked 4D Trajectory Assignment Status"^^xsd:string ;
+  dcterms:hasPart "Ranked 4D Trajectory Identifier"^^xsd:string ;
+  dcterms:hasPart "Ranked 4D Trajectory Maximum Acceptable Delay"^^xsd:string ;
+  dcterms:references "Fixm.FlightObject.Flight.RankedTrajectory.RankedTrajectory"^^xsd:string ;
+  dcterms:references "Ranked 4D Route"^^xsd:string ;
+  rdfs:label "Ranked 4D Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Four-D_Trajectory ;
+  skos:altLabel "Ranked Four-D Trajectory"^^xsd:string ;
+  skos:broader :Four-D_Trajectory ;
+  skos:definition "A series of desired 4D trajectories, with tolerances supplied if necessary by the airspace user to define when the next ranked trajectory should be used.   [FIXM 3.0]"^^xsd:string ;
+  skos:prefLabel "Ranked 4D Trajectory"^^xsd:string ;
+  skos:scopeNote "The desired 4D trajectory represents the best suited Ranked 4D trajectory chosen by the airspace user to meet their mission objectives.  The airspace user may elect to preemptively circumvent operational constraints and resource contention - or engage in collaboration on the trajectory.  There is only one desired 4D trajectory for any given flight at any time.  The tolerances provided with the Ranked 4D trajectories are used to express the bounds of variation on the trajectory triggering a preference for the next ranked trajectory.   [FIXM 3..0]"^^xsd:string ;
+.
+:Reference_Business_Trajectory
+  rdf:type owl:Class ;
+  vaem:acronym "RBT"^^xsd:string ;
+  rdfs:label "Reference Business Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Business_Trajectory ;
+  skos:broader :Business_Trajectory ;
+  skos:definition "The business trajectory which the airspace user agrees to fly and the ANSP and Airports agree to facilitate (subject to separation provision).   [SESAR]"^^xsd:string ;
+  skos:prefLabel "Reference Business Trajectory"^^xsd:string ;
+  skos:scopeNote "Most times indicated in the RBT are estimates, some may be target times (TTA) to facilitate planning and some of them may become constraints (CTA, CTO) to assist in queue management when appropriate, e.g. at AMAN horizon.  [SESAR]"^^xsd:string ;
+.
+:Reference_Ellipsoid
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA AC 150/5300-18B,  Appendix A"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Doc 9881, Guidelines for Electronic Terrain, Obstacle and Aerodrome Mapping Information"^^xsd:string ;
+  rdfs:label "Reference Ellipsoid"^^xsd:string ;
+  rdfs:subClassOf :Ellipsoid ;
+  skos:broader :Ellipsoid ;
+  skos:definition "A geometric figure comprising one component of a geodetic datum, usually determined by rotating an ellipse about its shorter (polar) axis, and used as a surface of reference for geodetic surveys. The reference ellipsoid closely approximates the dimensions of the GEOID. Certain ellipsoids fit the GEOID more closely for various areas of the earth. Elevations derived directly from satellite observations are relative to the ellipsoid and are called ellipsoid heights.   [ICAO]  [FAA AC 150/5300-18B]"^^xsd:string ;
+  skos:prefLabel "Reference Ellipsoid"^^xsd:string ;
+.
+:Reference_Line
+  rdf:type owl:Class ;
+  rdfs:label "Reference Line"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:broader :Line ;
+  skos:narrower :Axis ;
+  skos:prefLabel "Reference Line"^^xsd:string ;
+.
+:Reference_Point
+  rdf:type owl:Class ;
+  rdfs:label "Reference Point"^^xsd:string ;
+  rdfs:subClassOf :Point ;
+  skos:broader :Point ;
+  skos:narrower :Airport_Reference_Point ;
+  skos:narrower :Heliport_Reference_Point ;
+  skos:prefLabel "Reference Point"^^xsd:string ;
+.
+:Roll
+  rdf:type owl:Class ;
+  rdfs:label "Roll"^^xsd:string ;
+  rdfs:subClassOf :Longitudinal_Axis_of_the_Airplane ;
+  skos:prefLabel "Roll"^^xsd:string ;
+.
+:Runway
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Runway"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "Indicates the point corresponds to a runway.  Threshold at the center of the runway, arrival end when arriving, and departing end when departing.    [FIXM 3.0, DD p.340]"^^xsd:string ;
+  skos:prefLabel "Runway"^^xsd:string ;
+.
+:Runway_Geometry
+  rdf:type owl:Class ;
+  rdfs:label "Runway Geometry"^^xsd:string ;
+  rdfs:subClassOf :Aerodrome_Surface_Structure_Geometry ;
+  skos:broader :Aerodrome_Surface_Structure_Geometry ;
+  skos:narrower :Runway_Geometry_Element ;
+  skos:prefLabel "Runway Geometry"^^xsd:string ;
+.
+:Runway_Geometry_Element
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "RunwayElement"^^xsd:string ;
+  rdfs:label "Runway Geometry Element"^^xsd:string ;
+  rdfs:subClassOf :Runway_Geometry ;
+  owl:unionOf (
+      :Polygon
+    ) ;
+  skos:altLabel "Runway Element"^^xsd:string ;
+  skos:broader :Runway_Geometry ;
+  skos:definition "Runway element may consist of one ore more polygons not defined as other portions of the runway class.   [AIXM]"^^xsd:string ;
+  skos:prefLabel "Runway Geometry Element"^^xsd:string ;
+.
+:Runway_Gradient
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA PCG  Pilot/Controller Glossary (P/CG) Effective 2-9-12; part of AIM Order JO 7110.10 Flight Services and 7110.65, Air Traffic Control;  extracted from FAA web site on February 17, 2012"^^xsd:string ;
+  rdfs:label "Runway Gradient"^^xsd:string ;
+  rdfs:subClassOf :Gradient ;
+  skos:broader :Gradient ;
+  skos:definition "The average slope, measured in percent, between two ends or points on a runway.     [FAA PCG]"^^xsd:string ;
+  skos:prefLabel "Runway Gradient"^^xsd:string ;
+  skos:scopeNote "Runway gradient is depicted on Government aerodrome sketches when total runway gradient exceeds 0.3%.     [FAA PCG]"^^xsd:string ;
+.
+:S-Line
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIM - EUROC  Aeronautical Information Lexicon, FAA-IMS Interface Management System, European Air Traffic Management, EUROCONTROL, no date given"^^xsd:string ;
+  dcterms:bibliographicCitation "EUROCONTROL  European Organization for the Safety of Air Navigation: EUROCONTROL; European Air Traffic Management, Aeronautical Information Lexicon - FAA; no date provided in document"^^xsd:string ;
+  rdfs:label "S-Line"^^xsd:string ;
+  rdfs:subClassOf :Adapted_Line_Segment ;
+  skos:broader :Adapted_Line_Segment ;
+  skos:definition "Forces a posting in an FPA for direct route processing.  [AIM - EUROC]  [EUROCONTROL]"^^xsd:string ;
+  skos:prefLabel "S-Line"^^xsd:string ;
+.
+:Sector
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Sector"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Area ;
+  skos:broader :Circle ;
+  skos:definition "1 a : a geometric figure bounded by two radii and the included arc of a circle... [WEBSTER]"^^xsd:string ;
+  skos:narrower :Circle_Sector ;
+  skos:prefLabel "Sector"^^xsd:string ;
+.
+:Sexagesimal_Ellipsoid_Coordinate
+  rdf:type owl:Class ;
+  rdfs:label "Sexagesimal Ellipsoid Coordinate"^^xsd:string ;
+  rdfs:subClassOf :Ellipsoid_Coordinate ;
+  skos:prefLabel "Sexagesimal Ellipsoid Coordinate"^^xsd:string ;
+.
+:Shape
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Shape"^^xsd:string ;
+  rdfs:subClassOf :Form ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Form ;
+  skos:definition "1 b: (1) spatial form or contour (2) a standard or universally recognized spatial form [WEBSTER]"^^xsd:string ;
+  skos:narrower :Geometric_Shape ;
+  skos:prefLabel "Shape"^^xsd:string ;
+.
+:Shared_Business_Trajectory
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "SESAR Consortium (2007) CONOPS Acronyms and Definitions, Task 2.2.2 - Milestone 3, Document Number: DLT-0612-222-02-00"^^xsd:string ;
+  vaem:acronym "SBT"^^xsd:string ;
+  rdfs:label "Shared Business Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Business_Trajectory ;
+  skos:broader :Shared_Business_Trajectory ;
+  skos:definition "Published business trajectory that is available for collaborative ATM planning purposes.  [SESAR]"^^xsd:string ;
+  skos:prefLabel "Shared Business Trajectory"^^xsd:string ;
+  skos:scopeNote "The refinement of the SBT will be an iterative process.  [SESAR]"^^xsd:string ;
+.
+:Sideslip_Angle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA 14 CFR Part 60, Appendix F to Part 60 - Definitions and Abbreviations for Flight Simulation Training Devices"^^xsd:string ;
+  rdfs:label "Sideslip Angle"^^xsd:string ;
+  rdfs:subClassOf :Angle ;
+  skos:altLabel "Sideslip"^^xsd:string ;
+  skos:broader :Angle ;
+  skos:definition "Sideslip Angle—the angle between the relative wind vector and the airplane plane of symmetry. (Note: this definition replaces the current definition of “sideslip.”)   [FAA 14 CFR Part 60, Appendix F]"^^xsd:string ;
+  skos:prefLabel "Sideslip Angle"^^xsd:string ;
+.
+:Slope
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Slope"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Angle ;
+  skos:definition "4 a: the tangent of the angle made by a straight line with the x-axis   b: the slope of the line tangent to a plane curve at a point  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Average_Slope ;
+  skos:prefLabel "Slope"^^xsd:string ;
+.
+:Solid
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Solid"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass <http://www.opengis.net/ont/gml#Surface> ;
+  skos:broader :Geometric_Element ;
+  skos:definition "1 : a geometrical figure or element (as a cube or sphere) having three dimensions  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Cone ;
+  skos:narrower :Cube ;
+  skos:narrower :Cylinder ;
+  skos:narrower :Polyhedron ;
+  skos:narrower :Sphere ;
+  skos:prefLabel "Solid"^^xsd:string ;
+.
+:Solid_Angle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Solid Angle"^^xsd:string ;
+  rdfs:subClassOf :Angle ;
+  skos:broader :Angle ;
+  skos:definition "A solid angle is a three-dimensional angle, formed by three or more planes intersecting at a common point.   [NAS EA OV-7]"^^xsd:string ;
+  skos:narrower :Steradin ;
+  skos:prefLabel "Solid Angle"^^xsd:string ;
+.
+:Space
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;11 ed."^^xsd:string ;
+  rdfs:label "Space"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:definition "1 b: an extent set apart or available   4 a: boundless three-dimensional extent in which objects and events occur and have relative position and direction b: physical space independent of what occupies it - called also absolute space 7: a set of mathematical elements and esp. of abstractions of all the points on a line, in a plane, or in physical space; esp : a set of mathematical entities with a set of axioms of geometric character [WEBSTER]"^^xsd:string ;
+  skos:narrower :Extent ;
+  skos:narrower :Geometry_Collection ;
+  skos:narrower :Metric_Space ;
+  skos:narrower :Model ;
+  skos:narrower :Object ;
+  skos:narrower :Topological_Space ;
+  skos:narrower :Vector_Space ;
+  skos:narrower :Volume ;
+  skos:prefLabel "Space"^^xsd:string ;
+  skos:topConceptOf :Space ;
+.
+:Spatial_Area
+  rdf:type owl:Class ;
+  rdfs:label "Spatial Area"^^xsd:string ;
+  rdfs:subClassOf :Area ;
+  skos:broader :Area ;
+  skos:prefLabel "Spatial Area"^^xsd:string ;
+.
+:Spatial_Extent
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "A NAS Data Classification Scheme, MITRE Technical Report - MTR 00W0000067; NAS_clas_final file on Data Architecture CD,  September 2000  page 16"^^xsd:string ;
+  rdfs:label "Spatial Extent"^^xsd:string ;
+  rdfs:subClassOf :Extent ;
+  skos:broader :Extent ;
+  skos:definition "Data describing the spatial extent of the weather observations or forecasts which may include data about grids, areas, and level/altitude.   [MITRE]"^^xsd:string ;
+  skos:prefLabel "Spatial Extent"^^xsd:string ;
+.
+:Speed_Change
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Speed Change"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "The point where the aircraft will begin accelerating or decelerating as a result of a speed constraint or limit, or reaches an assigned speed.    [FIXM 3.0, DD p.340]"^^xsd:string ;
+  skos:prefLabel "Speed Change"^^xsd:string ;
+.
+:Sphere
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Sphere"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Geometric_Shape ;
+  skos:broader :Solid ;
+  skos:definition "2 c : (1) a solid that is bounded by surface consisting of all points at a given distance from a point constituting its center  (2) the bounding surface of a sphere  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Sphere"^^xsd:string ;
+  skos:related :Polygon ;
+.
+:Spherical_Geometry
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Spherical Geometry"^^xsd:string ;
+  rdfs:subClassOf :Geometry ;
+  skos:broader :Geometry ;
+  skos:definition ": the geometry of figures on a sphere  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Sphere ;
+  skos:prefLabel "Spherical Geometry"^^xsd:string ;
+.
+:Spherical_Polygon
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Spherical Polygon"^^xsd:string ;
+  rdfs:subClassOf :Polygon ;
+  skos:broader :Polygon ;
+  skos:definition ": a figure analogous to a plane polygon that is formed on a sphere by arcs of great circles  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Spherical_Triangle ;
+  skos:prefLabel "Spherical Polygon"^^xsd:string ;
+.
+:Spherical_Triangle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Spherical Triangle"^^xsd:string ;
+  rdfs:subClassOf :Triangle ;
+  skos:broader :Spherical_Polygon ;
+  skos:broader :Triangle ;
+  skos:definition ": a spherical polygon of three side [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Spherical Triangle"^^xsd:string ;
+.
+:Start_of_Climb
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Start of Climb"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "The point where the trajectory will begin  climb segment following a level (intermediate or cruise segment).  [FIXM 3.0, DD p. 340)"^^xsd:string ;
+  skos:prefLabel "Start of Climb"^^xsd:string ;
+.
+:Start_of_Descent
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Start of Descent"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "The point where the trajectory begins a descent from a level segment.    [FIXM 3.0, DD p.340]"^^xsd:string ;
+  skos:prefLabel "Start of Descent"^^xsd:string ;
+.
+:State_Plane_Coordinate_System
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA AC 150/5300-18B,  Appendix A"^^xsd:string ;
+  rdfs:label "State Plane Coordinate System"^^xsd:string ;
+  rdfs:subClassOf :Coordinate_System ;
+  skos:broader :Coordinate_System ;
+  skos:definition "A series of plane-rectangular coordinate systems established by the U.S. Coast and Geodetic Survey for the entire United States, with a separate system for each state.   [FAA AC 150/5300-18B]"^^xsd:string ;
+  skos:prefLabel "State Plane Coordinate System"^^xsd:string ;
+  skos:scopeNote "A mathematical relationship exists between state plane and geodetic coordinates, one being easily transformed into the other.   [FAA AC 150/5300-18B]"^^xsd:string ;
+  skos:scopeNote "The advantage of the State Plane Coordinate System is that it permits survey computations for small areas to be performed using plane trigonometry (as opposed to more complex spherical trigonometry), while still yielding very nearly the true angles and distances between points.   [FAA AC 150/5300-18B]"^^xsd:string ;
+.
+:Steradin
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Annex 5, Units of Measurement to be Used in Air and Ground Operations"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-538"^^xsd:string ;
+  dcterms:source "ICAO (AN 5)"^^xsd:string ;
+  vaem:abbreviation "sr"^^xsd:string ;
+  rdfs:label "Steradin"^^xsd:string ;
+  rdfs:subClassOf :Solid_Angle ;
+  skos:altLabel "Steradian"^^xsd:string ;
+  skos:broader :Solid_Angle ;
+  skos:definition "The solid angle which, having its vertex in the centre of a sphere, cuts off an area of the surface of the sphere equal to that of a square with sides of length equal to the radius of the sphere.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Steradin"^^xsd:string ;
+.
+:Straight_Line
+  rdf:type owl:Class ;
+  rdfs:label "Straight Line"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:broader :Line ;
+  skos:narrower :Axis ;
+  skos:prefLabel "Straight Line"^^xsd:string ;
+.
+:Structure
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-WEbster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Structure"^^xsd:string ;
+  rdfs:subClassOf :Form ;
+  skos:broader :Form ;
+  skos:definition "4 a: the arrangement of particles or parts in a substance or body  b: organization of parts as dominated by the general character of the whole  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Structure"^^xsd:string ;
+.
+:Structure_Geometric_Area
+  rdf:type owl:Class ;
+  rdfs:label "Structural Area"^^xsd:string ;
+  rdfs:subClassOf :Geometric_Area ;
+  skos:broader :Geometric_Area ;
+  skos:narrower :Vertical_Structure_Geometry ;
+  skos:prefLabel "Structural Area"^^xsd:string ;
+.
+:Structure_Geometry
+  rdf:type owl:Class ;
+  rdfs:label "Structure Geometry"^^xsd:string ;
+  rdfs:subClassOf :Geometry ;
+  skos:broader :Geometry ;
+  skos:narrower :Vertical_Structure_Geometry ;
+  skos:prefLabel "Structure Geometry"^^xsd:string ;
+.
+:Surface
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM 5.1 generated on 2009-02-03; retrieved on 11-29-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  :dataElementLabelAIXM "Surface"^^xsd:string ;
+  rdfs:label "Surface"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass <http://www.opengis.net/ont/gml#Surface> ;
+  skos:broader :Geometric_Element ;
+  skos:definition "A two-dimensional Geometric Element composed of a series of Line(s).   [NAS EA OV-7]"^^xsd:string ;
+  skos:definition "An AIXM surface derived from GM_Surface and extended to include Horizontal Accuracy Properties   [AIXM 5.0]  [AIXM 5.1]"^^xsd:string ;
+  skos:narrower :Area ;
+  skos:narrower :Cone ;
+  skos:narrower :Cylinder ;
+  skos:narrower :Elevated_Surface ;
+  skos:narrower :Geometric_Surface ;
+  skos:narrower :Imaginary_Surface ;
+  skos:narrower :Plane ;
+  skos:prefLabel "Surface"^^xsd:string ;
+.
+:Surface_Area
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA PCG  Pilot/Controller Glossary (P/CG) Effective 2-9-12; part of AIM Order JO 7110.10 Flight Services and 7110.65, Air Traffic Control;  extracted from FAA web site on February 17, 2012"^^xsd:string ;
+  rdfs:label "Surface Area"^^xsd:string ;
+  rdfs:subClassOf :Area ;
+  skos:broader :Area ;
+  skos:definition "The airspace contained by the lateral boundary of the Class B, C, D, or E airspace designated for an airport that begins at the surface and extends upward.  [PCG]"^^xsd:string ;
+  skos:prefLabel "Surface Area"^^xsd:string ;
+.
+:System_Coordinate
+  rdf:type owl:Class ;
+  rdfs:label "System Coordinate"^^xsd:string ;
+  rdfs:subClassOf :Coordinate ;
+  skos:prefLabel "System Coordinate"^^xsd:string ;
+.
+:System_Coordinates
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIM - EUROC   Aeronautical Information Lexicon, FAA-IMS Interface Management System, European Air Traffic Management, EUROCONTROL, no date given"^^xsd:string ;
+  rdfs:label "System Coordinates"^^xsd:string ;
+  rdfs:subClassOf :Coordinates ;
+  owl:unionOf (
+      :System_Coordinate
+    ) ;
+  skos:broader :Coordinates ;
+  skos:definition "The two-dimensional (X, Y) coordinate system for a NAS En Route ARTCC.   [AIM - EUROC]"^^xsd:string ;
+  skos:prefLabel "System Coordinates"^^xsd:string ;
+.
+:System_Plane
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIM - EUROC  Aeronautical Information Lexicon, FAA-IMS Interface Management System, European Air Traffic Management, EUROCONTROL, no date given"^^xsd:string ;
+  rdfs:label "System Plane"^^xsd:string ;
+  rdfs:subClassOf :Plane ;
+  skos:broader :Plane ;
+  skos:definition "The system plane tangent to the earth's surface and its point of tangency is the origin of the stereographic axis system. The ARTCC system X, Y cartesian axis is located at the lower lefthand corner of this system plane. The positive Y axis will have the direction of true north at the system plane's point of tangency.  The lower lefthand corner is chosen so as to insure that everything to be displayed has positive system X, Y coordinates.  [AIM - EUROC]  "^^xsd:string ;
+  skos:prefLabel "System Plane"^^xsd:string ;
+.
+:Time_Line
+  rdf:type owl:Class ;
+  rdfs:label "Time Line"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:broader :Line ;
+  skos:prefLabel "Time Line"^^xsd:string ;
+.
+:Tolerance_Angle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "TFM1  FlowInfo CommonMsgType"^^xsd:string ;
+  dcterms:hasFormat "Level 3: element; Required and sequenced: 2"^^xsd:string ;
+  dcterms:hasFormat "Level 4: simpleType"^^xsd:string ;
+  :dataElementLabelTMXM "tolerance"^^xsd:string ;
+  rdfs:label "Tolerance Angle"^^xsd:string ;
+  rdfs:subClassOf :Angle ;
+  skos:definition "The tolerance angle.   [TFM1]"^^xsd:string ;
+  skos:prefLabel "Tolerance Angle"^^xsd:string ;
+.
+:Top_of_Climb
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Top of Climb"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "Where the trajectory arrives at the cruise flight level.  There will be on top-of-climb point for each cruise flight level (step climbs).  [FIXM 3.0, DD p.340]"^^xsd:string ;
+  skos:prefLabel "Top of Climb"^^xsd:string ;
+.
+:Topological_Space
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Topological Space"^^xsd:string ;
+  rdfs:subClassOf :Space ;
+  skos:broader :Space ;
+  skos:definition ": a set with a collection of subsets satisfying the conditions that both the empty set and the set itself belong to the collection, the union of any number of the subsets is also an element of the collection, and the intersection of any finite number of the subsets is an element of the collection [WEBSTER]"^^xsd:string ;
+  skos:hasTopConcept :Space ;
+  skos:prefLabel "Topological Space"^^xsd:string ;
+.
+:Trajectory
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO (2003) AN-CONF/11-WP/4  The Global ATM Operational Concept"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  :dataElementLabelFIXM "trajectory"^^xsd:string ;
+  rdfs:label "Trajectory"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Vector ;
+  skos:definition """1 : the curve that a body (as a planet or comet in its orbit or a rocket) describes in space 
+2 : a path, progression, or line of development resembling a physical trajectory <an upward career trajectory>  [WEBSTER]"""^^xsd:string ;
+  skos:definition "the description of movement of an aircraft both in the air and on the ground including position, time, and at least via calculation, speed and acceleration.  [ICAO]"^^xsd:string ;
+  skos:narrower :Conveyance_Trajectory ;
+  skos:prefLabel "Trajectory"^^xsd:string ;
+.
+:Trajectory_Change_Point
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 30.0, August 2014"^^xsd:string ;
+  dcterms:references "Fixm.FlightObject.Flight.Trajectory.TrajectoryChangePointType"^^xsd:string ;
+  dcterms:references "Fixm.FlightObject.Flight.Trajectory.TrajectoryPoint.trajectoryChangeType"^^xsd:string ;
+  rdfs:label "Trajectory Change Point"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Point ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Start_of_Climb
+            :Top_of_Climb
+            :Start_of_Descent
+            :End_of_Descent
+            :Level-off
+            :Crossover_Altitude
+            :Transition_Altitude-Level
+            :Speed_Change
+            :Unnamed_Fix
+            :Runway
+            :Entry_Point_into_Special_Activity_Airspace
+            :Exit_Point_from_Special_Activity_Airspace
+            :Crossing_Point_for_Constrained_Airspace
+            :Initial_Prediction_Point
+            :Enter_Hold
+            :Exit_Hold
+          ) ;
+      ]
+    ) ;
+  skos:altLabel "Trajectory Change Point - Type"^^xsd:string ;
+  skos:altLabel "Trajectory Change Point Type"^^xsd:string ;
+  skos:definition "Identifies the type(s) of trajectory change point being described by the associated 4D Point.   [FIXM 3.0]"^^xsd:string ;
+  skos:prefLabel "Trajectory Change Point"^^xsd:string ;
+  skos:related :Four-D_Point ;
+.
+:Trajectory_Change_Point_Type
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  dcterms:bibliographicCitation "Flight and Flow Information for a Collaborative Environment - A Concept (Version 1.0), Nov 22, 2010"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Global Air Navigation Plan, ASBU-Block 1, ICAO DOC 9750, 4th Edition 2013"^^xsd:string ;
+  dcterms:hasFormat "Enumeration"^^xsd:string ;
+  dcterms:hasFormat "Valid values: {Start of Climb, Top of Climb, Start of Descent, End of Descent, Level-Off, Crossover Altitude, Transition Altitude/Level, Speed Change, Unnamed Fix, Runway, Entry Point into Special Activity Airspace, Exit point from Special Activity Airspace, Crossing Point for Constrained Airspace, Initial Prediction Point, Enter Hold, Exit Hold}"^^xsd:string ;
+  dcterms:isPartOf "Trajectory Point"^^xsd:string ;
+  dcterms:references "Fixm.FlightObject.Flight.Trajectory.TrajectoryChangePointType"^^xsd:string ;
+  dcterms:references "Fixm.FlightObject.Flight.Trajectory.TrajectoryPoint.trajectoryChangeType"^^xsd:string ;
+  :dataElementLabelFIXM "trajectoryChangeType"^^xsd:string ;
+  rdfs:label "Trajectory Change Point Type"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "Identifies the type(s) of trajectory change point being described by the associated 4D Point.  [FIXM 3.0]"^^xsd:string ;
+  skos:prefLabel "Trajectory Change Point Type"^^xsd:string ;
+  skos:scopeNote "Start of Climb = The point where the trajectory will begin a climb segment following a level (intermediate or cruise segment).  [FIXM 3.0]"^^xsd:string ;
+.
+:Trajectory_Option
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dcterms:isPartOf "Trajectory Options Set"^^xsd:string ;
+  rdfs:label "Trajectory Option"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Options_Set ;
+  skos:altLabel "TRAJECTORY OPTION"^^xsd:string ;
+  skos:broader :Conveyance_Trajectory ;
+  skos:definition "One of potentially several trajectory options proposed as part of a Trajectory Options Set   [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Trajectory Option"^^xsd:string ;
+.
+:Trajectory_Options_Set
+  rdf:type owl:Class ;
+  rdfs:label "Trajectory Options Set"^^xsd:string ;
+  rdfs:subClassOf :Conveyance_Trajectory ;
+  skos:broader :Conveyance_Trajectory ;
+  skos:narrower :Trajectory_Option ;
+  skos:prefLabel "Trajectory Options Set"^^xsd:string ;
+.
+:Trajectory_Point
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  dcterms:bibliographicCitation "Flight and Flow Information for a Collaborative Environment - A Concept (Version 1.0), Nov 22, 2010"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Global Air Navigation Plan, ASBU-Block 1, ICAO DOC 9750, 4th Edition 2013"^^xsd:string ;
+  dcterms:hasFormat "Record"^^xsd:string ;
+  dcterms:hasPart "Airspeed - Predicted"^^xsd:string ;
+  dcterms:hasPart "Assumed Altimeter Setting"^^xsd:string ;
+  dcterms:hasPart "Flow Constrained Area Entered"^^xsd:string ;
+  dcterms:hasPart "Ground Speed - Predicted"^^xsd:string ;
+  dcterms:hasPart "Meteorological Data"^^xsd:string ;
+  dcterms:hasPart "Point Range"^^xsd:string ;
+  dcterms:hasPart "Reference Point"^^xsd:string ;
+  dcterms:hasPart "Special Activity Airspace Entered/Exited"^^xsd:string ;
+  dcterms:hasPart "Trajectory Change Point Type"^^xsd:string ;
+  dcterms:references "Fixm.FlightObject.Flight.Trajectory.Trajectory.trajectoryPoint"^^xsd:string ;
+  dcterms:references "Fixm.FlightObject.Flight.Trajectory.TrajectoryPoint"^^xsd:string ;
+  :dataElementLabelFIXM "trajectoryPoint"^^xsd:string ;
+  rdfs:label "Trajectory Point"^^xsd:string ;
+  rdfs:subClassOf :Point ;
+  skos:broader :Four-D_Trajectory ;
+  skos:broader :Point ;
+  skos:definition "A container for information pertinent to a single point in a trajectory.   [FIXM 3.0]"^^xsd:string ;
+  skos:narrower :Four-D_Point ;
+  skos:prefLabel "Trajectory Point"^^xsd:string ;
+  skos:related :Four-D_Point ;
+.
+:Trajectory_or_Profile
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Doc 9854, Concept; p. B-6"^^xsd:string ;
+  rdfs:label "Trajectory or Profile"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_Trajectory ;
+  skos:broader :Aircraft_Trajectory ;
+  skos:definition "This is a description of the movement of an aircraft, both in the air and on the ground, including position, time and, at least via calculation, speed and acceleration.   [ICAO Doc. 9854]"^^xsd:string ;
+  skos:prefLabel "Trajectory or Profile"^^xsd:string ;
+.
+:Transition_Altitude-Level
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Transition Altitude-Level"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "Where the trajectory reaches the transition altitude (in climb) or transition level (in descent).    [FIXM 3.0, DD p.340]"^^xsd:string ;
+  skos:prefLabel "Transition Altitude-Level"^^xsd:string ;
+.
+:Transition_Line
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Mitre FAA National Airspace Data Classification Scheme, extracted from \"NAS_clas_final\" on Data Arch CD"^^xsd:string ;
+  rdfs:label "Transition Line"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:broader :Line ;
+  skos:definition "Data describing line that may initiate the application of [Precision Approach Radar] PARs or PDRs for direct route processing.  They may partially or completely enclose one or more airports.     [MITRE]"^^xsd:string ;
+  skos:prefLabel "Transition Line"^^xsd:string ;
+.
+:Triangle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Triangle"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Figure ;
+  skos:broader :Polygon ;
+  skos:definition "1 : a polygon having three sides - compare SPHERICAL TRIANGLE   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Triangle"^^xsd:string ;
+.
+:Trim_Line
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA AC 150/5300-18B,  Appendix A"^^xsd:string ;
+  rdfs:label "Trim Line"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:broader :Line ;
+  skos:definition "An imaginary line constructed perpendicular to the runway/stopway centerline which establishes the location of a runway/stopway end or displaced threshold.  [FAA AC 150/5300-18B]"^^xsd:string ;
+  skos:prefLabel "Trim Line"^^xsd:string ;
+.
+:Unnamed_Fix
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Unnamed Fix"^^xsd:string ;
+  rdfs:subClassOf :Trajectory_Change_Point ;
+  skos:definition "A point inserted between other trajectory points, not corresponding to any other specific point type, so as to provide more complete definition of the trajectory.  The unnamed fix includes any vertical points not specifically identified by other characteristics necessary to describe he vertical trajectory.    [FIXM 3.0, DD p.340]"^^xsd:string ;
+  skos:prefLabel "Unnamed Fix"^^xsd:string ;
+.
+:User_Preferred_Trajectory
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "UPT"^^xsd:string ;
+  rdfs:label "User Preferred Trajectory"^^xsd:string ;
+  rdfs:subClassOf :Flight_Trajectory ;
+  skos:broader :Flight_Trajectory ;
+  skos:prefLabel "User Preferred Trajectory"^^xsd:string ;
+.
+:Vector
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Vector"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Line_Segment ;
+  skos:broader :Magnitude ;
+  skos:definition "1 a: a quantity that has magnitude and direction and that is commonly represented by a directed line segment whose lenght represents the magnitude and whose orientation in space represents the direction; broadly : an element of a vector space  b: a course or compass direction esp. of an airplane  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Direction ;
+  skos:narrower :Flight_Vector ;
+  skos:narrower :Magnitude ;
+  skos:prefLabel "Vector"^^xsd:string ;
+.
+:Vector_Space
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Vector Space"^^xsd:string ;
+  rdfs:subClassOf :Space ;
+  skos:broader :Space ;
+  skos:definition ": a set of vectors along with operations of additon and multiplication such that a set is a commutative group under addition, it includes a multiplicative inverse, and multiplication by scalars is both associative and distributive [WEBSTER]"^^xsd:string ;
+  skos:hasTopConcept :Space ;
+  skos:prefLabel "Vector Space"^^xsd:string ;
+.
+:Vector_to_Final
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "VTF"^^xsd:string ;
+  rdfs:label "Vector to Final"^^xsd:string ;
+  rdfs:subClassOf :Flight_Path_Vector ;
+  skos:broader :Flight_Path_Vector ;
+  skos:prefLabel "Vector to Final"^^xsd:string ;
+.
+:Vertex
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA PCG  Pilot/Controller Glossary (P/CG) Effective 2-9-12; part of AIM Order JO 7110.10 Flight Services and 7110.65, Air Traffic Control;  extracted from FAA web site on February 17, 2012"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Doc 9881, Guidelines for Electronic Terrain, Obstacle and Aerodrome Mapping Information"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "RTCA/DO-276B.  User Requirements for Terrain and Obstacle Data, Draft; February 17, 2011"^^xsd:string ;
+  rdfs:label "Vertex"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Point ;
+  skos:definition "2 a: the point opposite to and farthest from the base in a figure  b: a point (as of an angle, polygon, polyhedron, graph, or network) that terminates a line or curve or comprises the intersection of two or more lines or curves  c: a point where an axis of an ellipse, parabola or hyperbola intersects the cure itself [WEBSTER]"^^xsd:string ;
+  skos:definition "A point that defines a line structure, curvature, or shape.  [RTCA]  [ICAO]"^^xsd:string ;
+  skos:definition "The last fix adapted on the arrival speed segments. Normally, it will be the outer marker of the runway in use. However, it may be the actual threshold or other suitable common point on the approach path for the particular runway configuration.  [FAA PCG]"^^xsd:string ;
+  skos:prefLabel "Vertex"^^xsd:string ;
+.
+:Vertical_Angle
+  rdf:type owl:Class ;
+  rdfs:label "Vertical Angle"^^xsd:string ;
+  rdfs:subClassOf :Angle ;
+  skos:broader :Angle ;
+  skos:narrower :Vertical_Descent_Angle ;
+  skos:narrower :Vertical_Path_Angle ;
+  skos:prefLabel "Vertical Angle"^^xsd:string ;
+.
+:Vertical_Coordinate_Reference_System
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dcterms:bibliographicCitation "OPENGIS   http://docs.geotools.org/latest/userguide/library/opengis/cs.html"^^xsd:string ;
+  rdfs:label "Vertical Coordinate Reference System"^^xsd:string ;
+  rdfs:subClassOf :Coordinate_Reference_System ;
+  skos:altLabel "Vertical CRS"^^xsd:string ;
+  skos:broader :Coordinate_Reference_System ;
+  skos:definition "A type of Coordinate Reference System (CRS) used for the recording of heights or depths. Vertical CRSs make use of the direction of gravity to define the concept of height or depth, but its relationship with gravity may not be straightforward. [OPENGIS]  [NAS EA OV-7]"^^xsd:string ;
+  skos:definition "Vertical CRS - a one dimensional CRS based on a vertical datum (e.g. MSL Depth14)"^^xsd:string ;
+  skos:prefLabel "Vertical Coordinate Reference System"^^xsd:string ;
+  skos:scopeNote "By implication therefore, ellipsoidal heights (h) cannot be captured in a vertical coordinate reference system: ellipsoidal heights cannot exist independently, but only as an inseparable part of a 3D coordinate tuple defined in a geographic 3D coordinate reference system.  [OPENGIS]  [NAS EA OV-7]"^^xsd:string ;
+.
+:Vertical_Coordinate_System
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Vertical Coordinate System"^^xsd:string ;
+  rdfs:subClassOf :Coordinate_System ;
+  skos:broader :Coordinate_System ;
+  skos:definition """A vertical coordinate system defines the origin for height or depth values.
+[NAS EA OV-7]"""^^xsd:string ;
+  skos:prefLabel "Vertical Coordinate System"^^xsd:string ;
+.
+:Vertical_Descent_Angle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIM  Aeronautical Information Manual (AIM); Office Guide to Basic Flight Information and ATC Procedures; Appendix 4. Abbreviations/Acronyms; dated 2/9/2012"^^xsd:string ;
+  vaem:acronym "VDA"^^xsd:string ;
+  rdfs:label "Vertical Descent Angle"^^xsd:string ;
+  rdfs:subClassOf :Vertical_Angle ;
+  skos:broader :Vertical_Angle ;
+  skos:prefLabel "Vertical Descent Angle"^^xsd:string ;
+.
+:Vertical_Extent
+  rdf:type owl:Class ;
+  rdfs:label "Vertical Extent"^^xsd:string ;
+  rdfs:subClassOf :Extent ;
+  skos:broader :Extent ;
+  skos:prefLabel "Vertical Extent"^^xsd:string ;
+.
+:Vertical_Line
+  rdf:type owl:Class ;
+  rdfs:label "Vertical Line"^^xsd:string ;
+  rdfs:subClassOf :Line ;
+  skos:broader :Line ;
+  skos:broader :Vertical_Extent ;
+  skos:prefLabel "Vertical Line"^^xsd:string ;
+.
+:Vertical_Line_Structure
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Doc 9881, Guidelines for Electronic Terrain, Obstacle and Aerodrome Mapping Information"^^xsd:string ;
+  rdfs:label "Vertical Line Structure"^^xsd:string ;
+  rdfs:subClassOf :Vertical_Structure_Geometry ;
+  skos:broader :Vertical_Structure_Geometry ;
+  skos:definition """Line structure of a defined vertical extend that is located within an area that extends from the edge(s) of the runway(s) to 90 m from the runway centreline(s) and for all other parts of the aerodrome movement area(s), 50 m from the edge(s) of the defined
+[ICAO]"""^^xsd:string ;
+  skos:narrower :Vertical_Line ;
+  skos:prefLabel "Vertical Line Structure"^^xsd:string ;
+.
+:Vertical_Path_Angle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Doc 8168 Vol 1, Flight Procedures"^^xsd:string ;
+  rdfs:label "Vertical Path Angle"^^xsd:string ;
+  rdfs:subClassOf :Vertical_Angle ;
+  skos:broader :Vertical_Angle ;
+  skos:definition "Angle of the published final approach descent in baro-VNAV procedures.  [ICAO]"^^xsd:string ;
+  skos:prefLabel "Vertical Path Angle"^^xsd:string ;
+.
+:Vertical_Plane
+  rdf:type owl:Class ;
+  rdfs:label "Vertical Plane"^^xsd:string ;
+  rdfs:subClassOf :Plane ;
+  skos:broader :Plane ;
+  skos:narrower :Fringe_Envelope ;
+  skos:prefLabel "Vertical Plane"^^xsd:string ;
+.
+:Vertical_Planes
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-587"^^xsd:string ;
+  dcterms:source "ICAO (AN 6/II)"^^xsd:string ;
+  rdfs:label "Vertical Planes"^^xsd:string ;
+  rdfs:subClassOf :Planes ;
+  skos:definition "Planes perpendicular to the horizontal plane.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Vertical Planes"^^xsd:string ;
+.
+:Vertical_Point_Structure
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Doc 9881, Guidelines for Electronic Terrain, Obstacle and Aeronautical Mapping Information"^^xsd:string ;
+  rdfs:label "Vertical Point Structure"^^xsd:string ;
+  rdfs:subClassOf :Vertical_Structure_Geometry ;
+  skos:broader :Vertical_Structure_Geometry ;
+  skos:definition """Point structure of a defined vertical extend that is located within an area that extends from the edge(s) of the runway(s) to 90 m from the runway centreline(s) and for all other parts of the aerodrome movement area(s), 50 m from the edge(s) of the define
+[ICAO]"""^^xsd:string ;
+  skos:prefLabel "Vertical Point Structure"^^xsd:string ;
+.
+:Vertical_Polygon_Structure
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Doc 9881, Guidelines for Electronic Terrain, Obstacle and Aeronautical Mapping Information"^^xsd:string ;
+  rdfs:label "Vertical Polygon Structure"^^xsd:string ;
+  rdfs:subClassOf :Vertical_Structure_Geometry ;
+  skos:definition """Polygonal structure of a defined vertical extend that is located within an area that extends from the edge(s) of the runway(s) to 90 m from the runway centreline(s) and for all other parts of the aerodrome movement area(s), 50 m from the edge(s) of the de
+[ICAO]"""^^xsd:string ;
+  skos:prefLabel "Vertical Polygon Structure"^^xsd:string ;
+.
+:Vertical_Structure_Element
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0   extracted from term \"Vertical Structure Part Geometry\" in AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  rdfs:label "Vertical Structure Element"^^xsd:string ;
+  rdfs:subClassOf :Vertical_Structure_Geometry ;
+  skos:definition "is a horizontal projection of an obstacle: point, line, or polygon   [AIXM 5.0]"^^xsd:string ;
+  skos:prefLabel "Vertical Structure Element"^^xsd:string ;
+.
+:Vertical_Structure_Geometry
+  rdf:type owl:Class ;
+  rdfs:label "Vertical Structure Geometry"^^xsd:string ;
+  rdfs:subClassOf :Structure_Geometry ;
+  skos:broader :Structure_Geometric_Area ;
+  skos:broader :Structure_Geometry ;
+  skos:narrower :Vertical_Line_Structure ;
+  skos:narrower :Vertical_Point_Structure ;
+  skos:narrower :Vertical_Structure_Element ;
+  skos:narrower :Vertical_Structure_Part_Geometry ;
+  skos:prefLabel "Vertical Structure Geometry"^^xsd:string ;
+.
+:Vertical_Structure_Part_Geometry
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  :dataElementLabelAIXM "VerticalStructurePartGeometry"^^xsd:string ;
+  rdfs:label "Vertical Structure Part Geometry"^^xsd:string ;
+  rdfs:subClassOf :Vertical_Structure_Geometry ;
+  skos:broader :Vertical_Structure_Geometry ;
+  skos:definition "A link that enables selecting between the three different possibilities for describing the horizontal projection of an obstacle: point, line or polygon.    [AIXM 5.0]"^^xsd:string ;
+  skos:editorialNote "In the term definition, it has \"horizontal projection\" - shouldn't it be \"vertical projection\" or \"vertical extent\"?"^^xsd:string ;
+  skos:prefLabel "Vertical Structure Part Geometry"^^xsd:string ;
+.
+:Volume
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Volume"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Space ;
+  skos:definition "3 : the amount of space occupied by a three-dimensional object as measured in cubic units : cubic capacity  [WEBSTER]"^^xsd:string ;
+  skos:definition "A closed three-dimensional Geometric Element.  [NAS EA OV-7]"^^xsd:string ;
+  skos:hasTopConcept :Space ;
+  skos:narrower :Airspace_Volume ;
+  skos:narrower :Cone ;
+  skos:narrower :Cube ;
+  skos:narrower :Cylinder ;
+  skos:narrower :Solid ;
+  skos:narrower :Sphere ;
+  skos:prefLabel "Volume"^^xsd:string ;
+.
+:Volume_Boundary_Surface
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Volume Boundary Surface"^^xsd:string ;
+  rdfs:subClassOf :Volume ;
+  skos:broader :Volume ;
+  skos:definition "A volume is constructed as an ordered set of connected surfaces which form a closed volume of space.   [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Volume Boundary Surface"^^xsd:string ;
+.
+:Zone_Polygon
+  rdf:type owl:Class ;
+  rdfs:label "Zone Polygon"^^xsd:string ;
+  rdfs:subClassOf :Polygon ;
+  skos:broader :Polygon ;
+  skos:narrower :Active_Monitored_Zone_Polygon ;
+  skos:prefLabel "Zone Polygon"^^xsd:string ;
+.
+:abscissa
+  rdf:type owl:Class ;
+  rdfs:label "abscissa"^^xsd:string ;
+  rdfs:subClassOf :x-Coordinate ;
+  skos:altLabel "North-South axis"^^xsd:string ;
+  skos:altLabel "North-South coordinate"^^xsd:string ;
+  skos:definition ": the horizontal coordinate of a point in a plane Cartesian coordinate system obtained by measuring parallel to the x-axis  compare ORDINATE  [WEBSTER] north-south"^^xsd:string ;
+  skos:definition "the x-coordinate is measured along the east–west axis  [http://support.esri.com/en/knowledgebase/GISDictionary/term/x,y,z%20coordinates]"^^xsd:string ;
+  skos:prefLabel "abscissa"^^xsd:string ;
+.
+:dataElementLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "dataElementLabel"^^xsd:string ;
+  rdfs:subPropertyOf skos:altLabel ;
+  skos:definition "An identified in the form of a coded name assigned to a single piece of data or datum (NOT information) that uniquely identifies it from all other data.  [Proposed]"^^xsd:string ;
+  skos:prefLabel "Data Element Label"^^xsd:string ;
+.
+:dataElementLabelAIXM
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "AIXM Data Element Label"^^xsd:string ;
+  rdfs:subPropertyOf :dataElementLabel ;
+  skos:prefLabel "AIXM Data Element Label"^^xsd:string ;
+.
+:dataElementLabelFIXM
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "FIXM Data Element Label"^^xsd:string ;
+  rdfs:subPropertyOf :dataElementLabel ;
+  skos:prefLabel "FIXM Data Element Label"^^xsd:string ;
+.
+:dataElementLabelTMXM
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "TMXM Data Element Label"^^xsd:string ;
+  rdfs:subPropertyOf :dataElementLabel ;
+  skos:prefLabel "TMXM Data Element Label"^^xsd:string ;
+.
+:ordinate
+  rdf:type owl:Class ;
+  rdfs:label "ordinate"^^xsd:string ;
+  rdfs:subClassOf :y-Coordinate ;
+  skos:altLabel "East-West axis"^^xsd:string ;
+  skos:altLabel "East-West coordinate"^^xsd:string ;
+  skos:definition ": a coordinate whose value is determined by measuring parallel to an x-axis; specifically : ABSCISSA  [WEBSTER] east-west"^^xsd:string ;
+  skos:definition "the y-coordinate is measured along the north–south axis [http://support.esri.com/en/knowledgebase/GISDictionary/term/x,y,z%20coordinates]"^^xsd:string ;
+  skos:prefLabel "ordinate"^^xsd:string ;
+.
+:x-Coordinate
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "x-Coordinate"^^xsd:string ;
+  rdfs:subClassOf :Coordinate ;
+  owl:equivalentClass :x-axis ;
+  skos:broader :Coordinate ;
+  skos:definition ": a coordinate whose value is determined by measuring parallel to an x-axis; specifically : ABSCISSA  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "x-Coordinate"^^xsd:string ;
+.
+:x-axis
+  rdf:type owl:Class ;
+  rdfs:label "x-axis"^^xsd:string ;
+  rdfs:subClassOf :Axis ;
+  owl:equivalentClass :x-Coordinate ;
+  skos:altLabel "East-West Axis"^^xsd:string ;
+  skos:definition """1 : the axis in a plane Cartesian coordinate system parallel to which abscissas are measured 
+2 : one of the three axes in a three-dimensional rectangular coordinate system  [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "x-axis"^^xsd:string ;
+.
+:y-Coordinate
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "y-Coordinate"^^xsd:string ;
+  rdfs:subClassOf :Coordinate ;
+  owl:equivalentClass :y-axis ;
+  skos:broader :Coordinate ;
+  skos:definition ": a coordinate whose value is determined by measuring parallel to a y-axis; specifically : ORDINATE   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "y-Coordinate"^^xsd:string ;
+.
+:y-axis
+  rdf:type owl:Class ;
+  rdfs:label "y-axis"^^xsd:string ;
+  rdfs:subClassOf :Axis ;
+  owl:equivalentClass :y-Coordinate ;
+  skos:altLabel "North-South Axis"^^xsd:string ;
+  skos:definition """1 : the axis of a plane Cartesian coordinate system parallel to which ordinates are measured 
+2 : one of the three axes in a three-dimensional rectangular coordinate system   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "y-axis"^^xsd:string ;
+.
+:z-Coordinate
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "z-Coordinate"^^xsd:string ;
+  rdfs:subClassOf :Coordinate ;
+  owl:equivalentClass :z-axis ;
+  skos:broader :Coordinate ;
+  skos:definition "... the z-coordinate measures height or elevation. [http://support.esri.com/en/knowledgebase/GISDictionary/term/x,y,z%20coordinates]"^^xsd:string ;
+  skos:definition ": a coordinate whose value is determined by measuring parallel to a z-axis  [WEBSTER]"^^xsd:string ;
+  skos:definition ": one of the axes in a three-dimensional rectangular coordinate system  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "z-Coordinate"^^xsd:string ;
+.
+:z-axis
+  rdf:type owl:Class ;
+  rdfs:label "z-axis"^^xsd:string ;
+  rdfs:subClassOf :Axis ;
+  owl:equivalentClass :z-Coordinate ;
+  skos:definition ": one of the axes in a three-dimensional rectangular coordinate system  {WEBSTER]"^^xsd:string ;
+  skos:prefLabel "z-axis"^^xsd:string ;
+.
+<http://www.opengis.net/ont/geosparql#Geometry>
+  owl:equivalentClass :Geometry ;
+.
+<http://www.opengis.net/ont/geosparql#SpatialObject>
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+skos:definition
+  owl:equivalentProperty rdfs:comment ;
+.

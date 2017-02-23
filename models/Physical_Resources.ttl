@@ -1,0 +1,2751 @@
+# baseURI: http://www.faa.gov/DRS/Physical_Resources
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.faa.gov/DRS/Aircraft
+# imports: http://www.faa.gov/DRS/Atmosphere-Airspace
+# imports: http://www.faa.gov/DRS/Conveyance
+# imports: http://www.faa.gov/DRS/Infrastructure
+# imports: http://www.faa.gov/DRS/Landcraft
+# imports: http://www.faa.gov/DRS/Spacecraft
+# imports: http://www.faa.gov/DRS/Watercraft
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://www.faa.gov/DRS/Physical_Resources#> .
+@prefix Conveyance: <http://www.faa.gov/DRS/Conveyance#> .
+@prefix Infrastructure: <http://www.faa.gov/DRS/Infrastructure#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dcterms:author
+  skos:definition """1 a : one that originates or creates : SOURCE <software authors> <film authors> <the author of this crime> b capitalized : GOD 1 
+2 : the writer of a literary work (as a book)   [WEBSTER]"""^^xsd:string ;
+.
+<http://www.faa.gov/DRS/Aircraft#Battery>
+  owl:equivalentClass :Battery ;
+.
+<http://www.faa.gov/DRS/Aircraft#Dangerous_Goods>
+  owl:equivalentClass :Dangerous_Goods ;
+.
+<http://www.faa.gov/DRS/Aircraft#Dangerous_Goods_Package>
+  owl:equivalentClass :Dangerous_Goods_Package ;
+.
+Conveyance:Container
+  rdfs:subClassOf :Container ;
+.
+Conveyance:Conveyance
+  skos:broader Conveyance:Device ;
+  skos:hasTopConcept :Physical_Resources ;
+.
+Conveyance:Device
+  rdfs:subClassOf :Conveyance ;
+  skos:broader Conveyance:Conveyance ;
+.
+Infrastructure:Infrastructure
+  skos:hasTopConcept :Physical_Resources ;
+.
+Infrastructure:Physical_Resources
+  rdfs:subClassOf :Physical_Resources ;
+  owl:equivalentClass :Physical_Resources ;
+  skos:broader :Infrastructure ;
+  skos:broader :Physical_Resources ;
+  skos:hasTopConcept :Resources ;
+  skos:narrower :Architecture ;
+  skos:narrower :Conveyance ;
+  skos:narrower :Inventory ;
+  skos:narrower :Item ;
+  skos:narrower :Materials ;
+  skos:narrower :Materiel ;
+  skos:narrower :Physical_Resource ;
+  skos:narrower :Physical_Resource_Group ;
+  skos:narrower :Property ;
+  skos:narrower :Stock ;
+  skos:topConceptOf :Physical_Resources ;
+.
+Infrastructure:Resources
+  skos:broader Infrastructure:Resources ;
+.
+<http://www.faa.gov/DRS/Landcraft#Conveyance>
+  skos:topConceptOf :Conveyance ;
+.
+<http://www.faa.gov/DRS/Physical_Resources>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dcterms: ;
+  owl:imports <http://www.faa.gov/DRS/Aircraft> ;
+  owl:imports <http://www.faa.gov/DRS/Atmosphere-Airspace> ;
+  owl:imports <http://www.faa.gov/DRS/Conveyance> ;
+  owl:imports <http://www.faa.gov/DRS/Infrastructure> ;
+  owl:imports <http://www.faa.gov/DRS/Landcraft> ;
+  owl:imports <http://www.faa.gov/DRS/Spacecraft> ;
+  owl:imports <http://www.faa.gov/DRS/Watercraft> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Acoustic_Insulation
+  rdf:type owl:Class ;
+  rdfs:label "Acoustic Insulation"^^xsd:string ;
+  rdfs:subClassOf :Insulation ;
+  skos:altLabel "Sound Insulation"^^xsd:string ;
+  skos:prefLabel "Acoustic Insulation"^^xsd:string ;
+.
+:Acoustic_Insulation_Materials
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Acoustic Insulation Materials"^^xsd:string ;
+  rdfs:subClassOf :Insulation_Materials ;
+  skos:broader :Insulation_Materials ;
+  skos:prefLabel "Acoustic Insulation Materials"^^xsd:string ;
+.
+:Agent
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Agent"^^xsd:string ;
+  rdfs:subClassOf <http://www.faa.gov/DRS/Systems#Substance> ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader <http://www.faa.gov/DRS/Systems#Substance> ;
+  skos:definition """1 : one that acts or exerts power 
+2 a : something that produces or is capable of producing an effect : an active or efficient cause b : a chemically, physically, or biologically active principle 
+3 : a means or instrument by which a guiding intelligence achieves a result 
+4 : one who is authorized to act for or in the place of another: as a : a representative, emissary, or official of a government <crown agent> <federal agent> b : one engaged in undercover activities (as espionage) : SPY <secret agent> c : a business representative (as of an athlete or entertainer) <a theatrical agent> 
+5 : a computer application designed to automate certain tasks (as gathering information online)    [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Agent"^^xsd:string ;
+.
+:Airborne_Object
+  rdf:type owl:Class ;
+  rdfs:label "Airborne Object"^^xsd:string ;
+  rdfs:subClassOf :Object ;
+  skos:broader :Object ;
+  skos:definition "Something material that has been detected as being located in the atmosphere; but cannot be readily identified  [Proposed]"^^xsd:string ;
+  skos:narrower :Fireworks ;
+  skos:narrower :Unidentified_Flying_Object ;
+  skos:prefLabel "Airborne Object"^^xsd:string ;
+.
+:Aircraft_De-Icing_Fluid_Type
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO (2010) Official term and definition added to Annex 15 by Amdt 36 (2010)"^^xsd:string ;
+  dcterms:source "AIFDD  Aeronautical Information Feature Data Dictionary (AIFDD)"^^xsd:string ;
+  rdfs:label "Aircraft De-Icing Fluid Type"^^xsd:string ;
+  rdfs:subClassOf :De-Icing_Fluid_Type ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            <http://www.faa.gov/DRS/Physical_Resources#SAE_Aircraft_De-Icing.Anti-Icing_Fluid_Type_I>
+            <http://www.faa.gov/DRS/Physical_Resources#SAE_Aircraft_De-Icing.Anti-Icing_Fluid_Type_II>
+            <http://www.faa.gov/DRS/Physical_Resources#SAE_Aircraft_De-Icing.Anti-Icing_Fluid_Type_III>
+          ) ;
+      ]
+    ) ;
+  skos:broader :De-Icing_Fluid_Type ;
+  skos:definition "The type(s) of fluid available for removal or prevention of ice, snow, shush or frost build-up from aircraft or aircraft engine on the ground.   [ICAO]"^^xsd:string ;
+  skos:narrower <http://www.faa.gov/DRS/Physical_Resources#SAE_Aircraft_De-Icing.Anti-Icing_Fluid_Type_I> ;
+  skos:narrower <http://www.faa.gov/DRS/Physical_Resources#SAE_Aircraft_De-Icing.Anti-Icing_Fluid_Type_II> ;
+  skos:narrower <http://www.faa.gov/DRS/Physical_Resources#SAE_Aircraft_De-Icing.Anti-Icing_Fluid_Type_III> ;
+  skos:prefLabel "Aircraft De-Icing Fluid Type"^^xsd:string ;
+.
+:Aircraft_Engine_Fuel_Type
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft Engine Fuel Type"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_Powerplant_Fuel_Type ;
+  rdfs:subClassOf :Engine_Fuel_Type ;
+  skos:broader :Aircraft_Powerplant_Fuel_Type ;
+  skos:broader :Engine_Fuel_Type ;
+  skos:prefLabel "Aircraft Engine Fuel Type"^^xsd:string ;
+.
+:Aircraft_Fuel
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft Fuel"^^xsd:string ;
+  rdfs:subClassOf :Conveyance_Fuel ;
+  skos:broader :Conveyance_Fuel ;
+  skos:prefLabel "Aircraft Fuel"^^xsd:string ;
+.
+:Aircraft_Fuel_Type
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA   https://en.wikipedia.org/wiki/Aviation_fuel#CNG_.26_LNG"^^xsd:string ;
+  rdfs:label "Aircraft Fuel Type"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_Fuel ;
+  rdfs:subClassOf :Conveyance_Fuel_Type ;
+  skos:broader :Aircraft_Fuel ;
+  skos:broader :Conveyance_Fuel_Type ;
+  skos:definition """The production of aviation fuel falls into two categories: fuel suitable for turbine engines and fuel suitable for internal combustion engines. [Aviation Gasoline and Jet Fuel]  There are international specifications for each.   [WIKIPEDIA]
+"""^^xsd:string ;
+  skos:prefLabel "Aircraft Fuel Type"^^xsd:string ;
+.
+:Aircraft_Powerplant_Fuel_Type
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft Powerplant Fuel Type"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_Propulsion_System_Fuel_Type ;
+  skos:broader :Aircraft_Propulsion_System_Fuel_Type ;
+  skos:prefLabel "Aircraft Powerplant Fuel Type"^^xsd:string ;
+.
+:Aircraft_Propulsion_System_Fuel_Type
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft Propulsion System Fuel Type"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_System_Fuel_Type ;
+  skos:broader :Aircraft_System_Fuel_Type ;
+  skos:prefLabel "Aircraft Propulsion System Fuel Type"^^xsd:string ;
+.
+:Aircraft_System_Fuel_Type
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft System Fuel Type"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_Fuel_Type ;
+  skos:broader :Aircraft_Fuel_Type ;
+  skos:prefLabel "Aircraft System Fuel Type"^^xsd:string ;
+.
+:Aramid_Fiber_Reinforced_Plastic
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "AFRP"^^xsd:string ;
+  rdfs:label "Aramid Fiber Reinforced Plastic"^^xsd:string ;
+  rdfs:subClassOf :Fiber_Reinforced_Plastic ;
+  skos:broader :Fiber_Reinforced_Plastic ;
+  skos:prefLabel "Aramid Fiber Reinforced Plastic"^^xsd:string ;
+.
+:Architecture
+  rdf:type owl:Class ;
+  rdfs:label "Architecture"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Physical_Resources ;
+  skos:prefLabel "Architecture"^^xsd:string ;
+.
+:Arrangement
+  rdf:type owl:Class ;
+  rdfs:label "Arrangement"^^xsd:string ;
+  rdfs:subClassOf :Form ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Form ;
+  skos:prefLabel "Arrangement"^^xsd:string ;
+.
+:Artifact
+  rdf:type owl:Class ;
+  rdfs:label "Artifact"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass :Man-Made_Feature ;
+  owl:equivalentClass :Man-Made_Resource ;
+  skos:broader :Physical_Resource ;
+  skos:prefLabel "Artifact"^^xsd:string ;
+.
+:Assembly
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Assembly"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Physical_Resource_Structure ;
+  skos:definition "6 a : the fitting together of manufactured parts into a complete machine, structure, or unit of a machine b : a collection of parts so assembled   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Assembly"^^xsd:string ;
+  skos:scopeNote "An Assembly contributes to the Structure of a whole Thing, and especially a Physical Resource.  An Assembly may be a Structural Unit of a whole Thing or Physical Resource.  An Assembly is a group of two or more Components that are dependent on each other.  An Assembly is a part of the whole Thing or Physical Resource. [Proposed]"^^xsd:string ;
+.
+:Automatic_De-Ice_and_Inhibitor
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Automatic De-Ice and Inhibitor"^^xsd:string ;
+  rdfs:subClassOf :De-Icing_Fluid ;
+  rdfs:subClassOf :Inhibitor ;
+  skos:broader :De-Icing_Fluid ;
+  skos:broader :Inhibitor ;
+  skos:prefLabel "Automatic De-Ice and Inhibitor"^^xsd:string ;
+.
+:Aviation_Fuel
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://en.wikipedia.org/wiki/Aviation_fuel"^^xsd:string ;
+  rdfs:label "Aviation Fuel"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_Fuel ;
+  skos:broader :Aircraft_Fuel ;
+  skos:definition "Aviation fuel is a specialized type of petroleum-based fuel used to power aircraft. It is generally of a higher quality than fuels used in less critical applications, such as heating or road transport, and often contains additives to reduce the risk of icing or explosion due to high temperature, among other properties.[1]  [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Aviation Fuel"^^xsd:string ;
+  skos:scopeNote "Most aviation fuels available for aircraft are kinds of petroleum spirit used in engines with spark plugs (i.e. piston and Wankel rotary engines), or fuel for jet turbine engines, which is also used in diesel aircraft engines.[1]   [WIKIPEDIA]"^^xsd:string ;
+.
+:Aviation_Fuel_Type
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM 5.1 retrieved on 11-28-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  :dataElementLabelAIXM "Fuel"^^xsd:string ;
+  rdfs:label "Aviation Fuel Type"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_Fuel_Type ;
+  rdfs:subClassOf :Fuel_Type ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Aviation_Gasoline
+            :Aviation_Kerosene
+            :Liquid_Gas
+            :Diesel
+          ) ;
+      ]
+    ) ;
+  skos:broader :Aircraft_Fuel_Type ;
+  skos:broader :Fuel_Type ;
+  skos:definition "Fuel types used for aircraft/helicopters.    [AIXM 5.0]  [AIXM 5.1]"^^xsd:string ;
+  skos:narrower :Aviation_Gasoline ;
+  skos:narrower :Aviation_Kerosene ;
+  skos:narrower :Jet_Fuel ;
+  skos:narrower :Turbine_Fuel ;
+  skos:prefLabel "Aviation Fuel Type"^^xsd:string ;
+.
+:Aviation_Gasoline
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA   https://en.wikipedia.org/wiki/Aviation_fuel#CNG_.26_LNG"^^xsd:string ;
+  vaem:abbreviation "avgas"^^xsd:string ;
+  rdfs:label "Aviation Gasoline"@en-US ;
+  rdfs:label "Aviation Spirit"@en ;
+  rdfs:subClassOf :Aviation_Fuel_Type ;
+  rdfs:subClassOf :Gasoline ;
+  skos:altLabel "100-LL"^^xsd:string ;
+  skos:altLabel "100-Low Lead"^^xsd:string ;
+  skos:altLabel "avgas"^^xsd:string ;
+  skos:broader :Aviation_Fuel_Type ;
+  skos:broader :Gasoline ;
+  skos:definition "Aviation gasoline, often referred to as \"avgas\" or 100-LL (low-lead), is a highly refined form of gasoline for aircraft, with an emphasis on purity, anti-knock characteristics and minimization of spark plug fouling. Avgas must meet performance guidelines for both the rich mixture condition required for take-off power settings and the leaner mixtures used during cruise to reduce fuel consumption.    [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Aviation Gasoline"@en-US ;
+  skos:prefLabel "Aviation Spirit"@en ;
+  skos:scopeNote "Avgas is sold in much lower volume than jet fuel, but to many more individual aircraft operators; whereas jet fuel is sold in high volume to large aircraft operators, such as airlines and military.[9]    [WIKIPEDIA]"^^xsd:string ;
+.
+:Aviation_Kerosene
+  rdf:type owl:Class ;
+  rdfs:label "Aviation Kerosene"^^xsd:string ;
+  rdfs:subClassOf :Aviation_Fuel_Type ;
+  rdfs:subClassOf :Kerosene ;
+  skos:broader :Aviation_Fuel_Type ;
+  skos:broader :Kerosene ;
+  skos:prefLabel "Aviation Kerosene"^^xsd:string ;
+.
+:Aviation_Turbine_Fuel
+  rdf:type :Aviation_Fuel_Type ;
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://en.wikipedia.org/wiki/Jet_fuel"^^xsd:string ;
+  vaem:abbreviation "avtur"^^xsd:string ;
+  vaem:acronym "ATF"^^xsd:string ;
+  rdfs:label "Aviation Turbine Fuel"^^xsd:string ;
+  rdfs:subClassOf :Aviation_Fuel_Type ;
+  rdfs:subClassOf :Turbine_Fuel ;
+  owl:equivalentClass :Jet_Fuel ;
+  skos:altLabel "Jet_Fuel"^^xsd:string ;
+  skos:definition "Jet fuel, aviation turbine fuel (ATF), or avtur, is a type of aviation fuel designed for use in aircraft powered by gas-turbine engines. It is colorless to straw-colored in appearance.  [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Aviation Turbine Fuel"^^xsd:string ;
+.
+:Bag
+  rdf:type owl:Class ;
+  rdfs:label "Bag"^^xsd:string ;
+  rdfs:subClassOf :Baggage ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Baggage ;
+  skos:prefLabel "Bag"^^xsd:string ;
+.
+:Baggage
+  rdf:type owl:Class ;
+  rdfs:label "Baggage"^^xsd:string ;
+  rdfs:subClassOf :Cargo ;
+  owl:unionOf (
+      :Bag
+    ) ;
+  skos:broader :Cargo ;
+  skos:prefLabel "Baggage"^^xsd:string ;
+.
+:Batteries
+  rdf:type owl:Class ;
+  rdfs:label "Batteries"^^xsd:string ;
+  rdfs:subClassOf :Dangerous_Goods ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Battery
+    ) ;
+  skos:broader :Dangerous_Goods ;
+  skos:narrower :Battery ;
+  skos:prefLabel "Batteries"^^xsd:string ;
+.
+:Battery
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Battery"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Batteries ;
+  skos:definition "4 a : a combination of apparatus for producing a single electrical effect b : a group of two or more cells connected together to furnish electric current; also : a single cell that furnishes electric current <a flashlight battery>   [WEBSTER]"^^xsd:string ;
+  skos:narrower :Lithium_Battery ;
+  skos:prefLabel "Battery"^^xsd:string ;
+.
+:Carbon_Fiber_Reinforced_Plastic
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "CFRP"^^xsd:string ;
+  rdfs:label "Carbon Fiber Reinforced Plastic"^^xsd:string ;
+  rdfs:subClassOf :Fiber_Reinforced_Plastic ;
+  skos:broader :Fiber_Reinforced_Plastic ;
+  skos:prefLabel "Carbon Fiber Reinforced Plastic"^^xsd:string ;
+.
+:Cargo
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Cargo"^^xsd:string ;
+  rdfs:subClassOf :Load ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Load ;
+  skos:definition ": the goods or merchandise conveyed in a ship, airplane, or vehicle : FREIGHT"^^xsd:string ;
+  skos:prefLabel "Cargo"^^xsd:string ;
+.
+:Cargo_Container
+  rdf:type owl:Class ;
+  rdfs:label "Cargo Container"^^xsd:string ;
+  rdfs:subClassOf :Container ;
+  owl:equivalentClass Conveyance:Cargo_Container ;
+  skos:broader :Container ;
+  skos:narrower :Overpack ;
+  skos:prefLabel "Cargo Container"^^xsd:string ;
+.
+:Cargo_Package
+  rdf:type owl:Class ;
+  rdfs:label "Cargo Package"^^xsd:string ;
+  rdfs:subClassOf :Cargo ;
+  rdfs:subClassOf :Package ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Cargo
+            :Package
+          ) ;
+      ]
+    ) ;
+  skos:broader :Cargo ;
+  skos:broader :Package ;
+  skos:narrower :Dangerous_Goods_Package ;
+  skos:prefLabel "Cargo Package"^^xsd:string ;
+.
+:Chemical_Element
+  rdf:type owl:Class ;
+  rdfs:label "Chemical Element"^^xsd:string ;
+  rdfs:subClassOf :Element ;
+  skos:broader :Element ;
+  skos:prefLabel "Chemical Element"^^xsd:string ;
+.
+:Class_2_Electronic_Flight_Bag
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:abbreviation "Class 2 EFB"^^xsd:string ;
+  rdfs:label "Class 2 Electronic Flight Bag"^^xsd:string ;
+  rdfs:subClassOf :Electronic_Flight_Bag ;
+  skos:broader :Electronic_Flight_Bag ;
+  skos:prefLabel "Class 2 Electronic Flight Bag"^^xsd:string ;
+.
+:Class_3_Electronic_Flight_Bag
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:abbreviation "Class 3 EFB"^^xsd:string ;
+  rdfs:label "Class 3 Electronic Flight Bag"^^xsd:string ;
+  rdfs:subClassOf :Electronic_Flight_Bag ;
+  skos:broader :Electronic_Flight_Bag ;
+  skos:prefLabel "Class 3 Electronic Flight Bag"^^xsd:string ;
+.
+:Commissary_Supplies
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Annex 9, Facilitation"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-170"^^xsd:string ;
+  dcterms:source """ICAO  (AN 9)
+Official definition added to AN 9 by Amdt 18 (28/11/2002), and modified to AN 9 by Amdt 19 (24/11/2005)"""^^xsd:string ;
+  rdfs:label "Commissary Supplies"^^xsd:string ;
+  rdfs:subClassOf :Supplies ;
+  skos:broader :Supplies ;
+  skos:definition "Items, either disposable or intended for multiple use, that are used by the aircraft operator for provision of services during flights, in particular for catering, and for the comfort of passengers.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Commissary Supplies"^^xsd:string ;
+.
+:Company_Material
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA 14 CFR Part 121  Section 1001, Applicability and definitions   http://www.ecfr.gov/cgi-bin/text-idx?SID=ab0f3414010623fb7afca77715f4f197&mc=true&node=pt14.3.121&rgn=div5#se14.3.121_1432"^^xsd:string ;
+  vaem:abbreviation "COMAT"^^xsd:string ;
+  rdfs:label "Company Material"^^xsd:string ;
+  rdfs:subClassOf :Material ;
+  skos:broader :Material ;
+  skos:definition "Material owned or used by a certificate holder.   {FAA 14 CFR Part 121]"^^xsd:string ;
+  skos:prefLabel "Company Material"^^xsd:string ;
+.
+:Company_Materials
+  rdf:type owl:Class ;
+  rdfs:label "Company Materials"^^xsd:string ;
+  rdfs:subClassOf :Materials ;
+  owl:unionOf (
+      :Company_Material
+    ) ;
+  skos:broader :Materials ;
+  skos:prefLabel "Company Materials"^^xsd:string ;
+.
+:Component
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Component"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Assembly ;
+  skos:definition "1 : a constituent part : INGREDIENT <an important component of the program> <stereo components>  [WEBSTER]"^^xsd:string ;
+  skos:definition "COMPONENT stresses its separate entity or distinguishable character <the components of a stereo system>. [WEBSTER]"^^xsd:string ;
+  skos:narrower :Part ;
+  skos:prefLabel "Component"^^xsd:string ;
+  skos:scopeNote "A Component contributes to the Structure of a whole Thing, and especially a Physical Resource.  A Component may be a Structural Unit of a whole Thing or Physical Resource.  A Component is a group of two or more Parts that are dependent on each other.  A Component may be a part of an Assembly. If a Component is not a part of an Assembly, then it is a part of the whole Thing or Physical Resource. [Proposed]"^^xsd:string ;
+.
+:Composite
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Composite"^^xsd:string ;
+  rdfs:subClassOf :Solid_Material ;
+  owl:unionOf (
+      :Substances
+    ) ;
+  skos:definition "4 : a solid material which is composed of two or more substances having different physical characteristics and in which each substance retains its identity while contributing desirable properties to the whole; especially : a structural material made of plastic within which a fibrous material (as silicon carbide) is embedded  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Composite"^^xsd:string ;
+.
+:Composite_Material
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Composite Material"^^xsd:string ;
+  rdfs:subClassOf :Physical_Material ;
+  skos:broader :Physical_Material ;
+  skos:prefLabel "Composite Material"^^xsd:string ;
+.
+:Composite_Materials
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Composite Materials"^^xsd:string ;
+  rdfs:subClassOf :Physical_Materials ;
+  owl:unionOf (
+      :Composite_Material
+    ) ;
+  skos:broader :Physical_Materials ;
+  skos:prefLabel "Composite Materials"^^xsd:string ;
+.
+:Composite_Structure
+  rdf:type owl:Class ;
+  rdfs:label "Composite Structure"^^xsd:string ;
+  rdfs:subClassOf :Structure ;
+  owl:equivalentClass <http://www.faa.gov/DRS/Aircraft#Composite_Structure> ;
+  skos:prefLabel "Composite Structure"^^xsd:string ;
+.
+:Compound
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Compound"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "2 : something formed by a union of elements or parts; especially : a distinct substance formed by chemical union of two or more ingredients in definite proportion by weight  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Compound"^^xsd:string ;
+.
+:Configuration
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Configuration"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Configuration_Item
+    ) ;
+  skos:definition "1 a : relative arrangement of parts or elements: as (1) : SHAPE (2) : contour of land <configuration of the mountains> (3) : functional arrangement <a small business computer system in its simplest configuration> b : something (as a figure, contour, pattern, or apparatus) that results from a particular arrangement of parts or components c : the stable structural makeup of a chemical compound especially with reference to the space relations of the constituent atoms   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Configuration"^^xsd:string ;
+.
+:Configuration_Item
+  rdf:type owl:Class ;
+  rdfs:label "Configuration Item"^^xsd:string ;
+  rdfs:subClassOf :Item ;
+  skos:prefLabel "Configuration Item"^^xsd:string ;
+.
+:Constituent
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Constituent"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Material ;
+  skos:definition """3 : an essential part : COMPONENT, ELEMENT 
+4 : a structural unit of a definable syntactic, semantic, or phonological category that consists of one or more linguistic elements (as words, morphemes, or features) and that can occur as a component of a larger construction    [WEBSTER]"""^^xsd:string ;
+  skos:definition "CONSTITUENT stresses its essential and formative character <the constituents of a chemical compound>. [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Constituent"^^xsd:string ;
+.
+:Consumable
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Consumable"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Material ;
+  skos:definition ": something (as food or fuel) that is consumable  usually used in plural  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Consumable"^^xsd:string ;
+.
+:Consumable_Natural_Resource
+  rdf:type owl:Class ;
+  rdfs:label "Consumable Natural Resource"^^xsd:string ;
+  rdfs:subClassOf :Consumable_Physical_Resource ;
+  skos:broader :Consumable_Physical_Resource ;
+  skos:prefLabel "Consumable Natural Resource"^^xsd:string ;
+.
+:Consumable_Physical_Resource
+  rdf:type owl:Class ;
+  rdfs:label "Consumable Physical Resource"^^xsd:string ;
+  rdfs:subClassOf :Consumable_Resource ;
+  skos:broader :Consumable_Resource ;
+  skos:prefLabel "Consumable Physical Resource"^^xsd:string ;
+.
+:Consumable_Resource
+  rdf:type owl:Class ;
+  rdfs:label "Consumable Resource"^^xsd:string ;
+  rdfs:subClassOf :Consumable ;
+  skos:broader :Consumable ;
+  skos:prefLabel "Consumable Resource"^^xsd:string ;
+.
+:Container
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Container"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Artifact ;
+  skos:definition ": one that contains : as a : a receptacle (as a box or jar) for holding goods b : a portable compartment in which freight is placed (as on a train or ship) for convenience of movement  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Container"^^xsd:string ;
+.
+:Conveyance
+  rdf:type rdfs:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Conveyance"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:equivalentClass Conveyance:Conveyance ;
+  skos:broader :Physical_Resources ;
+  skos:definition "2 : a means or way of conveying : as a : an instrument by which title to property is conveyed b : a means of transport : VEHICLE    [WEBSTER]"^^xsd:string ;
+  skos:hasTopConcept :Physical_Resources ;
+  skos:narrower <http://www.faa.gov/DRS/Aircraft#Conveyance> ;
+  skos:narrower <http://www.faa.gov/DRS/Landcraft#Conveyance> ;
+  skos:narrower <http://www.faa.gov/DRS/Spacecraft#Conveyance> ;
+  skos:narrower <http://www.faa.gov/DRS/Watercraft#Conveyance> ;
+  skos:prefLabel "Conveyance"^^xsd:string ;
+.
+:Conveyance_Fuel
+  rdf:type owl:Class ;
+  rdfs:label "Conveyance Fuel"^^xsd:string ;
+  rdfs:subClassOf :Fuel ;
+  skos:broader :Fuel ;
+  skos:prefLabel "Conveyance Fuel"^^xsd:string ;
+.
+:Conveyance_Fuel_Type
+  rdf:type owl:Class ;
+  rdfs:label "Conveyance Fuel Type"^^xsd:string ;
+  rdfs:subClassOf :Conveyance_Fuel ;
+  rdfs:subClassOf :Fuel_Type ;
+  skos:broader :Conveyance_Fuel ;
+  skos:broader :Fuel_Type ;
+  skos:prefLabel "Conveyance Fuel Type"^^xsd:string ;
+.
+:Cultural_Feature
+  rdf:type owl:Class ;
+  rdfs:label "Cultural Feature"^^xsd:string ;
+  rdfs:subClassOf :Man-Made_Feature ;
+  skos:prefLabel "Cultural Feature"^^xsd:string ;
+.
+:Cultural_Features
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Doc 9881, Guidelines for Electronic Terrain, Obstacle and Aerodrome Mapping Information"^^xsd:string ;
+  dcterms:bibliographicCitation "RTCA/DO-276B.  User Requirements for Terrain and Obstacle Data, Draft; February 17, 2011"^^xsd:string ;
+  rdfs:label "Cultural Features"^^xsd:string ;
+  rdfs:subClassOf :Man-Made_Features ;
+  owl:unionOf (
+      :Cultural_Feature
+    ) ;
+  skos:definition "Manmade morphological formations that include transportation systems (roads and trails; railroads and pipelines; runways; transmission lines), and other manmade structures, (buildings, houses, schools, churches, hospitals).   [RTCA]  [ICAO]"^^xsd:string ;
+  skos:prefLabel "Cultural Features"^^xsd:string ;
+.
+:Culture
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIS/AIM Training Guidance Manual, Version 1.0 DRAFT, as of 5/18/2011, p. 37."^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Annex 15, Aeronautical Information Services"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Annex 4, Aeronautical Charts"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-189"^^xsd:string ;
+  dcterms:bibliographicCitation "RTCA/DO-276B.  User Requirements for Terrain and Obstacle Data, Draft; February 17, 2011"^^xsd:string ;
+  dcterms:source """ICAO  (AN 4; AN 15)
+Official definition added to AN 15 by Amdt 33 (25/11/2004) and modified by Amdt 53 to AN 4 (25/11/2004)"""^^xsd:string ;
+  dcterms:source "ICAO Annex 4"^^xsd:string ;
+  rdfs:label "Culture"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass :Man-Made_Feature ;
+  skos:broader :Physical_Resources ;
+  skos:definition "All man-made features constructed on the surface of the Earth, such as cities, railways and canals.  [ICAO]  {RTCA]  [AIS/AIM]"^^xsd:string ;
+  skos:prefLabel "Culture"^^xsd:string ;
+.
+:Dangerous_Goods
+  rdf:type owl:Class ;
+  rdfs:label "Dangerous Goods"^^xsd:string ;
+  rdfs:subClassOf :Goods ;
+  skos:broader :Goods ;
+  skos:prefLabel "Dangerous Goods"^^xsd:string ;
+.
+:Dangerous_Goods_Cargo_Package
+  rdf:type owl:Class ;
+  rdfs:label "Dangerous Goods Cargo Package"^^xsd:string ;
+  rdfs:subClassOf :Cargo_Package ;
+  rdfs:subClassOf :Dangerous_Goods_Package ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Dangerous_Goods_Package
+            :Cargo_Package
+          ) ;
+      ]
+    ) ;
+  skos:broader :Cargo_Package ;
+  skos:broader :Dangerous_Goods_Package ;
+  skos:prefLabel "Dangerous Goods Cargo Package"^^xsd:string ;
+.
+:Dangerous_Goods_Package
+  rdf:type owl:Class ;
+  rdfs:label "Dangerous Goods Package"^^xsd:string ;
+  rdfs:subClassOf :Dangerous_Goods ;
+  rdfs:subClassOf :Package ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Dangerous_Goods
+            :Package
+          ) ;
+      ]
+    ) ;
+  skos:broader :Cargo_Package ;
+  skos:broader :Dangerous_Goods_Package_Group ;
+  skos:narrower :Dangerous_Goods_Type_of_Packaging ;
+  skos:prefLabel "Dangerous Goods Package"^^xsd:string ;
+.
+:Dangerous_Goods_Package_Group
+  rdf:type owl:Class ;
+  rdfs:label "Dangerous Goods Package Group"^^xsd:string ;
+  rdfs:subClassOf :Dangerous_Goods ;
+  rdfs:subClassOf :Package_Group ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Dangerous_Goods
+            :Package_Group
+          ) ;
+      ]
+    ) ;
+  owl:unionOf (
+      :Dangerous_Goods_Package
+    ) ;
+  skos:broader :Dangerous_Goods ;
+  skos:broader :Package_Group ;
+  skos:narrower :Dangerous_Goods_Package ;
+  skos:prefLabel "Dangerous Goods Package Group"^^xsd:string ;
+.
+:Dangerous_Goods_Type_of_Packaging
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA 49 CFR 172/173/175"^^xsd:string ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  dcterms:bibliographicCitation "IATA Dangerous Goods Regulations, January 2011"^^xsd:string ;
+  dcterms:bibliographicCitation "IATA SDDG Specification v. 2.1"^^xsd:string ;
+  dcterms:bibliographicCitation "IATA Shipper's Declaration for Dangerous Goods"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Technical Instructions for the Safe Transport of Dangerous Goods by Air (Doc 9284)"^^xsd:string ;
+  dcterms:hasFormat "Character String"^^xsd:string ;
+  dcterms:isPartOf "Dangerous Goods Package Detals"^^xsd:string ;
+  dcterms:references "Fixm.FlightObject.Cargo.Packaging.DangerousGoodsPackage.typeOfPackaging"^^xsd:string ;
+  rdfs:label "Dangerous Goods Type of Packaging"^^xsd:string ;
+  rdfs:subClassOf :Dangerous_Goods_Package ;
+  skos:altLabel "Package Type"^^xsd:string ;
+  skos:altLabel "Type of Packaging"^^xsd:string ;
+  skos:broader :Dangerous_Goods_Package ;
+  skos:definition "The material or container in which the dangerous good is packaged.   [FIXM 3.0]"^^xsd:string ;
+  skos:prefLabel "Dangerous Goods Type of Packaging"^^xsd:string ;
+  skos:scopeNote "IATA model ram:SpecifiedLogisticsPackage   /ram:UsedSupplyChainPackaging  /ram:Type"^^xsd:string ;
+  skos:scopeNote "This element contains free-form text.  [FIXM 3.0]"^^xsd:string ;
+.
+:De-Icing_Fluid
+  rdf:type owl:Class ;
+  rdfs:label "De-Icing Fluid"^^xsd:string ;
+  rdfs:subClassOf :Fluid ;
+  skos:broader :Fluid ;
+  skos:narrower :De-Icing_Fluid_Type ;
+  skos:prefLabel "De-Icing Fluid"^^xsd:string ;
+.
+:De-Icing_Fluid_Type
+  rdf:type owl:Class ;
+  rdfs:label "De-Icing Fluid Type"^^xsd:string ;
+  rdfs:subClassOf :De-Icing_Fluid ;
+  skos:broader :De-Icing_Fluid ;
+  skos:narrower :Aircraft_De-Icing_Fluid_Type ;
+  skos:prefLabel "De-Icing Fluid Type"^^xsd:string ;
+.
+:Depressant
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Depressant"^^xsd:string ;
+  rdfs:subClassOf :Agent ;
+  rdfs:subClassOf :Drug ;
+  skos:broader :Agent ;
+  skos:broader :Drug ;
+  skos:definition ": one that depresses; specifically : an agent that reduces a bodily functional activity or an instinctive desire (as appetite)   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Depressant"^^xsd:string ;
+.
+:Device
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Device"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass Conveyance:Device ;
+  owl:equivalentClass <http://www.faa.gov/DRS/Systems#Device> ;
+  skos:broader <http://www.faa.gov/DRS/Systems#Technology> ;
+  skos:prefLabel "Device"^^xsd:string ;
+.
+:Device_Part
+  rdf:type owl:Class ;
+  rdfs:label "Device Part"^^xsd:string ;
+  rdfs:subClassOf :System_Part ;
+  skos:broader :System_Part ;
+  skos:prefLabel "Device Part"^^xsd:string ;
+.
+:Device_Structure
+  rdf:type owl:Class ;
+  rdfs:label "Device Structure"^^xsd:string ;
+  rdfs:subClassOf :Device ;
+  rdfs:subClassOf <http://www.faa.gov/DRS/Systems#Technology_Structure> ;
+  skos:broader :Device ;
+  skos:broader <http://www.faa.gov/DRS/Systems#Technology_Structure> ;
+  skos:prefLabel "Device Structure"^^xsd:string ;
+.
+:Diesel
+  rdf:type owl:Class ;
+  rdfs:label "Diesel"^^xsd:string ;
+  rdfs:subClassOf :Fuel_Type ;
+  skos:broader :Fuel_Type ;
+  skos:prefLabel "Diesel"^^xsd:string ;
+.
+:Door
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Door"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Doors ;
+  skos:prefLabel "Door"^^xsd:string ;
+.
+:Doors
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Doors"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Door
+    ) ;
+  skos:prefLabel "Doors"^^xsd:string ;
+.
+:Drug
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Drug"^^xsd:string ;
+  rdfs:subClassOf <http://www.faa.gov/DRS/Systems#Substance> ;
+  skos:broader <http://www.faa.gov/DRS/Systems#Substance> ;
+  skos:definition """1 a obsolete : a substance used in dyeing or chemical operations b : a substance used as a medication or in the preparation of medication c according to the Food, Drug, and Cosmetic Act (1) : a substance recognized in an official pharmacopoeia or formulary (2) : a substance intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease (3) : a substance other than food intended to affect the structure or function of the body (4) : a substance intended for use as a component of a medicine but not a device or a component, part, or accessory of a device 
+2 : a commodity that is not salable or for which there is no demand  used in the phrase drug on the market 
+3 : something and often an illegal substance that causes addiction, habituation, or a marked change in consciousness     [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Drug"^^xsd:string ;
+.
+:Drug_Substance
+  rdf:type owl:Class ;
+  rdfs:label "Drug Substance"^^xsd:string ;
+  rdfs:subClassOf :Drug ;
+  rdfs:subClassOf :Substance ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Drug
+            :Substance
+          ) ;
+      ]
+    ) ;
+  skos:broader :Drug ;
+  skos:broader :Substance ;
+  skos:prefLabel "Drug Substance"^^xsd:string ;
+.
+:Electronic_Flight_Bag
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "EFB"^^xsd:string ;
+  rdfs:label "Electronic Flight Bag"^^xsd:string ;
+  rdfs:subClassOf :Flight_Bag ;
+  skos:broader :Flight_Bag ;
+  skos:prefLabel "Electronic Flight Bag"^^xsd:string ;
+.
+:Element
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Element"^^xsd:string ;
+  rdfs:subClassOf :Matter ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Material ;
+  skos:broader :Matter ;
+  skos:definition "2 : a constituent part: as a plural : the simplest principles of a subject of study : RUDIMENTS b (1) : a part of a geometric magnitude <an infinitesimal element of volume> (2) : a generator of a geometric figure; also : a line or line segment contained in the surface of a cone or cylinder (3) : a basic member of a mathematical or logical class or set (4) : one of the individual entries in a mathematical matrix or determinant c : a distinct group within a larger group or community <the criminal element in the city> d (1) : one of the necessary data or values on which calculations or conclusions are based (2) : one of the factors determining the outcome of a process e : any of the fundamental substances that consist of atoms of only one kind and that singly or in combination constitute all matter...  [WEBSTER]"^^xsd:string ;
+  skos:definition "ELEMENT applies to any such part and often connotes irreducible simplicity <the basic elements of geometry>. {WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Element"^^xsd:string ;
+.
+:Emergency_Provision
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Emergency Provision"^^xsd:string ;
+  rdfs:subClassOf :Provision ;
+  skos:broader :Emergency_Provisions ;
+  skos:broader :Provision ;
+  skos:prefLabel "Emergency Provision"^^xsd:string ;
+.
+:Emergency_Provisions
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Emergency Provisions"^^xsd:string ;
+  rdfs:subClassOf :Provisions ;
+  owl:unionOf (
+      :Emergency_Provision
+    ) ;
+  skos:broader :Provisions ;
+  skos:narrower :Emergency_Provision ;
+  skos:prefLabel "Emergency Provisions"^^xsd:string ;
+.
+:Engine_Fuel
+  rdf:type owl:Class ;
+  rdfs:label "Engine Fuel"^^xsd:string ;
+  rdfs:subClassOf :Powerplant_Fuel ;
+  skos:broader :Powerplant_Fuel ;
+  skos:prefLabel "Engine Fuel"^^xsd:string ;
+.
+:Engine_Fuel_Type
+  rdf:type owl:Class ;
+  rdfs:label "Engine Fuel Type"^^xsd:string ;
+  rdfs:subClassOf :Engine_Fuel ;
+  rdfs:subClassOf :Fuel_Type ;
+  rdfs:subClassOf :Powerplant_Fuel_Type ;
+  skos:broader :Engine_Fuel ;
+  skos:broader :Fuel_Type ;
+  skos:broader :Powerplant_Fuel_Type ;
+  skos:prefLabel "Engine Fuel Type"^^xsd:string ;
+.
+:Engine_Oil
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Engine Oil"^^xsd:string ;
+  rdfs:subClassOf :Oil ;
+  skos:prefLabel "Engine Oil"^^xsd:string ;
+.
+:Equipment_Form
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Equipment Form"^^xsd:string ;
+  rdfs:subClassOf :Technology_Form ;
+  skos:broader :Technology_Form ;
+  skos:prefLabel "Equipment Form"^^xsd:string ;
+.
+:Facility_Fuel
+  rdf:type owl:Class ;
+  rdfs:label "Facility Fuel"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Fuel ;
+  skos:broader :Infrastructure_Fuel ;
+  skos:prefLabel "Facility Fuel"^^xsd:string ;
+.
+:Facility_Part
+  rdf:type owl:Class ;
+  rdfs:label "Facility Part"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resource_Part ;
+  skos:broader :Physical_Resource_Part ;
+  skos:prefLabel "Facility Part"^^xsd:string ;
+.
+:Feature
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIS/AIM Training Guidance Manual, Version 1.0 DRAFT, as of 5/18/2011, p. 36."^^xsd:string ;
+  dcterms:source "ISO 19101"^^xsd:string ;
+  rdfs:label "Feature"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Physical_Resource ;
+  skos:definition "Abstraction of real world phenomena.    [AIS/AIM]"^^xsd:string ;
+  skos:narrower :Man-Made_Feature ;
+  skos:narrower :Natural_Feature ;
+  skos:prefLabel "Feature"^^xsd:string ;
+.
+:Features
+  rdf:type owl:Class ;
+  rdfs:label "Features"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Feature
+    ) ;
+  skos:prefLabel "Features"^^xsd:string ;
+.
+:Fiber_Reinforced_Plastic
+  rdf:type owl:Class ;
+  rdfs:label "Fiber Reinforced Plastic"^^xsd:string ;
+  rdfs:subClassOf :Reinforced_Plastic ;
+  skos:broader :Reinforced_Plastic ;
+  skos:narrower :Aramid_Fiber_Reinforced_Plastic ;
+  skos:narrower :Carbon_Fiber_Reinforced_Plastic ;
+  skos:narrower :Glass_Fiber_Reinforced_Plastic ;
+  skos:prefLabel "Fiber Reinforced Plastic"^^xsd:string ;
+.
+:Fireproof_Material
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Annex 7, Aircraft Nationality and Registration Marks"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-262"^^xsd:string ;
+  dcterms:source "ICAO (AN 7)"^^xsd:string ;
+  rdfs:label "Fireproof Material"^^xsd:string ;
+  rdfs:subClassOf :Physical_Material ;
+  skos:broader :Physical_Material ;
+  skos:definition "A material capable of withstanding heat as well as or better than steel when the dimensions in both cases are appropriate for the specific purpose.  [ICAO]"^^xsd:string ;
+  skos:prefLabel "Fireproof Material"^^xsd:string ;
+.
+:Fireworks
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Fireworks"^^xsd:string ;
+  rdfs:subClassOf :Airborne_Object ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Airborne_Object ;
+  skos:definition "1 : a device for producing a striking display by the combustion of explosive or flammable compositions  2 pl : a display of fireworks  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Fireworks"^^xsd:string ;
+.
+:Flammable_Fluid
+  rdf:type owl:Class ;
+  rdfs:label "Flammable Fluid"^^xsd:string ;
+  rdfs:subClassOf :Fluid ;
+  skos:prefLabel "Flammable Fluid"^^xsd:string ;
+.
+:Flight_Bag
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Flight Bag"^^xsd:string ;
+  rdfs:subClassOf <http://www.faa.gov/DRS/Aircraft#Carry-On_Bag> ;
+  rdfs:subClassOf :Bag ;
+  skos:broader <http://www.faa.gov/DRS/Aircraft#Carry-On_Bag> ;
+  skos:broader :Bag ;
+  skos:definition """1 : a lightweight traveling bag with zippered outside pockets 
+2 : a small canvas satchel   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Flight Bag"^^xsd:string ;
+.
+:Fluid
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Fluid"^^xsd:string ;
+  rdfs:subClassOf :Consumable_Physical_Resource ;
+  rdfs:subClassOf <http://www.faa.gov/DRS/Systems#Substance> ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Consumable_Physical_Resource ;
+  skos:broader <http://www.faa.gov/DRS/Systems#Substance> ;
+  skos:definition ": a substance (as a liquid or gas) tending to flow or conform to the outline of its container   [WEBSTER]"^^xsd:string ;
+  skos:narrower :De-Icing_Fluid ;
+  skos:narrower :Gas ;
+  skos:narrower :Liquid ;
+  skos:prefLabel "Fluid"^^xsd:string ;
+.
+:Foreign_Object
+  rdf:type owl:Class ;
+  rdfs:label "Foreign Object"^^xsd:string ;
+  rdfs:subClassOf :Object ;
+  skos:broader :Object ;
+  skos:definition "Something material that is detected and is considered to be inappropriate or incongruent with its current environment or situation.  [Proposed]"^^xsd:string ;
+  skos:prefLabel "Foreign Object"^^xsd:string ;
+.
+:Form
+  rdf:type owl:Class ;
+  rdfs:label "Form"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Structure
+    ) ;
+  skos:narrower :Arrangement ;
+  skos:narrower :Framework ;
+  skos:narrower :Structure ;
+  skos:prefLabel "Form"^^xsd:string ;
+.
+:Framework
+  rdf:type owl:Class ;
+  rdfs:label "Framework"^^xsd:string ;
+  rdfs:subClassOf :Form ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Form ;
+  skos:prefLabel "Framework"^^xsd:string ;
+.
+:Frangible_Object
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Annex 14 Part I, Aerodrome Design and Construction"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-287"^^xsd:string ;
+  dcterms:source """ICAO (AN 14/I)
+Official term added to AN 14/I by Amdt 1 (1995)"""^^xsd:string ;
+  rdfs:label "Frangible Object"^^xsd:string ;
+  rdfs:subClassOf :Object ;
+  skos:definition "An object of low mass designed to break, distort or yield on impact so as to present the minimum hazard to aircraft.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Frangible Object"^^xsd:string ;
+  skos:scopeNote "Note.— Guidance on design for frangibility is contained in the Aerodrome Design Manual, Part 6 [in preparation].   [ICAO]"^^xsd:string ;
+.
+:Fuel
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Fuel"^^xsd:string ;
+  rdfs:subClassOf :Consumable_Natural_Resource ;
+  rdfs:subClassOf :Fluid ;
+  rdfs:subClassOf :Material ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Consumable_Natural_Resource ;
+  skos:broader :Fluid ;
+  skos:broader :Material ;
+  skos:definition "1 a : a material used to produce heat or power by burning b : nutritive material c : a material from which atomic energy can be liberated especially in a reactor  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Fuel_Type ;
+  skos:prefLabel "Fuel"^^xsd:string ;
+.
+:Fuel_Tank_Structure
+  rdf:type owl:Class ;
+  rdfs:label "Fuel Tank Structure"^^xsd:string ;
+  rdfs:subClassOf :Tank_Structure ;
+  owl:equivalentClass <http://www.faa.gov/DRS/Aircraft#Fuel_Tank_Structure> ;
+  skos:prefLabel "Fuel Tank Structure"^^xsd:string ;
+.
+:Fuel_Type
+  rdf:type owl:Class ;
+  rdfs:label "Fuel Type"^^xsd:string ;
+  rdfs:subClassOf :Fuel ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Diesel
+            :Gasoline
+            :Kerosene
+            :Liquid_Gas
+          ) ;
+      ]
+    ) ;
+  skos:broader :Fuel ;
+  skos:narrower :Aviation_Fuel_Type ;
+  skos:prefLabel "Fuel Type"^^xsd:string ;
+.
+:Gas
+  rdf:type owl:Class ;
+  rdfs:label "Gas"^^xsd:string ;
+  rdfs:subClassOf :Consumable_Natural_Resource ;
+  rdfs:subClassOf :Fluid ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Consumable_Natural_Resource ;
+  skos:broader :Fluid ;
+  skos:definition """1 : a fluid (as air) that has neither independent shape nor volume but tends to expand indefinitely 
+2 a : a combustible gas or gaseous mixture for fuel or lighting; especially : NATURAL GAS b : a gaseous product of digestion; also : discomfort from this c : a gas or gaseous mixture used to produce anesthesia d : a substance that can be used to produce a poisonous, asphyxiating, or irritant atmosphere 
+3 : empty talk : BOMBAST 
+4 : GASOLINE; also : the accelerator pedal of an automotive vehicle 
+5 : driving force : ENERGY <I was young, and full of gas — H. L. Mencken> <ran out of gas in the seventh inning>    [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Gas"^^xsd:string ;
+.
+:Gasoline
+  rdf:type owl:Class ;
+  rdfs:label "Gasoline"^^xsd:string ;
+  rdfs:subClassOf :Fuel_Type ;
+  skos:prefLabel "Gasoline"^^xsd:string ;
+.
+:Geographic_Feature
+  rdf:type owl:Class ;
+  rdfs:label "Geographic Feature"^^xsd:string ;
+  rdfs:subClassOf :Natural_Feature ;
+  skos:prefLabel "Geographic Feature"^^xsd:string ;
+.
+:Geographic_Features
+  rdf:type owl:Class ;
+  rdfs:label "Geographic Features"^^xsd:string ;
+  rdfs:subClassOf :Natural_Features ;
+  owl:unionOf (
+      :Geographic_Feature
+    ) ;
+  skos:prefLabel "Geographic Features"^^xsd:string ;
+.
+:Glass
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Glass"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition """1 : any of various amorphous materials formed from a melt by cooling to rigidity without crystallization: as a : a usually transparent or translucent material consisting typically of a mixture of silicates b : a material (as obsidian) produced by fast cooling of magma 
+2 a : something made of glass: as (1) : TUMBLER; also : GLASSWARE (2) : MIRROR (3) : BAROMETER (4) : HOURGLASS (5) : BACKBOARD 1 b (1) : an optical instrument or device that has one or more lenses and is designed to aid in the viewing of objects not readily seen (2) : FIELD GLASSES, BINOCULARS  usually used in plural c plural : a device used to correct defects of vision or to protect the eyes that consists typically of a pair of glass or plastic lenses and the frame by which they are held in place  called also eyeglasses, spectacles 
+3 : the quantity held by a glass container 
+4 : FIBERGLASS    [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Glass"^^xsd:string ;
+.
+:Glass_Fiber_Reinforced_Plastic
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "GFRP"^^xsd:string ;
+  rdfs:label "Glass Fiber Reinforced Plastic"^^xsd:string ;
+  rdfs:subClassOf :Fiber_Reinforced_Plastic ;
+  skos:broader :Fiber_Reinforced_Plastic ;
+  skos:prefLabel "Glass Fiber Reinforced Plastic"^^xsd:string ;
+.
+:Goods
+  rdf:type owl:Class ;
+  rdfs:label "Goods"^^xsd:string ;
+  rdfs:subClassOf :Cargo ;
+  rdfs:subClassOf :Physical_Resources ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Cargo ;
+  skos:broader :Physical_Resources ;
+  skos:prefLabel "Goods"^^xsd:string ;
+.
+:Government_Furnished_Materials
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "GFM"^^xsd:string ;
+  rdfs:label "Government Furnished Materials"^^xsd:string ;
+  rdfs:subClassOf :Government_Materials ;
+  skos:broader :Government_Materials ;
+  skos:prefLabel "Government Furnished Materials"^^xsd:string ;
+.
+:Government_Furnished_Property
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "GFP"^^xsd:string ;
+  rdfs:label "Government Furnished Property"^^xsd:string ;
+  rdfs:subClassOf :Government_Property ;
+  skos:broader :Government_Property ;
+  skos:prefLabel "Government Furnished Property"^^xsd:string ;
+.
+:Government_Materials
+  rdf:type owl:Class ;
+  rdfs:label "Government Materials"^^xsd:string ;
+  rdfs:subClassOf :Materials ;
+  skos:broader :Materials ;
+  skos:narrower :Government_Furnished_Materials ;
+  skos:prefLabel "Government Materials"^^xsd:string ;
+.
+:Government_Property
+  rdf:type owl:Class ;
+  rdfs:label "Government Property"^^xsd:string ;
+  rdfs:subClassOf :Property ;
+  skos:broader :Property ;
+  skos:narrower :Government_Furnished_Property ;
+  skos:prefLabel "Government Property"^^xsd:string ;
+.
+:Halon
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Halon"^^xsd:string ;
+  rdfs:subClassOf :Glass ;
+  skos:definition ": a halocarbon that contains especially bromine  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Halon"^^xsd:string ;
+.
+:Hazardous_Material
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:abbreviation "HAZMAT"^^xsd:string ;
+  rdfs:label "Hazardous Material"^^xsd:string ;
+  rdfs:subClassOf :Physical_Material ;
+  skos:broader :Physical_Material ;
+  skos:prefLabel "Hazardous Material"^^xsd:string ;
+.
+:Heat-resistant_Material
+  rdf:type owl:Class ;
+  rdfs:label "Heat-resistant Material"^^xsd:string ;
+  rdfs:subClassOf :Physical_Material ;
+  skos:broader :Physical_Material ;
+  skos:prefLabel "Heat-resistant Material"^^xsd:string ;
+.
+:Infrastructure
+  rdf:type rdfs:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Infrastructure"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:equivalentClass Infrastructure:Physical_Resources ;
+  skos:broader :Physical_Resources ;
+  skos:definition """1 : the underlying foundation or basic framework (as of a system or organization) 
+2 : the permanent installations required for military purposes 
+3 : the system of public works of a country, state, or region; also : the resources (as personnel, buildings, or equipment) required for an activity    [WEBSTER]"""^^xsd:string ;
+  skos:hasTopConcept :Physical_Resources ;
+  skos:prefLabel "Infrastructure"^^xsd:string ;
+.
+:Infrastructure_Form
+  rdf:type owl:Class ;
+  rdfs:label "Infrastructure Form"^^xsd:string ;
+  rdfs:subClassOf :Form ;
+  skos:broader :Form ;
+  skos:prefLabel "Infrastructure Form"^^xsd:string ;
+.
+:Infrastructure_Fuel
+  rdf:type owl:Class ;
+  rdfs:label "Infrastructure Fuel"^^xsd:string ;
+  rdfs:subClassOf :Fuel ;
+  skos:broader :Fuel ;
+  skos:prefLabel "Infrastructure Fuel"^^xsd:string ;
+.
+:Ingredient
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Ingredient"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition ": something that enters into a compound or is a component part of any combination or mixture : CONSTITUENT    [WEBSTER]"^^xsd:string ;
+  skos:definition "INGREDIENT applies to any of the substances which when combined form a particular mixture <the ingredients of a cocktail>.   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Ingredient"^^xsd:string ;
+.
+:Inhibitor
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate Dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Inhibitor"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Agent ;
+  skos:definition ": one that inhibits : as a : an agent that slows or interferes with a chemical action b : a substance that reduces or suppresses the activity of another substance (as an enzyme)  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Inhibitor"^^xsd:string ;
+.
+:Inorganic_Substance
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Inorganic Substance"^^xsd:string ;
+  rdfs:subClassOf :Substance ;
+  owl:disjointWith :Organic_Substance ;
+  skos:broader :Substance ;
+  skos:definition "A substance that is composed of matter other than plant or animal.  It may be a material that is either a naturally occuring material or a man-made or artificial material.  If it is from the latter, then it may also be referred to as a man-made artifact.  [based on definition of \"inorganiic\" in WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Inorganic Substance"^^xsd:string ;
+.
+:Insulation
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Insulation"^^xsd:string ;
+  rdfs:subClassOf :Physical_Material ;
+  skos:broader :Physical_Material ;
+  skos:definition "2 : material used in insulating  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Insulation"^^xsd:string ;
+.
+:Insulation_Blanket
+  rdf:type owl:Class ;
+  rdfs:label "Insulation Blanket"^^xsd:string ;
+  rdfs:subClassOf :Insulation_Portion ;
+  skos:broader :Insulation_Portion ;
+  skos:prefLabel "Insulation Blanket"^^xsd:string ;
+.
+:Insulation_Blanket_Specimen
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA 14 CFR Part 25, Appendix F - Definitions"^^xsd:string ;
+  rdfs:label "Insulation Blanket Specimen"^^xsd:string ;
+  rdfs:subClassOf :Insulation_Blanket ;
+  rdfs:subClassOf :Insulation_Specimen ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Insulation_Blanket
+            :Insulation_Specimen
+          ) ;
+      ]
+    ) ;
+  skos:broader :Insulation_Blanket ;
+  skos:broader :Insulation_Specimen ;
+  skos:definition "Insulation blanket specimen means one of two specimens positioned in either side of the test rig, at an angle of 30° with respect to vertical.  [FAA 14 CFR Part 25, Appendix F]"^^xsd:string ;
+  skos:prefLabel "Insulation Blanket Specimen"^^xsd:string ;
+.
+:Insulation_Materials
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Insulation Materials"^^xsd:string ;
+  rdfs:subClassOf :Materials ;
+  skos:broader :Materials ;
+  skos:narrower :Acoustic_Insulation_Materials ;
+  skos:narrower :Thermal_Insulation_Materials ;
+  skos:prefLabel "Insulation Materials"^^xsd:string ;
+.
+:Insulation_Portion
+  rdf:type owl:Class ;
+  rdfs:label "Insulation Portion"^^xsd:string ;
+  rdfs:subClassOf :Insulation ;
+  skos:broader :Insulation ;
+  skos:prefLabel "Insulation Portion"^^xsd:string ;
+.
+:Insulation_Specimen
+  rdf:type owl:Class ;
+  rdfs:label "Insulation Specimen"^^xsd:string ;
+  rdfs:subClassOf :Insulation ;
+  rdfs:subClassOf :Specimen ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Insulation
+            :Specimen
+          ) ;
+      ]
+    ) ;
+  skos:broader :Insulation ;
+  skos:broader :Specimen ;
+  skos:prefLabel "Insulation Specimen"^^xsd:string ;
+.
+:Interior_Door
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Interior Door"^^xsd:string ;
+  rdfs:subClassOf :Door ;
+  skos:broader :Door ;
+  skos:prefLabel "Interior Door"^^xsd:string ;
+.
+:Inventory
+  rdf:type owl:Class ;
+  rdfs:label "Inventory"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Inventory_Item
+    ) ;
+  skos:broader :Physical_Resources ;
+  skos:narrower :Inventory_Item ;
+  skos:narrower :Real_Property_Inventory ;
+  skos:prefLabel "Inventory"^^xsd:string ;
+.
+:Inventory_Item
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "VOLPE - Asset Management Object Classes, Object_Class_Definition_4 on Data Architecture CD, Volpe Center, 10-01-03; ; page 1"^^xsd:string ;
+  rdfs:label "Inventory Item"^^xsd:string ;
+  rdfs:subClassOf :Item ;
+  skos:broader :Inventory ;
+  skos:broader :Item ;
+  skos:definition "An inventory item is a personal property asset that is cataloged, purchased, and stored for later use.   [VOLPE]"^^xsd:string ;
+  skos:narrower :Personal_Property ;
+  skos:prefLabel "Inventory Item"^^xsd:string ;
+.
+:Iridium
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Iridium"^^xsd:string ;
+  rdfs:subClassOf :Halon ;
+  skos:definition ": a rare silver-white hard brittle very heavy metallic element     [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Iridium"^^xsd:string ;
+.
+:Item
+  rdf:type owl:Class ;
+  rdfs:label "Item"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Physical_Resources ;
+  skos:prefLabel "Item"^^xsd:string ;
+.
+:Jet_Fuel
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA   https://en.wikipedia.org/wiki/Aviation_fuel#CNG_.26_LNG"^^xsd:string ;
+  dcterms:bibliographicCitation "WIKIPEDIA   https://en.wikipedia.org/wiki/Jet_fuel"^^xsd:string ;
+  rdfs:label "Jet Fuel"^^xsd:string ;
+  rdfs:subClassOf :Aviation_Fuel_Type ;
+  skos:broader :Aviation_Fuel_Type ;
+  skos:definition "Jet fuel, aviation turbine fuel (ATF), or avtur, is a type of aviation fuel designed for use in aircraft powered by gas-turbine engines. It is colorless to straw-colored in appearance. The most commonly used fuels for commercial aviation are Jet A and Jet A-1, which are produced to a standardized international specification. The only other jet fuel commonly used in civilian turbine-engine powered aviation is Jet B, which is used for its enhanced cold-weather performance.    [WIKIPEDIA]"^^xsd:string ;
+  skos:narrower :Military_Jet_Fuel ;
+  skos:prefLabel "Jet Fuel"^^xsd:string ;
+  skos:scopeNote "Jet fuel is a mixture of a large number of different hydrocarbons. The range of their sizes (molecular weights or carbon numbers) is defined by the requirements for the product, such as the freezing or smoke point. Kerosene-type jet fuel (including Jet A and Jet A-1) has a carbon number distribution between about 8 and 16 (carbon atoms per molecule); wide-cut or naphtha-type jet fuel (including Jet B), between about 5 and 15.[1]   {WIKIPEDIA]"^^xsd:string ;
+  skos:scopeNote "Jet fuel is used in both turboprop and jet aircraft, and must maintain a low viscosity at low temperature, meet definite limits in terms of density and calorific value, burn cleanly, and remain chemically stable when heated to high temperature.[8]  [WIKIPEDIA]"^^xsd:string ;
+.
+:Just_Culture
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation """ICAO \"36th Session of the Assembly of the International Civil Aviation Organisation (ICAO)
+MontrÃ©al, 18-28 September 2007; TECHNICAL COMMISSION - Agenda Item 30 â€“ Other Safety Matters, IMPLEMENTATION OF A \"\"JUST CULTURE\"\" CONCEPT
+
+Working Paper presented by Portugal, on behalf of the European Community and its Member
+States, by the other States Members of the European Civil Aviation Conference,
+and by Eurocontrol\""""^^xsd:string ;
+  rdfs:label "Just Culture"^^xsd:string ;
+  rdfs:subClassOf :Culture ;
+  skos:definition "A culture in which front line operators or others are not punished for actions, omissions or decisions taken by them that are commensurate with their experience and training, but where gross negligence, wilful violations and destructive acts are not tolerated.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Just Culture"^^xsd:string ;
+.
+:Kerosene
+  rdf:type owl:Class ;
+  rdfs:label "Kerosene"^^xsd:string ;
+  rdfs:subClassOf :Fuel_Type ;
+  skos:prefLabel "Kerosene"^^xsd:string ;
+.
+:Liquid
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11ed."^^xsd:string ;
+  rdfs:label "Liquid"^^xsd:string ;
+  rdfs:subClassOf :Fluid ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Fluid ;
+  skos:definition "2 : a fluid (as water) that has no independent shape but has a definite volume and does not expand indefinitely and that is only slightly compressible  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Liquid"^^xsd:string ;
+.
+:Liquid_Gas
+  rdf:type owl:Class ;
+  rdfs:label "Liquid Gas"^^xsd:string ;
+  rdfs:subClassOf :Fuel_Type ;
+  rdfs:subClassOf :Gas ;
+  skos:broader :Fuel_Type ;
+  skos:prefLabel "Liquid Gas"^^xsd:string ;
+.
+:Liquid_Oxygen
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Liquid Oxygen"^^xsd:string ;
+  rdfs:subClassOf :Oxygen ;
+  skos:prefLabel "Liquid Oxygen"^^xsd:string ;
+.
+:Liquor
+  rdf:type owl:Class ;
+  rdfs:label "Liquor"^^xsd:string ;
+  rdfs:subClassOf :Depressant ;
+  rdfs:subClassOf :Liquid ;
+  skos:broader :Depressant ;
+  skos:broader :Liquid ;
+  skos:definition ": a liquid substance: as a : a usually distilled rather than fermented alcoholic beverage b : a watery solution of a drug c : BATH 2b(1)  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Liquor"^^xsd:string ;
+.
+:Lithium_Batteries
+  rdf:type owl:Class ;
+  rdfs:label "Lithium Batteries"^^xsd:string ;
+  rdfs:subClassOf :Batteries ;
+  owl:unionOf (
+      :Lithium_Battery
+    ) ;
+  skos:broader :Batteries ;
+  skos:prefLabel "Lithium Batteries"^^xsd:string ;
+.
+:Lithium_Battery
+  rdf:type owl:Class ;
+  rdfs:label "Lithium Battery"^^xsd:string ;
+  rdfs:subClassOf :Battery ;
+  skos:broader :Battery ;
+  skos:prefLabel "Lithium Battery"^^xsd:string ;
+.
+:Load
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Load"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resource_Group ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Physical_Resource_Group ;
+  skos:definition """1 ... b : whatever is put on a person or pack animal to be carried : PACK c : whatever is put in a ship or vehicle or airplane for conveyance : CARGO; especially : a quantity of material assembled or packed as a shipping unit 
+2 a : a mass or weight supported by something <branches bent low by their load of fruit> b : the forces to which a structure is subjected due to superposed weight or to wind pressure on the vertical surfaces; broadly : the forces to which a given object is subjected   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Load"^^xsd:string ;
+.
+:Loadstone
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Loadstone"^^xsd:string ;
+  rdfs:subClassOf :Magnetite ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Magnetite ;
+  skos:definition """1 : magnetite possessing polarity 
+2 : something that strongly attracts   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Loadstone"^^xsd:string ;
+.
+:Magnesium
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Magnesium"^^xsd:string ;
+  rdfs:subClassOf :Iridium ;
+  skos:prefLabel "Magnesium"^^xsd:string ;
+.
+:Magnet
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Magnet"^^xsd:string ;
+  rdfs:subClassOf :Loadstone ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Loadstone ;
+  skos:definition """1 a : LODESTONE b : a body having the property of attracting iron and producing a magnetic field external to itself; specifically : a mass of iron, steel, or alloy that has this property artificially imparted 
+2 : something that attracts <a box-office magnet>   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Magnet"^^xsd:string ;
+.
+:Magnetic_Pole
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Magnetic Pole"^^xsd:string ;
+  rdfs:subClassOf :Magnet ;
+  skos:broader :Magnet ;
+  skos:definition "2 : either of the poles of a magnet  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Magnetic Pole"^^xsd:string ;
+.
+:Magnetite
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Magnetite"^^xsd:string ;
+  rdfs:subClassOf :Mineral ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Mineral ;
+  skos:definition ": a black isometric mineral of the spinel group that is an oxide of iron and an important iron ore   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Magnetite"^^xsd:string ;
+.
+:Man-Made_Feature
+  rdf:type owl:Class ;
+  rdfs:label "Man-Made Feature"^^xsd:string ;
+  rdfs:subClassOf :Feature ;
+  skos:broader :Feature ;
+  skos:prefLabel "Man-Made Feature"^^xsd:string ;
+.
+:Man-Made_Features
+  rdf:type owl:Class ;
+  rdfs:label "Man-Made Features"^^xsd:string ;
+  rdfs:subClassOf :Features ;
+  owl:unionOf (
+      :Man-Made_Feature
+    ) ;
+  skos:prefLabel "Man-Made Features"^^xsd:string ;
+.
+:Man-Made_Resource
+  rdf:type owl:Class ;
+  rdfs:label "Man-Made Resource"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resource ;
+  owl:disjointWith :Natural_Resource ;
+  owl:equivalentClass :Culture ;
+  owl:equivalentClass :Man-Made_Feature ;
+  skos:altLabel "Artifact"^^xsd:string ;
+  skos:altLabel "Man-Made Artifact"^^xsd:string ;
+  skos:broader :Physical_Resource ;
+  skos:definition "A physical resource that is or has been manufactured, created, or constructed by human beings.  [Proposed]"^^xsd:string ;
+  skos:prefLabel "Man-Made Resource"^^xsd:string ;
+.
+:Marijuana
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Marijuana"^^xsd:string ;
+  rdfs:subClassOf :Recreational_Drug ;
+  skos:broader :Recreational_Drug ;
+  skos:definition """1 : HEMP 1a, c 
+2 : the dried leaves and flowering tops of the pistillate hemp plant that yield THC and are smoked in cigarettes for their intoxicating effect  compare BHANG, CANNABIS, HASHISH  [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Marijuana"^^xsd:string ;
+.
+:Mass
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Mass"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Material ;
+  skos:definition """1 a : a quantity or aggregate of matter usually of considerable size...  (3) : the principal part or main body <the great mass of the continent is buried under an ice cap — Walter Sullivan> (4) : AGGREGATE, WHOLE <men in the mass> c : the property of a body that is a measure of its inertia and that is commonly taken as a measure of the amount of material it contains and causes it to have weight in a gravitational field 
+2 : a large quantity, amount, or number <a great mass of material>   [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Matter ;
+  skos:narrower <http://www.faa.gov/DRS/Systems#Substance> ;
+  skos:prefLabel "Mass"^^xsd:string ;
+.
+:Material
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://en.wikipedia.org/wiki/Materials_science"^^xsd:string ;
+  rdfs:label "Material"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Element
+            :Constituent
+            :Substance
+          ) ;
+      ]
+    ) ;
+  skos:broader :Materials ;
+  skos:definition "1 a (1) : the elements, constituents, or substances of which something is composed or can be made (2) : matter that has qualities which give it individuality and by which it may be categorized <sticky material> <explosive materials> b (1) : something (as data) that may be worked into a more finished form <material for a biography> (2) : something used for or made the object of study <material for the next semester> (3) : a performer's repertoire <a comedian's material> c : MATTER 3b d : CLOTH e : a person potentially suited to some pursuit <varsity material> <leadership material> "^^xsd:string ;
+  skos:definition "1 a : the elements, constituents, or substances of which something is composed or can be made  [WEBSTER]"^^xsd:string ;
+  skos:definition "A material is defined as a substance (most often a solid, but other condensed phases can be included) that is intended to be used for certain applications.[7] There are a myriad of materials around us—they can be found in anything from buildings to spacecraft. Materials can generally be divided into two classes: crystalline and non-crystalline.  New and advanced materials that are being developed include nanomaterials and biomaterials,[9] etc.   [WIKIPEDIA]"^^xsd:string ;
+  skos:example "The traditional examples of materials are metals, semiconductors, ceramics and polymers.[8]  [WIKIPEDIA]"^^xsd:string ;
+  skos:narrower :Constituent ;
+  skos:narrower :Element ;
+  skos:narrower :Fireproof_Material ;
+  skos:narrower :Hazardous_Material ;
+  skos:narrower :Mass ;
+  skos:narrower :Organic_Material ;
+  skos:narrower :Processed_Material ;
+  skos:narrower :Project_Material ;
+  skos:narrower :Radioactive_Material ;
+  skos:narrower :Raw_Material ;
+  skos:narrower :Substance ;
+  skos:narrower :Synthetic_Material ;
+  skos:prefLabel "Material"^^xsd:string ;
+  skos:scopeNote "The basis of materials science involves studying the structure of materials, and relating them to their properties. Once a materials scientist knows about this structure-property correlation, they can then go on to study the relative performance of a material in a given application. The major determinants of the structure of a material and thus of its properties are its constituent chemical elements and the way in which it has been processed into its final form. These characteristics, taken together and related through the laws of thermodynamics and kinetics, govern a material's microstructure, and thus its properties."^^xsd:string ;
+.
+:Materials
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Materials"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resources ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Material
+    ) ;
+  skos:broader :Physical_Resources ;
+  skos:narrower :Government_Materials ;
+  skos:narrower :Insulation_Materials ;
+  skos:narrower :Material ;
+  skos:narrower :Radioactive_Materials ;
+  skos:prefLabel "Materials"^^xsd:string ;
+.
+:Materiel
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Materiel"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resources ;
+  skos:broader :Physical_Resources ;
+  skos:definition ": equipment, apparatus, and supplies used by an organization or institution  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Supplies ;
+  skos:prefLabel "Materiel"^^xsd:string ;
+.
+:Matter
+  rdf:type owl:Class ;
+  rdfs:label "Matter"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Mass ;
+  skos:definition "2 a : the substance of which a physical object is composed b : material substance that occupies space, has mass, and is composed predominantly of atoms consisting of protons, neutrons, and electrons, that constitutes the observable universe, and that is interconvertible with energy c : a material substance of a particular kind or for a particular purpose <vegetable matter>  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Element ;
+  skos:prefLabel "Matter"^^xsd:string ;
+  skos:scopeNote "Matter is a Physical Resource."^^xsd:string ;
+  skos:scopeNote "Matter is composed predominately of Atoms (consisting of protons, neutrons, and electrons)."^^xsd:string ;
+.
+:Metallic_Element
+  rdf:type owl:Class ;
+  rdfs:label "Metallic Element"^^xsd:string ;
+  rdfs:subClassOf :Element ;
+  skos:broader :Element ;
+  skos:narrower :Titanium ;
+  skos:prefLabel "Metallic Element"^^xsd:string ;
+.
+:Military_Jet_Fuel
+  rdf:type owl:Class ;
+  rdfs:label "Military Jet Fuel"^^xsd:string ;
+  rdfs:subClassOf :Jet_Fuel ;
+  skos:broader :Jet_Fuel ;
+  skos:prefLabel "Military Jet Fuel"^^xsd:string ;
+.
+:Mineral
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Mineral"^^xsd:string ;
+  rdfs:subClassOf :Inorganic_Substance ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Inorganic_Substance ;
+  skos:definition """1 : ORE 
+2 : an inorganic substance (as in the ash of calcined tissue) 
+3 obsolete : MINE 
+4 : something neither animal nor vegetable 
+5 a : a solid homogeneous crystalline chemical element or compound that results from the inorganic processes of nature; broadly : any of various naturally occurring homogeneous substances (as stone, coal, salt, sulfur, sand, petroleum, water, or natural gas) obtained usually from the ground b : a synthetic substance having the chemical composition and crystalline form and properties of a naturally occurring mineral     [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Mineral"^^xsd:string ;
+.
+:Narcotic
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Narcotic"^^xsd:string ;
+  rdfs:subClassOf :Drug ;
+  skos:broader :Drug ;
+  skos:definition """1 a : a drug (as opium or morphine) that in moderate doses dulls the senses, relieves pain, and induces profound sleep but in excessive doses causes stupor, coma, or convulsions b : a drug (as marijuana or LSD) subject to restriction similar to that of addictive narcotics whether physiologically addictive and narcotic or not 
+2 : something that soothes, relieves, or lulls   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Narcotic"^^xsd:string ;
+.
+:Natural_Feature
+  rdf:type owl:Class ;
+  rdfs:label "Natural Feature"^^xsd:string ;
+  rdfs:subClassOf :Feature ;
+  skos:broader :Feature ;
+  skos:narrower :Geographic_Feature ;
+  skos:prefLabel "Natural Feature"^^xsd:string ;
+.
+:Natural_Features
+  rdf:type owl:Class ;
+  rdfs:label "Natural Features"^^xsd:string ;
+  rdfs:subClassOf :Features ;
+  owl:unionOf (
+      :Natural_Feature
+    ) ;
+  skos:prefLabel "Natural Features"^^xsd:string ;
+.
+:Natural_Resource
+  rdf:type owl:Class ;
+  rdfs:label "Natural Resource"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resource ;
+  skos:definition "A physical resource that occurs naturally in nature; without human intervention.  [Proposed]"^^xsd:string ;
+  skos:prefLabel "Natural Resource"^^xsd:string ;
+.
+:New_Material
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://en.wikipedia.org/wiki/Materials_science#materials_paradigm"^^xsd:string ;
+  rdfs:label "New Material"^^xsd:string ;
+  rdfs:subClassOf :Material ;
+  skos:broader :Material ;
+  skos:definition "A material is defined as a substance (most often a solid, but other condensed phases can be included) that is intended to be used for certain applications.[7] ...Materials can generally be divided into two classes: crystalline and non-crystalline.  New and advanced materials that are being developed include nanomaterials and biomaterials,[9] etc.   [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "New Material"^^xsd:string ;
+.
+:New_Materials
+  rdf:type owl:Class ;
+  rdfs:label "New Materials"^^xsd:string ;
+  rdfs:subClassOf :Materials ;
+  skos:broader :Materials ;
+  skos:prefLabel "New Materials"^^xsd:string ;
+.
+:Nitrogen
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.1 generated on 2009-02-03; retrieved on 11-29-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  :dataElementLabelAIXM "Nitrogen"^^xsd:string ;
+  rdfs:label "Nitrogen"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Gas ;
+  skos:definition ": a colorless tasteless odorless element that as a diatomic gas is relatively inert and constitutes 78 percent of the atmosphere and that is a constituent of organic compounds found in all living tissues  see ELEMENT table  [WEBSTER]"^^xsd:string ;
+  skos:definition "Nitrogen supplies in aviation   [AIXM 5.1]"^^xsd:string ;
+  skos:prefLabel "Nitrogen"^^xsd:string ;
+.
+:North_Pole
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "North Pole"^^xsd:string ;
+  rdfs:subClassOf :Magnetic_Pole ;
+  skos:altLabel "North-Seeking Pole"^^xsd:string ;
+  skos:broader :Magnetic_Pole ;
+  skos:definition "2 of a magnet : the pole that points toward the north when the magnet is freely suspended  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "North Pole"^^xsd:string ;
+.
+:Nuclide
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  rdfs:label "Nuclide"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition ": a species of atom characterized by the constitution of its nucleus and hence by the number of protons, the number of neutrons, and the energy content  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Nuclide"^^xsd:string ;
+.
+:Object
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Object"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Physical_Resource ;
+  skos:definition """1 a : something material that may be perceived by the senses <I see an object in the distance>  
+2 a : something mental or physical toward which thought, feeling, or action is directed <an object for study> <the object of my affection> <delicately carved art objects> b : something physical that is perceived by an individual and becomes an agent for psychological identification <the mother is the primary object of the child>
+4 : a thing that forms an element of or constitutes the subject matter of an investigation or science [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Airborne_Object ;
+  skos:narrower :Foreign_Object ;
+  skos:narrower :Unidentified_Flying_Object ;
+  skos:prefLabel "Object"^^xsd:string ;
+.
+:Oil
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM 5.1 generated on 2009-02-03; retrieved on 11-29-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  :dataElementLabelAIXM "Oil"^^xsd:string ;
+  rdfs:label "Oil"^^xsd:string ;
+  rdfs:subClassOf :Consumable_Natural_Resource ;
+  rdfs:subClassOf :Fluid ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Consumable_Natural_Resource ;
+  skos:broader :Fluid ;
+  skos:definition "1 a : any of numerous unctuous combustible substances that are liquid or can be liquefied easily on warming, are soluble in ether but not in water, and leave a greasy stain on paper or cloth  [WEBSTER]"^^xsd:string ;
+  skos:definition "Oil types used for aircraft/helicopters.   [AIXM 5.0]  [AIXM 5.1]"^^xsd:string ;
+  skos:prefLabel "Oil"^^xsd:string ;
+.
+:Operational_Object
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NATO Architecture Framework (NAF) Chapter 3, NNEC Architecture Elements and Descriptions"^^xsd:string ;
+  dcterms:bibliographicCitation "SESAR  Extracted from SESAR website on July 26, 2011"^^xsd:string ;
+  dcterms:source "NATO Architecture Framework (NAF) Chapter 3, NNEC Architecture Elements and Descriptions"^^xsd:string ;
+  rdfs:label "Operational Object"^^xsd:string ;
+  rdfs:subClassOf :Object ;
+  skos:definition "a thing or (an) entity that occurs in the real world and of which information is required about the facts that need to be known. It can be a tangible object, like military equipment, an event such as an operation or a concept like directive.    [NATO]  [SESAR]"^^xsd:string ;
+  skos:prefLabel "Operational Object"^^xsd:string ;
+.
+:Organic_Material
+  rdf:type owl:Class ;
+  rdfs:label "Organic Material"^^xsd:string ;
+  rdfs:subClassOf :Physical_Material ;
+  skos:broader :Physical_Material ;
+  skos:prefLabel "Organic Material"^^xsd:string ;
+.
+:Organic_Substance
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Organic Substance"^^xsd:string ;
+  rdfs:subClassOf :Substance ;
+  skos:broader :Substance ;
+  skos:definition "A substance that is composed of matter from or related to a plant or animal.  It may be a material that is derived from a naturally occuring material.  [based on definition of \"organiic\" in WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Organic Substance"^^xsd:string ;
+.
+:Overpack
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Annex 18, The Safe Transport of Dangerous Goods by Air"^^xsd:string ;
+  rdfs:label "Overpack"^^xsd:string ;
+  rdfs:subClassOf :Cargo_Container ;
+  skos:broader :Cargo_Container ;
+  skos:definition """An enclosure used by a single shipper to contain one or more packages and to form one handling unit for convenience of handling and stowage.
+[ICAO]"""^^xsd:string ;
+  skos:prefLabel "Overpack"^^xsd:string ;
+.
+:Oxygen
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.0, from INFO_TYPES worksheet"^^xsd:string ;
+  dcterms:bibliographicCitation "AIXM 5.1 generated on 2009-02-03; retrieved on 11-29-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  :dataElementLabelAIXM "Oxygen"^^xsd:string ;
+  rdfs:label "Oxygen"^^xsd:string ;
+  rdfs:subClassOf :Consumable_Natural_Resource ;
+  rdfs:subClassOf :Gas ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Consumable_Natural_Resource ;
+  skos:broader :Gas ;
+  skos:definition "1 : a reactive element that is found in water, in most rocks and minerals, in numerous organic compounds, and as a colorless tasteless odorless diatomic gas constituting 21 percent of the atmosphere, that is capable of combining with all elements except the inert gases, that is active in physiological processes, and that is involved especially in combustion  see ELEMENT table   [WEBSTER]"^^xsd:string ;
+  skos:definition "Oxygen supplies used in aviation.   [AIXM 5.0]  [AIXM 5.1]"^^xsd:string ;
+  skos:prefLabel "Oxygen"^^xsd:string ;
+.
+:Package
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Annex 18, The Safe Transport of Dangerous Goods by Air"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Package"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Package_Group ;
+  skos:definition """2 a : a small or moderate-sized pack : PARCEL b : a commodity or a unit of a product uniformly wrapped or sealed c : a preassembled unit 
+3 : a covering wrapper or container 
+4 : something that suggests a package: as a : PACKAGE DEAL b : a radio or television series offered for sale at a lump sum c : contract benefits gained through collective bargaining d : a ready-made computer program or collection of related software e : a travel arrangement contract that offers for a fixed price transportation, accommodations, and often sightseeing and entertainment f : a collection of related items; especially : one to be considered or acted on together <presented his tax package to the nation>   [WEBSTER]"""^^xsd:string ;
+  skos:definition "The complete product of the packing operation consisting of the packaging and its contents prepared for transport.  [ICAO]"^^xsd:string ;
+  skos:narrower :Cargo_Package ;
+  skos:prefLabel "Package"^^xsd:string ;
+.
+:Package_Group
+  rdf:type owl:Class ;
+  rdfs:label "Package Group"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resource_Group ;
+  owl:unionOf (
+      :Package
+    ) ;
+  skos:broader :Physical_Resource_Group ;
+  skos:narrower :Dangerous_Goods_Package_Group ;
+  skos:prefLabel "Package Group"^^xsd:string ;
+.
+:Part
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Asset Management Object Classes, Object_Class_Definition_4 on Data Architecture CD, Volpe Center, 10-01-03; ; page 1"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Part"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Component ;
+  skos:definition "1 : a constituent part : INGREDIENT <an important component of the program> <stereo components>  [WEBSTER]"^^xsd:string ;
+  skos:definition "A part is a replaceable component of a physical asset such as equipment that makes up a larger configuration item. [VOLPE]"^^xsd:string ;
+  skos:narrower :Unit ;
+  skos:prefLabel "Part"^^xsd:string ;
+.
+:Personal_Property
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "VOLPE - Asset Management Object Classes, Object_Class_Definition_4 on Data Architecture CD, Volpe Center, 10-01-03; ; page 1"^^xsd:string ;
+  rdfs:label "Personal Property"^^xsd:string ;
+  rdfs:subClassOf :Property ;
+  skos:broader :Inventory_Item ;
+  skos:broader :Property ;
+  skos:definition "Personal property includes any property other than real property such as a vehicle, software, a filing cabinet, and a personal computer.    [VOLPE]"^^xsd:string ;
+  skos:prefLabel "Personal Property"^^xsd:string ;
+.
+:Physical_Architecture
+  rdf:type owl:Class ;
+  rdfs:label "Physical Architecture"^^xsd:string ;
+  rdfs:subClassOf :Architecture ;
+  skos:prefLabel "Physical Architecture"^^xsd:string ;
+.
+:Physical_Material
+  rdf:type owl:Class ;
+  rdfs:label "Physical Material"^^xsd:string ;
+  rdfs:subClassOf :Material ;
+  skos:broader :Material ;
+  skos:narrower :Fireproof_Material ;
+  skos:narrower :Hazardous_Material ;
+  skos:narrower :Organic_Material ;
+  skos:narrower :Processed_Material ;
+  skos:narrower :Radioactive_Material ;
+  skos:narrower :Raw_Material ;
+  skos:narrower :Synthetic_Material ;
+  skos:narrower <http://www.faa.gov/DRS/Systems#Substance> ;
+  skos:prefLabel "Physical Material"^^xsd:string ;
+.
+:Physical_Materials
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Physical Materials"^^xsd:string ;
+  rdfs:subClassOf :Materials ;
+  owl:unionOf (
+      :Physical_Materials
+    ) ;
+  skos:broader :Materials ;
+  skos:prefLabel "Physical Materials"^^xsd:string ;
+.
+:Physical_Resource
+  rdf:type owl:Class ;
+  rdfs:label "Physical Resource"^^xsd:string ;
+  rdfs:subClassOf :Resource ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass dcterms:PhysicalResource ;
+  owl:equivalentClass <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+  skos:broader :Resource ;
+  skos:definition "1 a : a source of supply or support : an available means  usually used in plural b : a natural source of wealth or revenue  often used in plural c : a natural feature or phenomenon that enhances the quality of human life d : computable wealth  usually used in plural e : a source of information or expertise [WEBSTER]"^^xsd:string ;
+  skos:narrower :Item ;
+  skos:narrower :Material ;
+  skos:narrower :Object ;
+  skos:narrower :Part ;
+  skos:prefLabel "Physical Resource"^^xsd:string ;
+  skos:scopeNote "A Physical Resource has composition, meaning it is composed of one or more Materials."^^xsd:string ;
+  skos:scopeNote "A Physical Resource is a Spatial Thing and a Temporal Thing; meaning it has spatial and temporal dimensions.  As a Physical Resource, it is considered to be available and potentially useful to someone. A Physical Resource has a structure, unless it is a single individual Unit of some Thing. [Proposed]"^^xsd:string ;
+.
+:Physical_Resource_Composition
+  rdf:type owl:Class ;
+  rdfs:label "Physical Resource Composition"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resource ;
+  skos:broader :Physical_Resource ;
+  skos:narrower :Material ;
+  skos:prefLabel "Physical Resource Composition"^^xsd:string ;
+.
+:Physical_Resource_Group
+  rdf:type owl:Class ;
+  rdfs:label "Physical Resource Group"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resources ;
+  skos:broader :Physical_Resources ;
+  skos:narrower :Package_Group ;
+  skos:prefLabel "Physical Resource Group"^^xsd:string ;
+.
+:Physical_Resource_Part
+  rdf:type owl:Class ;
+  rdfs:label "Physical Resource Part"^^xsd:string ;
+  rdfs:subClassOf :Part ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Facility_Part
+            :System_Part
+          ) ;
+      ]
+    ) ;
+  skos:broader :Part ;
+  skos:prefLabel "Physical Resource Part"^^xsd:string ;
+.
+:Physical_Resource_Structure
+  rdf:type owl:Class ;
+  rdfs:label "Physical Resource Structure"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resource ;
+  skos:broader :Physical_Resource ;
+  skos:narrower :Assembly ;
+  skos:narrower :Component ;
+  skos:narrower :Part ;
+  skos:narrower :Surface_Structure ;
+  skos:narrower :Unit ;
+  skos:prefLabel "Physical Resource Structure"^^xsd:string ;
+.
+:Physical_Resources
+  rdf:type owl:Class ;
+  rdfs:label "Physical Resources"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:equivalentClass Infrastructure:Physical_Resources ;
+  owl:unionOf (
+      :Physical_Resource
+    ) ;
+  skos:broader :Resources ;
+  skos:definition """One or more material things that (at a minimum): 1) exists within a specific timeframe; 2) is located at a specific location at any given time; 3) has mass (e.g., has weight, volume); and 4) has physical dimensions (i.e., length, width, depth). 
+The material things (e.g., devices, machines, structures, tools) made or acquired by Someone (e.g., a person, group, or organization) or found within the Environment  that are regarded as essential to: (a) perform an activity (more specifically, a task); and (b) achieve an effect or result
+[Proposed]"""^^xsd:string ;
+  skos:hasTopConcept :Resources ;
+  skos:narrower :Architecture ;
+  skos:narrower :Conveyance ;
+  skos:narrower :Infrastructure ;
+  skos:narrower :Inventory ;
+  skos:narrower :Materials ;
+  skos:narrower :Materiel ;
+  skos:narrower :Physical_Resource_Group ;
+  skos:narrower :Property ;
+  skos:narrower :Stock ;
+  skos:prefLabel "Physical Resources"^^xsd:string ;
+.
+:Physical_Substances
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Physical Substances"^^xsd:string ;
+  rdfs:subClassOf :Substances ;
+  skos:broader :Substances ;
+  skos:prefLabel "Physical Substances"^^xsd:string ;
+.
+:Plastic
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Plastic"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Processed_Material ;
+  skos:broader :Synthetic_Material ;
+  skos:prefLabel "Plastic"^^xsd:string ;
+.
+:Pole
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Pole"^^xsd:string ;
+  rdfs:subClassOf :Battery ;
+  rdfs:subClassOf <http://www.faa.gov/DRS/Systems#Generator> ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition """2 a : either of two related opposites b : a point of guidance or attraction 
+3 a : either of the two terminals of an electric cell, battery, generator, or motor b : one of two or more regions in a magnetized body at which the magnetic flux density is concentrated 
+4 : either of two morphologically or physiologically differentiated areas at opposite ends of an axis in an organism or cell  see BLASTULA illustration 
+[WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Pole"^^xsd:string ;
+.
+:Potable
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Potable"^^xsd:string ;
+  rdfs:subClassOf :Liquid ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Liquid ;
+  skos:definition ": a liquid that is suitable for drinking; especially : an alcoholic beverage  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Potable"^^xsd:string ;
+.
+:Potable_Water
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Potable Water"^^xsd:string ;
+  rdfs:subClassOf :Water ;
+  owl:intersectionOf (
+      :Potable_Water
+    ) ;
+  skos:altLabel "Drinking Water"^^xsd:string ;
+  skos:broader :Water ;
+  skos:prefLabel "Potable Water"^^xsd:string ;
+.
+:Powerplant_Fuel
+  rdf:type owl:Class ;
+  rdfs:label "Powerplant Fuel"^^xsd:string ;
+  rdfs:subClassOf :Propulsion_System_Fuel ;
+  skos:broader :Propulsion_System_Fuel ;
+  skos:prefLabel "Powerplant Fuel"^^xsd:string ;
+.
+:Powerplant_Fuel_Type
+  rdf:type owl:Class ;
+  rdfs:label "Powerplant Fuel Type"^^xsd:string ;
+  rdfs:subClassOf :Powerplant_Fuel ;
+  rdfs:subClassOf :Propulsion_System_Fuel_Type ;
+  skos:broader :Powerplant_Fuel ;
+  skos:broader :Propulsion_System_Fuel_Type ;
+  skos:prefLabel "Powerplant Fuel Type"^^xsd:string ;
+.
+:Prescription_Drug
+  rdf:type owl:Class ;
+  rdfs:label "Prescription Drug"^^xsd:string ;
+  rdfs:subClassOf :Drug ;
+  skos:broader :Drug ;
+  skos:prefLabel "Prescription Drug"^^xsd:string ;
+.
+:Processed_Material
+  rdf:type owl:Class ;
+  rdfs:label "Processed Material"^^xsd:string ;
+  rdfs:subClassOf :Physical_Material ;
+  skos:broader :Physical_Material ;
+  skos:narrower :Plastic ;
+  skos:prefLabel "Processed Material"^^xsd:string ;
+.
+:Project_Material
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "VOLPE  Asset Management Object Classes, Object_Class_Definition_4 on Data Architecture CD, Volpe Center, 10-01-03; ; page 1"^^xsd:string ;
+  rdfs:label "Project Material"^^xsd:string ;
+  rdfs:subClassOf :Material ;
+  skos:broader :Material ;
+  skos:definition "Project materiel includes both materiel requirements during project planning and acquired project materiel during work-in-process (WIP) prior to an asset becoming operational and placed in-use.   [VOLPE]"^^xsd:string ;
+  skos:prefLabel "Project Material"^^xsd:string ;
+.
+:Property
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11ed."^^xsd:string ;
+  rdfs:label "Property"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Physical_Resources ;
+  skos:definition "2 a : something owned or possessed;  specifically   : a piece of real estate  b : the exclusive right to possess, enjoy, and dispose of a thing  : OWNERSHIP  c : something to which a person or business has a legal title  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Government_Property ;
+  skos:narrower :Personal_Property ;
+  skos:narrower :Real_Property ;
+  skos:prefLabel "Property"^^xsd:string ;
+.
+:Propulsion_System_Fuel
+  rdf:type owl:Class ;
+  rdfs:label "Propulsion System Fuel"^^xsd:string ;
+  rdfs:subClassOf :System_Fuel ;
+  skos:broader :System_Fuel ;
+  skos:prefLabel "Propulsion System Fuel"^^xsd:string ;
+.
+:Propulsion_System_Fuel_Type
+  rdf:type owl:Class ;
+  rdfs:label "Propulsion System Fuel Type"^^xsd:string ;
+  rdfs:subClassOf :Propulsion_System_Fuel ;
+  rdfs:subClassOf :System_Fuel_Type ;
+  skos:broader :Propulsion_System_Fuel ;
+  skos:broader :System_Fuel_Type ;
+  skos:prefLabel "Propulsion System Fuel Type"^^xsd:string ;
+.
+:Provision
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Provision"^^xsd:string ;
+  rdfs:subClassOf :Stock_Item ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Provisions ;
+  skos:definition """1 a : the act or process of providing b : the fact or state of being prepared beforehand c : a measure taken beforehand to deal with a need or contingency : PREPARATION <made provision for replacements> 
+2 : a stock of needed materials or supplies; especially : a stock of food  usually used in plural 
+3 : PROVISO, STIPULATION   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Provision"^^xsd:string ;
+.
+:Provisions
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Provisions"^^xsd:string ;
+  rdfs:subClassOf :Stock ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Provision
+    ) ;
+  skos:broader :Stock ;
+  skos:narrower :Provision ;
+  skos:prefLabel "Provisions"^^xsd:string ;
+.
+:Psychoactive_Substances
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Annex 1, Personnel Licensing"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Annex 2, Rules of the Air"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Annex 6 Part I; International Commercial Air Transport –  Aeroplanes"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Annex 6 Part II; International General Aviation – Aeroplanes"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Annex 6 Part III; International Operations – Helicopters"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-437"^^xsd:string ;
+  dcterms:source """ICAO  (AN 1; AN 2; AN 6/I; AN 6/II; AN 6/III)
+Official definition added to: AN 1 by Amdt 162 (5/11/1998), AN 2 by Amdt 34 (5/11/1998), and AN 6/I by Amdt 23 (5/11/1998)"""^^xsd:string ;
+  rdfs:label "Psychoactive Substances"^^xsd:string ;
+  rdfs:subClassOf :Substances ;
+  skos:broader :Substances ;
+  skos:definition "Alcohol, opioids, cannabinoids, sedatives and hypnotics, cocaine, other psychostimulants, hallucinogens, and volatile solvents, whereas coffee and tobacco are excluded.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Psychoactive Substances"^^xsd:string ;
+.
+:Radioactive_Material
+  rdf:type owl:Class ;
+  rdfs:label "Radioactive Material"^^xsd:string ;
+  rdfs:subClassOf :Physical_Material ;
+  skos:broader :Physical_Material ;
+  skos:narrower :Radioactive_Material_Category ;
+  skos:prefLabel "Radioactive Material"^^xsd:string ;
+.
+:Radioactive_Material_Category
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  dcterms:bibliographicCitation "IATA Dangerous Goods Regulations, January 2011"^^xsd:string ;
+  dcterms:bibliographicCitation "IATA SDDG Specification, v. 2.1"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Technical Instructions for the Safe Transport of Dangerous Goods by Air (Doc 9284)"^^xsd:string ;
+  dcterms:hasFormat "Enumeration"^^xsd:string ;
+  dcterms:hasFormat "Valid values: {I=White, II=Yellow, III=Yellow}"^^xsd:string ;
+  dcterms:isPartOf "Radioactive Materials"^^xsd:string ;
+  dcterms:references "Fixm.FlightObject.Cargo.RadioactiveMaterials.RadioactiveMaterial.category"^^xsd:string ;
+  dcterms:references "Fixm.FlightObject.Cargo.RadioactiveMaterials.RadioactiveMaterialCategory"^^xsd:string ;
+  rdfs:label "Radioactive Material Category"^^xsd:string ;
+  rdfs:subClassOf :Radioactive_Material ;
+  skos:broader :Radioactive_Material ;
+  skos:definition "A category used for radioactive materials in a package, overpack or freight container, based on their maximum radiation level.  [FIXM 3.0]"^^xsd:string ;
+  skos:prefLabel "Radioactive Material Category"^^xsd:string ;
+  skos:scopeNote "I=White: Surface radiation < .05 millirem/hr, 1 meter radiation: N/A  [FIXM 3.0]"^^xsd:string ;
+  skos:scopeNote "IATA does not specify a size.  [FIXM 3.0]"^^xsd:string ;
+  skos:scopeNote "IATA model Namespace = xmlns:ram='iata:datamodel:3'  XML element name = ram:ApplicableTransportDangerousGoods  /ram:RadioactiveMaterial   /ram:TypeCode  [FIXM 3.0]"^^xsd:string ;
+  skos:scopeNote "II=Yellow: Surface radiation < 50 millirem/hr, 1 meter radiation: <1 millirem/hr [FIXM 3.0]"^^xsd:string ;
+  skos:scopeNote "III=Yellow: Surface radiation >50 millirem/hr, 1 meter radiation: >1 millirem/hr  [FIXM 3.0]"^^xsd:string ;
+.
+:Radioactive_Materials
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Radioactive Materials"^^xsd:string ;
+  rdfs:subClassOf :Materials ;
+  owl:unionOf (
+      :Radioactive_Material
+    ) ;
+  skos:broader :Materials ;
+  skos:prefLabel "Radioactive Materials"^^xsd:string ;
+.
+:Radionuclide
+  rdf:type owl:Class ;
+  dcterms:isPartOf "Radioactive Materials"^^xsd:string ;
+  rdfs:label "Radionuclide"^^xsd:string ;
+  rdfs:subClassOf :Nuclide ;
+  skos:prefLabel "Radionuclide"^^xsd:string ;
+.
+:Raw_Material
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Raw Material"^^xsd:string ;
+  rdfs:subClassOf :Physical_Material ;
+  skos:broader :Physical_Material ;
+  skos:definition ": crude or processed material that can be converted by manufacture, processing, or combination into a new and useful product <wheat . . . is raw material for the flour mill — C. A. Koepke>; broadly : something with a potential for improvement, development, or elaboration <perplexities are often the raw material of discoveries — Agnes M. Clerke>  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Raw Material"^^xsd:string ;
+.
+:Real_Property
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "VOLPE - Asset Management Object Classes, Object_Class_Definition_4 on Data Architecture CD, Volpe Center, 10-01-03; ; page 1"^^xsd:string ;
+  rdfs:label "Real Property"^^xsd:string ;
+  rdfs:subClassOf :Property ;
+  skos:broader :Property ;
+  skos:definition "Real property generally refers to assets that cannot be easily moved and are affixed to the ground.  These assets include three categories referred to as: land, buildings (including space therein), and other structures.  Other structures typically include such items as roadways, parking lots, street lighting, concrete pads, fencing, structures for antennas, and drainage ditches.    [VOLPE]"^^xsd:string ;
+  skos:prefLabel "Real Property"^^xsd:string ;
+.
+:Real_Property_Inventory
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "RPI"^^xsd:string ;
+  rdfs:label "Real Property Inventory"^^xsd:string ;
+  rdfs:subClassOf :Inventory ;
+  skos:broader :Inventory ;
+  skos:narrower :Real_Property ;
+  skos:prefLabel "Real Property Inventory"^^xsd:string ;
+.
+:Recreational_Drug
+  rdf:type owl:Class ;
+  rdfs:label "Recreational Drug"^^xsd:string ;
+  rdfs:subClassOf :Drug ;
+  owl:disjointWith :Prescription_Drug ;
+  skos:broader :Drug ;
+  skos:prefLabel "Recreational Drug"^^xsd:string ;
+.
+:Reinforced_Plastic
+  rdf:type owl:Class ;
+  rdfs:label "Reinforced Plastic"^^xsd:string ;
+  rdfs:subClassOf :Plastic ;
+  skos:broader :Plastic ;
+  skos:narrower :Fiber_Reinforced_Plastic ;
+  skos:prefLabel "Reinforced Plastic"^^xsd:string ;
+.
+:Resource
+  rdf:type owl:Class ;
+  rdfs:label "Resource"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:hasTopConcept :Resources ;
+  skos:prefLabel "Resource"^^xsd:string ;
+.
+:Resources
+  rdf:type rdfs:Class ;
+  rdfs:label "Resources"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:narrower :Physical_Resources ;
+  skos:prefLabel "Resources"^^xsd:string ;
+.
+<http://www.faa.gov/DRS/Physical_Resources#SAE_Aircraft_De-Icing.Anti-Icing_Fluid_Type_I>
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "SAE Aircraft De-Icing.Anti-Icing Fluid Type I"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_De-Icing_Fluid_Type ;
+  skos:altLabel "SAE Type I"^^xsd:string ;
+  skos:broader :Aircraft_De-Icing_Fluid_Type ;
+  skos:prefLabel "SAE Aircraft De-Icing.Anti-Icing Fluid Type I"^^xsd:string ;
+.
+<http://www.faa.gov/DRS/Physical_Resources#SAE_Aircraft_De-Icing.Anti-Icing_Fluid_Type_II>
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "SAE Aircraft De-Icing.Anti-Icing Fluid Type II"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_De-Icing_Fluid_Type ;
+  skos:altLabel "SAE Type II"^^xsd:string ;
+  skos:broader :Aircraft_De-Icing_Fluid_Type ;
+  skos:prefLabel "SAE Aircraft De-Icing.Anti-Icing Fluid Type II"^^xsd:string ;
+.
+<http://www.faa.gov/DRS/Physical_Resources#SAE_Aircraft_De-Icing.Anti-Icing_Fluid_Type_III>
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "SAE Aircraft De-Icing.Anti-Icing Fluid Type III"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_De-Icing_Fluid_Type ;
+  skos:altLabel "SAE Type III"^^xsd:string ;
+  skos:broader :Aircraft_De-Icing_Fluid_Type ;
+  skos:prefLabel "SAE Aircraft De-Icing.Anti-Icing Fluid Type III"^^xsd:string ;
+.
+:Sample
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Sample"^^xsd:string ;
+  rdfs:subClassOf :Unit ;
+  skos:broader :Unit ;
+  skos:definition "...something that exhibits distinguishing characteristics in its category. ...SAMPLE implies a part or unit taken at random from a larger whole and so presumed to be typical of its qualities <show us a sample of your work>.  [WEBSTER]"^^xsd:string ;
+  skos:definition """1 : a representative part or a single item from a larger whole or group especially when presented for inspection or shown as evidence of quality : SPECIMEN 
+2 : a finite part of a statistical population whose properties are studied to gain information about the whole [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Sample"^^xsd:string ;
+.
+:Secondary_Door
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Secondary Door"^^xsd:string ;
+  rdfs:subClassOf :Door ;
+  skos:broader :Door ;
+  skos:prefLabel "Secondary Door"^^xsd:string ;
+.
+:Set
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Set"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resource_Group ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Physical_Resource_Group ;
+  skos:definition "2 : a number of things of the same kind that belong or are used together <an electric train set>   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Set"^^xsd:string ;
+.
+:Solid_Material
+  rdf:type owl:Class ;
+  rdfs:label "Solid Material"^^xsd:string ;
+  rdfs:subClassOf :Physical_Material ;
+  skos:prefLabel "Solid Material"^^xsd:string ;
+.
+:South_Pole
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "South Pole"^^xsd:string ;
+  rdfs:subClassOf :Magnetic_Pole ;
+  skos:altLabel "South-Seeking Pole"^^xsd:string ;
+  skos:broader :Magnetic_Pole ;
+  skos:definition "2 of a magnet : the pole that points toward the south   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "South Pole"^^xsd:string ;
+.
+:Specimen
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Specimen"^^xsd:string ;
+  rdfs:subClassOf :Unit ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Unit ;
+  skos:definition "...something that exhibits distinguishing characteristics in its category. INSTANCE applies to any individual person, act, or thing that may be offered to illustrate or explain <an instance of history repeating itself>. CASE is used to direct attention to a real or assumed occurrence or situation that is to be considered, studied, or dealt with <a case of mistaken identity>. ILLUSTRATION applies to an instance offered as a means of clarifying or illuminating a general statement <a telling illustration of Murphy's Law>. EXAMPLE applies to a typical, representative, or illustrative instance or case <a typical example of bureaucratic waste>. SAMPLE implies a part or unit taken at random from a larger whole and so presumed to be typical of its qualities <show us a sample of your work>. SPECIMEN applies to any example or sample whether representative or merely existent and available <one of the finest specimens of the jeweler's art>."^^xsd:string ;
+  skos:definition """1 a : an individual, item, or part considered typical of a group, class, or whole b : a portion or quantity of material for use in testing, examination, or study <a urine specimen> 
+2 a : something that obviously belongs to a particular category but is noticed by reason of an individual distinguishing characteristic b : PERSON, INDIVIDUAL <he's a tough specimen> 
+3 : a plant grown for exhibition or in the open to display its full development <specimen trees>  [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Specimen"^^xsd:string ;
+.
+:Specimen_Set
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA 14 CFR Part 25, Appendix F - Definitions"^^xsd:string ;
+  rdfs:label "Specimen Set"^^xsd:string ;
+  rdfs:subClassOf :Set ;
+  rdfs:subClassOf :Specimen ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Specimen
+            :Set
+          ) ;
+      ]
+    ) ;
+  skos:broader :Set ;
+  skos:definition "Specimen set means two insulation blanket specimens. Both specimens must represent the same production insulation blanket construction and materials, proportioned to correspond to the specimen size.   [FAA 14 CFR Part 25, Appendix F]"^^xsd:string ;
+  skos:prefLabel "Specimen Set"^^xsd:string ;
+.
+:Stimulant
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Stimulant"^^xsd:string ;
+  rdfs:subClassOf :Agent ;
+  rdfs:subClassOf :Drug ;
+  skos:broader :Agent ;
+  skos:broader :Drug ;
+  skos:definition """1 : an agent (as a drug) that produces a temporary increase of the functional activity or efficiency of an organism or any of its parts 
+2 : STIMULUS 
+3 : an alcoholic beverage  not used technically   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Stimulant"^^xsd:string ;
+.
+:Stock
+  rdf:type owl:Class ;
+  rdfs:label "Stock"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Stock_Item
+    ) ;
+  skos:broader :Physical_Resources ;
+  skos:narrower :Stock_Item ;
+  skos:prefLabel "Stock"^^xsd:string ;
+.
+:Stock_Item
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "VOLPE - Asset Management Object Classes, Object_Class_Definition_4 on Data Architecture CD, Volpe Center, 10-01-03; ; page 1"^^xsd:string ;
+  rdfs:label "Stock Item"^^xsd:string ;
+  rdfs:subClassOf :Item ;
+  skos:broader :Item ;
+  skos:broader :Stock ;
+  skos:definition "A stock item is a cataloged item available for supply that is identified by the National Stock Number (NSN) or FAA local stock number (LSN).   [VOLPE]"^^xsd:string ;
+  skos:prefLabel "Stock Item"^^xsd:string ;
+.
+:Structure
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Structure"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass <http://www.faa.gov/DRS/Aircraft#Structure> ;
+  owl:equivalentClass <http://www.faa.gov/DRS/Facilities#Structure> ;
+  owl:equivalentClass <http://www.faa.gov/DRS/Systems#Structure> ;
+  skos:prefLabel "Structure"^^xsd:string ;
+.
+:Structure_Part
+  rdf:type owl:Class ;
+  rdfs:label "Structure Part"^^xsd:string ;
+  rdfs:subClassOf :Facility_Part ;
+  skos:broader :Facility_Part ;
+  skos:prefLabel "Structure Part"^^xsd:string ;
+.
+:Structures
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Structures"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Structure
+    ) ;
+  skos:prefLabel "Structures"^^xsd:string ;
+.
+:Substance
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Substance"^^xsd:string ;
+  rdfs:subClassOf :Physical_Material ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Physical_Material ;
+  skos:definition """1 a : essential nature : ESSENCE b : a fundamental or characteristic part or quality c Christian Science : GOD 1b 
+2 a : ultimate reality that underlies all outward manifestations and change b : practical importance : MEANING, USEFULNESS <the . . . billwhich will be without substance in the sense that it will authorize nothing more than a set of ideas — Richard Reeves> 
+3 a : physical material from which something is made or which has discrete existence b : matter of particular or definite chemical constitution c : something (as drugs or alcoholic beverages) deemed harmful and usually subject to legal restriction <possession of a controlled substance> <substance abuse> 
+4 : material possessions : PROPERTY <a family of substance>   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Substance"^^xsd:string ;
+.
+:Substances
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Substances"^^xsd:string ;
+  rdfs:subClassOf :Physical_Materials ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Substance
+    ) ;
+  skos:broader :Physical_Materials ;
+  skos:prefLabel "Substances"^^xsd:string ;
+.
+:Supplies
+  rdf:type owl:Class ;
+  rdfs:label "Supplies"^^xsd:string ;
+  rdfs:subClassOf :Provisions ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Provisions ;
+  skos:narrower :Commissary_Supplies ;
+  skos:prefLabel "Supplies"^^xsd:string ;
+.
+:Suppression_Agent
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Suppression Agent"^^xsd:string ;
+  rdfs:subClassOf :Agent ;
+  skos:prefLabel "Suppression Agent"^^xsd:string ;
+.
+:Surface_Structure
+  rdf:type owl:Class ;
+  rdfs:label "Surface Structure"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resource_Structure ;
+  skos:broader :Physical_Resource_Structure ;
+  skos:narrower :Surface_Structure_Composition ;
+  skos:prefLabel "Surface Structure"^^xsd:string ;
+.
+:Surface_Structure_Composition
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.1 generated on 2009-02-03; retrieved on 11-29-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  :dataElementLabelAIXM "composition"^^xsd:string ;
+  rdfs:label "Surface Structure Composition"^^xsd:string ;
+  rdfs:subClassOf :Surface_Structure ;
+  skos:broader :Surface_Structure ;
+  skos:definition "The type of the predominant material of which a surface of the movement area is composed.   [AIXM 5.1]"^^xsd:string ;
+  skos:prefLabel "Surface Structure Composition"^^xsd:string ;
+.
+:Synthetic_Material
+  rdf:type owl:Class ;
+  rdfs:label "Synthetic Material"^^xsd:string ;
+  rdfs:subClassOf :Physical_Material ;
+  skos:broader :Physical_Material ;
+  skos:narrower :Plastic ;
+  skos:prefLabel "Synthetic Material"^^xsd:string ;
+.
+:System_Form
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "System Form"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Form ;
+  skos:broader :Infrastructure_Form ;
+  skos:prefLabel "System Form"^^xsd:string ;
+.
+:System_Fuel
+  rdf:type owl:Class ;
+  rdfs:label "System Fuel"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Fuel ;
+  skos:broader :Infrastructure_Fuel ;
+  skos:prefLabel "System Fuel"^^xsd:string ;
+.
+:System_Fuel_Type
+  rdf:type owl:Class ;
+  rdfs:label "System Fuel Type"^^xsd:string ;
+  rdfs:subClassOf :System_Fuel ;
+  skos:broader :System_Fuel ;
+  skos:prefLabel "System Fuel Type"^^xsd:string ;
+.
+:System_Part
+  rdf:type owl:Class ;
+  rdfs:label "System Part"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resource_Part ;
+  owl:equivalentClass <http://www.faa.gov/DRS/Systems#Part> ;
+  skos:broader :Physical_Resource_Part ;
+  skos:prefLabel "System Part"^^xsd:string ;
+.
+:System_Structure
+  rdf:type owl:Class ;
+  rdfs:label "System Structure"^^xsd:string ;
+  rdfs:subClassOf :Structure ;
+  skos:broader :Structure ;
+  skos:prefLabel "System Structure"^^xsd:string ;
+.
+:Tank_Structure
+  rdf:type owl:Class ;
+  rdfs:label "Tank Structure"^^xsd:string ;
+  rdfs:subClassOf :Device_Structure ;
+  skos:prefLabel "Tank Structure"^^xsd:string ;
+.
+:Technical_Architecture
+  rdf:type owl:Class ;
+  rdfs:label "Technical Architecture"^^xsd:string ;
+  rdfs:subClassOf :Architecture ;
+  skos:broader :Architecture ;
+  skos:prefLabel "Technical Architecture"^^xsd:string ;
+.
+:Technology_Form
+  rdf:type owl:Class ;
+  rdfs:label "Technology Form"^^xsd:string ;
+  rdfs:subClassOf :System_Form ;
+  skos:broader :System_Form ;
+  skos:prefLabel "Technology Form"^^xsd:string ;
+.
+:Thermal-Acoustic_Insulation
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA 14 CFR Part 25, Appendix F - Definitions"^^xsd:string ;
+  rdfs:label "Thermal-Acoustic Insulation"^^xsd:string ;
+  rdfs:subClassOf :Insulation ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Thermal_Insulation
+            :Acoustic_Insulation
+          ) ;
+      ]
+    ) ;
+  skos:altLabel "Thermal or Acoustic Insulation"^^xsd:string ;
+  skos:definition """“Thermal/acoustic insulation” means a material or system of materials used to provide thermal and/or acoustic protection. Examples include fiberglass or other batting material encapsulated by a film covering and foams.
+[FAA 14 CFR Part 25, Appendix F]"""^^xsd:string ;
+  skos:prefLabel "Thermal-Acoustic Insulation"^^xsd:string ;
+.
+:Thermal_Insulation
+  rdf:type owl:Class ;
+  rdfs:label "Thermal Insulation"^^xsd:string ;
+  rdfs:subClassOf :Insulation ;
+  skos:altLabel "Heat Insulation"^^xsd:string ;
+  skos:prefLabel "Thermal Insulation"^^xsd:string ;
+.
+:Thermal_Insulation_Materials
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Thermal Insulation Materials"^^xsd:string ;
+  rdfs:subClassOf :Insulation_Materials ;
+  skos:broader :Insulation_Materials ;
+  skos:prefLabel "Thermal Insulation Materials"^^xsd:string ;
+.
+:Titanium
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Titanium"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Heat-resistant_Material ;
+  skos:broader :Metallic_Element ;
+  skos:definition ": a silvery-gray light strong metallic element obtained from ilmenite and rutile and used especially in alloys and combined in refractory materials, pigments, and coatings  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Titanium"^^xsd:string ;
+.
+:Toxic_Gas
+  rdf:type owl:Class ;
+  rdfs:label "Toxic Gas"^^xsd:string ;
+  rdfs:subClassOf :Gas ;
+  skos:prefLabel "Toxic Gas"^^xsd:string ;
+.
+:Turbine_Fuel
+  rdf:type owl:Class ;
+  rdfs:label "Turbine Fuel"^^xsd:string ;
+  rdfs:subClassOf :Fuel_Type ;
+  skos:broader :Fuel_Type ;
+  skos:prefLabel "Turbine Fuel"^^xsd:string ;
+.
+:Unidentified_Flying_Object
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Aeronautical Information Manual (AIM); Office Guide to Basic Flight Information and ATC Procedures; Appendix 4. Abbreviations/Acronyms; dated 2/9/2012"^^xsd:string ;
+  dcterms:bibliographicCitation "FAA JO Order 7340.2C, Contractions; dated 2/9/2012."^^xsd:string ;
+  vaem:acronym "UFO"^^xsd:string ;
+  rdfs:label "Unidentified Flying Object"^^xsd:string ;
+  rdfs:subClassOf :Airborne_Object ;
+  skos:broader :Airborne_Object ;
+  skos:prefLabel "Unidentified Flying Object"^^xsd:string ;
+.
+:Unit
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Unit"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Constituent ;
+  skos:broader :Part ;
+  skos:definition "3 a : a single thing, person, or group that is a constituent of a whole... c : a piece or complex of apparatus serving to perform one particular function [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Unit"^^xsd:string ;
+.
+:Vertical_Object
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Doc 9881, Guidelines for Electronic Terrain, Obstacle and Aerodrome Mapping Information"^^xsd:string ;
+  rdfs:label "Vertical Object"^^xsd:string ;
+  rdfs:subClassOf :Object ;
+  skos:broader :Object ;
+  skos:definition "An object with vertical extent that is within the designated buffer area.   [ICAO]"^^xsd:string ;
+  skos:editorialNote "Do you mean \"Vertical Structure\" like an \"Obstacle\"?  If so, please go to \"Facilities\" ontology file."^^xsd:string ;
+  skos:prefLabel "Vertical Object"^^xsd:string ;
+.
+:Water
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Water"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Liquid ;
+  skos:definition """1 a : the liquid that descends from the clouds as rain, forms streams, lakes, and seas, and is a major constituent of all living matter and that when pure is an odorless, tasteless, very slightly compressible liquid oxide of hydrogen H2O which appears bluish in thick layers, freezes at 0° C and boils at 100° C, has a maximum density at 4° C and a high specific heat, is feebly ionized to hydrogen and hydroxyl ions, and is a poor conductor of electricity and a good solvent b : a natural mineral water  usually used in plural 
+2 : a particular quantity or body of water: as a (1) plural : the water occupying or flowing in a particular bed (2) chiefly British : LAKE, POND b : a quantity or depth of water adequate for some purpose (as navigation) c plural (1) : a band of seawater abutting on the land of a particular sovereignty and under the control of that sovereignty (2) : the sea of a particular part of the earth d : WATER SUPPLY <threatened to turn off the water> 
+3 : travel or transportation on water <we went by water> 
+4 : the level of water at a particular state of the tide : TIDE 
+5 : liquid containing or resembling water: as a (1) : a pharmaceutical or cosmetic preparation made with water (2) : a watery solution of a gaseous or readily volatile substance  compare AMMONIA WATER b archaic : a distilled fluid (as an essence); especially : a distilled alcoholic liquor c : a watery fluid (as tears, urine, or sap) formed or circulating in a living body d : AMNIOTIC FLUID; also : BAG OF WATERS ...
+8 a : stock not representing assets of the issuing company and not backed by earning power b : fictitious or exaggerated asset entries that give a stock an unrealistic book value   [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Potable_Water ;
+  skos:prefLabel "Water"^^xsd:string ;
+.
+:dataElementLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "Data Element Label"^^xsd:string ;
+  rdfs:subPropertyOf skos:altLabel ;
+  skos:prefLabel "Data Element Label"^^xsd:string ;
+.
+:dataElementLabelAIXM
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "AIXM Data Element Label"^^xsd:string ;
+  rdfs:subPropertyOf :dataElementLabel ;
+  skos:prefLabel "AIXM Data Element Label"^^xsd:string ;
+.
+<http://www.faa.gov/DRS/Spacecraft#Conveyance>
+  skos:topConceptOf Conveyance:Conveyance ;
+.
+<http://www.faa.gov/DRS/Systems#Air_Transportation_Communications_System>
+  skos:broader <http://www.faa.gov/DRS/Systems#Transportation_Communications_System> ;
+.
+<http://www.faa.gov/DRS/Systems#Appliance>
+  rdfs:subClassOf <http://www.faa.gov/DRS/Systems#Device> ;
+.
+<http://www.faa.gov/DRS/Systems#Implement>
+  rdfs:subClassOf <http://www.faa.gov/DRS/Systems#Tool> ;
+.
+<http://www.faa.gov/DRS/Systems#Substance>
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Substance"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Physical_Material ;
+  skos:broader :Substances ;
+  skos:definition "3 a : physical material from which something is made or which has discrete existence b : matter of particular or definite chemical constitution  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Fluid ;
+  skos:narrower :Ingredient ;
+  skos:narrower :Matter ;
+  skos:prefLabel "Substance"^^xsd:string ;
+.
+<http://www.faa.gov/DRS/Systems#Technology_Structure>
+  rdf:type owl:Class ;
+  rdfs:label "Technology Structure"^^xsd:string ;
+  rdfs:subClassOf :System_Structure ;
+  skos:broader :System_Structure ;
+  skos:prefLabel "Technology Structure"^^xsd:string ;
+.
+<http://www.faa.gov/DRS/Systems#Tool>
+  rdfs:subClassOf <http://www.faa.gov/DRS/Systems#Device> ;
+.
+<http://www.faa.gov/DRS/Systems#Traffic_Communications_System>
+  skos:broader <http://www.faa.gov/DRS/Systems#Transportation_Communications_System> ;
+.

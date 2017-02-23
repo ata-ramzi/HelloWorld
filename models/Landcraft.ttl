@@ -1,0 +1,1836 @@
+# baseURI: http://www.faa.gov/DRS/Landcraft
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://purl.org/goodrelations/v1
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://www.faa.gov/DRS/Landcraft#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.faa.gov/DRS/Landcraft>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dcterms: ;
+  owl:imports <http://purl.org/goodrelations/v1> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Acura
+  rdf:type :Automobile_Make ;
+  rdfs:label "Acura"^^xsd:string ;
+  skos:prefLabel "Acura"^^xsd:string ;
+.
+:Adult_Snow_Sled
+  rdf:type owl:Class ;
+  rdfs:label "Adult Snow Sled"^^xsd:string ;
+  rdfs:subClassOf :Snow_Sled ;
+  skos:broader :Snow_Sled ;
+  skos:prefLabel "Adult Snow Sled"^^xsd:string ;
+.
+:Alpha_Romeo
+  rdf:type :Automobile_Make ;
+  rdfs:label "Alpha Romeo"^^xsd:string ;
+  skos:prefLabel "Alpha Romeo"^^xsd:string ;
+.
+:Amphibious_Transport_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Amphibious Transport Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Amphibious_Vehicle ;
+  rdfs:subClassOf :Transport_Vehicle ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Amphibious_Vehicle
+            :Transport_Vehicle
+          ) ;
+      ]
+    ) ;
+  owl:unionOf (
+      :DUKW
+    ) ;
+  skos:broader :Amphibious_Vehicle ;
+  skos:broader :Transport_Vehicle ;
+  skos:prefLabel "Amphibious Transport Vehicle"^^xsd:string ;
+.
+:Amphibious_Vehicle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  rdfs:label "Amphibious Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Utility_Vehicle ;
+  owl:unionOf (
+      :Duck_Boat
+    ) ;
+  skos:broader :Utility_Vehicle ;
+  skos:definition "2 : an amphibious vehicle; esp : an airplane designed to take off from and land on either land or water  [WEBSTER]"^^xsd:string ;
+  skos:definition "A physical resource that is a type of vehicle that is capable of: (a) movement - moving under its own violition along a path or route on land or water; and (b) carrying or transporting someone (passenger) or something (cargo/payload) from one geographic location to another.  [PROPOSED]"^^xsd:string ;
+  skos:prefLabel "Amphibious Vehicle"^^xsd:string ;
+.
+:Animal_Drawn_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Animal Drawn Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Drawn_Vehicle ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Carriage
+            :Cart
+            :Sleigh
+            :Wagon
+          ) ;
+      ]
+    ) ;
+  skos:broader :Drawn_Vehicle ;
+  skos:prefLabel "Animal Drawn Vehicle"^^xsd:string ;
+.
+:Aston_Martin
+  rdf:type :Automobile_Make ;
+  rdfs:label "Aston Martin"^^xsd:string ;
+  skos:prefLabel "Aston Martin"^^xsd:string ;
+.
+:Audi
+  rdf:type :Automobile_Make ;
+  rdfs:label "Audi"^^xsd:string ;
+  skos:prefLabel "Audi"^^xsd:string ;
+.
+:Automobile
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Automobile"^^xsd:string ;
+  rdfs:subClassOf :Passenger_Car ;
+  rdfs:subClassOf owl:Thing ;
+  skos:altLabel "Auto"^^xsd:string ;
+  skos:broader :High_Occupancy_Vehicle ;
+  skos:broader :Motor_Vehicle ;
+  skos:broader :Passenger_Car ;
+  skos:broader :Passenger_Transport_Vehicle ;
+  skos:definition ": a usually four-wheeled automotive vehicle designed for passenger transportation   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Automobile"^^xsd:string ;
+.
+:Automobile_Category
+  rdf:type owl:Class ;
+  rdfs:label "Automobile Category"^^xsd:string ;
+  rdfs:subClassOf :Automobile ;
+  skos:broader :Automobile ;
+  skos:prefLabel "Automobile Category"^^xsd:string ;
+.
+:Automobile_Component
+  rdf:type owl:Class ;
+  rdfs:label "Automobile Component"^^xsd:string ;
+  rdfs:subClassOf :Automobile ;
+  skos:broader :Automobile ;
+  skos:prefLabel "Automobile Component"^^xsd:string ;
+.
+:Automobile_Make
+  rdf:type owl:Class ;
+  rdfs:label "Automobile Make"^^xsd:string ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  rdfs:subClassOf :Automobile_Type ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader :Automobile_Type ;
+  skos:prefLabel "Automobile Make"^^xsd:string ;
+.
+:Automobile_Make-Model
+  rdf:type owl:Class ;
+  rdfs:label "Automobile Make-Model"^^xsd:string ;
+  rdfs:subClassOf :Automobile_Model ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Automobile_Make
+            :Automobile_Model
+          ) ;
+      ]
+    ) ;
+  skos:broader :Automobile_Model ;
+  skos:prefLabel "Automobile Make-Model"^^xsd:string ;
+.
+:Automobile_Model
+  rdf:type owl:Class ;
+  rdfs:label "Automobile Model"^^xsd:string ;
+  rdfs:subClassOf :Automobile_Type ;
+  skos:broader :Automobile_Type ;
+  skos:prefLabel "Automobile Model"^^xsd:string ;
+.
+:Automobile_Type
+  rdf:type owl:Class ;
+  rdfs:label "Automobile Type"^^xsd:string ;
+  rdfs:subClassOf :Automobile ;
+  skos:broader :Automobile ;
+  skos:prefLabel "Automobile Type"^^xsd:string ;
+.
+:BMW
+  rdf:type :Automobile_Make ;
+  rdf:type :Truck_Make ;
+  rdfs:label "BMW"^^xsd:string ;
+  skos:prefLabel "BMW"^^xsd:string ;
+.
+:Baggage_Car
+  rdf:type owl:Class ;
+  rdfs:label "Baggage Car"^^xsd:string ;
+  rdfs:subClassOf :Luggage_Car ;
+  skos:broader :Luggage_Car ;
+  skos:prefLabel "Baggage Car"^^xsd:string ;
+.
+:Bentley
+  rdf:type :Automobile_Make ;
+  rdfs:label "Bentley"^^xsd:string ;
+  skos:prefLabel "Bentley"^^xsd:string ;
+.
+:Bicycle
+  rdf:type owl:Class ;
+  rdfs:label "Bicycle"^^xsd:string ;
+  rdfs:subClassOf :Cycle_Type ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Cycle_Type ;
+  skos:prefLabel "Bicycle"^^xsd:string ;
+.
+:Bicycle_Make
+  rdf:type owl:Class ;
+  rdfs:label "Bicycle Make"^^xsd:string ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  rdfs:subClassOf :Bicycle_Type ;
+  rdfs:subClassOf :Cycle_Make ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader :Bicycle_Type ;
+  skos:broader :Cycle_Make ;
+  skos:prefLabel "Bicycle Make"^^xsd:string ;
+.
+:Bicycle_Type
+  rdf:type owl:Class ;
+  rdfs:label "Bicycle Type"^^xsd:string ;
+  rdfs:subClassOf :Bicycle ;
+  skos:broader :Bicycle ;
+  skos:prefLabel "Bicycle Type"^^xsd:string ;
+.
+:Bobsled
+  rdf:type owl:Class ;
+  rdfs:label "Bobsled"^^xsd:string ;
+  rdfs:subClassOf :Self-Propelled_Sled ;
+  skos:altLabel "Bobsleigh"^^xsd:string ;
+  skos:broader :Self-Propelled_Sled ;
+  skos:definition "Bobsleigh or bobsled is a winter sport in which teams of two or four teammates make timed runs down narrow, twisting, banked, iced tracks in a gravity-powered sled. The timed runs are combined to calculate the final score.   [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Bobsled"^^xsd:string ;
+  skos:scopeNote "The various types of sleds came several years before the first tracks were built in St. Moritz, Switzerland, where the original bobsleds were adapted upsized luge/skeleton sleds designed by the adventurously wealthy to carry passengers. All three types were adapted from boys' delivery sleds and toboggans.  [WIKIPEDIA]"^^xsd:string ;
+.
+:Box_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Box Truck"^^xsd:string ;
+  rdfs:subClassOf :Medium_Truck ;
+  skos:prefLabel "Box Truck"^^xsd:string ;
+.
+:Boxcar
+  rdf:type owl:Class ;
+  rdfs:label "Boxcar"^^xsd:string ;
+  rdfs:subClassOf :Freight_Car ;
+  skos:broader :Freight_Car ;
+  skos:definition ": a roofed freight car usually with sliding doors in the sides  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Boxcar"^^xsd:string ;
+.
+:Buick
+  rdf:type :Automobile_Make ;
+  rdfs:label "Buick"^^xsd:string ;
+  skos:prefLabel "Buick"^^xsd:string ;
+.
+:Bus
+  rdf:type owl:Class ;
+  rdfs:label "Bus"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :High_Occupancy_Vehicle ;
+  skos:broader :Motor_Vehicle ;
+  skos:broader :Passenger_Transport_Vehicle ;
+  skos:broader :Public_Transit_Vehicle ;
+  skos:broader :Tour_Vehicle ;
+  skos:broader :Transit_Vehicle ;
+  skos:prefLabel "Bus"^^xsd:string ;
+.
+:Bus_Category
+  rdf:type owl:Class ;
+  rdfs:label "Bus Category"^^xsd:string ;
+  rdfs:subClassOf :Bus ;
+  skos:broader :Bus ;
+  skos:prefLabel "Bus Category"^^xsd:string ;
+.
+:Bus_Make
+  rdf:type owl:Class ;
+  rdfs:label "Bus Make"^^xsd:string ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  rdfs:subClassOf :Bus_Type ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader :Bus_Type ;
+  skos:prefLabel "Bus Make"^^xsd:string ;
+.
+:Bus_Type
+  rdf:type owl:Class ;
+  rdfs:label "Bus Type"^^xsd:string ;
+  rdfs:subClassOf :Bus ;
+  skos:broader :Bus ;
+  skos:prefLabel "Bus Type"^^xsd:string ;
+.
+:Caboose
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Caboose"^^xsd:string ;
+  rdfs:subClassOf :Freight_Car ;
+  skos:definition "2 : a freight-train car attached usually to the rear mainly for the use of the train crew   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Caboose"^^xsd:string ;
+.
+:Car
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Car"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition """1 : a vehicle moving on wheels: as a archaic : CARRIAGE, CHARIOT b : a vehicle designed to move on rails (as of a railroad) c : AUTOMOBILE 
+2 : the passenger compartment of an elevator 
+3 : the part of an airship or balloon that carries the passengers and cargo  [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Car"^^xsd:string ;
+.
+:Cargo
+  rdf:type owl:Class ;
+  rdfs:label "Cargo"^^xsd:string ;
+  rdfs:subClassOf :Load ;
+  skos:broader :Load ;
+  skos:prefLabel "Cargo"^^xsd:string ;
+.
+:Cargo_Car
+  rdf:type owl:Class ;
+  rdfs:label "Cargo Car"^^xsd:string ;
+  rdfs:subClassOf :Car ;
+  skos:broader :Car ;
+  skos:prefLabel "Cargo Car"^^xsd:string ;
+.
+:Cargo_Rail_Car
+  rdf:type owl:Class ;
+  rdfs:label "Cargo Rail Car"^^xsd:string ;
+  rdfs:subClassOf :Cargo_Car ;
+  rdfs:subClassOf :Rail_Car ;
+  skos:broader :Cargo_Car ;
+  skos:broader :Rail_Car ;
+  skos:prefLabel "Cargo Rail Car"^^xsd:string ;
+.
+:Cargo_Train
+  rdf:type owl:Class ;
+  rdfs:label "Cargo Train"^^xsd:string ;
+  rdfs:subClassOf :Train_Category ;
+  skos:broader :Cargo_Transport_Vehicle ;
+  skos:broader :Train ;
+  skos:narrower :Cargo ;
+  skos:prefLabel "Cargo Train"^^xsd:string ;
+.
+:Cargo_Transport_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Cargo Transport Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Transport_Vehicle ;
+  owl:unionOf (
+      :Cargo_Train
+    ) ;
+  skos:broader :Transport_Vehicle ;
+  skos:narrower :Cargo ;
+  skos:prefLabel "Cargo Transport Vehicle"^^xsd:string ;
+.
+:Carriage
+  rdf:type owl:Class ;
+  rdfs:label "Carriage"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Drawn_Vehicle ;
+  skos:broader :Passenger_Transport_Vehicle ;
+  skos:broader :Tour_Vehicle ;
+  skos:prefLabel "Carriage"^^xsd:string ;
+.
+:Cart
+  rdf:type owl:Class ;
+  rdfs:label "Cart"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Cargo_Transport_Vehicle ;
+  skos:broader :Drawn_Vehicle ;
+  skos:narrower :Load ;
+  skos:prefLabel "Cart"^^xsd:string ;
+.
+:Chair_Car
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Chair Car"^^xsd:string ;
+  rdfs:subClassOf :Passenger_Rail_Car ;
+  skos:definition """1 : a railroad car having pairs of chairs with individually adjustable backs on each side of the aisle 
+2 : PARLOR CAR   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Chair Car"^^xsd:string ;
+.
+:Chevrolet
+  rdf:type :Automobile_Make ;
+  rdfs:label "Chevrolet"^^xsd:string ;
+  skos:prefLabel "Chevrolet"^^xsd:string ;
+.
+:Child_Snow_Sled
+  rdf:type owl:Class ;
+  rdfs:label "Child Snow Sled"^^xsd:string ;
+  rdfs:subClassOf :Snow_Sled ;
+  skos:broader :Snow_Sled ;
+  skos:prefLabel "Child Snow Sled"^^xsd:string ;
+.
+:Club_Car
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Club Car"^^xsd:string ;
+  rdfs:subClassOf :Passenger_Rail_Car ;
+  skos:altLabel "Bar Car"^^xsd:string ;
+  skos:broader :Passenger_Rail_Car ;
+  skos:definition ": a railroad passenger car with facilities for serving refreshments and drinks  called also bar car, lounge car  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Club Car"^^xsd:string ;
+.
+:Commercial_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Commercial Truck"^^xsd:string ;
+  rdfs:subClassOf :Truck_Category ;
+  skos:broader :Truck_Category ;
+  skos:prefLabel "Commercial Truck"^^xsd:string ;
+.
+:Commuter_Train
+  rdf:type owl:Class ;
+  rdfs:label "Commuter Train"^^xsd:string ;
+  rdfs:subClassOf :Passenger_Train ;
+  skos:broader :Passenger_Train ;
+  skos:broader :Passenger_Transport_Vehicle ;
+  skos:broader :Public_Transit_Vehicle ;
+  skos:prefLabel "Commuter Train"^^xsd:string ;
+.
+:Concrete_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Concrete Truck"^^xsd:string ;
+  rdfs:subClassOf :Heavy_Truck ;
+  skos:broader :Heavy_Truck ;
+  skos:prefLabel "Concrete Truck"^^xsd:string ;
+.
+:Construction_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Construction Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Utility_Vehicle ;
+  skos:broader :Utility_Vehicle ;
+  skos:narrower :Truck ;
+  skos:prefLabel "Construction Vehicle"^^xsd:string ;
+.
+:Cycle
+  rdf:type owl:Class ;
+  rdfs:label "Cycle"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Unicycle
+            :Bicycle
+            :Tricycle
+          ) ;
+      ]
+    ) ;
+  skos:broader :Passenger_Transport_Vehicle ;
+  skos:broader :Recreational_Vehicle ;
+  skos:broader :Self-Propelled_Vehicle ;
+  skos:narrower :Bicycle ;
+  skos:narrower :Tricycle ;
+  skos:prefLabel "Cycle"^^xsd:string ;
+.
+:Cycle_Category
+  rdf:type owl:Class ;
+  rdfs:label "Cycle Category"^^xsd:string ;
+  rdfs:subClassOf :Cycle ;
+  skos:broader :Cycle ;
+  skos:prefLabel "Cycle Category"^^xsd:string ;
+.
+:Cycle_Make
+  rdf:type owl:Class ;
+  rdfs:label "Cycle Make"^^xsd:string ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  rdfs:subClassOf :Cycle_Type ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader :Cycle_Type ;
+  skos:prefLabel "Cycle Make"^^xsd:string ;
+.
+:Cycle_Type
+  rdf:type owl:Class ;
+  rdfs:label "Cycle Type"^^xsd:string ;
+  rdfs:subClassOf :Cycle ;
+  skos:broader :Cycle ;
+  skos:prefLabel "Cycle Type"^^xsd:string ;
+.
+:DUKW
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA   https://en.wikipedia.org/wiki/DUKW"^^xsd:string ;
+  rdfs:label "DUKW"^^xsd:string ;
+  rdfs:subClassOf :Medium_Truck ;
+  rdfs:subClassOf :Military_Transport_Truck ;
+  rdfs:subClassOf owl:Thing ;
+  skos:altLabel "Duck"^^xsd:string ;
+  skos:broader :Medium_Truck ;
+  skos:broader :Military_Transport_Truck ;
+  skos:definition "The DUKW (colloquially known as Duck) is a six-wheel-drive amphibious modification of the 2½ ton CCKW trucks used by the U.S. military in World War II. Designed by a partnership under military auspices of Sparkman & Stephens and General Motors Corporation (GMC), the DUKW was used for the transportation of goods and troops over land and water. Excelling at approaching and crossing beaches in amphibious warfare attacks, it was intended only to last long enough to meet the demands of combat. Surviving DUKWs have since found popularity as tourist craft in marine environments.  [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "DUKW"^^xsd:string ;
+  skos:scopeNote """The name DUKW comes from GMC model nomenclature:[7]
+D, designed in 1942
+U, utility
+K, all-wheel drive
+W, dual rear axles [8]   [WIKIPEDIA]"""^^xsd:string ;
+.
+:Delivery_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Delivery Truck"^^xsd:string ;
+  rdfs:subClassOf :Transport_Truck ;
+  skos:broader :Transport_Truck ;
+  skos:prefLabel "Delivery Truck"^^xsd:string ;
+.
+:Dining_Car
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Dining Car"^^xsd:string ;
+  rdfs:subClassOf :Club_Car ;
+  skos:definition ": a railroad car in which meals are served  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Dining Car"^^xsd:string ;
+.
+:Drawn_Sled
+  rdf:type owl:Class ;
+  rdfs:label "Drawn Sled"^^xsd:string ;
+  rdfs:subClassOf :Sled_Type ;
+  skos:broader :Sled_Type ;
+  skos:prefLabel "Drawn Sled"^^xsd:string ;
+.
+:Drawn_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Drawn Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Vehicle_Class ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Carriage
+            :Cart
+            :Sleigh
+            :Wagon
+          ) ;
+      ]
+    ) ;
+  skos:broader :Vehicle_Class ;
+  skos:prefLabel "Drawn Vehicle"^^xsd:string ;
+.
+:Duck_Boat
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Duck Boat1   http://patch.com/washington/bellevue/duck-boats-5-things-you-didnt-know-0"^^xsd:string ;
+  rdfs:label "Duck Boat"^^xsd:string ;
+  rdfs:subClassOf :DUKW ;
+  rdfs:subClassOf :Touring_Truck ;
+  skos:altLabel "DUKW"^^xsd:string ;
+  skos:broader :DUKW ;
+  skos:broader :Touring_Truck ;
+  skos:prefLabel "Duck Boat"^^xsd:string ;
+  skos:scopeNote "Originally called the DUKW, the vehicle was used as an amphibious landing craft in World War II. The vehicle’s main use was to transport supplies from ship to shore during amphibious operations. Many were used in D-Day.  [Duck Boat1]"^^xsd:string ;
+.
+:Dump_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Dump Truck"^^xsd:string ;
+  rdfs:subClassOf :Heavy_Truck ;
+  skos:broader :Heavy_Truck ;
+  skos:prefLabel "Dump Truck"^^xsd:string ;
+.
+:Elevator
+  rdf:type owl:Class ;
+  rdfs:label "Elevator"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "1 : one that raises or lifts something up: as a : an endless belt or chain conveyor with cleats, scoops, or buckets for raising material b : a cage or platform and its hoisting machinery for conveying people or things to different levels   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Elevator"^^xsd:string ;
+.
+:Elevator_Car
+  rdf:type owl:Class ;
+  rdfs:label "Elevator Car"^^xsd:string ;
+  rdfs:subClassOf :Car ;
+  rdfs:subClassOf :Elevator_Component ;
+  skos:broader :Elevator_Component ;
+  skos:prefLabel "Elevator Car"^^xsd:string ;
+.
+:Elevator_Category
+  rdf:type owl:Class ;
+  rdfs:label "Elevator Category"^^xsd:string ;
+  rdfs:subClassOf :Elevator ;
+  skos:broader :Elevator ;
+  skos:prefLabel "Elevator Category"^^xsd:string ;
+.
+:Elevator_Component
+  rdf:type owl:Class ;
+  rdfs:label "Elevator Component"^^xsd:string ;
+  rdfs:subClassOf :Elevator ;
+  skos:broader :Elevator ;
+  skos:prefLabel "Elevator Component"^^xsd:string ;
+.
+:Elevator_Freight_Car
+  rdf:type owl:Class ;
+  rdfs:label "Elevator Freight Car"^^xsd:string ;
+  rdfs:subClassOf :Elevator_Car ;
+  rdfs:subClassOf :Freight_Car ;
+  rdfs:subClassOf :Freight_Elevator_Component ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Elevator_Car
+            :Freight_Car
+          ) ;
+      ]
+    ) ;
+  skos:broader :Elevator_Car ;
+  skos:broader :Freight_Car ;
+  skos:broader :Freight_Elevator_Component ;
+  skos:prefLabel "Elevator Freight Car"^^xsd:string ;
+.
+:Elevator_Make
+  rdf:type owl:Class ;
+  rdfs:label "Elevator Make"^^xsd:string ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  rdfs:subClassOf :Elevator_Type ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader :Elevator_Type ;
+  skos:prefLabel "Elevator Make"^^xsd:string ;
+.
+:Elevator_Passenger_Car
+  rdf:type owl:Class ;
+  rdfs:label "Elevator Passenger Car"^^xsd:string ;
+  rdfs:subClassOf :Elevator_Car ;
+  rdfs:subClassOf :Passenger_Car ;
+  rdfs:subClassOf :Passenger_Elevator_Component ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Elevator_Car
+            :Passenger_Car
+          ) ;
+      ]
+    ) ;
+  skos:broader :Elevator_Car ;
+  skos:broader :Elevator_Passenger_Car ;
+  skos:broader :Passenger_Car ;
+  skos:prefLabel "Elevator Passenger Car"^^xsd:string ;
+.
+:Elevator_Type
+  rdf:type owl:Class ;
+  rdfs:label "Elevator Type"^^xsd:string ;
+  rdfs:subClassOf :Elevator ;
+  skos:broader :Elevator ;
+  skos:prefLabel "Elevator Type"^^xsd:string ;
+.
+:Enclosed_Wagon
+  rdf:type owl:Class ;
+  rdfs:label "Enclosed Wagon"^^xsd:string ;
+  rdfs:subClassOf :Wagon_Type ;
+  skos:broader :Wagon_Type ;
+  skos:prefLabel "Enclosed Wagon"^^xsd:string ;
+.
+:Expendable_Launch_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Expendable Launch Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Launch_Vehicle ;
+  skos:prefLabel "Expendable Launch Vehicle"^^xsd:string ;
+.
+:Ferrari
+  rdf:type :Automobile_Make ;
+  rdfs:label "Ferrari"^^xsd:string ;
+  skos:prefLabel "Ferrari"^^xsd:string ;
+.
+:Fiat
+  rdf:type :Automobile_Make ;
+  rdfs:label "Fiat"^^xsd:string ;
+  skos:prefLabel "Fiat"^^xsd:string ;
+.
+:Firetruck
+  rdf:type owl:Class ;
+  rdfs:label "Firetruck"^^xsd:string ;
+  rdfs:subClassOf :Medium_Truck ;
+  skos:altLabel "Fire Truck"^^xsd:string ;
+  skos:broader :Medium_Truck ;
+  skos:prefLabel "Firetruck"^^xsd:string ;
+.
+:Flat_Bed_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Flat Bed Truck"^^xsd:string ;
+  rdfs:subClassOf :Medium_Truck ;
+  skos:broader :Medium_Truck ;
+  skos:prefLabel "Flat Bed Truck"^^xsd:string ;
+.
+:Ford
+  rdf:type :Automobile_Make ;
+  rdf:type :Truck_Make ;
+  rdfs:label "Ford"^^xsd:string ;
+  skos:prefLabel "Ford"^^xsd:string ;
+.
+:Freight_Car
+  rdf:type owl:Class ;
+  rdfs:label "Freight Car"^^xsd:string ;
+  rdfs:subClassOf :Cargo_Rail_Car ;
+  skos:broader :Cargo_Rail_Car ;
+  skos:prefLabel "Freight Car"^^xsd:string ;
+.
+:Freight_Elevator
+  rdf:type owl:Class ;
+  rdfs:label "Freight Elevator"^^xsd:string ;
+  rdfs:subClassOf :Elevator_Category ;
+  skos:broader :Elevator_Category ;
+  skos:prefLabel "Freight Elevator"^^xsd:string ;
+.
+:Freight_Elevator_Component
+  rdf:type owl:Class ;
+  rdfs:label "Freight Elevator Component"^^xsd:string ;
+  rdfs:subClassOf :Elevator_Component ;
+  rdfs:subClassOf :Freight_Elevator ;
+  skos:broader :Elevator_Component ;
+  skos:broader :Freight_Elevator ;
+  skos:prefLabel "Freight Elevator Component"^^xsd:string ;
+.
+:Fuel_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Fuel Truck"^^xsd:string ;
+  rdfs:subClassOf :Tank_Truck ;
+  skos:broader :Tank_Truck ;
+  skos:prefLabel "Fuel Truck"^^xsd:string ;
+.
+:GM
+  rdf:type :Automobile_Make ;
+  rdf:type :Truck_Make ;
+  rdfs:label "GM"^^xsd:string ;
+  skos:prefLabel "GM"^^xsd:string ;
+.
+:GMC
+  rdf:type :Truck_Make ;
+  rdfs:label "GMC"^^xsd:string ;
+  skos:prefLabel "GMC"^^xsd:string ;
+.
+:Garbage_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Garbage Truck"^^xsd:string ;
+  rdfs:subClassOf :Heavy_Truck ;
+  skos:broader :Heavy_Truck ;
+  skos:prefLabel "Garbage Truck"^^xsd:string ;
+.
+:Haul_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Haul Truck"^^xsd:string ;
+  rdfs:subClassOf :Very_Heavy_Truck ;
+  skos:broader :Very_Heavy_Truck ;
+  skos:prefLabel "Haul Truck"^^xsd:string ;
+.
+:Heavy_Truck
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://en.wikipedia.org/wiki/List_of_truck_types"^^xsd:string ;
+  rdfs:label "Heavy Truck"^^xsd:string ;
+  rdfs:subClassOf :Truck_Type ;
+  skos:broader :Truck_Type ;
+  skos:definition "Heavy trucks are heavier than medium trucks. They weigh between 26001 to over 33000 lb (11794 to over (14969 kg). There is no higher on-road classification.   [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Heavy Truck"^^xsd:string ;
+.
+:High_Occupancy_Vehicle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA Standard Abbreviations as of 11-30-03, extracted from FAA Website"^^xsd:string ;
+  vaem:acronym "HOV"^^xsd:string ;
+  rdfs:label "High Occupancy Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Passenger_Transport_Vehicle ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Automobile
+            :Bus
+          ) ;
+      ]
+    ) ;
+  skos:broader :Passenger_Transport_Vehicle ;
+  skos:narrower :Automobile ;
+  skos:narrower :Bus ;
+  skos:prefLabel "High Occupancy Vehicle"^^xsd:string ;
+.
+:Honda
+  rdf:type :Automobile_Make ;
+  rdfs:label "Honda"^^xsd:string ;
+  skos:prefLabel "Honda"^^xsd:string ;
+.
+:Horse_Drawn_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Horse Drawn Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Animal_Drawn_Vehicle ;
+  skos:broader :Animal_Drawn_Vehicle ;
+  skos:prefLabel "Horse Drawn Vehicle"^^xsd:string ;
+.
+:Hyundai
+  rdf:type :Automobile_Make ;
+  rdfs:label "Hyundai"^^xsd:string ;
+  skos:prefLabel "Hyundai"^^xsd:string ;
+.
+:Infiniti
+  rdf:type :Automobile_Make ;
+  rdfs:label "Infiniti"^^xsd:string ;
+  skos:prefLabel "Infiniti"^^xsd:string ;
+.
+:Isuzu
+  rdf:type :Automobile_Make ;
+  rdfs:label "Isuzu"^^xsd:string ;
+  skos:prefLabel "Isuzu"^^xsd:string ;
+.
+:Jaguar
+  rdf:type :Automobile_Make ;
+  rdfs:label "Jaguar"^^xsd:string ;
+  skos:prefLabel "Jaguar"^^xsd:string ;
+.
+:Jeep
+  rdf:type :Automobile_Make ;
+  rdfs:label "Jeep"^^xsd:string ;
+  skos:prefLabel "Jeep"^^xsd:string ;
+.
+:Kia
+  rdf:type :Automobile_Make ;
+  rdfs:label "Kia"^^xsd:string ;
+  skos:prefLabel "Kia"^^xsd:string ;
+.
+:Lamborghini
+  rdf:type :Automobile_Make ;
+  rdfs:label "Lamborghini"^^xsd:string ;
+  skos:prefLabel "Lamborghini"^^xsd:string ;
+.
+:Land_Rover
+  rdf:type :Automobile_Make ;
+  rdf:type :Truck_Make ;
+  rdfs:label "Land Rover"^^xsd:string ;
+  skos:prefLabel "Land Rover"^^xsd:string ;
+.
+:Landcraft
+  rdf:type owl:Class ;
+  rdfs:label "Landcraft"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Vehicle
+    ) ;
+  skos:definition "A physical resource that is a type of conveyance that is capable of: (a) movement - moving under its own violition along a path or route on land; and (b) carrying or transporting someone (passenger) or something (cargo/payload) from one geographic location to another.  [PROPOSED]"^^xsd:string ;
+  skos:hasTopConcept <http://www.faa.gov/DRS/Conveyance#Conveyance> ;
+  skos:narrower :Load ;
+  skos:narrower :Vehicle ;
+  skos:prefLabel "Landcraft"^^xsd:string ;
+  skos:topConceptOf :Landcraft ;
+.
+:Landcraft_Category
+  rdf:type owl:Class ;
+  rdfs:label "Landcraft Category"^^xsd:string ;
+  rdfs:subClassOf :Landcraft ;
+  skos:broader :Landcraft ;
+  skos:hasTopConcept :Landcraft ;
+  skos:prefLabel "Landcraft Category"^^xsd:string ;
+.
+:Landcraft_Class
+  rdf:type owl:Class ;
+  rdfs:label "Landcraft Class"^^xsd:string ;
+  rdfs:subClassOf :Landcraft ;
+  skos:broader :Landcraft ;
+  skos:hasTopConcept :Landcraft ;
+  skos:prefLabel "Landcraft Class"^^xsd:string ;
+.
+:Landcraft_Group
+  rdf:type owl:Class ;
+  rdfs:label "Landcraft Group"^^xsd:string ;
+  rdfs:subClassOf :Landcraft ;
+  skos:broader :Landcraft ;
+  skos:hasTopConcept :Landcraft ;
+  skos:prefLabel "Landcraft Group"^^xsd:string ;
+.
+:Launch_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Launch Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Transport_Vehicle ;
+  skos:prefLabel "Launch Vehicle"^^xsd:string ;
+.
+:Lexus
+  rdf:type :Automobile_Make ;
+  rdfs:label "Lexus"^^xsd:string ;
+  skos:prefLabel "Lexus"^^xsd:string ;
+.
+:Light_Truck
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://en.wikipedia.org/wiki/List_of_truck_types"^^xsd:string ;
+  rdfs:label "Light Truck"^^xsd:string ;
+  rdfs:subClassOf :Truck_Type ;
+  skos:broader :Truck_Type ;
+  skos:definition "Light trucks are larger than mini trucks but smaller than medium trucks. In the US, they are defined as weighing between 00001–14000 lb (0001–6350 kg). There is no smaller classification.  [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Light Truck"^^xsd:string ;
+.
+:Load
+  rdf:type owl:Class ;
+  rdfs:label "Load"^^xsd:string ;
+  skos:broader :Landcraft ;
+  skos:hasTopConcept :Landcraft ;
+  skos:narrower :Cargo ;
+  skos:narrower :Payload ;
+  skos:prefLabel "Load"^^xsd:string ;
+.
+:Locomotive
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WEBSTER  http://www.merriam-webster.com/dictionary/locomotive"^^xsd:string ;
+  dcterms:bibliographicCitation "WEBSTER Concise Encyclopedia  http://www.merriam-webster.com/dictionary/locomotive"^^xsd:string ;
+  rdfs:label "Locomotive"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Train ;
+  skos:definition "1 : a self-propelled vehicle that runs on rails and is used for moving railroad cars [WEBSTER]"^^xsd:string ;
+  skos:definition "Self-propelled vehicle used for hauling railroad cars on tracks. [WEBSTER Concise]"^^xsd:string ;
+  skos:prefLabel "Locomotive"^^xsd:string ;
+.
+:Log_Truck
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://en.wikipedia.org/wiki/Logging_truck"^^xsd:string ;
+  rdfs:label "Log Truck"^^xsd:string ;
+  rdfs:subClassOf :Heavy_Truck ;
+  skos:altLabel "Timber Lorry"@en ;
+  skos:broader :Heavy_Truck ;
+  skos:definition "A logging truck or timber lorry is a large truck used to carry logs.[1] Some have integrated flatbeds, some are discrete tractor units, and some are configured to spread a load between the tractor unit and a dollied trailer pulled behind it. Often more than one trailer is attached.  [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Log Truck"^^xsd:string ;
+.
+:Lounge_Car
+  rdf:type owl:Class ;
+  rdfs:label "Lounge Car"^^xsd:string ;
+  rdfs:subClassOf :Club_Car ;
+  skos:broader :Club_Car ;
+  skos:prefLabel "Lounge Car"^^xsd:string ;
+.
+:Luggage_Car
+  rdf:type owl:Class ;
+  rdfs:label "Luggage Car"^^xsd:string ;
+  rdfs:subClassOf :Cargo_Rail_Car ;
+  skos:broader :Baggage_Car ;
+  skos:prefLabel "Luggage Car"^^xsd:string ;
+.
+:Masserati
+  rdf:type :Automobile_Make ;
+  rdfs:label "Masserati"^^xsd:string ;
+  skos:prefLabel "Masserati"^^xsd:string ;
+.
+:Mazda
+  rdf:type :Automobile_Make ;
+  rdfs:label "Mazda"^^xsd:string ;
+  skos:prefLabel "Mazda"^^xsd:string ;
+.
+:Medium_Truck
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://en.wikipedia.org/wiki/List_of_truck_types"^^xsd:string ;
+  rdfs:label "Medium Truck"^^xsd:string ;
+  rdfs:subClassOf :Truck_Type ;
+  skos:broader :Truck_Type ;
+  skos:definition "Medium trucks are larger than light but smaller than heavy trucks. In the US, they are defined as weighing between 14001–26000 lb (6351–11793 kg).   [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Medium Truck"^^xsd:string ;
+  skos:scopeNote "In North America, a medium-duty truck is larger than a heavy-duty pickup truck or full-size van.Some trucks listed as medium also are made in heavy versions.  [WIKIPEDIA]"^^xsd:string ;
+.
+:Mercedes-Benz
+  rdf:type :Automobile_Make ;
+  rdf:type :Truck_Make ;
+  rdfs:label "Mercedes-Benz"^^xsd:string ;
+  skos:prefLabel "Mercedes-Benz"^^xsd:string ;
+.
+:Military_Transport_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Military Transport Truck"^^xsd:string ;
+  rdfs:subClassOf :Military_Truck ;
+  rdfs:subClassOf :Transport_Truck ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Military_Truck
+            :Transport_Truck
+          ) ;
+      ]
+    ) ;
+  skos:broader :Military_Truck ;
+  skos:broader :Transport_Truck ;
+  skos:prefLabel "Military Transport Truck"^^xsd:string ;
+.
+:Military_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Military Truck"^^xsd:string ;
+  rdfs:subClassOf :Truck_Category ;
+  skos:broader :Truck_Category ;
+  skos:prefLabel "Military Truck"^^xsd:string ;
+.
+:Mitsubishi
+  rdf:type :Automobile_Make ;
+  rdfs:label "Mitsubishi"^^xsd:string ;
+  skos:prefLabel "Mitsubishi"^^xsd:string ;
+.
+:Motor_Home
+  rdf:type owl:Class ;
+  rdfs:label "Motor Home"^^xsd:string ;
+  rdfs:subClassOf :Medium_Truck ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Medium_Truck ;
+  skos:prefLabel "Motor Home"^^xsd:string ;
+.
+:Motor_Home_Make
+  rdf:type owl:Class ;
+  rdfs:label "Motor Home Make"^^xsd:string ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  rdfs:subClassOf :Motor_Home_Type ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader :Motor_Home_Type ;
+  skos:prefLabel "Motor Home Make"^^xsd:string ;
+.
+:Motor_Home_Type
+  rdf:type owl:Class ;
+  rdfs:label "Motor Home Type"^^xsd:string ;
+  rdfs:subClassOf :Motor_Home ;
+  skos:broader :Motor_Home ;
+  skos:prefLabel "Motor Home Type"^^xsd:string ;
+.
+:Motor_Vehicle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WEBSTER http://www.merriam-webster.com/dictionary/motor%20vehicle"^^xsd:string ;
+  rdfs:label "Motor Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Vehicle_Class ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Automobile
+            :Bus
+            :Motorcycle
+            :Truck
+            :Duck_Boat
+          ) ;
+      ]
+    ) ;
+  skos:broader :Vehicle_Class ;
+  skos:definition ": an automotive vehicle not operated on rails; especially: one with rubber tires for use on highways  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Automobile ;
+  skos:narrower :Bus ;
+  skos:narrower :Duck_Boat ;
+  skos:narrower :Truck ;
+  skos:prefLabel "Motor Vehicle"^^xsd:string ;
+.
+:Motorcycle
+  rdf:type owl:Class ;
+  rdfs:label "Motorcycle"^^xsd:string ;
+  rdfs:subClassOf :Cycle_Type ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Cycle_Type ;
+  skos:prefLabel "Motorcycle"^^xsd:string ;
+.
+:Motorcycle_Make
+  rdf:type owl:Class ;
+  rdfs:label "Motorcycle Make"^^xsd:string ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  rdfs:subClassOf :Cycle_Make ;
+  rdfs:subClassOf :Motorcycle_Type ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader :Cycle_Make ;
+  skos:broader :Motorcycle_Type ;
+  skos:prefLabel "Motorcycle Make"^^xsd:string ;
+.
+:Motorcycle_Type
+  rdf:type owl:Class ;
+  rdfs:label "Motorcycle Type"^^xsd:string ;
+  rdfs:subClassOf :Motorcycle ;
+  skos:broader :Motorcycle ;
+  skos:prefLabel "Motorcycle Type"^^xsd:string ;
+.
+:Moving_Van
+  rdf:type owl:Class ;
+  rdfs:label "Moving Van"^^xsd:string ;
+  rdfs:subClassOf :Transport_Van ;
+  rdfs:subClassOf :Van_Type ;
+  skos:broader :Moving_Van ;
+  skos:broader :Transport_Van ;
+  skos:prefLabel "Moving Van"^^xsd:string ;
+.
+:Mule_Drawn_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Mule Drawn Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Animal_Drawn_Vehicle ;
+  skos:broader :Animal_Drawn_Vehicle ;
+  skos:prefLabel "Mule Drawn Vehicle"^^xsd:string ;
+.
+:NIssan
+  rdf:type :Automobile_Make ;
+  rdfs:label "NIssan"^^xsd:string ;
+  skos:prefLabel "NIssan"^^xsd:string ;
+.
+:Opel
+  rdf:type :Automobile_Make ;
+  rdfs:label "Opel"^^xsd:string ;
+  skos:prefLabel "Opel"^^xsd:string ;
+.
+:Open_Bed_Wagon
+  rdf:type owl:Class ;
+  rdfs:label "Open Bed Wagon"^^xsd:string ;
+  rdfs:subClassOf :Wagon_Type ;
+  skos:broader :Wagon_Type ;
+  skos:prefLabel "Open Bed Wagon"^^xsd:string ;
+.
+:Panel_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Panel Truck"^^xsd:string ;
+  rdfs:subClassOf :Light_Truck ;
+  skos:broader :Light_Truck ;
+  skos:prefLabel "Panel Truck"^^xsd:string ;
+.
+:Panel_Van
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA https://en.wikipedia.org/wiki/Panel_van"^^xsd:string ;
+  rdfs:label "Panel Van"^^xsd:string ;
+  rdfs:subClassOf :Enclosed_Wagon ;
+  rdfs:subClassOf :Van_Type ;
+  skos:broader :Enclosed_Wagon ;
+  skos:broader :Van_Type ;
+  skos:definition "A panel van (or panelvan) is a form of solid (rigid-bodied, non-articulated) van, smaller than a lorry or truck, without rear side windows. In the U.K., this body style is referred to as a \"car-derived van\", and in American as a \"sedan delivery\". Panel vans are widely used in many parts of the world for transporting cargo. In some national usages it is distinct from a purpose-designed van in that it is based on the chassis of a family car design. In places where they are distinct from a \"van\", they have less cargo space but better agility and maneuverability, making them particularly suited for cities with narrow streets and/or heavy traffic.   [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Panel Van"^^xsd:string ;
+.
+:Parlor_Car
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Parlor Car"^^xsd:string ;
+  rdfs:subClassOf :Chair_Car ;
+  skos:definition ": an extra-fare railroad passenger car for day travel equipped with individual chairs  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Parlor Car"^^xsd:string ;
+.
+:Passenger_Car
+  rdf:type owl:Class ;
+  rdfs:label "Passenger Car"^^xsd:string ;
+  rdfs:subClassOf :Car ;
+  skos:broader :Car ;
+  skos:prefLabel "Passenger Car"^^xsd:string ;
+.
+:Passenger_Elevator
+  rdf:type owl:Class ;
+  rdfs:label "Passenger Elevator"^^xsd:string ;
+  rdfs:subClassOf :Elevator_Category ;
+  skos:broader :Elevator_Category ;
+  skos:prefLabel "Passenger Elevator"^^xsd:string ;
+.
+:Passenger_Elevator_Component
+  rdf:type owl:Class ;
+  rdfs:label "Passenger Elevator Component"^^xsd:string ;
+  rdfs:subClassOf :Elevator_Component ;
+  rdfs:subClassOf :Passenger_Elevator ;
+  skos:broader :Elevator_Component ;
+  skos:broader :Passenger_Elevator ;
+  skos:prefLabel "Passenger Elevator Component"^^xsd:string ;
+.
+:Passenger_Rail_Car
+  rdf:type owl:Class ;
+  rdfs:label "Passenger Rail Car"^^xsd:string ;
+  rdfs:subClassOf :Passenger_Car ;
+  rdfs:subClassOf :Rail_Car ;
+  skos:broader :Passenger_Car ;
+  skos:broader :Rail_Car ;
+  skos:prefLabel "Passenger Rail Car"^^xsd:string ;
+.
+:Passenger_Train
+  rdf:type owl:Class ;
+  rdfs:label "Passenger Train"^^xsd:string ;
+  rdfs:subClassOf :Train_Category ;
+  skos:broader :High_Occupancy_Vehicle ;
+  skos:broader :Passenger_Transport_Vehicle ;
+  skos:broader :Train ;
+  skos:broader :Train_Category ;
+  skos:broader :Transit_Vehicle ;
+  skos:narrower :Commuter_Train ;
+  skos:prefLabel "Passenger Train"^^xsd:string ;
+.
+:Passenger_Transport_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Passenger Transport Truck"^^xsd:string ;
+  rdfs:subClassOf :Transport_Truck ;
+  skos:broader :Transport_Truck ;
+  skos:prefLabel "Passenger Transport Truck"^^xsd:string ;
+.
+:Passenger_Transport_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Passenger Transport Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Transport_Vehicle ;
+  owl:unionOf (
+      :Passenger_Car
+    ) ;
+  skos:altLabel "Passenger Vehicle"^^xsd:string ;
+  skos:broader :Transport_Vehicle ;
+  skos:narrower :Automobile ;
+  skos:narrower :Bus ;
+  skos:narrower :Carriage ;
+  skos:narrower :Cart ;
+  skos:narrower :Cycle ;
+  skos:narrower :Duck_Boat ;
+  skos:narrower :Passenger_Train ;
+  skos:narrower :Truck ;
+  skos:narrower :Wagon ;
+  skos:prefLabel "Passenger Transport Vehicle"^^xsd:string ;
+.
+:Payload
+  rdf:type owl:Class ;
+  rdfs:label "Payload"^^xsd:string ;
+  rdfs:subClassOf :Load ;
+  skos:broader :Load ;
+  skos:prefLabel "Payload"^^xsd:string ;
+.
+:Pickup_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Pickup Truck"^^xsd:string ;
+  rdfs:subClassOf :Light_Truck ;
+  skos:broader :Light_Truck ;
+  skos:prefLabel "Pickup Truck"^^xsd:string ;
+.
+:Piloted_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Piloted Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Vehicle_Category ;
+  skos:broader :Vehicle_Category ;
+  skos:prefLabel "Piloted Vehicle"^^xsd:string ;
+.
+:Pontiac
+  rdf:type :Automobile_Make ;
+  rdfs:label "Pontiac"^^xsd:string ;
+  skos:prefLabel "Pontiac"^^xsd:string ;
+.
+:Porsche
+  rdf:type :Automobile_Make ;
+  rdfs:label "Porsche"^^xsd:string ;
+  skos:prefLabel "Porsche"^^xsd:string ;
+.
+:Public_Transit_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Public Transit Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Transit_Vehicle ;
+  skos:broader :Transit_Vehicle ;
+  skos:narrower :Bus ;
+  skos:narrower :Commuter_Train ;
+  skos:narrower :Subway ;
+  skos:prefLabel "Public Transit Vehicle"^^xsd:string ;
+.
+:Race_Car
+  rdf:type owl:Class ;
+  rdfs:label "Race Car"^^xsd:string ;
+  rdfs:subClassOf :Automobile_Category ;
+  skos:altLabel "Racing Car"^^xsd:string ;
+  skos:broader :Automobile_Category ;
+  skos:prefLabel "Race Car"^^xsd:string ;
+.
+:Rail_Car
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Rail Car"^^xsd:string ;
+  rdfs:subClassOf :Car ;
+  skos:altLabel "Railroad Car"^^xsd:string ;
+  skos:prefLabel "Rail Car"^^xsd:string ;
+.
+:Range_Rover
+  rdf:type :Automobile_Model ;
+  rdfs:label "Range Rover"^^xsd:string ;
+  skos:prefLabel "Range Rover"^^xsd:string ;
+.
+:Recreational_Vehicle
+  rdf:type owl:Class ;
+  vaem:acronym "RV"^^xsd:string ;
+  rdfs:label "Recreational Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Utility_Vehicle ;
+  owl:unionOf (
+      :Motor_Home
+    ) ;
+  skos:broader :Utility_Vehicle ;
+  skos:narrower :Cycle ;
+  skos:narrower :Tour_Vehicle ;
+  skos:prefLabel "Recreational Vehicle"^^xsd:string ;
+.
+:Refrigerator_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Refrigerator Truck"^^xsd:string ;
+  rdfs:subClassOf :Heavy_Truck ;
+  skos:broader :Heavy_Truck ;
+  skos:prefLabel "Refrigerator Truck"^^xsd:string ;
+.
+:Remotely_Piloted_Vehicle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "RPV"^^xsd:string ;
+  rdfs:label "Remotely Piloted Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Piloted_Vehicle ;
+  skos:broader :Piloted_Vehicle ;
+  skos:prefLabel "Remotely Piloted Vehicle"^^xsd:string ;
+.
+:Research_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Research Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Utility_Vehicle ;
+  skos:broader :Utility_Vehicle ;
+  skos:narrower :Rocket_Sled ;
+  skos:prefLabel "Research Vehicle"^^xsd:string ;
+.
+:Rocket-Propelled_Sled
+  rdf:type owl:Class ;
+  rdfs:label "Rocket-Propelled Sled"^^xsd:string ;
+  rdfs:subClassOf :Sled_Type ;
+  skos:prefLabel "Rocket-Propelled Sled"^^xsd:string ;
+.
+:Rocket-Propelled_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Rocket-Propelled Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Vehicle_Class ;
+  owl:unionOf (
+      :Rocket_Sled
+    ) ;
+  skos:broader :Vehicle_Class ;
+  skos:prefLabel "Rocket-Propelled Vehicle"^^xsd:string ;
+.
+:Rocket_Sled
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Rocket Sled"^^xsd:string ;
+  rdfs:subClassOf :Rocket-Propelled_Sled ;
+  skos:broader :Motor_Vehicle ;
+  skos:broader :Research_Vehicle ;
+  skos:broader :Rocket-Propelled_Sled ;
+  skos:definition ": a rocket-propelled vehicle that runs usually on a single rail and that is used especially in aeronautical experimentation [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Rocket Sled"^^xsd:string ;
+.
+:Rolls-Royce
+  rdf:type :Automobile_Make ;
+  rdfs:label "Rolls-Royce"^^xsd:string ;
+  skos:prefLabel "Rolls-Royce"^^xsd:string ;
+.
+:Self-Propelled_Cycle
+  rdf:type owl:Class ;
+  rdfs:label "Self-Propelled Cycle"^^xsd:string ;
+  rdfs:subClassOf :Cycle_Category ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Unicycle
+            :Bicycle
+            :Tricycle
+          ) ;
+      ]
+    ) ;
+  skos:broader :Cycle_Category ;
+  skos:prefLabel "Self-Propelled Cycle"^^xsd:string ;
+.
+:Self-Propelled_Sled
+  rdf:type owl:Class ;
+  rdfs:label "Self-Propelled Sled"^^xsd:string ;
+  rdfs:subClassOf :Sled_Type ;
+  skos:prefLabel "Self-Propelled Sled"^^xsd:string ;
+.
+:Self-Propelled_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Self-Propelled Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Vehicle_Class ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Self-Propelled_Cycle
+            :Sled
+          ) ;
+      ]
+    ) ;
+  skos:broader :Vehicle_Class ;
+  skos:narrower :Bicycle ;
+  skos:narrower :Sled ;
+  skos:narrower :Tricycle ;
+  skos:prefLabel "Self-Propelled Vehicle"^^xsd:string ;
+.
+:Sled
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Sled"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Passenger_Transport_Vehicle ;
+  skos:definition "1 : a vehicle usually on runners for transportation especially on snow or ice; especially : a small steerable one used especially by children for coasting down snow-covered hills   [WEBSTER}"^^xsd:string ;
+  skos:narrower :Rocket_Sled ;
+  skos:prefLabel "Sled"^^xsd:string ;
+.
+:Sled_Make
+  rdf:type owl:Class ;
+  rdfs:label "Sled Make"^^xsd:string ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  rdfs:subClassOf :Sled_Type ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader :Sled_Type ;
+  skos:prefLabel "Sled Make"^^xsd:string ;
+.
+:Sled_Type
+  rdf:type owl:Class ;
+  rdfs:label "Sled Type"^^xsd:string ;
+  rdfs:subClassOf :Sled ;
+  skos:broader :Sled ;
+  skos:prefLabel "Sled Type"^^xsd:string ;
+.
+:Sleeping_Car
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Sleeping Car"^^xsd:string ;
+  rdfs:subClassOf :Passenger_Rail_Car ;
+  skos:altLabel "Sleeper Car"^^xsd:string ;
+  skos:broader :Passenger_Rail_Car ;
+  skos:definition ": a railroad passenger car having berths for sleeping  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Sleeping Car"^^xsd:string ;
+.
+:Sleigh
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA   https://en.wikipedia.org/wiki/Sled"^^xsd:string ;
+  rdfs:label "Sleigh"^^xsd:string ;
+  rdfs:subClassOf :Drawn_Sled ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Drawn_Sled ;
+  skos:definition "A sleigh, or sled, is a vehicle with runners for sliding.  [WIKIPEDIA]"^^xsd:string ;
+  skos:definition "Sleigh refers to a moderate to large-sized, usually open-topped vehicle to carry passengers or goods, and typically drawn by horses or dogs.[3] In Scandinavia particularly a sleigh may also be drawn by reindeer, as for Father Christmas.  [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Sleigh"^^xsd:string ;
+.
+:Snow_Sled
+  rdf:type owl:Class ;
+  rdfs:label "Snow Sled"^^xsd:string ;
+  rdfs:subClassOf :Self-Propelled_Sled ;
+  skos:broader :Self-Propelled_Sled ;
+  skos:prefLabel "Snow Sled"^^xsd:string ;
+.
+:Stock_Car
+  rdf:type owl:Class ;
+  rdfs:label "Stock Car"^^xsd:string ;
+  rdfs:subClassOf :Cargo_Rail_Car ;
+  skos:broader :Cargo_Rail_Car ;
+  skos:definition """1 : a latticed railroad boxcar for carrying livestock [WEBSTER]
+2 : a racing car having the basic chassis of a commercially produced assembly-line model  [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Stock Car"^^xsd:string ;
+.
+:Streetcar
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Streetcar"^^xsd:string ;
+  rdfs:subClassOf :Passenger_Rail_Car ;
+  skos:altLabel "Street Car"^^xsd:string ;
+  skos:broader :Passenger_Rail_Car ;
+  skos:definition ": a vehicle on rails used primarily for transporting passengers and typically operating on city streets  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Streetcar"^^xsd:string ;
+.
+:Subaru
+  rdf:type :Automobile_Make ;
+  rdfs:label "Subaru"^^xsd:string ;
+  skos:prefLabel "Subaru"^^xsd:string ;
+.
+:Subway
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WEBSTER Concise Encyclopedia  http://www.merriam-webster.com/dictionary/subway?show=0&t=1362001081"^^xsd:string ;
+  rdfs:label "Subway"^^xsd:string ;
+  rdfs:subClassOf :Passenger_Train ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Motor_Vehicle ;
+  skos:broader :Passenger_Train ;
+  skos:broader :Passenger_Transport_Vehicle ;
+  skos:broader :Public_Transit_Vehicle ;
+  skos:definition "Underground railway system used to transport passengers within urban and suburban areas. The first subway line, 3.75 mi (6 km) long, opened in London in 1863 and carried 9 million passengers in its first year. The first electrified subway opened in 1890 in London (where it is called the underground or tube). Subways opened in Budapest in 1896 (the first on the European continent), Boston in 1897, Paris in 1900 (where it is called the métro), Berlin in 1902, New York in 1904, and later in Madrid (1919), Tokyo (1927), and Moscow (1935). Improvements in systems built from the 1970s on (including San Francisco, Washington, D.C., and Los Angeles) include computer technology to run subway trains by remote control, and refinements in track and car construction for faster, smoother, and quieter rides. [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Subway"^^xsd:string ;
+.
+:Subway_Car
+  rdf:type owl:Class ;
+  rdfs:label "Subway Car"^^xsd:string ;
+  rdfs:subClassOf :Passenger_Rail_Car ;
+  skos:broader :Passenger_Rail_Car ;
+  skos:prefLabel "Subway Car"^^xsd:string ;
+.
+:Subway_Type
+  rdf:type owl:Class ;
+  rdfs:label "Subway Type"^^xsd:string ;
+  rdfs:subClassOf :Subway ;
+  skos:broader :Subway ;
+  skos:prefLabel "Subway Type"^^xsd:string ;
+.
+:Suzuki
+  rdf:type :Automobile_Make ;
+  rdfs:label "Suzuki"^^xsd:string ;
+  skos:prefLabel "Suzuki"^^xsd:string ;
+.
+:Tank_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Tank Truck"^^xsd:string ;
+  rdfs:subClassOf :Heavy_Truck ;
+  skos:broader :Heavy_Truck ;
+  skos:prefLabel "Tank Truck"^^xsd:string ;
+.
+:Tanker_Car
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Tanker Car"^^xsd:string ;
+  rdfs:subClassOf :Cargo_Rail_Car ;
+  skos:altLabel "Tank Car"^^xsd:string ;
+  skos:broader :Cargo_Rail_Car ;
+  skos:definition ": a railroad car for transporting liquids or gases in bulk  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Tanker Car"^^xsd:string ;
+.
+:Toboggan
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "WIKIPEDIA   https://en.wikipedia.org/wiki/Toboggan"^^xsd:string ;
+  rdfs:label "Toboggan"^^xsd:string ;
+  rdfs:subClassOf :Self-Propelled_Sled ;
+  skos:broader :Self-Propelled_Sled ;
+  skos:definition "1 : a long flat-bottomed light sled made usually of thin boards curved up at one end with usually low handrails at the sides   [WEBSTER]"^^xsd:string ;
+  skos:definition "A toboggan is a simple sled which is a traditional form of transport used by the Innu and Cree of northern Canada. In modern times, it is used on snow to carry one or more people (often children) down a hill or other slope for recreation.  ...A toboggan differs from most sleds or sleighs in that it has no runners or skis (or only low ones) on the underside. The bottom of a toboggan rides directly on the snow. Some parks include designated toboggan hills where ordinary sleds are not allowed and which may include toboggan runs similar to bobsleigh courses. [1]  [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Toboggan"^^xsd:string ;
+  skos:scopeNote "Designs vary from simple, traditional models to modern engineered composites.  [WIKIPEDIA]"^^xsd:string ;
+  skos:scopeNote "Modern recreational toboggans are typically manufactured from wood or plastic. Larger, more rugged models are made for commercial or rescue use.  [WIKIPEDIA]"^^xsd:string ;
+  skos:scopeNote "The traditional toboggan is made of bound, parallel wood slats, all bent forward at the front to form a sideways 'J' shape. A thin rope is run through the top of the loop to provide rudimentary steering. The frontmost rider places their feet in the loop and sits on the flat bed; any others sit behind them and grasp the waist of the person before them.  [WIKIPEDIA]"^^xsd:string ;
+.
+:Tour_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Tour Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Recreational_Vehicle ;
+  owl:unionOf (
+      :Duck_Boat
+    ) ;
+  skos:broader :Recreational_Vehicle ;
+  skos:narrower :Bus ;
+  skos:narrower :Carriage ;
+  skos:narrower :Duck_Boat ;
+  skos:prefLabel "Tour Vehicle"^^xsd:string ;
+.
+:Touring_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Touring Truck"^^xsd:string ;
+  rdfs:subClassOf :Truck_Category ;
+  skos:broader :Truck_Category ;
+  skos:prefLabel "Touring Truck"^^xsd:string ;
+.
+:Tow-Truck
+  rdf:type owl:Class ;
+  rdfs:label "Tow-Truck"^^xsd:string ;
+  rdfs:subClassOf :Medium_Truck ;
+  skos:broader :Medium_Truck ;
+  skos:prefLabel "Tow-Truck"^^xsd:string ;
+.
+:Toyota
+  rdf:type :Automobile_Make ;
+  rdf:type :Truck_Make ;
+  rdfs:label "Toyota"^^xsd:string ;
+  skos:prefLabel "Toyota"^^xsd:string ;
+.
+:Train
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WEBSTER  http://www.merriam-webster.com/dictionary/train"^^xsd:string ;
+  rdfs:label "Train"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Rail_Car
+            :Locomotive
+          ) ;
+      ]
+    ) ;
+  skos:broader :Motor_Vehicle ;
+  skos:definition "7 a: a connected line of railroad cars with or without a locomotive [WEBSTER]"^^xsd:string ;
+  skos:narrower :Cargo_Train ;
+  skos:narrower :Passenger_Train ;
+  skos:prefLabel "Train"^^xsd:string ;
+.
+:Train_Category
+  rdf:type owl:Class ;
+  rdfs:label "Train Category"^^xsd:string ;
+  rdfs:subClassOf :Train ;
+  skos:broader :Train ;
+  skos:prefLabel "Train Category"^^xsd:string ;
+.
+:Train_Make
+  rdf:type owl:Class ;
+  rdfs:label "Train Make"^^xsd:string ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  rdfs:subClassOf :Train_Type ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader :Train_Type ;
+  skos:prefLabel "Train Make"^^xsd:string ;
+.
+:Train_Type
+  rdf:type owl:Class ;
+  rdfs:label "Train Type"^^xsd:string ;
+  rdfs:subClassOf :Train ;
+  skos:broader :Train ;
+  skos:prefLabel "Train Type"^^xsd:string ;
+.
+:Transit_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Transit Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Utility_Vehicle ;
+  skos:broader :Utility_Vehicle ;
+  skos:narrower :High_Occupancy_Vehicle ;
+  skos:narrower :Motor_Vehicle ;
+  skos:narrower :Public_Transit_Vehicle ;
+  skos:prefLabel "Transit Vehicle"^^xsd:string ;
+.
+:Transport_Truck
+  rdf:type owl:Class ;
+  rdfs:label "Transport Truck"^^xsd:string ;
+  rdfs:subClassOf :Truck_Category ;
+  skos:broader :Truck_Category ;
+  skos:prefLabel "Transport Truck"^^xsd:string ;
+.
+:Transport_Van
+  rdf:type owl:Class ;
+  rdfs:label "Transport Van"^^xsd:string ;
+  rdfs:subClassOf :Van_Category ;
+  skos:broader :Van_Category ;
+  skos:prefLabel "Transport Van"^^xsd:string ;
+.
+:Transport_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Transport Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Utility_Vehicle ;
+  skos:broader :Utility_Vehicle ;
+  skos:narrower :Cargo_Transport_Vehicle ;
+  skos:narrower :Passenger_Transport_Vehicle ;
+  skos:prefLabel "Transport Vehicle"^^xsd:string ;
+.
+:Tricycle
+  rdf:type owl:Class ;
+  rdfs:label "Tricycle"^^xsd:string ;
+  rdfs:subClassOf :Cycle_Type ;
+  skos:broader :Cycle_Type ;
+  skos:prefLabel "Tricycle"^^xsd:string ;
+.
+:Trolley_Car
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Trolley Car"^^xsd:string ;
+  rdfs:subClassOf :Streetcar ;
+  skos:broader :Streetcar ;
+  skos:definition "b : a streetcar powered electrically through a trolley  called also trolley car [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Trolley Car"^^xsd:string ;
+.
+:Truck
+  rdf:type owl:Class ;
+  rdfs:label "Truck"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:altLabel "Lorry"@en ;
+  skos:broader :Cargo_Transport_Vehicle ;
+  skos:broader :Construction_Vehicle ;
+  skos:broader :Motor_Vehicle ;
+  skos:narrower :Load ;
+  skos:narrower :Van ;
+  skos:prefLabel "Truck"^^xsd:string ;
+.
+:Truck_Category
+  rdf:type owl:Class ;
+  rdfs:label "Truck Category"^^xsd:string ;
+  rdfs:subClassOf :Truck ;
+  skos:broader :Truck ;
+  skos:prefLabel "Truck Category"^^xsd:string ;
+.
+:Truck_Make
+  rdf:type owl:Class ;
+  rdfs:label "Truck Make"^^xsd:string ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  rdfs:subClassOf :Truck_Type ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader :Truck_Type ;
+  skos:prefLabel "Truck Make"^^xsd:string ;
+.
+:Truck_Type
+  rdf:type owl:Class ;
+  rdfs:label "Truck Type"^^xsd:string ;
+  rdfs:subClassOf :Truck ;
+  skos:broader :Truck ;
+  skos:prefLabel "Truck Type"^^xsd:string ;
+.
+:Unicycle
+  rdf:type owl:Class ;
+  rdfs:label "Unicycle"^^xsd:string ;
+  rdfs:subClassOf :Cycle_Type ;
+  skos:broader :Cycle_Type ;
+  skos:prefLabel "Unicycle"^^xsd:string ;
+.
+:Utility_Vehicle
+  rdf:type owl:Class ;
+  rdfs:label "Utility Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Vehicle_Category ;
+  skos:broader :Vehicle_Category ;
+  skos:narrower :Amphibious_Vehicle ;
+  skos:narrower :Construction_Vehicle ;
+  skos:narrower :Recreational_Vehicle ;
+  skos:narrower :Research_Vehicle ;
+  skos:narrower :Transit_Vehicle ;
+  skos:narrower :Transport_Vehicle ;
+  skos:prefLabel "Utility Vehicle"^^xsd:string ;
+.
+:Van
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Van"^^xsd:string ;
+  rdfs:subClassOf :Light_Truck ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Light_Truck ;
+  skos:broader :Wagon ;
+  skos:definition """1 a : a usually enclosed wagon or motortruck used for transportation of goods or animals; also : CARAVAN 2a b : a multipurpose enclosed motor vehicle having a boxlike shape, rear or side doors, and side panels often with windows c : a detachable passenger cabin transportable by aircraft or truck 
+2 chiefly British : an enclosed railroad freight or baggage car   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Van"^^xsd:string ;
+.
+:Van_Category
+  rdf:type owl:Class ;
+  rdfs:label "Van Category"^^xsd:string ;
+  rdfs:subClassOf :Van ;
+  skos:broader :Van ;
+  skos:prefLabel "Van Category"^^xsd:string ;
+.
+:Van_Make
+  rdf:type owl:Class ;
+  rdfs:label "Van Make"^^xsd:string ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  rdfs:subClassOf :Van_Type ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader :Van_Type ;
+  skos:prefLabel "Van Make"^^xsd:string ;
+.
+:Van_Type
+  rdf:type owl:Class ;
+  rdfs:label "Van Type"^^xsd:string ;
+  rdfs:subClassOf :Van ;
+  skos:broader :Van ;
+  skos:prefLabel "Van Type"^^xsd:string ;
+.
+:Vehicle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WEBSTER  http://www.merriam-webster.com/dictionary/vehicle"^^xsd:string ;
+  rdfs:label "Vehicle"^^xsd:string ;
+  rdfs:subClassOf :Landcraft_Class ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Automobile
+            :Duck_Boat
+            :Bus
+            :Carriage
+            :Cart
+            :Subway
+            :Train
+            :Truck
+            :Wagon
+          ) ;
+      ]
+    ) ;
+  skos:broader :Landcraft_Class ;
+  skos:definition """4 : a means of carrying or transporting something <planes, trains, and other vehicles>: as 
+a: motor vehicle 
+b: a piece of mechanized equipment  [WEBSTER]"""^^xsd:string ;
+  skos:definition "A physical resource that is a type of landcraft that is capable of: (a) movement - moving under its own violition along a path or route on land; and (b) carrying or transporting someone (passenger) or something (cargo/payload) from one geographic location to another.  [PROPOSED]"^^xsd:string ;
+  skos:narrower :Amphibious_Vehicle ;
+  skos:narrower :Drawn_Vehicle ;
+  skos:narrower :High_Occupancy_Vehicle ;
+  skos:narrower :Motor_Vehicle ;
+  skos:narrower :Remotely_Piloted_Vehicle ;
+  skos:narrower :Self-Propelled_Vehicle ;
+  skos:narrower :Utility_Vehicle ;
+  skos:prefLabel "Vehicle"^^xsd:string ;
+.
+:Vehicle_Category
+  rdf:type owl:Class ;
+  rdfs:label "Vehicle Category"^^xsd:string ;
+  rdfs:subClassOf :Vehicle ;
+  skos:broader :Vehicle ;
+  skos:prefLabel "Vehicle Category"^^xsd:string ;
+.
+:Vehicle_Class
+  rdf:type owl:Class ;
+  rdfs:label "Vehicle Class"^^xsd:string ;
+  rdfs:subClassOf :Vehicle ;
+  skos:broader :Vehicle ;
+  skos:prefLabel "Vehicle Class"^^xsd:string ;
+.
+:Vehicle_Component
+  rdf:type owl:Class ;
+  rdfs:label "Vehicle Component"^^xsd:string ;
+  rdfs:subClassOf :Vehicle ;
+  owl:unionOf (
+      :Car
+    ) ;
+  skos:broader :Vehicle ;
+  skos:prefLabel "Vehicle Component"^^xsd:string ;
+.
+:Vehicle_Make
+  rdf:type owl:Class ;
+  rdfs:label "Vehicle Make"^^xsd:string ;
+  rdfs:subClassOf :Vehicle_Class ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Automobile_Make
+            :Motorcycle_Make
+            :Truck_Make
+            :Train_Make
+          ) ;
+      ]
+    ) ;
+  skos:broader :Vehicle_Class ;
+  skos:prefLabel "Vehicle Make"^^xsd:string ;
+.
+:Very_Heavy_Truck
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://en.wikipedia.org/wiki/List_of_truck_types"^^xsd:string ;
+  rdfs:label "Very Heavy Truck"^^xsd:string ;
+  rdfs:subClassOf :Truck_Type ;
+  skos:broader :Truck_Type ;
+  skos:definition "Vehicles in this category are too large for highway use without escorts and special permits.  [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Very Heavy Truck"^^xsd:string ;
+.
+:Volkswagen
+  rdf:type :Automobile_Make ;
+  rdfs:label "Volkswagen"^^xsd:string ;
+  skos:prefLabel "Volkswagen"^^xsd:string ;
+.
+:Volvo
+  rdf:type :Automobile_Make ;
+  rdfs:label "Volvo"^^xsd:string ;
+  skos:prefLabel "Volvo"^^xsd:string ;
+.
+:Wagon
+  rdf:type owl:Class ;
+  rdfs:label "Wagon"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Cargo_Transport_Vehicle ;
+  skos:broader :Drawn_Vehicle ;
+  skos:narrower :Load ;
+  skos:prefLabel "Wagon"^^xsd:string ;
+.
+:Wagon_Category
+  rdf:type owl:Class ;
+  rdfs:label "Wagon Category"^^xsd:string ;
+  rdfs:subClassOf :Wagon ;
+  skos:prefLabel "Wagon Category"^^xsd:string ;
+.
+:Wagon_Make
+  rdf:type owl:Class ;
+  rdfs:label "Wagon Make"^^xsd:string ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  rdfs:subClassOf :Wagon_Type ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader :Wagon_Type ;
+  skos:prefLabel "Wagon Make"^^xsd:string ;
+.
+:Wagon_Type
+  rdf:type owl:Class ;
+  rdfs:label "Wagon Type"^^xsd:string ;
+  rdfs:subClassOf :Wagon ;
+  skos:broader :Wagon ;
+  skos:prefLabel "Wagon Type"^^xsd:string ;
+.
+skos:definition
+  owl:equivalentProperty rdfs:comment ;
+.

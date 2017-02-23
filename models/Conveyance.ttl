@@ -1,0 +1,401 @@
+# baseURI: http://www.faa.gov/DRS/Conveyance
+# imports: http://www.faa.gov/DRS/Aircraft
+# imports: http://www.faa.gov/DRS/Landcraft
+# imports: http://www.faa.gov/DRS/Spacecraft
+# imports: http://www.faa.gov/DRS/Watercraft
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://xmlns.com/foaf/0.1/
+
+@prefix : <http://www.faa.gov/DRS/Conveyance#> .
+@prefix Aircraft: <http://www.faa.gov/DRS/Aircraft#> .
+@prefix Landcraft: <http://www.faa.gov/DRS/Landcraft#> .
+@prefix Spacecraft: <http://www.faa.gov/DRS/Spacecraft#> .
+@prefix Watercraft: <http://www.faa.gov/DRS/Watercraft#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.org/goodrelations/v1#Brand>
+  rdfs:subClassOf owl:Thing ;
+.
+Aircraft:Aircraft
+  rdfs:subClassOf :Conveyance ;
+  skos:broader :Conveyance ;
+.
+Aircraft:Airplane_Make
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+.
+Aircraft:Airship_Make
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+.
+Aircraft:Amphibian
+  rdfs:subClassOf Aircraft:Utility_Aircraft ;
+.
+Aircraft:Amphibian_Series
+  skos:broader Aircraft:Amphibian_Type ;
+.
+Aircraft:Balloon
+  owl:equivalentClass Spacecraft:Balloon ;
+.
+Aircraft:Glider_Make
+  skos:broader Aircraft:Glider_Type ;
+.
+Aircraft:Load
+  rdfs:subClassOf :Conveyance_Load ;
+  skos:broader :Conveyance_Load ;
+.
+Aircraft:Make
+  skos:narrower Aircraft:Conveyance_Make ;
+.
+Aircraft:Seaplane
+  owl:equivalentClass Watercraft:Seaplane ;
+.
+Aircraft:Surface
+  rdfs:subClassOf :Conveyance_Surface ;
+  skos:broader :Conveyance_Surface ;
+.
+Aircraft:Utility_Aircraft
+  owl:equivalentClass Spacecraft:Utility_Aircraft ;
+.
+<http://www.faa.gov/DRS/Conveyance>
+  rdf:type owl:Ontology ;
+  owl:imports <http://www.faa.gov/DRS/Aircraft> ;
+  owl:imports <http://www.faa.gov/DRS/Landcraft> ;
+  owl:imports <http://www.faa.gov/DRS/Spacecraft> ;
+  owl:imports <http://www.faa.gov/DRS/Watercraft> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <http://xmlns.com/foaf/0.1/> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Aircraft_Container
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft Container"^^xsd:string ;
+  rdfs:subClassOf :Cargo_Container ;
+  skos:broader :Cargo_Container ;
+  skos:prefLabel "Aircraft Container"^^xsd:string ;
+.
+:Aircraft_Pallet
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft Pallet"^^xsd:string ;
+  rdfs:subClassOf :Pallet ;
+  skos:broader :Pallet ;
+  skos:narrower :Aircraft_Pallet_with_Net ;
+  skos:narrower :Aircraft_Pallet_with_Net_over_Igloo ;
+  skos:prefLabel "Aircraft Pallet"^^xsd:string ;
+.
+:Aircraft_Pallet_with_Net
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft Pallet with Net"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_Pallet ;
+  skos:broader :Aircraft_Pallet ;
+  skos:prefLabel "Aircraft Pallet with Net"^^xsd:string ;
+.
+:Aircraft_Pallet_with_Net_over_Igloo
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft Pallet with Net over Igloo"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_Pallet ;
+  skos:broader :Aircraft_Pallet ;
+  skos:prefLabel "Aircraft Pallet with Net over Igloo"^^xsd:string ;
+.
+:Amphibious_Air-Water_Craft
+  rdf:type owl:Class ;
+  rdfs:label "Amphibious Aircraft and Watercraft"^^xsd:string ;
+  rdfs:subClassOf :Amphibious_Conveyance ;
+  owl:intersectionOf (
+      Aircraft:Amphibian
+      Watercraft:Amphibious_Vessel
+    ) ;
+  skos:broader :Amphibious_Conveyance ;
+  skos:prefLabel "Amphibious Aircraft and Watercraft"^^xsd:string ;
+.
+:Amphibious_Conveyance
+  rdf:type owl:Class ;
+  rdfs:label "Amphibious Conveyance"^^xsd:string ;
+  rdfs:subClassOf :Conveyance ;
+  owl:intersectionOf (
+      Aircraft:Amphibian
+      Landcraft:Amphibious_Vehicle
+      Watercraft:Amphibious_Vessel
+    ) ;
+  skos:broader :Conveyance ;
+  skos:hasTopConcept :Conveyance ;
+  skos:narrower :Amphibious_Air-Water_Craft ;
+  skos:narrower :Amphibious_Land-Water_Craft ;
+  skos:prefLabel "Amphibious Conveyance"^^xsd:string ;
+.
+:Amphibious_Land-Water_Craft
+  rdf:type owl:Class ;
+  rdfs:label "Amphibious Landcraft and Watercraft"^^xsd:string ;
+  rdfs:subClassOf :Amphibious_Conveyance ;
+  owl:intersectionOf (
+      Landcraft:Amphibious_Vehicle
+      Watercraft:Amphibious_Vessel
+    ) ;
+  skos:broader :Amphibious_Conveyance ;
+  skos:prefLabel "Amphibious Landcraft and Watercraft"^^xsd:string ;
+.
+:Cargo
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Cargo"^^xsd:string ;
+  rdfs:subClassOf :Load ;
+  skos:broader :Load ;
+  skos:definition ": the goods or merchandise conveyed in a ship, airplane, or vehicle : FREIGHT   [WEBSTER]"^^xsd:string ;
+  skos:narrower Aircraft:Cargo ;
+  skos:narrower Landcraft:Cargo ;
+  skos:narrower Spacecraft:Cargo ;
+  skos:narrower Watercraft:Cargo ;
+  skos:prefLabel "Cargo"^^xsd:string ;
+.
+:Cargo_Container
+  rdf:type owl:Class ;
+  rdfs:label "Cargo Container"^^xsd:string ;
+  rdfs:subClassOf :Cargo ;
+  rdfs:subClassOf :Container ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Cargo
+            :Container
+          ) ;
+      ]
+    ) ;
+  skos:broader :Cargo ;
+  skos:broader :Container ;
+  skos:narrower :Aircraft_Container ;
+  skos:narrower :Freight_Container ;
+  skos:prefLabel "Cargo Container"^^xsd:string ;
+.
+:Container
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Container"^^xsd:string ;
+  rdfs:subClassOf :Load_Device ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Load_Device ;
+  skos:definition ": one that contains : as b : a portable compartment in which freight is placed (as on a train or ship) for convenience of movement  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Container"^^xsd:string ;
+.
+:Conveyance
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Conveyance"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      Aircraft:Aircraft
+      Landcraft:Landcraft
+      Spacecraft:Spacecraft
+      Watercraft:Watercraft
+    ) ;
+  skos:definition "2 b : a means of transport: VEHICLE  [WEBSTER]"^^xsd:string ;
+  skos:definition "A physical resource that is capable of: (a) movement - moving under its own volition along a path or route; and (b) carrying or transporting someone (passenger) or something (cargo/payload) from one spatial location to another.  [PROPOSED]"^^xsd:string ;
+  skos:narrower Aircraft:Aircraft ;
+  skos:narrower :Amphibious_Conveyance ;
+  skos:narrower :Fleet ;
+  skos:narrower Landcraft:Landcraft ;
+  skos:narrower Spacecraft:Spacecraft ;
+  skos:narrower Watercraft:Watercraft ;
+  skos:prefLabel "Conveyance"^^xsd:string ;
+  skos:topConceptOf :Conveyance ;
+.
+:Conveyance_Class
+  rdf:type owl:Class ;
+  rdfs:label "Conveyance Class"^^xsd:string ;
+  rdfs:subClassOf :Conveyance ;
+  skos:broader :Conveyance ;
+  skos:prefLabel "Conveyance Class"^^xsd:string ;
+.
+:Conveyance_Group
+  rdf:type owl:Class ;
+  rdfs:label "Conveyance Group"^^xsd:string ;
+  rdfs:subClassOf :Conveyance ;
+  skos:broader :Conveyance ;
+  skos:prefLabel "Conveyance Group"^^xsd:string ;
+.
+:Conveyance_Load
+  rdf:type owl:Class ;
+  rdfs:label "Conveyance Load"^^xsd:string ;
+  rdfs:subClassOf :Conveyance ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Conveyance
+            :Load
+          ) ;
+      ]
+    ) ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            Aircraft:Load
+            Landcraft:Load
+            Spacecraft:Load
+            Watercraft:Load
+          ) ;
+      ]
+    ) ;
+  skos:broader :Conveyance ;
+  skos:narrower Landcraft:Load ;
+  skos:narrower Spacecraft:Load ;
+  skos:narrower Watercraft:Load ;
+  skos:prefLabel "Conveyance Load"^^xsd:string ;
+.
+:Conveyance_Surface
+  rdf:type owl:Class ;
+  rdfs:label "Conveyance Surface"^^xsd:string ;
+  rdfs:subClassOf :Conveyance ;
+  skos:broader :Conveyance ;
+  skos:prefLabel "Conveyance Surface"^^xsd:string ;
+.
+:Device
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Device"^^xsd:string ;
+  rdfs:subClassOf :Load ;
+  skos:broader :Load ;
+  skos:definition "f : a piece of equipment or a mechanism designed to serve a special purpose or perform a special function <an electronic device>   [WEBSTER]"^^xsd:string ;
+  skos:narrower :Load_Device ;
+  skos:prefLabel "Device"^^xsd:string ;
+.
+:Fleet
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Fleet"^^xsd:string ;
+  rdfs:subClassOf :Conveyance_Group ;
+  skos:broader :Conveyance_Group ;
+  skos:definition """1 : a number of warships under a single command; specifically : an organization of ships and aircraft under the command of a flag officer 
+2 : GROUP 2a, b; especially : a group (as of ships, planes, or trucks) operated under unified control  [WEBSTER]"""^^xsd:string ;
+  skos:hasTopConcept :Conveyance ;
+  skos:prefLabel "Fleet"^^xsd:string ;
+.
+:Freight_Container
+  rdf:type owl:Class ;
+  rdfs:label "Freight Container"^^xsd:string ;
+  rdfs:subClassOf :Cargo_Container ;
+  skos:broader :Cargo_Container ;
+  skos:prefLabel "Freight Container"^^xsd:string ;
+.
+:Load
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Load"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Conveyance ;
+  skos:definition "1 ...b : whatever is put on a person or pack animal to be carried : PACK c : whatever is put in a ship or vehicle or airplane for conveyance : CARGO; especially : a quantity of material assembled or packed as a shipping unit    [WEBSTER]"^^xsd:string ;
+  skos:narrower :Cargo ;
+  skos:narrower :Load_Device ;
+  skos:narrower :Payload ;
+  skos:prefLabel "Load"^^xsd:string ;
+.
+:Load_Device
+  rdf:type owl:Class ;
+  rdfs:label "Load Device"^^xsd:string ;
+  rdfs:subClassOf :Device ;
+  skos:broader :Device ;
+  skos:narrower :Unit_Load_Device ;
+  skos:prefLabel "Load Device"^^xsd:string ;
+.
+:Pallet
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Pallet"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Load_Device ;
+  skos:definition "3 : a portable platform for handling, storing, or moving materials and packages (as in warehouses, factories, or vehicles)  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Aircraft_Pallet ;
+  skos:prefLabel "Pallet"^^xsd:string ;
+.
+:Payload
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Payload"^^xsd:string ;
+  rdfs:subClassOf :Load ;
+  skos:broader :Load ;
+  skos:definition """1 : the load carried by a vehicle exclusive of what is necessary for its operation; especially : the load carried by an aircraft or spacecraft consisting of things (as passengers or instruments) necessary to the purpose of the flight 
+2 : the weight of a payload    [WEBSTER]"""^^xsd:string ;
+  skos:narrower Aircraft:Payload ;
+  skos:narrower Landcraft:Payload ;
+  skos:narrower Spacecraft:Payload ;
+  skos:narrower Watercraft:Payload ;
+  skos:prefLabel "Payload"^^xsd:string ;
+.
+:Unit_Load_Device
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Annex 18, The Safe Transport of Dangerous Goods by Air"^^xsd:string ;
+  rdfs:label "Unit Load Device"^^xsd:string ;
+  rdfs:subClassOf :Load_Device ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Aircraft_Container
+            :Freight_Container
+            :Aircraft_Pallet
+          ) ;
+      ]
+    ) ;
+  skos:broader :Load_Device ;
+  skos:definition "Any type of freight container, aircraft container, aircraft pallet with a net, or aircraft pallet with a net over an igloo.  [ICAO]"^^xsd:string ;
+  skos:narrower :Aircraft_Container ;
+  skos:narrower :Aircraft_Pallet ;
+  skos:narrower :Freight_Container ;
+  skos:prefLabel "Unit Load Device"^^xsd:string ;
+.
+Landcraft:Amphibious_Vehicle
+  rdfs:subClassOf Landcraft:Utility_Vehicle ;
+.
+Landcraft:Duck_Boat
+  owl:equivalentClass Watercraft:Duck_Boat ;
+.
+Landcraft:Landcraft
+  rdfs:subClassOf :Conveyance ;
+  skos:broader :Conveyance ;
+  skos:hasTopConcept :Conveyance ;
+.
+Landcraft:Load
+  rdfs:subClassOf :Conveyance_Load ;
+  rdfs:subClassOf :Load ;
+.
+Spacecraft:Balloon
+  owl:equivalentClass Aircraft:Balloon ;
+.
+Spacecraft:Load
+  rdfs:subClassOf :Conveyance_Load ;
+.
+Spacecraft:Spacecraft
+  rdfs:subClassOf :Conveyance ;
+  skos:broader :Conveyance ;
+  skos:hasTopConcept :Conveyance ;
+.
+Spacecraft:Utility_Aircraft
+  owl:equivalentClass Aircraft:Utility_Aircraft ;
+.
+Watercraft:Duck_Boat
+  owl:equivalentClass Landcraft:Duck_Boat ;
+.
+Watercraft:Load
+  rdfs:subClassOf :Conveyance_Load ;
+.
+Watercraft:Seaplane
+  owl:equivalentClass Aircraft:Seaplane ;
+.
+Watercraft:Watercraft
+  rdfs:subClassOf :Conveyance ;
+  skos:broader :Conveyance ;
+  skos:hasTopConcept :Conveyance ;
+.

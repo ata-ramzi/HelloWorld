@@ -1,0 +1,68 @@
+# baseURI: null
+
+@prefix composite: <http://www.topbraid.org/2007/05/composite.owl#> .
+@prefix forms: <http://www.topbraid.org/2007/01/forms.owl#> .
+@prefix inference: <http://www.topbraid.org/2007/06/inference.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix visual: <http://topbraid.org/visual#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.org/goodrelations/v1#Brand>
+  forms:keyProperties (
+      rdfs:label
+      <http://www.w3.org/2004/02/skos/core#altLabel>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/People#Aircraft_Engine_Manufacturing_Organization>
+  forms:keyProperties (
+      rdfs:label
+      <http://www.geonames.org/ontology#locatedIn>
+      <http://purl.org/goodrelations/v1#hasBrand>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/People#Aircraft_Industry_Group>
+  forms:keyProperties (
+      rdfs:label
+      <http://www.linkedmodel.org/schema/vaem#acronym>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/People#Aircraft_Manufacturing_Organization>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/goodrelations/v1#hasBrand>
+      <http://www.linkedmodel.org/schema/dtype#code>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/People#Airship_Manufacturing_Organization>
+  forms:keyProperties (
+      rdfs:label
+      <http://www.geonames.org/ontology#locatedIn>
+      <http://www.w3.org/2004/02/skos/core#altLabel>
+      <http://purl.org/goodrelations/v1#hasBrand>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/People#Balloon_Manufacturing_Organization>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/goodrelations/v1#legalName>
+      <http://www.geonames.org/ontology#locatedIn>
+      <http://purl.org/goodrelations/v1#hasBrand>
+      <http://www.linkedmodel.org/schema/dtype#code>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/People#Country>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/goodrelations/v1#legalName>
+      <http://www.w3.org/2004/02/skos/core#altLabel>
+      rdfs:comment
+    ) ;
+.

@@ -1,0 +1,297 @@
+# baseURI: http://www.faa.gov/DRS/Watercraft
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.geonames.org/ontology
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2000/01/rdf-schema
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://www.faa.gov/DRS/Watercraft#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.faa.gov/DRS/Watercraft>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dcterms: ;
+  owl:imports <http://www.geonames.org/ontology> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2000/01/rdf-schema> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Aircraft_Carrier
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Aircraft Carrier"^^xsd:string ;
+  rdfs:subClassOf :Warship ;
+  skos:broader :Warship ;
+  skos:definition ": a warship with a flight deck on which aircraft can be launched and landed  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Aircraft Carrier"^^xsd:string ;
+.
+:Amphibious_Vessel
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Amphibious Vessel"^^xsd:string ;
+  rdfs:subClassOf :Utility_Vessel ;
+  owl:unionOf (
+      :Duck_Boat
+    ) ;
+  skos:broader :Vessel ;
+  skos:definition """1 : combining two characteristics 
+2 a : relating to or adapted for both land and water <amphibious vehicles> [WEBSTER]"""^^xsd:string ;
+  skos:definition "A physical resource that is a type of vessel that is capable of: (a) movement - moving under its own violition along a path or route on land or water; and (b) carrying or transporting someone (passenger) or something (cargo/payload) from one geographic location to another.  [PROPOSED]"^^xsd:string ;
+  skos:prefLabel "Amphibious Vessel"^^xsd:string ;
+.
+:Boat
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Boat"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Ferryboat
+      :Duck_Boat
+      :Rescue_Boat
+    ) ;
+  skos:broader :Waterway_Vessel ;
+  skos:definition "1 a : a small vessel for travel on water b : SHIP  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Duck_Boat ;
+  skos:narrower :Ferryboat ;
+  skos:narrower :Rescue_Boat ;
+  skos:prefLabel "Boat"^^xsd:string ;
+.
+:Cargo
+  rdf:type owl:Class ;
+  rdfs:label "Cargo"^^xsd:string ;
+  rdfs:subClassOf :Load ;
+  skos:broader :Load ;
+  skos:prefLabel "Cargo"^^xsd:string ;
+.
+:Duck_Boat
+  rdf:type owl:Class ;
+  rdfs:label "Duck Boat"^^xsd:string ;
+  rdfs:subClassOf :Boat ;
+  skos:broader :Amphibious_Vessel ;
+  skos:broader :Boat ;
+  skos:prefLabel "Duck Boat"^^xsd:string ;
+.
+:Ferryboat
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Ferryboat"^^xsd:string ;
+  rdfs:subClassOf :Boat ;
+  skos:broader :Boat ;
+  skos:broader :Passenger_Vessel ;
+  skos:definition ": a boat used to ferry passengers, vehicles, or goods  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Ferryboat"^^xsd:string ;
+.
+:Fleet
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Fleet"^^xsd:string ;
+  rdfs:subClassOf :Watercraft_Group ;
+  skos:broader :Watercraft_Group ;
+  skos:definition """1 : a number of warships under a single command; specifically : an organization of ships and aircraft under the command of a flag officer 
+2 : GROUP 2a, b; especially : a group (as of ships, planes, or trucks) operated under unified control  [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Fleet"^^xsd:string ;
+.
+:Load
+  rdf:type owl:Class ;
+  rdfs:label "Load"^^xsd:string ;
+  skos:broader :Watercraft ;
+  skos:narrower :Cargo ;
+  skos:narrower :Payload ;
+  skos:prefLabel "Load"^^xsd:string ;
+.
+:Navy_Fleet
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Navy Fleet"^^xsd:string ;
+  rdfs:subClassOf :Fleet ;
+  skos:definition "1 : a number of warships under a single command; specifically : an organization of ships and aircraft under the command of a flag officer    [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Navy Fleet"^^xsd:string ;
+.
+:Ocean_Station_Vessel
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Abbreviations and Codes, Doc 8400, Seventh Edition, 2007; ICAO Procedures for Air Navigation Services"^^xsd:string ;
+  vaem:acronym "OSV"^^xsd:string ;
+  rdfs:label "Ocean Station Vessel"^^xsd:string ;
+  rdfs:subClassOf :Ocean_Vessel ;
+  skos:broader :Ocean_Vessel ;
+  skos:prefLabel "Ocean Station Vessel"^^xsd:string ;
+.
+:Ocean_Vessel
+  rdf:type owl:Class ;
+  rdfs:label "Ocean Vessel"^^xsd:string ;
+  rdfs:subClassOf :Vessel ;
+  owl:unionOf (
+      :Ship
+    ) ;
+  skos:broader :Vessel ;
+  skos:narrower :Ocean_Station_Vessel ;
+  skos:narrower :Ship ;
+  skos:prefLabel "Ocean Vessel"^^xsd:string ;
+.
+:Passenger_Vessel
+  rdf:type owl:Class ;
+  rdfs:label "Passenger Vessel"^^xsd:string ;
+  rdfs:subClassOf :Utility_Vessel ;
+  owl:intersectionOf (
+      :Duck_Boat
+      :Ferryboat
+    ) ;
+  skos:broader :Utility_Vessel ;
+  skos:prefLabel "Passenger Vessel"^^xsd:string ;
+.
+:Payload
+  rdf:type owl:Class ;
+  rdfs:label "Payload"^^xsd:string ;
+  rdfs:subClassOf :Load ;
+  skos:broader :Load ;
+  skos:prefLabel "Payload"^^xsd:string ;
+.
+:Rescue_Boat
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Abbreviations and Codes, Doc 8400, Seventh Edition, 2007; ICAO Procedures for Air Navigation Services"^^xsd:string ;
+  vaem:acronym "RB"^^xsd:string ;
+  rdfs:label "Rescue Boat"^^xsd:string ;
+  rdfs:subClassOf :Boat ;
+  skos:broader :Boat ;
+  skos:broader :Rescue_Vessel ;
+  skos:prefLabel "Rescue Boat"^^xsd:string ;
+.
+:Rescue_Vessel
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Abbreviations and Codes, Doc 8400, Seventh Edition, 2007; ICAO Procedures for Air Navigation Services"^^xsd:string ;
+  rdfs:label "Rescue Vessel"^^xsd:string ;
+  rdfs:subClassOf :Utility_Vessel ;
+  owl:intersectionOf (
+      :Rescue_Boat
+    ) ;
+  skos:broader :Vessel ;
+  skos:narrower :Rescue_Boat ;
+  skos:prefLabel "Rescue Vessel"^^xsd:string ;
+.
+:Ship
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Ship"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Ocean_Vessel ;
+  skos:definition """1 a : a large seagoing vessel b : a sailing vessel having a bowsprit and usually three masts each composed of a lower mast, a topmast, and a topgallant mast 
+2 : BOAT; especially : one propelled by power or sail 
+5 : AIRSHIP, AIRPLANE, SPACECRAFT  [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Warship ;
+  skos:prefLabel "Ship"^^xsd:string ;
+.
+:Utility_Vessel
+  rdf:type owl:Class ;
+  rdfs:label "Utility Vessel"^^xsd:string ;
+  rdfs:subClassOf :Vessel ;
+  skos:broader :Vessel ;
+  skos:narrower :Amphibious_Vessel ;
+  skos:narrower :Passenger_Vessel ;
+  skos:narrower :Rescue_Vessel ;
+  skos:prefLabel "Utility Vessel"^^xsd:string ;
+.
+:Vessel
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA JO Order 7340.2C, Contractions; dated 2/9/2012."^^xsd:string ;
+  vaem:abbreviation "VSL"^^xsd:string ;
+  rdfs:label "Vessel"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Watercraft ;
+  skos:definition "A physical resource that is a type of vessel that is capable of: (a) movement - moving under its own violition along a path or route on water (e.g, lake, river, sea, ocean); and (b) carrying or transporting someone (passenger) or something (cargo/payload) from one geographic location to another.  [PROPOSED]"^^xsd:string ;
+  skos:narrower :Ocean_Vessel ;
+  skos:narrower :Utility_Vessel ;
+  skos:narrower :Waterway_Vessel ;
+  skos:prefLabel "Vessel"^^xsd:string ;
+.
+:Warship
+  rdf:type owl:Class ;
+  rdfs:label "Warship"^^xsd:string ;
+  rdfs:subClassOf :Ship ;
+  owl:unionOf (
+      :Aircraft_Carrier
+    ) ;
+  skos:broader :Ship ;
+  skos:definition ": a naval vessel  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Aircraft_Carrier ;
+  skos:prefLabel "Warship"^^xsd:string ;
+.
+:Watercraft
+  rdf:type owl:Class ;
+  rdfs:label "Watercraft"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Vessel
+    ) ;
+  skos:definition "A physical resource that is a type of conveyance that is capable of: (a) movement - moving under its own violition along a path or route on water; and (b) carrying or transporting someone (passenger) or something (cargo/payload) from one geographic location to another.  [PROPOSED]"^^xsd:string ;
+  skos:hasTopConcept <http://www.faa.gov/DRS/Conveyance#Conveyance> ;
+  skos:narrower :Load ;
+  skos:narrower :Vessel ;
+  skos:prefLabel "Watercraft"^^xsd:string ;
+  skos:topConceptOf :Watercraft ;
+.
+:Watercraft_Category
+  rdf:type owl:Class ;
+  rdfs:label "Watercraft Category"^^xsd:string ;
+  rdfs:subClassOf :Watercraft ;
+  skos:broader :Watercraft ;
+  skos:hasTopConcept :Watercraft ;
+  skos:prefLabel "Watercraft Category"^^xsd:string ;
+.
+:Watercraft_Class
+  rdf:type owl:Class ;
+  rdfs:label "Watercraft Class"^^xsd:string ;
+  rdfs:subClassOf :Watercraft ;
+  skos:broader :Watercraft ;
+  skos:hasTopConcept :Watercraft ;
+  skos:prefLabel "Watercraft Class"^^xsd:string ;
+.
+:Watercraft_Group
+  rdf:type owl:Class ;
+  rdfs:label "Watercraft Group"^^xsd:string ;
+  rdfs:subClassOf :Watercraft ;
+  skos:broader :Watercraft ;
+  skos:hasTopConcept :Watercraft ;
+  skos:prefLabel "Watercraft Group"^^xsd:string ;
+.
+:Watercraft_Make
+  rdf:type owl:Class ;
+  rdfs:label "Watercraft Make"^^xsd:string ;
+  rdfs:subClassOf :Watercraft_Type ;
+  skos:broader :Watercraft_Type ;
+  skos:prefLabel "Watercraft Make"^^xsd:string ;
+.
+:Watercraft_Type
+  rdf:type owl:Class ;
+  rdfs:label "Watercraft Type"^^xsd:string ;
+  rdfs:subClassOf :Watercraft_Class ;
+  skos:broader :Watercraft_Class ;
+  skos:prefLabel "Watercraft Type"^^xsd:string ;
+.
+:Waterway_Vessel
+  rdf:type owl:Class ;
+  rdfs:label "Waterway Vessel"^^xsd:string ;
+  rdfs:subClassOf :Vessel ;
+  owl:unionOf (
+      :Boat
+    ) ;
+  skos:broader :Vessel ;
+  skos:narrower :Boat ;
+  skos:prefLabel "Waterway Vessel"^^xsd:string ;
+.
+skos:definition
+  owl:equivalentProperty rdfs:comment ;
+.

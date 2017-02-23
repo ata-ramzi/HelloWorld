@@ -1,0 +1,4383 @@
+# baseURI: http://www.faa.gov/DRS/Living_Beings
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.faa.gov/DRS/People
+# imports: http://www.geonames.org/ontology
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://www.faa.gov/DRS/Living_Beings#> .
+@prefix People: <http://www.faa.gov/DRS/People#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.faa.gov/DRS/AT-People#Community>
+  skos:broader :Community ;
+.
+<http://www.faa.gov/DRS/AT-People#Human_Associations>
+  skos:narrower <http://www.faa.gov/DRS/AT-People#Working_Group> ;
+.
+<http://www.faa.gov/DRS/AT-People#Human_Being>
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  owl:equivalentClass :Human_Being ;
+.
+<http://www.faa.gov/DRS/AT-People#Human_Beings>
+  owl:equivalentClass :Human_Beings ;
+.
+<http://www.faa.gov/DRS/AT-People#People>
+  owl:equivalentClass :Human_Beings ;
+.
+<http://www.faa.gov/DRS/AT-People#Population>
+  owl:equivalentClass :Population ;
+  skos:broader :Population ;
+  skos:definition "A large group of living beings who are inhabitants or residents of a specific spatial area.   As human beings, they may be citizens of a country, state, provenance, territory, municipality or other geo-political organization.   [PROPOSED]"^^xsd:string ;
+.
+<http://www.faa.gov/DRS/AT-People#Society>
+  rdfs:subClassOf <http://www.faa.gov/DRS/AT-People#Community> ;
+  skos:narrower :Family ;
+.
+<http://www.faa.gov/DRS/AT-People#Structure>
+  skos:altLabel "Structure"^^xsd:string ;
+  skos:broader People:Organization ;
+  skos:broader owl:Thing ;
+.
+<http://www.faa.gov/DRS/AT-People#Working_Group>
+  skos:broader People:Community_of_Practice ;
+  skos:narrower <http://www.faa.gov/DRS/AT-People#Member> ;
+.
+<http://www.faa.gov/DRS/Living_Beings>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dcterms: ;
+  owl:imports <http://www.faa.gov/DRS/People> ;
+  owl:imports <http://www.geonames.org/ontology> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Adult
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "OED  http://oxforddictionaries.com/definition/american_english/adult?q=adult"^^xsd:string ;
+  rdfs:label "Adult"^^xsd:string ;
+  rdfs:subClassOf :Living_Being_Stage ;
+  skos:definition """noun 
+a person who is fully grown or developed: children should be accompanied by an adult
+•  a fully developed animal. 
+•  Law a person who has reached the age of majority. See majority (sense 2).
+ adjective 
+(of a person or animal) fully grown or developed: the adult inhabitants of the U.S.
+•  of or for adult people: adult education the responsibilities of adult life
+•  emotionally and mentally mature: an effort to be adult and civilized
+•  sexually explicit or pornographic (used euphemistically to refer to a movie, book, or magazine).  [OED]"""^^xsd:string ;
+  skos:prefLabel "Adult"^^xsd:string ;
+.
+:Alga
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Alga"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Algae ;
+  skos:broader :Protozoan ;
+  skos:definition ": a plant or plantlike organism of any of several phyla, divisions, or classes of chiefly aquatic usually chlorophyll-containing nonvascular organisms of polyphyletic origin that usually include the green, yellow-green, brown, and red algae in the eukaryotes and especially formerly the cyanobacteria in the prokaryotes   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Alga"^^xsd:string ;
+.
+:Algae
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  rdfs:label "Algae"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Alga
+    ) ;
+  skos:broader :Protista ;
+  skos:definition "a large number of photosynthetic organisms that are generally unicelluar and not classified as plants. [Cliff; p. 211]"^^xsd:string ;
+  skos:narrower :Alga ;
+  skos:narrower :Simple_Algae ;
+  skos:prefLabel "Algae"^^xsd:string ;
+.
+:Alligator
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Alligator"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "1 a : either of two crocodilians (Alligator mississippiensis of the southeastern United States and A. sinensis of China) having broad heads not tapering to the snout and a special pocket in the upper jaw for reception of the enlarged lower fourth tooth b : CROCODILIAN  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Alligator"^^xsd:string ;
+.
+:Amoeba
+  rdf:type owl:Class ;
+  rdfs:label "Amoeba"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Amoebae ;
+  skos:definition ": any of a large genus (Amoeba) of naked rhizopod protozoans with lobed and never anastomosing pseudopodia, without permanent organelles or supporting structures, and of wide distribution in fresh and salt water and moist terrestrial environments; broadly: a naked rhizopod or other amoeboid protozoan  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Protozoan ;
+  skos:prefLabel "Amoeba"^^xsd:string ;
+.
+:Amoebae
+  rdf:type owl:Class ;
+  rdfs:label "Amoebae"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Amoeba
+    ) ;
+  skos:altLabel "Amoebas"^^xsd:string ;
+  skos:broader :Protozoa ;
+  skos:narrower :Amoeba ;
+  skos:prefLabel "Amoebae"^^xsd:string ;
+.
+:Amphibia
+  rdf:type owl:Class ;
+  rdfs:label "Amphibia"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Amphibian
+    ) ;
+  skos:broader :Vertebrata ;
+  skos:narrower :Amphibian ;
+  skos:prefLabel "Amphibia"^^xsd:string ;
+  skos:related :Class ;
+  skos:related :Vertebrates ;
+.
+:Amphibian
+  rdf:type owl:Class ;
+  rdfs:label "Amphibian"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Amphibia ;
+  skos:definition "1: an amphibious organism: esp. : any of a class (Amphibia) of cold-blooded vertebrates (as frogs, toads, or salamanders) intermediate in many characters between fishes and reptiles and having gilded aquatic larvae and air-breathing adults  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Amphibian"^^xsd:string ;
+  skos:related :Vertebrates ;
+.
+:Animal
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "OED http://oxforddictionaries.com/definition/american_english/animal?q=animal"^^xsd:string ;
+  rdfs:label "Animal"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:disjointWith :Plant ;
+  skos:broader :Animalia ;
+  skos:definition """1 : any of a kingdom (Animalia) of living things including many-celled organisms and often many of the single-celled ones (as protozoans) that typically differ from plants in having cells without cellulose walls, in lacking chlorophyll and the capacity for photosynthesis, in requiring more complex food materials (as proteins), in being organized to a greater degree of complexity, and in having the capacity for spontaneous movement and rapid motor responses to stimulation 
+2 a: one of the lower animals as distinguished from human beings  b: mammal; broadly: vertebrate 
+3 : a human being considered chiefly as physical or nonrational; also: this nature 
+4 : a person with a particular interest or aptitude 
+5 : matter, thing ; also: CREATURE 1c  [WEBSTER]"""^^xsd:string ;
+  skos:definition """noun 
+a living organism that feeds on organic matter, typically having specialized sense organs and nervous system and able to respond rapidly to stimuli: animals such as spiders wild animals adapt badly to a caged life humans are the only animals who weep
+• a living organism other than a human being: are humans superior to animals, or just different?
+• a mammal, as opposed to a bird, reptile, fish, or insect: the snowfall seemed to have chased all birds, animals, and men indoors
+• a person whose behavior is regarded as devoid of human attributes or civilizing influences, especially someone who is very cruel, violent, or repulsive: those men have to be animals—what they did to that boy was savage
+• [with adjective or noun modifier] a particular type of person or thing: I am a political animal the government that followed the election was a very different animal
+adjective  [attributive]
+of, relating to, or characteristic of animals: the evolution of animal life animal welfare
+• of animals as distinct from plants: tissues of animal and vegetable protein
+• characteristic of the physical and instinctive needs of animals; of the flesh rather than the spirit or intellect: a crude surrender to animal lust  [OED]"""^^xsd:string ;
+  skos:narrower :Domestic_Animal ;
+  skos:narrower :Service_Animal ;
+  skos:prefLabel "Animal"^^xsd:string ;
+  skos:scopeNote "Animals are generally distinguished from plants by being unable to synthesize organic molecules from inorganic ones, so that they have to feed on plants or on other animals. They are typically able to move about, although this ability is sometimes restricted to a particular stage in the life cycle. The great majority of animals are invertebrates, of which there are some thirty phyla; the vertebrates constitute but a single subphylum. See also higher animals, lower animals OED]"^^xsd:string ;
+.
+:Animalia
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  dcterms:relation "Fauna"^^xsd:string ;
+  rdfs:label "Animalia"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Animal
+    ) ;
+  skos:altLabel "Animal Kingdom"^^xsd:string ;
+  skos:broader :Kingdom ;
+  skos:definition "The final kingdom, Animalia, includes animals.  Animals without backbones (invertibrates) and with backbones (vertibrates) are included here.  The cellsare eukaryotic; the organisms are heterotrophic.  All animals are multicellular, and none have cell walls.  In the kingdom Animalia, biologists classify such organisms as sponges, hydras, worms, insects, starfish, reptiles, amphibians, birds, and mammals.  The feeding form is one in which large molecules form the external environment are consumed, then broken down to usable parts in the animal body.  [Cliff; p. 107]"^^xsd:string ;
+  skos:narrower :Animal ;
+  skos:narrower :Chordate ;
+  skos:prefLabel "Animalia"^^xsd:string ;
+.
+:Anthropoid
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Anthropoid"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:definition "1: any of a suborder (Anthropoidea) of higher primates (as macaques and marmosets); esp. : APE [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Anthropoid"^^xsd:string ;
+  skos:related :Sub-Order ;
+.
+:Anthropoidea
+  rdf:type owl:Class ;
+  rdfs:label "Anthropoidea"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Anthropoid
+    ) ;
+  skos:definition "Enlarged, convoluted cerebrum; well-developed eyes; prehensile tails; broad, flat noses; thumbs reduced; external nostrils close together"^^xsd:string ;
+  skos:narrower :Hominoidea ;
+  skos:narrower :Pongidae ;
+  skos:prefLabel "Anthropoidea"^^xsd:string ;
+.
+:Ape
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Ape"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "1 a : MONKEY; especially : one of the larger tailless or short-tailed Old World forms b : any of two families (Pongidae and Hylobatidae) of large tailless semierect primates (as the chimpanzee, gorilla, orangutan, or gibbon)  called also anthropoid, anthropoid ape    [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Ape"^^xsd:string ;
+.
+:Archaea
+  rdf:type owl:Class ;
+  rdfs:label "Archaea"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Monera ;
+  skos:definition ": microorganisms of a domain (Archaea) including esp. methane-producing forms, some red halophillic forms, and others of harsh hot acidic environments (as a hot spring)  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Archaea"^^xsd:string ;
+  skos:related :Microorganism ;
+.
+:Artiodactyla
+  rdf:type owl:Class ;
+  rdfs:label "Artiodactyla"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Mammalia ;
+  skos:definition "is an order that includes even-toed ungulates: pigs, hippopotamuses, camels, deer, giraffes, antelopes, cattle, sheep, goats, bison"^^xsd:string ;
+  skos:prefLabel "Artiodactyla"^^xsd:string ;
+  skos:related :Order ;
+.
+:Aves
+  rdf:type owl:Class ;
+  rdfs:label "Aves"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Vertebrata ;
+  skos:broader :Wildlife ;
+  skos:narrower :Bird ;
+  skos:prefLabel "Aves"^^xsd:string ;
+  skos:related :Class ;
+.
+:Baby
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "OED  http://oxforddictionaries.com/definition/american_english/baby?q=baby"^^xsd:string ;
+  rdfs:label "Baby"^^xsd:string ;
+  rdfs:subClassOf :Living_Being_Stage ;
+  skos:definition """noun (plural babies)
+ 1a very young child, especially one newly or recently born: his wife’s just had a baby [as modifier]: a baby girl
+•  a young or newly born animal. 
+•  the youngest member of a family or group: Clara was the baby of the family
+•  a timid or childish person: “Don’t be such a baby!” she said witheringly
+•  (one's baby) informal one’s particular responsibility, achievement, or concern: “This is your baby, Gerry,” she said, handing him the brief
+2 informal a young woman or a person with whom one is having a romantic relationship (often as a form of address): my baby left me for another guy baby, don’t cry!
+•  a thing regarded with affection or familiarity: this baby can reach speeds of 140 mph
+ adjective  [attributive]
+ comparatively small or immature of its kind: a baby grand piano
+•  (of vegetables) picked before reaching their usual size: baby carrots  [OED]"""^^xsd:string ;
+  skos:prefLabel "Baby"^^xsd:string ;
+.
+:Bacteria
+  rdf:type owl:Class ;
+  rdfs:label "Bacteria"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Bacterium
+    ) ;
+  skos:broader :Monera ;
+  skos:narrower :Bacterium ;
+  skos:prefLabel "Bacteria"^^xsd:string ;
+.
+:Bacterium
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "OED - http://oxforddictionaries.com/definition/american_english/bacterium?q=Bacterium"^^xsd:string ;
+  rdfs:label "Bacterium"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:altLabel "Bacteria"^^xsd:string ;
+  skos:altLabel "Prokaryotes"^^xsd:string ;
+  skos:broader :Bacteria ;
+  skos:definition ": any of a domain (Bacteria) of prokaryotic round, spiral, or rod-shaped single-celled microorganisms that may lack cell walls or are gram-positive or gram-negative if they have cell walls, that are often aggregated into colonies or motile by means of flagella, that typically live in soil, water, organic matter, or the bodies of plants and animals, that are usually autotrophic, saprophytic, or parasitic in nutrition, and that are noted for their biochemical effects and pathogenicity; broadly: prokaryote— compare archaea, eukaryote   [WEBSTER]"^^xsd:string ;
+  skos:definition "a member of a large group of unicellular microorganisms that have cell walls but lack organelles and an organized nucleus, including some that can cause disease.  [OED]"^^xsd:string ;
+  skos:prefLabel "Bacterium"^^xsd:string ;
+  skos:related :Microorganism ;
+  skos:scopeNote "Bacteria are widely distributed in soil, water, and air, and on or in the tissues of plants and animals. Formerly included in the plant kingdom, they are now classified separately (as prokaryotes). They play a vital role in global ecology, as the chemical changes they bring about include those of organic decay and nitrogen fixation. Much modern biochemical knowledge has been gained from the study of bacteria because they grow easily and reproduce rapidly in laboratory cultures [OED]"^^xsd:string ;
+.
+:Beaver
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  rdfs:label "Beaver"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Rodentia ;
+  skos:definition "1 or plural beaver a : either of two large semiaquatic herbivorous rodents comprising a family (Castoridae including Castor canadensis of North America and C. fiber of Eurasia), having webbed hind feet and a broad flat scaly tail, and constructing dams and partially submerged lodges  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Beaver"^^xsd:string ;
+.
+:Bird
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Bird"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Aves ;
+  skos:definition "2 : any of a class (Aves) of warm-blooded vertebrates distinguished by having the body more or less completely covered with feathers and the forelimbs modified as wings [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Bird"^^xsd:string ;
+  skos:related :Genus ;
+.
+:Bomb_Sniffing_Dog
+  rdf:type owl:Class ;
+  rdfs:label "Bomb Sniffing Dog"^^xsd:string ;
+  rdfs:subClassOf :Working_Dog ;
+  skos:broader :Working_Dog ;
+  skos:prefLabel "Bomb Sniffing Dog"^^xsd:string ;
+.
+:Bush
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GeoNames Taxonomy http://www.geonames.org/statistics/total.html"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  gn:featureCode <http://www.geonames.org/ontology#V.BUSH> ;
+  rdfs:label "Bush"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "1 a : SHRUB; especially : a low densely branched shrub  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Bush"^^xsd:string ;
+.
+:Bushes
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GeoNames Taxonomy http://www.geonames.org/statistics/total.html"^^xsd:string ;
+  gn:featureCode <http://www.geonames.org/ontology#V.BUSH> ;
+  rdfs:label "Bushes"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Bush
+    ) ;
+  skos:definition "a small clump of conspicuous bushes in an otherwise bare area  [GeoNames]"^^xsd:string ;
+  skos:prefLabel "Bushes"^^xsd:string ;
+.
+:Canid
+  rdf:type owl:Class ;
+  rdfs:label "Canid"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Wolf
+            :Jackal
+            :Fox
+            :Coyote
+            :Dog
+          ) ;
+      ]
+    ) ;
+  skos:broader :Canidae ;
+  skos:definition ": any of a family (Canidae) of carnivorious animals that includes wolves, jackals, foxes, coyote, and the domestic dog  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Coyote ;
+  skos:narrower :Dog ;
+  skos:narrower :Fox ;
+  skos:narrower :Jackal ;
+  skos:narrower :Wolf ;
+  skos:prefLabel "Canid"^^xsd:string ;
+  skos:related :Order ;
+.
+:Canidae
+  rdf:type owl:Class ;
+  rdfs:label "Canidae"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Canid
+    ) ;
+  skos:broader :Carnivora ;
+  skos:narrower :Canid ;
+  skos:narrower :Dog ;
+  skos:narrower :Fox ;
+  skos:narrower :Jackal ;
+  skos:narrower :Wolf ;
+  skos:prefLabel "Canidae"^^xsd:string ;
+  skos:related :Family ;
+.
+:Caribou
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary, 11 ed."^^xsd:string ;
+  rdfs:label "Caribou"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:altLabel "Reindeer"^^xsd:string ;
+  skos:broader :Deer ;
+  skos:definition ": a large gregarious deer (Rangifer tarandus) of Holarctic taiga and tundra that usually has palmate antlers in both sexes  used especially for one of the New World; called also reindeer   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Caribou"^^xsd:string ;
+.
+:Carnivora
+  rdf:type owl:Class ;
+  rdfs:label "Carnivora"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Carnivore
+    ) ;
+  skos:broader :Mammalia ;
+  skos:definition ": carnivorous animals  [WEBSTER]"^^xsd:string ;
+  skos:definition "includes: cats, dogs, bears, raccoons, weasels, skunks, minks, badgers, otters, hyenas, seals, walruses"^^xsd:string ;
+  skos:narrower :Canidae ;
+  skos:narrower :Carnivore ;
+  skos:prefLabel "Carnivora"^^xsd:string ;
+  skos:related :Order ;
+.
+:Carnivore
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Carnivore"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Carnivora ;
+  skos:definition "1: any of an order (Carnivore) of typically flesh-eating mammals that includes dogs, foxes, bears, raccoons,and cats; broadly : a carnivorous animal  2 : a carnivorous plant  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Carnivore"^^xsd:string ;
+.
+:Cat
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Cat"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "1 a : a carnivorous mammal (Felis catus) long domesticated as a pet and for catching rats and mice b : any of a family (Felidae) of carnivorous usually solitary and nocturnal mammals (as the domestic cat, lion, tiger, leopard, jaguar, cougar, wildcat, lynx, and cheetah)    [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Cat"^^xsd:string ;
+.
+:Cervidae
+  rdf:type owl:Class ;
+  rdfs:label "Cervidae"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Ruminantia ;
+  skos:narrower :Caribou ;
+  skos:narrower :Deer ;
+  skos:narrower :Moose ;
+  skos:prefLabel "Cervidae"^^xsd:string ;
+  skos:related :Family ;
+.
+:Cetacea
+  rdf:type owl:Class ;
+  rdfs:label "Cetacea"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Mammalia ;
+  skos:definition "includes: whales, dolphins, porpoises"^^xsd:string ;
+  skos:prefLabel "Cetacea"^^xsd:string ;
+  skos:related :Order ;
+.
+:Cetacean
+  rdf:type rdfs:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Cetacean"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Cetacea ;
+  skos:broader :Marine_Mammal ;
+  skos:definition ": any of an order (Cetacea) of aquatic mostly marine mammals that includes the whales, dolphins, porpoises, and related forms and that have a torpedo-shaped nearly hairless body, paddle-shaped forelimbs but no hind limbs, one or two nares opening externally at the top of the head, and a horizontally flattened tail used for locomotion    [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Cetacean"^^xsd:string ;
+.
+:Cetartiodactyla
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKI  http://wiki.answers.com/Q/What_kingdom_phylum_class_order_family_genus_species_of_the_deer"^^xsd:string ;
+  rdfs:label "Cetartiodactyla"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Mammalia ;
+  skos:definition "is an order that includes: deer, musk deer, antelope, cattle, giraffes, okapis, camels, llamas, vicunas, alpacas, pigs, peccaries, hippopotamuses, whales, dolphins, toothed whales, orcas  [WIKI]"^^xsd:string ;
+  skos:narrower :Cervidae ;
+  skos:prefLabel "Cetartiodactyla"^^xsd:string ;
+  skos:related :Order ;
+.
+:Child
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "OED  http://oxforddictionaries.com/definition/american_english/child?q=child"^^xsd:string ;
+  rdfs:label "Child"^^xsd:string ;
+  rdfs:subClassOf :Living_Being_Stage ;
+  skos:definition """ noun (plural children /ˈCHildrən/)
+ a young human being below the age of puberty or below the legal age of majority. 
+•  a son or daughter of any age. 
+•  an immature or irresponsible person: she’s such a child!
+•  a person who has little or no experience in a particular area: he’s a child in financial matters
+•  (children) the descendants of a family or people: the children of Abraham
+•  (child of) a person or thing influenced by a specified environment: a child of the sixties OPEC was in a sense a child of the Cold War  [OED]"""^^xsd:string ;
+  skos:prefLabel "Child"^^xsd:string ;
+.
+:Chiroptera
+  rdf:type owl:Class ;
+  rdfs:label "Chiroptera"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Mammalia ;
+  skos:definition "includes bats"^^xsd:string ;
+  skos:prefLabel "Chiroptera"^^xsd:string ;
+  skos:related :Order ;
+.
+:Chordate
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Chordate"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Animalia ;
+  skos:definition ": any of a phylum (Chordata) of animals having at least at some stage of development a notochord, dorsally situated central nervous system, and gill clefts and including the vertebrates, lancelets, and tunicates   [WEBSTER]"^^xsd:string ;
+  skos:narrower :Primata ;
+  skos:prefLabel "Chordate"^^xsd:string ;
+  skos:related :Chordates ;
+  skos:related :Invertebrates ;
+  skos:related :Phylum ;
+  skos:related :Vertebrates ;
+.
+:Chordates
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  rdfs:label "Chordates"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:altLabel "Chordata"^^xsd:string ;
+  skos:definition "animals with rods along their backs, including reptiles, amphibians, birds, and mammals  [Cliff; p. 214]"^^xsd:string ;
+  skos:prefLabel "Chordates"^^xsd:string ;
+  skos:related :Chordate ;
+.
+:Clan
+  rdf:type rdfs:Class ;
+  rdfs:label "Clan"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Community ;
+  skos:narrower :Family ;
+  skos:prefLabel "Clan"^^xsd:string ;
+.
+:Class
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  rdfs:label "Class"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Classes ;
+  skos:broader :Division ;
+  skos:broader :Phylum ;
+  skos:definition "a grouping of similar orders [Cliff; p. 214]"^^xsd:string ;
+  skos:narrower :Orders ;
+  skos:prefLabel "Class"^^xsd:string ;
+  skos:related :Mammalia ;
+.
+:Classes
+  rdf:type owl:Class ;
+  rdfs:label "Classes"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Class
+    ) ;
+  skos:broader :Phyla ;
+  skos:prefLabel "Classes"^^xsd:string ;
+.
+:Community
+  rdf:type owl:Class ;
+  rdfs:label "Community"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:equivalentClass <http://www.faa.gov/DRS/AT-People#Community> ;
+  skos:broader :Living_Beings ;
+  skos:narrower :Clan ;
+  skos:narrower :Crowd ;
+  skos:narrower :Society ;
+  skos:narrower :Tribe ;
+  skos:prefLabel "Community"^^xsd:string ;
+.
+:Coyote
+  rdf:type owl:Class ;
+  rdfs:label "Coyote"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Canid ;
+  skos:prefLabel "Coyote"^^xsd:string ;
+  skos:related :Genus ;
+.
+:Crocodile
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Crocodile"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "1 a : any of several large carnivorous thick-skinned long-bodied aquatic reptiles (family Crocodylidae) of tropical and subtropical waters; broadly : CROCODILIAN   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Crocodile"^^xsd:string ;
+.
+:Crowd
+  rdf:type rdfs:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Crowd"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Community ;
+  skos:definition """1 : a large number of persons especially when collected together : THRONG 
+2 a : the great body of the people : POPULACE b : most of one's peers <follow the crowd> 
+3 : a large number of things close together <I saw a crowd . . . of golden daffodils — William Wordsworth> 
+4 : a group of people having something (as a habit, interest, or occupation) in common <in with the wrong crowd> <the Hollywood crowd>    [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Pack ;
+  skos:prefLabel "Crowd"^^xsd:string ;
+.
+:Cyanobacteria
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Cyanobacteria"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:altLabel "Blue-green Algae"^^xsd:string ;
+  skos:broader :Monera ;
+  skos:definition "members of the kingdom Monera that are photosynthetic and are found in the soil and in freshwater or saltwater environments  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Cyanobacteria"^^xsd:string ;
+.
+:Deer
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Deer"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Cervidae ;
+  skos:definition "2 : any of numerous slender-legged ruminant mammals (family Cervidae, the deer family) having usually brownish fur and antlers borne by the males of nearly all and by the females of a few forms   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Deer"^^xsd:string ;
+  skos:related :Genus ;
+.
+:Dependent_Political_Entity
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GeoNames Taxonomy http://www.geonames.org/statistics/total.html"^^xsd:string ;
+  gn:featureCode <http://www.geonames.org/ontology#A.PCLD> ;
+  rdfs:label "Dependent Political Entity"^^xsd:string ;
+  rdfs:subClassOf :Political_Entity ;
+  skos:broader :Political_Entity ;
+  skos:prefLabel "Dependent Political Entity"^^xsd:string ;
+.
+:Division
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Division"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Divisions ;
+  skos:definition """10 : a group of organisms forming part of a larger group; specifically : a primary category of the plant kingdom in biological taxonomy that is typically equivalent to a phylum 
+11 : a competitive class or category (as in boxing or wrestling)   [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Class ;
+  skos:prefLabel "Division"^^xsd:string ;
+.
+:Divisions
+  rdf:type owl:Class ;
+  rdfs:label "Divisions"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Division
+    ) ;
+  skos:broader :Fungi ;
+  skos:broader :Plantae ;
+  skos:definition "Divisions are used for plants and fungi, while phyla are used for animals and animal-like organisms.  [Cliff; p. 105]"^^xsd:string ;
+  skos:narrower :Division ;
+  skos:prefLabel "Divisions"^^xsd:string ;
+.
+:Dog
+  rdf:type owl:Class ;
+  rdfs:label "Dog"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Canid ;
+  skos:definition "1 a : a CANID; esp. a highly variable domestic mammal (Canis familiaris)  closely related to the gray wolf  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Working_Dog ;
+  skos:prefLabel "Dog"^^xsd:string ;
+  skos:related :Genus ;
+.
+:Dolphin
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Dolphin"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Cetacean ;
+  skos:broader :Marine_Mammal ;
+  skos:definition "1 a (1) : any of various small marine toothed whales (family Delphinidae) with the snout more or less elongated into a beak and the neck vertebrae partially fused (2) : any of several related chiefly freshwater toothed whales (as of the family Platanistidae) b : PORPOISE 1     [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Dolphin"^^xsd:string ;
+.
+:Domestic_Animal
+  rdf:type owl:Class ;
+  rdfs:label "Domestic Animal"^^xsd:string ;
+  rdfs:subClassOf :Animal ;
+  rdfs:subClassOf :Service_Animal ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Cat
+            :Dog
+            :Bird
+            :Fish
+          ) ;
+      ]
+    ) ;
+  skos:broader :Animal ;
+  skos:broader :Service_Animal ;
+  skos:prefLabel "Domestic Animal"^^xsd:string ;
+.
+:Edentata
+  rdf:type owl:Class ;
+  rdfs:label "Edentata"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Mammalia ;
+  skos:definition "includes: sloths, anteaters, armadillos"^^xsd:string ;
+  skos:prefLabel "Edentata"^^xsd:string ;
+  skos:related :Order ;
+.
+:Emotional_Support_Service_Animal
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA CFR 382.117"^^xsd:string ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  :businessRuleNote """(e) If a passenger seeks to travel with an animal that is used as an emotional support or psychiatric service animal, you are not required to accept the animal for transportation in the cabin unless the passenger provides you current documentation (i.e., no older than one year from the date of the passenger's scheduled initial flight) on the letterhead of a licensed mental health professional (e.g., psychiatrist, psychologist, licensed clinical social worker, including a medical doctor specifically treating the passenger's mental or emotional disability) stating the following:
+(1) The passenger has a mental or emotional disability recognized in the Diagnostic and Statistical Manual of Mental Disorders—Fourth Edition (DSM IV);
+(2) The passenger needs the emotional support or psychiatric service animal as an accommodation for air travel and/or for activity at the passenger's destination;
+(3) The individual providing the assessment is a licensed mental health professional, and the passenger is under his or her professional care; and
+(4) The date and type of the mental health professional's license and the state or other jurisdiction in which it was issued.   [FAA CFR]"""^^xsd:string ;
+  rdfs:label "Emotional Support Service Animal"^^xsd:string ;
+  rdfs:subClassOf :Service_Animal ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Exotic_Service_Animal
+            :Unusual_Service_Animal
+          ) ;
+      ]
+    ) ;
+  skos:broader :Service_Animal ;
+  skos:prefLabel "Emotional Support Service Animal"^^xsd:string ;
+.
+:Entity
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Entity"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass dcterms:Agent ;
+  owl:unionOf (
+      :Living_Being
+    ) ;
+  skos:broader :Living_Being ;
+  skos:definition """1 a : BEING, EXISTENCE; especially : independent, separate, or self-contained existence b : the existence of a thing as contrasted with its attributes 
+2 : something that has separate and distinct existence and objective or conceptual reality 
+3 : an organization (as a business or governmental unit) that has an identity separate from those of its members    [WEBSTER]"""^^xsd:string ;
+  skos:narrower <http://www.faa.gov/DRS/AT-People#Organization> ;
+  skos:narrower <http://www.faa.gov/DRS/AT-People#Person> ;
+  skos:narrower :Dependent_Political_Entity ;
+  skos:narrower :Independent_Political_Entity ;
+  skos:narrower :Organism ;
+  skos:narrower :Semi-Independent_Political_Entity ;
+  skos:prefLabel "Entity"^^xsd:string ;
+.
+:Equid
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Equid"^^xsd:string ;
+  rdfs:subClassOf :Equidae ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Horse
+    ) ;
+  skos:broader :Equidae ;
+  skos:definition ": any of a family (Equidae) of perissodactyl mammals consisting of the horses, asses, zebras, and extinct related animals   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Equid"^^xsd:string ;
+.
+:Equidae
+  rdf:type rdfs:Class ;
+  rdfs:label "Equidae"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Mammalia ;
+  skos:prefLabel "Equidae"^^xsd:string ;
+.
+:Exotic_Service_Animal
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA CFR 382.117(f)"^^xsd:string ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Exotic Service Animal"^^xsd:string ;
+  rdfs:subClassOf :Service_Animal ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Miniature_Horse
+            :Pig
+            :Monkey
+          ) ;
+      ]
+    ) ;
+  skos:broader :Service_Animal ;
+  skos:example "(f) You are never required to accommodate certain unusual service animals (e.g., snakes, other reptiles, ferrets, rodents, and spiders) as service animals in the cabin. With respect to all other animals, including unusual or exotic animals that are presented as service animals (e.g., miniature horses, pigs, monkeys), as a carrier you must determine whether any factors preclude their traveling in the cabin as service animals (e.g., whether the animal is too large or heavy to be accommodated in the cabin, whether the animal would pose a direct threat to the health or safety of others, whether it would cause a significant disruption of cabin service, whether it would be prohibited from entering a foreign country that is the flight's destination). If no such factors preclude the animal from traveling in the cabin, you must permit it to do so. However, as a foreign carrier, you are not required to carry service animals other than dogs.  [FAA CFR]"^^xsd:string ;
+  skos:prefLabel "Exotic Service Animal"^^xsd:string ;
+.
+:Families
+  rdf:type owl:Class ;
+  rdfs:label "Families"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Family
+    ) ;
+  skos:broader :Order ;
+  skos:narrower :Family ;
+  skos:prefLabel "Families"^^xsd:string ;
+.
+:Family
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  rdfs:label "Family"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Clan ;
+  skos:broader :Families ;
+  skos:broader :Society ;
+  skos:broader :Tribe ;
+  skos:definition "similar genera classified together. [Cliff; p. 217]"^^xsd:string ;
+  skos:narrower :Genera ;
+  skos:narrower :Living_Being ;
+  skos:prefLabel "Family"^^xsd:string ;
+  skos:related :Hominid ;
+.
+:Fauna
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:relation "Animalia"^^xsd:string ;
+  rdfs:label "Fauna"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:disjointWith :Flora ;
+  skos:definition "animal life; esp. : the animals characteristic of a region, period, or special environment  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Fauna"^^xsd:string ;
+.
+:Ferret
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Ferret"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Rodentia ;
+  skos:definition """1 a : a domesticated usually albino, brownish, or silver-gray animal (Mustela putorius furo) that is descended from the European polecat b : BLACK-FOOTED FERRET 
+2 : an active and persistent searcher   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Ferret"^^xsd:string ;
+.
+:Fish
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Fish"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Vertebrates ;
+  skos:broader :Wildlife ;
+  skos:definition "1 a : an aquatic animal - usu. used in combination  b: any of numerous cold-blooded strictly aquatic craniate vertebrates that include the bony fishes and usu. the cartilaginous and jawless fishes and that have typically an elongated somewhat spindle-shaped body terminating in a broad caudal fin, limbs in the form of fins when present at all; and a 2-chambered heart by which blood is sent through thoracic gills to be oxygenated   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Fish"^^xsd:string ;
+  skos:related :Animal ;
+  skos:related :Vertebrates ;
+.
+:Flora
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:relation "Plantae"^^xsd:string ;
+  rdfs:label "Flora"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:disjointWith :Fauna ;
+  skos:definition "1 : a treatise on or list of the plants of an area or period 2 : plant or bacterial life; esp. : such life characteristic of a region, period, or special environment  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Flora"^^xsd:string ;
+.
+:Fox
+  rdf:type owl:Class ;
+  rdfs:label "Fox"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Canid ;
+  skos:prefLabel "Fox"^^xsd:string ;
+  skos:related :Genus ;
+.
+:Fungi
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  rdfs:label "Fungi"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Fungus
+    ) ;
+  skos:broader :Kingdom ;
+  skos:definition "The third kingdom, Fungi, includes the yeasts, molds, mildews, mushrooms, and other similar organisms.  The cells of this kingdom are eukaryotic and heterotrophic.  Some fungal species are unicellular, whereas other species form long chains of cells and are called filamentous fungi.  A cell wall containing chitin or cellulose is found in most members. Food is taken in by the absorption of small molecules from the external environment.  [Cliffs; p. 107]"^^xsd:string ;
+.
+:Fungus
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "OED - http://oxforddictionaries.com/definition/american_english/fungus?q=fungus"^^xsd:string ;
+  rdfs:label "Fungus"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Mold
+      :Mildew
+      :Yeast
+      :Toadstool
+      :Mushroom
+    ) ;
+  skos:broader :Fungi ;
+  skos:definition ": any of a kingdom (Fungi) of saprophytic and parasitic spore-producing eukaryotic typically filamentous organisms formerly classified as plants that lack chlorophyll and include molds, rusts, mildews, smuts, mushrooms, and yeasts [WEBSTER]"^^xsd:string ;
+  skos:definition """any of a group of unicellular, multicellular, or syncytial spore-producing organisms feeding on organic matter, including molds, yeast, mushrooms, and toadstools. 
+•  fungal infection (especially on fish). 
+•  [in singular] used to describe something that has appeared or grown rapidly and is considered unpleasant or unattractive: there was a fungus of outbuildings behind the house   [OED]"""^^xsd:string ;
+  skos:narrower :Mold ;
+  skos:narrower :Mushroom ;
+  skos:narrower :Toadstool ;
+  skos:narrower :Yeast ;
+  skos:prefLabel "Fungus"^^xsd:string ;
+  skos:scopeNote "Fungi lack chlorophyll and are therefore incapable of photosynthesis. Many play an ecologically vital role in breaking down dead organic matter; some are an important source of antibiotics or are used in fermentation, and others cause disease. The familiar mushrooms and toadstools are merely the fruiting bodies of organisms that exist mainly as a threadlike mycelium in the soil. Some fungi form associations with other plants, growing with algae to form lichens, or in the roots of higher plants to form mycorrhizas. Fungi are now often classified as a separate kingdom distinct from the green plants  [OED]"^^xsd:string ;
+.
+:Genera
+  rdf:type owl:Class ;
+  rdfs:label "Genera"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Genus
+    ) ;
+  skos:broader :Family ;
+  skos:narrower :Genus ;
+  skos:prefLabel "Genera"^^xsd:string ;
+.
+:Genus
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  rdfs:label "Genus"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Genera ;
+  skos:definition "a grouping of similar species (plural genera)  [Cliff; p. 218]"^^xsd:string ;
+  skos:narrower :Species ;
+  skos:prefLabel "Genus"^^xsd:string ;
+.
+:Gibbon
+  rdf:type owl:Class ;
+  rdfs:label "Gibbon"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Hylobatidae ;
+  skos:definition ": any of a genus (Hylobates of the family Hylobatidae) of agile brachiating tailless apes of southeastern Asia that are the smallest and most arboreal anthropoid apes  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Gibbon"^^xsd:string ;
+.
+:Gopher
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  rdfs:label "Gopher"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Rodent ;
+  skos:definition "2 a : any of a family (Geomyidae) of burrowing rodents of western North America, Central America, and the southern United States that are the size of a large rat and have large cheek pouches opening beside the mouth  called also pocket gopher  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Gopher"^^xsd:string ;
+.
+:Group
+  rdf:type owl:Class ;
+  rdfs:label "Group"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:equivalentClass <http://xmlns.com/foaf/0.1/Group> ;
+  skos:narrower :Living_Beings ;
+  skos:prefLabel "Group"^^xsd:string ;
+  skos:topConceptOf :Group ;
+.
+:Guide_Dog
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Guide Dog"^^xsd:string ;
+  rdfs:subClassOf :Working_Dog ;
+  skos:broader :Working_Dog ;
+  skos:definition ": a dog trained to lead the blind  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Guide Dog"^^xsd:string ;
+.
+:Hare
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Lagomorpha ;
+  skos:definition ": any of various swift long-eared lagomorph mammals (family Leporidae and especially genus Lepus) that are usually solitary or sometimes live in pairs and have the young open-eyed and furred at birth  compare RABBIT 1a  [WEBSTER]"^^xsd:string ;
+.
+:Herb
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Herb"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Plant ;
+  skos:definition """1 : a seed-producing annual, biennial, or perennial that does not develop persistent woody tissue but dies down at the end of a growing season 
+2 : a plant or plant part valued for its medicinal, savory, or aromatic qualities   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Herb"^^xsd:string ;
+.
+:Hominid
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "http://australianmuseum.net.au/Hominid-and-hominin-whats-the-difference/"^^xsd:string ;
+  rdfs:label "Hominid"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:definition ": any of a family (Hominidae) of erect bipedal primate mammals comprising recent humans together with extinct ancestral and related forms  [WEBSTER]"^^xsd:string ;
+  skos:definition "the group consisting of all modern and extinct Great Apes (that is, modern humans, chimpanzees, gorillas and orang-utans plus all their immediate ancestors). [Australia]"^^xsd:string ;
+  skos:narrower :Homo ;
+  skos:prefLabel "Hominid"^^xsd:string ;
+  skos:related :Family ;
+  skos:related :Mammal ;
+  skos:related :Primate ;
+.
+:Hominin
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "http://australianmuseum.net.au/Hominid-and-hominin-whats-the-difference/"^^xsd:string ;
+  rdfs:label "Hominin"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Hominoidea ;
+  skos:definition "the group consisting of modern humans, extinct human species and all our immediate ancestors (including members of the genera Homo, Australopithecus, Paranthropus and Ardipithecus). [Australia]"^^xsd:string ;
+  skos:narrower :Homo ;
+  skos:prefLabel "Hominin"^^xsd:string ;
+.
+:Hominoidea
+  rdf:type owl:Class ;
+  rdfs:label "Hominoidea"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Primata ;
+  skos:narrower :Homo ;
+  skos:narrower :Homo_Sapiens ;
+  skos:prefLabel "Hominoidea"^^xsd:string ;
+  skos:related :Family ;
+.
+:Homo
+  rdf:type owl:Class ;
+  rdfs:label "Homo"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Hominin ;
+  skos:definition ": any of a genus (Homo) of hominids that includes modern humans (H. sapiens) and several extinct related species (as H erectus and H. habilis)  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Homo_Sapiens ;
+  skos:prefLabel "Homo"^^xsd:string ;
+  skos:related :Genus ;
+.
+:Homo_Sapiens
+  rdf:type owl:Class ;
+  rdfs:label "Homo Sapiens"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Homo
+            :Sapiens
+          ) ;
+      ]
+    ) ;
+  skos:altLabel "Human Beings"^^xsd:string ;
+  skos:altLabel "Humans"^^xsd:string ;
+  skos:altLabel "Persons"^^xsd:string ;
+  skos:broader :Hominin ;
+  skos:broader :Mankind ;
+  skos:definition ": MANKIND  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Homo Sapiens"^^xsd:string ;
+.
+:Horse
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Horse"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Equid ;
+  skos:definition "1 a (1) : a large solid-hoofed herbivorous ungulate mammal (Equus caballus, family Equidae, the horse family) domesticated since prehistoric times and used as a beast of burden, a draft animal, or for riding (2) : RACEHORSE <play the horses> b : a male horse; especially : STALLION c : a recent or extinct animal (as a zebra, ass, or onager) of the horse family    [WEBSTER]"^^xsd:string ;
+  skos:narrower :Miniature_Horse ;
+  skos:narrower :Pony ;
+  skos:prefLabel "Horse"^^xsd:string ;
+.
+:Human_Being
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "OED  http://oxforddictionaries.com/definition/english/human%2Bbeing"^^xsd:string ;
+  rdfs:label "Human Being"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass <http://www.faa.gov/DRS/AT-People#Human_Being> ;
+  skos:altLabel "Human"^^xsd:string ;
+  skos:altLabel "Person"^^xsd:string ;
+  skos:broader :Human_Beings ;
+  skos:definition ": a bipedal primate mammal (Homo sapiens) : MAN; broadly: HOMINID  [WEBSTER]"^^xsd:string ;
+  skos:definition """noun 
+a man, woman, or child of the species Homo sapiens, distinguished from other animals by superior mental development, power of articulate speech, and upright stance. [OED]"""^^xsd:string ;
+  skos:prefLabel "Human Being"^^xsd:string ;
+  skos:related :Mammal ;
+  skos:related :Primate ;
+.
+:Human_Beings
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WEBSTER   http://www.merriam-webster.com/dictionary/human?show=0&t=1361807757"^^xsd:string ;
+  rdfs:label "Human Beings"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:disjointWith :Wildlife ;
+  owl:equivalentClass <http://www.faa.gov/DRS/AT-People#Human_Beings> ;
+  owl:unionOf (
+      :Human_Being
+    ) ;
+  skos:altLabel "Humans"^^xsd:string ;
+  skos:altLabel "People"^^xsd:string ;
+  skos:altLabel "humankind"^^xsd:string ;
+  skos:altLabel "the human race"^^xsd:string ;
+  skos:broader :Mankind ;
+  skos:definition """plural humans
+[count] : a person — usually plural [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Homo_Sapiens ;
+  skos:narrower :Human_Being ;
+  skos:prefLabel "Human Beings"^^xsd:string ;
+.
+:Hylobatidae
+  rdf:type owl:Class ;
+  rdfs:label "Hylobatidae"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Hominoidea ;
+  skos:narrower :Gibbon ;
+  skos:prefLabel "Hylobatidae"^^xsd:string ;
+.
+:Independent_Political_Entity
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GeoNames Taxonomy http://www.geonames.org/statistics/total.html"^^xsd:string ;
+  gn:featureCode <http://www.geonames.org/ontology#A.PCLI> ;
+  rdfs:label "Independent Political Entity"^^xsd:string ;
+  rdfs:subClassOf :Political_Entity ;
+  skos:broader :Political_Entity ;
+  skos:narrower :Section_of_Independent_Political_Entity ;
+  skos:prefLabel "Independent Political Entity"^^xsd:string ;
+.
+:Infant
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "OED  http://oxforddictionaries.com/definition/american_english/infant?q=infant"^^xsd:string ;
+  rdfs:label "Infant"^^xsd:string ;
+  rdfs:subClassOf :Living_Being_Stage ;
+  skos:definition """noun 
+a very young child or baby. 
+•  [as modifier] denoting something in an early stage of its development: the infant science of bioelectrical medicine
+•  Law a person who has not attained legal majority. [OED]"""^^xsd:string ;
+  skos:prefLabel "Infant"^^xsd:string ;
+.
+:Insectivora
+  rdf:type owl:Class ;
+  rdfs:label "Insectivora"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Mammalia ;
+  skos:definition "includes: moles, shrews"^^xsd:string ;
+  skos:prefLabel "Insectivora"^^xsd:string ;
+  skos:related :Order ;
+.
+:Invertebrates
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Invertebrates"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:disjointWith :Vertebrates ;
+  skos:definition ": lacking a spinal column; also : of, relating to, or concerned with invertebrate animals  [WEBSTER]"^^xsd:string ;
+  skos:definition "the most primitive of the chordates; lack a backbone [Cliff; p. 219]"^^xsd:string ;
+  skos:prefLabel "Invertebrates"^^xsd:string ;
+  skos:related :Chordate ;
+  skos:related :Chordates ;
+.
+:Jackal
+  rdf:type owl:Class ;
+  rdfs:label "Jackal"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Canid ;
+  skos:prefLabel "Jackal"^^xsd:string ;
+  skos:related :Genus ;
+.
+:Kingdom
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  rdfs:label "Kingdom"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Living_Being ;
+  skos:definition "the largest and broadest category of the classification system [of living beings or living things]  [Cliff; p. 219]"^^xsd:string ;
+  skos:narrower :Phyla ;
+  skos:prefLabel "Kingdom"^^xsd:string ;
+.
+:Lagomorpha
+  rdf:type owl:Class ;
+  rdfs:label "Lagomorpha"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Mammalia ;
+  skos:definition "includes: rabbits, hares, pikas"^^xsd:string ;
+  skos:narrower :Hare ;
+  skos:narrower :Rabbit ;
+  skos:prefLabel "Lagomorpha"^^xsd:string ;
+  skos:related :Order ;
+.
+:Legal_Entity
+  rdf:type owl:Class ;
+  rdfs:label "Legal Entity"^^xsd:string ;
+  rdfs:subClassOf :Entity ;
+  skos:broader :Entity ;
+  skos:narrower <http://www.faa.gov/DRS/AT-People#Organization> ;
+  skos:narrower <http://www.faa.gov/DRS/AT-People#Person> ;
+  skos:prefLabel "Legal Entity"^^xsd:string ;
+.
+:Living_Being
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "The American Heritage® Medical Dictionary Copyright © 2007, 2004 by Houghton Mifflin Company. Published by Houghton Mifflin Company. All rights reserved"^^xsd:string ;
+  rdfs:label "Living Being"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Plantae
+      :Animalia
+      :Monera
+      :Protista
+      :Fungi
+    ) ;
+  skos:altLabel "Living Thing"^^xsd:string ;
+  skos:broader :Clan ;
+  skos:broader :Living_Beings ;
+  skos:broader :Pack ;
+  skos:definition "An individual form of life, such as a plant, animal, bacterium, protist, or fungus; a body made up of organs, organelles, or other parts that work together to carry on the various processes of life.  [American Heritage Medical Dictionary]"^^xsd:string ;
+  skos:narrower :Animal ;
+  skos:narrower :Bacterium ;
+  skos:narrower :Fungus ;
+  skos:narrower :Plant ;
+  skos:narrower :Protista ;
+  skos:prefLabel "Living Being"^^xsd:string ;
+.
+:Living_Being_Stage
+  rdf:type owl:Class ;
+  rdfs:label "Living Being Stage"^^xsd:string ;
+  rdfs:subClassOf :Living_Being ;
+  skos:prefLabel "Living Being Stage"^^xsd:string ;
+.
+:Living_Beings
+  rdf:type owl:Class ;
+  rdfs:label "Living Beings"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Living_Being
+    ) ;
+  skos:broader :Group ;
+  skos:hasTopConcept :Group ;
+  skos:narrower :Community ;
+  skos:narrower :Population ;
+  skos:prefLabel "Living Beings"^^xsd:string ;
+.
+:Lizard
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Lizard"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Reptilia ;
+  skos:definition "1 : any of a suborder (Lacertilia) of reptiles distinguished from the snakes by a fused inseparable lower jaw, a single temporal opening, two pairs of well differentiated functional limbs which may be lacking in burrowing forms, external ears, and eyes with movable lids; broadly : any relatively long-bodied reptile (as a crocodile or dinosaur) with legs and tapering tail   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Lizard"^^xsd:string ;
+.
+:Mammal
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;   11 ed."^^xsd:string ;
+  rdfs:label "Mammal"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Mammalia ;
+  skos:definition ": any of a class (Mammalia) of warm-blooded higher vertebrates (as placentals, marsupials, or monotremes) that nourish their young with milk secreted by mammary glands, have the skin usu. more or less covered with hair, and include humans  [WEBSTER]"^^xsd:string ;
+  skos:definition "milk-producing animals.  [Cliff; p. 220]"^^xsd:string ;
+  skos:prefLabel "Mammal"^^xsd:string ;
+.
+:Mammalia
+  rdf:type owl:Class ;
+  rdfs:label "Mammalia"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Mammal
+    ) ;
+  skos:broader :Vertebrata ;
+  skos:broader :Wildlife ;
+  skos:narrower :Artiodactyla ;
+  skos:narrower :Carnivora ;
+  skos:narrower :Primata ;
+  skos:prefLabel "Mammalia"^^xsd:string ;
+  skos:related :Class ;
+  skos:related :Mammal ;
+.
+:Mankind
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  rdfs:label "Mankind"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:equivalentClass :Human_Beings ;
+  owl:unionOf (
+      :Human_Being
+    ) ;
+  skos:broader :Population ;
+  skos:definition "1 : the human race : the totality of human beings  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Homo_Sapiens ;
+  skos:narrower :Human_Being ;
+  skos:prefLabel "Mankind"^^xsd:string ;
+.
+:Marine_Mammal
+  rdf:type owl:Class ;
+  rdfs:label "Marine Mammal"^^xsd:string ;
+  rdfs:subClassOf :Mammal ;
+  skos:broader :Mammal ;
+  skos:narrower :Cetacean ;
+  skos:prefLabel "Marine Mammal"^^xsd:string ;
+.
+:Mice
+  rdf:type owl:Class ;
+  rdfs:label "Mice"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Mouse
+    ) ;
+  skos:broader :Rodentia ;
+  skos:narrower :Mouse ;
+  skos:prefLabel "Mice"^^xsd:string ;
+.
+:Microorganism
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Microorganism"^^xsd:string ;
+  rdfs:subClassOf :Organism ;
+  skos:broader :Organism ;
+  skos:definition ": an organism (as a bacterium or protozoan) of microscopic or ultramicroscopic size   [WEBSTER]"^^xsd:string ;
+  skos:narrower :Prokaryotic ;
+  skos:prefLabel "Microorganism"^^xsd:string ;
+  skos:related :Bacterium ;
+  skos:related :Protozoan ;
+.
+:Mildew
+  rdf:type owl:Class ;
+  rdfs:label "Mildew"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Fungus ;
+  skos:prefLabel "Mildew"^^xsd:string ;
+.
+:Miniature_Horse
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "MINIATURE HORSE  http://www.theminiaturehorse.com/article/miniaturehorses.htm"^^xsd:string ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://www.google.com/search?sourceid=navclient&aq=&oq=miniature+horse+definition&ie=UTF-8&rlz=1T4GGHP_enUS658US658&q=miniature+horse+definition&gs_l=hp...0.0.0.0.14471...........0.BJEMWOHousE"^^xsd:string ;
+  rdfs:subClassOf :Horse ;
+  owl:disjointWith :Pony ;
+  skos:broader :Horse ;
+  skos:definition "The designation of miniature horse is determined by the height of the animal, which, depending on the particular breed registry involved, is usually less than 34–38 inches (86–97 cm) as measured at the last hairs of the mane, which are found at the withers.  [WIKIPEDIA]"^^xsd:string ;
+  skos:scopeNote """Miniature horses are not the same as ponies. A pony is a horse that is shorter than 58 inches at the top of the shoulders....
+The miniature horse is something different. First of all, it is shorter than the smallest ponies. A mini must be no taller than 34 inches, measured at the top of the shoulders, where the mane ends. A full-grown mini weighs between 150 and 250 pounds. Although some minis resemble ponies, the goal of miniature horse breeders is to create a tiny horse, with everything about it the same as a full-sized horse, only smaller. They should not have short legs, thick necks, or big bellies.   [MINIATURE HORSE]"""^^xsd:string ;
+.
+:Mold
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Mold"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Fungus ;
+  skos:definition """1 : a superficial often woolly growth produced especially on damp or decaying organic matter or on living organisms by a fungus (as of the order Mucorales) 
+2 : a fungus that produces mold   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Mold"^^xsd:string ;
+.
+:Monera
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  rdfs:label "Monera"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Cyanobacteria
+      :Bacteria
+      :Archaea
+    ) ;
+  skos:altLabel "Monera Kingdom"^^xsd:string ;
+  skos:altLabel "Prokaryotae"^^xsd:string ;
+  skos:broader :Kingdom ;
+  skos:definition "The kingdom Monera includes the bacteria and the cyanobacteria.  These one-celled organisms are prokaryotic.  They are unicellular, and they may be autotrophic or heterotrophic.  Eukaryotic organisms have a nucleus and organelles in their cytoplasm, possess multiple chromosomes, have small ribosomes,and reproduce by simple fusion.  Many of the organisms (called autotrophic) can synthesize their own foods, and some (called heterotrophic) digest preformed organic matter.  [Cliff; p. 106]"^^xsd:string ;
+  skos:narrower :Archaea ;
+  skos:narrower :Bacteria ;
+  skos:narrower :Cyanobacteria ;
+  skos:prefLabel "Monera"^^xsd:string ;
+  skos:related :Prokaryotic ;
+.
+:Monkey
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Monkey"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "1 : a nonhuman primate mammal with the exception usually of the lemurs and tarsiers; especially : any of the smaller longer-tailed catarrhine or platyrrhine primates as contrasted with the apes   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Monkey"^^xsd:string ;
+.
+:Moose
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Moose"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Cervidae ;
+  skos:definition "1 : a ruminant mammal (Alces alces) with humped shoulders, long legs, and broadly palmated antlers that is the largest existing member of the deer family and inhabits forested areas of Canada, the northern United States, Europe, and Asia   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Moose"^^xsd:string ;
+  skos:related :Genus ;
+  skos:related :Mammal ;
+.
+:Mouse
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Mouse"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Rodentia ;
+  skos:definition "1 : any of numerous small rodents (as of the genus Mus) with pointed snout, rather small ears, elongated body, and slender tail   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Mouse"^^xsd:string ;
+.
+:Mushroom
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Mushroom"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Fungus ;
+  skos:definition "1  a: an enlarged complex aboveground fleshy fruiting body of a fungus (as a basidiomycete) that consists typically of a stem bearing a pileus; especially: one that is edible   b: fungus  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Mushroom"^^xsd:string ;
+.
+:Order
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  rdfs:label "Order"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Orders ;
+  skos:definition "a grouping of similar families  [Cliff; p. 222]"^^xsd:string ;
+  skos:narrower :Families ;
+  skos:narrower :Sub-Order ;
+  skos:prefLabel "Order"^^xsd:string ;
+  skos:related :Carnivora ;
+.
+:Orders
+  rdf:type owl:Class ;
+  rdfs:label "Orders"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Order
+    ) ;
+  skos:broader :Class ;
+  skos:narrower :Families ;
+  skos:prefLabel "Orders"^^xsd:string ;
+.
+:Organism
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "OED - http://oxforddictionaries.com/definition/american_english/organism?q=organism"^^xsd:string ;
+  rdfs:label "Organism"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Animal
+      :Plant
+      :Bacterium
+      :Fungus
+    ) ;
+  skos:altLabel "Living Organism"^^xsd:string ;
+  skos:broader :Organisms ;
+  skos:definition """1 : a complex structure of interdependent and subordinate elements whose relations and properties are largely determined by their function in the whole 
+2 : an individual constituted to carry on the activities of life by means of organs separate in function but mutually dependent : a living being [WEBSTER] """^^xsd:string ;
+  skos:definition """an individual animal, plant, or single-celled life form. 
+•  the material structure of an individual life form: the heart’s contribution to the maintenance of the human organism
+•  a whole with interdependent parts, likened to a living being: the upper strata of the American social organism  [OED]"""^^xsd:string ;
+  skos:narrower :Microorganism ;
+  skos:prefLabel "Organism"^^xsd:string ;
+  skos:related :Animal ;
+  skos:related :Bacterium ;
+  skos:related :Fungus ;
+  skos:related :Plant ;
+.
+:Organisms
+  rdf:type owl:Class ;
+  rdfs:label "Organisms"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Organism
+    ) ;
+  skos:broader :Population ;
+  skos:definition "A group of organisms.  [Proposed]"^^xsd:string ;
+  skos:narrower :Organism ;
+  skos:prefLabel "Organisms"^^xsd:string ;
+.
+:Pack
+  rdf:type rdfs:Class ;
+  rdfs:label "Pack"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Crowd ;
+  skos:narrower :Living_Being ;
+  skos:prefLabel "Pack"^^xsd:string ;
+.
+:Paramecia
+  rdf:type owl:Class ;
+  rdfs:label "Paramecia"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Paramecium
+    ) ;
+  skos:broader :Protozoan ;
+  skos:narrower :Paramecium ;
+  skos:prefLabel "Paramecia"^^xsd:string ;
+.
+:Paramecium
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "WEBSTER - http://www.merriam-webster.com/dictionary/paramecium"^^xsd:string ;
+  rdfs:label "Paramecium"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Paramecia ;
+  skos:definition ": any of a genus (Paramecium) of ciliate chiefly freshwater protozoans that have an elongate body rounded at the anterior end and an oblique funnel-shaped buccal groove bearing the mouth at the extremity   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Paramecium"^^xsd:string ;
+  skos:related :Protozoan ;
+  skos:scopeNote "Any of the free-living, single-celled protozoans that make up the genus Paramecium. Most are about the size of the period at the end of this sentence. They vary in shape and are surrounded by a rigid protein layer (pellicle) covered with hundreds of cilia that beat rhythmically to propel them and to direct bacteria and other food particles into their oral groove. Food particles are collected into food vacuoles, where digestion takes place. Two (occasionally three) contractile vacuoles close to the surface near the ends of the cell expand and contract as they discharge metabolic wastes and excess fluid. Paramecia have two kinds of nuclei: a large macronucleus (the centre of all metabolic activities) and at least one small micronucleus (which stores the genetic material necessary for sexual reproduction).  [WEBSTER]"^^xsd:string ;
+.
+<http://www.faa.gov/DRS/Living_Beings#People:Organization_Structure>
+  rdf:type owl:Class ;
+  rdfs:label "Organization Structure"^^xsd:string ;
+  rdfs:subClassOf People:Organization ;
+  skos:broader People:Organization ;
+  skos:prefLabel "Organization Structure"^^xsd:string ;
+.
+:Perissodactyla
+  rdf:type owl:Class ;
+  rdfs:label "Perissodactyla"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Mammalia ;
+  skos:definition "is an order that includes odd-toed ungulates (hoofed animals): horses, zebras, tapirs, rhinoceroses"^^xsd:string ;
+  skos:prefLabel "Perissodactyla"^^xsd:string ;
+  skos:related :Order ;
+.
+:Phyla
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  rdfs:label "Phyla"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Phylum
+    ) ;
+  skos:broader :Animalia ;
+  skos:definition "related classes grouped together (singular Phylum)  [Cliff; p. 223]"^^xsd:string ;
+  skos:narrower :Classes ;
+  skos:narrower :Phylum ;
+  skos:prefLabel "Phyla"^^xsd:string ;
+.
+:Phylum
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Phylum"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Phyla ;
+  skos:definition "1 a : a direct line of descent within a group b : a group that constitutes or has the unity of a phylum; specifically : a primary category in biological taxonomy especially of animals that ranks above the class and below the kingdom  compare DIVISION 10    [WEBSTER]"^^xsd:string ;
+  skos:narrower :Class ;
+  skos:narrower :Sub-Phylum ;
+  skos:prefLabel "Phylum"^^xsd:string ;
+  skos:related :Chordate ;
+.
+:Pig
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Pig"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Rodentia ;
+  skos:definition "1 a : a young domesticated swine not yet sexually mature; broadly : a wild or domestic swine b : an animal related to or resembling the pig   [WEBSTER]"^^xsd:string ;
+  skos:narrower :Potbellied_Pig ;
+  skos:prefLabel "Pig"^^xsd:string ;
+.
+:Plant
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "OED - http://oxforddictionaries.com/definition/american_english/plant?q=plant"^^xsd:string ;
+  rdfs:label "Plant"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:disjointWith :Animal ;
+  owl:unionOf (
+      :Tree
+      :Vine
+      :Shrub
+      :Herb
+    ) ;
+  skos:broader :Plantae ;
+  skos:definition "1 a: a young tree, vine, shrub, or herb planted or suitable for planting  b: any of a kingdom (Plantae) of multicellular eukaryotic mostly photosynthetic organisms typically lacking locomotive movement or obvious nervous or sensory organs and possessing cellulose cell walls [WEBSTER]"^^xsd:string ;
+  skos:definition """1a living organism of the kind exemplified by trees, shrubs, herbs, grasses, ferns, and mosses, typically growing in a permanent site, absorbing water and inorganic substances through its roots, and synthesizing nutrients in its leaves by photosynthesis using the green pigment chlorophyll. 
+•  a small plant, as distinct from a shrub or tree: garden plants  [OED]"""^^xsd:string ;
+  skos:narrower :Herb ;
+  skos:narrower :Shrub ;
+  skos:narrower :Tree ;
+  skos:narrower :Vine ;
+  skos:prefLabel "Plant"^^xsd:string ;
+.
+:Plant_Life
+  rdf:type owl:Class ;
+  rdfs:label "Plant Life"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Plant
+    ) ;
+  skos:altLabel "Plantlife"^^xsd:string ;
+  skos:broader :Plantae ;
+  skos:narrower :Plant ;
+  skos:narrower :Vegetation ;
+  skos:prefLabel "Plant Life"^^xsd:string ;
+.
+:Plantae
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:relation "Flora"^^xsd:string ;
+  rdfs:label "Plantae"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Plant
+    ) ;
+  skos:altLabel "Plant Kingdom"^^xsd:string ;
+  skos:broader :Kingdom ;
+  skos:definition ":a basic group of naural objects that includes all vinging and extinct plants [WEBSTER]"^^xsd:string ;
+  skos:definition "The fourth kingdom is Plantae. Classified here are the mosses,ferns, and seed-producing plants.  All plant cells are eukaroytotic and autotrophic.  The organisms synthesize their own foods by photosynthesis, and their cell walls contain cellulose.  All the organisms are multicellular.  [Cliff; p. 107]"^^xsd:string ;
+  skos:narrower :Phyla ;
+  skos:narrower :Plant_Life ;
+  skos:prefLabel "Plantae"^^xsd:string ;
+  skos:scopeNote "Compare ANIMAL KINGDON, MINERAL KINGDOM"^^xsd:string ;
+.
+:Police_Dog
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenarion Concept"^^xsd:string ;
+  rdfs:label "Police Dog"^^xsd:string ;
+  rdfs:subClassOf :Working_Dog ;
+  skos:broader :Working_Dog ;
+  skos:definition """1 : a dog trained to assist police (as in drug detection) 
+2 : GERMAN SHEPHERD    [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Police Dog"^^xsd:string ;
+.
+:Political_Entity
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GeoNames Taxonomy http://www.geonames.org/statistics/total.html"^^xsd:string ;
+  gn:featureCode <http://www.geonames.org/ontology#A.PCL> ;
+  rdfs:label "Political Entity"^^xsd:string ;
+  rdfs:subClassOf :Entity ;
+  owl:equivalentClass <http://www.faa.gov/DRS/AT-People#Political_Organization> ;
+  skos:broader :Entity ;
+  skos:narrower :Dependent_Political_Entity ;
+  skos:narrower :Independent_Political_Entity ;
+  skos:narrower :Semi-Independent_Political_Entity ;
+  skos:prefLabel "Political Entity"^^xsd:string ;
+.
+:Pongid
+  rdf:type owl:Class ;
+  rdfs:label "Pongid"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Pongidae ;
+  skos:definition ": any of a family (Pongidae) of apes that includes the chimpanzee, gorilla, and orangutan  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Pongid"^^xsd:string ;
+  skos:related :Family ;
+.
+:Pongidae
+  rdf:type owl:Class ;
+  rdfs:label "Pongidae"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Pongid
+    ) ;
+  skos:broader :Hominoidea ;
+  skos:definition "apes"^^xsd:string ;
+  skos:narrower :Pongid ;
+  skos:prefLabel "Pongidae"^^xsd:string ;
+  skos:related :Family ;
+.
+:Pony
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "MINIATURE HORSE  http://www.theminiaturehorse.com/article/miniaturehorses.htm"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Pony"^^xsd:string ;
+  rdfs:subClassOf :Horse ;
+  skos:broader :Horse ;
+  skos:definition "1 a : a small horse; especially : one of any of several breeds of very small stocky animals noted for their gentleness and endurance b : a bronco, mustang, or similar horse of the western United States c : RACEHORSE  usually used in plural   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Pony"^^xsd:string ;
+  skos:scopeNote "... A pony is a horse that is shorter than 58 inches at the top of the shoulders. Most ponies look different from riding horses. They have wide, strong bodies. Their necks are usually muscular, and their legs are short for their size. There are many kinds of ponies, some taller than others. The Welsh pony can be 58 inches tall. The American Shetland, on the other hand, isn't taller than 46 inches.  [MINIATURE HORSE]"^^xsd:string ;
+.
+:Population
+  rdf:type owl:Class ;
+  rdfs:label "Population"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:equivalentClass <http://www.faa.gov/DRS/AT-People#Population> ;
+  skos:broader :Living_Beings ;
+  skos:definition "A large group of living beings who are inhabitants or residents of a specific spatial area.   [PROPOSED]"^^xsd:string ;
+  skos:narrower :Mankind ;
+  skos:narrower :Organisms ;
+  skos:narrower :Wildlife ;
+  skos:prefLabel "Population"^^xsd:string ;
+  skos:scopeNote "As human beings, they may be citizens of a country, state, provenance, territory, municipality or other geo-political organization.   [PROPOSED]"^^xsd:string ;
+.
+:Porcupine
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Porcupine"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Rodentia ;
+  skos:definition ": any of various relatively large slow-moving chiefly herbivorous rodents having sharp erectile spines mingled with the hair and constituting an Old World terrestrial family (Hystricidae) and a New World chiefly arboreal family (Erethizontidae)   [WEBSTEr]"^^xsd:string ;
+  skos:prefLabel "Porcupine"^^xsd:string ;
+.
+:Porpoise
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Porpoise"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Cetacean ;
+  skos:broader :Marine_Mammal ;
+  skos:definition """1 : any of a family (Phocoenidae) of small gregarious toothed whales; especially : a blunt-snouted usually largely black whale (Phocoena phocoena) of the North Atlantic and North Pacific that is five to eight feet (1.5 to 2.4 meters) long 
+2 : DOLPHIN 1a(1)     [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Porpoise"^^xsd:string ;
+.
+:Potbellied_Pig
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:subClassOf :Pig ;
+  skos:broader :Pig ;
+  skos:definition ": any of a breed of small pigs originating in southeastern Asia and having a straight tail, potbelly, swayback, and black, white, or black and white coat  [WEBSTER]"^^xsd:string ;
+.
+:Primata
+  rdf:type owl:Class ;
+  rdfs:label "Primata"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Primate
+    ) ;
+  skos:broader :Mammalia ;
+  skos:definition "includes: lemurs, monkeys, apes, men"^^xsd:string ;
+  skos:narrower :Hominoidea ;
+  skos:narrower :Primate ;
+  skos:prefLabel "Primata"^^xsd:string ;
+  skos:related :Order ;
+  skos:related :Primate ;
+.
+:Primate
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Primate"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Human_Being
+            :Monkey
+            :Ape
+          ) ;
+      ]
+    ) ;
+  skos:broader :Primata ;
+  skos:definition "3 : any of an order (Primates) of mammals that are characteristized esp. by advanced development of binocular vision, specialization of the appendages for grasping, and enlargement of the cerebral hemispheres and that includes humans, apes, monkeys, and related forms (as lemurs and tarsiers)  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Primate"^^xsd:string ;
+.
+:Proboscidea
+  rdf:type owl:Class ;
+  rdfs:label "Proboscidea"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Mammalia ;
+  skos:definition "includes: elephants"^^xsd:string ;
+  skos:prefLabel "Proboscidea"^^xsd:string ;
+  skos:related :Order ;
+.
+:Prokaryotic
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  rdfs:label "Prokaryotic"^^xsd:string ;
+  rdfs:subClassOf :Microorganism ;
+  skos:broader :Microorganism ;
+  skos:definition ":any of the typically unicellular microorganisms that lack a distinct nucleus and membrane-bound organelles and that are classified as a kingdom (Prokaryotae syn. Monera) or into two domains (Bacterium and Archaea)  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Prokaryotic"^^xsd:string ;
+  skos:related :Monera ;
+.
+:Protista
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "OED - http://oxforddictionaries.com/definition/american_english/Protista?q=protist#Protista__5"^^xsd:string ;
+  rdfs:label "Protista"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:altLabel "Protist"^^xsd:string ;
+  skos:altLabel "Protista Kingdom"^^xsd:string ;
+  skos:altLabel "Protoctista"^^xsd:string ;
+  skos:broader :Kingdom ;
+  skos:definition ": any of a diverse taxonomic group and especially a kingdom (Protista syn. Protoctista) of eukaryotic organisms that are unicellular and sometimes colonial or less often multicellular and that typically include the protozoans, most algae, and often some fungi (as slime molds)  [WEBSTER]"^^xsd:string ;
+  skos:definition "The second kingdom, Protista, includes the protozoa, the one-celled algae, and the slime molds.  The cells of these organisms are eukaryotic.  They are unicellular, and they may be autotrophic or heterotrophic.  Eukaryotic organisms have a nucleus and organelles in they cytoplasm, possess multiple chromosomes, have large ribosomes, and reproduce by mitosis.  [Cliff; p. 106]"^^xsd:string ;
+  skos:definition "a kingdom or large grouping that comprises mostly single-celled organisms such as the protozoa, simple algae and fungi, slime molds, and (formerly) the bacteria. They are now divided among up to thirty phyla, and some have both plant and animal characteristics.  [OED]"^^xsd:string ;
+  skos:hasTopConcept :Living_Being ;
+  skos:narrower :Algae ;
+  skos:narrower :Protozoa ;
+  skos:prefLabel "Protist"^^xsd:string ;
+.
+:Protozoa
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  rdfs:label "Protozoa"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Protozoan
+    ) ;
+  skos:broader :Protista ;
+  skos:definition "The second kingdom, Protista, includes the protozoa, the one-celled algae, and the slime molds.  The cells of these organisms are eukaryotic.  They are unicellular, and they may be autotrophic or heterotrophic.  Eukaryotic organisms have a nucleus and organelles in they cytoplasm, possess multiple chromosomes, have large ribosomes, and reproduce by mitosis.  [Cliff; p. 106]"^^xsd:string ;
+  skos:narrower :Protozoan ;
+  skos:prefLabel "Protozoa"^^xsd:string ;
+.
+:Protozoan
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Protozoan"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Trypansome
+      :Sporozoan
+      :Paramecia
+      :Amoeba
+    ) ;
+  skos:broader :Amoeba ;
+  skos:broader :Protista ;
+  skos:definition ": any of a phylum or subkingdom (Protozoa) of chiefly motile and heterotrophic unicellular protists (as amoebas, trypanosomes, sporozoans, and paramecia) that are represented in almost every kind of habitat and include some pathogenic parasites of humans and domestic animals    [WEBSTER]"^^xsd:string ;
+  skos:narrower :Amoeba ;
+  skos:narrower :Paramecia ;
+  skos:narrower :Sporozoan ;
+  skos:narrower :Trypansome ;
+  skos:prefLabel "Protozoan"^^xsd:string ;
+  skos:related :Microorganism ;
+.
+:Psychiatric_Service_Animal
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA CFR 382.117(e)"^^xsd:string ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  :businessRuleNote """(e) If a passenger seeks to travel with an animal that is used as an emotional support or psychiatric service animal, you are not required to accept the animal for transportation in the cabin unless the passenger provides you current documentation (i.e., no older than one year from the date of the passenger's scheduled initial flight) on the letterhead of a licensed mental health professional (e.g., psychiatrist, psychologist, licensed clinical social worker, including a medical doctor specifically treating the passenger's mental or emotional disability) stating the following:
+(1) The passenger has a mental or emotional disability recognized in the Diagnostic and Statistical Manual of Mental Disorders—Fourth Edition (DSM IV);
+(2) The passenger needs the emotional support or psychiatric service animal as an accommodation for air travel and/or for activity at the passenger's destination;
+(3) The individual providing the assessment is a licensed mental health professional, and the passenger is under his or her professional care; and
+(4) The date and type of the mental health professional's license and the state or other jurisdiction in which it was issued.   [FAA CFR]"""^^xsd:string ;
+  rdfs:label "Psychiatric Service Animal"^^xsd:string ;
+  rdfs:subClassOf :Service_Animal ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Exotic_Service_Animal
+            :Unusual_Service_Animal
+          ) ;
+      ]
+    ) ;
+  skos:broader :Service_Animal ;
+  skos:prefLabel "Psychiatric Service Animal"^^xsd:string ;
+.
+:Rabbit
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Rabbit"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Lagomorpha ;
+  skos:definition "1 : any of a family (Leporidae) of long-eared short-tailed lagomorph mammals with long hind legs: a : any of various lagomorphs that are born furless, blind, and helpless, that are sometimes gregarious, and that include especially the cottontails of the New World and a small Old World mammal (Oryctolagus cuniculus) that is the source of various domestic breeds b : HARE  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Rabbit"^^xsd:string ;
+.
+:Rat
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Rat"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Rodentia ;
+  skos:definition "1 a : any of numerous rodents (Rattus and related genera) differing from the related mice especially by considerably larger size b : any of various similar rodents   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Rat"^^xsd:string ;
+.
+:Reptile
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Reptile"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Snake
+            :Alligator
+            :Crocodile
+            :Lizard
+            :Turtle
+          ) ;
+      ]
+    ) ;
+  skos:broader :Reptilia ;
+  skos:definition "1 : an animal that crawls or moves on its belly (as a snake) or on small short legs (as a lizard)   2 : any of a class (Reptilia) of air-breathing vertebrates that include the alligators and crocodiles, lizards, snakes, turtles, and extinct related forms (as dinosaurs and pterosaurs) and are characterized by a completely ossified skeleton with a single occipital condyle, a distinct quadrate bone usu. immovably articulated with the skull, ribs attached to the sternum, and a body usu. covered with scales or bony plates [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Reptile"^^xsd:string ;
+.
+:Reptilia
+  rdf:type owl:Class ;
+  rdfs:label "Reptilia"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Reptile
+    ) ;
+  skos:broader :Vertebrata ;
+  skos:narrower :Reptile ;
+  skos:prefLabel "Reptilia"^^xsd:string ;
+.
+:Rodent
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Rodent"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Mouse
+            :Squirrel
+            :Beaver
+            :Rabbit
+          ) ;
+      ]
+    ) ;
+  skos:broader :Rodentia ;
+  skos:definition """1 : any of an order (Rodentia) of relatively small gnawing mammals (as a mouse, squirrel, or beaver) that have in both jaws a single pair of incisors with a chisel-shaped edge 
+2 : a small mammal (as a rabbit or a shrew) other than a true rodent [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Rodent"^^xsd:string ;
+.
+:Rodentia
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Rodentia"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Rat
+            :Mouse
+            :Squirrel
+            :Gopher
+            :Beaver
+            :Porcupine
+          ) ;
+      ]
+    ) ;
+  skos:altLabel "Rodent"^^xsd:string ;
+  skos:broader :Mammalia ;
+  skos:definition "includes: rats, mice, squirrels, gophers, beavers, porcupines"^^xsd:string ;
+  skos:prefLabel "Rodentia"^^xsd:string ;
+  skos:related :Order ;
+.
+:Ruminantia
+  rdf:type owl:Class ;
+  rdfs:label "Ruminantia"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Artiodactyla ;
+  skos:definition """Ruminantia includes many of the well-known large grazing or browsing mammals: among them cattle, goats, sheep, deer, and antelope. All members of the Ruminantia are ruminants: they digest food in two steps, chewing and swallowing in the normal way to begin with, and then regurgitating the semi-digested cud to re-chew it and thus extract the maximum possible food value.
+ 
+Not all ruminants belong to the Ruminantia.[2] Camels and llamas are among the exceptions, a suborder known as Tylopoda.[2] Also, there are a number of other large grazing mammals that, while not strictly ruminants, have similar adaptations for surviving on large quantities of low-grade food. Kangaroos and horses are examples.
+ ORDER ARTIODACTYLA Suborder Suina: pigs and peccaries
+ Suborder Tylopoda: camels and llamas
+ Suborder Cetruminantia: ruminants and whales and hippos
+
+"""^^xsd:string ;
+  skos:narrower :Cervidae ;
+  skos:prefLabel "Ruminantia"^^xsd:string ;
+.
+:Sapiens
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Sapiens"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Homo ;
+  skos:definition " adj : of, relating to, or being recent humans (Homo Sapiens) as distinguished from various fossil hominids  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Sapiens"^^xsd:string ;
+  skos:related :Species ;
+.
+:Section_of_Independent_Political_Entity
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GeoNames Taxonomy http://www.geonames.org/statistics/total.html"^^xsd:string ;
+  gn:featureCode <http://www.geonames.org/ontology#A.PCLIX> ;
+  rdfs:label "Section of Independent Political Entity"^^xsd:string ;
+  rdfs:subClassOf :Independent_Political_Entity ;
+  skos:broader :Independent_Political_Entity ;
+  skos:prefLabel "Section of Independent Political Entity"^^xsd:string ;
+.
+:Semi-Independent_Political_Entity
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GeoNames Taxonomy http://www.geonames.org/statistics/total.html"^^xsd:string ;
+  gn:featureCode <http://www.geonames.org/ontology#A.PCLS> ;
+  rdfs:label "Semi-Independent Political Entity"^^xsd:string ;
+  rdfs:subClassOf :Political_Entity ;
+  skos:broader :Political_Entity ;
+  skos:prefLabel "Semi-Independent Political Entity"^^xsd:string ;
+.
+:Service_Animal
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA CFR 382.117(f)"^^xsd:string ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  :businessRuleNote "(f) ...However, as a foreign carrier, you are not required to carry service animals other than dogs.  [FAA CFR]"^^xsd:string ;
+  :businessRuleNote "(f) ...With respect to all other animals, including unusual or exotic animals that are presented as service animals (e.g., miniature horses, pigs, monkeys), as a carrier you must determine whether any factors preclude their traveling in the cabin as service animals (e.g., whether the animal is too large or heavy to be accommodated in the cabin, whether the animal would pose a direct threat to the health or safety of others, whether it would cause a significant disruption of cabin service, whether it would be prohibited from entering a foreign country that is the flight's destination). If no such factors preclude the animal from traveling in the cabin, you must permit it to do so. [FAA CFR]"^^xsd:string ;
+  :businessRuleNote "(f) You are never required to accommodate certain unusual service animals (e.g., snakes, other reptiles, ferrets, rodents, and spiders) as service animals in the cabin. [FAA CFR]"^^xsd:string ;
+  rdfs:label "Service Animal"^^xsd:string ;
+  rdfs:subClassOf :Animal ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Exotic_Service_Animal
+            :Unusual_Service_Animal
+            :Domestic_Animal
+          ) ;
+      ]
+    ) ;
+  skos:broader :Animal ;
+  skos:narrower :Domestic_Animal ;
+  skos:narrower :Emotional_Support_Service_Animal ;
+  skos:narrower :Exotic_Service_Animal ;
+  skos:narrower :Psychiatric_Service_Animal ;
+  skos:narrower :Unusual_Service_Animal ;
+  skos:prefLabel "Service Animal"^^xsd:string ;
+.
+:Service_Dog
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenarion Concept"^^xsd:string ;
+  rdfs:label "Service Dog"^^xsd:string ;
+  rdfs:subClassOf :Working_Dog ;
+  skos:broader :Working_Dog ;
+  skos:prefLabel "Service Dog"^^xsd:string ;
+.
+:Shrub
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Shrub"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Plant ;
+  skos:definition ": a low usually several-stemmed woody plant  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Shrub"^^xsd:string ;
+.
+:Shrubs
+  rdf:type owl:Class ;
+  rdfs:label "Shrubs"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Shrub
+    ) ;
+  skos:prefLabel "Shrubs"^^xsd:string ;
+.
+:Signal_Dog
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Signal Dog"^^xsd:string ;
+  rdfs:subClassOf :Working_Dog ;
+  skos:broader :Working_Dog ;
+  skos:prefLabel "Signal Dog"^^xsd:string ;
+.
+:Simple_Algae
+  rdf:type owl:Class ;
+  rdfs:label "Simple Algae"^^xsd:string ;
+  rdfs:subClassOf :Algae ;
+  skos:broader :Algae ;
+  skos:narrower :Alga ;
+  skos:prefLabel "Simple Algae"^^xsd:string ;
+.
+:Snake
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  rdfs:label "Snake"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Reptile ;
+  skos:prefLabel "Snake"^^xsd:string ;
+.
+:Society
+  rdf:type rdfs:Class ;
+  rdfs:label "Society"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Community ;
+  skos:narrower :Family ;
+  skos:prefLabel "Society"^^xsd:string ;
+.
+:Species
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  rdfs:label "Species"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Genus ;
+  skos:definition "a group of individuals that share features and are able to interbreed under natural conditions to yield fertile offspring  [Cliff; p.27]"^^xsd:string ;
+  skos:prefLabel "Species"^^xsd:string ;
+.
+:Spider
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Spider"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "1 : any of an order (Araneae syn. Araneida) of arachnids having the abdomen usually unsegmented and constricted at the base, chelicerae modified into poison fangs, and two or more pairs of abdominal spinnerets for spinning threads of silk for various uses (as in making cocoons for their eggs or webs to catch prey)   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Spider"^^xsd:string ;
+.
+:Sporozoa
+  rdf:type owl:Class ;
+  rdfs:label "Sporozoa"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Sporozoan
+    ) ;
+  skos:broader :Protozoan ;
+  skos:prefLabel "Sporozoa"^^xsd:string ;
+.
+:Sporozoan
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Sporozoan"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Sporozoa ;
+  skos:definition ": any of a large class (Sporozoa) of strictly parasitic nonmotile protozoans that have a complex life cycle usually involving both asexual and sexual generations often in different hosts and include important pathogens (as malaria parasites and babesias)   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Sporozoan"^^xsd:string ;
+.
+:Squirrel
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  rdfs:label "Squirrel"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Rodentia ;
+  skos:definition "1 : any of various small or medium-sized rodents (family Sciuridae, the squirrel family): as a : any of numerous New or Old World arboreal forms having a long bushy tail and strong hind legs b : GROUND SQUIRREL   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Squirrel"^^xsd:string ;
+.
+:Sub-Order
+  rdf:type owl:Class ;
+  rdfs:label "Sub-Order"^^xsd:string ;
+  rdfs:subClassOf :Order ;
+  skos:altLabel "Sub-order"^^xsd:string ;
+  skos:altLabel "Suborder"^^xsd:string ;
+  skos:broader :Order ;
+  skos:prefLabel "Sub-Order"^^xsd:string ;
+.
+:Sub-Phylum
+  rdf:type owl:Class ;
+  rdfs:label "Sub-Phylum"^^xsd:string ;
+  rdfs:subClassOf :Phylum ;
+  skos:altLabel "Sub-phylum"^^xsd:string ;
+  skos:altLabel "Subphylum"^^xsd:string ;
+  skos:broader :Phylum ;
+  skos:prefLabel "Sub-Phylum"^^xsd:string ;
+.
+:Tall_Vegetation
+  rdf:type rdfs:Class ;
+  rdfs:label "Tall Vegetation"^^xsd:string ;
+  rdfs:subClassOf :Vegetation ;
+  skos:broader :Vegetation ;
+  skos:prefLabel "Tall Vegetation"^^xsd:string ;
+.
+:Toadstool
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary ; 11 ed."^^xsd:string ;
+  rdfs:label "Toadstool"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Fungus ;
+  skos:definition ": a fungus having an umbrella-shaped pileus : mushroom; especially: a poisonous or inedible one as distinguished from an edible mushroom   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Toadstool"^^xsd:string ;
+.
+:Tree
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GeoNames Taxonomy http://www.geonames.org/statistics/total.html"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  gn:featureCode <http://www.geonames.org/ontology#V.TREE> ;
+  rdfs:label "Tree"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Plant ;
+  skos:definition "1 a: a woody perennial plant having a single usually elongate main stem generally with few or no branches on its lower part   b: a shrub or herb of arborescent form <rose trees> <a banana tree>  [WEBSTER]"^^xsd:string ;
+  skos:definition "a conspicuous tree uses as a landmark  [GeoNames]"^^xsd:string ;
+  skos:prefLabel "Tree"^^xsd:string ;
+.
+:Tribe
+  rdf:type rdfs:Class ;
+  rdfs:label "Tribe"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Community ;
+  skos:narrower :Family ;
+  skos:prefLabel "Tribe"^^xsd:string ;
+.
+:Trypansoma
+  rdf:type owl:Class ;
+  rdfs:label "Trypansoma"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Trypansome
+    ) ;
+  skos:broader :Herb ;
+  skos:broader :Shrub ;
+  skos:narrower :Trypansome ;
+  skos:prefLabel "Trypansoma"^^xsd:string ;
+.
+:Trypansome
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Trypansome"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Trypansoma ;
+  skos:definition "1 a: a woody perennial plant having a single usually elongate main stem generally with few or no branches on its lower part b: a shrub or herb of arborescent form [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Trypansome"^^xsd:string ;
+.
+:Turtle
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Turtle"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Reptilia ;
+  skos:definition ": any of an order (Testudines syn. Chelonia) of terrestrial, freshwater, and marine reptiles that have a toothless horny beak and a shell of bony dermal plates usually covered with horny shields enclosing the trunk and into which the head, limbs, and tail usually may be withdrawn  [WEBSTEr]"^^xsd:string ;
+  skos:prefLabel "Turtle"^^xsd:string ;
+.
+:Unusual_Service_Animal
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA CFR 382.117(f)"^^xsd:string ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  :businessRuleNote "(f)  ...With respect to all other animals, including unusual or exotic animals that are presented as service animals (e.g., miniature horses, pigs, monkeys), as a carrier you must determine whether any factors preclude their traveling in the cabin as service animals (e.g., whether the animal is too large or heavy to be accommodated in the cabin, whether the animal would pose a direct threat to the health or safety of others, whether it would cause a significant disruption of cabin service, whether it would be prohibited from entering a foreign country that is the flight's destination). If no such factors preclude the animal from traveling in the cabin, you must permit it to do so. [FAA CFR]"^^xsd:string ;
+  :businessRuleNote "(f) ...However, as a foreign carrier, you are not required to carry service animals other than dogs. [FAA CFR]"^^xsd:string ;
+  :businessRuleNote "(f) You are never required to accommodate certain unusual service animals (e.g., snakes, other reptiles, ferrets, rodents, and spiders) as service animals in the cabin....  [FAA CFR]"^^xsd:string ;
+  rdfs:label "Unusual Service Animal"^^xsd:string ;
+  rdfs:subClassOf :Service_Animal ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Snake
+            :Reptile
+            :Rodent
+            :Ferret
+            :Spider
+          ) ;
+      ]
+    ) ;
+  skos:broader :Service_Animal ;
+  skos:prefLabel "Unusual Service Animal"^^xsd:string ;
+.
+:Vegetation
+  rdf:type rdfs:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Vegetation"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:equivalentClass :Plant_Life ;
+  skos:broader :Plant_Life ;
+  skos:definition "3 : plant life or total plant cover (as of an area)  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Tall_Vegetation ;
+  skos:prefLabel "Vegetation"^^xsd:string ;
+.
+:Vertebrata
+  rdf:type owl:Class ;
+  rdfs:label "Vertebrata"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Chordate ;
+  skos:prefLabel "Vertebrata"^^xsd:string ;
+  skos:related :Sub-Phylum ;
+.
+:Vertebrates
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Alcamo, E. and Schweitzer, K. (2001).  Cliffs Quick Review Biology.  NY, NY: Hungry Minds."^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Vertebrates"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:disjointWith :Invertebrates ;
+  skos:broader :Vertebrata ;
+  skos:definition ": any of a subphylum (Vertebrata) of chordates possessing a spinal column that includes the mammals, birds, reptiles, amphibians, and fishes  [WEBSTER]"^^xsd:string ;
+  skos:definition "animals with backbones  [Cliff; p. 229]"^^xsd:string ;
+  skos:narrower :Amphibia ;
+  skos:narrower :Aves ;
+  skos:narrower :Fish ;
+  skos:narrower :Mammal ;
+  skos:narrower :Reptilia ;
+  skos:prefLabel "Vertebrates"^^xsd:string ;
+  skos:related :Chordate ;
+  skos:related :Chordates ;
+  skos:related :Sub-Phylum ;
+.
+:Vine
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Vine"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Plant ;
+  skos:definition """2 a: a plant whose stem requires support and which climbs by tendrils or twining or creeps along the ground; also: the stem of such a plant  
+b: any of various sprawling herbaceous plants (as a tomato or potato) that lack specialized adaptations for climbing   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Vine"^^xsd:string ;
+.
+:Whale
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Whale"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Cetacean ;
+  skos:broader :Marine_Mammal ;
+  skos:definition "1 or plural whale : CETACEAN; especially : one (as a sperm whale or killer whale) of larger size   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Whale"^^xsd:string ;
+.
+:Wildlife
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Wildlife"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:disjointWith :Human_Beings ;
+  skos:broader :Population ;
+  skos:definition ": living things and esp. mammals, birds, and fishes that are neither human nor domesticated  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Aves ;
+  skos:narrower :Fish ;
+  skos:narrower :Mammalia ;
+  skos:prefLabel "Wildlife"^^xsd:string ;
+.
+:Wolf
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Wolf"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:altLabel "Canis lupis [genus species]"^^xsd:string ;
+  skos:broader :Canid ;
+  skos:definition "1 plural also wolf a : any of several large predatory canids (genus Canis) that live and hunt in packs and resemble the related dogs; especially : GRAY WOLF  compare COYOTE, JACKAL b : the fur of a wolf   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Wolf"^^xsd:string ;
+.
+:Working_Dog
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Working Dog"^^xsd:string ;
+  rdfs:subClassOf :Dog ;
+  skos:broader :Dog ;
+  skos:definition ": a dog suitable by size, breeding, or training for useful work (as draft or herding) especially as distinguished from one suitable primarily for pet, show, or sporting use  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Bomb_Sniffing_Dog ;
+  skos:narrower :Guide_Dog ;
+  skos:narrower :Police_Dog ;
+  skos:narrower :Service_Dog ;
+  skos:narrower :Signal_Dog ;
+  skos:prefLabel "Working Dog"^^xsd:string ;
+.
+:Yeast
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Yeast"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Fungus ;
+  skos:definition "1 c (1): a unicellular fungus that is present and functionally active in yeast, usually has little or no mycelium, and reproduces by budding (2): any of various similar fungi   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Yeast"^^xsd:string ;
+.
+:businessRuleNote
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "Business Rule Note"^^xsd:string ;
+  rdfs:subPropertyOf skos:note ;
+  skos:prefLabel "Business Rule Note"^^xsd:string ;
+.
+People:Group
+  owl:equivalentClass :Group ;
+  skos:broader :Living_Beings ;
+  skos:narrower People:Industry ;
+  skos:narrower People:Party ;
+.
+People:Human_Beings
+  owl:equivalentClass :Human_Beings ;
+  skos:broader :Living_Beings ;
+.
+People:Population
+  owl:equivalentClass :Population ;
+.
+<http://www.geonames.org/ontology#A.ADM1>
+  rdfs:label "first-order administrative division"@en ;
+.
+<http://www.geonames.org/ontology#A.ADM1H>
+  rdfs:label "historical first-order administrative division"@en ;
+.
+<http://www.geonames.org/ontology#A.ADM2>
+  rdfs:label "second-order administrative division"@en ;
+.
+<http://www.geonames.org/ontology#A.ADM2H>
+  rdfs:label "historical second-order administrative division"@en ;
+.
+<http://www.geonames.org/ontology#A.ADM3>
+  rdfs:label "third-order administrative division"@en ;
+.
+<http://www.geonames.org/ontology#A.ADM3H>
+  rdfs:label "historical third-order administrative division"@en ;
+.
+<http://www.geonames.org/ontology#A.ADM4>
+  rdfs:label "fourth-order administrative division"@en ;
+.
+<http://www.geonames.org/ontology#A.ADM4H>
+  rdfs:label "historical fourth-order administrative division"@en ;
+.
+<http://www.geonames.org/ontology#A.ADM5>
+  rdfs:label "fifth-order administrative division"@en ;
+.
+<http://www.geonames.org/ontology#A.ADMD>
+  rdfs:label "administrative division"@en ;
+.
+<http://www.geonames.org/ontology#A.ADMH>
+  rdfs:label "historical administrative division"@en ;
+.
+<http://www.geonames.org/ontology#A.LTER>
+  rdfs:label "leased area"@en ;
+.
+<http://www.geonames.org/ontology#A.PCL>
+  rdfs:label "political entity"@en ;
+.
+<http://www.geonames.org/ontology#A.PCLD>
+  rdfs:label "dependent political entity"@en ;
+.
+<http://www.geonames.org/ontology#A.PCLF>
+  rdfs:label "freely associated state"@en ;
+.
+<http://www.geonames.org/ontology#A.PCLH>
+  rdfs:label "historical political entity"@en ;
+.
+<http://www.geonames.org/ontology#A.PCLI>
+  rdfs:label "independent political entity"@en ;
+.
+<http://www.geonames.org/ontology#A.PCLIX>
+  rdfs:label "section of independent political entity"@en ;
+.
+<http://www.geonames.org/ontology#A.PCLS>
+  rdfs:label "semi-independent political entity"@en ;
+.
+<http://www.geonames.org/ontology#A.PPCLH>
+  rdfs:label "historical capital of a political entity"@en ;
+.
+<http://www.geonames.org/ontology#A.PPLH>
+  rdfs:label "historical populated place"@en ;
+.
+<http://www.geonames.org/ontology#A.PRSH>
+  rdfs:label "parish"@en ;
+.
+<http://www.geonames.org/ontology#A.TERR>
+  rdfs:label "territory"@en ;
+.
+<http://www.geonames.org/ontology#A.ZN>
+  rdfs:label "zone"@en ;
+.
+<http://www.geonames.org/ontology#A.ZNB>
+  rdfs:label "buffer zone"@en ;
+.
+<http://www.geonames.org/ontology#H.AIRS>
+  rdfs:label "seaplane landing area"@en ;
+.
+<http://www.geonames.org/ontology#H.ANCH>
+  rdfs:label "anchorage"@en ;
+.
+<http://www.geonames.org/ontology#H.BAY>
+  rdfs:label "bay"@en ;
+.
+<http://www.geonames.org/ontology#H.BAYS>
+  rdfs:label "bays"@en ;
+.
+<http://www.geonames.org/ontology#H.BGHT>
+  rdfs:label "bight(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.BNK>
+  rdfs:label "bank(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.BNKR>
+  rdfs:label "stream bank"@en ;
+.
+<http://www.geonames.org/ontology#H.BNKX>
+  rdfs:label "section of bank"@en ;
+.
+<http://www.geonames.org/ontology#H.BOG>
+  rdfs:label "bog(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.CAPG>
+  rdfs:label "icecap"@en ;
+.
+<http://www.geonames.org/ontology#H.CHN>
+  rdfs:label "channel"@en ;
+.
+<http://www.geonames.org/ontology#H.CHNL>
+  rdfs:label "lake channel(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.CHNM>
+  rdfs:label "marine channel"@en ;
+.
+<http://www.geonames.org/ontology#H.CHNN>
+  rdfs:label "navigation channel"@en ;
+.
+<http://www.geonames.org/ontology#H.CNFL>
+  rdfs:label "confluence"@en ;
+.
+<http://www.geonames.org/ontology#H.CNL>
+  rdfs:label "canal"@en ;
+.
+<http://www.geonames.org/ontology#H.CNLA>
+  rdfs:label "aqueduct"@en ;
+.
+<http://www.geonames.org/ontology#H.CNLB>
+  rdfs:label "canal bend"@en ;
+.
+<http://www.geonames.org/ontology#H.CNLD>
+  rdfs:label "drainage canal"@en ;
+.
+<http://www.geonames.org/ontology#H.CNLI>
+  rdfs:label "irrigation canal"@en ;
+.
+<http://www.geonames.org/ontology#H.CNLN>
+  rdfs:label "navigation canal(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.CNLQ>
+  rdfs:label "abandoned canal"@en ;
+.
+<http://www.geonames.org/ontology#H.CNLSB>
+  rdfs:label "underground irrigation canal(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.CNLX>
+  rdfs:label "section of canal"@en ;
+.
+<http://www.geonames.org/ontology#H.COVE>
+  rdfs:label "cove(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.CRKT>
+  rdfs:label "tidal creek(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.CRNT>
+  rdfs:label "current"@en ;
+.
+<http://www.geonames.org/ontology#H.CUTF>
+  rdfs:label "cutoff"@en ;
+.
+<http://www.geonames.org/ontology#H.DCK>
+  rdfs:label "dock(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.DCKB>
+  rdfs:label "docking basin"@en ;
+.
+<http://www.geonames.org/ontology#H.DOMG>
+  rdfs:label "icecap dome"@en ;
+.
+<http://www.geonames.org/ontology#H.DPRG>
+  rdfs:label "icecap depression"@en ;
+.
+<http://www.geonames.org/ontology#H.DTCH>
+  rdfs:label "ditch"@en ;
+.
+<http://www.geonames.org/ontology#H.DTCHD>
+  rdfs:label "drainage ditch"@en ;
+.
+<http://www.geonames.org/ontology#H.DTCHI>
+  rdfs:label "irrigation ditch"@en ;
+.
+<http://www.geonames.org/ontology#H.DTCHM>
+  rdfs:label "ditch mouth(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.ESTY>
+  rdfs:label "estuary"@en ;
+.
+<http://www.geonames.org/ontology#H.FISH>
+  rdfs:label "fishing area"@en ;
+.
+<http://www.geonames.org/ontology#H.FJD>
+  rdfs:label "fjord"@en ;
+.
+<http://www.geonames.org/ontology#H.FJDS>
+  rdfs:label "fjords"@en ;
+.
+<http://www.geonames.org/ontology#H.FLLS>
+  rdfs:label "waterfall(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.FLLSX>
+  rdfs:label "section of waterfall(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.FLTM>
+  rdfs:label "mud flat(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.FLTT>
+  rdfs:label "tidal flat(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.GLCR>
+  rdfs:label "glacier(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.GULF>
+  rdfs:label "gulf"@en ;
+.
+<http://www.geonames.org/ontology#H.GYSR>
+  rdfs:label "geyser"@en ;
+.
+<http://www.geonames.org/ontology#H.HBR>
+  rdfs:label "harbor(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.HBRX>
+  rdfs:label "section of harbor"@en ;
+.
+<http://www.geonames.org/ontology#H.INLT>
+  rdfs:label "inlet"@en ;
+.
+<http://www.geonames.org/ontology#H.INLTQ>
+  rdfs:label "former inlet"@en ;
+.
+<http://www.geonames.org/ontology#H.LBED>
+  rdfs:label "lake bed(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.LGN>
+  rdfs:label "lagoon"@en ;
+.
+<http://www.geonames.org/ontology#H.LGNS>
+  rdfs:label "lagoons"@en ;
+.
+<http://www.geonames.org/ontology#H.LGNX>
+  rdfs:label "section of lagoon"@en ;
+.
+<http://www.geonames.org/ontology#H.LK>
+  rdfs:label "lake"@en ;
+.
+<http://www.geonames.org/ontology#H.LKC>
+  rdfs:label "crater lake"@en ;
+.
+<http://www.geonames.org/ontology#H.LKI>
+  rdfs:label "intermittent lake"@en ;
+.
+<http://www.geonames.org/ontology#H.LKN>
+  rdfs:label "salt lake"@en ;
+.
+<http://www.geonames.org/ontology#H.LKNI>
+  rdfs:label "intermittent salt lake"@en ;
+.
+<http://www.geonames.org/ontology#H.LKO>
+  rdfs:label "oxbow lake"@en ;
+.
+<http://www.geonames.org/ontology#H.LKOI>
+  rdfs:label "intermittent oxbow lake"@en ;
+.
+<http://www.geonames.org/ontology#H.LKS>
+  rdfs:label "lakes"@en ;
+.
+<http://www.geonames.org/ontology#H.LKSB>
+  rdfs:label "underground lake"@en ;
+.
+<http://www.geonames.org/ontology#H.LKSC>
+  rdfs:label "crater lakes"@en ;
+.
+<http://www.geonames.org/ontology#H.LKSI>
+  rdfs:label "intermittent lakes"@en ;
+.
+<http://www.geonames.org/ontology#H.LKSN>
+  rdfs:label "salt lakes"@en ;
+.
+<http://www.geonames.org/ontology#H.LKSNI>
+  rdfs:label "intermittent salt lakes"@en ;
+.
+<http://www.geonames.org/ontology#H.LKX>
+  rdfs:label "section of lake"@en ;
+.
+<http://www.geonames.org/ontology#H.MFGN>
+  rdfs:label "salt evaporation ponds"@en ;
+.
+<http://www.geonames.org/ontology#H.MGV>
+  rdfs:label "mangrove swamp"@en ;
+.
+<http://www.geonames.org/ontology#H.MOOR>
+  rdfs:label "moor(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.MRSH>
+  rdfs:label "marsh(es)"@en ;
+.
+<http://www.geonames.org/ontology#H.MRSHN>
+  rdfs:label "salt marsh"@en ;
+.
+<http://www.geonames.org/ontology#H.NRWS>
+  rdfs:label "narrows"@en ;
+.
+<http://www.geonames.org/ontology#H.OCN>
+  rdfs:label "ocean"@en ;
+.
+<http://www.geonames.org/ontology#H.OVF>
+  rdfs:label "overfalls"@en ;
+.
+<http://www.geonames.org/ontology#H.PND>
+  rdfs:label "pond"@en ;
+.
+<http://www.geonames.org/ontology#H.PNDI>
+  rdfs:label "intermittent pond"@en ;
+.
+<http://www.geonames.org/ontology#H.PNDN>
+  rdfs:label "salt pond"@en ;
+.
+<http://www.geonames.org/ontology#H.PNDNI>
+  rdfs:label "intermittent salt pond(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.PNDS>
+  rdfs:label "ponds"@en ;
+.
+<http://www.geonames.org/ontology#H.PNDSF>
+  rdfs:label "fishponds"@en ;
+.
+<http://www.geonames.org/ontology#H.PNDSI>
+  rdfs:label "intermittent ponds"@en ;
+.
+<http://www.geonames.org/ontology#H.PNDSN>
+  rdfs:label "salt ponds"@en ;
+.
+<http://www.geonames.org/ontology#H.POOL>
+  rdfs:label "pool(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.POOLI>
+  rdfs:label "intermittent pool"@en ;
+.
+<http://www.geonames.org/ontology#H.RCH>
+  rdfs:label "reach"@en ;
+.
+<http://www.geonames.org/ontology#H.RDGG>
+  rdfs:label "icecap ridge"@en ;
+.
+<http://www.geonames.org/ontology#H.RDST>
+  rdfs:label "roadstead"@en ;
+.
+<http://www.geonames.org/ontology#H.RF>
+  rdfs:label "reef(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.RFC>
+  rdfs:label "coral reef(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.RFX>
+  rdfs:label "section of reef"@en ;
+.
+<http://www.geonames.org/ontology#H.RPDS>
+  rdfs:label "rapids"@en ;
+.
+<http://www.geonames.org/ontology#H.RSV>
+  rdfs:label "reservoir(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.RSVI>
+  rdfs:label "intermittent reservoir"@en ;
+.
+<http://www.geonames.org/ontology#H.RSVT>
+  rdfs:label "water tank"@en ;
+.
+<http://www.geonames.org/ontology#H.RVN>
+  rdfs:label "ravine(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.SBKH>
+  rdfs:label "sabkha(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.SD>
+  rdfs:label "sound"@en ;
+.
+<http://www.geonames.org/ontology#H.SEA>
+  rdfs:label "sea"@en ;
+.
+<http://www.geonames.org/ontology#H.SHOL>
+  rdfs:label "shoal(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.SILL>
+  rdfs:label "sill"@en ;
+.
+<http://www.geonames.org/ontology#H.SPNG>
+  rdfs:label "spring(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.SPNS>
+  rdfs:label "sulphur spring(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.SPNT>
+  rdfs:label "hot spring(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.STM>
+  rdfs:label "stream"@en ;
+.
+<http://www.geonames.org/ontology#H.STMA>
+  rdfs:label "anabranch"@en ;
+.
+<http://www.geonames.org/ontology#H.STMB>
+  rdfs:label "stream bend"@en ;
+.
+<http://www.geonames.org/ontology#H.STMC>
+  rdfs:label "canalized stream"@en ;
+.
+<http://www.geonames.org/ontology#H.STMD>
+  rdfs:label "distributary(-ies)"@en ;
+.
+<http://www.geonames.org/ontology#H.STMH>
+  rdfs:label "headwaters"@en ;
+.
+<http://www.geonames.org/ontology#H.STMI>
+  rdfs:label "intermittent stream"@en ;
+.
+<http://www.geonames.org/ontology#H.STMIX>
+  rdfs:label "section of intermittent stream"@en ;
+.
+<http://www.geonames.org/ontology#H.STMM>
+  rdfs:label "stream mouth(s)"@en ;
+.
+<http://www.geonames.org/ontology#H.STMQ>
+  rdfs:label "abandoned watercourse"@en ;
+.
+<http://www.geonames.org/ontology#H.STMS>
+  rdfs:label "streams"@en ;
+.
+<http://www.geonames.org/ontology#H.STMSB>
+  rdfs:label "lost river"@en ;
+.
+<http://www.geonames.org/ontology#H.STMX>
+  rdfs:label "section of stream"@en ;
+.
+<http://www.geonames.org/ontology#H.STRT>
+  rdfs:label "strait"@en ;
+.
+<http://www.geonames.org/ontology#H.SWMP>
+  rdfs:label "swamp"@en ;
+.
+<http://www.geonames.org/ontology#H.SYSI>
+  rdfs:label "irrigation system"@en ;
+.
+<http://www.geonames.org/ontology#H.TNLC>
+  rdfs:label "canal tunnel"@en ;
+.
+<http://www.geonames.org/ontology#H.WAD>
+  rdfs:label "wadi"@en ;
+.
+<http://www.geonames.org/ontology#H.WADB>
+  rdfs:label "wadi bend"@en ;
+.
+<http://www.geonames.org/ontology#H.WADJ>
+  rdfs:label "wadi junction"@en ;
+.
+<http://www.geonames.org/ontology#H.WADM>
+  rdfs:label "wadi mouth"@en ;
+.
+<http://www.geonames.org/ontology#H.WADS>
+  rdfs:label "wadies"@en ;
+.
+<http://www.geonames.org/ontology#H.WADX>
+  rdfs:label "section of wadi"@en ;
+.
+<http://www.geonames.org/ontology#H.WHRL>
+  rdfs:label "whirlpool"@en ;
+.
+<http://www.geonames.org/ontology#H.WLL>
+  rdfs:label "well"@en ;
+.
+<http://www.geonames.org/ontology#H.WLLQ>
+  rdfs:label "abandoned well"@en ;
+.
+<http://www.geonames.org/ontology#H.WLLS>
+  rdfs:label "wells"@en ;
+.
+<http://www.geonames.org/ontology#H.WTLD>
+  rdfs:label "wetland"@en ;
+.
+<http://www.geonames.org/ontology#H.WTLDI>
+  rdfs:label "intermittent wetland"@en ;
+.
+<http://www.geonames.org/ontology#H.WTRC>
+  rdfs:label "watercourse"@en ;
+.
+<http://www.geonames.org/ontology#H.WTRH>
+  rdfs:label "waterhole(s)"@en ;
+.
+<http://www.geonames.org/ontology#L.AGRC>
+  rdfs:label "agricultural colony"@en ;
+.
+<http://www.geonames.org/ontology#L.AMUS>
+  rdfs:label "amusement park"@en ;
+.
+<http://www.geonames.org/ontology#L.AREA>
+  rdfs:label "area"@en ;
+.
+<http://www.geonames.org/ontology#L.BSND>
+  rdfs:label "drainage basin"@en ;
+.
+<http://www.geonames.org/ontology#L.BSNP>
+  rdfs:label "petroleum basin"@en ;
+.
+<http://www.geonames.org/ontology#L.BTL>
+  rdfs:label "battlefield"@en ;
+.
+<http://www.geonames.org/ontology#L.CLG>
+  rdfs:label "clearing"@en ;
+.
+<http://www.geonames.org/ontology#L.CMN>
+  rdfs:label "common"@en ;
+.
+<http://www.geonames.org/ontology#L.CNS>
+  rdfs:label "concession area"@en ;
+.
+<http://www.geonames.org/ontology#L.COLF>
+  rdfs:label "coalfield"@en ;
+.
+<http://www.geonames.org/ontology#L.CONT>
+  rdfs:label "continent"@en ;
+.
+<http://www.geonames.org/ontology#L.CST>
+  rdfs:label "coast"@en ;
+.
+<http://www.geonames.org/ontology#L.CTRB>
+  rdfs:label "business center"@en ;
+.
+<http://www.geonames.org/ontology#L.DEVH>
+  rdfs:label "housing development"@en ;
+.
+<http://www.geonames.org/ontology#L.FLD>
+  rdfs:label "field(s)"@en ;
+.
+<http://www.geonames.org/ontology#L.FLDI>
+  rdfs:label "irrigated field(s)"@en ;
+.
+<http://www.geonames.org/ontology#L.GASF>
+  rdfs:label "gasfield"@en ;
+.
+<http://www.geonames.org/ontology#L.GRAZ>
+  rdfs:label "grazing area"@en ;
+.
+<http://www.geonames.org/ontology#L.GVL>
+  rdfs:label "gravel area"@en ;
+.
+<http://www.geonames.org/ontology#L.INDS>
+  rdfs:label "industrial area"@en ;
+.
+<http://www.geonames.org/ontology#L.LAND>
+  rdfs:label "arctic land"@en ;
+.
+<http://www.geonames.org/ontology#L.LCTY>
+  rdfs:label "locality"@en ;
+.
+<http://www.geonames.org/ontology#L.MILB>
+  rdfs:label "military base"@en ;
+.
+<http://www.geonames.org/ontology#L.MNA>
+  rdfs:label "mining area"@en ;
+.
+<http://www.geonames.org/ontology#L.MVA>
+  rdfs:label "maneuver area"@sv ;
+.
+<http://www.geonames.org/ontology#L.NVB>
+  rdfs:label "naval base"@en ;
+.
+<http://www.geonames.org/ontology#L.OAS>
+  rdfs:label "oasis(-es)"@en ;
+.
+<http://www.geonames.org/ontology#L.OILF>
+  rdfs:label "oilfield"@en ;
+.
+<http://www.geonames.org/ontology#L.PEAT>
+  rdfs:label "peat cutting area"@en ;
+.
+<http://www.geonames.org/ontology#L.PRK>
+  rdfs:label "park"@en ;
+.
+<http://www.geonames.org/ontology#L.PRT>
+  rdfs:label "port"@en ;
+.
+<http://www.geonames.org/ontology#L.QCKS>
+  rdfs:label "quicksand"@en ;
+.
+<http://www.geonames.org/ontology#L.REP>
+  rdfs:label "republic"@en ;
+.
+<http://www.geonames.org/ontology#L.RES>
+  rdfs:label "reserve"@en ;
+.
+<http://www.geonames.org/ontology#L.RESA>
+  rdfs:label "agricultural reserve"@en ;
+.
+<http://www.geonames.org/ontology#L.RESF>
+  rdfs:label "forest reserve"@en ;
+.
+<http://www.geonames.org/ontology#L.RESH>
+  rdfs:label "hunting reserve"@en ;
+.
+<http://www.geonames.org/ontology#L.RESN>
+  rdfs:label "nature reserve"@en ;
+.
+<http://www.geonames.org/ontology#L.RESP>
+  rdfs:label "palm tree reserve"@en ;
+.
+<http://www.geonames.org/ontology#L.RESV>
+  rdfs:label "reservation"@en ;
+.
+<http://www.geonames.org/ontology#L.RESW>
+  rdfs:label "wildlife reserve"@en ;
+.
+<http://www.geonames.org/ontology#L.RGN>
+  rdfs:label "region"@en ;
+.
+<http://www.geonames.org/ontology#L.RGNE>
+  rdfs:label "economic region"@en ;
+.
+<http://www.geonames.org/ontology#L.RGNH>
+  rdfs:label "historical region"@en ;
+.
+<http://www.geonames.org/ontology#L.RGNL>
+  rdfs:label "lake region"@en ;
+.
+<http://www.geonames.org/ontology#L.RNGA>
+  rdfs:label "artillery range"@en ;
+.
+<http://www.geonames.org/ontology#L.SALT>
+  rdfs:label "salt area"@en ;
+.
+<http://www.geonames.org/ontology#L.SNOW>
+  rdfs:label "snowfield"@en ;
+.
+<http://www.geonames.org/ontology#L.TRB>
+  rdfs:label "tribal area"@en ;
+.
+<http://www.geonames.org/ontology#L.ZZZZZ>
+  rdfs:label "master source holdings list"@en ;
+.
+<http://www.geonames.org/ontology#P.PPL>
+  rdfs:label "populated place"@en ;
+.
+<http://www.geonames.org/ontology#P.PPLA>
+  rdfs:label "seat of a first-order administrative division"@en ;
+.
+<http://www.geonames.org/ontology#P.PPLA2>
+  rdfs:label "seat of a second-order administrative division"@en ;
+.
+<http://www.geonames.org/ontology#P.PPLA3>
+  rdfs:label "seat of a third-order administrative division"@en ;
+.
+<http://www.geonames.org/ontology#P.PPLA4>
+  rdfs:label "seat of a fourth-order administrative division"@en ;
+.
+<http://www.geonames.org/ontology#P.PPLC>
+  rdfs:label "capital of a political entity"@en ;
+.
+<http://www.geonames.org/ontology#P.PPLF>
+  rdfs:label "farm village"@en ;
+.
+<http://www.geonames.org/ontology#P.PPLG>
+  rdfs:label "seat of government of a political entity"@en ;
+.
+<http://www.geonames.org/ontology#P.PPLL>
+  rdfs:label "populated locality"@en ;
+.
+<http://www.geonames.org/ontology#P.PPLQ>
+  rdfs:label "abandoned populated place"@en ;
+.
+<http://www.geonames.org/ontology#P.PPLR>
+  rdfs:label "religious populated place"@en ;
+.
+<http://www.geonames.org/ontology#P.PPLS>
+  rdfs:label "populated places"@en ;
+.
+<http://www.geonames.org/ontology#P.PPLW>
+  rdfs:label "destroyed populated place"@en ;
+.
+<http://www.geonames.org/ontology#P.PPLX>
+  rdfs:label "section of populated place"@en ;
+.
+<http://www.geonames.org/ontology#P.STLMT>
+  rdfs:label "israeli settlement"@en ;
+.
+<http://www.geonames.org/ontology#R.CSWY>
+  rdfs:label "causeway"@en ;
+.
+<http://www.geonames.org/ontology#R.CSWYQ>
+  rdfs:label "former causeway"@en ;
+.
+<http://www.geonames.org/ontology#R.OILP>
+  rdfs:label "oil pipeline"@en ;
+.
+<http://www.geonames.org/ontology#R.PRMN>
+  rdfs:label "promenade"@en ;
+.
+<http://www.geonames.org/ontology#R.PTGE>
+  rdfs:label "portage"@en ;
+.
+<http://www.geonames.org/ontology#R.RD>
+  rdfs:label "road"@en ;
+.
+<http://www.geonames.org/ontology#R.RDA>
+  rdfs:label "ancient road"@en ;
+.
+<http://www.geonames.org/ontology#R.RDB>
+  rdfs:label "road bend"@en ;
+.
+<http://www.geonames.org/ontology#R.RDCUT>
+  rdfs:label "road cut"@en ;
+.
+<http://www.geonames.org/ontology#R.RDJCT>
+  rdfs:label "road junction"@en ;
+.
+<http://www.geonames.org/ontology#R.RJCT>
+  rdfs:label "railroad junction"@en ;
+.
+<http://www.geonames.org/ontology#R.RR>
+  rdfs:label "railroad"@en ;
+.
+<http://www.geonames.org/ontology#R.RRQ>
+  rdfs:label "abandoned railroad"@en ;
+.
+<http://www.geonames.org/ontology#R.RTE>
+  rdfs:label "caravan route"@en ;
+.
+<http://www.geonames.org/ontology#R.RYD>
+  rdfs:label "railroad yard"@en ;
+.
+<http://www.geonames.org/ontology#R.ST>
+  rdfs:label "street"@en ;
+.
+<http://www.geonames.org/ontology#R.STKR>
+  rdfs:label "stock route"@en ;
+.
+<http://www.geonames.org/ontology#R.TNL>
+  rdfs:label "tunnel"@en ;
+.
+<http://www.geonames.org/ontology#R.TNLN>
+  rdfs:label "natural tunnel"@en ;
+.
+<http://www.geonames.org/ontology#R.TNLRD>
+  rdfs:label "road tunnel"@en ;
+.
+<http://www.geonames.org/ontology#R.TNLRR>
+  rdfs:label "railroad tunnel"@en ;
+.
+<http://www.geonames.org/ontology#R.TNLS>
+  rdfs:label "tunnels"@en ;
+.
+<http://www.geonames.org/ontology#R.TRL>
+  rdfs:label "trail"@en ;
+.
+<http://www.geonames.org/ontology#S.ADMF>
+  rdfs:label "administrative facility"@en ;
+.
+<http://www.geonames.org/ontology#S.AGRF>
+  rdfs:label "agricultural facility"@en ;
+.
+<http://www.geonames.org/ontology#S.AIRB>
+  rdfs:label "airbase"@en ;
+.
+<http://www.geonames.org/ontology#S.AIRF>
+  rdfs:label "airfield"@en ;
+.
+<http://www.geonames.org/ontology#S.AIRH>
+  rdfs:label "heliport"@en ;
+.
+<http://www.geonames.org/ontology#S.AIRP>
+  rdfs:label "airport"@en ;
+.
+<http://www.geonames.org/ontology#S.AIRQ>
+  rdfs:label "abandoned airfield"@en ;
+.
+<http://www.geonames.org/ontology#S.AMTH>
+  rdfs:label "amphitheater"@en ;
+.
+<http://www.geonames.org/ontology#S.ANS>
+  rdfs:label "ancient site"@en ;
+.
+<http://www.geonames.org/ontology#S.AQC>
+  rdfs:label "aquaculture facility"@en ;
+.
+<http://www.geonames.org/ontology#S.ARCH>
+  rdfs:label "arch"@en ;
+.
+<http://www.geonames.org/ontology#S.ASTR>
+  rdfs:label "astronomical station"@en ;
+.
+<http://www.geonames.org/ontology#S.ASYL>
+  rdfs:label "asylum"@en ;
+.
+<http://www.geonames.org/ontology#S.ATHF>
+  rdfs:label "athletic field"@en ;
+.
+<http://www.geonames.org/ontology#S.ATM>
+  rdfs:label "automatic teller machine"@en ;
+.
+<http://www.geonames.org/ontology#S.BANK>
+  rdfs:label "bank"@en ;
+.
+<http://www.geonames.org/ontology#S.BCN>
+  rdfs:label "beacon"@en ;
+.
+<http://www.geonames.org/ontology#S.BDG>
+  rdfs:label "bridge"@en ;
+.
+<http://www.geonames.org/ontology#S.BDGQ>
+  rdfs:label "ruined bridge"@en ;
+.
+<http://www.geonames.org/ontology#S.BLDG>
+  rdfs:label "building(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.BLDO>
+  rdfs:label "office building"@en ;
+.
+<http://www.geonames.org/ontology#S.BP>
+  rdfs:label "boundary marker"@en ;
+.
+<http://www.geonames.org/ontology#S.BRKS>
+  rdfs:label "barracks"@en ;
+.
+<http://www.geonames.org/ontology#S.BRKW>
+  rdfs:label "breakwater"@en ;
+.
+<http://www.geonames.org/ontology#S.BSTN>
+  rdfs:label "baling station"@en ;
+.
+<http://www.geonames.org/ontology#S.BTYD>
+  rdfs:label "boatyard"@en ;
+.
+<http://www.geonames.org/ontology#S.BUR>
+  rdfs:label "burial cave(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.BUSTN>
+  rdfs:label "bus station"@en ;
+.
+<http://www.geonames.org/ontology#S.BUSTP>
+  rdfs:label "bus stop"@en ;
+.
+<http://www.geonames.org/ontology#S.CARN>
+  rdfs:label "cairn"@en ;
+.
+<http://www.geonames.org/ontology#S.CAVE>
+  rdfs:label "cave(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.CCL>
+  rdfs:label "Centres for Continuous Learning"@en ;
+.
+<http://www.geonames.org/ontology#S.CH>
+  rdfs:label "church"@en ;
+.
+<http://www.geonames.org/ontology#S.CMP>
+  rdfs:label "camp(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.CMPL>
+  rdfs:label "logging camp"@en ;
+.
+<http://www.geonames.org/ontology#S.CMPLA>
+  rdfs:label "labor camp"@en ;
+.
+<http://www.geonames.org/ontology#S.CMPMN>
+  rdfs:label "mining camp"@en ;
+.
+<http://www.geonames.org/ontology#S.CMPO>
+  rdfs:label "oil camp"@en ;
+.
+<http://www.geonames.org/ontology#S.CMPQ>
+  rdfs:label "abandoned camp"@en ;
+.
+<http://www.geonames.org/ontology#S.CMPRF>
+  rdfs:label "refugee camp"@en ;
+.
+<http://www.geonames.org/ontology#S.CMTY>
+  rdfs:label "cemetery"@en ;
+.
+<http://www.geonames.org/ontology#S.COMC>
+  rdfs:label "communication center"@en ;
+.
+<http://www.geonames.org/ontology#S.CRRL>
+  rdfs:label "corral(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.CSNO>
+  rdfs:label "casino"@en ;
+.
+<http://www.geonames.org/ontology#S.CSTL>
+  rdfs:label "castle"@en ;
+.
+<http://www.geonames.org/ontology#S.CSTM>
+  rdfs:label "customs house"@en ;
+.
+<http://www.geonames.org/ontology#S.CTHSE>
+  rdfs:label "courthouse"@en ;
+.
+<http://www.geonames.org/ontology#S.CTRA>
+  rdfs:label "atomic center"@en ;
+.
+<http://www.geonames.org/ontology#S.CTRCM>
+  rdfs:label "community center"@en ;
+.
+<http://www.geonames.org/ontology#S.CTRF>
+  rdfs:label "facility center"@en ;
+.
+<http://www.geonames.org/ontology#S.CTRM>
+  rdfs:label "medical center"@en ;
+.
+<http://www.geonames.org/ontology#S.CTRR>
+  rdfs:label "religious center"@en ;
+.
+<http://www.geonames.org/ontology#S.CTRS>
+  rdfs:label "space center"@en ;
+.
+<http://www.geonames.org/ontology#S.CVNT>
+  rdfs:label "convent"@en ;
+.
+<http://www.geonames.org/ontology#S.DAM>
+  rdfs:label "dam"@en ;
+.
+<http://www.geonames.org/ontology#S.DAMQ>
+  rdfs:label "ruined dam"@en ;
+.
+<http://www.geonames.org/ontology#S.DAMSB>
+  rdfs:label "sub-surface dam"@en ;
+.
+<http://www.geonames.org/ontology#S.DARY>
+  rdfs:label "dairy"@en ;
+.
+<http://www.geonames.org/ontology#S.DCKD>
+  rdfs:label "dry dock"@en ;
+.
+<http://www.geonames.org/ontology#S.DCKY>
+  rdfs:label "dockyard"@en ;
+.
+<http://www.geonames.org/ontology#S.DIKE>
+  rdfs:label "dike"@en ;
+.
+<http://www.geonames.org/ontology#S.DIP>
+  rdfs:label "diplomatic facility"@en ;
+.
+<http://www.geonames.org/ontology#S.DPOF>
+  rdfs:label "fuel depot"@en ;
+.
+<http://www.geonames.org/ontology#S.EST>
+  rdfs:label "estate(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.ESTB>
+  rdfs:label "banana plantation"@en ;
+.
+<http://www.geonames.org/ontology#S.ESTC>
+  rdfs:label "cotton plantation"@en ;
+.
+<http://www.geonames.org/ontology#S.ESTO>
+  rdfs:label "oil palm plantation"@en ;
+.
+<http://www.geonames.org/ontology#S.ESTR>
+  rdfs:label "rubber plantation"@en ;
+.
+<http://www.geonames.org/ontology#S.ESTSG>
+  rdfs:label "sugar plantation"@en ;
+.
+<http://www.geonames.org/ontology#S.ESTSL>
+  rdfs:label "sisal plantation"@en ;
+.
+<http://www.geonames.org/ontology#S.ESTT>
+  rdfs:label "tea plantation"@en ;
+.
+<http://www.geonames.org/ontology#S.ESTX>
+  rdfs:label "section of estate"@en ;
+.
+<http://www.geonames.org/ontology#S.FCL>
+  rdfs:label "facility"@en ;
+.
+<http://www.geonames.org/ontology#S.FNDY>
+  rdfs:label "foundry"@en ;
+.
+<http://www.geonames.org/ontology#S.FRM>
+  rdfs:label "farm"@en ;
+.
+<http://www.geonames.org/ontology#S.FRMQ>
+  rdfs:label "abandoned farm"@en ;
+.
+<http://www.geonames.org/ontology#S.FRMS>
+  rdfs:label "farms"@en ;
+.
+<http://www.geonames.org/ontology#S.FRMT>
+  rdfs:label "farmstead"@en ;
+.
+<http://www.geonames.org/ontology#S.FT>
+  rdfs:label "fort"@en ;
+.
+<http://www.geonames.org/ontology#S.FY>
+  rdfs:label "ferry"@en ;
+.
+<http://www.geonames.org/ontology#S.GATE>
+  rdfs:label "gate"@en ;
+.
+<http://www.geonames.org/ontology#S.GDN>
+  rdfs:label "garden(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.GHAT>
+  rdfs:label "ghat"@en ;
+.
+<http://www.geonames.org/ontology#S.GHSE>
+  rdfs:label "guest house"@en ;
+.
+<http://www.geonames.org/ontology#S.GOSP>
+  rdfs:label "gas-oil separator plant"@en ;
+.
+<http://www.geonames.org/ontology#S.GOVL>
+  rdfs:label "local government office"@en ;
+.
+<http://www.geonames.org/ontology#S.GRVE>
+  rdfs:label "grave"@en ;
+.
+<http://www.geonames.org/ontology#S.HERM>
+  rdfs:label "hermitage"@en ;
+.
+<http://www.geonames.org/ontology#S.HLT>
+  rdfs:label "halting place"@en ;
+.
+<http://www.geonames.org/ontology#S.HMSD>
+  rdfs:label "homestead"@en ;
+.
+<http://www.geonames.org/ontology#S.HSE>
+  rdfs:label "house(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.HSEC>
+  rdfs:label "country house"@en ;
+.
+<http://www.geonames.org/ontology#S.HSP>
+  rdfs:label "hospital"@en ;
+.
+<http://www.geonames.org/ontology#S.HSPC>
+  rdfs:label "clinic"@en ;
+.
+<http://www.geonames.org/ontology#S.HSPD>
+  rdfs:label "dispensary"@en ;
+.
+<http://www.geonames.org/ontology#S.HSPL>
+  rdfs:label "leprosarium"@en ;
+.
+<http://www.geonames.org/ontology#S.HSTS>
+  rdfs:label "historical site"@en ;
+.
+<http://www.geonames.org/ontology#S.HTL>
+  rdfs:label "hotel"@en ;
+.
+<http://www.geonames.org/ontology#S.HUT>
+  rdfs:label "hut"@en ;
+.
+<http://www.geonames.org/ontology#S.HUTS>
+  rdfs:label "huts"@en ;
+.
+<http://www.geonames.org/ontology#S.INSM>
+  rdfs:label "military installation"@en ;
+.
+<http://www.geonames.org/ontology#S.ITTR>
+  rdfs:label "research institute"@en ;
+.
+<http://www.geonames.org/ontology#S.JTY>
+  rdfs:label "jetty"@en ;
+.
+<http://www.geonames.org/ontology#S.LDNG>
+  rdfs:label "landing"@en ;
+.
+<http://www.geonames.org/ontology#S.LEPC>
+  rdfs:label "leper colony"@en ;
+.
+<http://www.geonames.org/ontology#S.LIBR>
+  rdfs:label "library"@en ;
+.
+<http://www.geonames.org/ontology#S.LNDF>
+  rdfs:label "landfill"@en ;
+.
+<http://www.geonames.org/ontology#S.LOCK>
+  rdfs:label "lock(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.LTHSE>
+  rdfs:label "lighthouse"@en ;
+.
+<http://www.geonames.org/ontology#S.MALL>
+  rdfs:label "mall"@en ;
+.
+<http://www.geonames.org/ontology#S.MAR>
+  rdfs:label "marina"@en ;
+.
+<http://www.geonames.org/ontology#S.MFG>
+  rdfs:label "factory"@en ;
+.
+<http://www.geonames.org/ontology#S.MFGB>
+  rdfs:label "brewery"@en ;
+.
+<http://www.geonames.org/ontology#S.MFGC>
+  rdfs:label "cannery"@en ;
+.
+<http://www.geonames.org/ontology#S.MFGCU>
+  rdfs:label "copper works"@en ;
+.
+<http://www.geonames.org/ontology#S.MFGLM>
+  rdfs:label "limekiln"@en ;
+.
+<http://www.geonames.org/ontology#S.MFGM>
+  rdfs:label "munitions plant"@en ;
+.
+<http://www.geonames.org/ontology#S.MFGPH>
+  rdfs:label "phosphate works"@en ;
+.
+<http://www.geonames.org/ontology#S.MFGQ>
+  rdfs:label "abandoned factory"@en ;
+.
+<http://www.geonames.org/ontology#S.MFGSG>
+  rdfs:label "sugar refinery"@en ;
+.
+<http://www.geonames.org/ontology#S.MKT>
+  rdfs:label "market"@en ;
+.
+<http://www.geonames.org/ontology#S.ML>
+  rdfs:label "mill(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.MLM>
+  rdfs:label "ore treatment plant"@en ;
+.
+<http://www.geonames.org/ontology#S.MLO>
+  rdfs:label "olive oil mill"@en ;
+.
+<http://www.geonames.org/ontology#S.MLSG>
+  rdfs:label "sugar mill"@en ;
+.
+<http://www.geonames.org/ontology#S.MLSGQ>
+  rdfs:label "former sugar mill"@en ;
+.
+<http://www.geonames.org/ontology#S.MLSW>
+  rdfs:label "sawmill"@en ;
+.
+<http://www.geonames.org/ontology#S.MLWND>
+  rdfs:label "windmill"@en ;
+.
+<http://www.geonames.org/ontology#S.MLWTR>
+  rdfs:label "water mill"@en ;
+.
+<http://www.geonames.org/ontology#S.MN>
+  rdfs:label "mine(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.MNAU>
+  rdfs:label "gold mine(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.MNC>
+  rdfs:label "coal mine(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.MNCR>
+  rdfs:label "chrome mine(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.MNCU>
+  rdfs:label "copper mine(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.MNDT>
+  rdfs:label "diatomite mine(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.MNFE>
+  rdfs:label "iron mine(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.MNMT>
+  rdfs:label "monument"@en ;
+.
+<http://www.geonames.org/ontology#S.MNN>
+  rdfs:label "salt mine(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.MNNI>
+  rdfs:label "nickel mine(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.MNPB>
+  rdfs:label "lead mine(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.MNPL>
+  rdfs:label "placer mine(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.MNQ>
+  rdfs:label "abandoned mine"@en ;
+.
+<http://www.geonames.org/ontology#S.MNQR>
+  rdfs:label "quarry(-ies)"@en ;
+.
+<http://www.geonames.org/ontology#S.MNSN>
+  rdfs:label "tin mine(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.MOLE>
+  rdfs:label "mole"@en ;
+.
+<http://www.geonames.org/ontology#S.MSQE>
+  rdfs:label "mosque"@en ;
+.
+<http://www.geonames.org/ontology#S.MSSN>
+  rdfs:label "mission"@en ;
+.
+<http://www.geonames.org/ontology#S.MSSNQ>
+  rdfs:label "abandoned mission"@en ;
+.
+<http://www.geonames.org/ontology#S.MSTY>
+  rdfs:label "monastery"@en ;
+.
+<http://www.geonames.org/ontology#S.MTRO>
+  rdfs:label "metro station"@en ;
+.
+<http://www.geonames.org/ontology#S.MUS>
+  rdfs:label "museum"@en ;
+.
+<http://www.geonames.org/ontology#S.NOV>
+  rdfs:label "novitiate"@en ;
+.
+<http://www.geonames.org/ontology#S.NSY>
+  rdfs:label "nursery(-ies)"@en ;
+.
+<http://www.geonames.org/ontology#S.OBPT>
+  rdfs:label "observation point"@en ;
+.
+<http://www.geonames.org/ontology#S.OBS>
+  rdfs:label "observatory"@en ;
+.
+<http://www.geonames.org/ontology#S.OBSR>
+  rdfs:label "radio observatory"@en ;
+.
+<http://www.geonames.org/ontology#S.OILJ>
+  rdfs:label "oil pipeline junction"@en ;
+.
+<http://www.geonames.org/ontology#S.OILQ>
+  rdfs:label "abandoned oil well"@en ;
+.
+<http://www.geonames.org/ontology#S.OILR>
+  rdfs:label "oil refinery"@en ;
+.
+<http://www.geonames.org/ontology#S.OILT>
+  rdfs:label "tank farm"@en ;
+.
+<http://www.geonames.org/ontology#S.OILW>
+  rdfs:label "oil well"@en ;
+.
+<http://www.geonames.org/ontology#S.OPRA>
+  rdfs:label "opera house"@en ;
+.
+<http://www.geonames.org/ontology#S.PAL>
+  rdfs:label "palace"@en ;
+.
+<http://www.geonames.org/ontology#S.PGDA>
+  rdfs:label "pagoda"@en ;
+.
+<http://www.geonames.org/ontology#S.PIER>
+  rdfs:label "pier"@en ;
+.
+<http://www.geonames.org/ontology#S.PKLT>
+  rdfs:label "parking lot"@en ;
+.
+<http://www.geonames.org/ontology#S.PMPO>
+  rdfs:label "oil pumping station"@en ;
+.
+<http://www.geonames.org/ontology#S.PMPW>
+  rdfs:label "water pumping station"@en ;
+.
+<http://www.geonames.org/ontology#S.PO>
+  rdfs:label "post office"@en ;
+.
+<http://www.geonames.org/ontology#S.PP>
+  rdfs:label "police post"@en ;
+.
+<http://www.geonames.org/ontology#S.PPQ>
+  rdfs:label "abandoned police post"@en ;
+.
+<http://www.geonames.org/ontology#S.PRKGT>
+  rdfs:label "park gate"@en ;
+.
+<http://www.geonames.org/ontology#S.PRKHQ>
+  rdfs:label "park headquarters"@en ;
+.
+<http://www.geonames.org/ontology#S.PRN>
+  rdfs:label "prison"@en ;
+.
+<http://www.geonames.org/ontology#S.PRNJ>
+  rdfs:label "reformatory"@en ;
+.
+<http://www.geonames.org/ontology#S.PRNQ>
+  rdfs:label "abandoned prison"@en ;
+.
+<http://www.geonames.org/ontology#S.PS>
+  rdfs:label "power station"@en ;
+.
+<http://www.geonames.org/ontology#S.PSH>
+  rdfs:label "hydroelectric power station"@en ;
+.
+<http://www.geonames.org/ontology#S.PSTB>
+  rdfs:label "border post"@en ;
+.
+<http://www.geonames.org/ontology#S.PSTC>
+  rdfs:label "customs post"@en ;
+.
+<http://www.geonames.org/ontology#S.PSTP>
+  rdfs:label "patrol post"@en ;
+.
+<http://www.geonames.org/ontology#S.PYR>
+  rdfs:label "pyramid"@en ;
+.
+<http://www.geonames.org/ontology#S.PYRS>
+  rdfs:label "pyramids"@en ;
+.
+<http://www.geonames.org/ontology#S.QUAY>
+  rdfs:label "quay"@en ;
+.
+<http://www.geonames.org/ontology#S.RDCR>
+  rdfs:label "traffic circle"@en ;
+.
+<http://www.geonames.org/ontology#S.RECG>
+  rdfs:label "golf course"@en ;
+.
+<http://www.geonames.org/ontology#S.RECR>
+  rdfs:label "racetrack"@en ;
+.
+<http://www.geonames.org/ontology#S.REST>
+  rdfs:label "restaurant"@en ;
+.
+<http://www.geonames.org/ontology#S.RET>
+  rdfs:label "store"@en ;
+.
+<http://www.geonames.org/ontology#S.RHSE>
+  rdfs:label "resthouse"@en ;
+.
+<http://www.geonames.org/ontology#S.RKRY>
+  rdfs:label "rookery"@en ;
+.
+<http://www.geonames.org/ontology#S.RLG>
+  rdfs:label "religious site"@en ;
+.
+<http://www.geonames.org/ontology#S.RLGR>
+  rdfs:label "retreat"@en ;
+.
+<http://www.geonames.org/ontology#S.RNCH>
+  rdfs:label "ranch(es)"@en ;
+.
+<http://www.geonames.org/ontology#S.RSD>
+  rdfs:label "railroad siding"@en ;
+.
+<http://www.geonames.org/ontology#S.RSGNL>
+  rdfs:label "railroad signal"@en ;
+.
+<http://www.geonames.org/ontology#S.RSRT>
+  rdfs:label "resort"@en ;
+.
+<http://www.geonames.org/ontology#S.RSTN>
+  rdfs:label "railroad station"@en ;
+.
+<http://www.geonames.org/ontology#S.RSTNQ>
+  rdfs:label "abandoned railroad station"@en ;
+.
+<http://www.geonames.org/ontology#S.RSTP>
+  rdfs:label "railroad stop"@en ;
+.
+<http://www.geonames.org/ontology#S.RSTPQ>
+  rdfs:label "abandoned railroad stop"@en ;
+.
+<http://www.geonames.org/ontology#S.RUIN>
+  rdfs:label "ruin(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.SCH>
+  rdfs:label "school"@en ;
+.
+<http://www.geonames.org/ontology#S.SCHA>
+  rdfs:label "agricultural school"@en ;
+.
+<http://www.geonames.org/ontology#S.SCHC>
+  rdfs:label "college"@en ;
+.
+<http://www.geonames.org/ontology#S.SCHD>
+  rdfs:label "Driving School"@en ;
+.
+<http://www.geonames.org/ontology#S.SCHL>
+  rdfs:label "language school"@en ;
+.
+<http://www.geonames.org/ontology#S.SCHM>
+  rdfs:label "military school"@en ;
+.
+<http://www.geonames.org/ontology#S.SCHN>
+  rdfs:label "maritime school"@en ;
+.
+<http://www.geonames.org/ontology#S.SCHT>
+  rdfs:label "technical school"@en ;
+.
+<http://www.geonames.org/ontology#S.SECP>
+  rdfs:label "State Exam Prep Centre"@en ;
+.
+<http://www.geonames.org/ontology#S.SHPF>
+  rdfs:label "sheepfold"@en ;
+.
+<http://www.geonames.org/ontology#S.SHRN>
+  rdfs:label "shrine"@en ;
+.
+<http://www.geonames.org/ontology#S.SHSE>
+  rdfs:label "storehouse"@en ;
+.
+<http://www.geonames.org/ontology#S.SLCE>
+  rdfs:label "sluice"@en ;
+.
+<http://www.geonames.org/ontology#S.SNTR>
+  rdfs:label "sanatorium"@en ;
+.
+<http://www.geonames.org/ontology#S.SPA>
+  rdfs:label "spa"@en ;
+.
+<http://www.geonames.org/ontology#S.SPLY>
+  rdfs:label "spillway"@en ;
+.
+<http://www.geonames.org/ontology#S.SQR>
+  rdfs:label "square"@en ;
+.
+<http://www.geonames.org/ontology#S.STBL>
+  rdfs:label "stable"@en ;
+.
+<http://www.geonames.org/ontology#S.STDM>
+  rdfs:label "stadium"@en ;
+.
+<http://www.geonames.org/ontology#S.STNB>
+  rdfs:label "scientific research base"@en ;
+.
+<http://www.geonames.org/ontology#S.STNC>
+  rdfs:label "coast guard station"@en ;
+.
+<http://www.geonames.org/ontology#S.STNE>
+  rdfs:label "experiment station"@en ;
+.
+<http://www.geonames.org/ontology#S.STNF>
+  rdfs:label "forest station"@en ;
+.
+<http://www.geonames.org/ontology#S.STNI>
+  rdfs:label "inspection station"@en ;
+.
+<http://www.geonames.org/ontology#S.STNM>
+  rdfs:label "meteorological station"@en ;
+.
+<http://www.geonames.org/ontology#S.STNR>
+  rdfs:label "radio station"@en ;
+.
+<http://www.geonames.org/ontology#S.STNS>
+  rdfs:label "satellite station"@en ;
+.
+<http://www.geonames.org/ontology#S.STNW>
+  rdfs:label "whaling station"@en ;
+.
+<http://www.geonames.org/ontology#S.STPS>
+  rdfs:label "steps"@en ;
+.
+<http://www.geonames.org/ontology#S.SWT>
+  rdfs:label "sewage treatment plant"@en ;
+.
+<http://www.geonames.org/ontology#S.THTR>
+  rdfs:label "theater"@en ;
+.
+<http://www.geonames.org/ontology#S.TMB>
+  rdfs:label "tomb(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.TMPL>
+  rdfs:label "temple(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.TNKD>
+  rdfs:label "cattle dipping tank"@en ;
+.
+<http://www.geonames.org/ontology#S.TOWR>
+  rdfs:label "tower"@en ;
+.
+<http://www.geonames.org/ontology#S.TRANT>
+  rdfs:label "transit terminal"@en ;
+.
+<http://www.geonames.org/ontology#S.TRIG>
+  rdfs:label "triangulation station"@en ;
+.
+<http://www.geonames.org/ontology#S.TRMO>
+  rdfs:label "oil pipeline terminal"@en ;
+.
+<http://www.geonames.org/ontology#S.TWO>
+  rdfs:label "temp work office"@en ;
+.
+<http://www.geonames.org/ontology#S.UNIO>
+  rdfs:label "postgrad & MBA"@en ;
+.
+<http://www.geonames.org/ontology#S.UNIP>
+  rdfs:label "university prep school"@en ;
+.
+<http://www.geonames.org/ontology#S.UNIV>
+  rdfs:label "university"@en ;
+.
+<http://www.geonames.org/ontology#S.USGE>
+  rdfs:label "united states government establishment"@en ;
+.
+<http://www.geonames.org/ontology#S.VETF>
+  rdfs:label "veterinary facility"@en ;
+.
+<http://www.geonames.org/ontology#S.WALL>
+  rdfs:label "wall"@en ;
+.
+<http://www.geonames.org/ontology#S.WALLA>
+  rdfs:label "ancient wall"@en ;
+.
+<http://www.geonames.org/ontology#S.WEIR>
+  rdfs:label "weir(s)"@en ;
+.
+<http://www.geonames.org/ontology#S.WHRF>
+  rdfs:label "wharf(-ves)"@en ;
+.
+<http://www.geonames.org/ontology#S.WRCK>
+  rdfs:label "wreck"@en ;
+.
+<http://www.geonames.org/ontology#S.WTRW>
+  rdfs:label "waterworks"@en ;
+.
+<http://www.geonames.org/ontology#S.ZNF>
+  rdfs:label "free trade zone"@en ;
+.
+<http://www.geonames.org/ontology#S.ZOO>
+  rdfs:label "zoo"@en ;
+.
+<http://www.geonames.org/ontology#T.ASPH>
+  rdfs:label "asphalt lake"@en ;
+.
+<http://www.geonames.org/ontology#T.ATOL>
+  rdfs:label "atoll(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.BAR>
+  rdfs:label "bar"@en ;
+.
+<http://www.geonames.org/ontology#T.BCH>
+  rdfs:label "beach"@en ;
+.
+<http://www.geonames.org/ontology#T.BCHS>
+  rdfs:label "beaches"@en ;
+.
+<http://www.geonames.org/ontology#T.BDLD>
+  rdfs:label "badlands"@en ;
+.
+<http://www.geonames.org/ontology#T.BLDR>
+  rdfs:label "boulder field"@en ;
+.
+<http://www.geonames.org/ontology#T.BLHL>
+  rdfs:label "blowhole(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.BLOW>
+  rdfs:label "blowout(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.BNCH>
+  rdfs:label "bench"@en ;
+.
+<http://www.geonames.org/ontology#T.BUTE>
+  rdfs:label "butte(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.CAPE>
+  rdfs:label "cape"@en ;
+.
+<http://www.geonames.org/ontology#T.CFT>
+  rdfs:label "cleft(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.CLDA>
+  rdfs:label "caldera"@en ;
+.
+<http://www.geonames.org/ontology#T.CLF>
+  rdfs:label "cliff(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.CNYN>
+  rdfs:label "canyon"@en ;
+.
+<http://www.geonames.org/ontology#T.CONE>
+  rdfs:label "cone(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.CRDR>
+  rdfs:label "corridor"@en ;
+.
+<http://www.geonames.org/ontology#T.CRQ>
+  rdfs:label "cirque"@en ;
+.
+<http://www.geonames.org/ontology#T.CRQS>
+  rdfs:label "cirques"@en ;
+.
+<http://www.geonames.org/ontology#T.CRTR>
+  rdfs:label "crater(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.CUET>
+  rdfs:label "cuesta(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.DLTA>
+  rdfs:label "delta"@en ;
+.
+<http://www.geonames.org/ontology#T.DPR>
+  rdfs:label "depression(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.DSRT>
+  rdfs:label "desert"@en ;
+.
+<http://www.geonames.org/ontology#T.DUNE>
+  rdfs:label "dune(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.DVD>
+  rdfs:label "divide"@en ;
+.
+<http://www.geonames.org/ontology#T.ERG>
+  rdfs:label "sandy desert"@en ;
+.
+<http://www.geonames.org/ontology#T.FAN>
+  rdfs:label "fan(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.FORD>
+  rdfs:label "ford"@en ;
+.
+<http://www.geonames.org/ontology#T.FSR>
+  rdfs:label "fissure"@en ;
+.
+<http://www.geonames.org/ontology#T.GAP>
+  rdfs:label "gap"@en ;
+.
+<http://www.geonames.org/ontology#T.GRGE>
+  rdfs:label "gorge(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.HDLD>
+  rdfs:label "headland"@en ;
+.
+<http://www.geonames.org/ontology#T.HLL>
+  rdfs:label "hill"@en ;
+.
+<http://www.geonames.org/ontology#T.HLLS>
+  rdfs:label "hills"@en ;
+.
+<http://www.geonames.org/ontology#T.HMCK>
+  rdfs:label "hammock"@sv ;
+.
+<http://www.geonames.org/ontology#T.HMDA>
+  rdfs:label "rock desert"@en ;
+.
+<http://www.geonames.org/ontology#T.INTF>
+  rdfs:label "interfluve"@en ;
+.
+<http://www.geonames.org/ontology#T.ISL>
+  rdfs:label "island"@en ;
+.
+<http://www.geonames.org/ontology#T.ISLET>
+  rdfs:label "islet"@en ;
+.
+<http://www.geonames.org/ontology#T.ISLF>
+  rdfs:label "artificial island"@en ;
+.
+<http://www.geonames.org/ontology#T.ISLM>
+  rdfs:label "mangrove island"@en ;
+.
+<http://www.geonames.org/ontology#T.ISLS>
+  rdfs:label "islands"@en ;
+.
+<http://www.geonames.org/ontology#T.ISLT>
+  rdfs:label "land-tied island"@en ;
+.
+<http://www.geonames.org/ontology#T.ISLX>
+  rdfs:label "section of island"@en ;
+.
+<http://www.geonames.org/ontology#T.ISTH>
+  rdfs:label "isthmus"@en ;
+.
+<http://www.geonames.org/ontology#T.KRST>
+  rdfs:label "karst area"@en ;
+.
+<http://www.geonames.org/ontology#T.LAVA>
+  rdfs:label "lava area"@en ;
+.
+<http://www.geonames.org/ontology#T.LEV>
+  rdfs:label "levee"@en ;
+.
+<http://www.geonames.org/ontology#T.MESA>
+  rdfs:label "mesa(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.MND>
+  rdfs:label "mound(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.MRN>
+  rdfs:label "moraine"@en ;
+.
+<http://www.geonames.org/ontology#T.MT>
+  rdfs:label "mountain"@en ;
+.
+<http://www.geonames.org/ontology#T.MTS>
+  rdfs:label "mountains"@en ;
+.
+<http://www.geonames.org/ontology#T.NKM>
+  rdfs:label "meander neck"@en ;
+.
+<http://www.geonames.org/ontology#T.NTK>
+  rdfs:label "nunatak"@en ;
+.
+<http://www.geonames.org/ontology#T.NTKS>
+  rdfs:label "nunataks"@en ;
+.
+<http://www.geonames.org/ontology#T.PAN>
+  rdfs:label "pan"@en ;
+.
+<http://www.geonames.org/ontology#T.PANS>
+  rdfs:label "pans"@en ;
+.
+<http://www.geonames.org/ontology#T.PASS>
+  rdfs:label "pass"@en ;
+.
+<http://www.geonames.org/ontology#T.PEN>
+  rdfs:label "peninsula"@en ;
+.
+<http://www.geonames.org/ontology#T.PENX>
+  rdfs:label "section of peninsula"@en ;
+.
+<http://www.geonames.org/ontology#T.PK>
+  rdfs:label "peak"@en ;
+.
+<http://www.geonames.org/ontology#T.PKS>
+  rdfs:label "peaks"@en ;
+.
+<http://www.geonames.org/ontology#T.PLAT>
+  rdfs:label "plateau"@en ;
+.
+<http://www.geonames.org/ontology#T.PLATX>
+  rdfs:label "section of plateau"@en ;
+.
+<http://www.geonames.org/ontology#T.PLDR>
+  rdfs:label "polder"@en ;
+.
+<http://www.geonames.org/ontology#T.PLN>
+  rdfs:label "plain(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.PLNX>
+  rdfs:label "section of plain"@en ;
+.
+<http://www.geonames.org/ontology#T.PROM>
+  rdfs:label "promontory(-ies)"@en ;
+.
+<http://www.geonames.org/ontology#T.PT>
+  rdfs:label "point"@en ;
+.
+<http://www.geonames.org/ontology#T.PTS>
+  rdfs:label "points"@en ;
+.
+<http://www.geonames.org/ontology#T.RDGB>
+  rdfs:label "beach ridge"@en ;
+.
+<http://www.geonames.org/ontology#T.RDGE>
+  rdfs:label "ridge(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.REG>
+  rdfs:label "stony desert"@en ;
+.
+<http://www.geonames.org/ontology#T.RK>
+  rdfs:label "rock"@en ;
+.
+<http://www.geonames.org/ontology#T.RKFL>
+  rdfs:label "rockfall"@en ;
+.
+<http://www.geonames.org/ontology#T.RKS>
+  rdfs:label "rocks"@en ;
+.
+<http://www.geonames.org/ontology#T.SAND>
+  rdfs:label "sand area"@en ;
+.
+<http://www.geonames.org/ontology#T.SBED>
+  rdfs:label "dry stream bed"@en ;
+.
+<http://www.geonames.org/ontology#T.SCRP>
+  rdfs:label "escarpment"@en ;
+.
+<http://www.geonames.org/ontology#T.SDL>
+  rdfs:label "saddle"@en ;
+.
+<http://www.geonames.org/ontology#T.SHOR>
+  rdfs:label "shore"@en ;
+.
+<http://www.geonames.org/ontology#T.SINK>
+  rdfs:label "sinkhole"@en ;
+.
+<http://www.geonames.org/ontology#T.SLID>
+  rdfs:label "slide"@en ;
+.
+<http://www.geonames.org/ontology#T.SLP>
+  rdfs:label "slope(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.SPIT>
+  rdfs:label "spit"@en ;
+.
+<http://www.geonames.org/ontology#T.SPUR>
+  rdfs:label "spur(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.TAL>
+  rdfs:label "talus slope"@en ;
+.
+<http://www.geonames.org/ontology#T.TRGD>
+  rdfs:label "interdune trough(s)"@en ;
+.
+<http://www.geonames.org/ontology#T.TRR>
+  rdfs:label "terrace"@en ;
+.
+<http://www.geonames.org/ontology#T.UPLD>
+  rdfs:label "upland"@en ;
+.
+<http://www.geonames.org/ontology#T.VAL>
+  rdfs:label "valley"@en ;
+.
+<http://www.geonames.org/ontology#T.VALG>
+  rdfs:label "hanging valley"@en ;
+.
+<http://www.geonames.org/ontology#T.VALS>
+  rdfs:label "valleys"@en ;
+.
+<http://www.geonames.org/ontology#T.VALX>
+  rdfs:label "section of valley"@en ;
+.
+<http://www.geonames.org/ontology#T.VLC>
+  rdfs:label "volcano"@en ;
+.
+<http://www.geonames.org/ontology#U.APNU>
+  rdfs:label "apron"@en ;
+.
+<http://www.geonames.org/ontology#U.ARCU>
+  rdfs:label "arch"@en ;
+.
+<http://www.geonames.org/ontology#U.ARRU>
+  rdfs:label "arrugado"@en ;
+.
+<http://www.geonames.org/ontology#U.BDLU>
+  rdfs:label "borderland"@en ;
+.
+<http://www.geonames.org/ontology#U.BKSU>
+  rdfs:label "banks"@en ;
+.
+<http://www.geonames.org/ontology#U.BNCU>
+  rdfs:label "bench"@en ;
+.
+<http://www.geonames.org/ontology#U.BNKU>
+  rdfs:label "bank"@en ;
+.
+<http://www.geonames.org/ontology#U.BSNU>
+  rdfs:label "basin"@en ;
+.
+<http://www.geonames.org/ontology#U.CDAU>
+  rdfs:label "cordillera"@en ;
+.
+<http://www.geonames.org/ontology#U.CNSU>
+  rdfs:label "canyons"@en ;
+.
+<http://www.geonames.org/ontology#U.CNYU>
+  rdfs:label "canyon"@en ;
+.
+<http://www.geonames.org/ontology#U.CRSU>
+  rdfs:label "continental rise"@en ;
+.
+<http://www.geonames.org/ontology#U.DEPU>
+  rdfs:label "deep"@en ;
+.
+<http://www.geonames.org/ontology#U.EDGU>
+  rdfs:label "shelf edge"@en ;
+.
+<http://www.geonames.org/ontology#U.ESCU>
+  rdfs:label "escarpment (or scarp)"@en ;
+.
+<http://www.geonames.org/ontology#U.FANU>
+  rdfs:label "fan"@en ;
+.
+<http://www.geonames.org/ontology#U.FLTU>
+  rdfs:label "flat"@en ;
+.
+<http://www.geonames.org/ontology#U.FRKU>
+  rdfs:label "fork"@en ;
+.
+<http://www.geonames.org/ontology#U.FRSU>
+  rdfs:label "forks"@en ;
+.
+<http://www.geonames.org/ontology#U.FRZU>
+  rdfs:label "fracture zone"@en ;
+.
+<http://www.geonames.org/ontology#U.FURU>
+  rdfs:label "furrow"@en ;
+.
+<http://www.geonames.org/ontology#U.GAPU>
+  rdfs:label "gap"@en ;
+.
+<http://www.geonames.org/ontology#U.GLYU>
+  rdfs:label "gully"@en ;
+.
+<http://www.geonames.org/ontology#U.HLLU>
+  rdfs:label "hill"@en ;
+.
+<http://www.geonames.org/ontology#U.HLSU>
+  rdfs:label "hills"@en ;
+.
+<http://www.geonames.org/ontology#U.HOLU>
+  rdfs:label "hole"@en ;
+.
+<http://www.geonames.org/ontology#U.KNLU>
+  rdfs:label "knoll"@en ;
+.
+<http://www.geonames.org/ontology#U.KNSU>
+  rdfs:label "knolls"@en ;
+.
+<http://www.geonames.org/ontology#U.LDGU>
+  rdfs:label "ledge"@en ;
+.
+<http://www.geonames.org/ontology#U.LEVU>
+  rdfs:label "levee"@en ;
+.
+<http://www.geonames.org/ontology#U.MDVU>
+  rdfs:label "median valley"@en ;
+.
+<http://www.geonames.org/ontology#U.MESU>
+  rdfs:label "mesa"@en ;
+.
+<http://www.geonames.org/ontology#U.MNDU>
+  rdfs:label "mound"@en ;
+.
+<http://www.geonames.org/ontology#U.MOTU>
+  rdfs:label "moat"@en ;
+.
+<http://www.geonames.org/ontology#U.MTSU>
+  rdfs:label "mountains"@en ;
+.
+<http://www.geonames.org/ontology#U.MTU>
+  rdfs:label "mountain"@en ;
+.
+<http://www.geonames.org/ontology#U.PKSU>
+  rdfs:label "peaks"@en ;
+.
+<http://www.geonames.org/ontology#U.PKU>
+  rdfs:label "peak"@en ;
+.
+<http://www.geonames.org/ontology#U.PLFU>
+  rdfs:label "platform"@en ;
+.
+<http://www.geonames.org/ontology#U.PLNU>
+  rdfs:label "plain"@en ;
+.
+<http://www.geonames.org/ontology#U.PLTU>
+  rdfs:label "plateau"@en ;
+.
+<http://www.geonames.org/ontology#U.PNLU>
+  rdfs:label "pinnacle"@en ;
+.
+<http://www.geonames.org/ontology#U.PRVU>
+  rdfs:label "province"@en ;
+.
+<http://www.geonames.org/ontology#U.RAVU>
+  rdfs:label "ravine"@en ;
+.
+<http://www.geonames.org/ontology#U.RDGU>
+  rdfs:label "ridge"@en ;
+.
+<http://www.geonames.org/ontology#U.RDSU>
+  rdfs:label "ridges"@en ;
+.
+<http://www.geonames.org/ontology#U.RFSU>
+  rdfs:label "reefs"@en ;
+.
+<http://www.geonames.org/ontology#U.RFU>
+  rdfs:label "reef"@en ;
+.
+<http://www.geonames.org/ontology#U.RISU>
+  rdfs:label "rise"@en ;
+.
+<http://www.geonames.org/ontology#U.RMPU>
+  rdfs:label "ramp"@en ;
+.
+<http://www.geonames.org/ontology#U.RNGU>
+  rdfs:label "range"@en ;
+.
+<http://www.geonames.org/ontology#U.SCNU>
+  rdfs:label "seachannel"@en ;
+.
+<http://www.geonames.org/ontology#U.SCSU>
+  rdfs:label "seachannels"@en ;
+.
+<http://www.geonames.org/ontology#U.SDLU>
+  rdfs:label "saddle"@en ;
+.
+<http://www.geonames.org/ontology#U.SHFU>
+  rdfs:label "shelf"@en ;
+.
+<http://www.geonames.org/ontology#U.SHLU>
+  rdfs:label "shoal"@en ;
+.
+<http://www.geonames.org/ontology#U.SHSU>
+  rdfs:label "shoals"@en ;
+.
+<http://www.geonames.org/ontology#U.SHVU>
+  rdfs:label "shelf valley"@en ;
+.
+<http://www.geonames.org/ontology#U.SILU>
+  rdfs:label "sill"@en ;
+.
+<http://www.geonames.org/ontology#U.SLPU>
+  rdfs:label "slope"@en ;
+.
+<http://www.geonames.org/ontology#U.SMSU>
+  rdfs:label "seamounts"@en ;
+.
+<http://www.geonames.org/ontology#U.SMU>
+  rdfs:label "seamount"@en ;
+.
+<http://www.geonames.org/ontology#U.SPRU>
+  rdfs:label "spur"@en ;
+.
+<http://www.geonames.org/ontology#U.TERU>
+  rdfs:label "terrace"@en ;
+.
+<http://www.geonames.org/ontology#U.TMSU>
+  rdfs:label "guyots"@en ;
+  rdfs:label "tablemounts"@en ;
+.
+<http://www.geonames.org/ontology#U.TMTU>
+  rdfs:label "guyot"@en ;
+  rdfs:label "tablemount"@en ;
+.
+<http://www.geonames.org/ontology#U.TNGU>
+  rdfs:label "tongue"@en ;
+.
+<http://www.geonames.org/ontology#U.TRGU>
+  rdfs:label "trough"@en ;
+.
+<http://www.geonames.org/ontology#U.TRNU>
+  rdfs:label "trench"@en ;
+.
+<http://www.geonames.org/ontology#U.VALU>
+  rdfs:label "valley"@en ;
+.
+<http://www.geonames.org/ontology#U.VLSU>
+  rdfs:label "valleys"@en ;
+.
+<http://www.geonames.org/ontology#V.BUSH>
+  rdfs:label "bush(es)"@en ;
+.
+<http://www.geonames.org/ontology#V.CULT>
+  rdfs:label "cultivated area"@en ;
+.
+<http://www.geonames.org/ontology#V.FRST>
+  rdfs:label "forest(s)"@en ;
+.
+<http://www.geonames.org/ontology#V.FRSTF>
+  rdfs:label "fossilized forest"@en ;
+.
+<http://www.geonames.org/ontology#V.GRSLD>
+  rdfs:label "grassland"@en ;
+.
+<http://www.geonames.org/ontology#V.GRVC>
+  rdfs:label "coconut grove"@en ;
+.
+<http://www.geonames.org/ontology#V.GRVO>
+  rdfs:label "olive grove"@en ;
+.
+<http://www.geonames.org/ontology#V.GRVP>
+  rdfs:label "palm grove"@en ;
+.
+<http://www.geonames.org/ontology#V.GRVPN>
+  rdfs:label "pine grove"@en ;
+.
+<http://www.geonames.org/ontology#V.HTH>
+  rdfs:label "pine grove"@en ;
+.
+<http://www.geonames.org/ontology#V.MDW>
+  rdfs:label "meadow"@en ;
+.
+<http://www.geonames.org/ontology#V.OCH>
+  rdfs:label "orchard(s)"@en ;
+.
+<http://www.geonames.org/ontology#V.SCRB>
+  rdfs:label "scrubland"@en ;
+.
+<http://www.geonames.org/ontology#V.TREE>
+  rdfs:label "tree(s)"@en ;
+.
+<http://www.geonames.org/ontology#V.TUND>
+  rdfs:label "tundra"@en ;
+.
+<http://www.geonames.org/ontology#V.VIN>
+  rdfs:label "vineyard"@en ;
+.
+<http://www.geonames.org/ontology#V.VINS>
+  rdfs:label "vineyards"@en ;
+.
+<http://xmlns.com/foaf/0.1/Group>
+  owl:equivalentClass :Group ;
+.

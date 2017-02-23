@@ -1,0 +1,1450 @@
+# baseURI: http://www.faa.gov/DRS/Human_Resources
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://www.faa.gov/DRS/Human_Resources#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.faa.gov/DRS/Human_Resources>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dct: ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Administrative_Staff
+  rdf:type owl:Class ;
+  rdfs:label "Administrative Staff"^^xsd:string ;
+  rdfs:subClassOf :Staff ;
+  skos:broader :Staff ;
+  skos:prefLabel "Administrative Staff"^^xsd:string ;
+.
+:Aerodrome_Safety_Team
+  rdf:type owl:Class ;
+  rdfs:label "Aerodrome Safety Team"^^xsd:string ;
+  rdfs:subClassOf :Aerodrome_Team ;
+  rdfs:subClassOf :Safety_Team ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Aerodrome_Team
+            :Safety_Team
+          ) ;
+      ]
+    ) ;
+  skos:broader :Aerodrome_Team ;
+  skos:narrower :Runway_Safety_Team ;
+  skos:prefLabel "Aerodrome Safety Team"^^xsd:string ;
+.
+:Aerodrome_Team
+  rdf:type owl:Class ;
+  rdfs:label "Aerodrome Team"^^xsd:string ;
+  rdfs:subClassOf :Facility_Team ;
+  skos:broader :Facility_Team ;
+  skos:narrower :Aerodrome_Safety_Team ;
+  skos:prefLabel "Aerodrome Team"^^xsd:string ;
+.
+:Aeronautical_Information_Personnel
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "AIS/AIM Training Guidance Manual, Version 1.0 DRAFT, as of 5/18/2011, p. 33."^^xsd:string ;
+  rdfs:label "Aeronautical Information Personnel"^^xsd:string ;
+  rdfs:subClassOf :Information_Resource_Personnel ;
+  skos:broader :Air_Transportation_Personnel ;
+  skos:broader :Information_Resource_Personnel ;
+  skos:definition "Anyone who is generally responsibility for any of or all of the functions required by the AIS or AIM provider as a general part of their employment.   [AIS/AIM]"^^xsd:string ;
+  skos:prefLabel "Aeronautical Information Personnel"^^xsd:string ;
+.
+:Air_Crew
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Air Crew"^^xsd:string ;
+  rdfs:subClassOf :Crew ;
+  skos:broader :Crew ;
+  skos:definition "Persons making up an Air Crew.   [NAS EA OV-7]"^^xsd:string ;
+  skos:editorialNote "Refer to \"Air Crew\" in \"People\" ontology too."^^xsd:string ;
+  skos:prefLabel "Air Crew"^^xsd:string ;
+  skos:scopeNote "Could be an Employee of an external organization like an Airline or Military.  [NAS EA OV-7]"^^xsd:string ;
+  skos:scopeNote "Could be an FAA Employee.  [NAS EA OV-7]"^^xsd:string ;
+.
+:Air_Traffic_Control_Position
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Air Traffic Control Position"^^xsd:string ;
+  rdfs:subClassOf :Air_Traffic_Management_Position ;
+  skos:broader :Air_Traffic_Management_Position ;
+  skos:definition """An ATC operation position is a combination of location/equipment and controllers  within a communication facility who work a particular Airspace sector to provide services and manage traffic.
+[NAS EA OV-7]"""^^xsd:string ;
+  skos:prefLabel "Air Traffic Control Position"^^xsd:string ;
+.
+:Air_Traffic_Flow_Management_Position
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "ICAO Doc 7754, Volume II, Part V.III"^^xsd:string ;
+  dtype:code "FMP"^^xsd:anySimpleType ;
+  rdfs:label "Air Traffic Flow Management Position"^^xsd:string ;
+  rdfs:subClassOf :Air_Traffic_Management_Position ;
+  skos:broader :Air_Traffic_Management_Position ;
+  skos:definition "A working position established in appropriate air traffic control units to ensure the necessary interface with a central management unit on matters concerning the provision of the air traffic flow management service.  [ICAO]"^^xsd:string ;
+  skos:prefLabel "Air Traffic Flow Management Position"^^xsd:string ;
+.
+:Air_Traffic_Management_Position
+  rdf:type owl:Class ;
+  rdfs:label "Air Traffic Management Position"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Management_Position ;
+  skos:broader :Air_Transportation_Management_Position ;
+  skos:narrower :Air_Traffic_Control_Position ;
+  skos:narrower :Air_Traffic_Flow_Management_Position ;
+  skos:prefLabel "Air Traffic Management Position"^^xsd:string ;
+.
+:Air_Transportation_Employee
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Employee"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Employee ;
+  skos:broader :Transportation_Employee ;
+  skos:narrower :Federal_Aviation_Administration_Employee ;
+  skos:prefLabel "Air Transportation Employee"^^xsd:string ;
+.
+:Air_Transportation_Management_Position
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Management Position"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Management_Position ;
+  skos:broader :Transportation_Management_Position ;
+  skos:narrower :Air_Traffic_Management_Position ;
+  skos:prefLabel "Air Transportation Management Position"^^xsd:string ;
+.
+:Air_Transportation_Personnel
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Personnel"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Personnel ;
+  skos:broader :Transportation_Personnel ;
+  skos:narrower :Flight_Personnel ;
+  skos:narrower :Ground_Personnel ;
+  skos:prefLabel "Air Transportation Personnel"^^xsd:string ;
+.
+:Air_Transportation_Work_Force
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Work Force"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Work_Force ;
+  skos:broader :Transportation_Work_Force ;
+  skos:prefLabel "Air Transportation Work Force"^^xsd:string ;
+.
+:Analysis_Team
+  rdf:type owl:Class ;
+  rdfs:label "Analysis Team"^^xsd:string ;
+  rdfs:subClassOf :Team ;
+  skos:broader :Team ;
+  skos:narrower :Systems_Analysis_Team ;
+  skos:prefLabel "Analysis Team"^^xsd:string ;
+.
+:Annual_Leave
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA JO Order 7340.2C, Contractions; dated 2/9/2012."^^xsd:string ;
+  vaem:acronym "AL"^^xsd:string ;
+  rdfs:label "Annual Leave"^^xsd:string ;
+  rdfs:subClassOf :Employee_Leave ;
+  skos:altLabel "Employee Annual Leave"^^xsd:string ;
+  skos:broader :Employee_Leave ;
+  skos:prefLabel "Annual Leave"^^xsd:string ;
+.
+:Aviation_Safety_Personnel
+  rdf:type owl:Class ;
+  rdfs:label "Aviation Safety Personnel"^^xsd:string ;
+  rdfs:subClassOf :Safety_Personnel ;
+  skos:broader :Safety_Personnel ;
+  skos:narrower :Air_Transportation_Personnel ;
+  skos:narrower :Safety-sensitive_Personnel ;
+  skos:prefLabel "Aviation Safety Personnel"^^xsd:string ;
+.
+:Aviation_Security_Personnel
+  rdf:type owl:Class ;
+  rdfs:label "Aviation Security Personnel"^^xsd:string ;
+  rdfs:subClassOf :Security_Personnel ;
+  skos:broader :Air_Transportation_Personnel ;
+  skos:broader :Security_Personnel ;
+  skos:prefLabel "Aviation Security Personnel"^^xsd:string ;
+.
+:Cabin_Crew_Member
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "ICAO Annex 6 Part I; International Commercial Air Transport –  Aeroplanes"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Annex 6 Part II; International General Aviation – Aeroplanes"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Annex 6 Part III; International Operations – Helicopters"^^xsd:string ;
+  dct:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-146"^^xsd:string ;
+  dct:source """ICAO  (AN 6/I; AN 6/III)
+Official definition added to AN 6/I by Amdt 21 (09/11/1995), to AN 6/III by Amdt 3 (09/11/1995). Term modified by Amdt 24 to AN 6/I (04/11/1999) and by Amdt 6 to AN 6/III (04/11/1999)"""^^xsd:string ;
+  rdfs:label "Cabin Crew Member"^^xsd:string ;
+  rdfs:subClassOf :Crew_Member ;
+  skos:altLabel "Cabin Attendant"^^xsd:string ;
+  skos:definition "A crew member who performs, in the interest of safety of passengers, duties assigned by the operator or the pilot-in-command of the aircraft, but who shall not act as a flight crew member.    [ICAO]"^^xsd:string ;
+  skos:prefLabel "Cabin Crew Member"^^xsd:string ;
+.
+:Certificate_Management_Team
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA  extracted from 'Work Activity Party Role Type\" in FAA Data Architecture"^^xsd:string ;
+  rdfs:label "Certificate Mangement Team"^^xsd:string ;
+  rdfs:subClassOf :Management_Team ;
+  skos:broader :Management_Team ;
+  skos:editorialNote """is a group of individuals who are working towards the same certificate management mission, objective, or goal
+[proposed]"""^^xsd:string ;
+  skos:editorialNote "is a role in a Work Activity Involved Party   [FAA]"^^xsd:string ;
+  skos:prefLabel "Certificate Management Team"^^xsd:string ;
+.
+:Certificate_Project_Team
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA  extracted from 'Work Activity Party Role Type\" in FAA Data Architecture"^^xsd:string ;
+  rdfs:label "Certificate Project Team"^^xsd:string ;
+  rdfs:subClassOf :Project_Team ;
+  skos:altLabel "Certification Project Team"^^xsd:string ;
+  skos:broader :Project_Team ;
+  skos:editorialNote "is a group of individuals who are working towards the same certificate project mission, objective, or goal [proposed]"^^xsd:string ;
+  skos:editorialNote "is a role in a Work Activity Involved Party   [FAA]"^^xsd:string ;
+  skos:prefLabel "Certificate Project Team"^^xsd:string ;
+.
+:Complete_Crew
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA JO Order 7340.2C, Contractions; dated 2/9/2012."^^xsd:string ;
+  dtype:code "CCRU"^^xsd:anySimpleType ;
+  rdfs:label "Complete Crew"^^xsd:string ;
+  rdfs:subClassOf :Crew ;
+  skos:broader :Crew ;
+  skos:prefLabel "Complete Crew"^^xsd:string ;
+.
+:Consultant
+  rdf:type owl:Class ;
+  rdfs:label "Consultant"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Member ;
+  skos:prefLabel "Consultant"^^xsd:string ;
+.
+:Contractor
+  rdf:type owl:Class ;
+  rdfs:label "Contractor"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Member ;
+  skos:prefLabel "Contractor"^^xsd:string ;
+.
+:Crew
+  rdf:type owl:Class ;
+  rdfs:label "Crew"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Work_Force ;
+  skos:narrower :Air_Crew ;
+  skos:narrower :Complete_Crew ;
+  skos:narrower :Crew_Member ;
+  skos:narrower :Deadheading_Crew ;
+  skos:narrower :Flight_Crew ;
+  skos:narrower :Ground_Crew ;
+  skos:prefLabel "Crew"^^xsd:string ;
+.
+:Crew_Member
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA CERT Aircraft Certification Definitions retrieved on 8-9-2014 from http://www.faa-aircraft-certification.com/faa-definitions.html"^^xsd:string ;
+  dct:bibliographicCitation "FAA FAR Part 1 - Definitions and abbreviations;  FAA website, as of February 3, 2008"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Annex 18, The Safe Transport of Dangerous Goods by Air"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Annex 6 Part I; International Commercial Air Transport –  Aeroplanes"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Annex 6 Part III; International Operations – Helicopters"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Annex 9, Facilitation"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Cir 328 Unmanned AIrcraft System (UAS); Glossary 2011"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Doc 9713, Vocabulary, Part A, Definitions; p. 1-185"^^xsd:string ;
+  dct:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  dct:source """ICAO (AN 6/I; AN 6/III; AN 9; AN 18)
+Official definition modified by: Amdt 25 to AN 6/I (02/11/2000), Amdt 7 to AN 6/III (02/11/2000), Amdt 18 to AN 9 (28/11/2002)"""^^xsd:string ;
+  rdfs:label "Crew Member"^^xsd:string ;
+  rdfs:subClassOf :Member ;
+  skos:altLabel "Aircraft Crew Member"^^xsd:string ;
+  skos:altLabel "Crewman"^^xsd:string ;
+  skos:altLabel "Crewmate"^^xsd:string ;
+  skos:altLabel "Crewmember"^^xsd:string ;
+  skos:broader :Crew ;
+  skos:broader :Member ;
+  skos:definition "A person assigned by an operator to duty on an aircraft during a flight duty period.   [ICAO]"^^xsd:string ;
+  skos:definition "A person certified to conduct an authorized activity that contributes to the safe operation of an aircraft.   [NAS EA OV-7]"^^xsd:string ;
+  skos:definition "means a person assigned to perform duty in an aircraft during flight time.    [FAA FAR]  [FAR CERT]"^^xsd:string ;
+  skos:narrower :Flight_Crew_Member ;
+  skos:narrower :Ground_Crew_Member ;
+  skos:prefLabel "Crew Member"^^xsd:string ;
+  skos:scopeNote "The source system reuses crew numbers, which has the potential to impact Enterprise level applications.  [NAS EA OV-7]"^^xsd:string ;
+.
+:Deadheading_Crew
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-205"^^xsd:string ;
+  dct:source """ICAO AN 6/III
+"""^^xsd:string ;
+  rdfs:label "Deadheading Crew"^^xsd:string ;
+  rdfs:subClassOf :Crew ;
+  skos:altLabel "Dead-Heading Crew"^^xsd:string ;
+  skos:altLabel "Dead-heading Crew"^^xsd:string ;
+  skos:broader :Crew ;
+  skos:broader :Flight_Personnel ;
+  skos:definition "A crew member positioned by the operator in flight or by surface transport.  [ICAO]"^^xsd:string ;
+  skos:prefLabel "Deadheading Crew"^^xsd:string ;
+.
+:Defense_Personnel
+  rdf:type owl:Class ;
+  rdfs:label "Defense Personnel"^^xsd:string ;
+  rdfs:subClassOf :Personnel ;
+  skos:broader :Personnel ;
+  skos:narrower :Military_Personnel ;
+  skos:prefLabel "Defense Personnel"^^xsd:string ;
+.
+:Department_of_Transportation_Employee
+  rdf:type owl:Class ;
+  rdfs:label "Department of Transportation Employee"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Employee ;
+  rdfs:subClassOf :United_States_Government_Employee ;
+  skos:altLabel "DOT Employee"^^xsd:string ;
+  skos:altLabel "DoT Employee"^^xsd:string ;
+  skos:broader :Transportation_Employee ;
+  skos:broader :United_States_Government_Employee ;
+  skos:narrower :Federal_Aviation_Administration_Employee ;
+  skos:prefLabel "Department of Transportation Employee"^^xsd:string ;
+.
+:Employee
+  rdf:type owl:Class ;
+  rdfs:label "Employee"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Member ;
+  skos:broader :Staff ;
+  skos:narrower :Employee_Award ;
+  skos:narrower :Employee_Benefit ;
+  skos:narrower :Employee_Health ;
+  skos:narrower :Employee_Incentive ;
+  skos:narrower :Employee_Promotion ;
+  skos:narrower :Employee_Relocation ;
+  skos:narrower :Employee_Retirement ;
+  skos:narrower :Employee_Travel ;
+  skos:prefLabel "Employee"^^xsd:string ;
+.
+:Employee_Accident_Insurance_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Accident Insurance Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Insurance_Benefit ;
+  skos:broader :Employee_Insurance_Benefit ;
+  skos:prefLabel "Employee Accident Insurance Benefit"^^xsd:string ;
+.
+:Employee_Award
+  rdf:type owl:Class ;
+  rdfs:label "Employee Award"^^xsd:string ;
+  rdfs:subClassOf :Employee ;
+  skos:broader :Employee ;
+  skos:prefLabel "Employee Award"^^xsd:string ;
+.
+:Employee_Benefit
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "Merriam-Webster's New Collegiate Dictionary, 11th ed."^^xsd:string ;
+  rdfs:label "Employee Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee ;
+  skos:broader :Employee ;
+  skos:definition "3 a : financial help in time of sickness, old age, or unemployment  b : a payment or service provided for under an annuity, pension plan, or insurance policy  c : a service (as health insurance) or right (as to take vacation time) provided by an employer in addition to wages or salary  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Employee_Benefit_Election ;
+  skos:narrower :Employee_Health_Benefit ;
+  skos:narrower :Employee_Insurance_Benefit ;
+  skos:narrower :Employee_Paid-Time-Off_Benefit ;
+  skos:narrower :Employee_Relocation_Benefit ;
+  skos:narrower :Employee_Retirement_Benefit ;
+  skos:narrower :Employee_Transit_Benefit ;
+  skos:narrower :Employee_Travel_Benefit ;
+  skos:narrower :Employee_Work-Life_Benefit ;
+  skos:narrower :Employee_Workers_Compensation_Benefit ;
+  skos:prefLabel "Employee Benefit"^^xsd:string ;
+.
+:Employee_Benefit_Election
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA DATA ARCHITECTURE"^^xsd:string ;
+  rdfs:label "Employee Benefit Election"^^xsd:string ;
+  rdfs:subClassOf :Employee_Benefit ;
+  skos:broader :Employee_Benefit ;
+  skos:definition "A person's chosen benefit terms provided through employment.   [FAA]"^^xsd:string ;
+  skos:prefLabel "Employee Benefit Election"^^xsd:string ;
+.
+:Employee_Compensation
+  rdf:type owl:Class ;
+  rdfs:label "Employee Compensation"^^xsd:string ;
+  rdfs:subClassOf :Employee ;
+  skos:broader :Employee ;
+  skos:narrower :Employee_Compensation_Benefit ;
+  skos:prefLabel "Employee Compensation"^^xsd:string ;
+.
+:Employee_Compensation_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Compensation Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Benefit ;
+  rdfs:subClassOf :Employee_Compensation ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Employee_Compensation
+            :Employee_Benefit
+          ) ;
+      ]
+    ) ;
+  skos:broader :Employee ;
+  skos:broader :Employee_Compensation ;
+  skos:broader :Personnel_Compensation_Benefits ;
+  skos:narrower :Employee_Workers_Compensation_Benefit ;
+  skos:prefLabel "Employee Compensation Benefit"^^xsd:string ;
+.
+:Employee_Compensation_and_Travel_Benefit
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:abbreviation "ECB&T"^^xsd:string ;
+  vaem:acronym "ECB&T"^^xsd:string ;
+  rdfs:label "Employee Compensation and Travel Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Compensation_Benefit ;
+  rdfs:subClassOf :Employee_Travel_Benefit ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Employee_Compensation_Benefit
+            :Employee_Travel_Benefit
+          ) ;
+      ]
+    ) ;
+  skos:altLabel "Employee Compensation & Travel Benefit"^^xsd:string ;
+  skos:broader :Employee_Compensation_Benefit ;
+  skos:broader :Employee_Travel_Benefit ;
+  skos:broader :Personnel_Compensation_Benefits_and_Travel ;
+  skos:prefLabel "Employee Compensation and Travel Benefit"^^xsd:string ;
+.
+:Employee_Dental_Insurance_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Dental Insurance Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Insurance_Benefit ;
+  skos:broader :Employee_Insurance_Benefit ;
+  skos:prefLabel "Employee Dental Insurance Benefit"^^xsd:string ;
+.
+:Employee_Health
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA extracted from FAA Order 0000.1G, dated March 14, 2001"^^xsd:string ;
+  dct:subject "Employee Health and Safety"^^xsd:string ;
+  :termTopicFAA "Employee Health and Safety"^^xsd:string ;
+  vaem:hasIdentifier "3900"^^xsd:string ;
+  rdfs:label "Employee Health"^^xsd:string ;
+  rdfs:subClassOf :Employee ;
+  skos:broader :Employee ;
+  skos:definition "is a major topic, 3900  [FAA]"^^xsd:string ;
+  skos:narrower :Employee_Health_Benefit ;
+  skos:prefLabel "Employee Health"^^xsd:string ;
+.
+:Employee_Health_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Health Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Benefit ;
+  skos:broader :Employee_Benefit ;
+  skos:broader :Employee_Health ;
+  skos:narrower :Employee_Medical_Benefit ;
+  skos:narrower :Employee_Preventive_Health_Benefit ;
+  skos:prefLabel "Employee Health Benefit"^^xsd:string ;
+.
+:Employee_Health_Insurance_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Health Insurance Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Insurance_Benefit ;
+  skos:broader :Employee_Health ;
+  skos:broader :Employee_Insurance_Benefit ;
+  skos:prefLabel "Employee Health Insurance Benefit"^^xsd:string ;
+.
+:Employee_Holiday_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Holiday Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Paid-Time-Off_Benefit ;
+  skos:broader :Employee_Paid-Time-Off_Benefit ;
+  skos:prefLabel "Employee Holiday Benefit"^^xsd:string ;
+.
+:Employee_Incentive
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "extracted from FAA Order 0000.1G, dated March 14, 2001"^^xsd:string ;
+  dct:subject "Employee Incentives"^^xsd:string ;
+  :termTopicFAA "Employee Incentives"^^xsd:string ;
+  vaem:hasIdentifier "3450"^^xsd:string ;
+  rdfs:label "Employee Incentive"^^xsd:string ;
+  rdfs:subClassOf :Employee ;
+  skos:broader :Employee ;
+  skos:definition "is a topic, 3450  [FAA]"^^xsd:string ;
+  skos:prefLabel "Employee Incentive"^^xsd:string ;
+.
+:Employee_Insurance_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Insurance Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Benefit ;
+  skos:broader :Employee_Benefit ;
+  skos:narrower :Employee_Accident_Insurance_Benefit ;
+  skos:narrower :Employee_Dental_Insurance_Benefit ;
+  skos:narrower :Employee_Health_Insurance_Benefit ;
+  skos:narrower :Employee_Life_Insurance_Benefit ;
+  skos:prefLabel "Employee Insurance Benefit"^^xsd:string ;
+.
+:Employee_Leave
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA extracted from FAA Order 0000.1G, dated March 14, 2001"^^xsd:string ;
+  dct:subject "Payroll, Leave, and Allowances"^^xsd:string ;
+  :termTopicFAA "Payroll, Leave, and Allowances"^^xsd:string ;
+  vaem:hasIdentifier "2730"^^xsd:string ;
+  rdfs:label "Employee Leave"^^xsd:string ;
+  rdfs:subClassOf :Employee ;
+  skos:broader :Employee ;
+  skos:definition "is a topic, 2730  [FAA]"^^xsd:string ;
+  skos:narrower :Annual_Leave ;
+  skos:narrower :Employee_Paid-Time-Off_Benefit ;
+  skos:narrower :Sick_Leave ;
+  skos:prefLabel "Employee Leave"^^xsd:string ;
+.
+:Employee_Leave_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Leave Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Paid-Time-Off_Benefit ;
+  skos:broader :Employee_Leave ;
+  skos:broader :Employee_Paid-Time-Off_Benefit ;
+  skos:prefLabel "Employee Leave Benefit"^^xsd:string ;
+.
+:Employee_Life_Insurance_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Life Insurance Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Insurance_Benefit ;
+  skos:broader :Employee_Insurance_Benefit ;
+  skos:prefLabel "Employee Life Insurance Benefit"^^xsd:string ;
+.
+:Employee_Medical_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Health Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Health_Benefit ;
+  skos:broader :Employee_Health_Benefit ;
+  skos:prefLabel "Employee Health Benefit"^^xsd:string ;
+.
+:Employee_Paid-Time-Off_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Paid Time-Off Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Benefit ;
+  skos:broader :Employee_Benefit ;
+  skos:narrower :Employee_Holiday_Benefit ;
+  skos:narrower :Employee_Leave_Benefit ;
+  skos:prefLabel "Employee Paid Time-Off Benefit"^^xsd:string ;
+.
+:Employee_Permanent_Change_of_Station
+  rdf:type owl:Class ;
+  rdfs:label "Employee Permanent Change of Station"^^xsd:string ;
+  rdfs:subClassOf :Employee_Relocation_Benefit ;
+  skos:broader :Employee_Relocation_Benefit ;
+  skos:prefLabel "Employee Permanent Change of Station"^^xsd:string ;
+.
+:Employee_Preventive_Health_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Preventive Health Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Health_Benefit ;
+  skos:broader :Employee_Health_Benefit ;
+  skos:prefLabel "Employee Preventive Health Benefit"^^xsd:string ;
+.
+:Employee_Promotion
+  rdf:type owl:Class ;
+  rdfs:label "Employee Promotion"^^xsd:string ;
+  rdfs:subClassOf :Employee ;
+  skos:broader :Employee ;
+  skos:prefLabel "Employee Promotion"^^xsd:string ;
+.
+:Employee_Relocation
+  rdf:type owl:Class ;
+  rdfs:label "Employee Relocation"^^xsd:string ;
+  rdfs:subClassOf :Employee ;
+  skos:broader :Employee ;
+  skos:narrower :Employee_Relocation_Benefit ;
+  skos:prefLabel "Employee Relocation"^^xsd:string ;
+.
+:Employee_Relocation_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Relocation Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Benefit ;
+  skos:broader :Employee_Benefit ;
+  skos:broader :Employee_Relocation ;
+  skos:narrower :Employee_Permanent_Change_of_Station ;
+  skos:prefLabel "Employee Relocation Benefit"^^xsd:string ;
+.
+:Employee_Retirement
+  rdf:type owl:Class ;
+  rdfs:label "Employee Retirement"^^xsd:string ;
+  rdfs:subClassOf :Employee ;
+  skos:broader :Employee ;
+  skos:narrower :Employee_Retirement_Benefit ;
+  skos:prefLabel "Employee Retirement"^^xsd:string ;
+.
+:Employee_Retirement_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Retirement Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Benefit ;
+  skos:broader :Employee_Benefit ;
+  skos:broader :Employee_Retirement ;
+  skos:prefLabel "Employee Retirement Benefit"^^xsd:string ;
+.
+:Employee_Temporary_Duty_Travel
+  rdf:type owl:Class ;
+  vaem:acronym "TDY"^^xsd:string ;
+  rdfs:label "Employee Temporary Duty Travel"^^xsd:string ;
+  rdfs:subClassOf :Employee_Travel ;
+  skos:altLabel "Temporary Duty Travel"^^xsd:string ;
+  skos:broader :Employee_Travel ;
+  skos:prefLabel "Employee Temporary Duty Travel"^^xsd:string ;
+.
+:Employee_Transit_Benefit
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "extracted from FAA Order 0000.1G, dated March 14, 2001"^^xsd:string ;
+  dct:subject "Transit Benefits"^^xsd:string ;
+  :termTopicFAA "Transit Benefits"^^xsd:string ;
+  vaem:hasIdentifier "1530"^^xsd:string ;
+  rdfs:label "Employee Transit Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Benefit ;
+  skos:broader :Employee_Benefit ;
+  skos:definition "is a topic, 1530   [FAA]"^^xsd:string ;
+  skos:prefLabel "Employee Transit Benefit"^^xsd:string ;
+.
+:Employee_Travel
+  rdf:type owl:Class ;
+  rdfs:label "Employee Travel"^^xsd:string ;
+  rdfs:subClassOf :Employee ;
+  skos:broader :Employee ;
+  skos:narrower :Employee_Temporary_Duty_Travel ;
+  skos:narrower :Employee_Travel_Benefit ;
+  skos:prefLabel "Employee Travel"^^xsd:string ;
+.
+:Employee_Travel_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Travel Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Benefit ;
+  skos:broader :Employee_Benefit ;
+  skos:broader :Employee_Travel ;
+  skos:prefLabel "Employee Travel Benefit"^^xsd:string ;
+.
+:Employee_Work-Life_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Work-Life Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Benefit ;
+  skos:broader :Employee_Benefit ;
+  skos:prefLabel "Employee Work-Life Benefit"^^xsd:string ;
+.
+:Employee_Workers_Compensation_Benefit
+  rdf:type owl:Class ;
+  rdfs:label "Employee Workers Compensation Benefit"^^xsd:string ;
+  rdfs:subClassOf :Employee_Compensation_Benefit ;
+  skos:broader :Employee_Benefit ;
+  skos:prefLabel "Employee Workers Compensation Benefit"^^xsd:string ;
+.
+:Equal_Opportunity
+  rdf:type owl:Class ;
+  rdfs:label "Equal Opportunity"^^xsd:string ;
+  rdfs:subClassOf :Work_Force ;
+  skos:prefLabel "Equal Opportunity"^^xsd:string ;
+.
+:FAA_Team
+  rdf:type :Organization_Team ;
+  rdfs:label "Federal Aviation Administration Team"^^xsd:string ;
+  rdfs:subClassOf :Organization_Team ;
+  skos:altLabel "FAA Team"^^xsd:string ;
+  skos:definition "is a group of individuals who are FAA employees or contractors who are working towards the same mission, objective, or goal   [FAA]"^^xsd:string ;
+  skos:prefLabel "Federal Aviation Administration Team"^^xsd:string ;
+.
+:Facility_Team
+  rdf:type owl:Class ;
+  rdfs:label "Facility Team"^^xsd:string ;
+  rdfs:subClassOf :Team ;
+  skos:broader :Team ;
+  skos:narrower :Aerodrome_Team ;
+  skos:prefLabel "Facility Team"^^xsd:string ;
+.
+:Federal_Aviation_Administration_Employee
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Federal Aviation Administration Employee"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Employee ;
+  rdfs:subClassOf :Department_of_Transportation_Employee ;
+  skos:altLabel "FAA Employee"^^xsd:string ;
+  skos:broader :Air_Transportation_Employee ;
+  skos:broader :Department_of_Transportation_Employee ;
+  skos:definition """An Employee of DOT FAA
+A Federal Employee   [NAS EA OV-7]"""^^xsd:string ;
+  skos:prefLabel "Federal Aviation Administration Employee"^^xsd:string ;
+.
+:Federal_Job_Classification
+  rdf:type :Position_Classification ;
+  dct:bibliographicCitation "FAA DATA ARCHITECTURE"^^xsd:string ;
+  rdfs:label "Federal Job Classification"^^xsd:string ;
+  skos:definition "The Federal Job classification codes which correspondi to a kind of employment position.  Examples include Operations Research Analyst, Computer Systems Analyst, etc.  [DATA ARCH]"^^xsd:string ;
+  skos:prefLabel "Federal Job Classification"^^xsd:string ;
+.
+:Flight_Crew
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "Mitre FAA National Airspace Data Classification Scheme, extracted from \"NAS_clas_final\" on Data Arch CD"^^xsd:string ;
+  rdfs:label "Flight Crew"^^xsd:string ;
+  rdfs:subClassOf :Crew ;
+  skos:altLabel "Aircrew"^^xsd:string ;
+  skos:broader :Crew ;
+  skos:broader :Flight_Personnel ;
+  skos:definition ": the crew manning an airplane  "^^xsd:string ;
+  skos:definition "Data describing the assigned flight crew for the flight.  This field specifies the quantity of the type of crew to be named    [MITRE]"^^xsd:string ;
+  skos:prefLabel "Flight Crew"^^xsd:string ;
+.
+:Flight_Crew_Member
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA CERT Aircraft Certification Definitions retrieved on 8-9-2014 from http://www.faa-aircraft-certification.com/faa-definitions.html"^^xsd:string ;
+  dct:bibliographicCitation "FAA FAR Part 1 - Definitions and abbreviations;  FAA website, as of February 3, 2008"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Air Traffic Services, Air Traffic Control Service, Flight Information Service, Alerting Service, Annex 11, Thirteenth edition; July 2001"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Annex 1, Personnel Licensing"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Annex 11, Air Traffic Services"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Annex 18, The Safe Transport of Dangerous Goods by Air"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Annex 2, Rules of the Air"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Annex 3, Meteorological Service for International Air Navigation"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Annex 6 Part I; International Commercial Air Transport –  Aeroplanes"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Annex 6 Part II; International General Aviation – Aeroplanes"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Annex 6 Part III; International Operations – Helicopters"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Cir 328 Unmanned AIrcraft System (UAS); Glossary 2011"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Doc 9713, Vocabulary, Part A, Definitions; p. 1-265"^^xsd:string ;
+  dct:bibliographicCitation "ICAO Procedures for Air Navigation Services - Air Traffic Management (PANS-ATM), Fourteenth edition; July 2001"^^xsd:string ;
+  dct:bibliographicCitation """ICAO, Official definition, 
+ANNEX 2  Rules of the Air  2005
+ANNEX 6/I  Operation of Aircraft â€” International Commercial Air Transport â€” Aeroplanes  2010"""^^xsd:string ;
+  dct:source """ICAO  (AN 1; AN 2; AN 3; AN 6/I; AN 6/II; AN 6/III; AN 9; AN 11; AN 18; PANS-ATM)
+Official definition added to: AN 3 by Amdt 72 (02/2001), AN 11 by Amdt 40 (01/11/2001), and modified by: Amdt 163 to AN 1, Amdt 36 to AN 2 (01/11/2001), Amdt 25 to AN 6/I (02/11/2000), Amdt 20 to AN 6/II (02/11/2000), Amdt 7 to AN 6/III (02/11/2000), Amdt 18 to AN 9 (28/11/2000), Amdt 6 to AN 18"""^^xsd:string ;
+  rdfs:label "Flight Crew Member"^^xsd:string ;
+  rdfs:subClassOf :Licensed_Crew_Member ;
+  skos:broader :Crew_Member ;
+  skos:editorialNote "A licensed crew member charged with duties essential to the operation of an aircraft during a flight duty period.   [ICAO]"^^xsd:string ;
+  skos:editorialNote "A pilot, flight engineer, or flight navigator assigned to duty in an aircraft during flight time.  [FAA CERT]"^^xsd:string ;
+  skos:editorialNote "means a pilot, flight engineer, or flight navigator assigned to duty in an aircraft during flight time.  [FAA FAR]"^^xsd:string ;
+  skos:prefLabel "Flight Crew Member"^^xsd:string ;
+.
+:Flight_Personnel
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "MITRE Mitre FAA National Airspace Data Classification Scheme, extracted from \"NAS_clas_final\" on Data Arch CD"^^xsd:string ;
+  rdfs:label "Flight Personnel"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Personnel ;
+  skos:broader :Air_Transportation_Personnel ;
+  skos:definition "The data describing the souls on board the aircraft.  [MITRE]"^^xsd:string ;
+  skos:narrower :Flight_Crew ;
+  skos:prefLabel "Flight Personnel"^^xsd:string ;
+.
+:Government_Employee
+  rdf:type owl:Class ;
+  rdfs:label "Government Employee"^^xsd:string ;
+  rdfs:subClassOf :Employee ;
+  skos:broader :Employee ;
+  skos:narrower :United_States_Government_Employee ;
+  skos:prefLabel "Government Employee"^^xsd:string ;
+.
+:Government_Person_Benefit_Election
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA DATA ARCHITECTURE"^^xsd:string ;
+  rdfs:label "Government Person Benefit Election"^^xsd:string ;
+  rdfs:subClassOf :Employee_Benefit_Election ;
+  skos:definition "A person's chosen benefit terms provided through employment.   [FAA DATA ARCH]"^^xsd:string ;
+  skos:prefLabel "Government Person Benefit Election"^^xsd:string ;
+.
+:Ground_Crew
+  rdf:type owl:Class ;
+  rdfs:label "Ground Crew"^^xsd:string ;
+  rdfs:subClassOf :Crew ;
+  skos:broader :Crew ;
+  skos:broader :Ground_Personnel ;
+  skos:narrower :Ground_Handler ;
+  skos:prefLabel "Ground Crew"^^xsd:string ;
+.
+:Ground_Crew_Member
+  rdf:type owl:Class ;
+  rdfs:label "Ground Crew Member"^^xsd:string ;
+  rdfs:subClassOf :Crew_Member ;
+  skos:broader :Crew_Member ;
+  skos:prefLabel "Ground Crew Member"^^xsd:string ;
+.
+:Ground_Handler
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "EUROCONTROL, ACI, IATA (2010) Airport CDM Implementation Manual, Issue 3.1. July 2010"^^xsd:string ;
+  vaem:acronym "GH"^^xsd:string ;
+  rdfs:label "Ground Handler"^^xsd:string ;
+  rdfs:subClassOf :Ground_Crew ;
+  skos:broader :Ground_Crew ;
+  skos:definition "Company responsible for handling of aircraft during turn-round at the airport.   [EUROCONTROL]"^^xsd:string ;
+  skos:prefLabel "Ground Handler"^^xsd:string ;
+.
+:Ground_Personnel
+  rdf:type owl:Class ;
+  rdfs:label "Ground Personnel"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Personnel ;
+  skos:broader :Air_Transportation_Personnel ;
+  skos:narrower :Ground_Crew ;
+  skos:prefLabel "Ground Personnel"^^xsd:string ;
+.
+:Human_Capital
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Human Capital"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Labor_Market ;
+  skos:definition "Human capital is the education, training, work experience, and other attributes that enhance the ability of the labor force to produce goods and services.   [GAO]"^^xsd:string ;
+  skos:prefLabel "Human Capital"^^xsd:string ;
+.
+:Human_Resources
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "OED http://oxforddictionaries.com/definition/english/human%2Bresources"^^xsd:string ;
+  vaem:acronym "HR"^^xsd:string ;
+  rdfs:label "Human Resources"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Resources ;
+  skos:definition "The personnel of a business or organization, regarded as a significant asset in terms of skills and abilities: the department of a business or organization that deals with the hiring, administration, and training of staff [OED]"^^xsd:string ;
+  skos:hasTopConcept :Resources ;
+  skos:narrower :Labor_Market ;
+  skos:prefLabel "Human Resource"^^xsd:string ;
+.
+:Information_Resource_Personnel
+  rdf:type owl:Class ;
+  rdfs:label "Information Resource Personnel"^^xsd:string ;
+  rdfs:subClassOf :Resource_Personnel ;
+  skos:broader :Resource_Personnel ;
+  skos:narrower :Aeronautical_Information_Personnel ;
+  skos:prefLabel "Information Resource Personnel"^^xsd:string ;
+.
+:Labor_Market
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "BLS http://www.bls.gov/cps/lfcharacteristics.htm#laborforce"^^xsd:string ;
+  dct:bibliographicCitation "BUSINESS http://www.businessdictionary.com/definition/labor-force.html"^^xsd:string ;
+  dct:bibliographicCitation "BUSINESS http://www.businessdictionary.com/definition/labor-market.html"^^xsd:string ;
+  rdfs:label "Labor Market"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:altLabel "Labor Force"^^xsd:string ;
+  skos:broader :Human_Resources ;
+  skos:definition """Labor Force
+1. Number of workers in a firm.
+2. Number of individuals in an economy who either are employed or are seeking employment. [BUSINESS]"""^^xsd:string ;
+  skos:definition "Labor Force: The labor force is the sum of employed and unemployed persons. The labor force participation rate is the labor force as a percent of the civilian noninstitutional population.   [BLS]  "^^xsd:string ;
+  skos:definition """The nominal market in which workers find paying work, employers find willing workers, and wage rates are determined.
+[BUSINESS]"""^^xsd:string ;
+  skos:hasTopConcept :Resources ;
+  skos:narrower :Human_Capital ;
+  skos:narrower :Work_Force ;
+  skos:prefLabel "Labor Market"^^xsd:string ;
+  skos:scopeNote """Labor markets may be local or national (even international) in their scope and are made up of smaller, interacting labor markets for different qualifications, skills, and geographical locations. They depend on exchange of information between employers and job seekers about wagerates, conditions of employment, level of competition, and job location.
+[BUSINESS]"""^^xsd:string ;
+.
+:Licensed_Crew_Member
+  rdf:type owl:Class ;
+  rdfs:label "Licensed Crew Member"^^xsd:string ;
+  rdfs:subClassOf :Crew_Member ;
+  skos:prefLabel "Licensed Crew Member"^^xsd:string ;
+.
+:Line_Position
+  rdf:type owl:Class ;
+  rdfs:label "Line Position"^^xsd:string ;
+  rdfs:subClassOf :Position ;
+  skos:prefLabel "Line Position"^^xsd:string ;
+.
+:Local_Runway_Safety_Team
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "ICAO (2007), Doc 9870 AN/463, Manual on the Prevention of Runway Incursions"^^xsd:string ;
+  vaem:acronym "LRST"^^xsd:string ;
+  rdfs:label "Local Runway Safety Team"^^xsd:string ;
+  rdfs:subClassOf :Runway_Safety_Team ;
+  skos:broader :Runway_Safety_Team ;
+  skos:definition "A team comprised of representatives from aerodrome operations, air traffic services providers, airlines or aircraft operators, pilot and air traffic controllers associations and any other group with a direct involvement in runway operations that advise the appropriate management on the potential runway incursion issues and recommend mitigation strategies.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Local Runway Safety Team"^^xsd:string ;
+.
+:Management_Position
+  rdf:type owl:Class ;
+  rdfs:label "Management Position"^^xsd:string ;
+  rdfs:subClassOf :Position ;
+  skos:broader :Position ;
+  skos:narrower :Transportation_Management_Position ;
+  skos:prefLabel "Management Position"^^xsd:string ;
+.
+:Management_Team
+  rdf:type owl:Class ;
+  rdfs:label "Management Team"^^xsd:string ;
+  rdfs:subClassOf :Team ;
+  skos:broader :Team ;
+  skos:narrower :Certificate_Management_Team ;
+  skos:narrower :Planning_Team ;
+  skos:prefLabel "Management Team"^^xsd:string ;
+.
+:Medical_Personnel
+  rdf:type owl:Class ;
+  rdfs:label "Medical Personnel"^^xsd:string ;
+  rdfs:subClassOf :Personnel ;
+  skos:broader :Personnel ;
+  skos:prefLabel "Medical Personnel"^^xsd:string ;
+.
+:Member
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Member"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass :Consultant ;
+  owl:equivalentClass :Contractor ;
+  owl:equivalentClass :Employee ;
+  skos:broader :Crew ;
+  skos:broader :Staff ;
+  skos:broader :Team ;
+  skos:definition "2 : one of the individuals composing a group   [WEBSTER]"^^xsd:string ;
+  skos:editorialNote "This term and its definition also appears in AT-People ontology."^^xsd:string ;
+  skos:narrower :Crew_Member ;
+  skos:narrower :Team_Member ;
+  skos:prefLabel "Member"^^xsd:string ;
+.
+:Military_Personnel
+  rdf:type owl:Class ;
+  rdfs:label "Military Personnel"^^xsd:string ;
+  rdfs:subClassOf :Defense_Personnel ;
+  skos:broader :Defense_Personnel ;
+  skos:prefLabel "Military Personnel"^^xsd:string ;
+.
+:Organization_Personnel
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA DATA ARCHITECTURE"^^xsd:string ;
+  rdfs:label "Organization Personnel"^^xsd:string ;
+  rdfs:subClassOf :Personnel ;
+  owl:equivalentClass :Personnel ;
+  skos:definition "Designates the assignment of a specific Person to a specific Position within a specific Organization.    [FAA DATA ARCH]"^^xsd:string ;
+  skos:prefLabel "Organization Personnel"^^xsd:string ;
+  skos:related :Personnel ;
+.
+:Organization_Team
+  rdf:type owl:Class ;
+  rdfs:label "Organization Team"^^xsd:string ;
+  rdfs:subClassOf :Team ;
+  skos:broader :Team ;
+  skos:prefLabel "Organization Team"^^xsd:string ;
+.
+:Personnel
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "Merriam Webster 11th Collegiate dictionary"^^xsd:string ;
+  vaem:abbreviation "PRSNL"^^xsd:string ;
+  rdfs:label "Personnel"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:equivalentClass :Organization_Personnel ;
+  skos:broader :Work_Force ;
+  skos:definition "1 a : a body of persons usually employed (as in a factory, office, or organization)  b  personnel plural   : PERSONS      2 : a division of an organization concerned with personnel  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Defense_Personnel ;
+  skos:narrower :Flight_Personnel ;
+  skos:narrower :Ground_Personnel ;
+  skos:narrower :Medical_Personnel ;
+  skos:narrower :Organization_Personnel ;
+  skos:narrower :Personnel_Benefits ;
+  skos:narrower :Personnel_Compensation ;
+  skos:narrower :Resource_Personnel ;
+  skos:narrower :Risk-related_Personnel ;
+  skos:narrower :Safety_Personnel ;
+  skos:narrower :Staff ;
+  skos:narrower :Transportation_Personnel ;
+  skos:prefLabel "Personnel"^^xsd:string ;
+.
+:Personnel_Benefits
+  rdf:type owl:Class ;
+  rdfs:label "Personnel Benefits"^^xsd:string ;
+  rdfs:subClassOf :Personnel ;
+  skos:broader :Personnel ;
+  skos:narrower :Personnel_Compensation_Benefits ;
+  skos:narrower :Personnel_Travel_Benefits ;
+  skos:prefLabel "Personnel Benefits"^^xsd:string ;
+.
+:Personnel_Compensation
+  rdf:type owl:Class ;
+  rdfs:label "Personnel Compensation"^^xsd:string ;
+  rdfs:subClassOf :Personnel ;
+  skos:broader :Personnel ;
+  skos:narrower :Personnel_Compensation_Benefits ;
+  skos:prefLabel "Personnel Compensation"^^xsd:string ;
+.
+:Personnel_Compensation_Benefits
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "PCB"^^xsd:string ;
+  rdfs:label "Personnel Compensation Benefits"^^xsd:string ;
+  rdfs:subClassOf :Personnel_Benefits ;
+  rdfs:subClassOf :Personnel_Compensation ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Personnel_Compensation
+            :Personnel_Benefits
+          ) ;
+      ]
+    ) ;
+  skos:broader :Personnel_Benefits ;
+  skos:broader :Personnel_Compensation ;
+  skos:narrower :Employee_Compensation_Benefit ;
+  skos:prefLabel "Personnel Compensation Benefits"^^xsd:string ;
+.
+:Personnel_Compensation_Benefits_and_Travel
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:abbreviation "PCB&T"^^xsd:string ;
+  vaem:acronym "PCB&T"^^xsd:string ;
+  rdfs:label "Personnel Compensation Benefits and Travel"^^xsd:string ;
+  rdfs:subClassOf :Personnel_Compensation_Benefits ;
+  rdfs:subClassOf :Personnel_Travel_Benefits ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Personnel_Compensation_Benefits
+            :Personnel_Travel_Benefits
+          ) ;
+      ]
+    ) ;
+  owl:unionOf (
+      :Employee_Compensation_and_Travel_Benefit
+    ) ;
+  skos:altLabel "Personnel Compensation Benefits & Travel"^^xsd:string ;
+  skos:broader :Personnel_Compensation_Benefits ;
+  skos:broader :Personnel_Travel_Benefits ;
+  skos:narrower :Employee_Compensation_and_Travel_Benefit ;
+  skos:prefLabel "Personnel Compensation Benefits and Travel"^^xsd:string ;
+.
+:Personnel_Travel_Benefits
+  rdf:type owl:Class ;
+  rdfs:label "Personnel Travel Benefits"^^xsd:string ;
+  rdfs:subClassOf :Personnel_Benefits ;
+  owl:unionOf (
+      :Employee_Travel_Benefit
+    ) ;
+  skos:broader :Personnel_Benefits ;
+  skos:narrower :Personnel_Compensation_Benefits_and_Travel ;
+  skos:prefLabel "Personnel Travel Benefits"^^xsd:string ;
+.
+:Planning_Team
+  rdf:type owl:Class ;
+  rdfs:label "Planning Team"^^xsd:string ;
+  rdfs:subClassOf :Management_Team ;
+  skos:broader :Management_Team ;
+  skos:narrower :Strategic_Planning_Team ;
+  skos:prefLabel "Planning Team"^^xsd:string ;
+.
+:Position
+  rdf:type owl:Class ;
+  dct:references "Organization"^^xsd:string ;
+  rdfs:label "Position"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Staff ;
+  skos:definition "A position is assigned to an organizational unit.  The personnel or human resources department works with each organizational unit to adequately describes a position.  [Proposed]"^^xsd:string ;
+  skos:narrower :Line_Position ;
+  skos:narrower :Management_Position ;
+  skos:narrower :Position_Advertisement ;
+  skos:narrower :Position_Applicant ;
+  skos:narrower :Position_Candidate ;
+  skos:narrower :Position_Classification ;
+  skos:narrower :Position_Compensation ;
+  skos:narrower :Position_Description ;
+  skos:narrower :Staff_Position ;
+  skos:prefLabel "Position"^^xsd:string ;
+  skos:related :Employee ;
+  skos:related :Personnel ;
+  skos:scopeNote "A position description includes the applicable roles and responsbilities to be assume by an prospective employee.  It also includes the knowledge, skills and abilities the prospective employee must or should possess and it also includes a salary range and identifies a normalized career path. [Proposed]"^^xsd:string ;
+.
+:Position_Advertisement
+  rdf:type owl:Class ;
+  rdfs:label "Position Advertisement"^^xsd:string ;
+  rdfs:subClassOf :Position ;
+  skos:broader :Position ;
+  skos:prefLabel "Position Advertisement"^^xsd:string ;
+.
+:Position_Allowance
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA extracted from FAA Order 0000.1G, dated March 14, 2001"^^xsd:string ;
+  dct:subject "Position Classification, Pay, and Allowances"^^xsd:string ;
+  :termTopicFAA "Position Classification, Pay, and Allowances"^^xsd:string ;
+  vaem:hasIdentifier "3500"^^xsd:string ;
+  rdfs:label "Position Allowance"^^xsd:string ;
+  rdfs:subClassOf :Position ;
+  skos:broader :Position ;
+  skos:definition "is a major topic, 3500   [FAA]"^^xsd:string ;
+  skos:prefLabel "Position Allowance"^^xsd:string ;
+.
+:Position_Applicant
+  rdf:type owl:Class ;
+  rdfs:label "Position Applicant"^^xsd:string ;
+  rdfs:subClassOf :Position ;
+  skos:broader :Position ;
+  skos:prefLabel "Position Applicant"^^xsd:string ;
+.
+:Position_Candidate
+  rdf:type owl:Class ;
+  rdfs:label "Position Candidate"^^xsd:string ;
+  rdfs:subClassOf :Position ;
+  skos:broader :Position ;
+  skos:prefLabel "Position Candidate"^^xsd:string ;
+.
+:Position_Classification
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA   extracted from FAA Order 0000.1G, dated March 14, 2001"^^xsd:string ;
+  dct:subject "Position Classification, Pay, and Allowances"^^xsd:string ;
+  :termTopicFAA "Position Classification, Pay, and Allowances"^^xsd:string ;
+  vaem:hasIdentifier "3500"^^xsd:string ;
+  rdfs:label "Position Classification"^^xsd:string ;
+  rdfs:subClassOf :Position ;
+  skos:broader :Position ;
+  skos:definition "is a major topic, 3500   [FAA]"^^xsd:string ;
+  skos:prefLabel "Position Classification"^^xsd:string ;
+.
+:Position_Compensation
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA   extracted from FAA Order 0000.1G, dated March 14, 2001"^^xsd:string ;
+  dct:subject "Position Classification, Pay, and Allowances"^^xsd:string ;
+  :termTopicFAA "Position Classification, Pay, and Allowances"^^xsd:string ;
+  vaem:hasIdentifier "3500"^^xsd:string ;
+  rdfs:label "Position Compensation"^^xsd:string ;
+  rdfs:subClassOf :Position ;
+  skos:altLabel "Position Pay"^^xsd:string ;
+  skos:altLabel "Position Salary"^^xsd:string ;
+  skos:broader :Position ;
+  skos:definition "is a major topic, 3500  [FAA]"^^xsd:string ;
+  skos:prefLabel "Position Compensation"^^xsd:string ;
+.
+:Position_Description
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "US ARMY http://cpol.army.mil/library/permiss/311.html"^^xsd:string ;
+  rdfs:label "Position Description"^^xsd:string ;
+  rdfs:subClassOf :Position ;
+  skos:broader :Position ;
+  skos:definition """The Position Description - commonly referred to as the PD - briefly describes the key or major duties and responsibilities of a position or a number of positions. The primary use of PDs is for classification and pay purposes. However, a PD also serves as the basis for preparing an employee's performance plan/objectives, preparing a formal training plan, or reviewing and evaluating employees' current or prior work experience.
+ 
+Since a supervisor determines work assignments for employees he/she supervises, it follows that he/she should have responsibility for ensuring that job descriptions accurately describe the duties and responsibilities required and performed. Specifically, he/she must consider the following:
+• Mission 
+• Economy and efficiency 
+• Employee motivation 
+• Career development/ladders 
+• Recruitment & retention 
+• A balance of trainees to a full performance level 
+• Productivity 
+ 
+A PD is adequate when it contains sufficient information to determine the title, series and grade of the position. Essential elements include:
+1. Major duties that show the knowledge, skill and ability required to perform significant tasks of the job.
+2. Percentage of time spent on each major duty. 
+3. An unnumbered statement at the end of major duties: \"Performs other duties as assigned.\" This makes it clear that the assignment of duties to employees is not limited by the content of the position description. However, supervisors should avoid assigning employees incidental duties that are inappropriate to their positions and qualifications.  [US ARMY}"""^^xsd:string ;
+  skos:prefLabel "Position Description"^^xsd:string ;
+  skos:scopeNote """PD Format 
+PD's are written in several formats depending on the type of position. PDs must be prepared in the format of the standard used to evaluate the grade controlling work. The following provides information on the various formats in use.
+A. NARRATIVE/TRADITIONAL: 
+◦ I. Supervisory Controls 
+◦ II. Introduction 
+◦ III. Duties and Responsibilities 
+◦ IV. Other Significant Facts 
+◦ V. Evaluation (type of evaluation varies with classification standard used)
+B. FACTOR EVALUATION SYSTEM (FES): 
+1. Major Duties 
+2. Factor Evaluation: 
+■ Factor 1. Knowledge Required by the Position 
+■Factor 2. Supervisory Controls 
+■Factor 3. Guidelines 
+■Factor 4. Complexity 
+■Factor 5. Scope and Effect 
+■Factor 6. Personal Contacts 
+■Factor 7. Purpose of Contacts 
+■Factor 8. Physical Demands 
+■Factor 9. Work Environment 
+
+Factor evaluation must include for each factor the factor level assigned, corresponding points assigned, description of the duties in terms of each factor (justifying the factor level), total points assigned, and resulting grade.  [US ARMY]"""^^xsd:string ;
+.
+:Program_Team
+  rdf:type owl:Class ;
+  rdfs:label "Program Team"^^xsd:string ;
+  rdfs:subClassOf :Team ;
+  skos:broader :Team ;
+  skos:narrower :Project_Team ;
+  skos:prefLabel "Program Team"^^xsd:string ;
+.
+:Project_Team
+  rdf:type owl:Class ;
+  rdfs:label "Project Team"^^xsd:string ;
+  rdfs:subClassOf :Team ;
+  skos:broader :Program_Team ;
+  skos:broader :Team ;
+  skos:definition "is a group of individuals, groups, or organizations who are working towards the same mission, objective, or goal"^^xsd:string ;
+  skos:narrower :Certificate_Project_Team ;
+  skos:prefLabel "Project Team"^^xsd:string ;
+.
+:RPA_Observer
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "ICAO Cir 328 Unmanned AIrcraft System (UAS); Glossary 2011"^^xsd:string ;
+  rdfs:label "RPA Observer"^^xsd:string ;
+  rdfs:subClassOf :Remote_Crew_Member ;
+  skos:altLabel "Remotely-Piloted Aircraft Observer"^^xsd:string ;
+  skos:definition "A remote crew member who, by visual observation of the remotely-piloted aircraft, assists the remote pilot in the safe conduct of the flight.  [ICAO]"^^xsd:string ;
+  skos:prefLabel "RPA Observer"^^xsd:string ;
+.
+:Remote_Crew_Member
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "ICAO Cir 328 Unmanned AIrcraft System (UAS); Glossary 2011"^^xsd:string ;
+  rdfs:label "Remote Crew Member"^^xsd:string ;
+  rdfs:subClassOf :Licensed_Crew_Member ;
+  skos:definition "A licensed crew member charged with duties essential to the operation of a remotely-piloted aircraft, during flight time.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Remote Crew Member"^^xsd:string ;
+.
+:Resource_Personnel
+  rdf:type owl:Class ;
+  rdfs:label "Resource Personnel"^^xsd:string ;
+  rdfs:subClassOf :Personnel ;
+  skos:broader :Personnel ;
+  skos:narrower :Information_Resource_Personnel ;
+  skos:prefLabel "Resource Personnel"^^xsd:string ;
+.
+:Resources
+  rdf:type rdfs:Class ;
+  rdfs:label "Resources"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:narrower :Human_Resources ;
+  skos:prefLabel "Resources"^^xsd:string ;
+.
+:Risk-related_Personnel
+  rdf:type owl:Class ;
+  rdfs:label "Risk-related Personnel"^^xsd:string ;
+  rdfs:subClassOf :Personnel ;
+  skos:broader :Personnel ;
+  skos:narrower :Safety_Personnel ;
+  skos:narrower :Security_Personnel ;
+  skos:prefLabel "Risk-related Personnel"^^xsd:string ;
+.
+:Runway_Safety_Team
+  rdf:type owl:Class ;
+  rdfs:label "Runway Safety Team"^^xsd:string ;
+  rdfs:subClassOf :Aerodrome_Safety_Team ;
+  skos:broader :Aerodrome_Safety_Team ;
+  skos:narrower :Local_Runway_Safety_Team ;
+  skos:prefLabel "Runway Safety Team"^^xsd:string ;
+.
+:Safety-sensitive_Personnel
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "ICAO Annex 2, Rules of the Air"^^xsd:string ;
+  dct:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-492"^^xsd:string ;
+  dct:source """ICAO (AN 2)
+Official definition added to AN 2 by Amdt 34 (05/11/1998)"""^^xsd:string ;
+  rdfs:label "Safety-sensitive Personnel"^^xsd:string ;
+  rdfs:subClassOf :Aviation_Safety_Personnel ;
+  skos:altLabel "Safety-Sensitive Personnel"^^xsd:string ;
+  skos:broader :Aviation_Safety_Personnel ;
+  skos:definition "Persons who might endanger aviation safety if they perform their duties and functions improperly including, but not limited to, crew members, aircraft maintenance personnel and air traffic controllers.  [ICAO]"^^xsd:string ;
+  skos:prefLabel "Safety-sensitive Personnel"^^xsd:string ;
+.
+:Safety_Personnel
+  rdf:type owl:Class ;
+  rdfs:label "Safety Personnel"^^xsd:string ;
+  rdfs:subClassOf :Risk-related_Personnel ;
+  skos:broader :Risk-related_Personnel ;
+  skos:narrower :Aviation_Safety_Personnel ;
+  skos:prefLabel "Safety Personnel"^^xsd:string ;
+.
+:Safety_Team
+  rdf:type owl:Class ;
+  rdfs:label "Safety Team"^^xsd:string ;
+  rdfs:subClassOf :Team ;
+  skos:prefLabel "Safety Team"^^xsd:string ;
+.
+:Security_Personnel
+  rdf:type owl:Class ;
+  rdfs:label "Security Personnel"^^xsd:string ;
+  rdfs:subClassOf :Risk-related_Personnel ;
+  skos:broader :Risk-related_Personnel ;
+  skos:narrower :Aviation_Security_Personnel ;
+  skos:prefLabel "Security Personnel"^^xsd:string ;
+.
+:Sick_Leave
+  rdf:type owl:Class ;
+  rdfs:label "Sick Leave"^^xsd:string ;
+  rdfs:subClassOf :Employee_Leave ;
+  skos:broader :Employee_Leave ;
+  skos:prefLabel "Sick Leave"^^xsd:string ;
+.
+:Staff
+  rdf:type owl:Class ;
+  rdfs:label "Staff"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Personnel ;
+  skos:narrower :Administrative_Staff ;
+  skos:narrower :Employee ;
+  skos:narrower :Position ;
+  skos:narrower :Support_Staff ;
+  skos:narrower :Technical_Staff ;
+  skos:prefLabel "Staff"^^xsd:string ;
+.
+:Staff_Member
+  rdf:type owl:Class ;
+  rdfs:label "Staff Member"^^xsd:string ;
+  rdfs:subClassOf :Member ;
+  skos:broader :Member ;
+  skos:broader :Staff ;
+  skos:prefLabel "Staff Member"^^xsd:string ;
+.
+:Staff_Position
+  rdf:type owl:Class ;
+  rdfs:label "Staff Position"^^xsd:string ;
+  rdfs:subClassOf :Position ;
+  skos:broader :Position ;
+  skos:prefLabel "Staff Position"^^xsd:string ;
+.
+:Strategic_Planning_Team
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA    http://www.fly.faa.gov/ASDI/asdidocs/aircraft_types_definitions.txt"^^xsd:string ;
+  dct:bibliographicCitation "Section 9 - Glossary, TFM Functional Audit Report - Final, November 2002"^^xsd:string ;
+  vaem:acronym "SPT"^^xsd:string ;
+  rdfs:label "Strategic Planning Team"^^xsd:string ;
+  rdfs:subClassOf :Planning_Team ;
+  skos:broader :Planning_Team ;
+  skos:definition "The Strategic Planning Team acts as a focal point for the development of collaborative Strategic Plans of Operation. Their goal is to provide advanced planning information for system users and air traffic facilities in order to maximize the utilization of the NAS in an organized and equitable manner.  [FAA]"^^xsd:string ;
+  skos:prefLabel "Strategic Planning Team"^^xsd:string ;
+.
+:Support_Staff
+  rdf:type owl:Class ;
+  rdfs:label "Support Staff"^^xsd:string ;
+  rdfs:subClassOf :Staff ;
+  skos:broader :Staff ;
+  skos:prefLabel "Support Staff"^^xsd:string ;
+.
+:Systems_Analysis_Team
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "FAA  extracted from 'Work Activity Party Role Type\" in FAA Data Architecture"^^xsd:string ;
+  rdfs:label "Systems Analysis Team"^^xsd:string ;
+  rdfs:subClassOf :Analysis_Team ;
+  skos:broader :Analysis_Team ;
+  skos:editorialNote "is a role in a Work Activity Involved Party  [FAA]"^^xsd:string ;
+  skos:prefLabel "Systems Analysis Team"^^xsd:string ;
+.
+:Task_Force
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "OED  based on definition from OED [Oxford English Dictionary]"^^xsd:string ;
+  rdfs:label "Task Force"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Team ;
+  skos:definition "GROUP of PEOPLE or RESOURCES specifically organized for a particular (especially military) TASK   [OED]"^^xsd:string ;
+  skos:narrower :Member ;
+  skos:prefLabel "Task Force"^^xsd:string ;
+.
+:Team
+  rdf:type owl:Class ;
+  rdfs:label "Team"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Work_Force ;
+  skos:definition "is a group of individuals, groups, or organizations who are working towards the same mission, objective, or goal   [PROPOSED]"^^xsd:string ;
+  skos:narrower :Analysis_Team ;
+  skos:narrower :Facility_Team ;
+  skos:narrower :Management_Team ;
+  skos:narrower :Organization_Team ;
+  skos:narrower :Program_Team ;
+  skos:narrower :Task_Force ;
+  skos:narrower :Team_Member ;
+  skos:prefLabel "Team"^^xsd:string ;
+.
+:Team_Member
+  rdf:type owl:Class ;
+  rdfs:label "Team Member"^^xsd:string ;
+  rdfs:subClassOf :Member ;
+  skos:altLabel "Teammate"^^xsd:string ;
+  skos:broader :Member ;
+  skos:broader :Team ;
+  skos:prefLabel "Team Member"^^xsd:string ;
+.
+:Technical_Staff
+  rdf:type owl:Class ;
+  rdfs:label "Technical Staff"^^xsd:string ;
+  rdfs:subClassOf :Staff ;
+  skos:broader :Staff ;
+  skos:prefLabel "Technical Staff"^^xsd:string ;
+.
+:Transportation_Employee
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Employee"^^xsd:string ;
+  rdfs:subClassOf :Employee ;
+  skos:broader :Employee ;
+  skos:narrower :Air_Transportation_Employee ;
+  skos:narrower :Department_of_Transportation_Employee ;
+  skos:prefLabel "Transportation Employee"^^xsd:string ;
+.
+:Transportation_Management_Position
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Management Position"^^xsd:string ;
+  rdfs:subClassOf :Management_Position ;
+  skos:broader :Management_Position ;
+  skos:narrower :Air_Transportation_Management_Position ;
+  skos:prefLabel "Transportation Management Position"^^xsd:string ;
+.
+:Transportation_Personnel
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Personnel"^^xsd:string ;
+  rdfs:subClassOf :Personnel ;
+  skos:broader :Personnel ;
+  skos:narrower :Air_Transportation_Personnel ;
+  skos:prefLabel "Transportation Personnel"^^xsd:string ;
+.
+:Transportation_Work_Force
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Work Force"^^xsd:string ;
+  rdfs:subClassOf :Work_Force ;
+  skos:broader :Work_Force ;
+  skos:narrower :Air_Transportation_Work_Force ;
+  skos:prefLabel "Transportation Work Force"^^xsd:string ;
+.
+:United_States_Government_Employee
+  rdf:type owl:Class ;
+  rdfs:label "United States Government Employee"^^xsd:string ;
+  rdfs:subClassOf :Government_Employee ;
+  skos:altLabel "U. S. Government Employee"^^xsd:string ;
+  skos:altLabel "US Government Employee"^^xsd:string ;
+  skos:broader :Government_Employee ;
+  skos:narrower :Department_of_Transportation_Employee ;
+  skos:prefLabel "United States Government Employee"^^xsd:string ;
+.
+:Work_Force
+  rdf:type owl:Class ;
+  dct:bibliographicCitation "OED  Oxford English Dictionary: Advanced Learner's dictionary"^^xsd:string ;
+  rdfs:label "Work Force"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:altLabel "Workforce"^^xsd:string ;
+  skos:broader :Labor_Market ;
+  skos:definition "total number of workers employed (e.g., in a factory) or available for work [OED]"^^xsd:string ;
+  skos:narrower :Crew ;
+  skos:narrower :Personnel ;
+  skos:narrower :Staff ;
+  skos:narrower :Team ;
+  skos:prefLabel "Work Force"^^xsd:string ;
+.
+:Work_Force_Diversity
+  rdf:type owl:Class ;
+  rdfs:label "Work Force Diversity"^^xsd:string ;
+  rdfs:subClassOf :Work_Force ;
+  skos:altLabel "Workforce Diversity"^^xsd:string ;
+  skos:prefLabel "Work Force Diversity"^^xsd:string ;
+.
+:termSubject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "Term Subject"^^xsd:string ;
+  rdfs:subPropertyOf dct:subject ;
+  skos:prefLabel "Term Subject"^^xsd:string ;
+.
+:termSubjectFAA
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "FAA Term Subject"^^xsd:string ;
+  rdfs:subPropertyOf :termSubject ;
+  skos:prefLabel "FAA Term Subject"^^xsd:string ;
+.
+:termTopic
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "Term Topic"^^xsd:string ;
+  rdfs:subPropertyOf :termSubject ;
+  skos:prefLabel "Term Topic"^^xsd:string ;
+.
+:termTopicFAA
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "FAA Term Topic"^^xsd:string ;
+  rdfs:subPropertyOf :termTopic ;
+  skos:prefLabel "FAA Term Topic"^^xsd:string ;
+.

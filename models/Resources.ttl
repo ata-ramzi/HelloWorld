@@ -1,0 +1,136 @@
+# baseURI: http://www.faa.gov/DRS/Resources
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.faa.gov/DRS/Aircraft
+# imports: http://www.faa.gov/DRS/Atmosphere-Airspace
+# imports: http://www.faa.gov/DRS/Financial_Resources
+# imports: http://www.faa.gov/DRS/Human_Resources
+# imports: http://www.faa.gov/DRS/Information_Resources
+# imports: http://www.faa.gov/DRS/Landcraft
+# imports: http://www.faa.gov/DRS/Physical_Resources
+# imports: http://www.faa.gov/DRS/Spacecraft
+# imports: http://www.faa.gov/DRS/Watercraft
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://www.faa.gov/DRS/Resources#> .
+@prefix Financial_Resources: <http://www.faa.gov/DRS/Financial_Resources#> .
+@prefix HumanResource: <http://www.faa.gov/DRS/Human_Resources#> .
+@prefix Information_Resources: <http://www.faa.gov/DRS/Information_Resources#> .
+@prefix Physical_Resource: <http://www.faa.gov/DRS/Physical_Resources#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.faa.gov/DRS/Aircraft#Electronic_Flight_Bag>
+  owl:equivalentClass Physical_Resource:Electronic_Flight_Bag ;
+  skos:related Physical_Resource:Electronic_Flight_Bag ;
+.
+<http://www.faa.gov/DRS/Aircraft#Portable_Electronic_Device>
+  owl:equivalentClass <http://www.faa.gov/DRS/Systems#Portable_Electronic_Device> ;
+  skos:related <http://www.faa.gov/DRS/Systems#Portable_Electronic_Device> ;
+.
+Financial_Resources:Financial_Resources
+  skos:hasTopConcept :Resources ;
+.
+Financial_Resources:Resources
+  owl:equivalentClass :Resources ;
+  skos:broader :Resources ;
+  skos:topConceptOf :Resources ;
+.
+HumanResource:Human_Resources
+  skos:hasTopConcept :Resources ;
+.
+HumanResource:Resources
+  owl:equivalentClass :Resources ;
+  skos:broader :Resources ;
+  skos:topConceptOf :Resources ;
+.
+Information_Resources:Information
+  skos:hasTopConcept :Resources ;
+.
+Information_Resources:Information_Resources
+  owl:equivalentClass :Resources ;
+  skos:hasTopConcept :Resources ;
+.
+Information_Resources:Resources
+  skos:broader :Resources ;
+.
+<http://www.faa.gov/DRS/Infrastructure#Resources>
+  owl:equivalentClass <http://www.faa.gov/DRS/Infrastructure#Resources> ;
+  skos:broader :Resources ;
+  skos:topConceptOf :Resources ;
+.
+Physical_Resource:Physical_Resources
+  skos:hasTopConcept :Resources ;
+.
+Physical_Resource:Resources
+  owl:equivalentClass :Resources ;
+  skos:broader :Resources ;
+  skos:topConceptOf :Resources ;
+.
+<http://www.faa.gov/DRS/Resources>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dcterms: ;
+  owl:imports <http://www.faa.gov/DRS/Aircraft> ;
+  owl:imports <http://www.faa.gov/DRS/Atmosphere-Airspace> ;
+  owl:imports <http://www.faa.gov/DRS/Financial_Resources> ;
+  owl:imports <http://www.faa.gov/DRS/Human_Resources> ;
+  owl:imports <http://www.faa.gov/DRS/Information_Resources> ;
+  owl:imports <http://www.faa.gov/DRS/Landcraft> ;
+  owl:imports <http://www.faa.gov/DRS/Physical_Resources> ;
+  owl:imports <http://www.faa.gov/DRS/Spacecraft> ;
+  owl:imports <http://www.faa.gov/DRS/Watercraft> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Resource
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "OASIS, Reference Model for Service Oriented Architecture 1.0, Public Review Draft, 28 April 2008, Chapter 4.4.3.1."^^xsd:string ;
+  dcterms:bibliographicCitation "SESAR  Extracted from SESAR website on July 26, 2011"^^xsd:string ;
+  dcterms:source """OASIS, Reference Model for Service Oriented Architecture 1.0, Public Review Draft, 28 April 2008,
+Chapter 4.4.3.1"""^^xsd:string ;
+  rdfs:label "Resource"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition """1 a : a source of supply or support : an available means  usually used in plural b : a natural source of wealth or revenue  often used in plural c : a natural feature or phenomenon that enhances the quality of human life d : computable wealth  usually used in plural e : a source of information or expertise 
+2 : something to which one has recourse in difficulty : EXPEDIENT 
+3 : a possibility of relief or recovery 
+4 : a means of spending one's leisure time 
+5 : an ability to meet and handle a situation : RESOURCEFULNESS   [WEBSTER]"""^^xsd:string ;
+  skos:definition "any entity of some perceived value.    [OASIS]  [SESAR]"^^xsd:string ;
+  skos:prefLabel "Resource"^^xsd:string ;
+.
+:Resources
+  rdf:type owl:Class ;
+  rdfs:label "Resources"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Resource
+    ) ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            Financial_Resources:Financial_Resources
+            HumanResource:Human_Resources
+            Information_Resources:Information_Resources
+            Physical_Resource:Physical_Resources
+            Information_Resources:Resources
+          ) ;
+      ]
+    ) ;
+  skos:narrower Financial_Resources:Financial_Resources ;
+  skos:narrower HumanResource:Human_Resources ;
+  skos:narrower Information_Resources:Information_Resources ;
+  skos:narrower Information_Resources:Resources ;
+  skos:narrower Physical_Resource:Physical_Resources ;
+  skos:prefLabel "Resources"^^xsd:string ;
+.

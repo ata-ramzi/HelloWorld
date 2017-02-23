@@ -1,0 +1,272 @@
+# baseURI: null
+
+@prefix composite: <http://www.topbraid.org/2007/05/composite.owl#> .
+@prefix forms: <http://www.topbraid.org/2007/01/forms.owl#> .
+@prefix inference: <http://www.topbraid.org/2007/06/inference.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix visual: <http://topbraid.org/visual#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.faa.gov/DRS/Aircraft#AIRBUS_A300B4-203>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/goodrelations/v1#hasMakeAndModel>
+      <http://www.linkedmodel.org/schema/vaem#hasIdentifier>
+      <http://purl.org/goodrelations/v1#serialNumber>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Aircraft#AIRBUS_A300B4-605R>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/goodrelations/v1#hasMakeAndModel>
+      rdfs:comment
+      <http://www.linkedmodel.org/schema/vaem#hasIdentifier>
+      <http://purl.org/goodrelations/v1#serialNumber>
+    ) ;
+.
+<http://www.faa.gov/DRS/Aircraft#AIRBUS_A310-324>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/goodrelations/v1#hasMakeAndModel>
+      <http://purl.org/goodrelations/v1#serialNumber>
+      <http://www.linkedmodel.org/schema/vaem#hasIdentifier>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Aircraft#AIRBUS_A320-211>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/goodrelations/v1#hasMakeAndModel>
+      <http://purl.org/goodrelations/v1#serialNumber>
+      <http://www.linkedmodel.org/schema/vaem#hasIdentifier>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Aircraft#AIRBUS_A320-214>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/goodrelations/v1#hasMakeAndModel>
+      <http://purl.org/goodrelations/v1#serialNumber>
+      <http://www.linkedmodel.org/schema/vaem#hasIdentifier>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Aircraft#Aircraft_Engine_Model>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/goodrelations/v1#serialNumber>
+      <http://www.linkedmodel.org/schema/vaem#hasIdentifier>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Aircraft#Airplane_Make-Model>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/goodrelations/v1#hasMakeAndModel>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Aircraft#MITSUBISHI_MU2B-20>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/goodrelations/v1#hasMakeAndModel>
+      <http://www.linkedmodel.org/schema/vaem#hasIdentifier>
+      rdfs:comment
+      <http://purl.org/goodrelations/v1#serialNumber>
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Advisory_Circular>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Circular>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#FSIMS_Order_Chapter>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#FSIMS_Order_Section>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#FSIMS_Order_Volume>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Handbook>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Legislation#Advisory_Circular>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Legislation#CFR_Part>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Legislation#Certification_Regulation>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Legislation#Maintenance_Airworthiness_Regulation>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Legislation#Recurrent_Airworthiness_Regulation>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Legislation#Role-based_Certification_Regulation>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Legislation#Special_Federal_Aviation_Regulation>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/People#Aircraft_Engine_Manufacturing_Organization>
+  forms:keyProperties (
+      rdfs:label
+      <http://www.geonames.org/ontology#locatedIn>
+      <http://www.w3.org/2006/vcard/ns#role>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Roles#Conveyance_Manufacturer>
+  forms:keyProperties (
+      rdfs:label
+      <http://www.w3.org/2006/vcard/ns#role>
+      rdfs:comment
+    ) ;
+.
+[
+  rdf:type forms:Form ;
+  forms:parentOf [
+      rdf:type forms:Section ;
+      forms:childIndex "0" ;
+      forms:parentOf [
+          rdf:type forms:PropertyWidgetGroup ;
+          forms:childIndex "0" ;
+          forms:predicateType owl:AnnotationProperty ;
+        ] ;
+      rdfs:label "Annotations" ;
+    ] ;
+  forms:parentOf [
+      rdf:type forms:Section ;
+      forms:childIndex "1" ;
+      forms:parentOf [
+          rdf:type forms:PropertyWidget ;
+          forms:childIndex "0" ;
+          forms:predicate rdfs:subClassOf ;
+        ] ;
+      forms:parentOf [
+          rdf:type forms:PropertyWidget ;
+          forms:childIndex 1 ;
+          forms:predicate <http://spinrdf.org/spin#constraint> ;
+        ] ;
+      forms:parentOf [
+          rdf:type forms:PropertyWidget ;
+          forms:childIndex 2 ;
+          forms:predicate <http://spinrdf.org/spin#constructor> ;
+        ] ;
+      forms:parentOf [
+          rdf:type forms:PropertyWidget ;
+          forms:childIndex 3 ;
+          forms:predicate <http://spinrdf.org/spin#rule> ;
+        ] ;
+      forms:parentOf [
+          rdf:type forms:PropertyWidget ;
+          forms:childIndex "4" ;
+          forms:predicate owl:equivalentClass ;
+        ] ;
+      forms:parentOf [
+          rdf:type forms:PropertyWidget ;
+          forms:childIndex "5" ;
+          forms:predicate owl:disjointWith ;
+        ] ;
+      forms:parentOf [
+          rdf:type forms:PropertyWidget ;
+          forms:childIndex "6" ;
+          forms:hiddenIfNoValue "true" ;
+          forms:predicate owl:complementOf ;
+        ] ;
+      forms:parentOf [
+          rdf:type forms:PropertyWidget ;
+          forms:childIndex "7" ;
+          forms:hiddenIfNoValue "true" ;
+          forms:predicate owl:intersectionOf ;
+        ] ;
+      forms:parentOf [
+          rdf:type forms:PropertyWidget ;
+          forms:childIndex "8" ;
+          forms:hiddenIfNoValue "true" ;
+          forms:predicate owl:oneOf ;
+        ] ;
+      forms:parentOf [
+          rdf:type forms:PropertyWidget ;
+          forms:childIndex "9" ;
+          forms:hiddenIfNoValue "true" ;
+          forms:predicate owl:unionOf ;
+        ] ;
+      rdfs:label "Class Axioms" ;
+    ] ;
+  forms:parentOf [
+      rdf:type forms:Section ;
+      forms:childIndex "2" ;
+      forms:collapsed "true" ;
+      forms:parentOf [
+          rdf:type forms:PropertyWidgetGroup ;
+          forms:childIndex "0" ;
+          forms:predicateType rdf:Property ;
+        ] ;
+      rdfs:label "Other Properties" ;
+    ] ;
+  forms:subjectType <http://www.faa.gov/DRS/Aircraft#Aircraft_Type_Not_Listed_in_DB_Special_Designator> ;
+  forms:useDomain "true" ;
+  rdfs:label "Class Form" ;
+].

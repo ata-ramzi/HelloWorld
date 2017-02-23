@@ -1,0 +1,1621 @@
+# baseURI: http://www.faa.gov/DRS/Agreements
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://www.faa.gov/DRS/Agreements#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.faa.gov/DRS/Agreements>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dcterms: ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Activity-related_Convention
+  rdf:type owl:Class ;
+  rdfs:label "Activity-related Convention"^^xsd:string ;
+  rdfs:subClassOf :Convention ;
+  skos:broader :Convention ;
+  skos:prefLabel "Activity-related Convention"^^xsd:string ;
+.
+:Activity-related_License
+  rdf:type owl:Class ;
+  rdfs:label "Activity-related License"^^xsd:string ;
+  rdfs:subClassOf :License ;
+  skos:broader :License ;
+  skos:prefLabel "Activity-related License"^^xsd:string ;
+.
+:Activity-related_Right
+  rdf:type owl:Class ;
+  rdfs:label "Activity-related Right"^^xsd:string ;
+  rdfs:subClassOf :Right ;
+  skos:broader :Right ;
+  skos:prefLabel "Activity-related Right"^^xsd:string ;
+.
+:Activity_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Activity Agreement"^^xsd:string ;
+  rdfs:subClassOf :Agreement ;
+  skos:broader :Activity_Agreements ;
+  skos:broader :Agreement ;
+  skos:narrower :Communications_Agreement ;
+  skos:narrower :Development_Agreement ;
+  skos:narrower :Management_Agreement ;
+  skos:narrower :Navigation_Agreement ;
+  skos:narrower :Research_Agreement ;
+  skos:narrower :Service_Agreement ;
+  skos:narrower :Surveillance_Agreement ;
+  skos:narrower :Transportation_Agreement ;
+  skos:prefLabel "Activity Agreement"^^xsd:string ;
+.
+:Activity_Agreements
+  rdf:type owl:Class ;
+  rdfs:label "Activity Agreements"^^xsd:string ;
+  rdfs:subClassOf :Agreements ;
+  owl:unionOf (
+      :Activity_Agreement
+    ) ;
+  skos:broader :Agreements ;
+  skos:narrower :Activity_Agreement ;
+  skos:prefLabel "Activity Agreements"^^xsd:string ;
+.
+:Activity_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Activity Contract"^^xsd:string ;
+  rdfs:subClassOf :Contract ;
+  skos:broader :Contract ;
+  skos:narrower :Implementation_Contract ;
+  skos:narrower :Service_Contract ;
+  skos:narrower :Support_Contract ;
+  skos:prefLabel "Activity Contract"^^xsd:string ;
+.
+:Agreement
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Agreement"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Compact
+            :Treaty
+            :Contract
+          ) ;
+      ]
+    ) ;
+  skos:broader :Agreements ;
+  skos:definition """1 a : the act or fact of agreeing b : harmony of opinion, action, or character : CONCORD 
+2 a : an arrangement as to a course of action b : COMPACT, TREATY 
+3 a : a contract duly executed and legally binding b : the language or instrument embodying such a contract   [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Activity_Agreement ;
+  skos:narrower :Compact ;
+  skos:narrower :Covenant ;
+  skos:narrower :Inter-Agency_Agreement ;
+  skos:narrower :International_Agreement ;
+  skos:narrower :Offer ;
+  skos:narrower :Resource_Agreement ;
+  skos:narrower :Service_Agreement ;
+  skos:narrower :Treaty ;
+  skos:prefLabel "Agreement"^^xsd:string ;
+.
+:Agreements
+  rdf:type owl:Class ;
+  rdfs:label "Agreements"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Agreement
+    ) ;
+  skos:broader :Explanation ;
+  skos:hasTopConcept :Explanation ;
+  skos:narrower :Activity_Agreements ;
+  skos:narrower :Agreement ;
+  skos:narrower :Compacts ;
+  skos:narrower :Covenants ;
+  skos:narrower :International_Agreements ;
+  skos:narrower :Resource_Agreements ;
+  skos:narrower :Service_Agreements ;
+  skos:prefLabel "Agreements"^^xsd:string ;
+.
+:Air_Navigation_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Air Navigation Agreement"^^xsd:string ;
+  rdfs:subClassOf :Navigation_Agreement ;
+  skos:broader :Navigation_Agreement ;
+  skos:narrower :Regional_Air_Navigation_Agreement ;
+  skos:prefLabel "Air Navigation Agreement"^^xsd:string ;
+.
+:Air_Transport_Operation_Right
+  rdf:type owl:Class ;
+  rdfs:label "Air Transport Operation Right"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Right ;
+  skos:broader :Air_Transportation_Right ;
+  skos:prefLabel "Air Transport Operation Right"^^xsd:string ;
+.
+:Air_Transportation_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Agreement"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Agreement ;
+  skos:broader :Transportation_Agreement ;
+  skos:prefLabel "Air Transportation Agreement"^^xsd:string ;
+.
+:Air_Transportation_Convention
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Convention"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Convention ;
+  skos:broader :Transportation_Convention ;
+  skos:prefLabel "Air Transportation Convention"^^xsd:string ;
+.
+:Air_Transportation_License
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation License"^^xsd:string ;
+  rdfs:subClassOf :Transportation_License ;
+  skos:broader :Transportation_License ;
+  skos:prefLabel "Air Transportation License"^^xsd:string ;
+.
+:Air_Transportation_Right
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Right"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Right ;
+  skos:broader :Transportation_Right ;
+  skos:prefLabel "Air Transportation Right"^^xsd:string ;
+.
+:Aircraft_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft Contract"^^xsd:string ;
+  rdfs:subClassOf :Conveyance_Contract ;
+  skos:broader :Conveyance_Contract ;
+  skos:prefLabel "Aircraft Contract"^^xsd:string ;
+.
+:Aircraft_Lease
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft Lease"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_Contract ;
+  rdfs:subClassOf :Conveyance_Lease ;
+  skos:broader :Aircraft_Contract ;
+  skos:broader :Conveyance_Lease ;
+  skos:prefLabel "Aircraft Lease"^^xsd:string ;
+.
+:Aircraft_License
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft License"^^xsd:string ;
+  rdfs:subClassOf :Conveyance_License ;
+  skos:broader :Conveyance_License ;
+  skos:prefLabel "Aircraft License"^^xsd:string ;
+.
+:Aircraft_Manufacturer_License
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft Manufacturer License"^^xsd:string ;
+  rdfs:subClassOf :Manufacturer_License ;
+  skos:broader :Manufacturer_License ;
+  skos:prefLabel "Aircraft Manufacturer License"^^xsd:string ;
+.
+:Aircraft_Part_License
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft Part License"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_License ;
+  rdfs:subClassOf :Part_License ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Aircraft_License
+            :Part_License
+          ) ;
+      ]
+    ) ;
+  skos:broader :Aircraft_License ;
+  skos:broader :Part_License ;
+  skos:prefLabel "Aircraft Part License"^^xsd:string ;
+.
+:Aircraft_Part_Manufacturer_License
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft Part Manufacturer License"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_Manufacturer_License ;
+  rdfs:subClassOf :Aircraft_Part_License ;
+  rdfs:subClassOf :Parts_Manufacturer_License ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Aircraft_Manufacturer_License
+            :Aircraft_Part_License
+            :Parts_Manufacturer_License
+          ) ;
+      ]
+    ) ;
+  skos:broader :Aircraft_Manufacturer_License ;
+  skos:broader :Aircraft_Part_License ;
+  skos:broader :Parts_Manufacturer_License ;
+  skos:prefLabel "Aircraft Part Manufacturer License"^^xsd:string ;
+.
+:Aircraft_Purchase_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Aircraft Purchase Contract"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_Contract ;
+  skos:broader :Aircraft_Contract ;
+  skos:prefLabel "Aircraft Purchase Contract"^^xsd:string ;
+.
+:Airspace_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Airspace Contract"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Contract ;
+  skos:broader :Infrastructure_Contract ;
+  skos:narrower :National_Airspace_Contract ;
+  skos:prefLabel "Airspace Contract"^^xsd:string ;
+.
+:Airspace_Right
+  rdf:type owl:Class ;
+  rdfs:label "Airspace Right"^^xsd:string ;
+  rdfs:subClassOf :Atmosphere_Right ;
+  rdfs:subClassOf :Infrastructure_Right ;
+  skos:broader :Atmosphere_Right ;
+  skos:broader :Infrastructure_Right ;
+  skos:prefLabel "Airspace Right"^^xsd:string ;
+.
+:Amendment
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Amendment"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Agreements ;
+  skos:definition """1 : the act of amending : CORRECTION 
+...
+3 a : the process of amending by parliamentary or constitutional procedure b : an alteration proposed or effected by this process <a constitutional amendment>  [WEBSTER]"""^^xsd:string ;
+  skos:definition "In legislation. A modification or alteration proposed to be made in a bill on its passage, or an enacted law; also such modification or change when made. Brake v. Callison (C. C.) 122 Fed. 722.  {BLACK'S LAW]"^^xsd:string ;
+  skos:prefLabel "Amendment"^^xsd:string ;
+  skos:scopeNote "This \"Amendment\" is about modifications of existing Agreements.  Refer to the Activities ontology to see Amendment pertaining to the process of amending a legal instrument.  Refer to Legislation ontology to see Amendments pertaining to Legislation (e.g., Regulations, Rules)."^^xsd:string ;
+.
+:Article
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Article"^^xsd:string ;
+  rdfs:subClassOf :Stipulation ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Stipulation ;
+  skos:definition "1 ...b : a separate clause c : a stipulation in a document (as a contract or a creed) <articles of indenture>   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Article"^^xsd:string ;
+.
+:Atmosphere_Right
+  rdf:type owl:Class ;
+  rdfs:label "Atmosphere Right"^^xsd:string ;
+  rdfs:subClassOf :Environmental_Right ;
+  skos:broader :Environmental_Right ;
+  skos:prefLabel "Atmosphere Right"^^xsd:string ;
+.
+:Automatic_Dependent_Surveillance-Contract_Agreement
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Annex 11, Air Traffic Services"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Annex 2, Rules of the Air"^^xsd:string ;
+  rdfs:label "Automatic Dependent Surveillance-Contract Agreement "^^xsd:string ;
+  rdfs:subClassOf :Automatic_Dependent_Surveillance_Agreement ;
+  skos:altLabel "ADS-C Agreement"^^xsd:string ;
+  skos:broader :Automatic_Dependent_Surveillance_Agreement ;
+  skos:definition "A reporting plan which establishes the conditions of ADS-C data reporting (i.e. data required by the air traffic services unit and frequency of ADS-C reports which have to be agreed to prior to using ADS-C in the provision of air traffic services).   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Automatic Dependent Surveillance-Contract Agreement "^^xsd:string ;
+.
+:Automatic_Dependent_Surveillance_Agreement
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-22"^^xsd:string ;
+  dcterms:source "ICAO  (AN 2; PANS-ATM)  Official definition added to AN 2 by Amdt 34 (05/11/1998)"^^xsd:string ;
+  vaem:abbreviation "ADS Agreement"^^xsd:string ;
+  rdfs:label "Automatic Dependent Surveillance Agreement"^^xsd:string ;
+  rdfs:subClassOf :Surveillance_Agreement ;
+  skos:broader :Surveillance_Agreement ;
+  skos:definition "An ADS reporting plan which establishes the conditions of ADS data reporting (i.e. data required by the air traffic services unit and frequency of ADS reports which have to be agreed to prior to the provision of the ADS services).    [ICAO]"^^xsd:string ;
+  skos:narrower :Automatic_Dependent_Surveillance-Contract_Agreement ;
+  skos:prefLabel "Automatic Dependent Surveillance Agreement"^^xsd:string ;
+  skos:scopeNote "The terms of the agreement will be exchanged between the ground system and the aircraft by means of a contract, or a series of contracts.   [ICAO]"^^xsd:string ;
+.
+:Aviation_Convention
+  rdf:type owl:Class ;
+  rdfs:label "Aviation Convention"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Convention ;
+  skos:broader :Air_Transportation_Convention ;
+  skos:prefLabel "Aviation Convention"^^xsd:string ;
+.
+:Aviation_Right
+  rdf:type owl:Class ;
+  rdfs:label "Aviation Right"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Right ;
+  skos:broader :Air_Transportation_Right ;
+  skos:prefLabel "Aviation Right"^^xsd:string ;
+.
+:Bilateral_Agreement
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA Order 8130.2H  Airworthiness Certification of Products and Articles; 9/7/2012"^^xsd:string ;
+  rdfs:label "Bilateral Agreement"^^xsd:string ;
+  rdfs:subClassOf :International_Agreement ;
+  skos:broader :International_Agreement ;
+  skos:definition "The term “bilateral agreement” means an executive agreement between the U.S. Government and the government of another country which facilitates the airworthiness approval or acceptance of civil aeronautical products exported from one country (contracting state) to the other. [FAA Order 8130.2H]"^^xsd:string ;
+  skos:narrower :Civil_Aeronautical_Products_Bilateral_Agreement ;
+  skos:prefLabel "Bilateral Agreement"^^xsd:string ;
+  skos:scopeNote "These agreements are intended to provide a framework for the airworthiness authority of the importing country to give maximum practicable credit to airworthiness certification functions performed by the airworthiness authority of the exporting country using its own certification system.   [FAA Order 8130.2H]"^^xsd:string ;
+  skos:scopeNote "These agreements are not trade agreements, but rather technical cooperation agreements. [FAA Order 8130.2H]"^^xsd:string ;
+.
+:Bilateral_Interface_Agreement
+  rdf:type owl:Class ;
+  :businessRuleNote "This agreement defines a number of features which are mandatory and optional with this specification and may include commercial restrictions concerning the proprietary nature of the data.  [AIDX 3.0]"^^xsd:string ;
+  rdfs:label "Bilateral Interface Agreement"^^xsd:string ;
+  rdfs:subClassOf :Communications_Agreement ;
+  skos:broader :Communications_Agreement ;
+  skos:definition "A documented agreement made between the sender and the receiver prior to the live operation of each message interface."^^xsd:string ;
+  skos:prefLabel "Bilateral Interface Agreement"^^xsd:string ;
+.
+:Bond
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Bond"^^xsd:string ;
+  rdfs:subClassOf :Covenant ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Covenant ;
+  skos:definition """2 : a binding agreement : COVENANT 
+3 a : a band or cord used to tie someth  [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Bond"^^xsd:string ;
+.
+:Building_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Building Contract"^^xsd:string ;
+  rdfs:subClassOf :Structure_Contract ;
+  skos:broader :Structure_Contract ;
+  skos:prefLabel "Building Contract"^^xsd:string ;
+.
+:Building_Lease
+  rdf:type owl:Class ;
+  rdfs:label "Building Lease"^^xsd:string ;
+  rdfs:subClassOf :Building_Contract ;
+  rdfs:subClassOf :Structure_Lease ;
+  skos:broader :Building_Contract ;
+  skos:broader :Structure_Lease ;
+  skos:prefLabel "Building Lease"^^xsd:string ;
+.
+:Civil_Aeronautical_Products_Bilateral_Agreement
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA 8130.2H  Airworthiness Certification of Products and Articles, Appendix G; 2/14/2015"^^xsd:string ;
+  rdfs:label "Civil Aeronautical Products Bilateral Agreement"^^xsd:string ;
+  rdfs:subClassOf :Bilateral_Agreement ;
+  owl:disjointWith :Trade_Agreement ;
+  skos:altLabel "Aeronautical Products Bilateral Agreement"^^xsd:string ;
+  skos:altLabel "Bilateral Agreement"^^xsd:string ;
+  skos:broader :Bilateral_Agreement ;
+  skos:definition "The term 'bilateral agreement' means an executive agreement between the U.S. Government and the government of another country which facilitates the airworthiness approval or acceptance of civil aeronautical products exported from one country (contracting state) to the other.   [FAA 8130.2H]"^^xsd:string ;
+  skos:prefLabel "Civil Aeronautical Products Bilateral Agreement"^^xsd:string ;
+  skos:scopeNote "These agreements are intended to provide a framework for the airworthiness authority of the importing country to give maximum practicable credit to airworthiness certification functions performed by the airworthiness authority of the exporting country using its own certification system.  [FAA 8130.2H]"^^xsd:string ;
+  skos:scopeNote "These agreements are not trade agreements, but rather technical cooperation agreements.  [FAA 8130.2H]"^^xsd:string ;
+.
+:Claim
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Claim"^^xsd:string ;
+  rdfs:subClassOf :Right ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Right ;
+  skos:definition """1 : a demand for something due or believed to be due <an insurance claim> 
+2 a : a right to something; specifically : a title to a debt, privilege, or other thing in the possession of another b : an assertion open to challenge <a claim of authenticity> 
+3 : something that is claimed; especially : a tract of land staked out  [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Claim"^^xsd:string ;
+.
+:Clause
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Clause"^^xsd:string ;
+  rdfs:subClassOf :Article ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Article ;
+  skos:definition "2 : a separate section of a discourse or writing; specifically : a distinct article in a formal document  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Clause"^^xsd:string ;
+.
+:Communications_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Communications Agreement"^^xsd:string ;
+  rdfs:subClassOf :Activity_Agreement ;
+  skos:broader :Activity_Agreement ;
+  skos:narrower :Bilateral_Interface_Agreement ;
+  skos:prefLabel "Communications Agreement"^^xsd:string ;
+.
+:Compact
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11ed."^^xsd:string ;
+  rdfs:label "Compact"^^xsd:string ;
+  rdfs:subClassOf :Contract ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Agreement ;
+  skos:broader :Compacts ;
+  skos:broader :Contract ;
+  skos:definition "An agreement or covenant: CONTRACT     [WEBSTER]"^^xsd:string ;
+  skos:narrower :Resource_Agreement ;
+  skos:narrower :Service_Agreement ;
+  skos:prefLabel "Compact"^^xsd:string ;
+  skos:related :Covenant ;
+.
+:Compacts
+  rdf:type owl:Class ;
+  rdfs:label "Compacts"^^xsd:string ;
+  rdfs:subClassOf :Agreements ;
+  owl:unionOf (
+      :Compact
+    ) ;
+  skos:broader :Agreements ;
+  skos:narrower :Compact ;
+  skos:prefLabel "Compacts"^^xsd:string ;
+.
+:Concord
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Stipulation
+            :Compact
+            :Covenant
+          ) ;
+      ]
+    ) ;
+  skos:broader :Agreement ;
+  skos:definition """1 a : a state of agreement : HARMONY ...
+2 : agreement by stipulation, compact, or covenant 
+3 : grammatical agreement   [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Compact ;
+  skos:narrower :Covenant ;
+  skos:narrower :Stipulation ;
+.
+:Condition
+  rdf:type owl:Class ;
+  rdfs:label "Condition"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Stipulation ;
+  skos:definition """1 a : a premise upon which the fulfillment of an agreement depends : STIPULATION b obsolete : COVENANT c : a provision making the effect of a legal instrument contingent upon an uncertain event; also : the event itself 
+2 : something essential to the appearance or occurrence of something else : PREREQUISITE: as a : an environmental requirement <available oxygen is an essential condition for animal life> b : the subordinate clause of a conditional sentence 
+3 a : a restricting or modifying factor : QUALIFICATION b : an unsatisfactory academic grade that may be raised by doing additional work   [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Must ;
+  skos:narrower :Qualification ;
+  skos:narrower :Should ;
+  skos:prefLabel "Condition"^^xsd:string ;
+.
+:Conditional_Stipulation
+  rdf:type owl:Class ;
+  rdfs:label "Conditional Stipulation"^^xsd:string ;
+  rdfs:subClassOf :Condition ;
+  rdfs:subClassOf :Stipulation ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Condition
+            :Stipulation
+          ) ;
+      ]
+    ) ;
+  skos:broader :Condition ;
+  skos:broader :Stipulation ;
+  skos:prefLabel "Conditional Stipulation"^^xsd:string ;
+.
+:Contract
+  rdf:type owl:Class ;
+  rdfs:label "Contract"^^xsd:string ;
+  rdfs:subClassOf :Legal_Instrument ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Agreement ;
+  skos:broader :Compact ;
+  skos:broader :Contracts ;
+  skos:broader :Covenant ;
+  skos:broader :Legal_Instrument ;
+  skos:broader :Resource_Level_Agreement ;
+  skos:broader :Service_Level_Agreement ;
+  skos:definition """1 a : a binding agreement between two or more persons or parties; especially : one legally enforceable b : a business arrangement for the supply of goods or services at a fixed price <make parts on contract> c : the act of marriage or an agreement to marry 
+2 : a document describing the terms of a contract 
+3 : the final bid to win a specified number of tricks in bridge 
+4 : an order or arrangement for a hired assassin to kill someone <his enemies put out a contract on him>  [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Activity_Contract ;
+  skos:narrower :Infrastructure_Contract ;
+  skos:prefLabel "Contract"^^xsd:string ;
+.
+:Contract_Amendment
+  rdf:type owl:Class ;
+  rdfs:label "Contract Amendment"^^xsd:string ;
+  rdfs:subClassOf :Amendment ;
+  rdfs:subClassOf :Contract ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Contract
+            :Amendment
+          ) ;
+      ]
+    ) ;
+  skos:broader :Amendment ;
+  skos:broader :Contract ;
+  skos:prefLabel "Contract Amendment"^^xsd:string ;
+.
+:Contracts
+  rdf:type owl:Class ;
+  rdfs:label "Contracts"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Compacts ;
+  skos:broader :Covenants ;
+  skos:broader :Resource_Agreements ;
+  skos:broader :Service_Agreements ;
+  skos:narrower :Contract ;
+  skos:prefLabel "Contracts"^^xsd:string ;
+.
+:Convention
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merram-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Convention"^^xsd:string ;
+  rdfs:subClassOf :Agreement ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Agreement ;
+  skos:definition "1 a : AGREEMENT, CONTRACT b : an agreement between states for regulation of matters affecting all of them c : a compact between opposing commanders especially concerning prisoner exchange or armistice ... [WEBSTER]"^^xsd:string ;
+  skos:definition "The Convention establishes rules of airspace, aircraft registration and safety, and details the rights of the signatories in relation to air travel; it also exempts air fuels from tax.  [SKYBRARY] "^^xsd:string ;
+  skos:editorialNote "The concept \"Convention\" has four different perspectives or senses: 1) If the perspective is one of an assembly or meeting of people, then refer to the People ontology; 2) if the perspective is one of established customs, standards, and practices, then refer to the Principles ontology; 3) if the perspective is one of reaching concensus or agreement with others, then refer to the Agreements ontology; and 4) more specifically,  if the perspective is one of accepted and approved regulations that are required by the actions of others and the rights that are permitted by those effected by the regulations,, then refer to the Legislation ontology. "^^xsd:string ;
+  skos:prefLabel "Convention"^^xsd:string ;
+  skos:related :Compact ;
+.
+:Convention_on_International_Civil_Aviation
+  rdf:type :International_Aviation_Convention ;
+  dcterms:bibliographicCitation "SKYBRARY   http://www.skybrary.aero/index.php/Chicago_Convention"^^xsd:string ;
+  rdfs:label "Convention on International Civil Aviation"^^xsd:string ;
+  skos:altLabel "Chicago Convention on International Civil Aviation"^^xsd:string ;
+  skos:altLabel "Chicago Convention"^^xsd:string ;
+  skos:definition "The Convention establishes rules of airspace, aircraft registration and safety, and details the rights of the signatories in relation to air travel; it also exempts air fuels from tax. "^^xsd:string ;
+  skos:historyNote "The Chicago Convention (also known as the Convention on International Civil Aviation), established the International Civil Aviation Organisation (ICAO), a specialized agency of the United Nations charged with coordinating and regulating international air travel. The Convention establishes rules of airspace, aircraft registration and safety, and details the rights of the signatories in relation to air travel; it also exempts air fuels from tax. The Convention was signed by 52 states on 7 December 1944 and came into effect on 4 April 1947.   [SKYBRARY] "^^xsd:string ;
+  skos:prefLabel "Convention on International Civil Aviation"^^xsd:string ;
+  skos:scopeNote "The Convention also concerns the issue and recognition of certificates (e.g. an aircraft's certificate of airworthiness (C of A) or an airline's air operator certificate (AOC) and licences (e.g. pilot licensing or controller licensing).  [SKYBRARY]"^^xsd:string ;
+  skos:scopeNote "The Convention provided for the sovereignty of airspace above the territory of each state, together with five freedoms (later expanded to nine by the addition of four unofficial freedoms) which govern the freedom of states to operate air transport flights (including the carriage of passengers, cargo and mail) across, into and within the airspace of other states. Only the first two of these freedoms (see below) apply automatically to signatory states, the remainder being subject to national agreement.   [SKYBRARY] "^^xsd:string ;
+.
+:Conveyance_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Conveyance Contract"^^xsd:string ;
+  rdfs:subClassOf :Contract ;
+  skos:broader :Contract ;
+  skos:prefLabel "Conveyance Contract"^^xsd:string ;
+.
+:Conveyance_Lease
+  rdf:type owl:Class ;
+  rdfs:label "Conveyance Lease"^^xsd:string ;
+  rdfs:subClassOf :Conveyance_Contract ;
+  rdfs:subClassOf :Lease ;
+  skos:broader :Conveyance_Contract ;
+  skos:broader :Lease ;
+  skos:prefLabel "Conveyance Lease"^^xsd:string ;
+.
+:Conveyance_License
+  rdf:type owl:Class ;
+  rdfs:label "Conveyance License"^^xsd:string ;
+  rdfs:subClassOf :License ;
+  skos:broader :License ;
+  skos:prefLabel "Conveyance License"^^xsd:string ;
+.
+:Cooperative_Research_and_Development_Agreement
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "CDRA"^^xsd:string ;
+  vaem:acronym "CRDA"^^xsd:string ;
+  rdfs:label "Cooperative Research and Development Agreement"^^xsd:string ;
+  rdfs:subClassOf :Research_and_Development_Agreement ;
+  skos:altLabel "Cooperative Development and Research Agreement"^^xsd:string ;
+  skos:broader :Research_and_Development_Agreement ;
+  skos:prefLabel "Cooperative Research and Development Agreement"^^xsd:string ;
+.
+:Covenant
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary, 11ed."^^xsd:string ;
+  rdfs:label "Covenant"^^xsd:string ;
+  rdfs:subClassOf :Agreement ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Agreement ;
+  skos:definition "A binding agreement made by two or more persons or parties: COMPACT.  [WEBSTER]"^^xsd:string ;
+  skos:definition "LAW: a. A formal sealed contract or agreement. b. A suit to recover damages for violation of such a contract.  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Contract ;
+  skos:prefLabel "Covenant"^^xsd:string ;
+  skos:related :Compact ;
+.
+:Covenants
+  rdf:type owl:Class ;
+  rdfs:label "Covenants"^^xsd:string ;
+  rdfs:subClassOf :Agreements ;
+  owl:unionOf (
+      :Covenant
+    ) ;
+  skos:broader :Agreements ;
+  skos:narrower :Covenant ;
+  skos:prefLabel "Covenants"^^xsd:string ;
+.
+:Deed
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Deed"^^xsd:string ;
+  rdfs:subClassOf :Legal_Instrument ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Legal_Instrument ;
+  skos:definition "4 : a signed and usually sealed instrument containing some legal transfer, bargain, or contract   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Deed"^^xsd:string ;
+.
+:Development_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Development Agreement"^^xsd:string ;
+  rdfs:subClassOf :Activity_Agreement ;
+  skos:broader :Activity_Agreement ;
+  skos:narrower :Research_and_Development_Agreement ;
+  skos:prefLabel "Development Agreement"^^xsd:string ;
+.
+:Device_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Device Contract"^^xsd:string ;
+  rdfs:subClassOf :Equipment_Contract ;
+  skos:broader :Equipment_Contract ;
+  skos:prefLabel "Device Contract"^^xsd:string ;
+.
+:Device_Lease
+  rdf:type owl:Class ;
+  rdfs:label "Device Lease"^^xsd:string ;
+  rdfs:subClassOf :Device_Contract ;
+  rdfs:subClassOf :Equipment_Lease ;
+  skos:broader :Device_Lease ;
+  skos:broader :Equipment_Lease ;
+  skos:prefLabel "Device Lease"^^xsd:string ;
+.
+:Device_Purchase_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Device Purchase Contract"^^xsd:string ;
+  rdfs:subClassOf :Device_Contract ;
+  skos:broader :Device_Contract ;
+  skos:prefLabel "Device Purchase Contract"^^xsd:string ;
+.
+:Emergency_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Emergency Agreement"^^xsd:string ;
+  rdfs:subClassOf :Inter-Agency_Agreement ;
+  skos:broader :Inter-Agency_Agreement ;
+  skos:narrower :Search_and_Rescue_Agreement ;
+  skos:prefLabel "Emergency Agreement"^^xsd:string ;
+.
+:Environmental_Right
+  rdf:type owl:Class ;
+  rdfs:label "Environmental Right"^^xsd:string ;
+  rdfs:subClassOf :Right ;
+  skos:broader :Right ;
+  skos:prefLabel "Environmental Right"^^xsd:string ;
+.
+:Equipment_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Equipment Contract"^^xsd:string ;
+  rdfs:subClassOf :Systems_Contract ;
+  skos:broader :Systems_Contract ;
+  skos:prefLabel "Equipment Contract"^^xsd:string ;
+.
+:Equipment_Lease
+  rdf:type owl:Class ;
+  rdfs:label "Equipment Lease"^^xsd:string ;
+  rdfs:subClassOf :Equipment_Contract ;
+  rdfs:subClassOf :Lease ;
+  skos:broader :Equipment_Contract ;
+  skos:broader :Lease ;
+  skos:prefLabel "Equipment Lease"^^xsd:string ;
+.
+:Equipment_Purchase_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Equipment Purchase Contract"^^xsd:string ;
+  rdfs:subClassOf :Equipment_Contract ;
+  skos:broader :Equipment_Contract ;
+  skos:prefLabel "Equipment Purchase Contract"^^xsd:string ;
+.
+:Explanation
+  rdf:type owl:Class ;
+  rdfs:label "Explanation"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:definition "Something that or someone who: (a)provides reasons for or a cause of an occurrence; or (b) provides clear direction or instruction for how to proceed given a specific situation or set of circumstances.  "^^xsd:string ;
+  skos:narrower :Agreements ;
+  skos:prefLabel "Explanation"^^xsd:string ;
+  skos:topConceptOf :Explanation ;
+.
+:Facilities_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Facilities Contract"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Contract ;
+  rdfs:subClassOf :Real_Estate_Contract ;
+  skos:broader :Infrastructure_Contract ;
+  skos:broader :Real_Estate_Contract ;
+  skos:prefLabel "Facilities Contract"^^xsd:string ;
+.
+:Facility_Lease
+  rdf:type owl:Class ;
+  rdfs:label "Facility Lease"^^xsd:string ;
+  rdfs:subClassOf :Facilities_Contract ;
+  rdfs:subClassOf :Real_Estate_Lease ;
+  skos:broader :Facilities_Contract ;
+  skos:broader :Real_Estate_Lease ;
+  skos:prefLabel "Facility Lease"^^xsd:string ;
+.
+:Financial_Resource_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Financial Resource Agreement"^^xsd:string ;
+  rdfs:subClassOf :Resource_Agreement ;
+  skos:broader :Resource_Agreement ;
+  skos:prefLabel "Financial Resource Agreement"^^xsd:string ;
+.
+:Human_Resource_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Human Resource Agreement"^^xsd:string ;
+  rdfs:subClassOf :Resource_Agreement ;
+  skos:broader :Resource_Agreement ;
+  skos:prefLabel "Human Resource Agreement"^^xsd:string ;
+.
+:Implementation_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Implementation Contract"^^xsd:string ;
+  rdfs:subClassOf :Activity_Contract ;
+  skos:broader :Activity_Contract ;
+  skos:narrower :Implementation_Support_Contract ;
+  skos:prefLabel "Implementation Contract"^^xsd:string ;
+.
+:Implementation_Support_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Implementation Support Contract"^^xsd:string ;
+  rdfs:subClassOf :Implementation_Contract ;
+  rdfs:subClassOf :Support_Contract ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Implementation_Contract
+            :Support_Contract
+          ) ;
+      ]
+    ) ;
+  skos:broader :Implementation_Contract ;
+  skos:broader :Support_Contract ;
+  skos:narrower :NAS_Implementation_Support_Contract ;
+  skos:prefLabel "Implementation Support Contract"^^xsd:string ;
+.
+:Information_Resource_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Information Resource Agreement"^^xsd:string ;
+  rdfs:subClassOf :Resource_Agreement ;
+  skos:broader :Resource_Agreement ;
+  skos:prefLabel "Information Resource Agreement"^^xsd:string ;
+.
+:Infrastructure_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Infrastructure Contract"^^xsd:string ;
+  rdfs:subClassOf :Contract ;
+  skos:broader :Contract ;
+  skos:narrower :Airspace_Contract ;
+  skos:narrower :Facilities_Contract ;
+  skos:narrower :Systems_Contract ;
+  skos:prefLabel "Infrastructure Contract"^^xsd:string ;
+.
+:Infrastructure_Right
+  rdf:type owl:Class ;
+  rdfs:label "Infrastructure Right"^^xsd:string ;
+  rdfs:subClassOf :Right ;
+  skos:broader :Right ;
+  skos:prefLabel "Infrastructure Right"^^xsd:string ;
+.
+:Instrument
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Instrument"^^xsd:string ;
+  rdfs:subClassOf :Agreement ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Agreement ;
+  skos:definition "4 : a formal legal document (as a deed, bond, or agreement)   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Instrument"^^xsd:string ;
+.
+:Inter-Agency_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Inter-Agency Agreement"^^xsd:string ;
+  rdfs:subClassOf :Agreement ;
+  skos:altLabel "Interagency Agreement"^^xsd:string ;
+  skos:broader :Agreement ;
+  skos:broader :Inter-Agency_Agreements ;
+  skos:narrower :Emergency_Agreement ;
+  skos:prefLabel "Inter-Agency Agreement"^^xsd:string ;
+.
+:Inter-Agency_Agreements
+  rdf:type owl:Class ;
+  rdfs:label "Inter-Agency Agreements"^^xsd:string ;
+  rdfs:subClassOf :Agreements ;
+  owl:unionOf (
+      :Inter-Agency_Agreement
+    ) ;
+  skos:altLabel "Interagency Agreements"^^xsd:string ;
+  skos:broader :Agreements ;
+  skos:narrower :Inter-Agency_Agreement ;
+  skos:prefLabel "Inter-Agency Agreements"^^xsd:string ;
+.
+:International_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "International Agreement"^^xsd:string ;
+  rdfs:subClassOf :Agreement ;
+  skos:broader :Agreement ;
+  skos:narrower :Bilateral_Agreement ;
+  skos:narrower :Trade_Agreement ;
+  skos:narrower :Treaty ;
+  skos:prefLabel "International Agreement"^^xsd:string ;
+.
+:International_Agreements
+  rdf:type owl:Class ;
+  rdfs:label "International Agreements"^^xsd:string ;
+  rdfs:subClassOf :Agreements ;
+  owl:unionOf (
+      :International_Agreement
+    ) ;
+  skos:broader :Agreements ;
+  skos:narrower :Inter-Agency_Agreement ;
+  skos:prefLabel "International Agreements"^^xsd:string ;
+.
+:International_Aviation_Convention
+  rdf:type owl:Class ;
+  rdfs:label "International Aviation Convention"^^xsd:string ;
+  rdfs:subClassOf :Aviation_Convention ;
+  skos:broader :Aviation_Convention ;
+  skos:prefLabel "International Aviation Convention"^^xsd:string ;
+.
+:International_Aviation_Convention_Right
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "SKYBRARY   http://www.skybrary.aero/index.php/Chicago_Convention"^^xsd:string ;
+  :businessRuleNote "Freedom 1: Right to overfly a foreign country without landing. [SKYBRARY] "^^xsd:string ;
+  :businessRuleNote "Freedom 2: Right to refuel or carry out maintenance in a foreign country  [SKYBRARY] "^^xsd:string ;
+  :businessRuleNote "Freedom 3: Right to fly from one's own country to another [SKYBRARY] "^^xsd:string ;
+  :businessRuleNote "Freedom 4: Right to fly from a foreign country to one's own  [SKYBRARY] "^^xsd:string ;
+  :businessRuleNote "Freedom 5: Right to fly between two foreign countries during flights which begin or end in one's own  [SKYBRARY] "^^xsd:string ;
+  :businessRuleNote "Freedom 6: Right to fly from one foreign country to another one while stopping in one's own country  [SKYBRARY] "^^xsd:string ;
+  :businessRuleNote "Freedom 7: Right to fly between two foreign countries while not offering flights to one's own country  [SKYBRARY] "^^xsd:string ;
+  :businessRuleNote "Freedom 8: Right to fly between two or more airports in a foreign country while continuing service to one's own country  [SKYBRARY] "^^xsd:string ;
+  :businessRuleNote """Freedom 9: Right to fly inside a foreign country without continuing service to one's own country  
+[SKYBRARY] """^^xsd:string ;
+  rdfs:label "International Aviation Convention Right"^^xsd:string ;
+  rdfs:subClassOf :International_Aviation_Convention ;
+  rdfs:subClassOf :International_Aviation_Right ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :International_Aviation_Convention
+            :International_Aviation_Right
+          ) ;
+      ]
+    ) ;
+  skos:broader :International_Aviation_Convention ;
+  skos:broader :International_Aviation_Right ;
+  skos:prefLabel "International Aviation Convention Right"^^xsd:string ;
+.
+:International_Aviation_Right
+  rdf:type owl:Class ;
+  rdfs:label "International Aviation Right"^^xsd:string ;
+  rdfs:subClassOf :Aviation_Right ;
+  skos:broader :Aviation_Right ;
+  skos:prefLabel "International Aviation Right"^^xsd:string ;
+.
+:Land_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Land Contract"^^xsd:string ;
+  rdfs:subClassOf :Facilities_Contract ;
+  rdfs:subClassOf :Real_Estate_Contract ;
+  skos:broader :Facilities_Contract ;
+  skos:broader :Real_Estate_Contract ;
+  skos:prefLabel "Land Contract"^^xsd:string ;
+.
+:Land_Lease
+  rdf:type owl:Class ;
+  rdfs:label "Land Lease"^^xsd:string ;
+  rdfs:subClassOf :Land_Contract ;
+  rdfs:subClassOf :Real_Estate_Lease ;
+  skos:broader :Land_Contract ;
+  skos:broader :Real_Estate_Lease ;
+  skos:prefLabel "Land Lease"^^xsd:string ;
+.
+:Lease
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Lease"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resource_Contract ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Physical_Resource_Contract ;
+  skos:definition """1 : a contract by which one conveys real estate, equipment, or facilities for a specified term and for a specified rent; also : the act of such conveyance or the term for which it is made...
+3 : a continuance or opportunity for continuance <a new lease on life>  [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Lease"^^xsd:string ;
+.
+:Legal_Instrument
+  rdf:type owl:Class ;
+  rdfs:label "Legal Instrument"^^xsd:string ;
+  rdfs:subClassOf :Instrument ;
+  skos:broader :Instrument ;
+  skos:prefLabel "Legal Instrument"^^xsd:string ;
+.
+:Letter
+  rdf:type owl:Class ;
+  rdfs:label "Letter"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Resource_Level_Agreement ;
+  skos:broader :Service_Level_Agreement ;
+  skos:narrower :Letter_of_Agreement ;
+  skos:prefLabel "Letter"^^xsd:string ;
+.
+:Letter_of_Agreement
+  rdf:type owl:Class ;
+  vaem:acronym "LOA"^^xsd:string ;
+  vaem:acronym "LoA"^^xsd:string ;
+  rdfs:label "Letter of Agreement"^^xsd:string ;
+  rdfs:subClassOf :Letter ;
+  skos:broader :Letter ;
+  skos:prefLabel "Letter of Agreement"^^xsd:string ;
+.
+:License
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "License"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:altLabel "Licence"^^xsd:string ;
+  skos:broader :Permit ;
+  skos:definition """1 a : permission to act b : freedom of action 
+2 a : a permission granted by competent authority to engage in a business or occupation or in an activity otherwise unlawful b : a document, plate, or tag evidencing a license granted c : a grant by the holder of a copyright or patent to another of any of the rights embodied in the copyright or patent short of an assignment of all rights   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "License"^^xsd:string ;
+.
+:Management_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Management Agreement"^^xsd:string ;
+  rdfs:subClassOf :Activity_Agreement ;
+  skos:broader :Activity_Agreement ;
+  skos:narrower :Project_Agreement ;
+  skos:prefLabel "Management Agreement"^^xsd:string ;
+.
+:Manufacturer_License
+  rdf:type owl:Class ;
+  rdfs:label "Manufacturer License"^^xsd:string ;
+  rdfs:subClassOf :Role-related_License ;
+  skos:broader :Role-related_License ;
+  skos:prefLabel "Manufacturer License"^^xsd:string ;
+.
+:Manufacturing_License
+  rdf:type owl:Class ;
+  rdfs:label "Manufacturing License"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_License ;
+  skos:broader :Activity-related_License ;
+  skos:prefLabel "Manufacturing License"^^xsd:string ;
+.
+:Memorandum
+  rdf:type owl:Class ;
+  rdfs:label "Memorandum"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Resource_Level_Agreement ;
+  skos:broader :Service_Level_Agreement ;
+  skos:narrower :Memorandum_of_Understanding ;
+  skos:prefLabel "Memorandum"^^xsd:string ;
+.
+:Memorandum_of_Agreement
+  rdf:type owl:Class ;
+  vaem:acronym "MOA"^^xsd:string ;
+  vaem:acronym "MoA"^^xsd:string ;
+  rdfs:label "Memorandum of Agreement"^^xsd:string ;
+  rdfs:subClassOf :Memorandum ;
+  skos:prefLabel "Memorandum of Agreement"^^xsd:string ;
+.
+:Memorandum_of_Understanding
+  rdf:type owl:Class ;
+  vaem:acronym "MOU"^^xsd:string ;
+  vaem:acronym "MoU"^^xsd:string ;
+  rdfs:label "Memorandum of Understanding"^^xsd:string ;
+  rdfs:subClassOf :Memorandum ;
+  skos:broader :Memorandum ;
+  skos:prefLabel "Memorandum of Understanding"^^xsd:string ;
+.
+:Must
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Must"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Condition ;
+  skos:definition """1 : an imperative need or duty : REQUIREMENT 
+2 : an indispensable item : ESSENTIAL <exercise is a must>  [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Must"^^xsd:string ;
+.
+:NAS_Implementation_Support_Contract
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "NISC"^^xsd:string ;
+  rdfs:label "NAS Implementation Support Contract"^^xsd:string ;
+  rdfs:subClassOf :Implementation_Support_Contract ;
+  rdfs:subClassOf :National_Airspace_Contract ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :National_Airspace_Contract
+            :Implementation_Support_Contract
+          ) ;
+      ]
+    ) ;
+  skos:altLabel "National Airspace System Implementation Support Contract"^^xsd:string ;
+  skos:broader :Implementation_Support_Contract ;
+  skos:broader :National_Airspace_Contract ;
+  skos:prefLabel "NAS Implementation Support Contract"^^xsd:string ;
+.
+:National_Airspace_Contract
+  rdf:type owl:Class ;
+  rdfs:label "National Airspace Contract"^^xsd:string ;
+  rdfs:subClassOf :Airspace_Contract ;
+  skos:broader :Airspace_Contract ;
+  skos:prefLabel "National Airspace Contract"^^xsd:string ;
+.
+:National_Search_and_Rescue_Plan
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA PCG  Pilot/Controller Glossary (P/CG) Effective 2-9-12; part of AIM Order JO 7110.10 Flight Services and 7110.65, Air Traffic Control;  extracted from FAA web site on February 17, 2012"^^xsd:string ;
+  rdfs:label "National Search and Rescue Plan"^^xsd:string ;
+  rdfs:subClassOf :Search_and_Rescue_Agreement ;
+  skos:broader :Search_and_Rescue_Agreement ;
+  skos:definition "An interagency agreement which provides for the effective utilization of all available facilities in all types of search and rescue missions.    [FAA PCG]"^^xsd:string ;
+  skos:narrower :Contract ;
+  skos:narrower :Memorandum_of_Understanding ;
+  skos:prefLabel "National Search and Rescue Plan"^^xsd:string ;
+.
+:Navigation_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Navigation Agreement"^^xsd:string ;
+  rdfs:subClassOf :Activity_Agreement ;
+  skos:broader :Activity_Agreement ;
+  skos:narrower :Air_Navigation_Agreement ;
+  skos:prefLabel "Navigation Agreement"^^xsd:string ;
+.
+:Offer
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Offer"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Agreement ;
+  skos:definition """1 a : a presenting of something for acceptance <considering job offers from several firms> <an offer of marriage> b : an undertaking to do an act or give something on condition that the party to whom the proposal is made do some specified act or make a return promise 
+2 obsolete : OFFERING 
+3 : a price named by one proposing to buy : BID ...  [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Proposal ;
+  skos:narrower :Proposition ;
+  skos:prefLabel "Offer"^^xsd:string ;
+.
+:Operator_License
+  rdf:type owl:Class ;
+  rdfs:label "Operator License"^^xsd:string ;
+  rdfs:subClassOf :Role-related_License ;
+  skos:broader :Role-related_License ;
+  skos:prefLabel "Operator License"^^xsd:string ;
+.
+:Part_License
+  rdf:type owl:Class ;
+  rdfs:label "Part License"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resource_License ;
+  skos:broader :Physical_Resource_License ;
+  skos:prefLabel "Part License"^^xsd:string ;
+.
+:Parts_Manufacturer_License
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA https://www.faa.gov/aircraft/air_cert/design_approvals/pma/pma_des/"^^xsd:string ;
+  rdfs:label "Parts Manufacturer License"^^xsd:string ;
+  rdfs:subClassOf :Manufacturer_License ;
+  rdfs:subClassOf :Part_License ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Aircraft_Part_License
+            :Parts_Manufacturer_License
+          ) ;
+      ]
+    ) ;
+  skos:broader :Aircraft_Part_License ;
+  skos:broader :Parts_Manufacturer_License ;
+  skos:definition "Is a license issued through a license agreement that shows that an applicant (Parts Manufacturer) has complied with tests and computations or demonstrated that an article/part is identifical to the original design of a type-certificated product.  [Proposed]"^^xsd:string ;
+  skos:prefLabel "Parts Manufacturer License"^^xsd:string ;
+  skos:scopeNote "Identicality means that an article is the same in all respects to an article design in a type-certificated product. Evidence of license agreement shows this identicality. [FAA]"^^xsd:string ;
+  skos:scopeNote "The applicant shows this compliance through tests and computations unless the article is identical to the article design on a type-certificated product.  [FAA]"^^xsd:string ;
+.
+:Permit
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Permit"^^xsd:string ;
+  rdfs:subClassOf :License ;
+  rdfs:subClassOf :Warrant ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Warrant
+            :License
+          ) ;
+      ]
+    ) ;
+  skos:broader :License ;
+  skos:broader :Warrant ;
+  skos:definition """1 : a written warrant or license granted by one having authority <a gun permit> 
+2 : PERMISSION  [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Permit"^^xsd:string ;
+.
+:Physical_Resource_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Physical Resource Agreement"^^xsd:string ;
+  rdfs:subClassOf :Resource_Agreement ;
+  skos:broader :Resource_Agreement ;
+  skos:prefLabel "Physical Resource Agreement"^^xsd:string ;
+.
+:Physical_Resource_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Physical Resource Contract"^^xsd:string ;
+  rdfs:subClassOf :Resource_Contract ;
+  skos:broader :Resource_Contract ;
+  skos:prefLabel "Physical Resource Contract"^^xsd:string ;
+.
+:Physical_Resource_License
+  rdf:type owl:Class ;
+  rdfs:label "Physical Resource License"^^xsd:string ;
+  rdfs:subClassOf :Resource_License ;
+  skos:broader :Resource_License ;
+  skos:prefLabel "Physical Resource License"^^xsd:string ;
+.
+:Project_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Project Agreement"^^xsd:string ;
+  rdfs:subClassOf :Management_Agreement ;
+  skos:broader :Management_Agreement ;
+  skos:narrower :Project_Scope_Agreement ;
+  skos:prefLabel "Project Agreement"^^xsd:string ;
+.
+:Project_Scope_Agreement
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:abbreviation "PjSA"^^xsd:string ;
+  vaem:acronym "PSA"^^xsd:string ;
+  rdfs:label "Project Scope Agreement"^^xsd:string ;
+  rdfs:subClassOf :Project_Agreement ;
+  skos:broader :Project_Agreement ;
+  skos:prefLabel "Project Scope Agreement"^^xsd:string ;
+.
+:Property_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Property Contract"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resource_Contract ;
+  skos:broader :Physical_Resource_Contract ;
+  skos:prefLabel "Property Contract"^^xsd:string ;
+.
+:Proposal
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Proposal"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Offer ;
+  skos:definition "2 a : something proposed : SUGGESTION b : OFFER; specifically : an offer of marriage  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Proposal"^^xsd:string ;
+.
+:Proposition
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Proposition"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Offer ;
+  skos:definition """1 a (1) : something offered for consideration or acceptance : PROPOSAL...  b : the point to be discussed or maintained in argument usually stated in sentence form near the outset ...
+2 a : an expression in language or signs of something that can be believed, doubted, or denied or is either true or false b : the objective meaning of a proposition 
+3 : something of an indicated kind to be dealt with <the farm was never a paying proposition> [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Proposition"^^xsd:string ;
+.
+:Proviso
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Proviso"^^xsd:string ;
+  rdfs:subClassOf :Article ;
+  rdfs:subClassOf :Conditional_Stipulation ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Article ;
+  skos:broader :Conditional_Stipulation ;
+  skos:definition """1 : an article or clause (as in a contract) that introduces a condition 
+2 : a conditional stipulation   [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Proviso"^^xsd:string ;
+.
+:Qualification
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Qualification"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Condition ;
+  skos:definition """1 : a restriction in meaning or application : a limiting modification <this statement stands without qualification> ...
+3 a : a quality or skill that fits a person (as for an office) <the applicant with the best qualifications> b : a condition or standard that must be complied with (as for the attainment of a privilege) <a qualification for membership>  [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Qualification"^^xsd:string ;
+.
+:Real_Estate_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Real Estate Contract"^^xsd:string ;
+  rdfs:subClassOf :Real_Property_Contract ;
+  skos:broader :Real_Property_Contract ;
+  skos:prefLabel "Real Estate Contract"^^xsd:string ;
+.
+:Real_Estate_Lease
+  rdf:type owl:Class ;
+  rdfs:label "Real Estate Lease"^^xsd:string ;
+  rdfs:subClassOf :Lease ;
+  rdfs:subClassOf :Real_Estate_Contract ;
+  skos:broader :Lease ;
+  skos:broader :Real_Estate_Contract ;
+  skos:prefLabel "Real Estate Lease"^^xsd:string ;
+.
+:Real_Property_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Real Property Contract"^^xsd:string ;
+  rdfs:subClassOf :Property_Contract ;
+  skos:broader :Property_Contract ;
+  skos:prefLabel "Real Property Contract"^^xsd:string ;
+.
+:Regional_Air_Navigation_Agreement
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Annex 3, Meteorological Service for International Air Navigation"^^xsd:string ;
+  rdfs:label "Regional Air Navigation Agreement"^^xsd:string ;
+  rdfs:subClassOf :Air_Navigation_Agreement ;
+  skos:broader :Air_Navigation_Agreement ;
+  skos:definition "Agreement approved by the Council of ICAO normally on the advice of a regional air navigation meeting.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Regional Air Navigation Agreement"^^xsd:string ;
+.
+:Requirement
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+.
+:Research_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Research Agreement"^^xsd:string ;
+  rdfs:subClassOf :Activity_Agreement ;
+  skos:broader :Activity_Agreement ;
+  skos:narrower :Research_and_Development_Agreement ;
+  skos:prefLabel "Research Agreement"^^xsd:string ;
+.
+:Research_and_Development_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Research and Development Agreement"^^xsd:string ;
+  rdfs:subClassOf :Development_Agreement ;
+  rdfs:subClassOf :Research_Agreement ;
+  skos:broader :Development_Agreement ;
+  skos:broader :Research_Agreement ;
+  skos:narrower :Cooperative_Research_and_Development_Agreement ;
+  skos:prefLabel "Research and Development Agreement"^^xsd:string ;
+.
+:Resource_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Resource Agreement"^^xsd:string ;
+  rdfs:subClassOf :Agreement ;
+  skos:broader :Agreement ;
+  skos:narrower :Financial_Resource_Agreement ;
+  skos:narrower :Human_Resource_Agreement ;
+  skos:narrower :Information_Resource_Agreement ;
+  skos:narrower :Physical_Resource_Agreement ;
+  skos:narrower :Resource_Level_Agreement ;
+  skos:prefLabel "Resource Agreement"^^xsd:string ;
+.
+:Resource_Agreements
+  rdf:type owl:Class ;
+  rdfs:label "Resource Agreements"^^xsd:string ;
+  rdfs:subClassOf :Agreements ;
+  skos:broader :Agreements ;
+  skos:narrower :Resource_Agreement ;
+  skos:prefLabel "Resource Agreements"^^xsd:string ;
+.
+:Resource_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Resource Contract"^^xsd:string ;
+  rdfs:subClassOf :Contract ;
+  skos:broader :Contract ;
+  skos:prefLabel "Resource Contract"^^xsd:string ;
+.
+:Resource_Level_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Resource Level Agreement"^^xsd:string ;
+  rdfs:subClassOf :Resource_Agreement ;
+  skos:broader :Resource_Agreement ;
+  skos:broader :Resource_Level_Agreements ;
+  skos:narrower :Contract ;
+  skos:narrower :Letter_of_Agreement ;
+  skos:narrower :Memorandum_of_Understanding ;
+  skos:prefLabel "Resource Level Agreement"^^xsd:string ;
+.
+:Resource_Level_Agreements
+  rdf:type owl:Class ;
+  rdfs:label "Resource Level Agreements"^^xsd:string ;
+  rdfs:subClassOf :Resource_Agreements ;
+  owl:unionOf (
+      :Resource_Level_Agreement
+    ) ;
+  skos:broader :Resource_Agreements ;
+  skos:narrower :Resource_Level_Agreement ;
+  skos:prefLabel "Resource Level Agreements"^^xsd:string ;
+.
+:Resource_License
+  rdf:type owl:Class ;
+  rdfs:label "Resource License"^^xsd:string ;
+  rdfs:subClassOf :License ;
+  skos:broader :License ;
+  skos:prefLabel "Resource License"^^xsd:string ;
+.
+:Right
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed"^^xsd:string ;
+  rdfs:label "Right"^^xsd:string ;
+  rdfs:subClassOf :Agreement ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Agreement ;
+  skos:definition """2 : something to which one has a just claim: as a : the power or privilege to which one is justly entitled <voting rights> <his right to decide> b (1) : the interest that one has in a piece of property  often used in plural <mineral rights> (2) plural : the property interest possessed under law or custom and agreement in an intangible thing especially of a literary and artistic nature <film rights of the novel> 
+3 : something that one may properly claim as due <knowing the truth is her right>  [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Right"^^xsd:string ;
+.
+:Role-related_License
+  rdf:type owl:Class ;
+  rdfs:label "Role-related License"^^xsd:string ;
+  rdfs:subClassOf :License ;
+  skos:broader :License ;
+  skos:prefLabel "Role-related License"^^xsd:string ;
+.
+:Search_and_Rescue_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Search and Rescue Agreement"^^xsd:string ;
+  rdfs:subClassOf :Inter-Agency_Agreement ;
+  skos:broader :Emergency_Agreement ;
+  skos:narrower :National_Search_and_Rescue_Plan ;
+  skos:prefLabel "Search and Rescue Agreement"^^xsd:string ;
+.
+:Service_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Service Agreement"^^xsd:string ;
+  rdfs:subClassOf :Activity_Agreement ;
+  skos:broader :Activity_Agreement ;
+  skos:narrower :Service_Level_Agreement ;
+  skos:prefLabel "Service Agreement"^^xsd:string ;
+.
+:Service_Agreements
+  rdf:type owl:Class ;
+  rdfs:label "Service Agreements"^^xsd:string ;
+  rdfs:subClassOf :Agreements ;
+  skos:broader :Agreements ;
+  skos:narrower :Service_Agreement ;
+  skos:prefLabel "Service Agreements"^^xsd:string ;
+.
+:Service_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Service Contract"^^xsd:string ;
+  rdfs:subClassOf :Activity_Contract ;
+  skos:broader :Activity_Contract ;
+  skos:narrower :Technical_Support_Services_Contract ;
+  skos:prefLabel "Service Contract"^^xsd:string ;
+.
+:Service_Level_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Service Level Agreement"^^xsd:string ;
+  rdfs:subClassOf :Service_Agreement ;
+  skos:broader :Service_Agreement ;
+  skos:broader :Service_Level_Agreements ;
+  skos:narrower :Contract ;
+  skos:narrower :Letter_of_Agreement ;
+  skos:narrower :Memorandum_of_Understanding ;
+  skos:prefLabel "Service Level Agreement"^^xsd:string ;
+.
+:Service_Level_Agreements
+  rdf:type owl:Class ;
+  rdfs:label "Service Level Agreements"^^xsd:string ;
+  rdfs:subClassOf :Service_Agreements ;
+  owl:unionOf (
+      :Service_Level_Agreement
+    ) ;
+  skos:broader :Service_Agreements ;
+  skos:narrower :Service_Level_Agreement ;
+  skos:prefLabel "Service Level Agreements"^^xsd:string ;
+.
+:Should
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA JO 7900.5C  Surface Weather Observing, Appendix H, Glossary"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Should"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Condition ;
+  skos:definition """1  used in auxiliary function to express condition <if he should leave his father, his father would die — Genesis 44:22 (Revised Standard Version)> 
+2  used in auxiliary function to express obligation, propriety, or expediency <'tis commanded I should do so — Shakespeare> <this is as it should be — H. L. Savage> <you should brush your teeth after each meal> 
+3  used in auxiliary function to express futurity from a point of view in the past <realized that she should have to do most of her farm work before sunrise — Ellen Glasgow> 
+4  used in auxiliary function to express what is probable or expected <with an early start, they should be here by noon> 
+5  used in auxiliary function to express a request in a polite manner or to soften direct statement <I should suggest that a guide . . . is the first essential — L. D. Reddick>  [WEBSTER]"""^^xsd:string ;
+  skos:definition "A term used to indicate that a standard is recommended.  [FAA AC 7900.5C]"^^xsd:string ;
+  skos:prefLabel "Should"^^xsd:string ;
+.
+:Stipulation
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:isPartOf :Compact ;
+  dcterms:isPartOf :Contract ;
+  dcterms:isPartOf :Treaty ;
+  rdfs:label "Stipulation"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Compact ;
+  skos:broader :Contract ;
+  skos:broader :Treaty ;
+  skos:definition "2 : something stipulated; especially : a condition, requirement, or item specified in a legal instrument   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Stipulation"^^xsd:string ;
+.
+:Structure_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Structure Contract"^^xsd:string ;
+  rdfs:subClassOf :Facilities_Contract ;
+  rdfs:subClassOf :Land_Contract ;
+  skos:broader :Facilities_Contract ;
+  skos:broader :Land_Contract ;
+  skos:prefLabel "Structure Contract"^^xsd:string ;
+.
+:Structure_Lease
+  rdf:type owl:Class ;
+  rdfs:label "Structure Lease"^^xsd:string ;
+  rdfs:subClassOf :Facility_Lease ;
+  rdfs:subClassOf :Structure_Contract ;
+  skos:broader :Facility_Lease ;
+  skos:broader :Structure_Contract ;
+  skos:prefLabel "Structure Lease"^^xsd:string ;
+.
+:Support_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Support Contract"^^xsd:string ;
+  rdfs:subClassOf :Activity_Contract ;
+  skos:broader :Activity_Contract ;
+  skos:narrower :Implementation_Support_Contract ;
+  skos:narrower :Technical_Support_Services_Contract ;
+  skos:prefLabel "Support Contract"^^xsd:string ;
+.
+:Surveillance_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Surveillance Agreement"^^xsd:string ;
+  rdfs:subClassOf :Activity_Agreement ;
+  skos:broader :Activity_Agreement ;
+  skos:narrower :Automatic_Dependent_Surveillance_Agreement ;
+  skos:prefLabel "Surveillance Agreement"^^xsd:string ;
+.
+:Systems_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Systems Contract"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Contract ;
+  skos:broader :Infrastructure_Contract ;
+  skos:narrower :Technical_Contract ;
+  skos:prefLabel "Systems Contract"^^xsd:string ;
+.
+:Technical_Contract
+  rdf:type owl:Class ;
+  rdfs:label "Technical Contract"^^xsd:string ;
+  rdfs:subClassOf :Systems_Contract ;
+  skos:broader :Systems_Contract ;
+  skos:narrower :Technical_Support_Services_Contract ;
+  skos:prefLabel "Technical Contract"^^xsd:string ;
+.
+:Technical_Support_Services_Contract
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "TSSC"^^xsd:string ;
+  rdfs:label "Technical Support Services Contract"^^xsd:string ;
+  rdfs:subClassOf :Service_Contract ;
+  rdfs:subClassOf :Support_Contract ;
+  rdfs:subClassOf :Technical_Contract ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Technical_Contract
+            :Support_Contract
+            :Service_Contract
+          ) ;
+      ]
+    ) ;
+  skos:broader :Service_Contract ;
+  skos:broader :Support_Contract ;
+  skos:broader :Technical_Contract ;
+  skos:prefLabel "Technical Support Services Contract"^^xsd:string ;
+.
+:Trade_Agreement
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Trade Agreement"^^xsd:string ;
+  rdfs:subClassOf :International_Agreement ;
+  skos:broader :International_Agreement ;
+  skos:definition """1 : an international agreement on conditions of trade in goods and services 
+2 : an agreement resulting from collective bargaining  [WEBSTER]"""^^xsd:string ;
+  skos:prefLabel "Trade Agreement"^^xsd:string ;
+.
+:Transportation_Agreement
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Agreement"^^xsd:string ;
+  rdfs:subClassOf :Activity_Agreement ;
+  skos:broader :Activity_Agreement ;
+  skos:narrower :Air_Transportation_Agreement ;
+  skos:prefLabel "Transportation Agreement"^^xsd:string ;
+.
+:Transportation_Convention
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Convention"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Convention ;
+  skos:broader :Activity-related_Convention ;
+  skos:prefLabel "Transportation Convention"^^xsd:string ;
+.
+:Transportation_License
+  rdf:type owl:Class ;
+  rdfs:label "Transportation License"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_License ;
+  skos:broader :Activity-related_License ;
+  skos:prefLabel "Transportation License"^^xsd:string ;
+.
+:Transportation_Right
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Right"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Right ;
+  skos:broader :Activity-related_Right ;
+  skos:prefLabel "Transportation Right"^^xsd:string ;
+.
+:Treaties
+  rdf:type owl:Class ;
+  rdfs:label "Treaties"^^xsd:string ;
+  rdfs:subClassOf :International_Agreements ;
+  owl:unionOf (
+      :Treaty
+    ) ;
+  skos:broader :International_Agreements ;
+  skos:narrower :Treaty ;
+  skos:prefLabel "Treaties"^^xsd:string ;
+.
+:Treaty
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Treaty"^^xsd:string ;
+  rdfs:subClassOf :International_Agreement ;
+  rdfs:subClassOf :Legal_Instrument ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :International_Agreement ;
+  skos:broader :Legal_Instrument ;
+  skos:broader :Treaties ;
+  skos:definition "2 a : an agreement or arrangement made by negotiation: (1) : PRIVATE TREATY (2) : a contract in writing between two or more political authorities (as states or sovereigns) formally signed by representatives duly authorized and usually ratified by the lawmaking authority of the state b : a document in which such a contract is set down  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Treaty"^^xsd:string ;
+.
+:Warrant
+  rdf:type owl:Class ;
+  rdfs:label "Warrant"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Permit ;
+  skos:prefLabel "Warrant"^^xsd:string ;
+.
+:Wet_Lease
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA 14 CFR Part 110 Section 2 Definitions   http://www.ecfr.gov/cgi-bin/text-idx?SID=aa488901db0614f6ff6d45249b6938d3&mc=true&node=pt14.3.110&rgn=div5"^^xsd:string ;
+  rdfs:label "Wet Lease"^^xsd:string ;
+  rdfs:subClassOf :Aircraft_Lease ;
+  rdfs:subClassOf :Lease ;
+  skos:broader :Aircraft_Lease ;
+  skos:broader :Lease ;
+  skos:definition "Wet lease means any leasing arrangement whereby a person agrees to provide an entire aircraft and at least one crewmember.   [FAA 14 CFR Part 110]"^^xsd:string ;
+  skos:prefLabel "Wet Lease"^^xsd:string ;
+  skos:scopeNote "A wet lease does not include a code-sharing arrangement.   [FAA 14 CFR Part 110]"^^xsd:string ;
+.
+:businessRuleNote
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "business rule note"^^xsd:string ;
+  rdfs:subPropertyOf skos:note ;
+  skos:prefLabel "business rule note"^^xsd:string ;
+.
+:dataElementLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "dataElementLabel"^^xsd:string ;
+  rdfs:subPropertyOf skos:altLabel ;
+  skos:definition "An identified in the form of a coded name assigned to a single piece of data or datum (NOT information) that uniquely identifies it from all other data.  [Proposed]"^^xsd:string ;
+  skos:prefLabel "Data Element Label"^^xsd:string ;
+.
+rdfs:comment
+  owl:equivalentProperty skos:definition ;
+.
+skos:definition
+  owl:equivalentProperty rdfs:comment ;
+.

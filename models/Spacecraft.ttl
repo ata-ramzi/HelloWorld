@@ -1,0 +1,768 @@
+# baseURI: http://www.faa.gov/DRS/Spacecraft
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://purl.org/goodrelations/v1
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://www.faa.gov/DRS/Spacecraft#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.org/goodrelations/v1#Brand>
+  rdfs:subClassOf owl:Thing ;
+.
+<http://purl.org/goodrelations/v1#BusinessEntity>
+  rdfs:subClassOf owl:Thing ;
+.
+<http://purl.org/goodrelations/v1#BusinessEntityType>
+  rdfs:subClassOf owl:Thing ;
+.
+<http://purl.org/goodrelations/v1#BusinessFunction>
+  rdfs:subClassOf owl:Thing ;
+.
+<http://purl.org/goodrelations/v1#ProductOrService>
+  rdfs:subClassOf owl:Thing ;
+.
+<http://www.faa.gov/DRS/Spacecraft>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dcterms: ;
+  owl:imports <http://purl.org/goodrelations/v1> ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Astronomy_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Astronomy Satellite"^^xsd:string ;
+  rdfs:subClassOf :Science_Satellite ;
+  skos:broader :Science_Satellite ;
+  skos:prefLabel "Astronomy Satellite"^^xsd:string ;
+.
+:Capsule
+  rdf:type owl:Class ;
+  rdfs:label "Capsule"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Launch_Recovery_Spacecraft ;
+  skos:narrower :Passenger_Capsule ;
+  skos:prefLabel "Capsule"^^xsd:string ;
+.
+:Cargo
+  rdf:type owl:Class ;
+  rdfs:label "Cargo"^^xsd:string ;
+  rdfs:subClassOf :Load ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Load ;
+  skos:prefLabel "Cargo"^^xsd:string ;
+.
+:Commercial_Communications_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Commercial Communications Satellite"^^xsd:string ;
+  rdfs:subClassOf :Commercial_Satellite ;
+  rdfs:subClassOf :Communications_Satellite ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Commercial_Satellite
+            :Communications_Satellite
+          ) ;
+      ]
+    ) ;
+  skos:broader :Commercial_Satellite ;
+  skos:broader :Communications_Satellite ;
+  skos:prefLabel "Commercial Communications Satellite"^^xsd:string ;
+.
+:Commercial_Navigation_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Commercial Navigation Satellite"^^xsd:string ;
+  rdfs:subClassOf :Commercial_Satellite ;
+  rdfs:subClassOf :Navigation_Satellite ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Commercial_Satellite
+            :Navigation_Satellite
+          ) ;
+      ]
+    ) ;
+  skos:broader :Commercial_Satellite ;
+  skos:broader :Navigation_Satellite ;
+  skos:prefLabel "Commercial Navigation Satellite"^^xsd:string ;
+.
+:Commercial_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Commercial Satellite"^^xsd:string ;
+  rdfs:subClassOf :Satellite_Category ;
+  owl:disjointWith :Government_Satellite ;
+  owl:disjointWith :Military_Satellite ;
+  owl:disjointWith :Private_Satellite ;
+  skos:broader :Satellite_Category ;
+  skos:definition "A man-made satellite that is owned by a commercial group, organization, or person for profit.  [Proposed]"^^xsd:string ;
+  skos:prefLabel "Commercial Satellite"^^xsd:string ;
+.
+:Commercial_Spacecraft
+  rdf:type owl:Class ;
+  rdfs:label "Commercial Spacecraft"^^xsd:string ;
+  rdfs:subClassOf :Spacecraft_Category ;
+  skos:broader :Spacecraft_Category ;
+  skos:prefLabel "Commercial Spacecraft"^^xsd:string ;
+.
+:Commercial_Weather_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Commercial Weather Satellite"^^xsd:string ;
+  rdfs:subClassOf :Commercial_Satellite ;
+  rdfs:subClassOf :Weather_Satellite ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Commercial_Satellite
+            :Weather_Satellite
+          ) ;
+      ]
+    ) ;
+  skos:broader :Commercial_Satellite ;
+  skos:broader :Weather_Satellite ;
+  skos:prefLabel "Commercial Weather Satellite"^^xsd:string ;
+.
+:Communications_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Communications Satellite"^^xsd:string ;
+  rdfs:subClassOf :Geostationary_Satellite ;
+  rdfs:subClassOf :Utility_Satellite ;
+  skos:broader :Geostationary_Satellite ;
+  skos:broader :Utility_Satellite ;
+  skos:prefLabel "Communications Satellite"^^xsd:string ;
+.
+:Communications_Spacecraft
+  rdf:type owl:Class ;
+  rdfs:label "Communications Spacecraft"^^xsd:string ;
+  rdfs:subClassOf :Utility_Spacecraft ;
+  owl:unionOf (
+      :Communications_Satellite
+    ) ;
+  skos:broader :Utility_Spacecraft ;
+  skos:prefLabel "Communications Spacecraft"^^xsd:string ;
+.
+:Earth_Observation_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Earth Observation Satellite"^^xsd:string ;
+  rdfs:subClassOf :Observation_Satellite ;
+  skos:broader :Observation_Satellite ;
+  skos:prefLabel "Earth Observation Satellite"^^xsd:string ;
+.
+:Geostationary_Satellite
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://en.wikipedia.org/wiki/Geosynchronous_satellite"^^xsd:string ;
+  rdfs:label "Geostationary Satellite"^^xsd:string ;
+  rdfs:subClassOf :Geosynchronous_Satellite ;
+  skos:broader :Geosynchronous_Satellite ;
+  skos:definition "A special case of geosynchronous satellite is the geostationary satellite, which has a geostationary orbit – a circular geosynchronous orbit directly above the Earth's equator. Another type of geosynchronous orbit used by satellites is the Tundra elliptical orbit.  [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Geostationary Satellite"^^xsd:string ;
+  skos:scopeNote "Geostationary satellites appear to be fixed over one spot above the equator. Receiving and transmitting antennas on the earth do not need to track such a satellite. These antennas can be fixed in place and are much less expensive than tracking antennas. These satellites have revolutionized global communications, television broadcasting and weather forecasting, and have a number of important defense and intelligence applications."^^xsd:string ;
+  skos:scopeNote "Geostationary satellites have the special property of remaining permanently fixed in exactly the same position in the sky, as viewed from any location on Earth, meaning that ground-based antennas do not need to track them but can remain fixed in one direction. Such satellites are often used for communication purposes; a geosynchronous network is a communication network based on communication with or through geosynchronous satellites.  [WIKIPEDIA]"^^xsd:string ;
+  skos:scopeNote "If a geosynchronous satellite's orbit is not exactly aligned with the Earth's equator, the orbit is known as an inclined orbit. It will appear (when viewed by someone on the ground) to oscillate daily around a fixed point. As the angle between the orbit and the equator decreases, the magnitude of this oscillation becomes smaller; when the orbit lies entirely over the equator in a circular orbit, the satellite remains stationary relative to the Earth's surface – it is said to be geostationary.  [WIKIPEDIA]"^^xsd:string ;
+  skos:scopeNote "The term geosynchronous refers to the satellite's orbital period being exactly one sidereal day which enables it to be synchronized with the rotation of the Earth (\"geo-\"). Along with this orbital period requirement, to be geostationary as well, the satellite must be placed in an orbit that puts it in the vicinity over the equator. These two requirements make the satellite appear in an unchanging area of visibility when viewed from the Earth's surface, enabling continuous operation from one point on the ground. The special case of a geostationary orbit is the most common type of orbit for communications satellites.  [WIKIPEDIA]"^^xsd:string ;
+.
+:Geosynchronous_Satellite
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://en.wikipedia.org/wiki/Geosynchronous_satellite"^^xsd:string ;
+  rdfs:label "Geosynchronous Satellite"^^xsd:string ;
+  rdfs:subClassOf :Orbiting_Satellite ;
+  skos:definition "A geosynchronous satellite is a satellite in geosynchronous orbit, with an orbital period the same as the Earth's rotation period. Such a satellite returns to the same position in the sky after each sidereal day, and over the course of a day traces out a path in the sky that is typically some form of analemma. A special case of geosynchronous satellite is the geostationary satellite, which has a geostationary orbit – a circular geosynchronous orbit directly above the Earth's equator. Another type of geosynchronous orbit used by satellites is the Tundra elliptical orbit.  [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Geosynchronous Satellite"^^xsd:string ;
+  skos:scopeNote "Geosynchronous satellites have the advantage of remaining permanently in the same area of the sky, as viewed from a particular location on Earth, and so permanently within view of a given ground station.  [WIKIPEDIA]"^^xsd:string ;
+  skos:scopeNote "The term geosynchronous refers to the satellite's orbital period being exactly one sidereal day which enables it to be synchronized with the rotation of the Earth (\"geo-\").   [WIKIPEDIA]"^^xsd:string ;
+.
+:Global_Positioning_System_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Global Positioning System Satellite"^^xsd:string ;
+  rdfs:subClassOf :Navigation_Satellite ;
+  rdfs:subClassOf :Orbiting_Satellite ;
+  skos:altLabel "GPS Satellite"^^xsd:string ;
+  skos:broader :Navigation_Satellite ;
+  skos:broader :Orbiting_Satellite ;
+  skos:prefLabel "Global Positioning System Satellite"^^xsd:string ;
+.
+:Global_Positioning_System_Spacecraft
+  rdf:type owl:Class ;
+  rdfs:label "Global Positioning System Spacecraft"^^xsd:string ;
+  rdfs:subClassOf :Orbiting_Spacecraft ;
+  owl:unionOf (
+      :Satellite
+    ) ;
+  skos:altLabel "GPS Spacecraft"^^xsd:string ;
+  skos:broader :Orbiting_Spacecraft ;
+  skos:prefLabel "Global Positioning System Spacecraft"^^xsd:string ;
+.
+:Government_Communications_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Government Communications Satellite"^^xsd:string ;
+  rdfs:subClassOf :Communications_Satellite ;
+  rdfs:subClassOf :Government_Satellite ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Government_Satellite
+            :Communications_Satellite
+          ) ;
+      ]
+    ) ;
+  skos:broader :Communications_Satellite ;
+  skos:broader :Government_Satellite ;
+  skos:prefLabel "Government Communications Satellite"^^xsd:string ;
+.
+:Government_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Government Satellite"^^xsd:string ;
+  rdfs:subClassOf :Satellite_Category ;
+  owl:disjointWith :Commercial_Satellite ;
+  owl:disjointWith :Private_Satellite ;
+  skos:broader :Satellite_Category ;
+  skos:definition "A man-made satellite that is owned by a government and not for profit.  [Proposed]"^^xsd:string ;
+  skos:prefLabel "Government Satellite"^^xsd:string ;
+.
+:Government_Weather_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Government Weather Satellite"^^xsd:string ;
+  rdfs:subClassOf :Government_Satellite ;
+  rdfs:subClassOf :Weather_Satellite ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Government_Satellite
+            :Weather_Satellite
+          ) ;
+      ]
+    ) ;
+  skos:broader :Government_Satellite ;
+  skos:broader :Weather_Satellite ;
+  skos:prefLabel "Government Weather Satellite"^^xsd:string ;
+.
+:Launch_Recovery_Spacecraft
+  rdf:type owl:Class ;
+  rdfs:label "Launch Recovery Spacecraft"^^xsd:string ;
+  rdfs:subClassOf :Reusable_Spacecraft ;
+  skos:altLabel "Launch Recovery Spacecraft"^^xsd:string ;
+  skos:broader :Reusable_Spacecraft ;
+  skos:definition "A spacecraft purposely designed to return, substantially intact, from Earth orbit or outer space, to Earth.  [Proposed]"^^xsd:string ;
+  skos:narrower :Capsule ;
+  skos:narrower :Launch_Vehicle_Recovery_Asset ;
+  skos:narrower :Rocket ;
+  skos:prefLabel "Launch Recovery Vehicle"^^xsd:string ;
+.
+:Launch_Vehicle_Recovery_Asset
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DATA ARCHITECTURE"^^xsd:string ;
+  rdfs:label "Launch Vehicle Recovery Asset"^^xsd:string ;
+  rdfs:subClassOf :Launch_Recovery_Spacecraft ;
+  owl:unionOf (
+      :Passenger_Capsule
+    ) ;
+  skos:broader :Launch_Recovery_Spacecraft ;
+  skos:definition "A Launch Vehicle component purposely designed to return, substantially intact, from Earth orbit or outer space, to Earth.    [FAA DATA ARCH]"^^xsd:string ;
+  skos:prefLabel "Launch Vehicle Recovery Asset"^^xsd:string ;
+.
+:Load
+  rdf:type owl:Class ;
+  rdfs:label "Load"^^xsd:string ;
+  rdfs:subClassOf :Spacecraft ;
+  skos:broader :Spacecraft ;
+  skos:narrower :Cargo ;
+  skos:narrower :Payload ;
+  skos:prefLabel "Load"^^xsd:string ;
+.
+:Man-Made_Satellite
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://simple.wikipedia.org/wiki/Satellite_(artificial)"^^xsd:string ;
+  rdfs:label "Man-Made Satellite"^^xsd:string ;
+  rdfs:subClassOf :Satellite_Type ;
+  skos:broader :Satellite_Type ;
+  skos:definition "Most man-made satellites also orbit the Earth, but some orbit other planets, such as Saturn, Venus or Mars, or the moon.   [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Man-Made Satellite"^^xsd:string ;
+  skos:scopeNote """Man-made satellites have several main uses:
+Scientific Investigation
+Earth observation - including weather forecasting and tracking storms and pollution
+Communications - including satellite television and telephone calls
+Navigation - including the Global Positioning System (GPS)
+Military - including reconnaissance photography and communications (nuclear weapons are not allowed in space)
+[WIKIPEDIA]"""^^xsd:string ;
+.
+:Military_Communications_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Military Communications Satellite"^^xsd:string ;
+  rdfs:subClassOf :Communications_Satellite ;
+  rdfs:subClassOf :Military_Satellite ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Military_Satellite
+            :Communications_Satellite
+          ) ;
+      ]
+    ) ;
+  skos:broader :Communications_Satellite ;
+  skos:broader :Military_Satellite ;
+  skos:prefLabel "Military Communications Satellite"^^xsd:string ;
+.
+:Military_Navigation_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Military Navigation Satellite"^^xsd:string ;
+  rdfs:subClassOf :Navigation_Satellite ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Military_Satellite
+            :Navigation_Satellite
+          ) ;
+      ]
+    ) ;
+  skos:broader :Navigation_Satellite ;
+  skos:prefLabel "Military Navigation Satellite"^^xsd:string ;
+.
+:Military_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Military Satellite"^^xsd:string ;
+  rdfs:subClassOf :Satellite_Category ;
+  owl:disjointWith :Commercial_Satellite ;
+  owl:disjointWith :Private_Satellite ;
+  skos:broader :Satellite_Category ;
+  skos:definition "A man-made satellite that is owned by a military organization for defense purposes.  [Proposed]"^^xsd:string ;
+  skos:prefLabel "Military Satellite"^^xsd:string ;
+.
+:Natural_Satellite
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://simple.wikipedia.org/wiki/Satellite_(artificial)"^^xsd:string ;
+  rdfs:label "Natural Satellite"^^xsd:string ;
+  rdfs:subClassOf :Satellite_Type ;
+  skos:editorialNote "Refer to \"Satellite\" in the Space ontology for further information about Natural Satellites."^^xsd:string ;
+  skos:prefLabel "Natural Satellite"^^xsd:string ;
+.
+:Navigation_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Navigation Satellite"^^xsd:string ;
+  rdfs:subClassOf :Utility_Satellite ;
+  skos:broader :Utility_Satellite ;
+  skos:prefLabel "Navigation Satellite"^^xsd:string ;
+.
+:Observation_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Observation Satellite"^^xsd:string ;
+  rdfs:subClassOf :Surveillance_Satellite ;
+  skos:broader :Surveillance_Satellite ;
+  skos:prefLabel "Observation Satellite"^^xsd:string ;
+.
+:Observatory
+  rdf:type owl:Class ;
+  rdfs:label "Observatory"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Spacecraft ;
+  skos:narrower :Space_Observatory ;
+  skos:prefLabel "Observatory"^^xsd:string ;
+.
+:Orbiting_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Orbiting Satellite"^^xsd:string ;
+  rdfs:subClassOf :Satellite_Type ;
+  skos:broader :Satellite_Type ;
+  skos:prefLabel "Orbiting Satellite"^^xsd:string ;
+.
+:Orbiting_Spacecraft
+  rdf:type owl:Class ;
+  rdfs:label "Orbiting Spacecraft"^^xsd:string ;
+  rdfs:subClassOf :Spacecraft_Class ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Suborbital_Rocket
+            :Satellite
+            :Space_Station
+            :Space_Observatory
+          ) ;
+      ]
+    ) ;
+  skos:broader :Spacecraft_Class ;
+  skos:narrower :Satellite ;
+  skos:narrower :Space_Station ;
+  skos:narrower :Suborbital_Rocket ;
+  skos:prefLabel "Orbiting Spacecraft"^^xsd:string ;
+.
+:Passenger_Capsule
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "extracted from Launch Vehicle Recovery Asset Type in FAA DATA ARCHITECTURE"^^xsd:string ;
+  rdfs:label "Passenger Capsule"^^xsd:string ;
+  rdfs:subClassOf :Capsule ;
+  skos:altLabel "Passenger Stage"^^xsd:string ;
+  skos:broader :Capsule ;
+  skos:broader :Launch_Recovery_Spacecraft ;
+  skos:definition "is a type of Launch Recovery Vehicle  [FAA DATA ARCH]"^^xsd:string ;
+  skos:definition "is a type of launch vehicle that remains intact and can return to Earth for future use  "^^xsd:string ;
+  skos:prefLabel "Passenger Capsule"^^xsd:string ;
+.
+:Payload
+  rdf:type owl:Class ;
+  rdfs:label "Payload"^^xsd:string ;
+  rdfs:subClassOf :Load ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Load ;
+  skos:narrower :Remote_Sensing_Payload ;
+  skos:narrower :Scientific_Payload ;
+  skos:narrower :Weather_Payload ;
+  skos:prefLabel "Payload"^^xsd:string ;
+  skos:related :Spacecraft ;
+.
+:Private_Communications_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Private Communications Satellite"^^xsd:string ;
+  rdfs:subClassOf :Communications_Satellite ;
+  rdfs:subClassOf :Private_Satellite ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Private_Satellite
+            :Communications_Satellite
+          ) ;
+      ]
+    ) ;
+  skos:broader :Communications_Satellite ;
+  skos:broader :Private_Satellite ;
+  skos:prefLabel "Private Communications Satellite"^^xsd:string ;
+.
+:Private_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Private Satellite"^^xsd:string ;
+  rdfs:subClassOf :Satellite_Category ;
+  owl:disjointWith :Commercial_Satellite ;
+  owl:disjointWith :Government_Satellite ;
+  owl:disjointWith :Military_Satellite ;
+  skos:broader :Satellite_Category ;
+  skos:definition "A man-made satellite that is owned by a private group, organization, or person and not for profit.  [Proposed]"^^xsd:string ;
+  skos:prefLabel "Private Satellite"^^xsd:string ;
+.
+:Reconnaissance_Satellite
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA   https://en.wikipedia.org/wiki/Reconnaissance_satellite"^^xsd:string ;
+  rdfs:label "Reconnaissance Satellite"^^xsd:string ;
+  rdfs:subClassOf :Earth_Observation_Satellite ;
+  rdfs:subClassOf :Government_Satellite ;
+  rdfs:subClassOf :Military_Satellite ;
+  skos:altLabel "Spy Satellite"^^xsd:string ;
+  skos:broader :Government_Satellite ;
+  skos:broader :Military_Satellite ;
+  skos:definition "A reconnaissance satellite (commonly, although unofficially, referred to as a spy satellite) is an Earth observation satellite or communications satellite deployed for military or intelligence applications.   [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Reconnaissance Satellite"^^xsd:string ;
+.
+:Remote_Sensing_Payload
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "extracted from \"Payload\" in FAA DATA ARCHITECTURE"^^xsd:string ;
+  rdfs:label "Remote Sensing Payload"^^xsd:string ;
+  rdfs:subClassOf :Payload ;
+  skos:broader :Payload ;
+  skos:definition "is a type of Payload in a Spacecraft   [FAA DATA ARCH]"^^xsd:string ;
+  skos:prefLabel "Remote Sensing Payload"^^xsd:string ;
+.
+:Research_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Research Satellite"^^xsd:string ;
+  rdfs:subClassOf :Science_Satellite ;
+  skos:broader :Science_Satellite ;
+  skos:prefLabel "Research Satellite"^^xsd:string ;
+.
+:Reusable_Spacecraft
+  rdf:type owl:Class ;
+  rdfs:label "Reusable Spacecraft"^^xsd:string ;
+  rdfs:subClassOf :Utility_Spacecraft ;
+  owl:unionOf (
+      :Space_Shuttle
+      :Spaceship
+    ) ;
+  skos:broader :Utility_Spacecraft ;
+  skos:narrower :Launch_Recovery_Spacecraft ;
+  skos:narrower :Space_Shuttle ;
+  skos:narrower :Spaceship ;
+  skos:prefLabel "Reusable Spacecraft"^^xsd:string ;
+.
+:Rocket
+  rdf:type owl:Class ;
+  rdfs:label "Rocket"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Utility_Spacecraft ;
+  skos:narrower :Suborbital_Rocket ;
+  skos:prefLabel "Rocket"^^xsd:string ;
+.
+:Rocket-Propelled_Spaceship
+  rdf:type owl:Class ;
+  rdfs:label "Rocket-Propelled Spaceship"^^xsd:string ;
+  rdfs:subClassOf :Spaceship_Type ;
+  skos:broader :Spaceship_Type ;
+  skos:prefLabel "Rocket-Propelled Spaceship"^^xsd:string ;
+.
+:Rocket_Category
+  rdf:type owl:Class ;
+  rdfs:label "Rocket Category"^^xsd:string ;
+  rdfs:subClassOf :Rocket ;
+  skos:broader :Rocket ;
+  skos:prefLabel "Rocket Category"^^xsd:string ;
+.
+:Rocket_Make
+  rdf:type owl:Class ;
+  rdfs:label "Rocket Make"^^xsd:string ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  rdfs:subClassOf :Rocket_Type ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader :Rocket_Type ;
+  skos:prefLabel "Rocket Make"^^xsd:string ;
+.
+:Rocket_Ship
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Rocket Ship"^^xsd:string ;
+  rdfs:subClassOf :Rocket-Propelled_Spaceship ;
+  skos:altLabel "Rocketship"^^xsd:string ;
+  skos:broader :Rocket-Propelled_Spaceship ;
+  skos:definition ": a rocket-propelled spaceship  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Rocket Ship"^^xsd:string ;
+.
+:Rocket_Type
+  rdf:type owl:Class ;
+  rdfs:label "Rocket Type"^^xsd:string ;
+  rdfs:subClassOf :Rocket ;
+  skos:broader :Rocket ;
+  skos:prefLabel "Rocket Type"^^xsd:string ;
+.
+:Satellite
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://simple.wikipedia.org/wiki/Satellite_(artificial)"^^xsd:string ;
+  rdfs:label "Satellite"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "2 a : a celestial body orbiting another of larger size b : a manufactured object or vehicle intended to orbit the earth, the moon, or another celestial body   [WEBSTER]"^^xsd:string ;
+  skos:definition "A satellite is an object that orbits another object. In space, satellites may be made by man, or they may be natural. The moon is a natural satellite that orbits the Earth. Most man-made satellites also orbit the Earth, but some orbit other planets, such as Saturn, Venus or Mars, or the moon.   [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Satellite"^^xsd:string ;
+  skos:scopeNote "Satellites are used for many purposes. There are weather satellites, communications satellites, reconnaissance satellites, astronomy satellites and many other kinds.  [WIKIPEDIA]"^^xsd:string ;
+.
+:Satellite_Category
+  rdf:type owl:Class ;
+  rdfs:label "Satellite Category"^^xsd:string ;
+  rdfs:subClassOf :Satellite ;
+  skos:broader :Satellite ;
+  skos:prefLabel "Satellite Category"^^xsd:string ;
+.
+:Satellite_Make
+  rdf:type owl:Class ;
+  rdfs:label "Satellite Make"^^xsd:string ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  rdfs:subClassOf :Satellite_Type ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader :Satellite_Type ;
+  skos:prefLabel "Satellite Make"^^xsd:string ;
+.
+:Satellite_Type
+  rdf:type owl:Class ;
+  rdfs:label "Satellite Type"^^xsd:string ;
+  rdfs:subClassOf :Satellite ;
+  skos:broader :Satellite ;
+  skos:prefLabel "Satellite Type"^^xsd:string ;
+.
+:Science_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Science Satellite"^^xsd:string ;
+  rdfs:subClassOf :Utility_Satellite ;
+  skos:broader :Utility_Satellite ;
+  skos:prefLabel "Science Satellite"^^xsd:string ;
+.
+:Scientific_Payload
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "extracted from \"Payload\" in FAA DATA ARCHITECTURE"^^xsd:string ;
+  rdfs:label "Scientific Payload"^^xsd:string ;
+  rdfs:subClassOf :Payload ;
+  skos:broader :Payload ;
+  skos:definition "is a type of Payload in a Spacecraft   [FAA DATA ARCH]"^^xsd:string ;
+  skos:prefLabel "Scientific Payload"^^xsd:string ;
+.
+:Space_Observatory
+  rdf:type owl:Class ;
+  rdfs:label "Space Observatory"^^xsd:string ;
+  rdfs:subClassOf :Observatory ;
+  skos:broader :Observatory ;
+  skos:broader :Spaceship ;
+  skos:prefLabel "Space Observatory"^^xsd:string ;
+.
+:Space_Shuttle
+  rdf:type owl:Class ;
+  rdfs:label "Space Shuttle"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Reusable_Spacecraft ;
+  skos:definition ": a reusable spacecraft designed to transport people and cargo between earth and space  "^^xsd:string ;
+  skos:prefLabel "Space Shuttle"^^xsd:string ;
+.
+:Space_Station
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Space Station"^^xsd:string ;
+  rdfs:subClassOf :Orbiting_Satellite ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Orbiting_Satellite ;
+  skos:definition ": a large artificial satellite designed to be occupied for long periods and to serve as a base (as for scientific observation)  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Space Station"^^xsd:string ;
+  skos:related :Space_Observatory ;
+.
+:Spacecraft
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11ed."^^xsd:string ;
+  rdfs:label "Spacecraft"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:definition " : a vehicle or device designed for travel or operation outside the earth's atmosphere [WEBSTER]"^^xsd:string ;
+  skos:definition "A physical resource that is a type of conveyance that is capable of: (a) movement - moving under its own violition along a path or route through the earth's atmosphere to outer space and return to land on either land or water; and (b) carrying or transporting someone or something from Earth to outer space (perhaps to another planet or satellite) and it may or may not return to Earth (depending on its mission).  [PROPOSED]"^^xsd:string ;
+  skos:hasTopConcept <http://www.faa.gov/DRS/Conveyance#Conveyance> ;
+  skos:narrower :Commercial_Spacecraft ;
+  skos:narrower :Load ;
+  skos:narrower :Orbiting_Spacecraft ;
+  skos:narrower :Utility_Spacecraft ;
+  skos:prefLabel "Spacecraft"^^xsd:string ;
+  skos:topConceptOf :Spacecraft ;
+.
+:Spacecraft_Category
+  rdf:type owl:Class ;
+  rdfs:label "Spacecraft Category"^^xsd:string ;
+  rdfs:subClassOf :Spacecraft ;
+  skos:broader :Spacecraft ;
+  skos:hasTopConcept :Spacecraft ;
+  skos:prefLabel "Spacecraft Category"^^xsd:string ;
+.
+:Spacecraft_Class
+  rdf:type owl:Class ;
+  rdfs:label "Spacecraft Class"^^xsd:string ;
+  rdfs:subClassOf :Spacecraft ;
+  skos:broader :Spacecraft ;
+  skos:hasTopConcept :Spacecraft ;
+  skos:prefLabel "Spacecraft Class"^^xsd:string ;
+.
+:Spacecraft_Make
+  rdf:type owl:Class ;
+  rdfs:label "Spacecraft Make"^^xsd:string ;
+  rdfs:subClassOf :Spacecraft_Type ;
+  skos:broader :Spacecraft_Type ;
+  skos:prefLabel "Spacecraft Make"^^xsd:string ;
+.
+:Spacecraft_Type
+  rdf:type owl:Class ;
+  rdfs:label "Spacecraft Type"^^xsd:string ;
+  rdfs:subClassOf :Spacecraft_Class ;
+  skos:broader :Spacecraft_Class ;
+  skos:prefLabel "Spacecraft Type"^^xsd:string ;
+.
+:Spaceship
+  rdf:type owl:Class ;
+  rdfs:label "Spaceship"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Reusable_Spacecraft ;
+  skos:definition " : a vehicle used for space travel"^^xsd:string ;
+  skos:narrower :Rocket_Ship ;
+  skos:narrower :Space_Observatory ;
+  skos:prefLabel "Spaceship"^^xsd:string ;
+.
+:Spaceship_Make
+  rdf:type owl:Class ;
+  rdfs:label "Spaceship Make"^^xsd:string ;
+  rdfs:subClassOf <http://purl.org/goodrelations/v1#Brand> ;
+  rdfs:subClassOf :Spaceship_Type ;
+  skos:broader <http://purl.org/goodrelations/v1#Brand> ;
+  skos:broader :Spaceship_Type ;
+  skos:prefLabel "Spaceship Make"^^xsd:string ;
+.
+:Spaceship_Type
+  rdf:type owl:Class ;
+  rdfs:label "Spaceship Type"^^xsd:string ;
+  rdfs:subClassOf :Spaceship ;
+  skos:broader :Spaceship ;
+  skos:prefLabel "Spaceship Type"^^xsd:string ;
+.
+:Suborbital_Rocket
+  rdf:type owl:Class ;
+  rdfs:label "Suborbital Rocket"^^xsd:string ;
+  rdfs:subClassOf :Rocket_Type ;
+  skos:broader :Rocket_Type ;
+  skos:prefLabel "Suborbital Rocket"^^xsd:string ;
+.
+:Surveillance_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Surveillance Satellite"^^xsd:string ;
+  rdfs:subClassOf :Utility_Satellite ;
+  skos:broader :Utility_Satellite ;
+  skos:prefLabel "Surveillance Satellite"^^xsd:string ;
+.
+:Transport_Spacecraft
+  rdf:type owl:Class ;
+  rdfs:label "Transport Spacecraft"^^xsd:string ;
+  rdfs:subClassOf :Utility_Spacecraft ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            :Space_Shuttle
+            :Passenger_Capsule
+          ) ;
+      ]
+    ) ;
+  skos:broader :Utility_Spacecraft ;
+  skos:prefLabel "Transport Spacecraft"^^xsd:string ;
+.
+:Utility_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Utility Satellite"^^xsd:string ;
+  rdfs:subClassOf :Satellite_Category ;
+  skos:prefLabel "Utility Satellite"^^xsd:string ;
+.
+:Utility_Spacecraft
+  rdf:type owl:Class ;
+  rdfs:label "Utility Spacecraft"^^xsd:string ;
+  rdfs:subClassOf :Spacecraft_Category ;
+  skos:broader :Spacecraft_Category ;
+  skos:narrower :Communications_Spacecraft ;
+  skos:narrower :Reusable_Spacecraft ;
+  skos:prefLabel "Utility Spacecraft"^^xsd:string ;
+.
+:Weather_Payload
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "extracted from \"Payload\" in FAA DATA ARCHITECTURE"^^xsd:string ;
+  rdfs:label "Weather Payload"^^xsd:string ;
+  rdfs:subClassOf :Payload ;
+  skos:broader :Payload ;
+  skos:definition "is a type of Payload in a Spacecraft   [FAA DATA ARCH]"^^xsd:string ;
+  skos:prefLabel "Weather Payload"^^xsd:string ;
+.
+:Weather_Satellite
+  rdf:type owl:Class ;
+  rdfs:label "Weather Satellite"^^xsd:string ;
+  rdfs:subClassOf :Earth_Observation_Satellite ;
+  rdfs:subClassOf :Geostationary_Satellite ;
+  rdfs:subClassOf :Utility_Satellite ;
+  skos:broader :Earth_Observation_Satellite ;
+  skos:broader :Geostationary_Satellite ;
+  skos:broader :Utility_Satellite ;
+  skos:prefLabel "Weather Satellite"^^xsd:string ;
+.
+skos:definition
+  owl:equivalentProperty rdfs:comment ;
+.

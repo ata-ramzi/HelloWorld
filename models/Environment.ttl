@@ -1,0 +1,534 @@
+# baseURI: http://www.faa.gov/DRS/Environment
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://www.faa.gov/DRS/Atmosphere-Airspace
+# imports: http://www.faa.gov/DRS/Existence
+# imports: http://www.faa.gov/DRS/Geography
+# imports: http://www.faa.gov/DRS/Geometry
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://www.faa.gov/DRS/Environment#> .
+@prefix Atmosphere-Airspace: <http://www.faa.gov/DRS/Atmosphere-Airspace#> .
+@prefix Existence: <http://www.faa.gov/DRS/Existence#> .
+@prefix Geography: <http://www.faa.gov/DRS/Geography#> .
+@prefix Geometry: <http://www.faa.gov/DRS/Geometry#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+Atmosphere-Airspace:Air_Mass_Boundary
+  dc:relation "AT-Existence:Front"^^xsd:string ;
+  skos:related Existence:Front ;
+.
+Atmosphere-Airspace:Space
+  skos:broader :Environment ;
+  skos:hasTopConcept :Environment ;
+.
+<http://www.faa.gov/DRS/Environment>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports <http://www.faa.gov/DRS/Atmosphere-Airspace> ;
+  owl:imports <http://www.faa.gov/DRS/Existence> ;
+  owl:imports <http://www.faa.gov/DRS/Geography> ;
+  owl:imports <http://www.faa.gov/DRS/Geometry> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Activity-related_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Activity-related Environment"^^xsd:string ;
+  rdfs:subClassOf :Environment ;
+  skos:broader :Environment ;
+  skos:prefLabel "Activity-related Environment"^^xsd:string ;
+.
+:Air_Transportation_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Environment"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Environment ;
+  skos:broader :Transportation_Environment ;
+  skos:prefLabel "Air Transportation Environment"^^xsd:string ;
+.
+:Airspace_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Airspace Environment"^^xsd:string ;
+  rdfs:subClassOf :Atmospheric_Environment ;
+  rdfs:subClassOf :Infrastructure_Environment ;
+  skos:broader :Atmospheric_Environment ;
+  skos:broader :Infrastructure_Environment ;
+  skos:prefLabel "Airspace Environment"^^xsd:string ;
+.
+:Atmospheric_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Atmospheric Environment"^^xsd:string ;
+  rdfs:subClassOf :Environment ;
+  skos:broader :Environment ;
+  skos:prefLabel "Atmospheric Environment"^^xsd:string ;
+.
+:Aviation_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Aviation Environment"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Environment ;
+  skos:broader :Air_Transportation_Environment ;
+  skos:prefLabel "Aviation Environment"^^xsd:string ;
+.
+:Aviation_Safety_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Aviation Safety Environment"^^xsd:string ;
+  rdfs:subClassOf :Aviation_Environment ;
+  rdfs:subClassOf :Safety_Environment ;
+  skos:broader :Aviation_Environment ;
+  skos:broader :Safety_Environment ;
+  skos:prefLabel "Aviation Safety Environment"^^xsd:string ;
+.
+:Aviation_Safety_Knowledge_Management_Environment
+  rdf:type owl:Class ;
+  vaem:acronym "ASKME"^^xsd:string ;
+  rdfs:label "Aviation Safety Knowledge Management Environment"^^xsd:string ;
+  rdfs:subClassOf :Aviation_Safety_Environment ;
+  rdfs:subClassOf :Knowledge_Management_Environment ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Aviation_Safety_Environment
+            :Knowledge_Management_Environment
+          ) ;
+      ]
+    ) ;
+  skos:broader :Aviation_Safety_Environment ;
+  skos:broader :Knowledge_Management_Environment ;
+  skos:prefLabel "Aviation Safety Knowledge Management Environment"^^xsd:string ;
+.
+:Collaborative_Decision_Making_Environment
+  rdf:type owl:Class ;
+  dc:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  dc:bibliographicCitation "SESAR Consortium (2007) CONOPS Acronyms and Definitions, Task 2.2.2 - Milestone 3, Document Number: DLT-0612-222-02-00"^^xsd:string ;
+  vaem:abbreviation "CDM Environment"^^xsd:string ;
+  rdfs:label "Collaborative Decision Making Environment"^^xsd:string ;
+  rdfs:subClassOf :Collaborative_Work_Environment ;
+  rdfs:subClassOf :Decision-Making_Environment ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Collaborative_Work_Environment
+            :Decision-Making_Environment
+          ) ;
+      ]
+    ) ;
+  skos:altLabel "CDM Environment"^^xsd:string ;
+  skos:altLabel "CDM"^^xsd:string ;
+  skos:broader :Collaborative_Work_Environment ;
+  skos:broader :Decision-Making_Environment ;
+  skos:definition "An environment in which the consequences of decisions taken are visible to all partners.   [SESAR]"^^xsd:string ;
+  skos:prefLabel "Collaborative Decision Making Environment"^^xsd:string ;
+.
+:Collaborative_Work_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Collaborative Work Environment"^^xsd:string ;
+  rdfs:subClassOf :Work_Environment ;
+  skos:broader :Work_Environment ;
+  skos:prefLabel "Collaborative Work Environment"^^xsd:string ;
+.
+:Communications_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Communications Environment"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Environment ;
+  skos:broader :Activity-related_Environment ;
+  skos:prefLabel "Communications Environment"^^xsd:string ;
+.
+:Congested_Hostile_Environment
+  rdf:type owl:Class ;
+  dc:bibliographicCitation "ICAO Annex 6 Part III, International Operations - Helicopters"^^xsd:string ;
+  rdfs:label "Congested Hostile Environment"^^xsd:string ;
+  rdfs:subClassOf :Hostile_Environment ;
+  owl:disjointWith :Non-Congested_Hostile_Environment ;
+  skos:broader :Hostile_Environment ;
+  skos:definition "A hostile environment within a congested area.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Congested Hostile Environment"^^xsd:string ;
+.
+:Continous_Lower_Energy_Emissions_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Continous Lower Energy Emissions Environment"^^xsd:string ;
+  rdfs:subClassOf :Energy_Emissions_Environment ;
+  skos:broader :Energy_Emissions_Environment ;
+  skos:prefLabel "Continous Lower Energy Emissions Environment"^^xsd:string ;
+.
+:Continous_Lower_Energy_Emissions_and_Noise
+  rdf:type owl:Class ;
+  vaem:acronym "CLEEN"^^xsd:string ;
+  rdfs:label "Continous Lower Energy Emissions and Noise"^^xsd:string ;
+  rdfs:subClassOf :Continous_Lower_Energy_Emissions_Environment ;
+  rdfs:subClassOf :Noise_Emissions_Environment ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Continous_Lower_Energy_Emissions_Environment
+            :Noise_Emissions_Environment
+          ) ;
+      ]
+    ) ;
+  skos:broader :Continous_Lower_Energy_Emissions_Environment ;
+  skos:broader :Noise_Emissions_Environment ;
+  skos:prefLabel "Continous Lower Energy Emissions and Noise"^^xsd:string ;
+.
+:Data_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Data Environment"^^xsd:string ;
+  rdfs:subClassOf :Information_Resource_Environment ;
+  skos:broader :Information_Resource_Environment ;
+  skos:prefLabel "Data Environment"^^xsd:string ;
+.
+:Decision-Making_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Decision-Making Environment"^^xsd:string ;
+  rdfs:subClassOf :Management_Environment ;
+  skos:broader :Management_Environment ;
+  skos:prefLabel "Decision-Making Environment"^^xsd:string ;
+.
+:Design_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Design Environment"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Environment ;
+  skos:broader :Activity-related_Environment ;
+  skos:prefLabel "Design Environment"^^xsd:string ;
+.
+:Emissions_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Emissions Environment"^^xsd:string ;
+  rdfs:subClassOf :Atmospheric_Environment ;
+  skos:broader :Atmospheric_Environment ;
+  skos:prefLabel "Emissions Environment"^^xsd:string ;
+.
+:Energy_Emissions_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Energy Emissions Environment"^^xsd:string ;
+  rdfs:subClassOf :Emissions_Environment ;
+  skos:broader :Emissions_Environment ;
+  skos:prefLabel "Energy Emissions Environment"^^xsd:string ;
+.
+:Environment
+  rdf:type owl:Class ;
+  dc:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Environment"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:definition """1 : the circumstances, objects, or conditions by which one is surrounded 
+2 a : the complex of physical, chemical, and biotic factors (as climate, soil, and living things) that act upon an organism or an ecological community and ultimately determine its form and survival b : the aggregate of social and cultural conditions that influence the life of an individual or community 
+3 : the position or characteristic position of a linguistic element in a sequence 
+4 : a computer interface from which various tasks can be performed <a programming environment>   [WEBSTER]"""^^xsd:string ;
+  skos:narrower Atmosphere-Airspace:Space ;
+  skos:narrower :Collaborative_Decision_Making_Environment ;
+  skos:narrower :Hostile_Environment ;
+  skos:narrower :Non-Hostile_Environment ;
+  skos:narrower :Universe_of_Discourse ;
+  skos:narrower Existence:Existence ;
+  skos:narrower Geography:Space ;
+  skos:narrower Geometry:Space ;
+  skos:prefLabel "Environment"^^xsd:string ;
+.
+:Facility_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Facility Environment"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Environment ;
+  skos:broader :Infrastructure_Environment ;
+  skos:prefLabel "Facility Environment"^^xsd:string ;
+.
+:Flight_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Flight Environment"^^xsd:string ;
+  rdfs:subClassOf :Aviation_Environment ;
+  skos:broader :Aviation_Environment ;
+  skos:prefLabel "Flight Environment"^^xsd:string ;
+.
+:Geographic_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Geographic Environment"^^xsd:string ;
+  rdfs:subClassOf :Environment ;
+  skos:broader :Environment ;
+  skos:prefLabel "Geographic Environment"^^xsd:string ;
+.
+:Graphical_Airspace_Design_Environment
+  rdf:type owl:Class ;
+  dc:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:abbreviation "GRADE"^^xsd:string ;
+  rdfs:label "Graphical Airspace Design Environment"^^xsd:string ;
+  rdfs:subClassOf :Airspace_Environment ;
+  rdfs:subClassOf :Design_Environment ;
+  rdfs:subClassOf :Graphics_Environment ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Graphics_Environment
+            :Airspace_Environment
+            :Design_Environment
+          ) ;
+      ]
+    ) ;
+  skos:broader :Airspace_Environment ;
+  skos:broader :Design_Environment ;
+  skos:broader :Graphics_Environment ;
+  skos:prefLabel "Graphical Airspace Design Environment"^^xsd:string ;
+.
+:Graphics_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Graphics Environment"^^xsd:string ;
+  rdfs:subClassOf :Information_Resource_Environment ;
+  skos:broader :Information_Resource_Environment ;
+  skos:prefLabel "Graphics Environment"^^xsd:string ;
+.
+:Hostile_Environment
+  rdf:type owl:Class ;
+  dc:bibliographicCitation "ICAO Annex 6 Part III, International Operations - Helicopters"^^xsd:string ;
+  rdfs:label "Hostile Environment"^^xsd:string ;
+  rdfs:subClassOf :Environment ;
+  owl:disjointWith :Non-Hostile_Environment ;
+  skos:broader :Environment ;
+  skos:definition """An environment in which:
+a) a safe forced landing cannot be accomplished because the surface and surrounding environment are inadequate; or
+b) the helicopter occupants cannot be adequately protected from the elements; or
+c) search and rescue response/capa                [ICAO]"""^^xsd:string ;
+  skos:narrower :Congested_Hostile_Environment ;
+  skos:narrower :Non-Congested_Hostile_Environment ;
+  skos:prefLabel "Hostile Environment"^^xsd:string ;
+.
+:Information_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Information Environment"^^xsd:string ;
+  rdfs:subClassOf :Information_Resource_Environment ;
+  skos:broader :Information_Resource_Environment ;
+  skos:prefLabel "Information Environment"^^xsd:string ;
+.
+:Information_Resource_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Information Resource Environment"^^xsd:string ;
+  rdfs:subClassOf :Resource_Environment ;
+  skos:broader :Resource_Environment ;
+  skos:prefLabel "Information Resource Environment"^^xsd:string ;
+.
+:Information_Resource_Management_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Information Resource Management Environment"^^xsd:string ;
+  rdfs:subClassOf :Resource_Environment ;
+  rdfs:subClassOf :Resource_Management_Environment ;
+  skos:broader :Resource_Environment ;
+  skos:broader :Resource_Management_Environment ;
+  skos:prefLabel "Information Resource Management Environment"^^xsd:string ;
+.
+:Infrastructure_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Infrastructure Environment"^^xsd:string ;
+  rdfs:subClassOf :Environment ;
+  skos:broader :Environment ;
+  skos:prefLabel "Infrastructure Environment"^^xsd:string ;
+.
+:Integrated_Information_Environment
+  rdf:type owl:Class ;
+  dc:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "IEE"^^xsd:string ;
+  rdfs:label "Integrated Information Environment"^^xsd:string ;
+  rdfs:subClassOf :Information_Environment ;
+  skos:broader :Information_Environment ;
+  skos:prefLabel "Integrated Information Environment"^^xsd:string ;
+.
+:Knowledge_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Knowledge Environment"^^xsd:string ;
+  rdfs:subClassOf :Information_Resource_Environment ;
+  skos:broader :Information_Resource_Environment ;
+  skos:prefLabel "Knowledge Environment"^^xsd:string ;
+.
+:Knowledge_Management_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Knowledge Management Environment"^^xsd:string ;
+  rdfs:subClassOf :Information_Resource_Management_Environment ;
+  rdfs:subClassOf :Knowledge_Environment ;
+  skos:broader :Information_Resource_Management_Environment ;
+  skos:broader :Knowledge_Environment ;
+  skos:prefLabel "Knowledge Management Environment"^^xsd:string ;
+.
+:Management_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Management Environment"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Environment ;
+  skos:broader :Activity-related_Environment ;
+  skos:prefLabel "Management Environment"^^xsd:string ;
+.
+:National_Airspace_System_Adaptation_Services_Environment
+  rdf:type owl:Class ;
+  vaem:acronym "NASE"^^xsd:string ;
+  rdfs:label "National Airspace System Adaptation Services Environment"^^xsd:string ;
+  rdfs:subClassOf :National_Airspace_System_Environment ;
+  skos:altLabel "NAS Adaptation Services Environment"^^xsd:string ;
+  skos:broader :National_Airspace_System_Environment ;
+  skos:prefLabel "National Airspace System Adaptation Services Environment"^^xsd:string ;
+.
+:National_Airspace_System_Environment
+  rdf:type owl:Class ;
+  dc:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:abbreviation "NAS Environment"^^xsd:string ;
+  vaem:acronym "NASE"^^xsd:string ;
+  rdfs:label "National Airspace System Environment"^^xsd:string ;
+  rdfs:subClassOf :Airspace_Environment ;
+  skos:altLabel "NAS Environment"^^xsd:string ;
+  skos:broader :Airspace_Environment ;
+  skos:prefLabel "National Airspace System Environment"^^xsd:string ;
+.
+:Noise_Emissions_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Noise Emissions Environment"^^xsd:string ;
+  rdfs:subClassOf :Emissions_Environment ;
+  skos:broader :Emissions_Environment ;
+  skos:prefLabel "Noise Emissions Environment"^^xsd:string ;
+.
+:Non-Congested_Hostile_Environment
+  rdf:type owl:Class ;
+  dc:bibliographicCitation "ICAO Annex 6 Part III, International Operations - Helicopters"^^xsd:string ;
+  rdfs:label "Non-Congested Hostile Environment"^^xsd:string ;
+  rdfs:subClassOf :Hostile_Environment ;
+  skos:broader :Hostile_Environment ;
+  skos:definition "A hostile environment outside a congested area.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Non-Congested Hostile Environment"^^xsd:string ;
+.
+:Non-Hostile_Environment
+  rdf:type owl:Class ;
+  dc:bibliographicCitation "ICAO Annex 6 Part III, International Operations - Helicopters"^^xsd:string ;
+  rdfs:label "Non-Hostile Environment"^^xsd:string ;
+  rdfs:subClassOf :Environment ;
+  skos:broader :Environment ;
+  skos:definition """An environment in which:
+a) a safe forced landing can be accomplished because the surface and surrounding environment are adequate;
+b) the helicopter occupants can be adequately protected from the elements;
+c) search and rescue response/capability is prov       [ICAO]"""^^xsd:string ;
+  skos:prefLabel "Non-Hostile Environment"^^xsd:string ;
+.
+:Operations_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Operations Environment"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Environment ;
+  skos:broader :Activity-related_Environment ;
+  skos:prefLabel "Operations Environment"^^xsd:string ;
+.
+:Physical_Resource_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Physical Resource Environment"^^xsd:string ;
+  rdfs:subClassOf :Resource_Environment ;
+  skos:broader :Resource_Environment ;
+  skos:prefLabel "Physical Resource Environment"^^xsd:string ;
+.
+:Resource_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Resource Environment"^^xsd:string ;
+  rdfs:subClassOf :Environment ;
+  skos:broader :Environment ;
+  skos:prefLabel "Resource Environment"^^xsd:string ;
+.
+:Resource_Management_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Resource Management Environment"^^xsd:string ;
+  rdfs:subClassOf :Management_Environment ;
+  skos:broader :Management_Environment ;
+  skos:prefLabel "Resource Management Environment"^^xsd:string ;
+.
+:Risk_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Risk Environment"^^xsd:string ;
+  rdfs:subClassOf :Environment ;
+  skos:broader :Environment ;
+  skos:prefLabel "Risk Environment"^^xsd:string ;
+.
+:Risk_Management_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Risk Management Environment"^^xsd:string ;
+  rdfs:subClassOf :Management_Environment ;
+  skos:broader :Management_Environment ;
+  skos:prefLabel "Risk Management Environment"^^xsd:string ;
+.
+:Safety_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Safety Environment"^^xsd:string ;
+  rdfs:subClassOf :Risk_Environment ;
+  skos:broader :Environment ;
+  skos:prefLabel "Safety Environment"^^xsd:string ;
+.
+:Security_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Security Environment"^^xsd:string ;
+  rdfs:subClassOf :Risk_Environment ;
+  skos:broader :Risk_Environment ;
+  skos:prefLabel "Security Environment"^^xsd:string ;
+.
+:Service_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Service Environment"^^xsd:string ;
+  rdfs:subClassOf :Operations_Environment ;
+  skos:broader :Operations_Environment ;
+  skos:prefLabel "Service Environment"^^xsd:string ;
+.
+:System_Environment
+  rdf:type owl:Class ;
+  rdfs:label "System Environment"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Environment ;
+  skos:broader :Infrastructure_Environment ;
+  skos:prefLabel "System Environment"^^xsd:string ;
+.
+:Transportation_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Environment"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Environment ;
+  skos:broader :Activity-related_Environment ;
+  skos:prefLabel "Transportation Environment"^^xsd:string ;
+.
+:Universe_of_Discourse
+  rdf:type owl:Class ;
+  dc:bibliographicCitation "ICAO Doc 9881, Guidelines for Electronic Terrain, Obstacle and Aerodrome Mapping Information"^^xsd:string ;
+  rdfs:label "Universe of Discourse"^^xsd:string ;
+  rdfs:subClassOf :Environment ;
+  skos:broader :Environment ;
+  skos:definition "View of the real or hypothetical world that includes everything of interest.  [ICAO]"^^xsd:string ;
+  skos:prefLabel "Universe of Discourse"^^xsd:string ;
+.
+:Work_Environment
+  rdf:type owl:Class ;
+  rdfs:label "Work Environment"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Environment ;
+  skos:broader :Activity-related_Environment ;
+  skos:prefLabel "Work Environment"^^xsd:string ;
+.
+Existence:Airflow
+  skos:broader Atmosphere-Airspace:Air_Mass ;
+.
+Existence:Existence
+  skos:broader :Environment ;
+  skos:hasTopConcept :Environment ;
+.
+Existence:Front
+  dc:relation "AT-Atmosphere-Airspace:Air_Mass_Boundary"^^xsd:string ;
+  skos:broader Atmosphere-Airspace:Air_Mass_Boundary ;
+  skos:related Atmosphere-Airspace:Air_Mass_Boundary ;
+.
+Geography:Origin
+  skos:broader Geography:Point ;
+.
+Geography:Point
+  skos:narrower Geography:Origin ;
+.
+Geography:Space
+  skos:broader :Environment ;
+  skos:hasTopConcept :Environment ;
+.
+Geometry:Space
+  skos:broader :Environment ;
+  skos:hasTopConcept :Environment ;
+.

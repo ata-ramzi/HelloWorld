@@ -1,0 +1,319 @@
+# baseURI: null
+
+@prefix composite: <http://www.topbraid.org/2007/05/composite.owl#> .
+@prefix forms: <http://www.topbraid.org/2007/01/forms.owl#> .
+@prefix inference: <http://www.topbraid.org/2007/06/inference.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix visual: <http://topbraid.org/visual#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.faa.gov/DRS/Aircraft#Airplane_Make-Model>
+  forms:keyProperties (
+      rdfs:label
+      <http://www.faa.gov/DRS/Aircraft#aircraftTypeDesignator>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Aircraft#BOEING_737-130>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/goodrelations/v1#hasManufacturer>
+      <http://purl.org/goodrelations/v1#hasMakeAndModel>
+      <http://purl.org/goodrelations/v1#serialNumber>
+      <http://www.linkedmodel.org/schema/vaem#hasIdentifier>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Aircraft#BOEING_737-200>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/goodrelations/v1#hasManufacturer>
+      <http://purl.org/goodrelations/v1#hasMakeAndModel>
+      <http://purl.org/goodrelations/v1#serialNumber>
+      <http://www.linkedmodel.org/schema/vaem#hasIdentifier>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Aircraft#BOEING_737-300>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/goodrelations/v1#hasManufacturer>
+      <http://purl.org/goodrelations/v1#hasMakeAndModel>
+      <http://purl.org/goodrelations/v1#serialNumber>
+      <http://www.linkedmodel.org/schema/vaem#hasIdentifier>
+      rdfs:comment
+    ) ;
+.
+[
+  rdf:type visual:Graph ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Aircraft> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "112"^^xsd:int ;
+      visual:x "569"^^xsd:int ;
+      visual:y "24"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Aircraft_Class> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "151"^^xsd:int ;
+      visual:x "550"^^xsd:int ;
+      visual:y "80"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Aircraft_Make> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "154"^^xsd:int ;
+      visual:x "548"^^xsd:int ;
+      visual:y "136"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Aircraft_Make-Model> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "203"^^xsd:int ;
+      visual:x "524"^^xsd:int ;
+      visual:y "192"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Aircraft_Make-Model-Series> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "248"^^xsd:int ;
+      visual:x "501"^^xsd:int ;
+      visual:y "248"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Fixed-Wing_Aircraft> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "194"^^xsd:int ;
+      visual:x "1125"^^xsd:int ;
+      visual:y "337"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Heavier-than-Air_Aircraft> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "229"^^xsd:int ;
+      visual:x "1027"^^xsd:int ;
+      visual:y "143"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Light-Sport_Aircraft> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "193"^^xsd:int ;
+      visual:x "299"^^xsd:int ;
+      visual:y "192"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Lighter-than-Air_Aircraft> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "224"^^xsd:int ;
+      visual:x "283"^^xsd:int ;
+      visual:y "136"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Non-Power-Driven_Aircraft> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "241"^^xsd:int ;
+      visual:x "26"^^xsd:int ;
+      visual:y "192"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Power-Driven_Aircraft> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "207"^^xsd:int ;
+      visual:x "1329"^^xsd:int ;
+      visual:y "342"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Powered-Lift_Aircraft> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "202"^^xsd:int ;
+      visual:x "1425"^^xsd:int ;
+      visual:y "309"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Rotorcraft> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "130"^^xsd:int ;
+      visual:x "986"^^xsd:int ;
+      visual:y "339"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Short_Takeoff_and_Landing_Aircraft> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "297"^^xsd:int ;
+      visual:x "1405"^^xsd:int ;
+      visual:y "226"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Vertical_Takeoff_and_Landing_Aircraft> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "311"^^xsd:int ;
+      visual:x "588"^^xsd:int ;
+      visual:y "288"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Weight-Shift-Control_Aircraft> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "256"^^xsd:int ;
+      visual:x "718"^^xsd:int ;
+      visual:y "342"^^xsd:int ;
+    ] ;
+  visual:depicts <http://www.faa.gov/DRS/Aircraft#Aircraft> ;
+  rdfs:label "Aircraft Graph" ;
+].
+[
+  rdf:type visual:Graph ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Airplane> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "119"^^xsd:int ;
+      visual:x "485"^^xsd:int ;
+      visual:y "80"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Airplane_Classification> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "212"^^xsd:int ;
+      visual:x "617"^^xsd:int ;
+      visual:y "136"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Airplane_Make> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "161"^^xsd:int ;
+      visual:x "422"^^xsd:int ;
+      visual:y "192"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Airplane_Model> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "168"^^xsd:int ;
+      visual:x "222"^^xsd:int ;
+      visual:y "192"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Airplane_Series> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "164"^^xsd:int ;
+      visual:x "26"^^xsd:int ;
+      visual:y "192"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Airplane_Type> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "156"^^xsd:int ;
+      visual:x "287"^^xsd:int ;
+      visual:y "136"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Special_Classification> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "204"^^xsd:int ;
+      visual:x "863"^^xsd:int ;
+      visual:y "192"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Standard_Classification> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "216"^^xsd:int ;
+      visual:x "615"^^xsd:int ;
+      visual:y "192"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts owl:Thing ;
+      visual:height "22"^^xsd:int ;
+      visual:width "127"^^xsd:int ;
+      visual:x "481"^^xsd:int ;
+      visual:y "24"^^xsd:int ;
+    ] ;
+  visual:depicts <http://www.faa.gov/DRS/Aircraft#Airplane> ;
+  rdfs:label "Airplane Graph" ;
+].
+[
+  rdf:type visual:Graph ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Helicopter> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "133"^^xsd:int ;
+      visual:x "442"^^xsd:int ;
+      visual:y "80"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Helicopter_Make> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "175"^^xsd:int ;
+      visual:x "748"^^xsd:int ;
+      visual:y "192"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Helicopter_Model> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "182"^^xsd:int ;
+      visual:x "534"^^xsd:int ;
+      visual:y "192"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Helicopter_Series> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "178"^^xsd:int ;
+      visual:x "324"^^xsd:int ;
+      visual:y "192"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Helicopter_Special_Designator> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "266"^^xsd:int ;
+      visual:x "26"^^xsd:int ;
+      visual:y "192"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts <http://www.faa.gov/DRS/Aircraft#Helicopter_Type> ;
+      visual:height "22"^^xsd:int ;
+      visual:width "170"^^xsd:int ;
+      visual:x "423"^^xsd:int ;
+      visual:y "136"^^xsd:int ;
+    ] ;
+  visual:child [
+      rdf:type visual:Box ;
+      visual:depicts owl:Thing ;
+      visual:height "22"^^xsd:int ;
+      visual:width "127"^^xsd:int ;
+      visual:x "445"^^xsd:int ;
+      visual:y "24"^^xsd:int ;
+    ] ;
+  visual:depicts <http://www.faa.gov/DRS/Aircraft#Helicopter> ;
+  rdfs:label "Helicopter Graph" ;
+].

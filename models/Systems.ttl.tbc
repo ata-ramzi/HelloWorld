@@ -1,0 +1,42 @@
+# baseURI: null
+
+@prefix composite: <http://www.topbraid.org/2007/05/composite.owl#> .
+@prefix forms: <http://www.topbraid.org/2007/01/forms.owl#> .
+@prefix inference: <http://www.topbraid.org/2007/06/inference.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix visual: <http://topbraid.org/visual#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.faa.gov/DRS/Systems#Communications_Channel>
+  forms:keyProperties (
+      rdfs:label
+      <http://www.linkedmodel.org/schema/vaem#acronym>
+      <http://www.linkedmodel.org/schema/vaem#abbreviation>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Systems#Flight_Data_Processing_System>
+  forms:keyProperties (
+      rdfs:label
+      <http://www.linkedmodel.org/schema/vaem#acronym>
+      <http://www.linkedmodel.org/schema/vaem#abbreviation>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Systems#Oceanic_Route_System>
+  forms:keyProperties (
+      rdfs:label
+      <http://www.linkedmodel.org/schema/vaem#acronym>
+      <http://www.linkedmodel.org/schema/vaem#abbreviation>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Systems#System>
+  forms:keyProperties (
+      rdfs:label
+      <http://www.linkedmodel.org/schema/vaem#acronym>
+      rdfs:comment
+    ) ;
+.

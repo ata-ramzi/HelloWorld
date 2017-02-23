@@ -1,0 +1,896 @@
+# baseURI: http://www.faa.gov/DRS/Space
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.faa.gov/DRS/Atmosphere-Airspace
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix Atmosphere-Airspace: <http://www.faa.gov/DRS/Atmosphere-Airspace#> .
+@prefix Space: <http://www.faa.gov/DRS/Space#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+Atmosphere-Airspace:Celestial_Body
+  owl:equivalentClass Space:Celestial_Body ;
+.
+Atmosphere-Airspace:Extremely_Low_Frequency
+  skos:broader Atmosphere-Airspace:Low_Frequency ;
+.
+Atmosphere-Airspace:High_Frequency
+  skos:broader Atmosphere-Airspace:Radio_Frequency_Class ;
+.
+Atmosphere-Airspace:Last_Contact_Radio_Frequency
+  skos:broader Atmosphere-Airspace:Radio_Frequency ;
+.
+Atmosphere-Airspace:Low_Frequency
+  skos:broader Atmosphere-Airspace:Radio_Frequency_Class ;
+  skos:narrower Atmosphere-Airspace:Extremely_Low_Frequency ;
+  skos:narrower Atmosphere-Airspace:Low_Frequency_Range ;
+  skos:narrower Atmosphere-Airspace:Very_Low_Frequency ;
+.
+Atmosphere-Airspace:Medium_Frequency
+  skos:broader Atmosphere-Airspace:Frequency ;
+.
+Atmosphere-Airspace:Physical_Space
+  owl:equivalentClass Space:Physical_Space ;
+.
+Atmosphere-Airspace:Planet
+  owl:equivalentClass Space:Planet ;
+.
+Atmosphere-Airspace:Radio_Frequency_Class
+  skos:broader Atmosphere-Airspace:Radio_Frequency ;
+  skos:narrower Atmosphere-Airspace:High_Frequency ;
+  skos:narrower Atmosphere-Airspace:Low_Frequency ;
+  skos:narrower Atmosphere-Airspace:Medium_Frequency ;
+.
+Atmosphere-Airspace:Satellite
+  owl:equivalentClass Space:Satellite ;
+.
+Atmosphere-Airspace:Solar_System
+  owl:equivalentClass Space:Solar_System ;
+.
+Atmosphere-Airspace:Space
+  rdfs:subClassOf Space:Space ;
+  owl:equivalentClass Space:Space ;
+  skos:broader Space:Space ;
+  skos:hasTopConcept Space:Space ;
+.
+Atmosphere-Airspace:Universe
+  owl:equivalentClass Space:Universe ;
+.
+<http://www.faa.gov/DRS/Space>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dcterms: ;
+  owl:imports <http://www.faa.gov/DRS/Atmosphere-Airspace> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+Space:Area
+  rdf:type owl:Class ;
+  rdfs:label "Area"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Area"^^xsd:string ;
+.
+Space:Asteroid
+  rdf:type owl:Class ;
+  rdfs:label "Asteroid"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader Space:Asteroid_Belt ;
+  skos:broader Space:Celestial_Body ;
+  skos:definition "1 : any of the small rocky celestial bodies found especially between the orbits of Mars and Jupiter"^^xsd:string ;
+  skos:prefLabel "Asteroid"^^xsd:string ;
+.
+Space:Asteroid_Belt
+  rdf:type owl:Class ;
+  rdfs:label "Asteroid Belt"^^xsd:string ;
+  rdfs:subClassOf Space:Solar_System ;
+  skos:broader Space:Solar_System ;
+  skos:definition " : a  region of solar system between the orbits of Mars and Jupiter in which most asteroids are found"^^xsd:string ;
+  skos:prefLabel "Asteroid Belt"^^xsd:string ;
+.
+Space:Big_Dipper
+  rdf:type Space:Star_Group ;
+  rdfs:label "Big Dipper"^^xsd:string ;
+  skos:definition " : the seven principal stars in the constellation of Ursa Major"^^xsd:string ;
+  skos:prefLabel "Big Dipper"^^xsd:string ;
+.
+Space:Binary_Star
+  rdf:type owl:Class ;
+  rdfs:label "Binary Star"^^xsd:string ;
+  rdfs:subClassOf Space:Star_Group ;
+  skos:altLabel "Double Star"^^xsd:string ;
+  skos:broader Space:Star_Group ;
+  skos:definition ": a system of two stars that revolve around each other under their mutual gravitation"^^xsd:string ;
+  skos:narrower Space:Contact_Binary ;
+  skos:prefLabel "Binary Star"^^xsd:string ;
+.
+Space:Black_Hole
+  rdf:type owl:Class ;
+  rdfs:label "Black Hole"^^xsd:string ;
+  rdfs:subClassOf Space:Celestial_Object ;
+  skos:broader Space:Celestial_Object ;
+  skos:definition "1 : a celestial object that has a gravitational field so strong that light cannot escape it and that is believed to be created especially in the collapse of a very massive star"^^xsd:string ;
+  skos:narrower Space:Event_Horizon ;
+  skos:prefLabel "Black Hole"^^xsd:string ;
+.
+Space:Bright_Planet
+  rdf:type owl:Class ;
+  rdfs:label "Bright Planet"^^xsd:string ;
+  rdfs:subClassOf Space:Planet ;
+  skos:definition "1 : a bright planet (as Venus) seen especially in the western sky at or after sunset"^^xsd:string ;
+  skos:definition "2 : a planet that rises before midnight"^^xsd:string ;
+  skos:prefLabel "Bright Planet"^^xsd:string ;
+.
+Space:Canis_Major
+  rdf:type Space:Constellation ;
+  rdfs:label "Canis Major"^^xsd:string ;
+  skos:definition " : a constellation to the southeast of Orion containing Sirius"^^xsd:string ;
+  skos:prefLabel "Canis Major"^^xsd:string ;
+.
+Space:Canis_Minor
+  rdf:type Space:Constellation ;
+  rdfs:label "Canis Minor"^^xsd:string ;
+  skos:definition ": a constellation to the east of Orion containing Procyon"^^xsd:string ;
+  skos:prefLabel "Canis Minor"^^xsd:string ;
+.
+Space:Celestial_Area
+  rdf:type owl:Class ;
+  rdfs:label "Celestial Area"^^xsd:string ;
+  rdfs:subClassOf Space:Area ;
+  skos:prefLabel "Celestial Area"^^xsd:string ;
+.
+Space:Celestial_Body
+  rdf:type owl:Class ;
+  rdfs:label "Celestial Body"^^xsd:string ;
+  rdfs:subClassOf Space:Celestial_Sphere ;
+  owl:equivalentClass Atmosphere-Airspace:Celestial_Body ;
+  skos:broader Space:Celestial_Sphere ;
+  skos:broader Space:Solar_System ;
+  skos:definition "1 : a heavenly or mythical being"^^xsd:string ;
+  skos:narrower Space:Asteroid ;
+  skos:narrower Space:Comet ;
+  skos:narrower Space:Planet ;
+  skos:narrower Space:Satellite ;
+  skos:prefLabel "Celestial Body"^^xsd:string ;
+.
+Space:Celestial_Matter
+  rdf:type owl:Class ;
+  rdfs:label "Celestial Matter"^^xsd:string ;
+  rdfs:subClassOf Space:Celestial_Sphere ;
+  skos:broader Space:Celestial_Sphere ;
+  skos:narrower Space:Meteor ;
+  skos:prefLabel "Celestial Matter"^^xsd:string ;
+.
+Space:Celestial_Object
+  rdf:type owl:Class ;
+  rdfs:label "Celestial Object"^^xsd:string ;
+  rdfs:subClassOf Space:Celestial_Sphere ;
+  skos:broader Space:Celestial_Sphere ;
+  skos:narrower Space:Black_Hole ;
+  skos:narrower Space:Quasar ;
+  skos:prefLabel "Celestial Object"^^xsd:string ;
+.
+Space:Celestial_Pole
+  rdf:type owl:Class ;
+  rdfs:label "Celestial Pole"^^xsd:string ;
+  rdfs:subClassOf Space:Celestial_Sphere ;
+  skos:broader Space:Celestial_Sphere ;
+  skos:definition ": either of the two points on the celestial sphere around which the diurnal rotation of the stars appears to take place"^^xsd:string ;
+  skos:prefLabel "Celestial Pole"^^xsd:string ;
+.
+Space:Celestial_Sphere
+  rdf:type owl:Class ;
+  rdfs:label "Celestial Sphere"^^xsd:string ;
+  rdfs:subClassOf Space:Sphere ;
+  skos:broader Space:Sphere ;
+  skos:definition " : an imaginary sphere of infinite radius against which the celestial bodies appear to be projected and of which the apparent dome of the visible sky forms half"^^xsd:string ;
+  skos:narrower Space:Celestial_Body ;
+  skos:narrower Space:Celestial_Matter ;
+  skos:narrower Space:Celestial_Object ;
+  skos:narrower Space:Celestial_Pole ;
+  skos:prefLabel "Celestial Sphere"^^xsd:string ;
+.
+Space:Celestial_Surface_Area
+  rdf:type owl:Class ;
+  rdfs:label "Celestial Surface Area"^^xsd:string ;
+  rdfs:subClassOf Space:Celestial_Area ;
+  skos:prefLabel "Celestial Surface Area"^^xsd:string ;
+.
+Space:Comet
+  rdf:type owl:Class ;
+  rdfs:label "Comet"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:altLabel "Blazing Star"^^xsd:string ;
+  skos:broader Space:Celestial_Body ;
+  skos:definition ": a celestial body that appears as a fuzzy head usually surrounding a bright nucleus, that has a usually highly eccentric orbit... often develops one or more long tails when near the sun "^^xsd:string ;
+  skos:prefLabel "Comet"^^xsd:string ;
+  skos:scopeNote "consists primarily of ice and dust"^^xsd:string ;
+.
+Space:Constellation
+  rdf:type owl:Class ;
+  rdfs:label "Constellation"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:altLabel "Stars"^^xsd:string ;
+  skos:broader Space:Universe ;
+  skos:definition " 2 : any of 88 arbitrary configurations of stars or an area of the celestial sphere covering one of these configurations"^^xsd:string ;
+  skos:definition "1 : the configuration of stars especially at one's birth; "^^xsd:string ;
+  skos:definition "2 a (1) : a planet or a configuration of the planets that is held in astrology to influence one's destiny or fortune —  usually used in plural [Stars]"^^xsd:string ;
+  skos:narrower Space:Star_Group ;
+  skos:prefLabel "Constellation"^^xsd:string ;
+.
+Space:Contact_Binary
+  rdf:type owl:Class ;
+  rdfs:label "Contact Binary"^^xsd:string ;
+  rdfs:subClassOf Space:Binary_Star ;
+  skos:broader Space:Binary_Star ;
+  skos:definition ": a binary star system in which the two stars are close enough together for material to pass between them"^^xsd:string ;
+  skos:prefLabel "Contact Binary"^^xsd:string ;
+.
+Space:Corvus
+  rdf:type Space:Constellation ;
+  rdfs:label "Corvus"^^xsd:string ;
+  skos:altLabel "Crow"^^xsd:string ;
+  skos:definition " : a small constellation adjoining Virgo on the south"^^xsd:string ;
+  skos:prefLabel "Corvus"^^xsd:string ;
+.
+Space:Dark_Matter
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Dark Matter"^^xsd:string ;
+  rdfs:subClassOf Space:Matter ;
+  skos:broader Space:Matter ;
+  skos:definition ": nonluminous matter not yet directly detected by astronomers that is hypothesized to exist to account for various observed gravitational effects  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Dark Matter"^^xsd:string ;
+.
+Space:Deep_Space
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WEBSTER Merriam-Webster's New Collegiate Dictionary, 11ed."^^xsd:string ;
+  rdfs:label "Deep Space"^^xsd:string ;
+  rdfs:subClassOf Space:Physical_Space ;
+  skos:broader Space:Physical_Space ;
+  skos:definition ": space well outside the earth's atmosphere and especially that part lying beyond the earth-moon system  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Deep Space"^^xsd:string ;
+.
+Space:Earth
+  rdf:type Space:Planet ;
+  rdfs:label "Earth"^^xsd:string ;
+  skos:definition "2 : the sphere of mortal life as distinguished from spheres of spirit life —  compare HEAVEN, HELL; "^^xsd:string ;
+  skos:definition "4 often capitalized   : the planet on which we live that is third in order from the sun"^^xsd:string ;
+  skos:prefLabel "Earth"^^xsd:string ;
+.
+Space:Ether
+  rdf:type owl:Class ;
+  rdfs:label "Ether"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "1 a : the rarefied element formerly believed to fill the upper regions of space  b : the upper regions of space  : HEAVENS"^^xsd:string ;
+  skos:prefLabel "Ether"^^xsd:string ;
+.
+Space:Evening_Star
+  rdf:type owl:Class ;
+  rdfs:label "Evening Star"^^xsd:string ;
+  rdfs:subClassOf Space:Bright_Planet ;
+  skos:definition "1 : a bright planet (as Venus) seen especially in the western sky at or after sunset"^^xsd:string ;
+  skos:definition "2 : a planet that rises before midnight"^^xsd:string ;
+  skos:prefLabel "Evening Star"^^xsd:string ;
+.
+Space:Event_Horizon
+  rdf:type owl:Class ;
+  rdfs:label "Event Horizon"^^xsd:string ;
+  rdfs:subClassOf Space:Black_Hole ;
+  skos:broader Space:Black_Hole ;
+  skos:definition " : the surface of a black hole  : the boundary of a black hole beyond which nothing can escape from within it"^^xsd:string ;
+  skos:prefLabel "Event Horizon"^^xsd:string ;
+.
+Space:Fixed_Star
+  rdf:type owl:Class ;
+  rdfs:label "Fixed Star"^^xsd:string ;
+  rdfs:subClassOf Space:Star ;
+  skos:broader Space:Star ;
+  skos:definition ": a star so distant that its motion can be measured only by very precise observations over long periods"^^xsd:string ;
+  skos:prefLabel "Fixed Star"^^xsd:string ;
+.
+Space:Galaxy
+  rdf:type owl:Class ;
+  rdfs:label "Galaxy"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader Space:Star_Group ;
+  skos:definition "b : any of the very large groups of stars and associated matter that are found throughout the universe"^^xsd:string ;
+  skos:narrower Space:Radio_Galaxy ;
+  skos:narrower Space:Spiral_Galaxy ;
+  skos:prefLabel "Galaxy"^^xsd:string ;
+.
+Space:Giant_Star
+  rdf:type owl:Class ;
+  rdfs:label "Giant Star"^^xsd:string ;
+  rdfs:subClassOf Space:Star ;
+  skos:broader Space:Star ;
+  skos:definition " : a star of great luminosity and of large mass"^^xsd:string ;
+  skos:prefLabel "Giant Star"^^xsd:string ;
+.
+Space:Happy_Hunting_Ground
+  rdf:type Space:Positive_Spiritual_Space ;
+  rdfs:label "Happy Hunting Ground"^^xsd:string ;
+  skos:definition " 2 : a choice or profitable area of activity or exploitation"^^xsd:string ;
+  skos:definition "1 : the paradise of some American Indian tribes to which the souls of warriors and hunters pass after death to spend a happy hereafter in hunting and feasting;"^^xsd:string ;
+  skos:prefLabel "Happy Hunting Ground"^^xsd:string ;
+.
+Space:Heaven
+  rdf:type Space:Positive_Spiritual_Space ;
+  rdfs:label "Heaven"^^xsd:string ;
+  skos:definition "2 a often capitalized   : the dwelling place of the Deity and the blessed dead  "^^xsd:string ;
+  skos:prefLabel "Heaven"^^xsd:string ;
+.
+Space:Hell
+  rdf:type Space:Negative_Spiritual_Space ;
+  rdfs:label "Hell"^^xsd:string ;
+  skos:altLabel "Hades"^^xsd:string ;
+  skos:definition "(2) : the nether realm of the devil and the demons in which the damned suffer everlasting punishment —  often used in curses  *go to hell* or as a generalized term of abuse  *the hell with it*  "^^xsd:string ;
+  skos:definition "1 a (1) : a nether world in which the dead continue to exist  : HADES  "^^xsd:string ;
+  skos:prefLabel "Hell"^^xsd:string ;
+.
+Space:Hyades
+  rdf:type Space:Star_Group ;
+  rdfs:label "Hyades"^^xsd:string ;
+  skos:definition ": a V-shaped cluster of stars in the head of the constellation Taurus held by the ancients to indicate rainy weather when they rise with the sun"^^xsd:string ;
+  skos:prefLabel "Hyades"^^xsd:string ;
+.
+Space:Inferior_Planet
+  rdf:type owl:Class ;
+  rdfs:label "Inferior Planet"^^xsd:string ;
+  rdfs:subClassOf Space:Planet ;
+  owl:unionOf (
+      Space:Venus
+      Space:Mercury
+    ) ;
+  skos:definition """: either of the planets Mercury and Venus whose orbits lie within that of the earth
+"""^^xsd:string ;
+  skos:prefLabel "Inferior Planet"^^xsd:string ;
+.
+Space:Inner_Planet
+  rdf:type owl:Class ;
+  rdfs:label "Inner Planet"^^xsd:string ;
+  rdfs:subClassOf Space:Planet ;
+  owl:unionOf (
+      Space:Mercury
+      Space:Venus
+      Space:Earth
+      Space:Mars
+    ) ;
+  skos:definition ": any of the planets Mercury, Venus, Earth, and Mars whose orbits are within the asteroid belt"^^xsd:string ;
+  skos:prefLabel "Inner Planet"^^xsd:string ;
+.
+Space:Interplanetary_Space
+  rdf:type owl:Class ;
+  rdfs:label "Interplanetary Space"^^xsd:string ;
+  rdfs:subClassOf Space:Outer_Space ;
+  skos:broader Space:Outer_Space ;
+  skos:definition ": located, taking place, or traveling among the planets  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Interplanetary Space"^^xsd:string ;
+.
+Space:Interstellar_Space
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WEBSTER Merriam-Webster's New Collegiate Dictionary, 11ed."^^xsd:string ;
+  rdfs:label "Interstellar Space"^^xsd:string ;
+  rdfs:subClassOf Space:Outer_Space ;
+  skos:broader Space:Outer_Space ;
+  skos:definition ": located, taking place, or traveling among the stars especially of the Milky Way galaxy  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Interstellar Spacestring"^^xsd:string ;
+.
+Space:Jupiter
+  rdf:type Space:Planet ;
+  rdfs:label "Jupiter"^^xsd:string ;
+  skos:definition "2 : the largest of the planets and fifth in order from the sun"^^xsd:string ;
+  skos:prefLabel "Jupiter"^^xsd:string ;
+.
+Space:Little_Dipper
+  rdf:type Space:Star_Group ;
+  rdfs:label "Little Dipper"^^xsd:string ;
+  skos:altLabel "Pleiades"^^xsd:string ;
+  skos:definition "2 : a conspicuous cluster of stars in the constellation Taurus that includes six stars in the form of a very small dipper "^^xsd:string ;
+  skos:prefLabel "Little Dipper"^^xsd:string ;
+.
+Space:Man-Made_Satellite
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://simple.wikipedia.org/wiki/Satellite_(artificial)"^^xsd:string ;
+  rdfs:label "Man-Made Satellite"^^xsd:string ;
+  rdfs:subClassOf Space:Satellite_Type ;
+  skos:broader Space:Satellite_Type ;
+  skos:definition "Most man-made satellites also orbit the Earth, but some orbit other planets, such as Saturn, Venus or Mars, or the moon.   [WIKIPEDIA]"^^xsd:string ;
+  skos:editorialNote "Refer to \"Satellite\" in the Spacecraft ontology for further information about Man-Made or Artificial Satellites."^^xsd:string ;
+  skos:prefLabel "Man-Made Satellite"^^xsd:string ;
+  skos:scopeNote """Man-made satellites have several main uses:
+Scientific Investigation
+Earth observation - including weather forecasting and tracking storms and pollution
+Communications - including satellite television and telephone calls
+Navigation - including the Global Positioning System (GPS)
+Military - including reconnaissance photography and communications (nuclear weapons are not allowed in space)
+[WIKIPEDIA]"""^^xsd:string ;
+.
+Space:Mare
+  rdf:type owl:Class ;
+  rdfs:label "string"^^xsd:string ;
+  rdfs:subClassOf Space:Celestial_Surface_Area ;
+  owl:unionOf (
+      Space:Moon
+      Space:Mars
+    ) ;
+  skos:altLabel "Mares"^^xsd:string ;
+  skos:altLabel "Maria"^^xsd:string ;
+  skos:definition ": any of several mostly flat dark areas of considerable extent on the surface of the moon or Mars"^^xsd:string ;
+  skos:prefLabel "Mare"^^xsd:string ;
+.
+Space:Mars
+  rdf:type Space:Planet ;
+  rdfs:label "Mars"^^xsd:string ;
+  skos:definition "2 : the planet fourth in order from the sun and conspicuous for its red color"^^xsd:string ;
+  skos:prefLabel "Mars"^^xsd:string ;
+.
+Space:Matter
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  rdfs:label "Matter"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader Space:Physical_Space ;
+  skos:definition "2 a : the substance of which a physical object is composed b : material substance that occupies space, has mass, and is composed predominantly of atoms consisting of protons, neutrons, and electrons, that constitutes the observable universe, and that is interconvertible with energy c : a material substance of a particular kind or for a particular purpose <vegetable matter>   [WEBSTER]"^^xsd:string ;
+  skos:narrower Space:Dark_Matter ;
+  skos:prefLabel "Matter"^^xsd:string ;
+.
+Space:Mercury
+  rdf:type Space:Planet ;
+  rdfs:label "Mercury"^^xsd:string ;
+  skos:definition "3 capitalized   : the planet nearest the sun "^^xsd:string ;
+  skos:prefLabel "Mercury"^^xsd:string ;
+.
+Space:Meteor
+  rdf:type owl:Class ;
+  rdfs:label "Meteor"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:altLabel "Falling Star"^^xsd:string ;
+  skos:broader Space:Celestial_Matter ;
+  skos:definition "2 a : any of the small particles of matter in the solar system that are directly observable only by their incandescence from frictional heating on entry into the atmosphere  b : the streak of light produced by the passage of a meteor"^^xsd:string ;
+  skos:narrower Space:Visible_Meteor ;
+  skos:prefLabel "Falling Star"^^xsd:string ;
+.
+Space:Milky_Way
+  rdf:type Space:Galaxy ;
+  rdfs:label "Milky Way"^^xsd:string ;
+  skos:altLabel "Milky Way galaxy"^^xsd:string ;
+  skos:definition ": the galaxy of which the sun and the solar system are a part and which contains the myriads of stars that create the light of the Milky Way"^^xsd:string ;
+  skos:prefLabel "Milky Way"^^xsd:string ;
+.
+Space:Minor_Planet
+  rdf:type owl:Class ;
+  rdfs:label "Minor Planet"^^xsd:string ;
+  rdfs:subClassOf Space:Planet ;
+  skos:prefLabel "Minor Planet"^^xsd:string ;
+.
+Space:Moon
+  rdf:type Space:Natural_Satellite ;
+  rdfs:label "Moon"^^xsd:string ;
+  skos:definition "1 a often capitalized   : the earth's natural satellite that shines by the sun's reflected light, revolves about the earth from west to east in about 29 1/2 days with reference to the sun or about 27 1/3 days with reference to the stars, and has a diameter"^^xsd:string ;
+  skos:definition "c : SATELLITE 2;  specifically   : a natural satellite of a planet; 3 : MOONLIGHT"^^xsd:string ;
+  skos:prefLabel "Moon"^^xsd:string ;
+.
+Space:Morning_Star
+  rdf:type owl:Class ;
+  rdfs:label "Morning Star"^^xsd:string ;
+  rdfs:subClassOf Space:Bright_Planet ;
+  skos:definition ": a bright planet (as Venus) seen in the eastern sky before or at sunrise"^^xsd:string ;
+  skos:definition ": a planet that rises before or at sunrise"^^xsd:string ;
+  skos:prefLabel "Morning Star"^^xsd:string ;
+.
+Space:Multiple_Star
+  rdf:type owl:Class ;
+  rdfs:label "Multiple Star"^^xsd:string ;
+  rdfs:subClassOf Space:Star_Group ;
+  skos:broader Space:Star_Group ;
+  skos:definition " : several stars in close proximity that appear to form a single system"^^xsd:string ;
+  skos:prefLabel "Multiple Star"^^xsd:string ;
+.
+Space:Natural_Satellite
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://simple.wikipedia.org/wiki/Satellite_(artificial)"^^xsd:string ;
+  rdfs:label "Natural Satellite"^^xsd:string ;
+  rdfs:subClassOf Space:Satellite_Type ;
+  skos:broader Space:Satellite_Type ;
+  skos:definition "A natural satellite or moon is, in the most common usage, an astronomical body that orbits a planet or minor planet (or sometimes another Small Solar System Body).   [WIKIPEDIA]"^^xsd:string ;
+  skos:definition "The moon is a natural satellite that orbits the Earth.  [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Natural Satellite"^^xsd:string ;
+  skos:scopeNote "In the Solar System there are six planetary satellite systems containing 178 known natural satellites.[1][2] Four IAU-listed dwarf planets are also known to have natural satellites: Pluto, Haumea, Makemake, and Eris.[3] As of January 2012, over 200 minor-planet moons have been discovered.[4]   [WIKIPEDIA]"^^xsd:string ;
+.
+Space:Negative_Spiritual_Space
+  rdf:type owl:Class ;
+  rdfs:label "Negative Spiritual Space"^^xsd:string ;
+  rdfs:subClassOf Space:Spiritual_Space ;
+  skos:prefLabel "Negative Spiritual Space"^^xsd:string ;
+.
+Space:Neptune
+  rdf:type Space:Planet ;
+  rdfs:label "Neptune"^^xsd:string ;
+  skos:definition "2 : the planet eighth in order from the sun"^^xsd:string ;
+  skos:prefLabel "Neptune"^^xsd:string ;
+.
+Space:Neutron_Star
+  rdf:type owl:Class ;
+  rdfs:label "Neutron Star"^^xsd:string ;
+  rdfs:subClassOf Space:Star ;
+  skos:broader Space:Star ;
+  skos:definition " : a dense celestial object that consists primarily of closely packed neutrons and that results from the collapse of a much larger stellar body"^^xsd:string ;
+  skos:prefLabel "Neutron Star"^^xsd:string ;
+.
+Space:North_Star
+  rdf:type owl:Class ;
+  rdfs:label "North Star"^^xsd:string ;
+  rdfs:subClassOf Space:Star ;
+  skos:altLabel "Polestar"^^xsd:string ;
+  skos:broader Space:Star ;
+  skos:definition ": the star of the northern hemisphere toward which the axis of the earth points"^^xsd:string ;
+  skos:prefLabel "North Star"^^xsd:string ;
+.
+Space:Orion
+  rdf:type Space:Constellation ;
+  rdfs:label "Orion"^^xsd:string ;
+  skos:altLabel "genitive Orionis"@latin ;
+  skos:definition "1 : a constellation on the equator east of Taurus represented on charts by the figure of a hunter with belt and sword"^^xsd:string ;
+  skos:prefLabel "Orion"^^xsd:string ;
+.
+Space:Outer_Planet
+  rdf:type owl:Class ;
+  rdfs:label "Outer Planet"^^xsd:string ;
+  rdfs:subClassOf Space:Planet ;
+  owl:unionOf (
+      Space:Jupiter
+      Space:Neptune
+      Space:Saturn
+      Space:Uranus
+      Space:Pluto
+    ) ;
+  skos:definition ": any of the planets Jupiter, Saturn, Uranus, Neptune, and Pluto whose orbits lie beyond the asteroid belt"^^xsd:string ;
+  skos:prefLabel "Outer Planet"^^xsd:string ;
+.
+Space:Outer_Space
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WEBSTER Merriam-Webster's New Collegiate Dictionary, 11ed"^^xsd:string ;
+  rdfs:label "Outer Space"^^xsd:string ;
+  rdfs:subClassOf Space:Physical_Space ;
+  skos:broader Space:Physical_Space ;
+  skos:definition ": space immediately outside the earth's atmosphere;  broadly   : interplanetary or interstellar space   [WEBSTER]"^^xsd:string ;
+  skos:narrower [
+      rdf:type owl:Class ;
+      owl:unionOf (
+          Space:Interplanetary_Space
+          Space:Interstellar_Space
+        ) ;
+    ] ;
+  skos:prefLabel "Outer Space"^^xsd:string ;
+.
+Space:Physical_Space
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Physical Space"^^xsd:string ;
+  rdfs:subClassOf Space:Space ;
+  skos:broader Space:Space ;
+  skos:broader Space:Space-Time ;
+  skos:definition "2 a : a limited extent in one, two, or three dimensions  : DISTANCE, AREA, VOLUME  b : an extent set apart or available  *parking space*  *floor space*  c : the distance from other people or things that a person needs in order to remain comfortable  *invading my personal space*   [WEBSTER]"^^xsd:string ;
+  skos:hasTopConcept Space:Space ;
+  skos:narrower Space:Deep_Space ;
+  skos:narrower Space:Outer_Space ;
+  skos:narrower Space:Sphere ;
+  skos:prefLabel "Physical Space"^^xsd:string ;
+.
+Space:Planet
+  rdf:type owl:Class ;
+  rdfs:label "Planet"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass Atmosphere-Airspace:Planet ;
+  skos:broader Space:Celestial_Body ;
+  skos:definition "1 a : any of the seven celestial bodies sun, moon, Venus, Jupiter, Mars, Mercury, and Saturn that in ancient belief have motions of their own among the fixed stars b (1) : any of the large bodies that revolve around the sun in the solar system (2) : a similar body associated with another star c : EARTH  usually used with  [WEBSTER]"^^xsd:string ;
+  skos:definition "2 : a celestial body held to influence the fate of human beings [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Planet"^^xsd:string ;
+.
+Space:Pluto
+  rdf:type Space:Minor_Planet ;
+  rdfs:label "Pluto"^^xsd:string ;
+  skos:definition "2 [New Latin] : the planet with the farthest mean distance from the sun"^^xsd:string ;
+  skos:prefLabel "Pluto"^^xsd:string ;
+.
+Space:Positive_Spiritual_Space
+  rdf:type owl:Class ;
+  rdfs:label "Positive Spiritual Space"^^xsd:string ;
+  rdfs:subClassOf Space:Spiritual_Space ;
+  skos:prefLabel "Positive Spiritual Space"^^xsd:string ;
+.
+Space:Procyon
+  rdf:type Space:Star ;
+  rdfs:label "Procyon"^^xsd:string ;
+  skos:definition ": the brightest star in the constellation Canis Minor"^^xsd:string ;
+  skos:prefLabel "Procyon"^^xsd:string ;
+.
+Space:Quasar
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's 11th Collegiate Dictionary"^^xsd:string ;
+  rdfs:label "Quasar"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:altLabel "Quasi-Stellar Object"^^xsd:string ;
+  skos:broader Space:Celestial_Object ;
+  skos:definition ": any of a class of celestial objects that resemble stars but whose large redshift and apparent brightness imply extreme distance and huge energy output   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Quasar"^^xsd:string ;
+.
+Space:Radio_Galaxy
+  rdf:type owl:Class ;
+  rdfs:label "Radio Galaxy"^^xsd:string ;
+  rdfs:subClassOf Space:Galaxy ;
+  skos:broader Space:Galaxy ;
+  skos:definition ": a galaxy that is a powerful source of radio waves"^^xsd:string ;
+  skos:prefLabel "Radio Galaxy"^^xsd:string ;
+.
+Space:Radio_Star
+  rdf:type owl:Class ;
+  rdfs:label "Radio Star"^^xsd:string ;
+  rdfs:subClassOf Space:Star ;
+  skos:broader Space:Star ;
+  skos:definition " : a cosmic radio source;  especially   : a point source of radio emissions"^^xsd:string ;
+  skos:prefLabel "Radio Star"^^xsd:string ;
+.
+Space:Red_Star
+  rdf:type owl:Class ;
+  rdfs:label "Red Star"^^xsd:string ;
+  rdfs:subClassOf Space:Star ;
+  skos:broader Space:Star ;
+  skos:definition " : a star having a very low surface temperature and a red color"^^xsd:string ;
+  skos:prefLabel "Red Star"^^xsd:string ;
+.
+Space:Satellite
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "WIKIPEDIA  https://simple.wikipedia.org/wiki/Satellite_(artificial)"^^xsd:string ;
+  rdfs:label "Satellite"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass Atmosphere-Airspace:Satellite ;
+  skos:broader Space:Celestial_Body ;
+  skos:definition "2 a : a celestial body orbiting another of larger size b : a manufactured object or vehicle intended to orbit the earth, the moon, or another celestial body   [WEBSTER]"^^xsd:string ;
+  skos:definition "A satellite is an object that orbits another object. In space, satellites may be made by man, or they may be natural. The moon is a natural satellite that orbits the Earth. Most man-made satellites also orbit the Earth, but some orbit other planets, such as Saturn, Venus or Mars, or the moon.   [WIKIPEDIA]"^^xsd:string ;
+  skos:prefLabel "Satellite"^^xsd:string ;
+  skos:scopeNote "Satellites are used for many purposes. There are weather satellites, communications satellites, reconnaissance satellites, astronomy satellites and many other kinds.  [WIKIPEDIA]"^^xsd:string ;
+.
+Space:Satellite_Type
+  rdf:type owl:Class ;
+  rdfs:label "Satellite Type"^^xsd:string ;
+  rdfs:subClassOf Space:Satellite ;
+  skos:broader Space:Satellite ;
+  skos:prefLabel "Satellite Type"^^xsd:string ;
+.
+Space:Saturn
+  rdf:type Space:Planet ;
+  rdfs:label "Saturn"^^xsd:string ;
+  skos:definition "2 : the planet sixth in order from the sun"^^xsd:string ;
+  skos:prefLabel "Saturn"^^xsd:string ;
+.
+Space:Seyfert
+  rdf:type Space:Spiral_Galaxy ;
+  rdfs:label "Seyfert"^^xsd:string ;
+  skos:altLabel "Seyfert Galaxy"^^xsd:string ;
+  skos:definition ": any of a class of spiral galaxies that have small compact bright nuclei characterized by variability in light intensity, emission of radio waves, and spectra"^^xsd:string ;
+  skos:prefLabel "Seyfert"^^xsd:string ;
+.
+Space:Sirius
+  rdf:type Space:Star ;
+  rdfs:label "Sirius"^^xsd:string ;
+  skos:altLabel "Dog Star"^^xsd:string ;
+  skos:definition ": a star of the constellation Canis Major that is the brightest star in the heavens "^^xsd:string ;
+  skos:prefLabel "Sirius"^^xsd:string ;
+.
+Space:Solar_System
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Solar System"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass Atmosphere-Airspace:Solar_System ;
+  skos:broader Space:Universe ;
+  skos:definition ": the sun together with the group of celestial bodies that are held by its attraction and revolve around it;  also   : a similar system centered on another star       [WEBSTER]"^^xsd:string ;
+  skos:narrower Space:Asteroid_Belt ;
+  skos:narrower Space:Celestial_Body ;
+  skos:narrower Space:Sun ;
+  skos:prefLabel "Solar System"^^xsd:string ;
+.
+Space:Space
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "WEBSTER Merriam-Webster's New Collegiate Dictionary, 11th ed."^^xsd:string ;
+  rdfs:label "Space"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:disjointUnionOf (
+      Space:Physical_Space
+      Space:Spiritual_Space
+    ) ;
+  owl:equivalentClass Atmosphere-Airspace:Space ;
+  skos:altLabel "Absolute Space"^^xsd:string ;
+  skos:definition "4 a : a boundless three-dimensional extent in which objects and events occur and have relative position and direction  *infinite space and time*; 5 : the region beyond the earth's atmosphere or beyond the solar system;  : physical space independent of what occupies it         [WEBSTER]"^^xsd:string ;
+  skos:narrower Space:Physical_Space ;
+  skos:narrower Space:Space-Time ;
+  skos:narrower Space:Spiritual_Space ;
+  skos:narrower Space:Universe ;
+  skos:prefLabel "Space"^^xsd:string ;
+  skos:topConceptOf Space:Space ;
+.
+Space:Space-Time
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary, 11ed."^^xsd:string ;
+  rdfs:domain Space:Physical_Space ;
+  rdfs:label "Space-Time"^^xsd:string ;
+  rdfs:subClassOf Space:Space ;
+  skos:altLabel "Space-Time Continuum"^^xsd:string ;
+  skos:broader Space:Space ;
+  skos:definition "1 : a system of one temporal and three spatial coordinates by which any physical object or event can be located  called also space-time continuum   [WEBSTER]"^^xsd:string ;
+  skos:definition "2 : the whole or a portion of physical reality determinable by a usually four-dimensional coordinate system; also : the properties characteristic of such an order  [WEBSTER]"^^xsd:string ;
+  skos:hasTopConcept Space:Space ;
+  skos:narrower Space:Physical_Space ;
+  skos:prefLabel "Space-Time"^^xsd:string ;
+.
+Space:Sphere
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Sphere"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      Space:Planet
+      Space:Star
+    ) ;
+  skos:broader Space:Physical_Space ;
+  skos:broader Space:Universe ;
+  skos:definition """1 a (1) : the apparent surface of the heavens of which half forms the dome of the visible sky (2) : any of the concentric and eccentric revolving spherical transparent shells in which according to ancient astronomy stars, sun, planets, and moon are set b : a globe depicting such a sphere; broadly : GLOBE a 
+2 a : a globular body : BALL b : PLANET, STAR c (1) : a solid that is bounded by a surface consisting of all points at a given distance from a point constituting its center  see VOLUME table (2) : the bounding surface of a sphere   [WEBSTER]"""^^xsd:string ;
+  skos:narrower Space:Celestial_Sphere ;
+  skos:narrower Space:Planet ;
+  skos:narrower Space:Star ;
+  skos:prefLabel "Sphere"^^xsd:string ;
+.
+Space:Spiral_Galaxy
+  rdf:type owl:Class ;
+  rdfs:label "Spiral Galaxy"^^xsd:string ;
+  rdfs:subClassOf Space:Galaxy ;
+  skos:altLabel "Spiral Nebula"^^xsd:string ;
+  skos:broader Space:Galaxy ;
+  skos:definition " : a galaxy exhibiting a central nucleus or barred structure from which extend curved arms of higher luminosity"^^xsd:string ;
+  skos:prefLabel "Spiral Galaxy"^^xsd:string ;
+.
+Space:Spiritual_Space
+  rdf:type owl:Class ;
+  rdfs:label "Spiritual Space"^^xsd:string ;
+  rdfs:subClassOf Space:Space ;
+  skos:broader Space:Space ;
+  skos:definition " things of a spiritual, ecclesiastical, or religious nature that do not possess a four-dimensional extent like physical space"^^xsd:string ;
+  skos:hasTopConcept Space:Space ;
+  skos:narrower Space:Negative_Spiritual_Space ;
+  skos:narrower Space:Positive_Spiritual_Space ;
+  skos:prefLabel "Spiritual Space"^^xsd:string ;
+.
+Space:Star
+  rdf:type owl:Class ;
+  rdfs:label "Star"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader Space:Star_Group ;
+  skos:definition "1 a : a natural luminous body visible in the sky especially at night  b : a self-luminous gaseous spheroidal celestial body of great mass which produces energy by means of nuclear fusion reactions; "^^xsd:string ;
+  skos:definition "2 a (1) : a planet or a configuration of the planets that is held in astrology to influence one's destiny or fortune —  usually used in plural "^^xsd:string ;
+  skos:narrower Space:Fixed_Star ;
+  skos:narrower Space:Giant_Star ;
+  skos:narrower Space:Neutron_Star ;
+  skos:narrower Space:North_Star ;
+  skos:narrower Space:Radio_Star ;
+  skos:narrower Space:Red_Star ;
+  skos:prefLabel "Star"^^xsd:string ;
+.
+Space:Star_Group
+  rdf:type owl:Class ;
+  rdfs:label "Star Group"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader Space:Constellation ;
+  skos:narrower Space:Binary_Star ;
+  skos:narrower Space:Galaxy ;
+  skos:narrower Space:Multiple_Star ;
+  skos:narrower Space:Star ;
+  skos:prefLabel "Star Group"^^xsd:string ;
+.
+Space:Sun
+  rdf:type Space:Celestial_Body ;
+  rdfs:label "Sun"^^xsd:string ;
+  skos:definition "1 a often capitalized   : the luminous celestial body around which the earth and other planets revolve, from which they receive heat and light, which is composed mainly of hydrogen and helium, and which has a mean distance from earth of about 93,000,000 miles (150,000,000 kilometers), a linear diameter of 864,000 miles (1,390,000 kilometers), and a mass 332,000 times greater than earth"^^xsd:string ;
+  skos:prefLabel "Sun"^^xsd:string ;
+.
+Space:Taurus
+  rdf:type Space:Zodiacal_Constellation ;
+  rdfs:label "Taurus"^^xsd:string ;
+  skos:definition "1 : a zodiacal constellation that contains the Pleiades and Hyades and is represented pictorially by a bull's forequarters"^^xsd:string ;
+  skos:prefLabel "Taurus"^^xsd:string ;
+.
+Space:Universe
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate Dictionary - 11ed."^^xsd:string ;
+  rdfs:label "Universe"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass Atmosphere-Airspace:Universe ;
+  skos:broader Space:Space ;
+  skos:definition "1 : the whole body of things and phenomena observed or postulated  : COSMOS: as  a : a systematic whole held to arise by and persist through the direct intervention of divine power  b : the world of human experience  c (1) : the entire celestial cosmos [WEBSTER]"^^xsd:string ;
+  skos:hasTopConcept Space:Space ;
+  skos:narrower Space:Constellation ;
+  skos:narrower Space:Solar_System ;
+  skos:narrower Space:Sphere ;
+  skos:prefLabel "Universe"^^xsd:string ;
+.
+Space:Uranus
+  rdf:type Space:Planet ;
+  rdfs:label "Uranus"^^xsd:string ;
+  skos:definition "2 : the planet seventh in order from the sun"^^xsd:string ;
+  skos:prefLabel "Uranus"^^xsd:string ;
+.
+Space:Ursa_Major
+  rdf:type Space:Constellation ;
+  rdfs:label "Ursa Major"^^xsd:string ;
+  skos:altLabel "Great Bear"^^xsd:string ;
+  skos:definition " : a constellation that is the most conspicuous of the northern constellations, is situated near the north pole of the heavens, and contains the stars forming the Big Dipper two of which are in a line indicating the direction of the North Star "^^xsd:string ;
+  skos:prefLabel "Ursa Major"^^xsd:string ;
+.
+Space:Ursa_Minor
+  rdf:type Space:Constellation ;
+  rdfs:label "Ursa Minor"^^xsd:string ;
+  skos:altLabel "Little Bear"^^xsd:string ;
+  skos:definition ": a constellation that includes the north pole of the heavens and the stars which form the Little Dipper with the North Star at the tip of the handle"^^xsd:string ;
+  skos:prefLabel "Ursa Minor"^^xsd:string ;
+.
+Space:Venus
+  rdf:type Space:Planet ;
+  rdfs:label "Venus"^^xsd:string ;
+  skos:definition "2 : the planet second in order from the sun"^^xsd:string ;
+  skos:prefLabel "Venus"^^xsd:string ;
+.
+Space:Visible_Meteor
+  rdf:type owl:Class ;
+  rdfs:label "Visibile Meteor"^^xsd:string ;
+  rdfs:subClassOf Space:Meteor ;
+  skos:altLabel "Shooting Star"^^xsd:string ;
+  skos:definition "1 : a visual meteor appearing as a temporary streak of light in the night sky"^^xsd:string ;
+  skos:prefLabel "Visibile Meteor"^^xsd:string ;
+.
+Space:World
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "World"^^xsd:string ;
+  rdfs:subClassOf Space:Universe ;
+  owl:equivalentClass Space:Universe ;
+  skos:broader Space:Universe ;
+  skos:definition """1 a : the earthly state of human existence b : life after death  used with a qualifier <the next world> 
+2 : the earth with its inhabitants and all things upon it 
+4 : the inhabitants of the earth : the human race 
+5 a : the concerns of the earth and its affairs as distinguished from heaven and the life to come b : secular affairs 
+6 : the system of created things : UNIVERSE 
+7 a : a division or generation of the inhabitants of the earth distinguished by living together at the same place or at the same time <the medieval world> b : a distinctive class of persons or their sphere of interest or activity <the academic world> <the digital world> 
+8 : human society <withdraw from the world> 
+9 : a part or section of the earth that is a separate independent unit 
+10 : the sphere or scene of one's life and action <living in your own little world> 
+11 : an indefinite multitude or a great quantity or distance <makes a world of difference> <a world away> 
+14 : a celestial body (as a planet)                [WEBSTER]"""^^xsd:string ;
+  skos:narrower Space:Sphere ;
+  skos:prefLabel "World"^^xsd:string ;
+  skos:related Space:Space-Time ;
+.
+Space:Zodiacal_Constellation
+  rdf:type owl:Class ;
+  rdfs:label "Zodiacal Constellation"^^xsd:string ;
+  rdfs:subClassOf Space:Constellation ;
+  skos:altLabel "Zodiac Constellation"^^xsd:string ;
+  skos:definition "1 a : an imaginary band in the heavens centered on the ecliptic that encompasses the apparent paths of all the planets except Pluto and is divided into 12 constellations or signs each taken for astrological purposes to extend 30 degrees of longitude  "^^xsd:string ;
+  skos:prefLabel "Zodiacal Constellation"^^xsd:string ;
+.
+skos:definition
+  owl:equivalentProperty rdfs:comment ;
+.

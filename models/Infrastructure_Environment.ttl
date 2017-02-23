@@ -1,0 +1,1739 @@
+# baseURI: http://www.faa.gov/DRS/Infrastructure_Environment
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.faa.gov/DRS/Atmosphere-Airspace
+# imports: http://www.faa.gov/DRS/Environment
+# imports: http://www.faa.gov/DRS/Facilities
+# imports: http://www.faa.gov/DRS/Geography
+# imports: http://www.faa.gov/DRS/Geometry
+# imports: http://www.faa.gov/DRS/Infrastructure
+# imports: http://www.faa.gov/DRS/Systems
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://www.faa.gov/DRS/Infrastructure_Environment#> .
+@prefix AT-Facility: <http://www.faa.gov/DRS/Facilities#> .
+@prefix Environment: <http://www.faa.gov/DRS/Environment#> .
+@prefix Infrastructure: <http://www.faa.gov/DRS/Infrastructure#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix ns: <http://www.w3.org/2006/vcard/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+Environment:Activity-related_Environment
+  skos:broader Environment:Environment ;
+.
+Environment:Information_Resource_Environment
+  skos:broader Environment:Resource_Environment ;
+.
+Environment:Management_Environment
+  skos:broader Environment:Activity-related_Environment ;
+.
+Environment:Resource_Environment
+  skos:broader Environment:Environment ;
+.
+AT-Facility:Abbotsford_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#British_Columbia> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Abilene_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Abilene_TX> ;
+.
+AT-Facility:Abilene_Regional_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Abilene_TX> ;
+.
+AT-Facility:Abilene_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Abilene_TX> ;
+.
+AT-Facility:Abuquerque_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Albuquerque_NM> ;
+.
+AT-Facility:Akron-Canton_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#North_Canton_OH> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Akron_OH> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Canton_OH> ;
+.
+AT-Facility:Akron-Canton_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#North_Canton_OH> ;
+.
+AT-Facility:Alaskan_Regional_Administrative_Facility
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Anchorage_AK> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Alaska> ;
+  skos:altLabel "Alaskan Region"@en-US ;
+.
+AT-Facility:Albany_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Latham_NY> ;
+.
+AT-Facility:Albany_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Latham_NY> ;
+.
+AT-Facility:Albuquerque_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Albuquerque_NM> ;
+.
+AT-Facility:Allentown_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Allentown_PA> ;
+.
+AT-Facility:Allentown_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Allentown_PA> ;
+.
+AT-Facility:Alpnach_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Obwalden> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Switzerland> ;
+.
+AT-Facility:Amarillo_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Amarillo_TX> ;
+.
+AT-Facility:Amarillo_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Amarillo_TX> ;
+.
+AT-Facility:Amedee_Army_Airfield
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Lassen_County_CA> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Anchorage_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Anchorage_County_AK> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Anchorage_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Anchorage_AK> ;
+.
+AT-Facility:Andersen_Air_Force_Base
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[afb-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Guam> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Yigo_GU> ;
+.
+AT-Facility:Andrews_Air_Force_Base
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Camp_Springs_MD> ;
+.
+AT-Facility:Arnold_Air_Force_Base
+  gn:nearby <http://www.faa.gov/DRS/Geography#Tullahoma_TN> ;
+.
+AT-Facility:Asheville_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fletcher_NC> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Asheville_NC> ;
+.
+AT-Facility:Asheville_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fletcher_NC> ;
+.
+AT-Facility:Aspen_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Aspen_CO> ;
+.
+AT-Facility:Aspen_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Aspen_CO> ;
+.
+AT-Facility:Atlanta_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Peachtree_City_GA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Atlanta_GA> ;
+.
+AT-Facility:Atlantic_City_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Atlantic_City_NJ> ;
+.
+AT-Facility:Atlantic_City_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Atlantic_City_NJ> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Atlantic_County_NJ> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Atlantic_City_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Atlantic_City_NJ> ;
+.
+AT-Facility:Augusta_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Augusta_GA> ;
+.
+AT-Facility:Augusta_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Augusta_GA> ;
+.
+AT-Facility:Austin_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Austin_TX> ;
+.
+AT-Facility:Austin_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Austin_TX> ;
+.
+AT-Facility:Bakersfield_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Bakersfield_CA> ;
+.
+AT-Facility:Bakersfield_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Bakersfield_CA> ;
+.
+AT-Facility:Baltimore-Washington_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Anne_Arundel_County_MD> ;
+.
+AT-Facility:Baltimore_Washington_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Anne_Arundel_County_MD> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Baltimore_MD> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Glen_Burnie_MD> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+  owl:sameAs <http://dbpedia.org/resource/Baltimore%E2%80%93Washington_International_Airport> ;
+  skos:altLabel "BWI Airport"^^xsd:string ;
+  skos:altLabel "BWI Marshall Airport"^^xsd:string ;
+  skos:altLabel "Baltimore/Washington International Thurgood Marshall Airport"^^xsd:string ;
+  skos:altLabel "Thurgood Marshall Airport"^^xsd:string ;
+.
+AT-Facility:Bangor_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Bangor_ME> ;
+.
+AT-Facility:Bangor_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Bangor_ME> ;
+.
+AT-Facility:Barksdale_Air_Force_Base
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Bossier_City_LA> ;
+.
+AT-Facility:Baton_Rouge_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Baton_Rouge_LA> ;
+.
+AT-Facility:Baton_Rouge_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Baton_Rouge_LA> ;
+.
+AT-Facility:Bern_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Bern> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Switzerland> ;
+.
+AT-Facility:Billings_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Billings_MT> ;
+.
+AT-Facility:Billings_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Billings_MT> ;
+.
+AT-Facility:Binghamton_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Johnson_City_NY> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Binghamton_NY> ;
+.
+AT-Facility:Binghamton_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Johnson_City_NY> ;
+.
+AT-Facility:Birmingham_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Birmingham_AL> ;
+.
+AT-Facility:Birmingham_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Birmingham_AL> ;
+.
+AT-Facility:Bismarck_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Bismarck_ND> ;
+.
+AT-Facility:Bismarck_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Bismarck_ND> ;
+.
+AT-Facility:Boise_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Boise_ID> ;
+.
+AT-Facility:Boise_Cascade_Heliport
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[heliport-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Ada_County_ID> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Boise_ID> ;
+.
+AT-Facility:Boise_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Boise_ID> ;
+.
+AT-Facility:Boston_Heliport
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[heliport-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Suffolk_County_MA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Boston_MA> ;
+.
+AT-Facility:Boston_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Merrimack_NH> ;
+.
+AT-Facility:Boston_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Merrimack_NH> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Boston_MA> ;
+.
+AT-Facility:Buffalo_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Cheektowaga_NY> ;
+.
+AT-Facility:Buffalo_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Cheektowaga_NY> ;
+.
+AT-Facility:Buochs_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Nidwalden> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Switzerland> ;
+.
+AT-Facility:Burlington_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#South_Burlington_VT> ;
+.
+AT-Facility:Burlington_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#South_Burlington_VT> ;
+.
+AT-Facility:Calgary_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Alberta> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Cape_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Falmouth_MA> ;
+.
+AT-Facility:Cape_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Falmouth_MA> ;
+.
+AT-Facility:Casper_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Casper_WY> ;
+.
+AT-Facility:Casper_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Casper_WY> ;
+.
+AT-Facility:Cedar_Rapids_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Cedar_Rapids_IA> ;
+.
+AT-Facility:Cedar_Rapids_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Cedar_Rapids_IA> ;
+.
+AT-Facility:Central_Air_Traffic_Organization_Service_Center
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fort_Worth_TX> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Arkansas> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Illinois> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Indiana> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Iowa> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Kansas> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Louisiana> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Michigan> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Minnesota> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Missouri> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Nebraska> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#New_Mexico> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#North_Dakota> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Ohio> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Oklahoma> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#South_Dakota> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Texas> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Wisconsin> ;
+.
+AT-Facility:Central_Florida_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Orlando_FL> ;
+.
+AT-Facility:Central_Florida_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Orlando_FL> ;
+.
+AT-Facility:Central_Regional_Administrative_Facility
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Kansas_City_MO> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Iowa> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Kansas> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Missouri> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Nebraska> ;
+.
+AT-Facility:Champaign_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Savoy_IL> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Champaign_IL> ;
+.
+AT-Facility:Champaign_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Savoy_IL> ;
+.
+AT-Facility:Charleston_Executive_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Charleston_County_SC> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Charleston_SC_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Charleston_SC> ;
+.
+AT-Facility:Charleston_SC_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Charleston_SC> ;
+.
+AT-Facility:Charleston_WV_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Charleston_WV> ;
+.
+AT-Facility:Charleston_WV_Tower
+  rdf:type AT-Facility:Air_Traffic_Control_Tower ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Charleston_WV> ;
+  rdfs:label "Charleston Tower"^^xsd:string ;
+  skos:prefLabel "Charleston Tower"^^xsd:string ;
+.
+AT-Facility:Charlotte_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Charlotte_NC> ;
+.
+AT-Facility:Charlotte_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Charlotte_NC> ;
+.
+AT-Facility:Charlottetown_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Prince_Edward_Island> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Chattanooga_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Chattanooga_TN> ;
+.
+AT-Facility:Chattanooga_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Chattanooga_TN> ;
+.
+AT-Facility:Chicago_OHare_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Cook_County_IL> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Chicago_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Elgin_IL> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Chicago_IL> ;
+.
+AT-Facility:Cincinnati_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Erlanger_KY> ;
+.
+AT-Facility:Cincinnatti_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Erlanger_KY> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Cincinnati_OH> ;
+.
+AT-Facility:City_of_Fort_Lauderdale_Heliport
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[heliport-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Broward_County_FL> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fort_Lauderdale_FL> ;
+.
+AT-Facility:Clarksburg_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Bridgeport_WV> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Clarksburg_WV> ;
+.
+AT-Facility:Clarksburg_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Bridgeport_WV> ;
+.
+AT-Facility:Cleveland_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Cleveland_OH> ;
+.
+AT-Facility:Cleveland_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Cleveland_OH> ;
+.
+AT-Facility:Colorado_Springs_Air_Traffic_Control_Tower
+  gn:nearby <http://www.faa.gov/DRS/Geography#Colorado_Springs_CO> ;
+  geo:sfWithin AT-Facility:Peterson_Air_Force_Base ;
+.
+AT-Facility:Colorado_Springs_Tower
+  gn:locatedIn AT-Facility:Peterson_Air_Force_Base ;
+.
+AT-Facility:Columbia_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#West_Columbia_SC> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Columbia_SC> ;
+.
+AT-Facility:Columbia_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#West_Columbia_SC> ;
+.
+AT-Facility:Columbus_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Columbus_OH> ;
+.
+AT-Facility:Columbus_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Columbus_OH> ;
+.
+AT-Facility:Corpus_Christi_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Corpus_Christi_TX> ;
+.
+AT-Facility:Corpus_Christi_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Corpus_Christi_TX> ;
+.
+AT-Facility:Dallas_Fort_Worth_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Tarrant_County_TX> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Dallas_Ft-Worth_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Dallas_TX> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fort_Worth_TX> ;
+.
+AT-Facility:Dallas_Ft-Worth_Terminal_Radar_Approach_Control
+  gn:nearby <http://www.faa.gov/DRS/Geography#Dallas_TX> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Fort_Worth_TX> ;
+.
+AT-Facility:Dayton_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Vandalia_OH> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Dayton_OH> ;
+.
+AT-Facility:Dayton_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Vandalia_OH> ;
+.
+AT-Facility:Daytona_Beach_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Daytona_Beach_FL> ;
+.
+AT-Facility:Daytona_Beach_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Daytona_Beach_FL> ;
+.
+AT-Facility:Denver_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Denver_County_CO> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Denver_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Denver_CO> ;
+.
+AT-Facility:Denver_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Denver_CO> ;
+.
+AT-Facility:Des_Moines_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Des_Moines_IA> ;
+.
+AT-Facility:Des_Moines_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Des_Moines_IA> ;
+.
+AT-Facility:Detroit_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Detroit_MI> ;
+.
+AT-Facility:Detroit_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Detroit_MI> ;
+.
+AT-Facility:Dobbins_Air_Reserve_Base
+  dc:identifier <http://dbpedia.org/resource/Dobbins_Air_Reserve_Base> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Marietta_GA> ;
+.
+AT-Facility:Dubendorf_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Zurich> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Switzerland> ;
+.
+AT-Facility:Duluth_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Duluth_MN> ;
+.
+AT-Facility:Duluth_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Duluth_MN> ;
+.
+AT-Facility:Eastern_Air_Traffic_Organization_Service_Center
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#College_Park_GA> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Alabama> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Connecticut> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Delaware> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Florida> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Georgia_ST> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Kentucky> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Maine> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Maryland> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Massachusetts> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Mississippi> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#New_Hampshire> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#New_Jersey> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#New_York> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#North_Carolina> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Pennsylvania> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Rhode_Island> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#South_Carolina> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Tennessee> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Vermont> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Virginia> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#West_Virginia> ;
+.
+AT-Facility:Eastern_Regional_Administrative_Facility
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Delaware> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Maryland> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#New_Jersey> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#New_York> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Pennsylvania> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Virginia> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#West_Virginia> ;
+.
+AT-Facility:Edmonton_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Alberta> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:El_Paso_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#El_Paso_TX> ;
+.
+AT-Facility:El_Paso_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#El_Paso_TX> ;
+.
+AT-Facility:Elmira_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Elmira_NY> ;
+.
+AT-Facility:Elmira_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Elmira_NY> ;
+.
+AT-Facility:Emmen_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Lucerne> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Switzerland> ;
+.
+AT-Facility:Erie_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Erie_PA> ;
+.
+AT-Facility:Erie_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Erie_PA> ;
+.
+AT-Facility:Eugene_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Eugene_OR> ;
+.
+AT-Facility:Eugene_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Eugene_OR> ;
+.
+AT-Facility:EuroAirport
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#France> ;
+.
+AT-Facility:Evansville_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Evansville_IN> ;
+.
+AT-Facility:Evansville_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Evansville_IN> ;
+.
+AT-Facility:Fairbanks_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fairbanks_AK> ;
+.
+AT-Facility:Fairbanks_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fairbanks_AK> ;
+.
+AT-Facility:Fargo_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fargo_ND> ;
+.
+AT-Facility:Fargo_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fargo_ND> ;
+.
+AT-Facility:Fayetteville_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fayetteville_NC> ;
+.
+AT-Facility:Fayetteville_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fayetteville_NC> ;
+.
+AT-Facility:Flint_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Flint_MI> ;
+.
+AT-Facility:Flint_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Flint_MI> ;
+.
+AT-Facility:Florence_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Florence_SC> ;
+.
+AT-Facility:Florence_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Florence_SC> ;
+.
+AT-Facility:Fort_Lauderdale_Executive_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Broward_County_FL> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Fort_Myers_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fort_Myers_FL> ;
+.
+AT-Facility:Fort_Myers_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fort_Myers_FL> ;
+.
+AT-Facility:Fort_Smith_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fort_Smith_AR> ;
+.
+AT-Facility:Fort_Smith_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fort_Smith_AR> ;
+.
+AT-Facility:Fort_Wayne_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fort_Wayne_IN> ;
+.
+AT-Facility:Fort_Wayne_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fort_Wayne_IN> ;
+.
+AT-Facility:Fresno_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fresno_CA> ;
+.
+AT-Facility:Fresno_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fresno_CA> ;
+.
+AT-Facility:Gander_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Newfoundland_and_Labrador> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:General_Edward_Lawrence_Logan_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Suffolk_County_MA> ;
+.
+AT-Facility:Geneva_Cointrin_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Geneva_GE> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Switzerland> ;
+.
+AT-Facility:George_Bush_Intercontinental_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Harris_County_TX> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Grand_Rapids_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Grand_Rapids_MI> ;
+.
+AT-Facility:Grand_Rapids_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Grand_Rapids_MI> ;
+.
+AT-Facility:Grant_County_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Moses_Lake_WA> ;
+.
+AT-Facility:Grant_County_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Moses_Lake_WA> ;
+.
+AT-Facility:Great_Falls_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Great_Falls_MT> ;
+.
+AT-Facility:Great_Falls_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Great_Falls_MT> ;
+.
+AT-Facility:Great_Lakes_Regional_Administrative_Facility
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Illinois> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Indiana> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Michigan> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Minnesota> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#North_Dakota> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Ohio> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#South_Dakota> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Wisconsin> ;
+.
+AT-Facility:Greater_Moncton_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#New_Brunswick> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Green_Bay_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Green_Bay_WI> ;
+.
+AT-Facility:Green_Bay_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Green_Bay_WI> ;
+.
+AT-Facility:Greensboro_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Greensboro_NC> ;
+.
+AT-Facility:Greensboro_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Greensboro_NC> ;
+.
+AT-Facility:Greer_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Greer_SC> ;
+.
+AT-Facility:Greer_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Greer_SC> ;
+.
+AT-Facility:Grissom_Air_Reserve_Base
+  dc:identifier <http://dbpedia.org/resource/Grissom_Air_Reserve_Base> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Kokomo_IN> ;
+.
+AT-Facility:Guam_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Guam> ;
+.
+AT-Facility:Gulfport_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Gulfport_MS> ;
+.
+AT-Facility:Gulfport_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Gulfport_MS> ;
+.
+AT-Facility:Halifax_Stanfield_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Nova_Scotia> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Harrisburg_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Middletown_PA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Harrisburg_PA> ;
+.
+AT-Facility:Harrisburg_Intl_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Middletown_PA> ;
+.
+AT-Facility:Helena_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Helena_MT> ;
+.
+AT-Facility:Helena_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Helena_MT> ;
+.
+AT-Facility:Hilo_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Hilo_HI> ;
+.
+AT-Facility:Hilo_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Hilo_HI> ;
+.
+AT-Facility:Homestead_Joint_Air_Reserve_Base
+  dc:identifier <http://dbpedia.org/resource/Homestead_Air_Reserve_Base> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Homestead_FL> ;
+.
+AT-Facility:Houston_Airpark
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Brazoria_County_TX> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Houston_Executive_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Waller_County_TX> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Houston_Heliport
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[heliport-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Harris_County_TX> ;
+.
+AT-Facility:Houston_Oil_and_MInerals_Port_Bolivar_Heliport
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[heliport-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Galveston_County_TX> ;
+.
+AT-Facility:Houston_Oil_and_Minerals_Port_Bolivar_Heliport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Galveston_County_TX> ;
+.
+AT-Facility:Houston_Oil_and_Minerals_Port_Bolivar_Heliport_Number_2
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[heliport-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Galveston_County_TX> ;
+.
+AT-Facility:Houston_Oil_and_Minerals_Smith_Point_Heliport
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[heliport-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Chambers_County_TX> ;
+.
+AT-Facility:Houston_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Houston_TX> ;
+.
+AT-Facility:Houston_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Houston_TX> ;
+.
+AT-Facility:Huntington_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Huntington_WV> ;
+.
+AT-Facility:Huntington_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Huntington_WV> ;
+.
+AT-Facility:Huntsville_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Huntsville_AL> ;
+.
+AT-Facility:Huntsville_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Huntsville_AL> ;
+.
+AT-Facility:Indianapolis_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Indianapolis_IN> ;
+.
+AT-Facility:Indianapolis_Brookside_Airpark
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Hancock_County_IN> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Indianapolis_Metropolitan_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Hamilton_County_IN> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Indianapolis_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Indianapolis_IN> ;
+.
+AT-Facility:Iqaluit_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Nunavut> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Jackson_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Jackson_MS> ;
+.
+AT-Facility:Jackson_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Jackson_MS> ;
+.
+AT-Facility:Jacksonville_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Jacksonville_FL> ;
+.
+AT-Facility:Jacksonville_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Duval_County_FL> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Jacksonville_Naval_Air_Station
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Duval_County_FL> ;
+.
+AT-Facility:Jacksonville_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Jacksonville_FL> ;
+.
+AT-Facility:John_F_Kennedy_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#New_York_NY> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Queens> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Queens_County_NY> ;
+.
+AT-Facility:Kalamazoo_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Portage_MI> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Kalamazoo_MI> ;
+.
+AT-Facility:Kalamazoo_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Portage_MI> ;
+.
+AT-Facility:Kansas_City_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Kansas_City_MO> ;
+.
+AT-Facility:Kansas_City_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Kansas_City_MO> ;
+.
+AT-Facility:Kelowna_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#British_Columbia> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Knoxville_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Loisville_TN> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Knoxville_TN> ;
+.
+AT-Facility:Knoxville_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Loisville_TN> ;
+.
+AT-Facility:La_Guardia_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Queens_County_NY> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Lafayette_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Lafayette_LA> ;
+.
+AT-Facility:Lafayette_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Lafayette_LA> ;
+.
+AT-Facility:Lake_Charles_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Lake_Charles_LA> ;
+.
+AT-Facility:Lake_Charles_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Lake_Charles_LA> ;
+.
+AT-Facility:Lambert_Saint-Louis_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Saint_Louis_County_MO> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Lambert_St-Louis_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#St_Louis_County_MO> ;
+.
+AT-Facility:Lansing_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Lansing_MI> ;
+.
+AT-Facility:Lansing_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Lansing_MI> ;
+.
+AT-Facility:Las_Vegas_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Las_Vegas_NV> ;
+.
+AT-Facility:Las_Vegas_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Las_Vegas_NV> ;
+.
+AT-Facility:Lausanne_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Vaud> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Switzerland> ;
+.
+AT-Facility:Lexington_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Lexington_KY> ;
+.
+AT-Facility:Lexington_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Lexington_KY> ;
+.
+AT-Facility:Little_Rock_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Little_Rock_AR> ;
+.
+AT-Facility:Little_Rock_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Little_Rock_AR> ;
+.
+AT-Facility:Logan_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Suffolk_County_MA> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Longview_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Longview_TX> ;
+.
+AT-Facility:Longview_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Longview_TX> ;
+.
+AT-Facility:Los_Angeles_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Los_Angeles_County_CA> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Lubbock_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Lubbock_TX> ;
+.
+AT-Facility:Lubbock_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Lubbock_TX> ;
+.
+AT-Facility:Lugano_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Ticino> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Switzerland> ;
+.
+AT-Facility:MacDill_Air_Force_Base_Auxiliary_Field
+  gn:nearby <http://www.faa.gov/DRS/Geography#Tampa_FL> ;
+.
+AT-Facility:Madison_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Madison_WI> ;
+.
+AT-Facility:Madison_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Madison_WI> ;
+.
+AT-Facility:Mansfield_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Mansfield_OH> ;
+.
+AT-Facility:March_Air_Reserve_Base
+  dc:identifier <http://dbpedia.org/resource/March_Air_Reserve_Base> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Moreno_Valley_CA> ;
+.
+AT-Facility:Meiringen_Air_Base
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Bern> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Switzerland> ;
+.
+AT-Facility:Memphis_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Shelby_County_TN> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Memphis_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Memphis_TN> ;
+.
+AT-Facility:Memphis_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Memphis_TN> ;
+.
+AT-Facility:Meridian_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Meridian_MS> ;
+.
+AT-Facility:Meridian_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Meridian_MS> ;
+.
+AT-Facility:Metropolitan_Oakland_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Alameda_County_CA> ;
+.
+AT-Facility:Miami_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Miami_FL> ;
+.
+AT-Facility:Miami_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Miami-Dade_County_FL> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Miami_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Miami_FL> ;
+.
+AT-Facility:Midland_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Midland_TX> ;
+.
+AT-Facility:Midland_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Midland_TX> ;
+.
+AT-Facility:Milwaukee_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Milwaukee_WI> ;
+.
+AT-Facility:Milwaukee_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Milwaukee_WI> ;
+.
+AT-Facility:Minneapolis_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Minneapolis_MN> ;
+.
+AT-Facility:Minneapolis_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Minneapolis_MN> ;
+.
+AT-Facility:Mobile_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Mobile_AL> ;
+.
+AT-Facility:Mobile_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Mobile_AL> ;
+.
+AT-Facility:Mollis_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Glarus> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Switzerland> ;
+.
+AT-Facility:Monroe_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Monroe_LA> ;
+.
+AT-Facility:Monroe_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Monroe_LA> ;
+.
+AT-Facility:Montgomery_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Hope_Hull_AL> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Montgomery_AL> ;
+.
+AT-Facility:Montgomery_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Hope_Hull_AL> ;
+.
+AT-Facility:Montreal_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Quebec> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Mount_Spokane_West_Airpark
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Spokane_County_WA> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Muskegon_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Muskegon_MI> ;
+.
+AT-Facility:Muskegon_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Muskegon_MI> ;
+.
+AT-Facility:Myrtle_Beach_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Myrtle_Beach_SC> ;
+.
+AT-Facility:Myrtle_Beach_Hardee_Airpark
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Horry_County_SC> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Myrtle_Beach_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Myrtle_Beach_SC> ;
+.
+AT-Facility:Nashville_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Nashville_TN> ;
+.
+AT-Facility:Nashville_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Nashville_TN> ;
+.
+AT-Facility:National_Guard_Heliport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Oklahoma_City_OK> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Oklahoma_County_OK> ;
+.
+AT-Facility:New_England_Regional_Administrative_Facility
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Connecticut> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Maine> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Massachusetts> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#New_Hampshire> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Rhode_Island> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Vermont> ;
+.
+AT-Facility:New_Orleans_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#New_Orleans_LA> ;
+.
+AT-Facility:New_Orleans_Downtown_Heliport
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[heliport-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#New_Orleans_LA> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Orleans_County_LA> ;
+.
+AT-Facility:New_Orleans_Downtown_Superbowl_Heliport
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[heliport-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#New_Orleans_LA> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Orleans_County_LA> ;
+.
+AT-Facility:New_Orleans_Downtown_Superdome_Heliport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Orleans_County_LA> ;
+.
+AT-Facility:New_Orleans_Naval_Air_Station
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Plaquemines_County_LA> ;
+.
+AT-Facility:New_Orleans_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#New_Orleans_LA> ;
+.
+AT-Facility:New_York_Army_National_Guard_Heliport
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[heliport-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Albany_County_NY> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Albany_NY> ;
+.
+AT-Facility:New_York_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Westbury_NY> ;
+.
+AT-Facility:Norfolk_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Virginia_Beach_VA> ;
+.
+AT-Facility:Norfolk_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Virginia_Beach_VA> ;
+.
+AT-Facility:Norman_Y_Mineta_San_Jose_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Santa_Clara_County_CA> ;
+.
+AT-Facility:Northern_California_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Mather_CA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Oakland_CA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#San_Francisco_CA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#San_Jose_CA> ;
+.
+AT-Facility:Northwest_Mountain_Regional_Administrative_Facility
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Colorado> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Idaho> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Montana> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Oregon> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Washington> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Wyoming> ;
+.
+AT-Facility:Oakland_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Alameda_County_CA> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Oklahoma_City_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Oklahoma_City_OK> ;
+.
+AT-Facility:Oklahoma_City_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Oklahoma_City_OK> ;
+.
+AT-Facility:Oklahoma_National_Guard_Heliport
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[heliport-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Oklahoma_City_OK> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Oklahoma_County_OK> ;
+.
+AT-Facility:Omaha_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Bellevue_NB> ;
+.
+AT-Facility:Omaha_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Bellevue_NB> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Omaha_NB> ;
+.
+AT-Facility:Orlando_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Orange_County_FL> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Otis_Air_National_Guard_Base
+  dc:identifier <http://dbpedia.org/resource/Otis_Air_National_Guard_Base> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Mashpee_MA> ;
+.
+AT-Facility:Ottawa_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Ottawa> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Palm_Beach_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#West_Palm_Beach_FL> ;
+.
+AT-Facility:Palm_Beach_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#West_Palm_Beach_FL> ;
+.
+AT-Facility:Pasco_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Pasco_WA> ;
+.
+AT-Facility:Pasco_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Pasco_WA> ;
+.
+AT-Facility:Payerne_Airport
+  dc:identifier <http://dbpedia.org/resource/Payerne_Airport> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Vaud> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Bern> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Lausanne> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Payerne_VD> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Switzerland> ;
+.
+AT-Facility:Pensacola_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Pensacola_FL> ;
+.
+AT-Facility:Pensacola_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Pensacola_FL> ;
+.
+AT-Facility:Peoria_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Peoria_IL> ;
+.
+AT-Facility:Peoria_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Peoria_IL> ;
+.
+AT-Facility:Peterson_Air_Force_Base
+  gn:nearby <http://www.faa.gov/DRS/Geography#Colorado_Springs_CO> ;
+.
+AT-Facility:Philadelpha_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Philadelphia_PA> ;
+.
+AT-Facility:Philadelphia_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Philadelphia_PA> ;
+.
+AT-Facility:Phoenix_Sky_Harbor_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Maricopa_County_AZ> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Phoenix_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Phoenix_AZ> ;
+.
+AT-Facility:Phoenix_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Phoenix_AZ> ;
+.
+AT-Facility:Pittsburgh_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Pittsburgh_PA> ;
+.
+AT-Facility:Pittsburgh_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Allegheny_County_PA> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Pittsburgh_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Pittsburgh_PA> ;
+.
+AT-Facility:Portland_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Portland_ME> ;
+.
+AT-Facility:Portland_Auto_Port_Airstrip
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Multnomah_County_OR> ;
+.
+AT-Facility:Portland_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Multnomah_County_OR> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Portland_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Portland_OR> ;
+.
+AT-Facility:Portland_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Portland_OR> ;
+.
+AT-Facility:Portland_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Portland_ME> ;
+.
+AT-Facility:Portlantd_Auto_Port_Airstrip
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Multnomah_County_OR> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Potomac_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Warrenton_VA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Arlington_VA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Chantilly_VA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Dulles_VA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Washington_DC> ;
+.
+AT-Facility:Providence_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Warwick_RI> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Providence_RI> ;
+.
+AT-Facility:Providence_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Warwick_RI> ;
+.
+AT-Facility:Quad_City_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Moline_IL> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Bettendorf_IA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Davenport_IA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#East_Moline_IL> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Rock_Island_IL> ;
+.
+AT-Facility:Quad_City_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Moline_IL> ;
+.
+AT-Facility:Raleigh-Durham_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Morrisville_NC> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Durham_NC> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Raleigh_NC> ;
+.
+AT-Facility:Raleigh-Durham_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Morrisville_NC> ;
+.
+AT-Facility:Reading_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Reading_PA> ;
+.
+AT-Facility:Reading_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Reading_PA> ;
+.
+AT-Facility:Regina_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Saskatchewan> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Roanoke_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Roanoke_VA> ;
+.
+AT-Facility:Roanoke_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Roanoke_VA> ;
+.
+AT-Facility:Rochester_MN_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Rochester_MN> ;
+.
+AT-Facility:Rochester_NY_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Rochester_NY> ;
+.
+AT-Facility:Rochester_NY_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Rochester_NY> ;
+.
+AT-Facility:Rockford_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Rockford_IL> ;
+.
+AT-Facility:Rockford_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Rockford_IL> ;
+.
+AT-Facility:Ronald_Reagan_Washington_National_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Arlington_County_VA> ;
+.
+AT-Facility:Roswell_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Roswell_NM> ;
+.
+AT-Facility:Saginaw_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Freeland_MI> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Saginaw_MI> ;
+.
+AT-Facility:Saginaw_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Freeland_MI> ;
+.
+AT-Facility:Saint_Louis_Downtown_Heliport
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[heliport-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Saint_Louis_County_MO> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Saint_Louis_MO> ;
+.
+AT-Facility:Saint_Thomas_Waterfront_Heliport
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[heliport-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Saint_Thomas_VI> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#United_States_Virgin_Islands> ;
+.
+AT-Facility:Salt_Lake_City_Heliport
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[heliport-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Salt_Lake_City_UT> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Salt_Lake_County_UT> ;
+.
+AT-Facility:Salt_Lake_City_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Salt_Lake_County_UT> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Salt_Lake_City_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Salt_Lake_City_UT> ;
+.
+AT-Facility:Salt_Lake_City_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Salt_Lake_City_UT> ;
+.
+AT-Facility:San_Antonio_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#San_Antonio_TX> ;
+.
+AT-Facility:San_Antonio_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#San_Antonio_TX> ;
+.
+AT-Facility:San_Diego_Heliport
+  dcterms:bibliographicCitation "http://geonames.usgs.gov/pls/gnispublic/[heliport-id] accessed 8/4/2013"^^xsd:string ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#San_Diego_County_CA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#San_Diego_CA> ;
+.
+AT-Facility:San_Diego_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#San_Diego_CA> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:San_Francisco_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#San_Mateo_County_CA> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:San_Jose_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Santa_Clara_County_CA> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Santa_Barbara_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Goleta_CA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Santa_Barbara_CA> ;
+.
+AT-Facility:Santa_Barbara_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Goleta_CA> ;
+.
+AT-Facility:Savannah_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Savannah_GA> ;
+.
+AT-Facility:Savannah_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Savannah_GA> ;
+.
+AT-Facility:Seattle-Tacoma_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#King_County_WA> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Seattle_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Burien_WA> ;
+.
+AT-Facility:Seattle_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Burien_WA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Seattle_WA> ;
+.
+AT-Facility:Selfridge_Air_National_Guard_Base
+  dc:identifier <http://dbpedia.org/resource/Selfridge_Air_National_Guard_Base> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Mount_Clemens_MI> ;
+.
+AT-Facility:Shreveport_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Bossier_City_LA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Shreveport_LA> ;
+  geo:sfWithin AT-Facility:Barksdale_Air_Force_Base ;
+.
+AT-Facility:Sion_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Valais> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Switzerland> ;
+.
+AT-Facility:Sioux_Falls_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Sioux_Falls_SD> ;
+.
+AT-Facility:Sioux_Falls_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Sioux_Falls_SD> ;
+.
+AT-Facility:Sioux_Gateway_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Sioux_City_IA> ;
+.
+AT-Facility:Sioux_Gateway_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Sioux_City_IA> ;
+.
+AT-Facility:South_Bend_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#South_Bend_IN> ;
+.
+AT-Facility:South_Bend_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#South_Bend_IN> ;
+.
+AT-Facility:Southern_California_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#San_Diego_CA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Los_Angeles_CA> ;
+.
+AT-Facility:Southern_Regional_Administrative_Facility
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#College_Park_GA> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Alabama> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Florida> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Georgia_ST> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Kentucky> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Mississippi> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#North_Carolina> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#South_Carolina> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Tennessee> ;
+.
+AT-Facility:Southwest_Regional_Administrative_Facility
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fort_Worth_TX> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Arizona> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Louisiana> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#New_Mexico> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Oklahoma> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Texas> ;
+.
+AT-Facility:Spokane_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Spokane_WA> ;
+.
+AT-Facility:Spokane_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Spokane_WA> ;
+.
+AT-Facility:Springfield_IL_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Springfield_IL> ;
+.
+AT-Facility:Springfield_IL_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Springfield_IL> ;
+.
+AT-Facility:Springfield_MO_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Springfield_MO> ;
+.
+AT-Facility:Springfield_MO_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Springfield_MO> ;
+.
+AT-Facility:St-Louis_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Saint_Charles_MO> ;
+.
+AT-Facility:St_Gallen-Altenrhein_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#St_Gallen> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Switzerland> ;
+.
+AT-Facility:St_Louis_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Saint_Charles_MO> ;
+.
+AT-Facility:Standiford_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Louisville_KY> ;
+.
+AT-Facility:Standiford_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Louisville_KY> ;
+.
+AT-Facility:Syracuse_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#North_Syracuse_NY> ;
+.
+AT-Facility:Syracuse_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#North_Syracuse_NY> ;
+.
+AT-Facility:Tallahassee_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Tallahassee_FL> ;
+.
+AT-Facility:Tallahassee_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Tallahassee_FL> ;
+.
+AT-Facility:Tampa_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Tampa_FL> ;
+.
+AT-Facility:Tampa_Bay_Executive_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Pasco_County_FL> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Tampa_Executive_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Hillsborough_County_FL> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Tampa_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Hillsborough_County_FL> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Tampa_North_Aero_Park
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Pasco_County_FL> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Tampa_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Tampa_FL> ;
+.
+AT-Facility:Ted_Stevens_Anchorage_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Anchorage_AK> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Anchorage_County_AK> ;
+.
+AT-Facility:Terra_Haute_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Terra_Haute_IN> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Hulman_IN> ;
+.
+AT-Facility:Toledo_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Swanton_OH> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Toledo_OH> ;
+.
+AT-Facility:Toledo_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Swanton_OH> ;
+.
+AT-Facility:Toronto_Pearson_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Ontario> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Tri-Cities_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Blountville_TN> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Bristol_TN> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Bristol_VA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Johnson_City_TN> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Kingsport_TN> ;
+.
+AT-Facility:Tri-Cities_Regional_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Blountville_TN> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Abingdon_VA> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Blountville_TN> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Bluff_City_TN> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Boone_NC> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Bristol_TN> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Bristol_VA> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Elizabethton_TN> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Erwin_TN> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Greeneville_TN> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Johnson_City_TN> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Jonesborough_TN> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Kingsport_TN> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Mountain_City_TN> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Rogersville_TN> ;
+.
+AT-Facility:Tri-Cities_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Blountville_TN> ;
+.
+AT-Facility:Tucson_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Tucson_AZ> ;
+.
+AT-Facility:Tucson_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Tucson_AZ> ;
+.
+AT-Facility:Tulsa_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Tulsa_OK> ;
+.
+AT-Facility:Tulsa_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Tulsa_OK> ;
+.
+AT-Facility:Twin_Falls_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Twin_Falls_ID> ;
+.
+AT-Facility:Twin_Falls_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Twin_Falls_ID> ;
+.
+AT-Facility:Vancouver_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#British_Columbia> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Victoria_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#British_Columbia> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Waco_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Waco_TX> ;
+.
+AT-Facility:Waco_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Waco_TX> ;
+.
+AT-Facility:Washington_Dulles_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Loudoun_County_VA> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Washington_National_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Arlington_County_VA> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Waterloo_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Waterloo_IA> ;
+.
+AT-Facility:Waterloo_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Waterloo_IA> ;
+.
+AT-Facility:Westchester_County_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Westchester_County_NY> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Western-Pacific_Regional_Administrative_Facility
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Arizona> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#California> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Hawaii> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Nevada> ;
+.
+AT-Facility:Western_Air_Traffic_Organization_Service_Center
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Renton_WA> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Alaska> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Arizona> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#California> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Colorado> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Hawaii> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Idaho> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Montana> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Nevada> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Oregon> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Utah> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Washington> ;
+  geo:ehCovers <http://www.faa.gov/DRS/Geography#Wyoming> ;
+  ns:street-address "1601 East Valley Road"^^xsd:string ;
+.
+AT-Facility:Whitehorse_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Yukon> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Wichita_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Wichita_KS> ;
+.
+AT-Facility:Wichita_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Wichita_KS> ;
+.
+AT-Facility:Wilkes-Barre_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Avoca_PA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Scranton_PA> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Wilkes-Barre_PA> ;
+.
+AT-Facility:Wilkes-Barre_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Avoca_PA> ;
+.
+AT-Facility:Will_Rogers_World_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Oklahoma_County_OK> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#United_States_of_America> ;
+.
+AT-Facility:Wilmington_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Wilmington_NC> ;
+.
+AT-Facility:Wilmington_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Wilmington_NC> ;
+.
+AT-Facility:Winnipeg_International_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Manitoba> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Yankee_TRACON
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Windsor_Locks_CT> ;
+.
+AT-Facility:Yankee_Terminal_Radar_Approach_Control
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Windsor_Locks_CT> ;
+.
+AT-Facility:Yellowknife_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Northwest_Territories> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Canada> ;
+.
+AT-Facility:Youngstown_Air_Traffic_Control_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Vienna_OH> ;
+  gn:nearby <http://www.faa.gov/DRS/Geography#Youngstown_OH> ;
+.
+AT-Facility:Youngstown_Tower
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Vienna_OH> ;
+.
+AT-Facility:Zurich_Airport
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Zurich> ;
+  gn:parentCountry <http://www.faa.gov/DRS/Geography#Switzerland> ;
+.
+<http://www.faa.gov/DRS/Geography#Atlanta_GA>
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Fulton_County> ;
+.
+<http://www.faa.gov/DRS/Geography#Charlotte_NC>
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Mecklenburg_County> ;
+  owl:sameAs <http://dbpedia.org/resource/Charlotte%2C_North_Carolina> ;
+.
+<http://www.faa.gov/DRS/Geography#Cincinnati_OH>
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Hamilton_County_OH> ;
+  owl:sameAs <http://dbpedia.org/resource/Cincinnati> ;
+.
+<http://www.faa.gov/DRS/Geography#Cleveland_OH>
+  dc:identifier <http://dbpedia.org/resource/Cleveland> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Cuyahoga_County> ;
+  owl:sameAs <http://dbpedia.org/resource/Cleveland> ;
+.
+<http://www.faa.gov/DRS/Geography#College_Park_GA>
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Georgia_ST> ;
+.
+<http://www.faa.gov/DRS/Geography#College_Park_MD>
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Maryland> ;
+.
+<http://www.faa.gov/DRS/Geography#Country_Capital_City>
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Ontario> ;
+.
+<http://www.faa.gov/DRS/Geography#Detroit_MI>
+  dc:identifier <http://dbpedia.org/resource/Detroit> ;
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Wayne_County> ;
+.
+<http://www.faa.gov/DRS/Geography#Dover_NH>
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#New_Hampshire> ;
+.
+<http://www.faa.gov/DRS/Geography#Fort_Lauderdale_FL>
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Broward_County_FL> ;
+.
+<http://www.faa.gov/DRS/Geography#Herisau>
+  gn:locatedIn <http://www.faa.gov/DRS/Geography#Herisau> ;
+.
+<http://www.faa.gov/DRS/Geography#Queens_County_NY>
+  owl:sameAs <http://dbpedia.org/resource/Queens> ;
+.
+<http://www.faa.gov/DRS/Geography#hasLocation>
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "Indicates that the object feature is located in the subject resource"@en ;
+  rdfs:label "located in"@en ;
+  rdfs:range gn:Feature ;
+  owl:inverseOf gn:locatedIn ;
+.
+<http://www.faa.gov/DRS/Geometry#Axes>
+  rdfs:subClassOf <http://www.faa.gov/DRS/Geometry#Line> ;
+  skos:broader <http://www.faa.gov/DRS/Geometry#Line> ;
+.
+<http://www.faa.gov/DRS/Infrastructure_Environment>
+  rdf:type owl:Ontology ;
+  owl:imports dc: ;
+  owl:imports dcterms: ;
+  owl:imports <http://www.faa.gov/DRS/Atmosphere-Airspace> ;
+  owl:imports <http://www.faa.gov/DRS/Environment> ;
+  owl:imports <http://www.faa.gov/DRS/Facilities> ;
+  owl:imports <http://www.faa.gov/DRS/Geography> ;
+  owl:imports <http://www.faa.gov/DRS/Geometry> ;
+  owl:imports <http://www.faa.gov/DRS/Infrastructure> ;
+  owl:imports <http://www.faa.gov/DRS/Systems> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Infrastructure-Environment
+  rdf:type owl:Class ;
+  rdfs:label "Infrastructure-Environment"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            Environment:Environment
+            Infrastructure:Infrastructure
+          ) ;
+      ]
+    ) ;
+  skos:prefLabel "Infrastructure-Environment"^^xsd:string ;
+.
+:System-Wide_Information_Management
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "SESAR  Extracted from SESAR website on July 26, 2011"^^xsd:string ;
+  dcterms:bibliographicCitation "SESAR Consortium (2007) CONOPS Acronyms and Definitions, Task 2.2.2 - Milestone 3, Document Number: DLT-0612-222-02-00"^^xsd:string ;
+  dcterms:source """SESAR Consortium (2007) CONOPS Acronyms and Definitions, Task 2.2.2 - Milestone 3, Document Number: DLT-0612-222-02-00
+"""^^xsd:string ;
+  rdfs:label "System-Wide Information Management"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure-Environment ;
+  skos:altLabel "SWIM"^^xsd:string ;
+  skos:definition "A distributed processing environment which replaces data level interoperability and closely coupled interfaces with an open, flexible, modular and secure data architecture totally transparent to users and their applications.   [SESAR]"^^xsd:string ;
+  skos:prefLabel "System-Wide Information Management"^^xsd:string ;
+.

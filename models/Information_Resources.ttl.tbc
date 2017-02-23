@@ -1,0 +1,147 @@
+# baseURI: null
+
+@prefix composite: <http://www.topbraid.org/2007/05/composite.owl#> .
+@prefix forms: <http://www.topbraid.org/2007/01/forms.owl#> .
+@prefix inference: <http://www.topbraid.org/2007/06/inference.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix visual: <http://topbraid.org/visual#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.faa.gov/DRS/Information_Resources#Active_Advisory_Circular>
+  forms:keyProperties (
+      rdfs:label
+      <http://www.w3.org/2004/02/skos/core#altLabel>
+      <http://purl.org/dc/elements/1.1/title>
+      <http://purl.org/dc/terms/issued>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Advisory_Circular>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Aeronautical_Bulletin>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Airworthiness_Directives_Manual>
+  forms:keyProperties (
+      rdfs:label
+      rdfs:comment
+      <http://purl.org/dc/elements/1.1/title>
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Airworthiness_Inspector_Handbook>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Aviation_Maintenance_Technician_Handbook>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Examiners_and_Inspectors_Orders>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#FAR_Chapter>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Flight_Standards_Service_Orders>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Human_Resource_Order>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Information_Resource_Management_Order>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Inspector_Handbook_Document_Type>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Inspector_Orders>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Medical_Orders>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#National_Information_Resource_Management_Order>
+  forms:keyProperties (
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:label
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Order>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Parts_Manufacturer_Approval_Order>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      <http://purl.org/dc/terms/issued>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Research_and_Development_Orders>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.
+<http://www.faa.gov/DRS/Information_Resources#Transportation_Order>
+  forms:keyProperties (
+      rdfs:label
+      <http://purl.org/dc/elements/1.1/title>
+      rdfs:comment
+    ) ;
+.

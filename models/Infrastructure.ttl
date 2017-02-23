@@ -1,0 +1,832 @@
+# baseURI: http://www.faa.gov/DRS/Infrastructure
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://www.faa.gov/DRS/Atmosphere-Airspace
+# imports: http://www.faa.gov/DRS/Facilities
+# imports: http://www.faa.gov/DRS/Systems
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://www.faa.gov/DRS/Infrastructure#> .
+@prefix Atmosphere-Airspace: <http://www.faa.gov/DRS/Atmosphere-Airspace#> .
+@prefix Facilities: <http://www.faa.gov/DRS/Facilities#> .
+@prefix Systems: <http://www.faa.gov/DRS/Systems#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+Atmosphere-Airspace:Communications_Frequency
+  skos:broader Atmosphere-Airspace:Frequency ;
+  skos:narrower Atmosphere-Airspace:Voice_Communications_Frequency ;
+.
+Atmosphere-Airspace:Extremely_Low_Frequency
+  skos:broader Atmosphere-Airspace:Low_Frequency ;
+.
+Atmosphere-Airspace:Frequency
+  skos:narrower Atmosphere-Airspace:Advisory_Frequency ;
+  skos:narrower Atmosphere-Airspace:Communications_Frequency ;
+  skos:narrower Atmosphere-Airspace:Radio_Frequency ;
+.
+Atmosphere-Airspace:Low_Frequency
+  skos:narrower Atmosphere-Airspace:Extremely_Low_Frequency ;
+  skos:narrower Atmosphere-Airspace:Very_Low_Frequency ;
+.
+Atmosphere-Airspace:Radio_Frequency
+  skos:narrower Atmosphere-Airspace:Last_Contact_Radio_Frequency ;
+  skos:narrower Atmosphere-Airspace:Navigation_Frequency ;
+  skos:narrower Atmosphere-Airspace:Radio_Frequency_Class ;
+  skos:narrower Atmosphere-Airspace:Receiving_Unit_Frequency ;
+.
+Atmosphere-Airspace:Radio_Frequency_Class
+  skos:broader Atmosphere-Airspace:Radio_Frequency ;
+  skos:narrower Atmosphere-Airspace:High_Frequency ;
+  skos:narrower Atmosphere-Airspace:Low_Frequency ;
+  skos:narrower Atmosphere-Airspace:Medium_Frequency ;
+.
+Atmosphere-Airspace:Space
+  skos:broader :Infrastructure ;
+  skos:topConceptOf Atmosphere-Airspace:Space ;
+  skos:topConceptOf :Infrastructure ;
+.
+Atmosphere-Airspace:Universe
+  skos:broader Atmosphere-Airspace:Space ;
+  skos:hasTopConcept Atmosphere-Airspace:Space ;
+.
+Atmosphere-Airspace:Voice_Communications_Frequency
+  skos:broader Atmosphere-Airspace:Communications_Frequency ;
+.
+Facilities:Complex
+  skos:broader :Infrastructure ;
+  skos:hasTopConcept :Infrastructure ;
+.
+Facilities:Facilities
+  skos:broader Facilities:Complex ;
+  skos:topConceptOf :Infrastructure ;
+.
+<http://www.faa.gov/DRS/Infrastructure>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports <http://www.faa.gov/DRS/Atmosphere-Airspace> ;
+  owl:imports <http://www.faa.gov/DRS/Facilities> ;
+  owl:imports <http://www.faa.gov/DRS/Systems> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Activity-related_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Activity-related Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure ;
+  skos:broader :Infrastructure ;
+  skos:prefLabel "Activity-related Infrastructure"^^xsd:string ;
+.
+:Aerodromes_Air-Routes-and_Ground-Aids
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA JO Order 7340.2C, Contractions; dated 2/9/2012."^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Abbreviations and Codes, Doc 8400, Seventh Edition, 2007; ICAO Procedures for Air Navigation Services"^^xsd:string ;
+  dtype:code "AGA"^^xsd:anySimpleType ;
+  rdfs:label "Aerodromes, Air Routes and Ground Aids"^^xsd:string ;
+  rdfs:subClassOf Atmosphere-Airspace:Routes ;
+  rdfs:subClassOf Facilities:Aerodrome ;
+  rdfs:subClassOf Systems:Ground-based_Navigation_Aid ;
+  rdfs:subClassOf owl:Thing ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            Atmosphere-Airspace:Routes
+            Facilities:Aerodrome
+            Systems:Ground-based_Navigation_Aid
+          ) ;
+      ]
+    ) ;
+  skos:broader Atmosphere-Airspace:Routes ;
+  skos:broader Facilities:Aerodrome ;
+  skos:broader Systems:Ground-based_Navigation_Aid ;
+  skos:prefLabel "Aerodromes, Air Routes and Ground Aids"^^xsd:string ;
+.
+:Air_Transportation_Communications_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Communications Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Communications_Infrastructure ;
+  skos:broader :Transportation_Communications_Infrastructure ;
+  skos:narrower :Air_Transportation_Teleccommunications_Infrastructure ;
+  skos:prefLabel "Air Transportation Communications Infrastructure"^^xsd:string ;
+.
+:Air_Transportation_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Infrastructure ;
+  owl:unionOf (
+      [
+        rdf:type owl:Class ;
+        owl:unionOf (
+            Systems:National_Airspace_Systems
+            Facilities:Air_Transportation_Facilities
+            Atmosphere-Airspace:Airspace
+          ) ;
+      ]
+    ) ;
+  skos:broader :Transportation_Infrastructure ;
+  skos:definition "The set of Air Transportation Physical Resources that consists of the airspace, facilities (including land, buildings, utilities), systems (automated and manual, including equipment), and relevant procedures within the geographic and functional boundaries of a national government (based on NAS standard definition of \"infrastructure\") that form the foundation necessary to support the collective set of physical resources required to enable and support the transport of people and cargo via aircraft.  Air Transportation Infrastructure also includes:  (1) the Communications Infrastructure necessary to support the communication of information between individuals within the different Air Transportation Facilities; (2) the Information Technology Infrastructure necessary to support the processing of information; (3) the land, water, utility, and other facility infrastructures not associated with the Air Transportation Infrastructure but affect the safe transport of people and cargo through the airspace (i.e., obstacles to air travel such as mountains, lighthouses, water towers, electrical power lines, construction cranes, high-rise buildings, etc.).  [PROPOSED]"^^xsd:string ;
+  skos:narrower Atmosphere-Airspace:Airspace ;
+  skos:narrower Facilities:Facility ;
+  skos:narrower :Air_Transportation_System_Infrastructure ;
+  skos:narrower :Land_Transportation_Infrastructure ;
+  skos:narrower :National_Transportation_Infrastructure ;
+  skos:narrower :Space_Transportation_Infrastructure ;
+  skos:narrower :Water_Transportation_Infrastructure ;
+  skos:narrower Systems:System ;
+  skos:prefLabel "Air Transportation Infrastructure"^^xsd:string ;
+.
+:Air_Transportation_Infrastructure_Architecture
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Infrastructure Architecture"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Infrastructure_Architecture ;
+  owl:intersectionOf (
+      Facilities:Facility_Architecture
+      Atmosphere-Airspace:Airspace_Architecture
+      Systems:System_Architecture
+    ) ;
+  skos:broader :Transportation_Infrastructure_Architecture ;
+  skos:narrower :Air_Transportation_Infrastructure ;
+  skos:prefLabel "Air Transportation Infrastructure Architecture"^^xsd:string ;
+.
+:Air_Transportation_System_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation System Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Infrastructure ;
+  skos:broader :Air_Transportation_Infrastructure ;
+  skos:narrower :Navigation_Aid_Infrastructure ;
+  skos:prefLabel "Air Transportation System Infrastructure"^^xsd:string ;
+.
+:Air_Transportation_Teleccommunications_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Telecommunications Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Communications_Infrastructure ;
+  skos:broader :Air_Transportation_Communications_Infrastructure ;
+  skos:prefLabel "Air Transportation Telecommunications Infrastructure"^^xsd:string ;
+.
+:Architecture
+  rdf:type owl:Class ;
+  rdfs:label "Architecture"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:narrower :Infrastructure_Architecture ;
+  skos:prefLabel "Architecture"^^xsd:string ;
+.
+:Atmosphere_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Atmosphere Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Environment_Infrastructure ;
+  skos:broader :Environment_Infrastructure ;
+  skos:prefLabel "Atmosphere Infrastructure"^^xsd:string ;
+.
+:Bare_Earth
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIS/AIM Training Guidance Manual, Version 1.0 DRAFT, as of 5/18/2011, p. 34."^^xsd:string ;
+  dcterms:bibliographicCitation "RTCA/DO-276B.  User Requirements for Terrain and Obstacle Data, Draft; February 17, 2011"^^xsd:string ;
+  dcterms:source """ICAO (AN 4; AN 15)
+Official definition added to: AN 4 by Amdt 53 (25/11/2004), AN 15 by Amdt 33 (25/11/2004)."""^^xsd:string ;
+  rdfs:label "Bare Earth"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "Surface of the Earth including bodies of water and permanent ice and snow, and excluding vegetation and man-made objects.  [ICAO]  [AIS/AIM]"^^xsd:string ;
+.
+:Canopy
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-148"^^xsd:string ;
+  dcterms:bibliographicCitation "RTCA/DO-276B.  User Requirements for Terrain and Obstacle Data, Draft; February 17, 2011"^^xsd:string ;
+  dcterms:source """ICAO (AN 4; AN 15)
+Official definition added to: AN 4 by Amdt 53 (25/11/2004), AN 15 by Amdt 33  (25/11/2004)."""^^xsd:string ;
+  rdfs:label "Canopy"^^xsd:string ;
+  rdfs:subClassOf :Bare_Earth ;
+  skos:definition "A model describing a bare earth model supplemented by the vegetation height.  [RTCA]"^^xsd:string ;
+  skos:definition "Bare Earth supplemented by vegetation height.  [ICAO]"^^xsd:string ;
+  skos:prefLabel "Canopy"^^xsd:string ;
+.
+:Commercial_Space_Transportation_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Commercial Space Transportation Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Space_Transportation_Infrastructure ;
+  skos:broader :Space_Transportation_Infrastructure ;
+  skos:prefLabel "Commercial Space Transportation Infrastructure"^^xsd:string ;
+.
+:Communications_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Communications Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Infrastructure ;
+  skos:broader :Activity-related_Infrastructure ;
+  skos:hasTopConcept :Infrastructure ;
+  skos:narrower :Telecommunications_Infrastructure ;
+  skos:narrower :Transportation_Communications_Infrastructure ;
+  skos:prefLabel "Communications Infrastructure"^^xsd:string ;
+.
+:Critical_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Critical Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure ;
+  skos:broader :Infrastructure ;
+  skos:prefLabel "Critical Infrastructure"^^xsd:string ;
+.
+:Critical_Infrastructure_Architecture
+  rdf:type owl:Class ;
+  rdfs:label "Critical Infrastructure Architecture"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Architecture ;
+  skos:broader :Infrastructure_Architecture ;
+  skos:prefLabel "Critical Infrastructure Architecture"^^xsd:string ;
+.
+:Cultural_Features
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "RTCA/DO-276B.  User Requirements for Terrain and Obstacle Data, Draft; February 17, 2011"^^xsd:string ;
+  rdfs:label "Cultural Features"^^xsd:string ;
+  rdfs:subClassOf :Real_Property ;
+  skos:definition "Manmade morphological formations that include transportation systems (roads and trails; railroads and pipelines; runways; transmission lines), and other manmade structures, (buildings, houses, schools, churches, hospitals).   [RTCA]"^^xsd:string ;
+  skos:prefLabel "Cultural Features"^^xsd:string ;
+.
+:Education_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Education Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Infrastructure ;
+  skos:broader :Activity-related_Infrastructure ;
+  skos:hasTopConcept :Infrastructure ;
+  skos:prefLabel "Education Infrastructure"^^xsd:string ;
+.
+:Electrical_Power_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Electrical Power Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Utility_Infrastructure ;
+  skos:broader :Utility_Infrastructure ;
+  skos:prefLabel "Electrical Power Infrastructure"^^xsd:string ;
+.
+:Environment_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Environment Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure ;
+  skos:broader :Infrastructure ;
+  skos:prefLabel "Environment Infrastructure"^^xsd:string ;
+.
+:FAA_Telecommunications_Infrastructure
+  rdf:type :Federal_Telecommunications_Infrastructure ;
+  dcterms:bibliographicCitation "DOT - extracted from DOT materials"^^xsd:string ;
+  dcterms:bibliographicCitation "NASEA Simplified NAS poster"^^xsd:string ;
+  rdfs:label "FAA Telecommunications Infrastructure"^^xsd:string ;
+  skos:definition "FTI  - NAS Communication System Component  [NASEA]"^^xsd:string ;
+  skos:definition "The FAA Telecommunications Infrastructure (FTI) services will replace most FAA-owned and leased telecommunications systems/services and consolidate their functions under a single service provider.   [DOT]"^^xsd:string ;
+  skos:prefLabel "FAA Telecommunications Infrastructure"^^xsd:string ;
+.
+:Federal_Telecommunications_Infrastructure
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "FTI"^^xsd:string ;
+  rdfs:label "Federal Telecommunications Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :National_Telecommunications_Infrastructure ;
+  skos:broader :National_Telecommunications_Infrastructure ;
+  skos:prefLabel "Federal Telecommunications Infrastructure"^^xsd:string ;
+.
+:Geographic_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Geographic Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Environment_Infrastructure ;
+  skos:broader :Environment_Infrastructure ;
+  skos:prefLabel "Geographic Infrastructure"^^xsd:string ;
+.
+:Grounds
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA extracted from FAA Order 0000.1G, dated March 14, 2001"^^xsd:string ;
+  dcterms:references "Grounds and Roads"^^xsd:string ;
+  dcterms:references "Plant, Structures, and Grounds"^^xsd:string ;
+  vaem:hasIdentifier "6900"^^xsd:string ;
+  vaem:hasIdentifier "6940"^^xsd:string ;
+  rdfs:label "Grounds"^^xsd:string ;
+  rdfs:subClassOf :Bare_Earth ;
+  skos:definition "Grounds and Roads is a topic, 6940  [FAA]"^^xsd:string ;
+  skos:definition "Plant, Structures, and Grounds is a major topic, 6900   [FAA]"^^xsd:string ;
+  skos:prefLabel "Grounds"^^xsd:string ;
+.
+:Human_Benefits_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Human Benefits Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Human_Resource_Infrastructure ;
+  skos:broader :Human_Resource_Infrastructure ;
+  skos:prefLabel "Human Benefits Infrastructure"^^xsd:string ;
+.
+:Human_Resource_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Human Resource Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Resource_Infrastructure ;
+  skos:broader :Resource_Infrastructure ;
+  skos:prefLabel "Human Resource Infrastructure"^^xsd:string ;
+.
+:Information_Technology_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Information Technology Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Technology_Infrastructure ;
+  skos:broader :Technology_Infrastructure ;
+  skos:prefLabel "Information Technology Infrastructure"^^xsd:string ;
+.
+:Infrastructure
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "BusinessDictionary.com"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11ed."^^xsd:string ;
+  dcterms:bibliographicCitation "Mitre FAA National Airspace Data Classification Scheme, extracted from \"NAS_clas_final\" on Data Arch CD"^^xsd:string ;
+  dcterms:bibliographicCitation "WIKIPEDIA http://en.wikipedia.orgl/wiki/Infrastructure as of 1/26/2008"^^xsd:string ;
+  vaem:abbreviation "INFRA"^^xsd:string ;
+  rdfs:label "Infrastructure"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Physical_Resources ;
+  skos:definition " : the underlying foundation or basic framework (as of a system or organization);   2 : the permanent installations required for military purposes;   3 : the system of public works of a country, state, or region;  also   : the resources (as personnel, buildings, or equipment) required for an activity  [WEBSTER]"^^xsd:string ;
+  skos:definition "1. Basic and usually permanent framework which supports a superstructure and is supported by a substructure.  2.  Relatively permanent and foundational capital investment of a country, firm, or project that underlies and makes possible all its economic activity.  It includes administration, telecommunications, transportation, utilities, and waste removal and processing facilities.  Some definitions include education, health care, research and development, and training facilities.  [BusinessDictionary]"^^xsd:string ;
+  skos:definition "Infrastructure is generally structural elements that provide the framework supporting an entire structure.  The term as diverse meanings in different fields, but is perhaps most widely understood to refer to roads, airports, and utilities.  These various elments may collectively be termed civil infrastructure, municipal infrastructure, or simply public works, although they may be developed and operated as private-sector or government enterprises.  In other applications, infrastructure may refer to information technology, informal and form channels of communication, software development tools, political and social networks, beliefs held by members of particular groups. Still underlying these more general uses is the concept that infrastructure provides organizing structure and support for the system or organization it serves, whether it is a city, a nation, or a corporation.  Economically infrastructure could be seen to be the structural elements of an economy which allow for production of goods and services without themselves being part of the production process, e.g., roads allow the transport of raw materials and finished products.  [WIKIPEDIA]"^^xsd:string ;
+  skos:definition "The description (static and dynamic) of classes of NAS infrastructure and resources supporting a flight such as landing facilities, air space partitions, communications systems, navigation systems, surveillance systems, automation tools, etc.  [MITRE]"^^xsd:string ;
+  skos:hasTopConcept :Physical_Resources ;
+  skos:historyNote "...A comprehension of infrastructure spans not only these public works facilities, but also the operating procedures, management practices, and development policies that interact together with societal demand and the physical world to facilitate the transport of people and goods, provision of water for drinking and a variety of other uses, safe disposal of society's waste products, provision of energy where it is needed, and transmission of information within and between communities.  [WIKIPEDIA]"^^xsd:string ;
+  skos:historyNote "In subsequent years the word has grown in popularity and been applied with increasing generality to suggest the internal framework discernible in any technology system or business organization.  The term 'critical infrastructure' has been widely adopted to distinguish those infrastructure elements that, if significantly damaged or destroyed, woudl cause serious disruption of the dependent system or organization.  Storm or earthquake damage leading to loss of certain transportation routes in a city (for example, bridges crossing a river), could make it impossible for people to evacuate and for emergency services to operate; these routes would be deemed critical infrastructure.  Similarly, an on-line reservations system might be critical infrastructure for an airline.  [WIKIPEDIA]"^^xsd:string ;
+  skos:historyNote "The word seems to have originated from Pakistan into Asia which carried over to the U.S, and throughout the first half of the 20th century was used to refer primarily to military installations. The term came to prominence in the United States in the 1980s following publication of \"American in Ruins\" (Choate and Walter, 1981), which initiated a public-policy discussion of the nations 'infrastructure crisis', purported to be caused by decades of inadequate investment and poor maintenance of public works.  [WIKIPEDIA]"^^xsd:string ;
+  skos:narrower Atmosphere-Airspace:Airspace ;
+  skos:narrower Facilities:Complex ;
+  skos:narrower :Communications_Infrastructure ;
+  skos:narrower :Manufacturing_Infrastructure ;
+  skos:narrower :Meteorological_Infrastructure ;
+  skos:narrower :Property_Infrastructure ;
+  skos:narrower :Storage_Management_Infrastructure ;
+  skos:narrower :Technology_Infrastructure ;
+  skos:narrower :Transportation_Infrastructure ;
+  skos:narrower :Waste_Management_Infrastructure ;
+  skos:narrower :Water_Management_Infrastructure ;
+  skos:narrower Systems:System_of_Systems ;
+  skos:prefLabel "Infrastructure"^^xsd:string ;
+.
+:Infrastructure_Architecture
+  rdf:type owl:Class ;
+  rdfs:label "Infrastructure Architecture"^^xsd:string ;
+  rdfs:subClassOf :Architecture ;
+  skos:broader :Infrastructure ;
+  skos:narrower :Critical_Infrastructure_Architecture ;
+  skos:narrower :Transportation_Infrastructure_Architecture ;
+  skos:prefLabel "Infrastructure Architecture"^^xsd:string ;
+.
+:Land_Transportation_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Land Transportation Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Infrastructure ;
+  skos:broader :Transportation_Infrastructure ;
+  skos:prefLabel "Land Transportation Infrastructure"^^xsd:string ;
+.
+:Manufacturing_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Manufacturing Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Infrastructure ;
+  skos:broader :Activity-related_Infrastructure ;
+  skos:hasTopConcept :Infrastructure ;
+  skos:prefLabel "Manufacturing Infrastructure"^^xsd:string ;
+.
+:Meteorological_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Meteorlogical Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Environment_Infrastructure ;
+  skos:broader :Environment_Infrastructure ;
+  skos:hasTopConcept :Infrastructure ;
+  skos:prefLabel "Meteorlogical Infrastructure"^^xsd:string ;
+.
+:National_Airspace_Data_Interchange_Network-Message_Switched_Network
+  rdf:type :National_Airspace_Data_Interchange_Network-Message_Switched_Network ;
+  dcterms:bibliographicCitation "NASEA Simplified NAS poster"^^xsd:string ;
+  vaem:acronym "NADIN-MSN"^^xsd:string ;
+  rdfs:label "National Airspace Data Interchange Network - Message Switched Network"^^xsd:string ;
+  skos:altLabel "National Airspace Data Interchange Network - MSN"^^xsd:string ;
+  skos:definition "NADIN MSN  - NAS Communication System Component "^^xsd:string ;
+  skos:prefLabel "National Airspace Data Interchange Network - Message Switched Network"^^xsd:string ;
+.
+:National_Telecommunications_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "National Telecommunications Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Telecommunications_Infrastructure ;
+  skos:broader :Telecommunications_Infrastructure ;
+  skos:narrower :Federal_Telecommunications_Infrastructure ;
+  skos:prefLabel "National Telecommunications Infrastructure"^^xsd:string ;
+.
+:National_Transportation_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "National Transportation Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Infrastructure ;
+  skos:broader :Transportation_Infrastructure ;
+  skos:prefLabel "National Transportation Infrastructure"^^xsd:string ;
+.
+:Navigation_Aid_Infrastructure
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Doc 9613, Performance-based Navigation Manual"^^xsd:string ;
+  rdfs:label "Navigation Aid Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_System_Infrastructure ;
+  skos:broader :Air_Transportation_System_Infrastructure ;
+  skos:definition "Navaid infrastructure refers to space-based and or ground-based navigation aids available to meet the requirements in the navigation specification.   [ICAO]"^^xsd:string ;
+  skos:narrower Systems:Navigation_Aid ;
+  skos:prefLabel "Navigation Aid Infrastructure"^^xsd:string ;
+.
+:Network_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Network Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :System_of_Systems_Infrastructure ;
+  skos:broader :System_of_Systems_Infrastructure ;
+  skos:prefLabel "Network Infrastructure"^^xsd:string ;
+.
+:Physical_Resource_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Physical Resource Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Resource_Infrastructure ;
+  skos:broader :Resource_Infrastructure ;
+  skos:prefLabel "Physical Resource Infrastructure"^^xsd:string ;
+.
+:Physical_Resources
+  rdf:type rdfs:Class ;
+  rdfs:label "Physical Resources"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Resources ;
+  skos:hasTopConcept :Resources ;
+  skos:narrower :Infrastructure ;
+  skos:prefLabel "Physical Resources"^^xsd:string ;
+.
+:Property
+  rdf:type owl:Class ;
+  rdfs:label "Property"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Property_Infrastructure ;
+  skos:narrower :Real_Property ;
+  skos:prefLabel "Property"^^xsd:string ;
+.
+:Property_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Property Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Physical_Resource_Infrastructure ;
+  skos:broader :Physical_Resource_Infrastructure ;
+  skos:hasTopConcept :Infrastructure ;
+  skos:narrower :Property ;
+  skos:prefLabel "Property Infrastructure"^^xsd:string ;
+.
+:Real_Estate
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Real Estate"^^xsd:string ;
+  rdfs:subClassOf :Real_Property ;
+  skos:broader :Property ;
+  skos:definition """1 : property in buildings and land 
+2 : SPACE, CAPACITY <desktop real estate> <the limited real estate on hard drives — Leonard Wiener>   {WEBSTER}"""^^xsd:string ;
+  skos:prefLabel "Real Estate"^^xsd:string ;
+.
+:Real_Property
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "VOLPE  Asset Management Object Classes, Object_Class_Definition_4 on Data Architecture CD, Volpe Center, 10-01-03; ; page 1"^^xsd:string ;
+  rdfs:label "Real Property"^^xsd:string ;
+  rdfs:subClassOf :Property ;
+  skos:broader :Property ;
+  skos:definition "Real property generally refers to assets that cannot be easily moved and are affixed to the ground.  These assets include three categories referred to as: land, buildings (including space therein), and other structures.  Other structures typically include such items as roadways, parking lots, street lighting, concrete pads, fencing, structures for antennas, and drainage ditches.  [VOLPE]"^^xsd:string ;
+  skos:prefLabel "Real Property"^^xsd:string ;
+.
+:Real_Property_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Real Property Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Geographic_Infrastructure ;
+  rdfs:subClassOf :Property_Infrastructure ;
+  skos:broader :Geographic_Infrastructure ;
+  skos:broader :Property_Infrastructure ;
+  skos:prefLabel "Real Property Infrastructure"^^xsd:string ;
+.
+:Resource_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Resource Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure ;
+  skos:broader :Infrastructure ;
+  skos:prefLabel "Resource Infrastructure"^^xsd:string ;
+.
+:Resources
+  rdf:type rdfs:Class ;
+  rdfs:label "Resources"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:narrower :Physical_Resources ;
+  skos:prefLabel "Resources"^^xsd:string ;
+  skos:topConceptOf :Resources ;
+.
+:Space_Transportation_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Space Transportation Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Infrastructure ;
+  skos:broader :Transportation_Infrastructure ;
+  skos:narrower :Commercial_Space_Transportation_Infrastructure ;
+  skos:prefLabel "Space Transportation Infrastructure"^^xsd:string ;
+.
+:Storage_Management_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Storage Management Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Utility_Infrastructure ;
+  skos:broader :Utility_Infrastructure ;
+  skos:hasTopConcept :Infrastructure ;
+  skos:prefLabel "Storage Management Infrastructure"^^xsd:string ;
+.
+:System_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "System Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :System_of_Systems_Infrastructure ;
+  skos:broader :System_of_Systems_Infrastructure ;
+  skos:prefLabel "System Infrastructure"^^xsd:string ;
+.
+:System_of_Systems_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "System of Systems Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure ;
+  skos:broader :Infrastructure ;
+  skos:prefLabel "System of Systems Infrastructure"^^xsd:string ;
+.
+:Technology_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Technology Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :System_Infrastructure ;
+  skos:broader :System_Infrastructure ;
+  skos:hasTopConcept :Infrastructure ;
+  skos:narrower :Information_Technology_Infrastructure ;
+  skos:prefLabel "Technology Infrastructure"^^xsd:string ;
+.
+:Telecommunications_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Telecommunications Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Communications_Infrastructure ;
+  rdfs:subClassOf :Network_Infrastructure ;
+  skos:broader :Communications_Infrastructure ;
+  skos:broader :Network_Infrastructure ;
+  skos:narrower :National_Telecommunications_Infrastructure ;
+  skos:prefLabel "Telecommunications Infrastructure"^^xsd:string ;
+.
+:Transportation_Communications_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Communications Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Communications_Infrastructure ;
+  skos:broader :Communications_Infrastructure ;
+  skos:narrower :Air_Transportation_Communications_Infrastructure ;
+  skos:prefLabel "Transportation Communications Infrastructure"^^xsd:string ;
+.
+:Transportation_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Infrastructure ;
+  skos:broader :Infrastructure ;
+  skos:hasTopConcept :Activity-related_Infrastructure ;
+  skos:narrower :Air_Transportation_Infrastructure ;
+  skos:narrower :Land_Transportation_Infrastructure ;
+  skos:narrower :National_Transportation_Infrastructure ;
+  skos:narrower :Space_Transportation_Infrastructure ;
+  skos:narrower :Water_Transportation_Infrastructure ;
+  skos:prefLabel "Transportation Infrastructure"^^xsd:string ;
+.
+:Transportation_Infrastructure_Architecture
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Infrastructure Architecture"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Architecture ;
+  skos:broader :Infrastructure_Architecture ;
+  skos:narrower :Air_Transportation_Infrastructure_Architecture ;
+  skos:prefLabel "Transportation Infrastructure Architecture"^^xsd:string ;
+.
+:United_States_Air_Transportation_Teleccommunications_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "United States Air Transportation Teleccommunications Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Teleccommunications_Infrastructure ;
+  skos:prefLabel "United States Air Transportation Teleccommunications Infrastructure"^^xsd:string ;
+.
+:User_Benefits_Infrastructure
+  rdf:type owl:Class ;
+  vaem:acronym "UBI"^^xsd:string ;
+  rdfs:label "User Benefits Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Human_Benefits_Infrastructure ;
+  skos:broader :Human_Benefits_Infrastructure ;
+  skos:prefLabel "User Benefits Infrastructure"^^xsd:string ;
+.
+:Utility_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Utility Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Infrastructure ;
+  rdfs:subClassOf :System_of_Systems_Infrastructure ;
+  skos:broader :Activity-related_Infrastructure ;
+  skos:broader :System_of_Systems_Infrastructure ;
+  skos:hasTopConcept :Infrastructure ;
+  skos:narrower :Electrical_Power_Infrastructure ;
+  skos:narrower :Storage_Management_Infrastructure ;
+  skos:narrower :Waste_Management_Infrastructure ;
+  skos:narrower :Water_Management_Infrastructure ;
+  skos:prefLabel "Utility Infrastructure"^^xsd:string ;
+.
+:Waste_Management_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Waste Management Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Utility_Infrastructure ;
+  skos:broader :Utility_Infrastructure ;
+  skos:hasTopConcept :Infrastructure ;
+  skos:prefLabel "Waste Management Infrastructure"^^xsd:string ;
+.
+:Water_Management_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Water Management Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Utility_Infrastructure ;
+  skos:broader :Utility_Infrastructure ;
+  skos:hasTopConcept :Infrastructure ;
+  skos:prefLabel "Water Management Infrastructure"^^xsd:string ;
+.
+:Water_Transportation_Infrastructure
+  rdf:type owl:Class ;
+  rdfs:label "Water Transportation Infrastructure"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Infrastructure ;
+  skos:broader :Transportation_Infrastructure ;
+  skos:prefLabel "Water Transportation Infrastructure"^^xsd:string ;
+.
+:dataElementLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "dataElementLabel"^^xsd:string ;
+  rdfs:subPropertyOf skos:altLabel ;
+  skos:definition "An identified in the form of a coded name assigned to a single piece of data or datum (NOT information) that uniquely identifies it from all other data.  [Proposed]"^^xsd:string ;
+  skos:prefLabel "Data Element Label"^^xsd:string ;
+.
+:dataElementLabelAIXM
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "AIXM Data Element Label"^^xsd:string ;
+  rdfs:subPropertyOf :dataElementLabel ;
+  skos:prefLabel "AIXM Data Element Label"^^xsd:string ;
+.
+:termSubject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "Term Subject"^^xsd:string ;
+  rdfs:subPropertyOf dcterms:subject ;
+  skos:prefLabel "Term Subject"^^xsd:string ;
+.
+:termSubjectFAA
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "FAA Term Subject"^^xsd:string ;
+  rdfs:subPropertyOf :termSubject ;
+  skos:prefLabel "FAA Term Subject"^^xsd:string ;
+.
+Systems:Aeronautical_Meteorological_System
+  skos:broader Systems:Meteorological_System ;
+  skos:narrower Systems:World_Area_Forecast_System ;
+.
+Systems:Air_Traffic_Management_Software
+  skos:narrower Systems:Collaborative_Decision_Making_Application ;
+.
+Systems:Air_Traffic_Software
+  skos:narrower Systems:Air_Traffic_Management_Software ;
+.
+Systems:Air_Transportation_Software
+  skos:broader Systems:Transportation_Software ;
+  skos:narrower Systems:Air_Traffic_Software ;
+.
+Systems:Aircraft_Sensor
+  skos:broader Systems:Conveyance_Sensor ;
+.
+Systems:Airport_Lighting
+  skos:broader Systems:Aerodrome_Lighting ;
+.
+Systems:Atmospheric_Sensor
+  skos:broader Systems:Enviromental_Sensor ;
+  skos:narrower Systems:Precipitation_Sensor ;
+.
+Systems:Collaborative_Decision_Making_Application
+  skos:broader Systems:Air_Traffic_Management_Software ;
+.
+Systems:Conveyance_Sensor
+  skos:broader Systems:Sensor ;
+  skos:narrower Systems:Aircraft_Sensor ;
+.
+Systems:Domain
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  skos:definition "10 : a subdivision of the Internet consisting of computers or sites usually with a common purpose (as providing commercial information) and denoted in Internet addresses by a unique abbreviation (as com or gov); also : DOMAIN NAME   [WEBSTER]"^^xsd:string ;
+.
+Systems:Enviromental_Sensor
+  skos:broader Systems:Sensor ;
+  skos:narrower Systems:Atmospheric_Sensor ;
+  skos:narrower Systems:Geographic_Sensor ;
+  skos:narrower Systems:Magnetic_Sensor ;
+.
+Systems:Facility_Lighting
+  skos:broader Systems:Infrastructure_Lighting ;
+  skos:narrower Systems:Aerodrome_Lighting ;
+  skos:narrower Systems:Parking_Lot_Lighting ;
+  skos:narrower Systems:Vertical_Structure_Lighting ;
+.
+Systems:Family_of_Systems
+  skos:example """Basically a grouping of systems having some common characteristic(s).
+For example, each system in a FoS may belong to a domain or product lines (e.g., a family of missiles or aircraft).
+• Lacks the synergy of a SoS.
+• Does not acquire qualitatively new properties as a result of the grouping. In fact, the member systems may not be connected into a whole.  [INCOSE]"""^^xsd:string ;
+  skos:example "For instance, the war fighter may need the capability to track moving targets. The FoS that provides this capability could include unmanned or manned aerial vehicles with appropriate sensors, a space-based sensor platform, or a special operations capability. Each can provide the ability to track moving targets but with differing characteristics of persistence, accuracy, timeliness, etc.”  [DOD]"^^xsd:string ;
+.
+Systems:Geographic_Sensor
+  skos:broader Systems:Enviromental_Sensor ;
+  skos:narrower Systems:Geographic_Surface_Sensor ;
+.
+Systems:Geographic_Surface_Sensor
+  skos:broader Systems:Geographic_Sensor ;
+  skos:narrower Systems:Surface_Weather_Sensor ;
+.
+Systems:Height_Monitoring_Unit
+  skos:broader Systems:Monitoring_Unit ;
+.
+Systems:Infrastructure_Lighting
+  skos:broader Systems:Lighting ;
+  skos:narrower Systems:Facility_Lighting ;
+.
+Systems:International_Earth_Reference_System
+  skos:broader Systems:International_Reference_System ;
+.
+Systems:Internet
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  skos:broader Systems:Network ;
+  skos:definition ": an electronic communications network that connects computer networks and organizational computer facilities around the world   [WEBSTER]"^^xsd:string ;
+  skos:narrower Systems:Domain ;
+.
+Systems:Intranet
+  skos:broader Systems:Network ;
+.
+Systems:Lighting
+  skos:narrower Systems:Infrastructure_Lighting ;
+.
+Systems:Management_Software
+  skos:broader Systems:Application_Software ;
+  skos:narrower Systems:Air_Traffic_Management_Software ;
+.
+Systems:Meteorological_System
+  skos:broader Systems:System ;
+  skos:narrower Systems:Aeronautical_Meteorological_System ;
+.
+Systems:Mobile_Satellite
+  skos:broader Systems:Satellite ;
+.
+Systems:Monitoring_Unit
+  skos:broader Systems:Unit ;
+  skos:narrower Systems:Height_Monitoring_Unit ;
+.
+Systems:Movement_Area_Lighting
+  skos:narrower Systems:Runway_Lighting ;
+.
+Systems:National_Airspace_Systems
+  vaem:acronym "NAS"^^xsd:string ;
+.
+Systems:Parking_Lot_Lighting
+  skos:broader Systems:Facility_Lighting ;
+.
+Systems:Reference_System
+  skos:broader Systems:System ;
+  skos:narrower Systems:International_Reference_System ;
+.
+Systems:Safety_Program
+  skos:broader Systems:Application_Program ;
+  skos:narrower Systems:Runway_Safety_Program ;
+.
+Systems:Sensor
+  skos:narrower Systems:Conveyance_Sensor ;
+  skos:narrower Systems:Enviromental_Sensor ;
+.
+Systems:Stand-Alone_Weather_Sensor
+  skos:broader Systems:Surface_Weather_Sensor ;
+.
+Systems:Surface_Weather_Sensor
+  skos:narrower Systems:Stand-Alone_Weather_Sensor ;
+.
+Systems:System
+  skos:narrower Systems:Meteorological_System ;
+  skos:narrower Systems:Quality_System ;
+  skos:narrower Systems:Reference_System ;
+  skos:narrower Systems:Unit ;
+.
+Systems:System_of_Systems
+  skos:narrower Systems:Acknowledged_System_of_Systems ;
+  skos:narrower Systems:Collaborative_System_of_Systems ;
+  skos:narrower Systems:Directed_System_of_Systems ;
+  skos:narrower Systems:Virtual_System_of_Systems ;
+.
+Systems:Systems
+  skos:broader :Infrastructure ;
+  skos:hasTopConcept :Infrastructure ;
+.
+Systems:Telephony_Network
+  skos:broader Systems:Voice_Communications_Network ;
+  skos:narrower Systems:Radiotelephony_Network ;
+.
+Systems:Traffic_Software
+  skos:broader Systems:Transportation_Software ;
+  skos:narrower Systems:Air_Traffic_Software ;
+.
+Systems:Transportation_Software
+  skos:broader Systems:Application_Software ;
+  skos:narrower Systems:Air_Transportation_Software ;
+  skos:narrower Systems:Traffic_Software ;
+.
+Systems:Unit
+  skos:broader Systems:System ;
+  skos:narrower Systems:Monitoring_Unit ;
+  skos:narrower Systems:Power_Unit ;
+.
+Systems:Vertical_Structure_Lighting
+  skos:broader Systems:Facility_Lighting ;
+.
+Systems:Voice_Communications_Network
+  skos:narrower Systems:Telephony_Network ;
+.

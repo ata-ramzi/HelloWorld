@@ -1,0 +1,79 @@
+# baseURI: http://www.faa.gov/DRS/Explanations
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.faa.gov/DRS/Agreements
+# imports: http://www.faa.gov/DRS/Legislation
+# imports: http://www.faa.gov/DRS/Principles
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://www.faa.gov/DRS/Explanations#> .
+@prefix Agreement: <http://www.faa.gov/DRS/Agreements#> .
+@prefix Legislation: <http://www.faa.gov/DRS/Legislation#> .
+@prefix Principles: <http://www.faa.gov/DRS/Principles#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+Agreement:Explanation
+  skos:broader :Explanation ;
+  skos:hasTopConcept :Explanation ;
+.
+<http://www.faa.gov/DRS/Explanations>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dcterms: ;
+  owl:imports <http://www.faa.gov/DRS/Agreements> ;
+  owl:imports <http://www.faa.gov/DRS/Legislation> ;
+  owl:imports <http://www.faa.gov/DRS/Principles> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Explanation
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Explanation"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      Agreement:Explanation
+      Legislation:Explanation
+      Principles:Explanation
+    ) ;
+  skos:definition """1 : the act or process of explaining 
+2 : something that explains <gave no explanation> [WEBSTER]"""^^xsd:string ;
+  skos:definition "Something that or someone who: (a)provides reasons for or a cause of an occurrence; or (b) provides clear direction or instruction for how to proceed given a specific situation or set of circumstances.  [Proposed]"^^xsd:string ;
+  skos:prefLabel "Explanation"^^xsd:string ;
+  skos:topConceptOf :Explanation ;
+.
+Legislation:Authority
+  skos:broader Legislation:Explanation ;
+.
+Legislation:Explanation
+  skos:broader :Explanation ;
+  skos:hasTopConcept :Explanation ;
+.
+Legislation:Not_Legal
+  skos:broader Legislation:Law ;
+.
+Legislation:Rule
+  skos:broader Legislation:Regulation ;
+.
+Principles:Development_Practice
+  skos:broader Principles:Activity-related_Practice ;
+.
+Principles:Explanation
+  skos:broader :Explanation ;
+  skos:hasTopConcept :Explanation ;
+.
+Principles:Records_Guidelines
+  skos:broader Principles:Information_Resource_Guidelines ;
+.

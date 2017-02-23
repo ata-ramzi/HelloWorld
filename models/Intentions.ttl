@@ -1,0 +1,1036 @@
+# baseURI: http://www.faa.gov/DRS/Intentions
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: http://www.opengis.net/ont/geosparql
+
+@prefix : <http://www.faa.gov/DRS/Intentions#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.faa.gov/DRS/Intentions>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dcterms: ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Activity-related_Intent
+  rdf:type owl:Class ;
+  rdfs:label "Activity-related Intent"^^xsd:string ;
+  rdfs:subClassOf :Intent ;
+  skos:broader :Intent ;
+  skos:narrower :Flight_Intent ;
+  skos:prefLabel "Activity-related Intent"^^xsd:string ;
+.
+:Activity_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Activity Objective"^^xsd:string ;
+  rdfs:subClassOf :Objective ;
+  skos:broader :Objective ;
+  skos:narrower :Communications_Objective ;
+  skos:narrower :Design_Objective ;
+  skos:narrower :Education_Objective ;
+  skos:narrower :Management_Objective ;
+  skos:narrower :Operational_Objective ;
+  skos:narrower :Safety_Objective ;
+  skos:prefLabel "Activity Objective"^^xsd:string ;
+.
+:Activity_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Activity Reason"^^xsd:string ;
+  rdfs:subClassOf :Reason ;
+  skos:broader :Reason ;
+  skos:narrower :Management_Reason ;
+  skos:narrower :Operations_Reason ;
+  skos:narrower :Transportation_Reason ;
+  skos:prefLabel "Activity Reason"^^xsd:string ;
+.
+:Aim
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "http://www.businessdictionary.com/definition/aim.html"^^xsd:string ;
+  rdfs:label "Aim"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Goal ;
+  skos:definition """1. To attempt or intend to reach a certain goal. \"I aim to finish this project in a week or less.\"
+2. A specific goal or purpose. \"My aim is to be a strong, hard-working employee.\"   [BUSINESS DICTIONARY]"""^^xsd:string ;
+  skos:definition "AIM adds to these implications of effort directed toward attaining or accomplishing <her aim was to raise film to an art form>.   [WEBSTER]"^^xsd:string ;
+  skos:narrower :Objective ;
+  skos:prefLabel "Aim"^^xsd:string ;
+.
+:Air_Traffic_Control_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Air Traffic Control Reason"^^xsd:string ;
+  rdfs:subClassOf :Air_Traffic_Management_Reason ;
+  skos:broader :Air_Traffic_Management_Reason ;
+  skos:prefLabel "Air Traffic Control Reason"^^xsd:string ;
+.
+:Air_Traffic_Flow_Management_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Air Traffic Flow Management Reason"^^xsd:string ;
+  rdfs:subClassOf :Air_Traffic_Management_Reason ;
+  skos:broader :Air_Traffic_Management_Reason ;
+  skos:narrower :Coordination_Reason ;
+  skos:narrower :Ground_Delay_Program_Reason ;
+  skos:prefLabel "Air Traffic Flow Management Reason"^^xsd:string ;
+.
+:Air_Traffic_Management_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Air Traffic Management Reason"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Management_Reason ;
+  skos:broader :Transportation_Management_Reason ;
+  skos:narrower :Air_Traffic_Control_Reason ;
+  skos:narrower :Air_Traffic_Flow_Management_Reason ;
+  skos:narrower :Boundary_Crossing_Reason ;
+  skos:prefLabel "Air Traffic Management Reason"^^xsd:string ;
+.
+:Air_Traffic_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Air Traffic Reason"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Reason ;
+  rdfs:subClassOf :Traffic_Reason ;
+  skos:broader :Air_Transportation_Reason ;
+  skos:broader :Traffic_Reason ;
+  skos:narrower :Air_Traffic_Service_Reason ;
+  skos:prefLabel "Air Traffic Reason"^^xsd:string ;
+.
+:Air_Traffic_Service_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Air Traffic Service Reason"^^xsd:string ;
+  rdfs:subClassOf :Air_Traffic_Reason ;
+  rdfs:subClassOf :Traffic_Service_Reason ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Air_Traffic_Reason
+            :Traffic_Service_Reason
+          ) ;
+      ]
+    ) ;
+  skos:broader :Air_Traffic_Reason ;
+  skos:broader :Traffic_Service_Reason ;
+  skos:prefLabel "Air Traffic Service Reason"^^xsd:string ;
+.
+:Air_Transportation_Intent
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Intent"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Intent ;
+  skos:broader :Transportation_Intent ;
+  skos:prefLabel "Air Transportation Intent"^^xsd:string ;
+.
+:Air_Transportation_Procedure_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Procedure Reason"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Procedure_Reason ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Air_Transportation_Reason
+            :Procedure_Reason
+          ) ;
+      ]
+    ) ;
+  skos:broader :Transportation_Procedure_Reason ;
+  skos:narrower :Flight_Procedure_Reason ;
+  skos:prefLabel "Air Transportation Procedure Reason"^^xsd:string ;
+.
+:Air_Transportation_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Reason"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Reason ;
+  skos:broader :Transportation_Reason ;
+  skos:narrower :Air_Traffic_Reason ;
+  skos:narrower :Flight_Reason ;
+  skos:prefLabel "Air Transportation Reason"^^xsd:string ;
+.
+:Aircraft_Intent
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Doc 9854, Concept; p. B-1"^^xsd:string ;
+  rdfs:label "Aircraft Intent"^^xsd:string ;
+  rdfs:subClassOf :Conveyance_Intent ;
+  skos:broader :Conveyance_Intent ;
+  skos:definition "Information on planned future aircraft behaviour, which can be obtained from the aircraft systems (avionics). It is associated with the commanded trajectory and will enhance airborne functions.  The aircraft intent data correspond either to aircraft trajectory data that directly relate to the future aircraft trajectory as programmed inside the avionics, or the aircraft control parameters as managed by the automatic flight control system. These aircraft control parameters could either be entered by the flight crew or automatically derived by the flight management system.    [ICAO]"^^xsd:string ;
+  skos:prefLabel "Aircraft Intent"^^xsd:string ;
+.
+:Aviation_Intent
+  rdf:type owl:Class ;
+  rdfs:label "Aviation Intent"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Intent ;
+  skos:broader :Air_Transportation_Intent ;
+  skos:prefLabel "Aviation Intent"^^xsd:string ;
+.
+:Boundary_Crossing_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Boundary Crossing Reason"^^xsd:string ;
+  rdfs:subClassOf :Air_Traffic_Management_Reason ;
+  skos:broader :Air_Traffic_Management_Reason ;
+  skos:narrower :Off_Track_Reason ;
+  skos:prefLabel "Boundary Crossing Reason"^^xsd:string ;
+.
+:Budgeting_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Budgeting Objective"^^xsd:string ;
+  rdfs:subClassOf :Financial_Resource_Objective ;
+  rdfs:subClassOf :Management_Objective ;
+  skos:broader :Human_Resource_Objective ;
+  skos:broader :Management_Objective ;
+  skos:prefLabel "Budgeting Objective"^^xsd:string ;
+.
+:Cause
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Cause"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Motive ;
+  skos:definition """1 a : a reason for an action or condition : MOTIVE b : something that brings about an effect or a result c : a person or thing that is the occasion of an action or state; especially : an agent that brings something about d : sufficient reason <discharged for cause> 
+2 a : a ground of legal action b : CASE    [WEBSTER]"""^^xsd:string ;
+  skos:narrower :Significance ;
+  skos:prefLabel "Cause"^^xsd:string ;
+.
+:Causes
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-156"^^xsd:string ;
+  dcterms:source """ICAO  (AN 13)
+Official definition modified by Amdt 9 to AN 13 (10/11/1994)"""^^xsd:string ;
+  rdfs:label "Causes"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Cause
+    ) ;
+  skos:altLabel "Causal Factors"^^xsd:string ;
+  skos:definition "Actions, omissions, events, conditions, or a combination thereof, which led to the accident or incident.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Causes"^^xsd:string ;
+.
+:Collection_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Collection Reason"^^xsd:string ;
+  rdfs:subClassOf :Operations_Reason ;
+  skos:broader :Operations_Reason ;
+  skos:narrower :Information_Collection_Reason ;
+  skos:prefLabel "Collection Reason"^^xsd:string ;
+.
+:Communications_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Communications Objective"^^xsd:string ;
+  rdfs:subClassOf :Activity_Objective ;
+  skos:broader :Activity_Objective ;
+  skos:narrower :Reporting_Objective ;
+  skos:prefLabel "Communications Objective"^^xsd:string ;
+.
+:Controlling_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Controlling Objective"^^xsd:string ;
+  rdfs:subClassOf :Management_Objective ;
+  skos:prefLabel "Controlling Objective"^^xsd:string ;
+.
+:Conveyance_Intent
+  rdf:type owl:Class ;
+  rdfs:label "Conveyance Intent"^^xsd:string ;
+  rdfs:subClassOf :Intent ;
+  skos:broader :Intent ;
+  skos:narrower :Aircraft_Intent ;
+  skos:prefLabel "Conveyance Intent"^^xsd:string ;
+.
+:Coordination_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Coordination Reason"^^xsd:string ;
+  rdfs:subClassOf :Air_Traffic_Flow_Management_Reason ;
+  skos:broader :Air_Traffic_Flow_Management_Reason ;
+  skos:prefLabel "Coordination Reason"^^xsd:string ;
+.
+:Design_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Design Objective"^^xsd:string ;
+  rdfs:subClassOf :Activity_Objective ;
+  skos:broader :Activity_Objective ;
+  skos:narrower :Design_Service_Objective ;
+  skos:prefLabel "Design Objective"^^xsd:string ;
+.
+:Design_Service_Objective
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "DSO"^^xsd:string ;
+  rdfs:label "Design Service Objective"^^xsd:string ;
+  rdfs:subClassOf :Design_Objective ;
+  rdfs:subClassOf :Service_Objective ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Design_Objective
+            :Service_Objective
+          ) ;
+      ]
+    ) ;
+  skos:broader :Design_Objective ;
+  skos:broader :Service_Objective ;
+  skos:prefLabel "Design Service Objective"^^xsd:string ;
+.
+:Desire
+  rdf:type owl:Class ;
+  rdfs:label "Desire"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Significance ;
+  skos:narrower :Want ;
+  skos:prefLabel "Desire"^^xsd:string ;
+.
+:Directing_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Directing Objective"^^xsd:string ;
+  rdfs:subClassOf :Management_Objective ;
+  skos:prefLabel "Directing Objective"^^xsd:string ;
+.
+:Education_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Education Objective"^^xsd:string ;
+  rdfs:subClassOf :Activity_Objective ;
+  skos:broader :Activity_Objective ;
+  skos:narrower :Training_Objective ;
+  skos:prefLabel "Education Objective"^^xsd:string ;
+.
+:Enabling_Objective
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIS/AIM Training Guidance Manual, Version 1.0 DRAFT, as of 5/18/2011, p. 36."^^xsd:string ;
+  rdfs:label "Enabling Objective"^^xsd:string ;
+  rdfs:subClassOf :Training_Objective ;
+  skos:broader :Training_Objective ;
+  skos:definition "A training objective derived from performance criteria in the competency framework. In order to achieve enabling objectives, a trainee requires skills, knowledge and attitudes.  [AIS/AIM]"^^xsd:string ;
+  skos:prefLabel "Enabling Objective"^^xsd:string ;
+.
+:Financial_Resource_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Financial Resource Objective"^^xsd:string ;
+  rdfs:subClassOf :Resource_Objective ;
+  skos:broader :Resource_Objective ;
+  skos:narrower :Budgeting_Objective ;
+  skos:prefLabel "Financial Resource Objective"^^xsd:string ;
+.
+:Flight_Departure_Procedure_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Flight Departure Procedure Reason"^^xsd:string ;
+  rdfs:subClassOf :Flight_Procedure_Reason ;
+  skos:broader :Flight_Procedure_Reason ;
+  skos:narrower :Prohibited_Departure_Procedure_Reason ;
+  skos:prefLabel "Flight Departure Procedure Reason"^^xsd:string ;
+.
+:Flight_Intent
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA Draft U.S. Airport Surface Collaborative Decision Making (CDM) Concept of Operations in the Near-Term, Application of Surface CDM at United States Airports, Federal Aviation Administration (FAA) Air Traffic Organization Surface Operations Office, July 23, 2013"^^xsd:string ;
+  dcterms:bibliographicCitation "FAA Terminal Flight Data Manager (TFDM) Core for Airport Traffic Control Towers (ATCT) Concept of Operations, ConOps-PMO-02-TFDM-13-001, Rev. 2.1, Terminal Flight Data Manager Program Office, November 4, 2013"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Doc 9854, Concept; p. B-2"^^xsd:string ;
+  dcterms:bibliographicCitation "ICAO Doc 9854, Global ATM Operational Concept"^^xsd:string ;
+  dcterms:bibliographicCitation "US-FIXM 3.0  Flight Information Exchange Model (FIXM), US Extension Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  dcterms:hasFormat "Record"^^xsd:string ;
+  dcterms:hasPart "Airport_Movement_Area_Holding-Arrival_Information"^^xsd:string ;
+  dcterms:hasPart "Airport_Movement_Area_Holding-Departure_Information"^^xsd:string ;
+  dcterms:hasPart "Deicing_Information"^^xsd:string ;
+  dcterms:hasPart "Intended_Arrival_Spot"^^xsd:string ;
+  dcterms:hasPart "Intended_Departure_Spot"^^xsd:string ;
+  dcterms:hasPart "Stand_Return_Intent"^^xsd:string ;
+  dcterms:references "Extensions.Nas.NasFlightData.NasFlight.flightIntent"^^xsd:string ;
+  dcterms:references "Extensions.Nas.NasFlightIntent.FlightIntent"^^xsd:string ;
+  :businessRuleNote """For airport surface management in the United States.:
+• Intent for a departing flight to hold in the Airport Movement Area when surface departure metering or other Traffic Management Initiatives are in effect
+• Intent for an arriving flight to hold in the Airport Movement Area due to unavailability of a parking stand or ramp access
+• Intent for a flight to be de-iced
+• Intended departure spot (entry point in the airport movement area from the non-movement area)
+• Intended arrival spot (entry point in the non-movement area from the airport movement area)
+• Stand return Intent                                [US-FIXM 3.0]"""^^xsd:string ;
+  :dataElementLabelFIXM "flightIntent"^^xsd:string ;
+  vaem:abbreviation "FLIPINT"^^xsd:string ;
+  rdfs:label "Flight Intent"^^xsd:string ;
+  rdfs:subClassOf :Aviation_Intent ;
+  skos:broader :Aviation_Intent ;
+  skos:definition "A container for the list of intent values provided by the flight operator that designate the intentions of a flight prior to departure from an aerodrome or after arrival at an aerodrome.    [US-FIXM 3.0]"^^xsd:string ;
+  skos:definition "The future aircraft trajectory expressed as a 4-D profile until destination (taking account of aircraft performance, weather, terrain, and ATM service constraints), calculated and “owned” by the aircraft flight management system, and agreed by the pilot.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Flight Intent"^^xsd:string ;
+  skos:scopeNote "For airport surface management in the United States., this data element facilitates airport surface departure management.    [US-FIXM 3.0]"^^xsd:string ;
+.
+:Flight_Procedure_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Flight Procedure Reason"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Procedure_Reason ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Flight_Reason
+            :Procedure_Reason
+          ) ;
+      ]
+    ) ;
+  skos:broader :Air_Transportation_Procedure_Reason ;
+  skos:narrower :Flight_Departure_Procedure_Reason ;
+  skos:prefLabel "Flight Procedure Reason"^^xsd:string ;
+.
+:Flight_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Flight Reason"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Reason ;
+  skos:broader :Air_Transportation_Reason ;
+  skos:prefLabel "Flight Reason"^^xsd:string ;
+.
+:General_Purpose
+  rdf:type owl:Class ;
+  rdfs:label "General Purpose"^^xsd:string ;
+  rdfs:subClassOf :Purpose ;
+  skos:broader :Purpose ;
+  skos:prefLabel "General Purpose"^^xsd:string ;
+.
+:Goal
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:bibliographicCitation "TOGAF  The Open Group Architecture Framework (TOGAF), Definitions , Glossary of Supplementary Definitions [http://www.opengroup.org/architecture/togaf9-doc/arch/apdxa.html#tag_54]"^^xsd:string ;
+  dcterms:bibliographicCitation "http://www.businessdictionary.com/definition/goal.html  retrieved on 7/24/14"^^xsd:string ;
+  rdfs:label "Goal"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Mission ;
+  skos:definition "A high-level statement of intent or direction for an organization. Typically used to measure success of an organization.   [TOGAF]"^^xsd:string ;
+  skos:definition "An observable and measurable end result having one or more objectives to be achieved within a more or less fixed timeframe.  [BUSINESS DICTIONARY]"^^xsd:string ;
+  skos:definition "GOAL suggests something attained only by prolonged effort and hardship <worked years to reach her goals>.  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Aim ;
+  skos:narrower :Objective ;
+  skos:prefLabel "Goal"^^xsd:string ;
+.
+:Ground_Delay_Program_Reason
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Ground Delay Program Reason"^^xsd:string ;
+  rdfs:subClassOf :Air_Traffic_Flow_Management_Reason ;
+  rdfs:subClassOf :Program_Management_Reason ;
+  owl:oneOf (
+      "RWY"^^xsd:string
+      "WX"^^xsd:string
+      "CIGS"^^xsd:string
+      "VIS"^^xsd:string
+    ) ;
+  skos:altLabel "REFERENCE GROUND DELAY PROGRAM REASON"^^xsd:string ;
+  skos:broader :Air_Traffic_Flow_Management_Reason ;
+  skos:broader :Program_Management_Reason ;
+  skos:definition "The reference values for the reason that a Ground Delay Program has been initiated.  [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Ground Delay Program Reason"^^xsd:string ;
+  skos:scopeNote """\"RWY	Runway
+WX	Weather
+CIGS	Ceilings 
+VIS	Visibility\""""^^xsd:string ;
+.
+:Human_Resource_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Human Resource Objective"^^xsd:string ;
+  rdfs:subClassOf :Resource_Objective ;
+  skos:broader :Resource_Objective ;
+  skos:narrower :Staffing_Objective ;
+  skos:prefLabel "Human Resource Objective"^^xsd:string ;
+.
+:Information_Collection_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Information Collection Reason"^^xsd:string ;
+  rdfs:subClassOf :Collection_Reason ;
+  skos:broader :Collection_Reason ;
+  skos:prefLabel "Information Collection Reason"^^xsd:string ;
+.
+:Information_Resource_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Information Resource Objective"^^xsd:string ;
+  rdfs:subClassOf :Resource_Objective ;
+  skos:broader :Resource_Objective ;
+  skos:prefLabel "Information Resource Objective"^^xsd:string ;
+.
+:Intent
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIM - EUROC   Aeronautical Information Lexicon, FAA-IMS Interface Management System, European Air Traffic Management, EUROCONTROL, no date given"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Intent"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Intentions ;
+  skos:definition """1 a : the act or fact of intending : PURPOSE; especially : the design or purpose to commit a wrongful or criminal act <admitted wounding him with intent> b : the state of mind with which an act is done : VOLITION 
+2 : a usually clearly formulated or planned intention : AIM <the director's intent> 
+3 a : MEANING, SIGNIFICANCE b : CONNOTATION 3   [WEBSTER]"""^^xsd:string ;
+  skos:definition "Definition to be determined.   [AIM - EUROC]"^^xsd:string ;
+  skos:definition "INTENT suggests clearer formulation or greater deliberateness <the clear intent of the statute>.  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Activity-related_Intent ;
+  skos:narrower :Conveyance_Intent ;
+  skos:prefLabel "Intent"^^xsd:string ;
+.
+:Intention
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Intention"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition """1 : a determination to act in a certain way : RESOLVE 
+2 : IMPORT, SIGNIFICANCE 
+3 a : what one intends to do or bring about b : the object for which a prayer, mass, or pious act is offered 
+4 : a process or manner of healing of incised wounds 
+5 : CONCEPT; especially : a concept considered as the product of attention directed to an object of knowledge   [WEBSTER]"""^^xsd:string ;
+  skos:definition "INTENTION implies little more than what one has in mind to do or bring about <announced his intention to marry>.  [WEBSTEr]"^^xsd:string ;
+  skos:prefLabel "Intention"^^xsd:string ;
+.
+:Intentions
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FREE http://www.thefreedictionary.com/intention"^^xsd:string ;
+  rdfs:label "Intentions"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Intention
+    ) ;
+  skos:definition """n. 
+1. A course of action that one intends to follow.
+2. a. An aim that guides action; an objective.   [FREE]"""^^xsd:string ;
+  skos:narrower :Intent ;
+  skos:narrower :Mission ;
+  skos:prefLabel "Intentions"^^xsd:string ;
+  skos:topConceptOf :Intentions ;
+.
+:Management_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Management Objective"^^xsd:string ;
+  rdfs:subClassOf :Activity_Objective ;
+  skos:broader :Activity_Objective ;
+  skos:narrower :Budgeting_Objective ;
+  skos:narrower :Controlling_Objective ;
+  skos:narrower :Directing_Objective ;
+  skos:narrower :Organizing_Objective ;
+  skos:narrower :Planning_Objective ;
+  skos:narrower :Reporting_Objective ;
+  skos:narrower :Staffing_Objective ;
+  skos:prefLabel "Management Objective"^^xsd:string ;
+.
+:Management_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Management Reason"^^xsd:string ;
+  rdfs:subClassOf :Activity_Reason ;
+  skos:broader :Activity_Reason ;
+  skos:narrower :Program_Management_Reason ;
+  skos:narrower :Transportation_Management_Reason ;
+  skos:prefLabel "Management Reason"^^xsd:string ;
+.
+:Method_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Method Reason"^^xsd:string ;
+  rdfs:subClassOf :Policy_Reason ;
+  skos:broader :Policy_Reason ;
+  skos:narrower :Procedure_Reason ;
+  skos:prefLabel "Method Reason"^^xsd:string ;
+.
+:Metric
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Metric"^^xsd:string ;
+  skos:broader :Target ;
+  skos:definition "2 : a standard of measurement <no metric exists that can be applied directly to happiness — Scientific Monthly>   [WEBSTER]"^^xsd:string ;
+  skos:narrower :Need ;
+  skos:prefLabel "Metric"^^xsd:string ;
+.
+:Mission
+  rdf:type owl:Class ;
+  rdfs:label "Mission"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Intentions ;
+  skos:hasTopConcept :Intentions ;
+  skos:narrower :Objective ;
+  skos:narrower :Purpose ;
+  skos:prefLabel "Mission"^^xsd:string ;
+.
+:Mission_Statement
+  rdf:type owl:Class ;
+  rdfs:label "Mission Statement"^^xsd:string ;
+  rdfs:subClassOf :Mission ;
+  skos:broader :Mission ;
+  skos:narrower :Objective ;
+  skos:prefLabel "Mission Statement"^^xsd:string ;
+.
+:Motive
+  rdf:type owl:Class ;
+  rdfs:label "Motive"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Purpose ;
+  skos:narrower :Cause ;
+  skos:prefLabel "Motive"^^xsd:string ;
+.
+:Need
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "OASIS, Reference Model for Service Oriented Architecture 1.0, Public Review Draft, 28 April 2008, Chapter 3.3"^^xsd:string ;
+  rdfs:label "Need"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Metric ;
+  skos:definition "a measurable requirement that a service participant is actively seeking to satisfy.   [OASIS]"^^xsd:string ;
+  skos:narrower :Value ;
+  skos:prefLabel "Need"^^xsd:string ;
+.
+:Objective
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "//http://www.businessdictionary.com/definition/objective.html  retrieved on 7/24/14"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Objective"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Goal ;
+  skos:definition """1. A specific result that a person or system aims to achieve within a time frame and with available resources.
+In general, objectives are more specific and easier to measure than goals. Objectives are basic tools that underlie all planning and strategic activities. They serve as the basis for creating policy and evaluating performance. Some examples of business objectives include minimizing expenses, expanding internationally, or making a profit.
+2. Neutral (bias free), relating to, or based on verifiable evidence or facts instead of on attitude, belief, or opinion. Opposite of subjective.   [BUSINESS DICTIONARY]"""^^xsd:string ;
+  skos:definition "OBJECTIVE implies something tangible and immediately attainable <their objective is to seize the oil fields>.  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Activity_Objective ;
+  skos:narrower :Resource_Objective ;
+  skos:narrower :Target ;
+  skos:prefLabel "Objective"^^xsd:string ;
+.
+:Observation_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Observation Reason"^^xsd:string ;
+  rdfs:subClassOf :Operations_Reason ;
+  skos:broader :Operations_Reason ;
+  skos:narrower :Weather_Observation_Reason ;
+  skos:prefLabel "Observation Reason"^^xsd:string ;
+.
+:Off_Track_Deviation_Reason
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  rdfs:label "Off Track Deviation Reason"^^xsd:string ;
+  rdfs:subClassOf :Off_Track_Reason ;
+  skos:broader :Off_Track_Reason ;
+  skos:editorialNote "This data element is identified as part of \"Boundary Crossing - Off Track Information - Proposed\" and Boundary Crossing - Off Track Information/Coordinated\" in Core FIXM 3.0.  However, the term is not defined separately in the Core Data Dictionary.  [FIXM 3.0]"^^xsd:string ;
+  skos:prefLabel "Off Track Deviation Reason"^^xsd:string ;
+.
+:Off_Track_Reason
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FIXM 3.0  Flight Information Exchange Model (FIXM) Core Data Dictionary; v 3.0, August 2014"^^xsd:string ;
+  dcterms:hasFormat "Enumeration"^^xsd:string ;
+  dcterms:hasFormat "Valid values: {O = Offset, D = Weather Deviation}"^^xsd:string ;
+  rdfs:label "Off Track Reason"^^xsd:string ;
+  rdfs:subClassOf :Boundary_Crossing_Reason ;
+  skos:broader :Boundary_Crossing_Reason ;
+  skos:narrower :Off_Track_Deviation_Reason ;
+  skos:prefLabel "Off Track Reason"^^xsd:string ;
+  skos:scopeNote "For weather Deviations, one method of specifying the range would be to issue one distance in either direction of the route.  For example, 5 NM with a Direction of Either would give a range of 10 NM.  Another way to specify a weather Deviation range would be to issue one distance to the Left of the route and one to the Right.  [FIXM 3.0]"^^xsd:string ;
+  skos:scopeNote "The Off Track Reason come from a Controlled List containing: O = Offset; D = Weather Deviation  [FIXM 3.0]"^^xsd:string ;
+.
+:Operational_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Operational Objective"^^xsd:string ;
+  rdfs:subClassOf :Activity_Objective ;
+  skos:broader :Activity_Objective ;
+  skos:narrower :Service_Objective ;
+  skos:prefLabel "Operational Objective"^^xsd:string ;
+.
+:Operations_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Operations Reason"^^xsd:string ;
+  rdfs:subClassOf :Activity_Reason ;
+  skos:broader :Activity_Reason ;
+  skos:narrower :Collection_Reason ;
+  skos:narrower :Observation_Reason ;
+  skos:narrower :Service_Reason ;
+  skos:prefLabel "Operations Reason"^^xsd:string ;
+.
+:Organizing_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Organizing Objective"^^xsd:string ;
+  rdfs:subClassOf :Management_Objective ;
+  skos:prefLabel "Organizing Objective"^^xsd:string ;
+.
+:Physical_Resource_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Physical Resource Objective"^^xsd:string ;
+  rdfs:subClassOf :Resource_Objective ;
+  skos:broader :Resource_Objective ;
+  skos:prefLabel "Physical Resource Objective"^^xsd:string ;
+.
+:Planning_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Planning Objective"^^xsd:string ;
+  rdfs:subClassOf :Management_Objective ;
+  skos:broader :Management_Objective ;
+  skos:narrower :Strategic_Objective ;
+  skos:prefLabel "Planning Objective"^^xsd:string ;
+.
+:Policy_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Policy Reason"^^xsd:string ;
+  rdfs:subClassOf :Principle_Reason ;
+  skos:broader :Principle_Reason ;
+  skos:narrower :Method_Reason ;
+  skos:prefLabel "Policy Reason"^^xsd:string ;
+.
+:Principle_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Principle Reason"^^xsd:string ;
+  rdfs:subClassOf :Reason ;
+  skos:broader :Reason ;
+  skos:narrower :Policy_Reason ;
+  skos:prefLabel "Principle Reason"^^xsd:string ;
+.
+:Procedure_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Procedure Reason"^^xsd:string ;
+  rdfs:subClassOf :Policy_Reason ;
+  skos:broader :Method_Reason ;
+  skos:narrower :Transportation_Procedure_Reason ;
+  skos:prefLabel "Procedure Reason"^^xsd:string ;
+.
+:Program_Management_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Program Management Reason"^^xsd:string ;
+  rdfs:subClassOf :Management_Reason ;
+  skos:broader :Management_Reason ;
+  skos:narrower :Ground_Delay_Program_Reason ;
+  skos:prefLabel "Program Management Reason"^^xsd:string ;
+.
+:Prohibited_Departure_Procedure_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Prohibited Departure Procedure Reason"^^xsd:string ;
+  rdfs:subClassOf :Flight_Departure_Procedure_Reason ;
+  skos:broader :Flight_Departure_Procedure_Reason ;
+  skos:narrower :Prohibited_Departure_Procedure_Reason_Type ;
+  skos:prefLabel "Prohibited Departure Procedure Reason"^^xsd:string ;
+.
+:Prohibited_Departure_Procedure_Reason_Type
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Prohibited Departure Procedure Reason Type"^^xsd:string ;
+  rdfs:subClassOf :Prohibited_Departure_Procedure_Reason ;
+  owl:oneOf (
+      "Obstacles"^^xsd:string
+      "Environmental"^^xsd:string
+      "Noise Abatement"^^xsd:string
+      "Terrain"^^xsd:string
+      "Airspace"^^xsd:string
+      "ATC"^^xsd:string
+      "Night"^^xsd:string
+      "Other"^^xsd:string
+    ) ;
+  skos:altLabel "REFERENCE PROHIBITED DEPARTURE PROCEDURE REASON TYPE"^^xsd:string ;
+  skos:broader :Prohibited_Departure_Procedure_Reason ;
+  skos:definition "Identifies the reason why a departure procedure can not be developed for an individual Runway End.   [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Prohibited Departure Procedure Reason Type"^^xsd:string ;
+.
+:Purpose
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIXM 5.1 generated on 2009-02-03; retrieved on 11-29-2013 from http://www.aixm.aero/public/standard_page/download.html"^^xsd:string ;
+  dcterms:bibliographicCitation "FAA 14 CFR Part 21.190, Issue of special airworthiness certificates for light-sport category aircraft"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  :dataElementLabelAIXM "purpose"^^xsd:string ;
+  rdfs:label "Purpose"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Mission ;
+  skos:definition "An indication of the goal which led to the provision of the free text note.   [AIXM 5.1]"^^xsd:string ;
+  skos:definition "PURPOSE suggests a more settled determination <being successful was her purpose in life>.   [WEBSTER]"^^xsd:string ;
+  skos:narrower :Motive ;
+  skos:prefLabel "Purpose"^^xsd:string ;
+.
+:Reason
+  rdf:type owl:Class ;
+  rdfs:label "Reason"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Motive ;
+  skos:narrower :Activity_Reason ;
+  skos:narrower :Principle_Reason ;
+  skos:narrower :Significance ;
+  skos:prefLabel "Reason"^^xsd:string ;
+.
+:Reporting_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Reporting Objective"^^xsd:string ;
+  rdfs:subClassOf :Communications_Objective ;
+  rdfs:subClassOf :Management_Objective ;
+  skos:broader :Communications_Objective ;
+  skos:broader :Management_Objective ;
+  skos:prefLabel "Reporting Objective"^^xsd:string ;
+.
+:Resource_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Resource Objective"^^xsd:string ;
+  rdfs:subClassOf :Objective ;
+  skos:broader :Objective ;
+  skos:narrower :Financial_Resource_Objective ;
+  skos:narrower :Human_Resource_Objective ;
+  skos:narrower :Information_Resource_Objective ;
+  skos:narrower :Physical_Resource_Objective ;
+  skos:prefLabel "Resource Objective"^^xsd:string ;
+.
+:Risk_Target
+  rdf:type owl:Class ;
+  rdfs:label "Risk Target"^^xsd:string ;
+  rdfs:subClassOf :Target ;
+  skos:prefLabel "Risk Target"^^xsd:string ;
+.
+:Safety_Objective
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA Order 8000.369A, Safety Management System; Appendix A; dated 5/8/13"^^xsd:string ;
+  rdfs:label "Safety Objective"^^xsd:string ;
+  rdfs:subClassOf :Activity_Objective ;
+  skos:broader :Activity_Objective ;
+  skos:definition "A measurable goal or desirable outcome related to safety.  [FAA Order 8000.369A]"^^xsd:string ;
+  skos:prefLabel "Safety Objective"^^xsd:string ;
+.
+:Safety_Target
+  rdf:type owl:Class ;
+  rdfs:label "Safety Target"^^xsd:string ;
+  rdfs:subClassOf :Risk_Target ;
+  skos:prefLabel "Safety Target"^^xsd:string ;
+.
+:Service_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Service Objective"^^xsd:string ;
+  rdfs:subClassOf :Operational_Objective ;
+  skos:broader :Operational_Objective ;
+  skos:narrower :Design_Service_Objective ;
+  skos:prefLabel "Service Objective"^^xsd:string ;
+.
+:Service_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Service Reason"^^xsd:string ;
+  rdfs:subClassOf :Operations_Reason ;
+  skos:broader :Operations_Reason ;
+  skos:narrower :Transportation_Service_Reason ;
+  skos:prefLabel "Service Reason"^^xsd:string ;
+.
+:Significance
+  rdf:type owl:Class ;
+  rdfs:label "Significance"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Cause ;
+  skos:prefLabel "Significance"^^xsd:string ;
+.
+:Staffing_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Staffing Objective"^^xsd:string ;
+  rdfs:subClassOf :Human_Resource_Objective ;
+  rdfs:subClassOf :Management_Objective ;
+  skos:broader :Human_Resource_Objective ;
+  skos:broader :Management_Objective ;
+  skos:prefLabel "Staffing Objective"^^xsd:string ;
+.
+:Strategic_Objective
+  rdf:type owl:Class ;
+  rdfs:label "Strategic Objective"^^xsd:string ;
+  rdfs:subClassOf :Planning_Objective ;
+  skos:broader :Planning_Objective ;
+  skos:prefLabel "Strategic Objective"^^xsd:string ;
+.
+:Target
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "http://www.businessdictionary.com/definition/target.html  retrieved on 7/24/14"^^xsd:string ;
+  rdfs:label "Target"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Objective ;
+  skos:definition """1. Any objective of economic policy.
+2. The value of an economic variable that policy makers regard as ideal and use as the basis for setting policy. Contrasts with instrument.
+3. The level of an exchange rate that guides exchange market intervention by a central bank or exchange stabilization fund.
+[BUSINESS DICTIONARY]"""^^xsd:string ;
+  skos:narrower :Metric ;
+  skos:prefLabel "Target"^^xsd:string ;
+.
+:Target_Level_of_Safety
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO, Doc 9713, Vocabulary, Part A, Definitions; p. 1-551"^^xsd:string ;
+  dcterms:source """ICAO  (AN 6/I; AN 6/II)
+Official definition added to: AN 6/I by Amdt 29 (24/11/2005), AN 6/II by Amdt 24 (24/11/2005)"""^^xsd:string ;
+  dcterms:source """ICAO, Official definition, ANNEX 6/I  Operation of Aircraft â€” International Commercial Air Transport â€” Aeroplanes  2010
+"""^^xsd:string ;
+  vaem:abbreviation "TLS"^^xsd:string ;
+  vaem:acronym "TLoS"^^xsd:string ;
+  rdfs:label "Target Level of Safety"^^xsd:string ;
+  rdfs:subClassOf :Safety_Target ;
+  skos:definition "A generic term representing the level of risk which is considered acceptable in particular circumstances.   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Target Level of Safety"^^xsd:string ;
+.
+:Terminal_Objective
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIS/AIM Training Guidance Manual, Version 1.0 DRAFT, as of 5/18/2011, p. 40."^^xsd:string ;
+  rdfs:label "Terminal Objective"^^xsd:string ;
+  rdfs:subClassOf :Training_Objective ;
+  skos:broader :Training_Objective ;
+  skos:definition "Part of a training objective derived from a competency element in the competency framework which a trainee will achieve when successfully completing training.   [AIS/AIM]"^^xsd:string ;
+  skos:prefLabel "Terminal Objective"^^xsd:string ;
+.
+:Traffic_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Traffic Reason"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Reason ;
+  skos:broader :Transportation_Reason ;
+  skos:narrower :Air_Traffic_Reason ;
+  skos:prefLabel "Traffic Reason"^^xsd:string ;
+.
+:Traffic_Service_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Traffic Service Reason"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Service_Reason ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Traffic_Reason
+            :Service_Reason
+          ) ;
+      ]
+    ) ;
+  skos:broader :Transportation_Service_Reason ;
+  skos:narrower :Air_Traffic_Service_Reason ;
+  skos:prefLabel "Traffic Service Reason"^^xsd:string ;
+.
+:Training_Objective
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "AIS/AIM Training Guidance Manual, Version 1.0 DRAFT, as of 5/18/2011, p. 40."^^xsd:string ;
+  rdfs:label "Training Objective"^^xsd:string ;
+  rdfs:subClassOf :Education_Objective ;
+  skos:broader :Education_Objective ;
+  skos:definition "A clear statement that is comprised of three parts, i.e. the desired performance or what the trainee is expected to be able to do at the end of particular stages of training (terminal objective), the performance standard that must be attained to confirm the trainee’s level of competence and the conditions under which the trainee will demonstrate competence.    [AIS/AIM]"^^xsd:string ;
+  skos:narrower :Enabling_Objective ;
+  skos:prefLabel "Training Objective"^^xsd:string ;
+.
+:Transportation_Intent
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Intent"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Intent ;
+  skos:broader :Activity-related_Intent ;
+  skos:prefLabel "Transportation Intent"^^xsd:string ;
+.
+:Transportation_Management_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Management Reason"^^xsd:string ;
+  rdfs:subClassOf :Management_Reason ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Transportation_Reason
+            :Management_Reason
+          ) ;
+      ]
+    ) ;
+  skos:broader :Management_Reason ;
+  skos:narrower :Air_Traffic_Management_Reason ;
+  skos:prefLabel "Transportation Management Reason"^^xsd:string ;
+.
+:Transportation_Procedure_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Procedure Reason"^^xsd:string ;
+  rdfs:subClassOf :Procedure_Reason ;
+  rdfs:subClassOf :Transportation_Reason ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Transportation_Reason
+            :Procedure_Reason
+          ) ;
+      ]
+    ) ;
+  skos:broader :Procedure_Reason ;
+  skos:broader :Transportation_Reason ;
+  skos:narrower :Air_Transportation_Procedure_Reason ;
+  skos:prefLabel "Transportation Procedure Reason"^^xsd:string ;
+.
+:Transportation_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Reason"^^xsd:string ;
+  rdfs:subClassOf :Activity_Reason ;
+  skos:broader :Activity_Reason ;
+  skos:narrower :Traffic_Reason ;
+  skos:narrower :Transportation_Service_Reason ;
+  skos:prefLabel "Transportation Reason"^^xsd:string ;
+.
+:Transportation_Service_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Service Reason"^^xsd:string ;
+  rdfs:subClassOf :Service_Reason ;
+  rdfs:subClassOf :Transportation_Reason ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Transportation_Reason
+            :Service_Reason
+          ) ;
+      ]
+    ) ;
+  skos:broader :Service_Reason ;
+  skos:broader :Transportation_Reason ;
+  skos:narrower :Traffic_Reason ;
+  skos:narrower :Traffic_Service_Reason ;
+  skos:prefLabel "Transportation Service Reason"^^xsd:string ;
+.
+:Value
+  rdf:type owl:Class ;
+  rdfs:label "Value"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Need ;
+  skos:broader :Want ;
+  skos:prefLabel "Value"^^xsd:string ;
+.
+:Want
+  rdf:type owl:Class ;
+  rdfs:label "Want"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Desire ;
+  skos:narrower :Value ;
+  skos:prefLabel "Want"^^xsd:string ;
+.
+:Weather_Observation_Collection_Reason
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "NAS EA OV-7  [from spreadsheet NAS-EA-AV-2-Mid-Term-v4 0-01315]"^^xsd:string ;
+  rdfs:label "Weather Observation Collection Reason"^^xsd:string ;
+  rdfs:subClassOf :Information_Collection_Reason ;
+  rdfs:subClassOf :Weather_Observation_Reason ;
+  skos:altLabel "REFERENCE WEATHER OBSERVATION COLLECTION REASON"^^xsd:string ;
+  skos:broader :Information_Collection_Reason ;
+  skos:broader :Weather_Observation_Reason ;
+  skos:definition "Reference information for the reason that 2 or more Weather Observations are collected together in a set.  [NAS EA OV-7]"^^xsd:string ;
+  skos:prefLabel "Weather Observation Collection Reason"^^xsd:string ;
+.
+:Weather_Observation_Reason
+  rdf:type owl:Class ;
+  rdfs:label "Weather Observation Reason"^^xsd:string ;
+  rdfs:subClassOf :Observation_Reason ;
+  skos:broader :Observation_Reason ;
+  skos:narrower :Weather_Observation_Collection_Reason ;
+  skos:prefLabel "Weather Observation Reason"^^xsd:string ;
+.
+:businessRuleNote
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "Business Rule Note"^^xsd:string ;
+  rdfs:subPropertyOf skos:note ;
+  skos:prefLabel "Business Rule Note"^^xsd:string ;
+.
+:dataElementLabel
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "dataElementLabel"^^xsd:string ;
+  rdfs:subPropertyOf skos:altLabel ;
+  skos:definition "An identified in the form of a coded name assigned to a single piece of data or datum (NOT information) that uniquely identifies it from all other data.  [Proposed]"^^xsd:string ;
+  skos:prefLabel "Data Element Label"^^xsd:string ;
+.
+:dataElementLabelAIXM
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "AIXM Data Element Label"^^xsd:string ;
+  rdfs:subPropertyOf :dataElementLabel ;
+  skos:altLabel "Aeronautical Information Exchange Model Data Element Label"^^xsd:string ;
+  skos:prefLabel "AIXM Data Element Label"^^xsd:string ;
+.
+:dataElementLabelFIXM
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "FIXM Data Element Label"^^xsd:string ;
+  rdfs:subPropertyOf :dataElementLabel ;
+  skos:altLabel "Flight Information Exchange Model Data Element Label"^^xsd:string ;
+  skos:prefLabel "FIXM Data Element Label"^^xsd:string ;
+.
+:dataElementLabelTMXM
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "TMXM Data Element Label"^^xsd:string ;
+  rdfs:subPropertyOf :dataElementLabel ;
+  skos:altLabel "Air Traffic Management Information Exchange Model Data Element Label"^^xsd:string ;
+  skos:prefLabel "TMXM Data Element Label"^^xsd:string ;
+.
+skos:definition
+  owl:equivalentProperty rdfs:comment ;
+.

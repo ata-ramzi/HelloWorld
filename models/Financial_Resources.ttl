@@ -1,0 +1,2637 @@
+# baseURI: http://www.faa.gov/DRS/Financial_Resources
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.linkedmodel.org/schema/dtype
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://www.faa.gov/DRS/Financial_Resources#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl: <http://spinrdf.org/spl#> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.faa.gov/DRS/Financial_Resources>
+  rdf:type owl:Ontology ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dcterms: ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer"^^xsd:string ;
+.
+:Account
+  rdf:type owl:Class ;
+  rdfs:label "Account"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Ledger ;
+  skos:narrower :Budget_Account ;
+  skos:narrower :Expense_Account ;
+  skos:narrower :General_Ledger_Account ;
+  skos:narrower :Revenue_Account ;
+  skos:prefLabel "Account"^^xsd:string ;
+.
+:Account_Payable_Account
+  rdf:type owl:Class ;
+  rdfs:label "Account Payable Account"^^xsd:string ;
+  rdfs:subClassOf :Liability_Account ;
+  skos:altLabel "AP Account"^^xsd:string ;
+  skos:altLabel "AP Acct"^^xsd:string ;
+  skos:broader :Liability_Account ;
+  skos:prefLabel "Account Payable Account"^^xsd:string ;
+.
+:Account_Receivable_Account
+  rdf:type owl:Class ;
+  rdfs:label "Account Receivable Account"^^xsd:string ;
+  rdfs:subClassOf :Asset_Account ;
+  skos:broader :Asset_Account ;
+  skos:prefLabel "Account Receivable Accountstring"^^xsd:string ;
+.
+:Activity-related_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Activity-related Charge"^^xsd:string ;
+  rdfs:subClassOf :Charge ;
+  skos:broader :Charge ;
+  skos:prefLabel "Activity-related Charge"^^xsd:string ;
+.
+:Activity_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Activity Budget"^^xsd:string ;
+  rdfs:subClassOf :Budget ;
+  skos:broader :Budget ;
+  skos:narrower :Operations_Budget ;
+  skos:narrower :Program_Project_Activity_Budget ;
+  skos:narrower :Research_Engineering_Development_Budget ;
+  skos:prefLabel "Activity Budget"^^xsd:string ;
+.
+:Administration_of_Airport_Program_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Administration of Airport Program Budget"^^xsd:string ;
+  rdfs:subClassOf :Airport_Improvement_Program_Budget ;
+  skos:definition "is a type of budget - Airport Improvement Program (AIP) Program Budget;  700 Administration of Airports Programs.   [FAA]"@en-US ;
+  skos:prefLabel "Administration of Airport Program Budget"^^xsd:string ;
+.
+:Aerodrome_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Aerodrome Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Facility_Expenditure ;
+  skos:broader :Air_Transportation_Facility_Expenditure ;
+  skos:prefLabel "Aerodrome Expenditure"^^xsd:string ;
+.
+:Aerodrome_Facility_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Aerodrome Facility Charge"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Facility_Charge ;
+  skos:broader :Air_Transportation_Facility_Charge ;
+  skos:prefLabel "Aerodrome Facility Charge"^^xsd:string ;
+.
+:Aerodrome_Facility_Charges
+  rdf:type owl:Class ;
+  rdfs:label "Aerodrome Facility Charges"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Facility_Charges ;
+  owl:unionOf (
+      :Aerodrome_Facility_Charge
+    ) ;
+  skos:altLabel "Charges of Aerodrome Facility"^^xsd:string ;
+  skos:broader :Air_Transportation_Facility_Charges ;
+  skos:prefLabel "Aerodrome Facility Charges"^^xsd:string ;
+.
+:Agency_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Agency Budget"^^xsd:string ;
+  rdfs:subClassOf :Organizational_Unit_Budget ;
+  skos:broader :Department_Budget ;
+  skos:broader :Organizational_Unit_Budget ;
+  skos:narrower :Budget_Line_Item ;
+  skos:prefLabel "Agency Budget"^^xsd:string ;
+.
+:Agency_Portfolio_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Agency Portfolio Budget"^^xsd:string ;
+  rdfs:subClassOf :Portfolio_Budget ;
+  skos:broader :Agency_Budget ;
+  skos:broader :Portfolio_Budget ;
+  skos:narrower :Program_Budget ;
+  skos:prefLabel "Agency Portfolio Budget"^^xsd:string ;
+.
+:Air_Traffic_Control_Program_Project_Activity_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Air Traffic Control Program, Project and Activity Budget"^^xsd:string ;
+  rdfs:subClassOf :Program_Project_Activity_Budget ;
+  skos:altLabel "ATC PPA Budget"^^xsd:string ;
+  skos:broader :Program_Project_Activity_Budget ;
+  skos:definition """\"is a type of specific program, project or activity that is association with the Operations Program Budget;  100 Operation of the Air Traffic Control System.
+  110 Air Route Traffic Control Centers (ARTCC).  Staffing and funding for charges incurred in the exercise of en route air traffic control.  Included are centers and center/terminal combinations and military liaison positions other than Air Traffic Representatives (ATREP) and the traffic flow management function.  Covers funding for telephone tolls and monthly telephone instrument charges for administrative business telephones in manned air traffic control facilities.  Switchboard charges at manned air traffic control facilities will be prorated on the ratio of administrative business telephone instruments to technical operating telephones.
+   11A Chokepoint Program in Air Route Traffic Control Centers (ARTCC).    Funding for charges incurred as part of the Chokepoint program in Air Route Traffic Control Centers (ARTCC).\"  [FAA]"""^^xsd:string ;
+  skos:prefLabel "Air Traffic Control Program, Project and Activity Budget"^^xsd:string ;
+.
+:Air_Transportation_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Charge"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Charge ;
+  skos:broader :Transportation_Charge ;
+  skos:prefLabel "Air Transportation Charge"^^xsd:string ;
+.
+:Air_Transportation_Facility_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Facility Charge"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Charge ;
+  rdfs:subClassOf :Transportation_Facility_Charge ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Air_Transportation_Charge
+            :Facility_Charge
+          ) ;
+      ]
+    ) ;
+  skos:broader :Air_Transportation_Charge ;
+  skos:broader :Transportation_Facility_Charge ;
+  skos:prefLabel "Air Transportation Facility Charge"^^xsd:string ;
+.
+:Air_Transportation_Facility_Charges
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Facility Charges"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Facility_Charges ;
+  owl:unionOf (
+      :Air_Transportation_Facility_Charge
+    ) ;
+  skos:altLabel "Charges of Air Transportation Facility"^^xsd:string ;
+  skos:broader :Transportation_Facility_Charges ;
+  skos:prefLabel "Air Transportation Facility Charges"^^xsd:string ;
+.
+:Air_Transportation_Facility_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Facility Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Funds_Expenditure ;
+  rdfs:subClassOf :Transportation_Facility_Expenditure ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Air_Transportation_Funds_Expenditure
+            :Facility_Expenditure
+          ) ;
+      ]
+    ) ;
+  skos:broader :Air_Transportation_Funds_Expenditure ;
+  skos:broader :Transportation_Facility_Expenditure ;
+  skos:prefLabel "Air Transportation Facility Expenditure"^^xsd:string ;
+.
+:Air_Transportation_Funds_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Air Transportation Funds Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Funds_Expenditure ;
+  skos:broader :Transportation_Funds_Expenditure ;
+  skos:prefLabel "Air Transportation Funds Expenditure"^^xsd:string ;
+.
+:Airport_Certification_Grant
+  rdf:type owl:Class ;
+  rdfs:label "Airport Certification Grant"^^xsd:string ;
+  rdfs:subClassOf :Airport_Grant ;
+  skos:broader :Airport_Grant ;
+  skos:prefLabel "Airport Certification Grant"^^xsd:string ;
+.
+:Airport_Construction_Grant
+  rdf:type owl:Class ;
+  rdfs:label "Airport Construction Grant"^^xsd:string ;
+  rdfs:subClassOf :Airport_Grant ;
+  owl:intersectionOf (
+      :Airport_Grant
+      :Construction_Grant
+    ) ;
+  skos:broader :Airport_Grant ;
+  skos:prefLabel "Airport Construction Grant"^^xsd:string ;
+.
+:Airport_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Airport Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Aerodrome_Expenditure ;
+  skos:broader :Aerodrome_Expenditure ;
+  skos:prefLabel "Airport Expenditure"^^xsd:string ;
+.
+:Airport_Grant
+  rdf:type owl:Class ;
+  rdfs:label "Airport Grant"^^xsd:string ;
+  rdfs:subClassOf :Grant ;
+  skos:broader :Grant ;
+  skos:narrower :Airport_Certification_Grant ;
+  skos:narrower :Airport_Construction_Grant ;
+  skos:narrower :Airport_Operations_Grant ;
+  skos:narrower :Airport_Safety_Grant ;
+  skos:prefLabel "Airport Grant"^^xsd:string ;
+.
+:Airport_Grants_Program_Project_Activity_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Airports - Grants Program, Project or Activity Budget"^^xsd:string ;
+  rdfs:subClassOf :Airport_Program_Project_Activity_Budget ;
+  skos:altLabel "Airports - Grants PPA Budget"^^xsd:string ;
+  skos:definition "is a sub-type of budget - A Airport Improvement Program (AIP) Program Budget;  751 Airports - Training.  [FAA]"@en-US ;
+  skos:prefLabel "Airports - Grants Program, Project or Activity Budget"^^xsd:string ;
+.
+:Airport_Improvement_Program_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Airport Improvement Program Budget"^^xsd:string ;
+  rdfs:subClassOf :Facility_Improvement_Program_Budget ;
+  skos:altLabel "AIP Budget"^^xsd:string ;
+  skos:broader :Facility_Improvement_Program_Budget ;
+  skos:definition """A program element is not used for recording grants-in-aid to airports.  A three-digit zero fill (000) in the program element field is used in DAFIS.  Administrative costs recorded in AIP use the following codes:
+ 000 Grants-in-Aid to Airports.  Used for all AIP transactions (grants) except administrative costs.
+ 700 Administration of Airports Programs.
+  720 Safety Programs and Engineering Standards.
+  730 Airports Grants - Planning and Programming.
+  750 Planning, Direction, and Evaluation.  
+   751 Airports - Training.  
+  760 Airports.     \"
+[FAA DATA ARCHITECTURE]"""@en-US ;
+  skos:prefLabel "Airport Improvement Program Budget"^^xsd:string ;
+  skos:related :Program_Budget_Line_Item_Type ;
+.
+:Airport_Operations_Grant
+  rdf:type owl:Class ;
+  rdfs:label "Airport Operations Grant"^^xsd:string ;
+  rdfs:subClassOf :Airport_Grant ;
+  owl:intersectionOf (
+      :Airport_Grant
+      :Operations_Grant
+    ) ;
+  skos:broader :Airport_Grant ;
+  skos:prefLabel "Airport Operations Grant"^^xsd:string ;
+.
+:Airport_Program_Project_Activity_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Airport Program, Project or Activity Budget"^^xsd:string ;
+  rdfs:subClassOf :Program_Project_Activity_Budget ;
+  skos:altLabel "Airport Training Program Budget"^^xsd:string ;
+  skos:broader :Program_Project_Activity_Budget ;
+  skos:definition "is a type of budget - Airport Improvement Program (AIP) Program Budget"@en-US ;
+  skos:prefLabel "Airport Program Budget"^^xsd:string ;
+.
+:Airport_Safety_Grant
+  rdf:type owl:Class ;
+  rdfs:label "Airport Safety Grant"^^xsd:string ;
+  rdfs:subClassOf :Airport_Grant ;
+  owl:intersectionOf (
+      :Airport_Grant
+      :Safety_Grant
+    ) ;
+  skos:broader :Airport_Grant ;
+  skos:prefLabel "Airport Safety Grant"^^xsd:string ;
+.
+:Airport_Training_Program_Project_Activity_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Airport Training Program Project Activity Budget"^^xsd:string ;
+  rdfs:subClassOf :Airport_Program_Project_Activity_Budget ;
+  skos:altLabel "Airport Training PPA Budget"^^xsd:string ;
+  skos:definition "is a type of budget - A Airport Improvement Program (AIP) Program Budget;  751 Airports - Training.    [FAA]"@en-US ;
+  skos:prefLabel "Airport Training Program Project Activity Budget"^^xsd:string ;
+.
+:Airspace_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Airspace Charge"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Charge ;
+  skos:broader :Infrastructure_Charge ;
+  skos:prefLabel "Airspace Charge"^^xsd:string ;
+.
+:Airspace_Charges
+  rdf:type owl:Class ;
+  rdfs:label "Airspace Charges"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Charges ;
+  owl:unionOf (
+      :Airspace_Charge
+    ) ;
+  skos:altLabel "Charges of Airspace"^^xsd:string ;
+  skos:broader :Infrastructure_Charges ;
+  skos:prefLabel "Airspace Charges"^^xsd:string ;
+.
+:Allocation
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO   http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Allocation"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Apportionment ;
+  skos:definition "For the purposes of budgeting, an allocation means a delegation, authorized in law, by one agency of its authority to obligate budget authority and outlay funds to another agency. (The appropriation or fund from which the allocation is made is generally referred to as the parent appropriation or fund.) An allocation is made when one or more agencies share the administration of a program for which appropriations are made to only one of the agencies or to the President. When an allocation occurs, the Department of the Treasury establishes a subsidiary account called a “transfer appropriation account,” and the agency receiving the allocation may obligate up to the amount included in the account. The budget does not show the transfer appropriation account separately. Transactions involving allocation accounts appear in the Object Classification Schedule, with the corresponding Program and Financing Schedule, in the President’s budget. For purposes of section 302(a) of the Congressional Budget and Impoundment Control Act of 1974 (2 U.S.C. § 633(a)), an allocation is the distribution of spending authority and outlays to relevant committees based on the levels contained in a concurrent resolution on the budget. (See also Committee Allocation.) For purposes of section 302(b) of the Congressional Budget and Impoundment Control Act of 1974 (2 U.S.C. § 633(b)), an allocation is the distribution of spending authority and outlays to relevant subcommittees based on the levels contained in the concurrent resolution on the budget. (See also Subcommittee Allocation.) For funds control purposes, an allocation is a further subdivision of an apportionment.    [GAO]"@en-US ;
+  skos:narrower :Committee_Allocation ;
+  skos:prefLabel "Allocation"^^xsd:string ;
+.
+:Allotment
+  rdf:type owl:Class ;
+  rdfs:label "Allotment"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Apportionment ;
+  skos:narrower :Suballotment ;
+  skos:prefLabel "Allotment"^^xsd:string ;
+.
+:Allowance
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary;  11 ed."^^xsd:string ;
+  rdfs:label "Allowance"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Reimbursement ;
+  skos:definition "1 a: a share or portion alloted or granted  b: a sum granted as a reimbursement or bounty or for expenses; esp. a sum regularly provided for personal or household expenses  c: a fixed or available amount d: a reduction from a list price or stated price [WEBSTEER]"^^xsd:string ;
+  skos:narrower :Employee_Allowance ;
+  skos:narrower :Office_Allowance ;
+  skos:narrower :Payroll_Allowance ;
+  skos:prefLabel "Allowance"^^xsd:string ;
+.
+:Annual_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Annual Budget"^^xsd:string ;
+  rdfs:subClassOf :Budget ;
+  skos:broader :Budget ;
+  skos:prefLabel "Annual Budget"^^xsd:string ;
+.
+:Anticipated_Reimbursement
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Anticipated Reimbursement"^^xsd:string ;
+  rdfs:subClassOf :Reimbursement ;
+  skos:broader :Reimbursement ;
+  skos:definition "Anticipated reimbursements are, in the case of transactions with the public, estimated collections of expected advances to be received or expected reimbursements to be earned.  In transactions between government accounts, anticipated reimbursements consist of orders expected to be received for which no orders have been accepted. Agencies cannot obligate against anticipated reimbursements without specific statutory authority.  [GAO] {@en-US} [GAO]"^^xsd:string ;
+  skos:prefLabel "Anticipated Reimbursement"^^xsd:string ;
+  skos:related :Account_Receivable_Account ;
+.
+:Apportionment
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Apportionment"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Allotment
+      :Allocation
+    ) ;
+  skos:broader :Funds ;
+  skos:definition "The action by which the Office of Management and Budget (OMB) distributes amounts available for obligation, including budgetary reserves established pursuant to law, in an appropriation or fund account. An apportionment divides amounts available for obligation by specific time periods (usually quarters), activities, projects, objects, or a combination thereof. The amounts so apportioned limit the amount of obligations that may be incurred. An apportionment may be further subdivided by an agency into allotments, suballotments, and allocations. In apportioning any account, some funds may be reserved to provide for contingencies or to effect savings made possible pursuant to the Antideficiency Act. Funds apportioned to establish a reserve must be proposed for deferral or rescission pursuant to the Impoundment Control Act of 1974 (2 U.S.C. §§ 681–688).The apportionment process is intended to (1) prevent the obligation of amounts available within an appropriation or fund account in a manner that would require deficiency or supplemental appropriations and (2) achieve the most effective and economical use of amounts made available for obligation.   [GAO]"@en-US ;
+  skos:narrower :Allocation ;
+  skos:narrower :Allotment ;
+  skos:prefLabel "Apportionment"^^xsd:string ;
+  skos:related :Obligation ;
+.
+:Appropriation
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  dcterms:subject "Appropriation"^^xsd:string ;
+  :termTopicFAA "Appropriation"^^xsd:string ;
+  rdfs:label "Appropriation"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Appropriation_and_Funding ;
+  skos:definition "2: something that has been appropriated ; specif. : money set aside by a formal action for a specific use  [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Appropriation"^^xsd:string ;
+.
+:Appropriation_Account
+  rdf:type owl:Class ;
+  rdfs:label "Appropriation Account"^^xsd:string ;
+  rdfs:subClassOf :Budget_Account ;
+  skos:altLabel "Fund Account"^^xsd:string ;
+  skos:broader :Budget_Account ;
+  skos:narrower :Fixed_Appropriation_Account ;
+  skos:narrower :Transfer_Appropriation_Account ;
+  skos:prefLabel "Appropriation Account"^^xsd:string ;
+  skos:related :Appropriation ;
+  skos:related :Funds ;
+.
+:Appropriation_and_Funding
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA   extracted from FAA Order 0000.1G, dated March 14, 2001"^^xsd:string ;
+  dcterms:subject "Appropriation and Funding"^^xsd:string ;
+  :termTopicFAA "Appropriation and Funding"^^xsd:string ;
+  vaem:hasIdentifier "2600"^^xsd:string ;
+  rdfs:label "Appropriation and Funding"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:intersectionOf (
+      :Appropriation
+      :Funds
+    ) ;
+  skos:broader :Asset ;
+  skos:definition "is a major topic, 2600    [FAA]"@en-US ;
+  skos:hasTopConcept :Financial_Resources ;
+  skos:narrower :Appropriation ;
+  skos:narrower :Funds ;
+  skos:narrower :Grant ;
+  skos:prefLabel "Appropriation and Funding"^^xsd:string ;
+.
+:Asset
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Asset"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Financial_Resources ;
+  skos:definition "1 b: the entire property of a person, association, corporation, or estate applicable or subject to the payment of debts  3 a: an item of value owned  b [plural] : the items on a balance sheet showing the book value of property owned  [WEBSTER]"^^xsd:string ;
+  skos:definition "An asset has monetary value.  An asset may be tangible (physical things) or intangible (rights, e.g. intellectual property).  The two most frequently used types of assets are: 1) current assets (e.g., cash or funds, and receivables); and 2) fixed or plant assets."^^xsd:string ;
+  skos:hasTopConcept :Financial_Resources ;
+  skos:narrower :Appropriation_and_Funding ;
+  skos:narrower :Asset_Account ;
+  skos:narrower :Aviation_Asset ;
+  skos:prefLabel "Asset"^^xsd:string ;
+  skos:related :Asset_Account ;
+.
+:Asset_Account
+  rdf:type owl:Class ;
+  rdfs:label "Asset Account"^^xsd:string ;
+  rdfs:subClassOf :General_Ledger_Account ;
+  skos:broader :Asset ;
+  skos:broader :General_Ledger_Account ;
+  skos:narrower :Account_Receivable_Account ;
+  skos:narrower :Cash_Account ;
+  skos:narrower :Fixed_Asset_Account ;
+  skos:prefLabel "Asset Account"^^xsd:string ;
+  skos:related :Asset ;
+.
+:Aviation_Asset
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DATA ARCHITECTURE"^^xsd:string ;
+  rdfs:label "Aviation Asset"^^xsd:string ;
+  rdfs:subClassOf :Asset ;
+  skos:broader :Capital_Assets ;
+  skos:definition "An aviation facility, equipment, part, or system resource.    [FAA DATA ARCH]"^^xsd:string ;
+  skos:prefLabel "Aviation Asset"^^xsd:string ;
+.
+:Aviation_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Aviation Charge"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Charge ;
+  skos:broader :Air_Transportation_Charge ;
+  skos:prefLabel "Aviation Charge"^^xsd:string ;
+.
+:Aviation_Facility_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Aviation Facility Charge"^^xsd:string ;
+  rdfs:subClassOf :Air_Transportation_Facility_Charge ;
+  rdfs:subClassOf :Aviation_Charge ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Aviation_Charge
+            :Facility_Charge
+          ) ;
+      ]
+    ) ;
+  skos:broader :Air_Transportation_Facility_Charge ;
+  skos:broader :Aviation_Charge ;
+  skos:prefLabel "Aviation Facility Charge"^^xsd:string ;
+.
+:Aviation_Trust_Fund
+  rdf:type owl:Class ;
+  rdfs:label "Aviation Trust Fund"^^xsd:string ;
+  rdfs:subClassOf :Trust_Fund ;
+  skos:broader :Trust_Fund ;
+  skos:prefLabel "Aviation Trust Fund"^^xsd:string ;
+.
+:Block_Grant
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Block Grant"^^xsd:string ;
+  rdfs:subClassOf :Grant-in-Aid ;
+  skos:broader :Grant-in-Aid ;
+  skos:definition "Block grants are given primarily to general purpose governmental units in accordance with a statutory formula. Such grants can be used for a variety of activities within a broad functional area. Examples of federal block grant programs are the Omnibus Crime Control and Safe Streets Act of 1968, the Housing and Community Development Act of 1974, and the grants to states for social services under title XX of the Social Security Act.   [GAO]"@en-US ;
+  skos:prefLabel "Block Grant"^^xsd:string ;
+.
+:Budget
+  rdf:type owl:Class ;
+  rdfs:label "Budget"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Financial_Resources ;
+  skos:hasTopConcept :Financial_Resources ;
+  skos:narrower :Activity_Budget ;
+  skos:narrower :Annual_Budget ;
+  skos:narrower :Budget_Authority ;
+  skos:narrower :Budget_Line ;
+  skos:narrower :Capital_Budget ;
+  skos:narrower :Organization_Budget ;
+  skos:narrower :Organizational_Unit_Budget ;
+  skos:narrower :Portfolio_Budget ;
+  skos:narrower :Program_Budget ;
+  skos:narrower :Program_Project_Activity_Budget ;
+  skos:narrower :Project_Budget ;
+  skos:narrower :Task_Budget ;
+  skos:prefLabel "Budget"^^xsd:string ;
+.
+:Budget_Account
+  rdf:type owl:Class ;
+  rdfs:label "Budget Account"^^xsd:string ;
+  rdfs:subClassOf :Account ;
+  skos:broader :Account ;
+  skos:narrower :Appropriation_Account ;
+  skos:prefLabel "Budget Account"^^xsd:string ;
+.
+:Budget_Authority
+  rdf:type owl:Class ;
+  rdfs:label "Budget Authority"^^xsd:string ;
+  rdfs:subClassOf :Budget ;
+  skos:broader :Budget ;
+  skos:narrower :Limitation ;
+  skos:prefLabel "Budget Authority"^^xsd:string ;
+.
+:Budget_Line
+  rdf:type owl:Class ;
+  rdfs:label "Budget Line"^^xsd:string ;
+  rdfs:subClassOf :Budget ;
+  skos:broader :Budget ;
+  skos:narrower :Budget_Line_Item ;
+  skos:prefLabel "Budget Line"^^xsd:string ;
+.
+:Budget_Line_Item
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  vaem:acronym "BLI"^^xsd:string ;
+  rdfs:label "Budget Line Item"^^xsd:string ;
+  rdfs:subClassOf :Budget_Line ;
+  skos:altLabel "Budget Line"^^xsd:string ;
+  skos:altLabel "Line Item"^^xsd:string ;
+  skos:altLabel "Program Element/Budget Line Item"^^xsd:string ;
+  skos:broader :Agency_Budget ;
+  skos:definition "A line item on the agency's budget.   [FAA DATA ARCH]"@en-US ;
+  skos:definition "In executive budgeting, a particular expenditure, such as program, subprogram, or object class. For purposes of the concurrent budget resolution, it usually refers to assumptions about particular programs or accounts implicit but not explicit in the budget resolution. In appropriation acts, it usually refers to an individual account or part of an account for which a specific amount is available. (See also Line Item Veto; Obligated Balance under Obligational Authority; Appropriation Rider.)  [GAO]"^^xsd:string ;
+  skos:narrower :Program_Budget_Line_Item ;
+  skos:prefLabel "Budget Line Item"^^xsd:string ;
+.
+:Bureau_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Bureau Budget"^^xsd:string ;
+  rdfs:subClassOf :Organizational_Unit_Budget ;
+  skos:broader :Department_Budget ;
+  skos:broader :Department_Portfolio_Budget ;
+  skos:broader :Organizational_Unit_Budget ;
+  skos:narrower :Program_Budget ;
+  skos:prefLabel "Bureau Budget"^^xsd:string ;
+.
+:Capital
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Capital"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:altLabel "Equity"^^xsd:string ;
+  skos:broader :Financial_Resources ;
+  skos:definition "1 a (1): a stock of accumulated goods esp. at a specified time and in contrast to income received during a specified period; also the value of those accumulated goods (2) : accumulated goods devoted to the production of other goods; (3) accumulated possessions calculated to bring in income  b (1) : net worth  (2) : STOCK  [WEBSTER]"^^xsd:string ;
+  skos:definition "Capital or equity refers to the owner's equity (whether person or shareholders) in the organization (e.g., sole proprietorship, partnership, or corporation).  Capital or equity is the residual value of the assets after the value of the total liabilities have been deducted."^^xsd:string ;
+  skos:hasTopConcept :Financial_Resources ;
+  skos:narrower :Capital_Account ;
+  skos:prefLabel "Capital"^^xsd:string ;
+.
+:Capital_Account
+  rdf:type owl:Class ;
+  rdfs:label "Capital Account"^^xsd:string ;
+  rdfs:subClassOf :General_Ledger_Account ;
+  skos:broader :Capital ;
+  skos:broader :General_Ledger_Account ;
+  skos:prefLabel "Capital Account"^^xsd:string ;
+  skos:related :Capital ;
+.
+:Capital_Assets
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Capital Assets"^^xsd:string ;
+  rdfs:subClassOf :Capital ;
+  skos:broader :Asset ;
+  skos:definition "Capital assets are land, structures, equipment, intellectual property (e.g., software), and information technology (including information technology service contracts) that are used by the federal government and have an estimated useful life of 2 years or more. Capital assets may be acquired in different ways: through purchase, construction, or manufacturing; through a lease-purchase or other capital lease (regardless of whether title has passed to the federal government); through an operating lease for an asset with an estimated useful life of 2 years or more; or through exchange. Capital assets may or may not be recorded in an entity’s balance sheet under federal accounting standards. Capital assets do not include grants to state and local governments or other entities for acquiring capital assets (such as National Science Foundation grants to universities or Department of Transportation grants to Amtrak), intangible assets (such as the knowledge resulting from research and development), or the human capital resulting from education and training. For more on capital assets, consult the Capital Programming Guide (June 1997), a supplement to OMB Circular No. A-11.   [GAO]"^^xsd:string ;
+  skos:narrower :Aviation_Asset ;
+  skos:narrower :Physical_Capital ;
+  skos:prefLabel "Capital Assets"^^xsd:string ;
+.
+:Capital_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Capital Budget"^^xsd:string ;
+  rdfs:subClassOf :Budget ;
+  skos:broader :Budget ;
+  skos:narrower :Facilities_Budget ;
+  skos:prefLabel "Capital Budget"^^xsd:string ;
+.
+:Cash
+  rdf:type owl:Class ;
+  rdfs:label "Cash"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Funds ;
+  skos:narrower :Cash_Collection ;
+  skos:narrower :Cash_Deposit ;
+  skos:narrower :Cash_Receipt ;
+  skos:narrower :Cash_Transfer ;
+  skos:prefLabel "Cash"^^xsd:string ;
+.
+:Cash_Account
+  rdf:type owl:Class ;
+  rdfs:label "Cash Account"^^xsd:string ;
+  rdfs:subClassOf :Asset_Account ;
+  skos:broader :Asset_Account ;
+  skos:prefLabel "Cash Account"^^xsd:string ;
+.
+:Cash_Collection
+  rdf:type owl:Class ;
+  rdfs:label "Cash Collection"^^xsd:string ;
+  rdfs:subClassOf :Cash ;
+  owl:intersectionOf (
+      :Cash
+      :Collections
+    ) ;
+  skos:altLabel "Cash Collections"^^xsd:string ;
+  skos:broader :Cash ;
+  skos:prefLabel "Cash Collection"^^xsd:string ;
+.
+:Cash_Deposit
+  rdf:type owl:Class ;
+  rdfs:label "Cash Deposit"^^xsd:string ;
+  rdfs:subClassOf :Cash ;
+  owl:intersectionOf (
+      :Cash
+      :Deposit
+    ) ;
+  skos:altLabel "Cash Deposits"^^xsd:string ;
+  skos:broader :Cash ;
+  skos:prefLabel "Cash Deposit"^^xsd:string ;
+.
+:Cash_Receipt
+  rdf:type owl:Class ;
+  rdfs:label "Cash Receipt"^^xsd:string ;
+  rdfs:subClassOf :Cash ;
+  owl:intersectionOf (
+      :Cash
+      :Receipt
+    ) ;
+  skos:altLabel "Cash Receipts"^^xsd:string ;
+  skos:broader :Cash ;
+  skos:prefLabel "Cash Receipt"^^xsd:string ;
+.
+:Cash_Transfer
+  rdf:type owl:Class ;
+  rdfs:label "Cash Transfer"^^xsd:string ;
+  rdfs:subClassOf :Cash ;
+  skos:altLabel "Cash Transfers"^^xsd:string ;
+  skos:broader :Cash ;
+  skos:prefLabel "Cash Transfer"^^xsd:string ;
+.
+:Categorical_Grant
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Categorical Grant"^^xsd:string ;
+  rdfs:subClassOf :Grant-in-Aid ;
+  skos:broader :Grant-in-Aid ;
+  skos:definition "Categorical grants can be used only for specific programs or for narrowly defined activities. They may be formula or project grants.   [GAO]"@en-US ;
+  skos:narrower :Formula_Grant ;
+  skos:narrower :Project_Grant ;
+  skos:prefLabel "Categorical Grant"^^xsd:string ;
+.
+:Charge
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Charge"^^xsd:string ;
+  rdfs:subClassOf :Cost ;
+  rdfs:subClassOf :Expense ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Cost ;
+  skos:broader :Expense ;
+  skos:definition "5 a : EXPENSE, COST <gave the banquet at his own charge> b : the price demanded for something <no admission charge> c : a debit to an account <the purchase was a charge> d : the record of a loan (as of a book from a library) e British : an interest in property granted as security for a loan   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Charge"^^xsd:string ;
+.
+:Charges
+  rdf:type owl:Class ;
+  rdfs:label "Charges"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Charge
+    ) ;
+  skos:broader :Expenditures ;
+  skos:prefLabel "Charges"^^xsd:string ;
+.
+:Collections
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Collections"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:unionOf (
+      :Government_Receipt
+      :Offsetting_Receipt
+      :Offsetting_Collection
+    ) ;
+  skos:altLabel "Collection"^^xsd:string ;
+  skos:broader :Financial_Resources ;
+  skos:definition """\"Amounts received by the federal government during the fiscal year. Collections are classified into three major categories: (1) governmental receipts (also called budget receipts or federal receipts), (2) offsetting collections, and (3) offsetting receipts.
+Governmental receipts result from the exercise of the government’s sovereign powers. Offsetting collections and receipts result from businesslike transactions with the public or transactions between appropriated activities. Offsetting collections and offsetting receipts are recorded as offsets to spending. They are offsetting collections when the collections are authorized by law to be credited to expenditure accounts. Otherwise, they are deposited in receipt accounts and called offsetting receipts.\"   [GAO]"""@en-US ;
+  skos:hasTopConcept :Financial_Resources ;
+  skos:narrower :Government_Receipt ;
+  skos:narrower :Offsetting_Collection ;
+  skos:narrower :Offsetting_Receipt ;
+  skos:narrower :Revenue ;
+  skos:prefLabel "Collections"^^xsd:string ;
+.
+:Commitment
+  rdf:type owl:Class ;
+  rdfs:label "Commitment"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Expenditure ;
+  skos:broader :Liability ;
+  skos:narrower :Obligation ;
+  skos:prefLabel "Commitment"^^xsd:string ;
+.
+:Committee_Allocation
+  rdf:type owl:Class ;
+  rdfs:label "Committee Allocation"^^xsd:string ;
+  rdfs:subClassOf :Allocation ;
+  skos:broader :Allocation ;
+  skos:narrower :Sub-Committee_Allocation ;
+  skos:prefLabel "Committee Allocation"^^xsd:string ;
+.
+:Construction_Grant
+  rdf:type owl:Class ;
+  rdfs:label "Construction Grant"^^xsd:string ;
+  rdfs:subClassOf :Grant ;
+  skos:broader :Grant ;
+  skos:prefLabel "Construction Grant"^^xsd:string ;
+.
+:Contingency_Funds
+  rdf:type owl:Class ;
+  rdfs:label "Contingency Funds"^^xsd:string ;
+  rdfs:subClassOf :Reserve_Funds ;
+  skos:broader :Reserve_Funds ;
+  skos:prefLabel "Contingency Funds"^^xsd:string ;
+.
+:Contingent_Account
+  rdf:type owl:Class ;
+  rdfs:label "Contingent Account"^^xsd:string ;
+  rdfs:subClassOf :Liability_Account ;
+  skos:broader :Liability_Account ;
+  skos:prefLabel "Contingent Account"^^xsd:string ;
+.
+:Contract_Payment
+  rdf:type owl:Class ;
+  rdfs:label "Contract Payment"^^xsd:string ;
+  rdfs:subClassOf :Payment ;
+  skos:broader :Payment ;
+  skos:prefLabel "Contract Payment"^^xsd:string ;
+.
+:Corporate_Income_Tax
+  rdf:type owl:Class ;
+  rdfs:label "Corporate Income Tax"^^xsd:string ;
+  rdfs:subClassOf :Income_Tax ;
+  skos:broader :Income_Tax ;
+  skos:prefLabel "Corporate Income Tax"^^xsd:string ;
+.
+:Cost
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA   extracted from Appendix A- Definitions of FAA Order 80840.4 - Safety Risk Management, dated June 26, 1998"^^xsd:string ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  dcterms:bibliographicCitation "Webster's Collegiate dictionary"^^xsd:string ;
+  rdfs:label "Cost"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Expenditure ;
+  skos:definition "1 a : the amount or equivalent paid or charged for something  : PRICE  b : the outlay or expenditure (as of effort or sacrifice) made to achieve an object;     [Webster's]"^^xsd:string ;
+  skos:definition "1. COSTS. Direct and indirect costs to the United States Government, State, local, and tribal governments, international trade impacts, and the private sector.     [FAA]"@en-US ;
+  skos:definition "The price or cash value of the resources used to produce a program, project, or activity. This term is used in many different contexts. When used in connection with federal credit programs, the term means the estimated long-term cost to the government of a direct loan or loan guarantee, calculated on a net present value basis over the life of the loan, excluding administrative costs and any incidental effects on governmental receipts or outlays. (See also Credit Subsidy Cost under Federal Credit; Expense.) For federal proprietary accounting, the monetary value of resources used or sacrificed or the liabilities incurred to achieve an objective. In economic terms, it is a measure of what must be given up in order to obtain something, whether by purchase, exchange, or production. Economists generally use the concept of opportunity cost, which is the value of all of the things that must be forgone or given up in obtaining something. The opportunity cost measure may, but will not always, equal the money outlays used to measure accounting costs. Economists sometimes distinguish between the private costs of a good or activity to the consumer or producer and the social costs imposed on the community as a whole.  [GAO]"@en-US ;
+  skos:definition "the sum of money piad for a resource or service"^^xsd:string ;
+  skos:narrower :Direct_Cost ;
+  skos:narrower :Flight_Cost ;
+  skos:narrower :Indirect_Cost ;
+  skos:narrower :Labor_Cost ;
+  skos:narrower :Opportunity_Cost ;
+  skos:narrower :Sunk_Cost ;
+  skos:prefLabel "Cost"^^xsd:string ;
+.
+:Court_Fine
+  rdf:type owl:Class ;
+  rdfs:label "Court Fine"^^xsd:string ;
+  rdfs:subClassOf :Fine ;
+  skos:broader :Fine ;
+  skos:broader :Government_Receipt ;
+  skos:prefLabel "Court Fine"^^xsd:string ;
+.
+:Defense_Funds_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Defense Funds Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Government_Funds_Expenditure ;
+  skos:broader :Government_Funds_Expenditure ;
+  skos:prefLabel "Defense Funds Expenditure"^^xsd:string ;
+.
+:Defense_Organization_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Defense Organization Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Organization_Expenditure ;
+  skos:prefLabel "Defense Organization Expenditure"^^xsd:string ;
+.
+:Deobligation
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Deobligation"^^xsd:string ;
+  rdfs:subClassOf :Obligation ;
+  skos:broader :Obligation ;
+  skos:definition "An agency’s cancellation or downward adjustment of previously incurred obligations. Deobligated funds may be reobligated within the period of availability of the appropriation. For example, annual appropriated funds may be reobligated in the fiscal year in which the funds were appropriated, while multiyear or no-year appropriated funds may be reobligated in the same or subsequent fiscal years. (See Reobligation.)   [GAO]"@en-US ;
+  skos:prefLabel "Deobligation"^^xsd:string ;
+.
+:Department_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Department Budget"^^xsd:string ;
+  rdfs:subClassOf :Organizational_Unit_Budget ;
+  skos:broader :Organizational_Unit_Budget ;
+  skos:narrower :Agency_Budget ;
+  skos:prefLabel "Department Budget"^^xsd:string ;
+.
+:Department_Portfolio_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Department Portfolio Budget"^^xsd:string ;
+  rdfs:subClassOf :Portfolio_Budget ;
+  skos:broader :Department_Budget ;
+  skos:broader :Portfolio_Budget ;
+  skos:narrower :Agency_Budget ;
+  skos:narrower :Bureau_Budget ;
+  skos:narrower :Program_Budget ;
+  skos:prefLabel "Department Portfolio Budget"^^xsd:string ;
+.
+:Department_of_Transportation_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Department of Transportation Budget"^^xsd:string ;
+  rdfs:subClassOf :Department_Budget ;
+  skos:altLabel "DOT Budget"^^xsd:string ;
+  skos:altLabel "DoT Budget"^^xsd:string ;
+  skos:prefLabel "Department of Transportation Budget"^^xsd:string ;
+.
+:Deposit
+  rdf:type owl:Class ;
+  rdfs:label "Deposit"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:altLabel "Deposits"^^xsd:string ;
+  skos:broader :Collections ;
+  skos:prefLabel "Deposit"^^xsd:string ;
+.
+:Deposit_Earnings
+  rdf:type owl:Class ;
+  rdfs:label "Deposit Earnings"^^xsd:string ;
+  rdfs:subClassOf :Earnings ;
+  skos:altLabel "Earnings on Deposits"^^xsd:string ;
+  skos:broader :Earnings ;
+  skos:prefLabel "Deposit Earnings"^^xsd:string ;
+.
+:Depreciation_Expense_Account
+  rdf:type owl:Class ;
+  rdfs:label "Depreciation Expense Account"^^xsd:string ;
+  rdfs:subClassOf :Expense_Account ;
+  skos:broader :Expense_Account ;
+  skos:prefLabel "Depreciation Expense Account"^^xsd:string ;
+.
+:Direct_Cost
+  rdf:type owl:Class ;
+  rdfs:label "Direct Cost"^^xsd:string ;
+  rdfs:subClassOf :Cost ;
+  owl:disjointWith :Indirect_Cost ;
+  skos:broader :Cost ;
+  skos:prefLabel "Direct Cost"^^xsd:string ;
+.
+:Disbursements
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Disbursements"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  owl:equivalentClass :Outlay ;
+  skos:altLabel "Disbursement"^^xsd:string ;
+  skos:broader :Financial_Resources ;
+  skos:definition "Amounts paid by federal agencies, by cash or cash equivalent, during the fiscal year to liquidate government obligations. “Disbursement” is used interchangeably with the term “outlay.” In budgetary usage, gross disbursements represent the amount of checks issued and cash or other payments made, less refunds received. Net disbursements represent gross disbursements less income collected and credited to the appropriation or fund account, such as amounts received for goods and services provided. (See also Outlay; Expenditure.)  [GAO]"@en-US ;
+  skos:hasTopConcept :Financial_Resources ;
+  skos:narrower :Expenditure ;
+  skos:prefLabel "Disbursements"^^xsd:string ;
+  skos:related :Outlay ;
+.
+:Duties
+  rdf:type owl:Class ;
+  rdfs:label "Duties"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:unionOf (
+      :Duty
+    ) ;
+  skos:broader :Import_Taxes ;
+  skos:narrower :Duty ;
+  skos:prefLabel "Duties"^^xsd:string ;
+.
+:Duty
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Duty"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Import_Tax ;
+  skos:definition "4 : TAX; especially : a tax on imports   [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Duty"^^xsd:string ;
+.
+:Earnings
+  rdf:type owl:Class ;
+  rdfs:label "Earnings"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Revenue ;
+  skos:narrower :Deposit_Earnings ;
+  skos:prefLabel "Earnings"^^xsd:string ;
+.
+:Employee_Allowance
+  rdf:type owl:Class ;
+  rdfs:label "Employee Allowance"^^xsd:string ;
+  rdfs:subClassOf :Allowance ;
+  skos:broader :Allowance ;
+  skos:prefLabel "Employee Allowance"^^xsd:string ;
+.
+:Employee_Payroll
+  rdf:type owl:Class ;
+  rdfs:label "Employee Payroll"^^xsd:string ;
+  rdfs:subClassOf :Payroll ;
+  skos:broader :Payroll ;
+  skos:prefLabel "Employee Payroll"^^xsd:string ;
+.
+:Employee_Payroll_Reimbursement
+  rdf:type owl:Class ;
+  rdfs:label "Employee Payroll Reimbursement"^^xsd:string ;
+  rdfs:subClassOf :Payroll_Reimbursement ;
+  skos:broader :Payroll_Reimbursement ;
+  skos:prefLabel "Employee Payroll Reimbursement"^^xsd:string ;
+  skos:related :Account_Payable_Account ;
+.
+:Employee_Payroll_Withholding
+  rdf:type owl:Class ;
+  rdfs:label "Employee Payroll Withholding"^^xsd:string ;
+  rdfs:subClassOf :Payroll ;
+  owl:intersectionOf (
+      :Employee_Payroll
+      :Payroll_Withholding
+    ) ;
+  skos:broader :Payroll ;
+  skos:prefLabel "Employee Payroll Withholding"^^xsd:string ;
+.
+:Employee_Travel_Obligation
+  rdf:type owl:Class ;
+  rdfs:label "Employee Travel Obligation"^^xsd:string ;
+  rdfs:subClassOf :Travel_Obligation ;
+  skos:broader :Travel_Obligation ;
+  skos:prefLabel "Employee Travel Obligation"^^xsd:string ;
+.
+:Employee_Travel_Reimbursement
+  rdf:type owl:Class ;
+  rdfs:label "Employee Travel Reimbursement"^^xsd:string ;
+  rdfs:subClassOf :Travel_Reimbursement ;
+  skos:broader :Travel_Reimbursement ;
+  skos:prefLabel "Employee Travel Reimbursement"^^xsd:string ;
+.
+:Exchange_Revenue
+  rdf:type owl:Class ;
+  rdfs:label "Exchange Revenue"^^xsd:string ;
+  rdfs:subClassOf :Government_Revenue ;
+  skos:altLabel "Earned Revenue"^^xsd:string ;
+  skos:definition " Exchange revenues arise when a government entity provides goods and services to the public or to another government entity for a price. Another term for exchange revenue is “earned revenue.” "^^xsd:string ;
+  skos:prefLabel "Exchange Revenue"^^xsd:string ;
+.
+:Excise_Tax
+  rdf:type owl:Class ;
+  rdfs:label "Excise Tax"^^xsd:string ;
+  rdfs:subClassOf :Tax ;
+  skos:broader :Tax ;
+  skos:prefLabel "Excise Tax"^^xsd:string ;
+.
+:Expenditure
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Expenditure"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Disbursements ;
+  skos:definition "The actual spending of money; an outlay.   [GAO]"@en-US ;
+  skos:narrower :Expense ;
+  skos:narrower :Outlay ;
+  skos:narrower :Payment ;
+  skos:prefLabel "Expenditure"^^xsd:string ;
+.
+:Expenditures
+  rdf:type owl:Class ;
+  rdfs:label "Expenditures"^^xsd:string ;
+  rdfs:subClassOf :Disbursements ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Disbursements ;
+  skos:prefLabel "Expenditures"^^xsd:string ;
+.
+:Expense
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Expense"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Expenditure ;
+  skos:definition "Outflow or other depletion of assets or incurrences of liabilities (or a combination of both) during some period as a result of providing goods, rendering services, or carrying out other activities related to an entity’s programs and missions, the benefits from which do not extend beyond the present operating period.   [GAO]"@en-US ;
+  skos:prefLabel "Expense"^^xsd:string ;
+.
+:Expense_Account
+  rdf:type owl:Class ;
+  rdfs:label "Expense Account"^^xsd:string ;
+  rdfs:subClassOf :Account ;
+  skos:broader :Account ;
+  skos:narrower :Depreciation_Expense_Account ;
+  skos:narrower :Miscellaneous_Expense_Account ;
+  skos:narrower :Payroll_Expense_Account ;
+  skos:prefLabel "Expense Account"^^xsd:string ;
+  skos:related :Expense ;
+.
+:Facilities_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Facilites Budget"^^xsd:string ;
+  rdfs:subClassOf :Capital_Budget ;
+  skos:broader :Capital_Budget ;
+  skos:narrower :Facilities_Improvement_Budget ;
+  skos:narrower :Facilities_and_Equipment_Budget ;
+  skos:prefLabel "Facilties Budget"^^xsd:string ;
+.
+:Facilities_Improvement_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Facilities Improvement Budget"^^xsd:string ;
+  rdfs:subClassOf :Facilities_Budget ;
+  skos:broader :Facilities_Budget ;
+  skos:narrower :Facility_Improvement_Program_Budget ;
+  skos:prefLabel "Facilities Improvement Budget"^^xsd:string ;
+.
+:Facilities_and_Equipment_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Facilities and Equipment Budget"^^xsd:string ;
+  rdfs:subClassOf :Facilities_Budget ;
+  skos:altLabel "F&E Budget"^^xsd:string ;
+  skos:broader :Facilities_Budget ;
+  skos:definition "is a type of FAA program that has it's own FAA Budget line item   [FAA]"^^xsd:string ;
+  skos:prefLabel "Facilities and Equipment Budget"^^xsd:string ;
+.
+:Facility_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Facility Charge"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Charge ;
+  skos:broader :Infrastructure_Charge ;
+  skos:prefLabel "Facility Charge"^^xsd:string ;
+.
+:Facility_Charges
+  rdf:type owl:Class ;
+  rdfs:label "Facility Charges"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Charges ;
+  owl:unionOf (
+      :Facility_Charge
+    ) ;
+  skos:altLabel "Charges of Facility"^^xsd:string ;
+  skos:broader :Infrastructure_Charges ;
+  skos:prefLabel "Facility Charges"^^xsd:string ;
+.
+:Facility_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Facility Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Expenditure ;
+  skos:broader :Infrastructure_Expenditure ;
+  skos:prefLabel "Facility Expenditure"^^xsd:string ;
+.
+:Facility_Improvement_Program_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Facility Improvement Program Budget"^^xsd:string ;
+  rdfs:subClassOf :Program_Budget ;
+  skos:broader :Facilities_Improvement_Budget ;
+  skos:broader :Program_Budget ;
+  skos:narrower :Airport_Improvement_Program_Budget ;
+  skos:prefLabel "Facility Improvement Program Budget"^^xsd:string ;
+.
+:Federal_Aviation_Administration_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Federal Aviation Administration Budget"^^xsd:string ;
+  rdfs:subClassOf :Agency_Budget ;
+  skos:altLabel "FAA Budget"^^xsd:string ;
+  skos:prefLabel "Federal Aviation Administration Budget"^^xsd:string ;
+.
+:Federal_Funds_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Federal Funds Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Federal_Government_Funds_Expenditure ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Federal_Government_Funds
+            :Funds_Expenditure
+          ) ;
+      ]
+    ) ;
+  skos:broader :Federal_Government_Funds_Expenditure ;
+  skos:prefLabel "Federal Funds Expenditure"^^xsd:string ;
+.
+:Federal_Funds_Expenditure_for_Facilities
+  rdf:type owl:Class ;
+  rdfs:label "Federal Funds Expenditure for Facilities"^^xsd:string ;
+  rdfs:subClassOf :Facility_Expenditure ;
+  rdfs:subClassOf :Federal_Funds_Expenditure ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Federal_Funds_Expenditure
+            :Facility_Expenditure
+          ) ;
+      ]
+    ) ;
+  skos:broader :Facility_Expenditure ;
+  skos:broader :Federal_Funds_Expenditure ;
+  skos:prefLabel "Federal Funds Expenditure for Facilities"^^xsd:string ;
+.
+:Federal_Funds_Expenditure_for_Military_Airport
+  rdf:type owl:Class ;
+  rdfs:label "Federal Funds Expenditure for Military Airport"^^xsd:string ;
+  rdfs:subClassOf :Federal_Funds_Expenditure ;
+  rdfs:subClassOf :Military_Airport_Expenditure ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Federal_Funds_Expenditure
+            :Military_Airport_Expenditure
+          ) ;
+      ]
+    ) ;
+  skos:broader :Federal_Funds_Expenditure ;
+  skos:broader :Military_Airport_Expenditure ;
+  skos:prefLabel "Federal Funds Expenditure for Military Airport"^^xsd:string ;
+.
+:Federal_Government_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Federal Government Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Government_Expenditure ;
+  skos:broader :Government_Expenditure ;
+  skos:prefLabel "Federal Government Expenditure"^^xsd:string ;
+.
+:Federal_Government_Funds
+  rdf:type owl:Class ;
+  rdfs:label "Federal Government Funds"^^xsd:string ;
+  rdfs:subClassOf :Government_Funds ;
+  skos:altLabel "Federal Funds"^^xsd:string ;
+  skos:broader :Government_Funds ;
+  skos:prefLabel "Federal Government Funds"^^xsd:string ;
+.
+:Federal_Government_Funds_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Federal Government Funds Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Federal_Government_Expenditure ;
+  rdfs:subClassOf :Government_Funds_Expenditure ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Federal_Government_Expenditure
+            :Government_Funds_Expenditure
+          ) ;
+      ]
+    ) ;
+  skos:broader :Federal_Government_Expenditure ;
+  skos:broader :Government_Funds_Expenditure ;
+  skos:prefLabel "Federal Government Funds Expenditure"^^xsd:string ;
+.
+:Fee
+  rdf:type owl:Class ;
+  rdfs:label "Fee"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Revenue ;
+  skos:narrower :License_Fee ;
+  skos:narrower :User_Fee ;
+  skos:prefLabel "Fee"^^xsd:string ;
+.
+:Fees
+  rdf:type owl:Class ;
+  rdfs:label "Fees"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Revenue ;
+  skos:prefLabel "Fees"^^xsd:string ;
+.
+:Financial_Resources
+  rdf:type owl:Class ;
+  rdfs:label "Financial Resources"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Resources ;
+  skos:definition """The assets (e.g., funds, investments) of someone (e.g., a person, group, or organization) regarded as having significant value and essential to the acquisition of all resources necessary to: (a) perform an activity; and (b) achieve a effect or result.  
+The department of a business or organization that deals with the budgeting, accounting, and reporting of the: (a) acquisition and distribution of all resources; and (b) collection and disbursement of funds.  [Proposed]"""^^xsd:string ;
+  skos:hasTopConcept :Resources ;
+  skos:narrower :Appropriation_and_Funding ;
+  skos:narrower :Budget ;
+  skos:narrower :Collections ;
+  skos:narrower :Disbursements ;
+  skos:narrower :Ledger ;
+  skos:prefLabel "Financial Resources"^^xsd:string ;
+.
+:Fine
+  rdf:type owl:Class ;
+  rdfs:label "Fine"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Revenue ;
+  skos:narrower :Court_Fine ;
+  skos:prefLabel "Fine"^^xsd:string ;
+.
+:Fixed_Appropriation_Account
+  rdf:type owl:Class ;
+  rdfs:label "Fixed Appropriation Account"^^xsd:string ;
+  rdfs:subClassOf :Appropriation_Account ;
+  skos:broader :Appropriation_Account ;
+  skos:prefLabel "Fixed Appropriation Account"^^xsd:string ;
+.
+:Fixed_Asset
+  rdf:type owl:Class ;
+  rdfs:label "Fixed Asset"^^xsd:string ;
+  rdfs:subClassOf :Asset ;
+  skos:prefLabel "Fixed Asset"^^xsd:string ;
+  skos:related :Fixed_Asset_Account ;
+.
+:Fixed_Asset_Account
+  rdf:type owl:Class ;
+  rdfs:label "Fixed Asset Account"^^xsd:string ;
+  rdfs:subClassOf :Asset_Account ;
+  skos:broader :Asset_Account ;
+  skos:prefLabel "Fixed Asset Account"^^xsd:string ;
+  skos:related :Fixed_Asset ;
+.
+:Flight_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Flight Charge"^^xsd:string ;
+  rdfs:subClassOf :Aviation_Charge ;
+  skos:broader :Aviation_Charge ;
+  skos:prefLabel "Flight Charge"^^xsd:string ;
+.
+:Flight_Cost
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "MITRE    A NAS Data Classification Scheme, MITRE Technical Report - MTR 00W0000067; NAS_clas_final file on Data Architecture CD,  September 2000  page 14"^^xsd:string ;
+  rdfs:label "Flight Cost"^^xsd:string ;
+  rdfs:subClassOf :Cost ;
+  skos:altLabel "Flight Charges"^^xsd:string ;
+  skos:altLabel "Flight User Charges"^^xsd:string ;
+  skos:broader :Cost ;
+  skos:definition "The data required in computing user charges in the NAS.   [MITRE]  [@en-US}"^^xsd:string ;
+  skos:prefLabel "Flight Cost"^^xsd:string ;
+  skos:related :User_Fee ;
+.
+:Formula_Grant
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Formula Grant"^^xsd:string ;
+  rdfs:subClassOf :Categorical_Grant ;
+  skos:broader :Categorical_Grant ;
+  skos:definition "Formula grants allocate federal funds to states or their subdivisions in accordance with a distribution formula prescribed by law or administrative regulation. [GAO]"@en-US ;
+  skos:prefLabel "Formula Grant"^^xsd:string ;
+.
+:Franchise_Funds
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Franchise Funds"^^xsd:string ;
+  rdfs:subClassOf :Revolving_Fund ;
+  skos:broader :Revolving_Fund ;
+  skos:definition "A type of intragovernmental revolving fund that operates as a self-supporting entrepreneurial entity to provide common administrative services benefiting other federal entities. These funds function entirely from the fees charged for the services they provide consistent with their statutory authority. (See also Intragovermental Revolving Fund Account under Intragovernmental Fund Account under Federal Fund Accounts under Account in the President’s Budget.)    [GAO]"@en-US ;
+  skos:prefLabel "Franchise Funds"^^xsd:string ;
+.
+:Fund
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Fund"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "1 a : a sum of money or other resources whose principal or interest is set apart for a specific objective b : money on deposit on which checks or drafts can be drawn  usually used in plural c : CAPITAL d plural : the stock of the British national debt  usually used with the    [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Fund"^^xsd:string ;
+.
+:Funds
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DATA ARCHITECTURE"^^xsd:string ;
+  dcterms:bibliographicCitation "Webster's Collegiate dictionary"^^xsd:string ;
+  rdfs:label "Funds"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Apportionment ;
+  skos:broader :Appropriation_and_Funding ;
+  skos:definition "1 a : a sum of money or other resources whose principal or interest is set apart for a specific objective  b : money on deposit on which checks or drafts can be drawn —  usually used in plural     [WEBSTER]"^^xsd:string ;
+  skos:definition "A financial resource established for a purpose. Includes appropriated and non-appropriated funds, apportionments, allocations, sub-allocations, and operating budgets.   [FAA]"@en-US ;
+  skos:narrower :Cash ;
+  skos:narrower :Franchise_Funds ;
+  skos:narrower :Operations_Funds ;
+  skos:narrower :Program_Funds ;
+  skos:narrower :Revolving_Fund ;
+  skos:narrower :Special_Purpose_Fund ;
+  skos:narrower :Trust_Fund ;
+  skos:prefLabel "Funds"^^xsd:string ;
+.
+:Funds_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Funds Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Expenditure ;
+  skos:broader :Expenditure ;
+  skos:prefLabel "Funds Expenditure"^^xsd:string ;
+.
+:General_Ledger
+  rdf:type owl:Class ;
+  rdfs:label "General Ledger"^^xsd:string ;
+  rdfs:subClassOf :Ledger ;
+  skos:broader :Ledger ;
+  skos:narrower :Standard_General_Ledger ;
+  skos:prefLabel "General Ledger"^^xsd:string ;
+.
+:General_Ledger_Account
+  rdf:type owl:Class ;
+  rdfs:label "General Ledger Account"^^xsd:string ;
+  rdfs:subClassOf :Account ;
+  skos:altLabel "GL Account"^^xsd:string ;
+  skos:altLabel "GL Acct"^^xsd:string ;
+  skos:broader :Account ;
+  skos:broader :General_Ledger ;
+  skos:narrower :Asset_Account ;
+  skos:narrower :Capital_Account ;
+  skos:narrower :Liability_Account ;
+  skos:prefLabel "General Ledger Account"^^xsd:string ;
+.
+:Government_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Government Budget"^^xsd:string ;
+  rdfs:subClassOf :Organization_Budget ;
+  skos:broader :Organization_Budget ;
+  skos:narrower :National_Government_Budget ;
+  skos:prefLabel "Government Budget"^^xsd:string ;
+.
+:Government_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Government Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Organization_Expenditure ;
+  skos:broader :Organization_Expenditure ;
+  skos:prefLabel "Government Expenditure"^^xsd:string ;
+.
+:Government_Funds
+  rdf:type owl:Class ;
+  rdfs:label "Government Funds"^^xsd:string ;
+  rdfs:subClassOf :Organization_Funds ;
+  skos:broader :Organization_Funds ;
+  skos:prefLabel "Government Funds"^^xsd:string ;
+.
+:Government_Funds_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Government Funds Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Funds_Expenditure ;
+  rdfs:subClassOf :Government_Expenditure ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Government_Expenditure
+            :Funds_Expenditure
+          ) ;
+      ]
+    ) ;
+  skos:broader :Funds_Expenditure ;
+  skos:broader :Government_Expenditure ;
+  skos:prefLabel "Government Funds Expenditure"^^xsd:string ;
+.
+:Government_Receipt
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO   http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Government Receipt"^^xsd:string ;
+  rdfs:subClassOf :Receipt ;
+  owl:equivalentClass :Government_Revenue ;
+  owl:unionOf (
+      :Tax
+      :Fee
+      :Fine
+      :Penalty
+      :Earnings
+    ) ;
+  skos:altLabel "Budget Receipts"^^xsd:string ;
+  skos:altLabel "Federal Receipts"^^xsd:string ;
+  skos:altLabel "Government Receipts"^^xsd:string ;
+  skos:broader :Receipt ;
+  skos:definition "Collections from the public based on the government’s exercise of its sovereign powers, including individual and corporate income taxes and social insurance taxes, excise taxes, duties, court fines, compulsory licenses, and deposits of earnings by the Federal Reserve System. Gifts and contributions (as distinguished from payments for services or cost-sharing deposits by state and local governments) are also counted as governmental receipts. Total governmental receipts include those specifically designated as off-budget by provisions of law. Total governmental receipts are compared with total outlays in calculating the budget surplus or deficit. (See also Federal Fund Accounts under Account in the President’s Budget; Gross Basis and Net Basis under Budgeting in Relation to Totals under Bases of Budgeting; Off-Budget; On-Budget.)    [GAO]"@en-US ;
+  skos:narrower :Earnings ;
+  skos:narrower :Fee ;
+  skos:narrower :Fine ;
+  skos:narrower :Penalty ;
+  skos:narrower :Tax ;
+  skos:prefLabel "Government Receipt"^^xsd:string ;
+.
+:Government_Revenue
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Government Revenue"^^xsd:string ;
+  rdfs:subClassOf :Revenue ;
+  owl:equivalentClass :Government_Receipt ;
+  skos:broader :Revenue ;
+  skos:definition "Either of the following:(1) As used in the congressional budget process, a synonym for governmental receipts. Revenues result from amounts that result from the government’s exercise of its sovereign power to tax or otherwise compel payment or from gifts to the government. Article I, Section 7, of the U.S. Constitution requires that revenue bills originate in the House of Representatives.(2) As used in federal proprietary accounting, an inflow of resources that the government demands, earns, or receives by donation. Revenue comes from two sources: exchange transactions and nonexchange transactions. Exchange revenues arise when a government entity provides goods and services to the public or to another government entity for a price. Another term for exchange revenue is “earned revenue.” Nonexchange revenues arise primarily from exercise of the government’s power to demand payments from the public (e.g., taxes, duties, fines, and penalties) but also include donations. The term “revenue” does not encompass all financing sources of government reporting entities, such as most of the appropriations they receive. Revenues result from (1) services performed by the federal government and (2) goods and other property delivered to purchasers. (See also Collections.)    [GAO]"@en-US ;
+  skos:prefLabel "Government Revenue"^^xsd:string ;
+.
+:Grant
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Grant"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Appropriation_and_Funding ;
+  skos:definition "A federal financial assistance award making payment in cash or in kind for a specified purpose. The federal government is not expected to have substantial involvement with the state or local government or other recipient while the contemplated activity is being performed. The term “grant” is used broadly and may include a grant to nongovernmental recipients as well as one to a state or local government, while the term “grant-in-aid” is commonly used to refer only to a grant to a state or local government. (For a more detailed description, see the Federal Grant and Cooperative Agreement Act of 1977, 31 U.S.C. §§ 6301–6308.)   [GAO]"@en-US ;
+  skos:narrower :Airport_Grant ;
+  skos:narrower :Construction_Grant ;
+  skos:narrower :Grant-in-Aid ;
+  skos:narrower :Operations_Grant ;
+  skos:narrower :Safety_Grant ;
+  skos:prefLabel "Grant"^^xsd:string ;
+.
+:Grant-in-Aid
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Grant-in-Aid"^^xsd:string ;
+  rdfs:subClassOf :Grant ;
+  skos:broader :Grant ;
+  skos:definition "...the term “grant-in-aid” is commonly used to refer only to a grant to a state or local government. (For a more detailed description, see the Federal Grant and Cooperative Agreement Act of 1977, 31 U.S.C. §§ 6301–6308.) The two major forms of federal grants-in-aid are block and categorical.  [GAO]"@en-US ;
+  skos:narrower :Block_Grant ;
+  skos:narrower :Categorical_Grant ;
+  skos:prefLabel "Grant-in-Aid"^^xsd:string ;
+.
+:Grants-in-Aid_for_Airport_Program_Project_Activity_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Grants-in-Aid for Airport Program Project Activity Budget"^^xsd:string ;
+  rdfs:label "Grants-in-Aid for Airport Program, Project and Activity Budget"^^xsd:string ;
+  rdfs:subClassOf :Airport_Program_Project_Activity_Budget ;
+  skos:altLabel "Grants-in-Aid for Airport PPA"^^xsd:string ;
+  skos:definition """\"is a type of specific program, project or activity that is association with the Airport Improvement Program (AIP) Program Budget;  A program element is not used for recording grants-in-aid to airports.  A three-digit zero fill (000) in the program element field is used in DAFIS.  Administrative costs recorded in AIP use the following codes:
+ 000 Grants-in-Aid to Airports.  Used for all AIP transactions (grants) except administrative costs.\"  [FAA]"""@en-US ;
+  skos:prefLabel "Grants-in-Aid for Airport Program Project Activity Budget"^^xsd:string ;
+  skos:prefLabel "Grants-in-Aid for Airport Program, Project and Activity Budget"^^xsd:string ;
+  skos:related :Airport_Improvement_Program_Budget ;
+.
+:Import_Duties_and_Taxes
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "ICAO Annex 9, Facilitation"^^xsd:string ;
+  rdfs:label "Import Duties and Taxes"^^xsd:string ;
+  rdfs:subClassOf :Duties ;
+  rdfs:subClassOf :Import_Taxes ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Import_Taxes
+            :Duties
+          ) ;
+      ]
+    ) ;
+  skos:broader :Duties ;
+  skos:broader :Import_Taxes ;
+  skos:definition "Customs duties and all other duties, taxes or charges, which are collected on or in connection with the importation of goods. Not included are any charges which are limited in amount to the approximate cost of services rendered or collected by the customs...   [ICAO]"^^xsd:string ;
+  skos:prefLabel "Import Duties and Taxes"^^xsd:string ;
+.
+:Import_Tax
+  rdf:type owl:Class ;
+  rdfs:label "Import Tax"^^xsd:string ;
+  rdfs:subClassOf :Tax ;
+  skos:broader :Tax ;
+  skos:narrower :Duty ;
+  skos:prefLabel "Import Tax"^^xsd:string ;
+.
+:Import_Taxes
+  rdf:type owl:Class ;
+  rdfs:label "Import Taxes"^^xsd:string ;
+  rdfs:subClassOf :Taxes ;
+  skos:broader :Taxes ;
+  skos:narrower :Import_Duties_and_Taxes ;
+  skos:prefLabel "Import Taxes"^^xsd:string ;
+.
+:Income_Tax
+  rdf:type owl:Class ;
+  rdfs:label "Income Tax"^^xsd:string ;
+  rdfs:subClassOf :Tax ;
+  skos:broader :Tax ;
+  skos:narrower :Corporate_Income_Tax ;
+  skos:narrower :Individual_Income_Tax ;
+  skos:prefLabel "Income Tax"^^xsd:string ;
+.
+:Indirect_Cost
+  rdf:type owl:Class ;
+  rdfs:label "Indirect Cost"^^xsd:string ;
+  rdfs:subClassOf :Cost ;
+  owl:disjointWith :Direct_Cost ;
+  skos:broader :Cost ;
+  skos:prefLabel "Indirect Cost"^^xsd:string ;
+.
+:Individual_Income_Tax
+  rdf:type owl:Class ;
+  rdfs:label "Individual Income Tax"^^xsd:string ;
+  rdfs:subClassOf :Income_Tax ;
+  skos:broader :Income_Tax ;
+  skos:prefLabel "Individual Income Tax"^^xsd:string ;
+.
+:Infrastructure_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Infrastructure Charge"^^xsd:string ;
+  rdfs:subClassOf :Charge ;
+  skos:broader :Charge ;
+  skos:prefLabel "Infrastructure Charge"^^xsd:string ;
+.
+:Infrastructure_Charges
+  rdf:type owl:Class ;
+  rdfs:label "Infrastructure Charges"^^xsd:string ;
+  rdfs:subClassOf :Charges ;
+  owl:unionOf (
+      :Infrastructure_Charge
+    ) ;
+  skos:altLabel "Charges of Infrastructure"^^xsd:string ;
+  skos:broader :Charges ;
+  skos:prefLabel "Infrastructure Charges"^^xsd:string ;
+.
+:Infrastructure_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Infrastructure Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Expenditure ;
+  skos:broader :Expenditure ;
+  skos:prefLabel "Infrastructure Expenditure"^^xsd:string ;
+.
+:Inter-Agency_Payment
+  rdf:type owl:Class ;
+  rdfs:label "Inter-Agency Payment"^^xsd:string ;
+  rdfs:subClassOf :Payment ;
+  skos:broader :Payment ;
+  skos:prefLabel "Inter-Agency Payment"^^xsd:string ;
+.
+:Inter-Agency_Reimbursement
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Inter-Agency Reimbursement"^^xsd:string ;
+  rdfs:subClassOf :Reimbursement ;
+  skos:broader :Reimbursement ;
+  skos:definition "A sum (1) that is received by an agency as a payment for commodities sold or services furnished either to the public or to another government account and (2) that is authorized by law to be credited directly to specific appropriation and fund accounts. Reimbursements between two accounts for goods or services are usually expenditure transactions/transfers.  [GAO]"^^xsd:string ;
+  skos:prefLabel "Inter-Agency Reimbursement"^^xsd:string ;
+  skos:related :Account_Payable_Account ;
+.
+:Labor_Cost
+  rdf:type owl:Class ;
+  rdfs:label "Labor Cost"^^xsd:string ;
+  rdfs:subClassOf :Cost ;
+  skos:broader :Cost ;
+  skos:prefLabel "Labor Cost"^^xsd:string ;
+.
+:Ledger
+  rdf:type owl:Class ;
+  rdfs:label "Ledger"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:broader :Financial_Resources ;
+  skos:hasTopConcept :Financial_Resources ;
+  skos:narrower :Account ;
+  skos:narrower :General_Ledger ;
+  skos:prefLabel "Ledger"^^xsd:string ;
+.
+:Liability
+  rdf:type owl:Class ;
+  rdfs:label "Liability"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Financial_Resources ;
+  skos:definition "The debts owed to outsiders or creditors.  There are two types of liabilities: 1) current liabilities (normal due within a calendar year); 2) long-term liabilities (normally due longer than one calendar year).  "^^xsd:string ;
+  skos:hasTopConcept :Financial_Resources ;
+  skos:narrower :Commitment ;
+  skos:narrower :Liability_Account ;
+  skos:prefLabel "Liability"^^xsd:string ;
+  skos:related :Liability_Account ;
+.
+:Liability_Account
+  rdf:type owl:Class ;
+  rdfs:label "Liability Account"^^xsd:string ;
+  rdfs:subClassOf :General_Ledger_Account ;
+  skos:broader :General_Ledger_Account ;
+  skos:broader :Liability ;
+  skos:narrower :Account_Payable_Account ;
+  skos:narrower :Contingent_Account ;
+  skos:prefLabel "Liability Account"^^xsd:string ;
+  skos:related :Liability ;
+.
+:License_Fee
+  rdf:type owl:Class ;
+  rdfs:label "License Fee"^^xsd:string ;
+  rdfs:subClassOf :Fee ;
+  skos:broader :Fee ;
+  skos:broader :Government_Receipt ;
+  skos:prefLabel "License Fee"^^xsd:string ;
+.
+:License_Fees
+  rdf:type owl:Class ;
+  rdfs:label "License Fees"^^xsd:string ;
+  rdfs:subClassOf :Fees ;
+  owl:unionOf (
+      :License_Fee
+    ) ;
+  skos:broader :Fees ;
+  skos:prefLabel "License Fees"^^xsd:string ;
+.
+:Life_Cycle_Cost
+  rdf:type owl:Class ;
+  vaem:acronym "LCC"^^xsd:string ;
+  rdfs:label "Life Cycle Cost"^^xsd:string ;
+  rdfs:subClassOf :Cost ;
+  skos:broader :Cost ;
+  skos:prefLabel "Life Cycle Cost"^^xsd:string ;
+.
+:Limitation
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO   http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Limitation"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Budget_Authority ;
+  skos:definition "A restriction on the amount, purpose, or period of availability of budget authority. While limitations are most often established through appropriations acts, they may also be established through authorization legislation. Limitations may be placed on the availability of funds for program levels, administrative expenses, direct loan obligations, loan guarantee commitments, or other purposes. (See also Administrative Division or Subdivision of Funds; Apportionment; Appropriation Act; Appropriation Rider; Authorizing Legislation; Duration under Budget Authority.)    [GAO]"@en-US ;
+  skos:prefLabel "Limitiation"^^xsd:string ;
+.
+:Military_Airport_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Military Airport Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Airport_Expenditure ;
+  owl:disjointWith :Non-Military_Airport_Expenditure ;
+  skos:broader :Airport_Expenditure ;
+  skos:prefLabel "Military Airport Expenditure"^^xsd:string ;
+.
+:Military_Funds_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Military Funds Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Defense_Funds_Expenditure ;
+  skos:broader :Defense_Funds_Expenditure ;
+  skos:prefLabel "Military Funds Expenditure"^^xsd:string ;
+.
+:Military_Organization_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Military Organization Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Defense_Organization_Expenditure ;
+  skos:prefLabel "Military Organization Expenditure"^^xsd:string ;
+.
+:Miscellaneous_Expense_Account
+  rdf:type owl:Class ;
+  rdfs:label "Miscellaneous Expense Account"^^xsd:string ;
+  rdfs:subClassOf :Expense_Account ;
+  skos:broader :Expense_Account ;
+  skos:prefLabel "Depreciation Expense Account"^^xsd:string ;
+.
+:Monthly_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Monthly Charge"^^xsd:string ;
+  rdfs:subClassOf :Periodic_Charge ;
+  skos:broader :Periodic_Charge ;
+  skos:prefLabel "Monthly Charge"^^xsd:string ;
+.
+:Monthly_Recurring_Charge
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "MRC"^^xsd:string ;
+  rdfs:label "Monthly Recurring Charge"^^xsd:string ;
+  rdfs:subClassOf :Monthly_Charge ;
+  rdfs:subClassOf :Recurring_Charge ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Monthly_Charge
+            :Recurring_Charge
+          ) ;
+      ]
+    ) ;
+  skos:broader :Monthly_Charge ;
+  skos:broader :Recurring_Charge ;
+  skos:prefLabel "Monthly Recurring Charge"^^xsd:string ;
+.
+:National_Government_Budget
+  rdf:type owl:Class ;
+  rdfs:label "National Government Budget"^^xsd:string ;
+  rdfs:subClassOf :Government_Budget ;
+  skos:broader :Government_Budget ;
+  skos:prefLabel "National Governent Budget"^^xsd:string ;
+.
+:Non-Exchange_Revenue
+  rdf:type owl:Class ;
+  rdfs:label "Non-Exchange Revenue"^^xsd:string ;
+  rdfs:subClassOf :Government_Revenue ;
+  skos:definition "Nonexchange revenues arise primarily from exercise of the government’s power to demand payments from the public (e.g., taxes, duties, fines, and penalties) but also include donations. "^^xsd:string ;
+  skos:prefLabel "Non-Exchange Revenue"^^xsd:string ;
+.
+:Non-Military_Airport_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Military Airport Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Airport_Expenditure ;
+  skos:broader :Airport_Expenditure ;
+  skos:prefLabel "Military Airport Expenditure"^^xsd:string ;
+.
+:Non-Recurring_Charge
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "NRC"^^xsd:string ;
+  rdfs:label "Non-Recurring Charge"^^xsd:string ;
+  rdfs:subClassOf :One-Time_Charge ;
+  owl:disjointWith :Recurring_Charge ;
+  skos:broader :One-Time_Charge ;
+  skos:prefLabel "Non-Recurring Charge"^^xsd:string ;
+.
+:Obligation
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  dcterms:bibliographicCitation "Webster's Collegiate dictionary"^^xsd:string ;
+  rdfs:label "Obligation"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Commitment ;
+  skos:definition """A definite commitment that creates a legal liability of the government for the payment of goods and services ordered or received, or a legal duty on the part of the United States that could mature into a legal liability by virtue of actions on the part of the other party beyond the control of the United States. Payment may be made immediately or in the future. An agency incurs an obligation, for example, when it places an order, signs a contract, awards a grant, purchases a service, or takes other actions that require the government to make payments to the public or from one government account to another. The standards for the proper reporting of obligations are found in section 1501(a) of title 31 of the United States Code. See also OMB Circular No. A-11.
+[GAO]"""@en-US ;
+  skos:definition "b : a debt security (as a mortgage or corporate bond)  c : a commitment (as by a government) to pay a particular sum of money;  also   : an amount owed under such an obligation  *unable to meet its obligations, the company went into bankruptcy*  [WEBSTER]"^^xsd:string ;
+  skos:narrower :Deobligation ;
+  skos:narrower :Reobligation ;
+  skos:narrower :Travel_Obligation ;
+  skos:narrower :Unliquidated_Obligation ;
+  skos:prefLabel "Obligation"^^xsd:string ;
+.
+:Office_Allotment
+  rdf:type owl:Class ;
+  rdfs:label "Office Allotment"^^xsd:string ;
+  rdfs:subClassOf :Suballotment ;
+  skos:broader :Suballotment ;
+  skos:prefLabel "Office Allotment"^^xsd:string ;
+.
+:Office_Allowance
+  rdf:type owl:Class ;
+  rdfs:label "Office Allowance"^^xsd:string ;
+  rdfs:subClassOf :Allowance ;
+  skos:broader :Allowance ;
+  skos:prefLabel "Office Allowance"^^xsd:string ;
+.
+:Offsetting_Collection
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Offsetting Collection"^^xsd:string ;
+  rdfs:subClassOf :Collections ;
+  owl:unionOf (
+      :Reimbursement
+      :Transfer_Funds
+      :Refund
+      :Offsetting_Governmental_Collection
+    ) ;
+  skos:altLabel "Offsetting Collections"^^xsd:string ;
+  skos:broader :Collections ;
+  skos:definition "Collections authorized by law to be credited to appropriation or fund expenditure accounts. They result from (1) businesslike transactions or market-oriented activities with the public, (2) intragovernmental transfers, and (3) collections from the public that are governmental in nature but required by law to be classified as offsetting. Collections resulting from businesslike transactions with the public and other government accounts are also known as reimbursements. Laws authorizing offsetting collections make them available for obligation to meet the account’s purpose without further legislative action. However, it is not uncommon for annual appropriation acts to include limitations on the obligations to be financed by these collections. The authority to obligate and spend offsetting collections is a form of budget authority. The Congressional Budget Act of 1974, as amended by the Budget Enforcement Act (BEA) of 1990, defines offsetting collections as negative budget authority and the reductions to it as positive budget authority. Offsetting collections include reimbursements, transfers between federal and trust fund accounts, offsetting governmental collections, and refunds.   [GAO]"@en-US ;
+  skos:narrower :Offsetting_Governmental_Collection ;
+  skos:narrower :Refund ;
+  skos:narrower :Reimbursement ;
+  skos:narrower :Transfer_Funds ;
+  skos:prefLabel "Offsetting Collection"^^xsd:string ;
+.
+:Offsetting_Governmental_Collection
+  rdf:type owl:Class ;
+  rdfs:label "Offsetting Governmental Collection"^^xsd:string ;
+  rdfs:subClassOf :Offsetting_Collection ;
+  skos:broader :Offsetting_Collection ;
+  skos:prefLabel "Offsetting Governmental Collection"^^xsd:string ;
+.
+:Offsetting_Receipt
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Offsetting Receipt"^^xsd:string ;
+  rdfs:subClassOf :Receipt ;
+  skos:altLabel "Offsetting Receipts"^^xsd:string ;
+  skos:broader :Receipt ;
+  skos:definition "Collections that are offset against gross outlays but are not authorized to be credited to expenditure accounts. Offsetting receipts are deposited in receipt accounts. Like offsetting collections, they result from (1) businesslike transactions or market-oriented activities with the public, (2) intragovernmental transfers, and (3) collections from the public that are governmental in nature but required by law to be classified as offsetting receipts.Offsetting receipts are offsets to gross budget authority and outlays, usually at the agency or subfunction level, but some are undistributed and are offsets to budget authority and outlays in the aggregate. (See also Undistributed Offsetting Receipts.)  Unlike offsetting collections, offsetting receipts cannot be used without being appropriated. Trust fund offsetting receipts are permanently appropriated and, therefore, can be used without subsequent annual appropriation legislation. (See Permanent Authority under Timing of Legislative Action under Budget Authority; Trust Fund Receipt Account under Trust Fund Accounts under Account in the President’s Budget.) The Congressional Budget Act of 1974, as amended by the Budget Enforcement Act (BEA) of 1990, defines offsetting receipts and collections as negative budget authority and the reductions to it as positive budget authority. (See also Earmarking; Reimbursement.)   [GAO]"@en-US ;
+  skos:prefLabel "Offsetting Receipt"^^xsd:string ;
+.
+:One-Time_Charge
+  rdf:type owl:Class ;
+  rdfs:label "One-Time Charge"^^xsd:string ;
+  rdfs:subClassOf :Charge ;
+  owl:disjointWith :Periodic_Charge ;
+  skos:broader :Charge ;
+  skos:prefLabel "One-Time Charge"^^xsd:string ;
+.
+:Operations_Budget
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Operations Budget"^^xsd:string ;
+  rdfs:subClassOf :Activity_Budget ;
+  skos:altLabel "Operating Budget"^^xsd:string ;
+  skos:broader :Activity_Budget ;
+  skos:definition "A detailed projection of all estimated income and expenses during a given future period.    [GAO]"@en-US ;
+  skos:narrower :Operations_Program_Budget ;
+  skos:prefLabel "Operations Budget"^^xsd:string ;
+.
+:Operations_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Operations Charge"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Charge ;
+  skos:broader :Activity-related_Charge ;
+  skos:prefLabel "Operations Charge"^^xsd:string ;
+.
+:Operations_Funds
+  rdf:type owl:Class ;
+  rdfs:label "Operations Funds"^^xsd:string ;
+  rdfs:subClassOf :Funds ;
+  skos:broader :Appropriation ;
+  skos:broader :Funds ;
+  skos:definition "is a a type of Appropriation based on accounting codes that identify the appropriation and fund account symbols and titles applicable to the agency:  01 Operations, Federal Aviation Administration 69_1301"^^xsd:string ;
+  skos:prefLabel "Operations Funds"^^xsd:string ;
+.
+:Operations_Grant
+  rdf:type owl:Class ;
+  rdfs:label "Operations Grant"^^xsd:string ;
+  rdfs:subClassOf :Grant ;
+  skos:broader :Grant ;
+  skos:prefLabel "Operations Grant"^^xsd:string ;
+.
+:Operations_Program_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Operations Program Budget"^^xsd:string ;
+  rdfs:subClassOf :Program_Budget ;
+  skos:broader :Operations_Budget ;
+  skos:definition "is a type of FAA program that has it's own FAA Budget line item   [FAA]"@en-US ;
+  skos:prefLabel "Operations Program Budget"^^xsd:string ;
+.
+:Opportunity_Cost
+  rdf:type owl:Class ;
+  rdfs:label "Opportunity Cost"^^xsd:string ;
+  rdfs:subClassOf :Cost ;
+  skos:broader :Cost ;
+  skos:prefLabel "Opportunity Cost"^^xsd:string ;
+.
+:Organization_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Organization Budget"^^xsd:string ;
+  rdfs:subClassOf :Budget ;
+  skos:broader :Budget ;
+  skos:narrower :Government_Budget ;
+  skos:prefLabel "Organization Budget"^^xsd:string ;
+.
+:Organization_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Organization Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Expenditure ;
+  skos:broader :Expenditure ;
+  skos:prefLabel "Organization Expenditure"^^xsd:string ;
+.
+:Organization_Funds
+  rdf:type owl:Class ;
+  rdfs:label "Organization Funds"^^xsd:string ;
+  rdfs:subClassOf :Funds ;
+  skos:broader :Funds ;
+  skos:prefLabel "Organization Funds"^^xsd:string ;
+.
+:Organizational_Unit_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Organizational Unit Budget"^^xsd:string ;
+  rdfs:subClassOf :Budget ;
+  skos:broader :Organization_Budget ;
+  skos:narrower :Agency_Budget ;
+  skos:narrower :Bureau_Budget ;
+  skos:narrower :Department_Budget ;
+  skos:prefLabel "Organizational Unit Budget"^^xsd:string ;
+.
+:Outlay
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Outlay"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  owl:equivalentClass :Disbursements ;
+  skos:broader :Payment ;
+  skos:definition "The issuance of checks, disbursement of cash, or electronic transfer of funds made to liquidate a federal obligation. Outlays also occur when interest on the Treasury debt held by the public accrues and when the government issues bonds, notes, debentures, monetary credits, or other cash-equivalent instruments in order to liquidate obligations. Also, under credit reform, the credit subsidy cost is recorded as an outlay when a direct or guaranteed loan is disbursed. An outlay is not recorded for repayment of debt principal, disbursements to the public by federal credit programs for direct loan obligations and loan guarantee commitments made in fiscal year 1992 or later, disbursements from deposit funds, and refunds of receipts that result from overpayments. Outlays during a fiscal year may be for payment of obligations incurred in prior years (prior-year obligations) or in the same year. Outlays, therefore, flow in part from unexpended balances of prior-year budgetary resources and in part from budgetary resources provided for the year in which the money is spent.Outlays are stated both gross and net of offsetting collections. (See Offsetting Collections under Collections.) Total government outlays include outlays of off-budget federal entities. (See also Expenditure; Expense.)    [GAO]"@en-US ;
+  skos:prefLabel "Outlay"^^xsd:string ;
+  skos:related :Expenditure ;
+  skos:related :Expense ;
+.
+:Overflight_Fee
+  rdf:type owl:Class ;
+  rdfs:label "Overflight Fee"^^xsd:string ;
+  rdfs:subClassOf :Airspace_Charge ;
+  rdfs:subClassOf :Fee ;
+  skos:altLabel "Over Flight Fee"^^xsd:string ;
+  skos:altLabel "Over-Flight Fee"^^xsd:string ;
+  skos:broader :Airspace_Charge ;
+  skos:broader :Fee ;
+  skos:prefLabel "Overflight Fee"^^xsd:string ;
+.
+:Overflight_Fees
+  rdf:type owl:Class ;
+  rdfs:label "Overflight Fees"^^xsd:string ;
+  rdfs:subClassOf :Fees ;
+  owl:unionOf (
+      :Overflight_Fee
+    ) ;
+  skos:broader :Fees ;
+  skos:prefLabel "Overflight Fees"^^xsd:string ;
+.
+:Passenger_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Passenger Charge"^^xsd:string ;
+  rdfs:subClassOf :Traveller_Charge ;
+  skos:broader :Traveller_Charge ;
+  skos:prefLabel "Passenger Charge"^^xsd:string ;
+.
+:Passenger_Charges
+  rdf:type owl:Class ;
+  rdfs:label "Passenger Charges"^^xsd:string ;
+  rdfs:subClassOf :Traveller_Charges ;
+  owl:unionOf (
+      :Passenger_Charge
+    ) ;
+  skos:altLabel "Charges of Passengers"^^xsd:string ;
+  skos:broader :Traveller_Charges ;
+  skos:prefLabel "Passenger Charges"^^xsd:string ;
+.
+:Passenger_Facility_Charge
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "DRS Scenario Concept"^^xsd:string ;
+  vaem:acronym "PFC"^^xsd:string ;
+  rdfs:label "Passenger Facility Charge"^^xsd:string ;
+  rdfs:subClassOf :Aerodrome_Facility_Charge ;
+  rdfs:subClassOf :Transportation_Facility_Charge ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Passenger_Charge
+            :Facility_Charge
+          ) ;
+      ]
+    ) ;
+  skos:altLabel "Charge of Passenger Facility"^^xsd:string ;
+  skos:broader :Aerodrome_Facility_Charge ;
+  skos:broader :Transportation_Facility_Charge ;
+  skos:prefLabel "Passenger Facility Charge"^^xsd:string ;
+.
+:Passenger_Facility_Charges
+  rdf:type owl:Class ;
+  rdfs:label "Passenger Facility Charges"^^xsd:string ;
+  rdfs:subClassOf :Aerodrome_Facility_Charges ;
+  rdfs:subClassOf :Transportation_Facility_Charges ;
+  owl:unionOf (
+      :Passenger_Facility_Charge
+    ) ;
+  skos:altLabel "Charges of Passenger Facility"^^xsd:string ;
+  skos:broader :Aerodrome_Facility_Charges ;
+  skos:broader :Transportation_Facility_Charges ;
+  skos:prefLabel "Passenger Facility Charges"^^xsd:string ;
+.
+:Payment
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA  extracted from FAA Order 0000.1G, dated March 14, 2001"^^xsd:string ;
+  dcterms:bibliographicCitation "Merriam-Webster's dictionary"^^xsd:string ;
+  rdfs:label "Payment"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Expenditure ;
+  skos:definition "1 : a public expenditure made for a purpose (as unemployment compensation) other than procuring goods or services —  usually used in plural [Webster's]"^^xsd:string ;
+  skos:definition "is a sub-topic, 4456  [FAA]"^^xsd:string ;
+  skos:narrower :Contract_Payment ;
+  skos:narrower :Inter-Agency_Payment ;
+  skos:narrower :Outlay ;
+  skos:narrower :Treasury_Payment ;
+  skos:prefLabel "Payment"^^xsd:string ;
+.
+:Payroll
+  rdf:type owl:Class ;
+  rdfs:label "Payroll"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Expenditure ;
+  skos:narrower :Employee_Payroll ;
+  skos:narrower :Employee_Payroll_Withholding ;
+  skos:narrower :Payroll_Differential ;
+  skos:narrower :Payroll_Withholding ;
+  skos:prefLabel "Payroll"^^xsd:string ;
+.
+:Payroll_Allowance
+  rdf:type owl:Class ;
+  rdfs:label "Payroll Allowance"^^xsd:string ;
+  rdfs:subClassOf :Allowance ;
+  skos:broader :Allowance ;
+  skos:prefLabel "Payroll Allowance"^^xsd:string ;
+.
+:Payroll_Differential
+  rdf:type owl:Class ;
+  rdfs:label "Payroll Differential"^^xsd:string ;
+  rdfs:subClassOf :Payroll ;
+  skos:broader :Payroll ;
+  skos:prefLabel "Payroll Differential"^^xsd:string ;
+.
+:Payroll_Expense_Account
+  rdf:type owl:Class ;
+  rdfs:label "Payroll Expense Account"^^xsd:string ;
+  rdfs:subClassOf :Expense_Account ;
+  skos:broader :Expense_Account ;
+  skos:prefLabel "Payroll Expense Account"^^xsd:string ;
+.
+:Payroll_Reimbursement
+  rdf:type owl:Class ;
+  rdfs:label "Payroll Reimbursement"^^xsd:string ;
+  rdfs:subClassOf :Reimbursement ;
+  skos:broader :Reimbursement ;
+  skos:narrower :Employee_Payroll_Reimbursement ;
+  skos:prefLabel "Payroll Reimbursement"^^xsd:string ;
+.
+:Payroll_Withholding
+  rdf:type owl:Class ;
+  rdfs:label "Payroll Withholding"^^xsd:string ;
+  rdfs:subClassOf :Payroll ;
+  skos:broader :Payroll ;
+  skos:prefLabel "Payroll Withholding"^^xsd:string ;
+.
+:Penalty
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Merriam-Webster's Collegiate dictionary; 11 ed."^^xsd:string ;
+  rdfs:label "Penalty"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Government_Receipt ;
+  skos:broader :Revenue ;
+  skos:definition "2: the suffering or the sum to be forfeited to which a person agrees to be subjected in case of nonfulfillment of stipulations [WEBSTER]"^^xsd:string ;
+  skos:prefLabel "Penalty"^^xsd:string ;
+.
+:Periodic_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Periodic Charge"^^xsd:string ;
+  rdfs:subClassOf :Charge ;
+  skos:broader :Charge ;
+  skos:prefLabel "Periodic Charge"^^xsd:string ;
+.
+:Physical_Capital
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO - http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Physical Capital"^^xsd:string ;
+  rdfs:subClassOf :Capital ;
+  skos:broader :Capital_Assets ;
+  skos:definition "Physical capital is land and the stock of products set aside to support future production and consumption. In the National Income and Product Accounts, private capital consists of business inventories, producers’ durable equipment, and residential and nonresidential structures. (See National Income and Product Accounts.)   [GAO]"^^xsd:string ;
+  skos:definition "is related to PROPERTY - PHYSICAL RESOURCE"^^xsd:string ;
+  skos:prefLabel "Physical Capital"^^xsd:string ;
+.
+:Planning_Direction_Evaluation_Program_Project_Activity_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Planning Direction Evaluation Program Project Activity Budget"^^xsd:string ;
+  rdfs:label "Planning, Direction, and Evaluation Program, Project and Activity Budget"^^xsd:string ;
+  rdfs:subClassOf :Airport_Program_Project_Activity_Budget ;
+  skos:altLabel "Planning, Direction, and Evaluation PPA Budget"^^xsd:string ;
+  skos:definition "is a type of specific program, project or activity that is association with the Airport Improvement Program (AIP) Program Budget;  750 Planning, Direction, and Evaluation.    [FAA]"@en-US ;
+  skos:prefLabel "Planning Direction Evaluation Program Project Activity Budget"^^xsd:string ;
+  skos:prefLabel "Planning, Direction, and Evaluation Program, Project and Activity Budget"^^xsd:string ;
+  skos:related :Airport_Improvement_Program_Budget ;
+.
+:Portfolio_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Portfolio Budget"^^xsd:string ;
+  rdfs:subClassOf :Budget ;
+  owl:unionOf (
+      :Program_Budget
+    ) ;
+  skos:broader :Agency_Budget ;
+  skos:broader :Department_Budget ;
+  skos:narrower :Agency_Portfolio_Budget ;
+  skos:narrower :Department_Portfolio_Budget ;
+  skos:prefLabel "Portfolio Budget"^^xsd:string ;
+.
+:Presidents_Budget
+  rdf:type owl:Class ;
+  rdfs:label "President's Budget"^^xsd:string ;
+  rdfs:subClassOf :National_Government_Budget ;
+  skos:prefLabel "President's Budget"^^xsd:string ;
+.
+:Program_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Program Budget"^^xsd:string ;
+  rdfs:subClassOf :Budget ;
+  owl:unionOf (
+      :Project_Budget
+    ) ;
+  skos:broader :Agency_Budget ;
+  skos:broader :Agency_Portfolio_Budget ;
+  skos:narrower :Facility_Improvement_Program_Budget ;
+  skos:narrower :Operations_Program_Budget ;
+  skos:narrower :Program_Budget_Line_Item ;
+  skos:narrower :Program_Project_Activity_Budget ;
+  skos:narrower :Project_Budget ;
+  skos:prefLabel "Program Budget"^^xsd:string ;
+.
+:Program_Budget_Line_Item
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DATA ARCHITECTURE"^^xsd:string ;
+  dcterms:type :Program_Budget_Line_Item_Type ;
+  rdfs:label "Program Budget Line Item"^^xsd:string ;
+  rdfs:subClassOf :Budget_Line_Item ;
+  skos:altLabel "Program Element/BLI"^^xsd:string ;
+  skos:broader :Budget_Line_Item ;
+  skos:broader :Program_Budget ;
+  skos:narrower :Program_Budget_Line_Item_Type ;
+  skos:prefLabel "Program Budget Line Item"^^xsd:string ;
+.
+:Program_Budget_Line_Item_Type
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DATA ARCHITECTURE"^^xsd:string ;
+  dcterms:source "US GAO - A Glossary of Terms Used in the Federal Budget Process, September 2005.  Definition for Budget Activity"^^xsd:string ;
+  rdfs:label "Program Budget Line Item Type"^^xsd:string ;
+  rdfs:subClassOf :Program_Budget_Line_Item ;
+  skos:broader :Program_Budget_Line_Item ;
+  skos:definition "\"A categorization of a Program Element/Budget Line Item by the specific and distinguishable line of work performed by a governmental unit to discharge a function or subfunction for which the governmental unit is responsible.   [FAA DATA ARCHITECTURE]"^^xsd:string ;
+  skos:prefLabel "Program Budget Line Item Type"^^xsd:string ;
+  skos:related :Airport_Improvement_Program_Budget ;
+.
+:Program_Funds
+  rdf:type owl:Class ;
+  rdfs:label "Program Funds"^^xsd:string ;
+  rdfs:subClassOf :Funds ;
+  skos:broader :Funds ;
+  skos:prefLabel "Program Funds"^^xsd:string ;
+.
+:Program_Project_Activity_Budget
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "FAA DATA ARCHITECTURE"^^xsd:string ;
+  dcterms:source "US GAO - A Glossary of Terms Used in the Federal Budget Process, September 2005.  Definition for Program, Project, or Activity (PPA).  "^^xsd:string ;
+  rdfs:label "Program, Project or Activity Budget"^^xsd:string ;
+  rdfs:subClassOf :Program_Budget ;
+  owl:unionOf (
+      :Program_Budget
+      :Project_Budget
+      :Activity_Budget
+    ) ;
+  skos:altLabel "PPA Budget"^^xsd:string ;
+  skos:broader :Activity_Budget ;
+  skos:broader :Program_Budget ;
+  skos:broader :Project_Budget ;
+  skos:definition """A categorization of an element within a budget account. For annually appropriated accounts, the Office of Management and Budget (OMB) and agencies identify PPAs by reference to committee reports and budget justifications; for permanent appropriations, OMB and agencies identify PPAs by the program and financing schedules that the President provides in the \"\"Detailed Budget Estimates\"\" in the budget submission for the relevant fiscal year. Program activity structures are intended to provide a meaningful representation of the operations financed by a specific budget account-usually by project, activity, or organization. Source: US GAO - A Glossary of Terms Used in the Federal Budget Process, September 2005.  Definition for Program, Project, or Activity (PPA).     Valid values include, but are not limited to:
+Operations:
+ 000 Commercial Space Transportation.  Staffing and funding for charges incurred in the exercise of licensing and regulating a safe, secure and efficient space transportation system that contributes to national security and a viable and internationally competitive commercial space transportation industry.
+  0S1 Commercial Space Transportation.  Staffing and funding for charges incurred in the exercise of licensing and regulating a safe, secure, and efficient space transportation system that contributes to national security and a viable and international competitive commercial space transportation industry.
+  0S2 Commercial Space Transportation  - Training. Technical training and all other training not funded by the Human Resource Management (HRM) activity.
+
+ 100 Operation of the Air Traffic Control System.
+  110 Air Route Traffic Control Centers (ARTCC).  Staffing and funding for charges incurred in the exercise of en route air traffic control.  Included are centers and center/terminal combinations and military liaison positions other than Air Traffic Representatives (ATREP) and the traffic flow management function.  Covers funding for telephone tolls and monthly telephone instrument charges for administrative business telephones in manned air traffic control facilities.  Switchboard charges at manned air traffic control facilities will be prorated on the ratio of administrative business telephone instruments to technical operating telephones.
+   11A Chokepoint Program in Air Route Traffic Control Centers (ARTCC).    Funding for charges incurred as part of the Chokepoint program in Air Route Traffic Control Centers (ARTCC).
+
+Research, Engineering, And Development (R,E,&D):
+ 1AA R,E&D Management, Plan and Control
+ 1AB R,E&D Advisory Committee
+ 1AC R,E&D Plans and Programs
+ 1AD ACT Tech Laboratory Facility
+ 1AE Center for Advanced Aviation System Development (CAASD)
+ 1AG Information Security
+ 2AA Advanced Traffic Management System (ATMS)
+ 2AB Flight Operations and Air Traffic Management Integration
+
+Facilities And Equipment (F&E):
+ 1A01  Advanced Technology Development and Prototype
+  Lithium Technology
+  Wake Turbulence
+  Airport Technology
+  GPS Anti-Jam Technology
+ 1A02  Safe Flight 21
+ 1A03  Aeronautical Data Link (ADL) Applications
+ 1A04  Next Generation Very High Frequency Air/Ground Communications System
+ 1A05 User Request Evaluation Tool (URET)
+ 1A06 Traffic Management Advisor (TMA)
+
+Airport Improvement Program (AIP):
+A program element is not used for recording grants-in-aid to airports.  A three-digit zero fill (000) in the program element field is used in DAFIS.  Administrative costs recorded in AIP use the following codes:
+ 000 Grants-in-Aid to Airports.  Used for all AIP transactions (grants) except administrative costs.
+ 700 Administration of Airports Programs.
+  720 Safety Programs and Engineering Standards.
+  730 Airports Grants - Planning and Programming.
+  750 Planning, Direction, and Evaluation.  
+   751 Airports - Training.  
+  760 Airports.     \"
+[FAA DATA ARCHITECTURE]"""^^xsd:string ;
+  skos:narrower :Air_Traffic_Control_Program_Project_Activity_Budget ;
+  skos:narrower :Airport_Program_Project_Activity_Budget ;
+  skos:prefLabel "Program, Project or Activity Budget"^^xsd:string ;
+.
+:Project_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Project Budget"^^xsd:string ;
+  rdfs:subClassOf :Budget ;
+  owl:unionOf (
+      :Task_Budget
+    ) ;
+  skos:broader :Program_Budget ;
+  skos:narrower :Program_Project_Activity_Budget ;
+  skos:narrower :Task_Budget ;
+  skos:prefLabel "Project Budget"^^xsd:string ;
+.
+:Project_Grant
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Project Grant"^^xsd:string ;
+  rdfs:subClassOf :Categorical_Grant ;
+  skos:broader :Categorical_Grant ;
+  skos:definition """Project grants provide federal funding for fixed or known periods for specific projects or the delivery of specific services or products.
+[GAO]"""@en-US ;
+  skos:prefLabel "Project Grant"^^xsd:string ;
+.
+:Receipt
+  rdf:type owl:Class ;
+  rdfs:label "Receipt"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:altLabel "Receipts"^^xsd:string ;
+  skos:broader :Collections ;
+  skos:narrower :Government_Receipt ;
+  skos:narrower :Offsetting_Receipt ;
+  skos:prefLabel "Receipt"^^xsd:string ;
+.
+:Recurring_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Recurring Charge"^^xsd:string ;
+  rdfs:subClassOf :Periodic_Charge ;
+  skos:broader :Periodic_Charge ;
+  skos:prefLabel "Recurring Charge"^^xsd:string ;
+.
+:Refund
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "OMB   http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Refund"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:definition "Either (1) the return of money that the government improperly collected or collected in excess of the amount owed (for example, refund is money owed to taxpayers by the government when their total tax payments are greater than their total tax) or (2) money returned as an appropriation by outside sources for payments that the government made in error, overpayments, or adjustment for previous amounts disbursed. (See also under Offsetting Collections under Collections.)    [OMB]"@en-US ;
+  skos:prefLabel "Refund"^^xsd:string ;
+  skos:related :Offsetting_Collection ;
+.
+:Reimbursement
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Reimbursement"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Offsetting_Collection ;
+  skos:definition """A sum (1) that is received by an agency as a payment for commodities sold or services furnished either to the public or to another government account and (2) that is authorized by law to be credited directly to specific appropriation and fund accounts. Reimbursements between two accounts for goods or services are usually expenditure transactions/transfers.Anticipated reimbursements are, in the case of transactions with the public, estimated collections of expected advances to be received or expected reimbursements to be earned. In transactions between government accounts, anticipated reimbursements consist of orders expected to be received for which no orders have been accepted. Agencies cannot obligate against anticipated reimbursements without specific statutory authority. (See also Offsetting Collections under Collections; Unfilled Customer Orders.)
+[GAO]"""@en-US ;
+  skos:narrower :Allowance ;
+  skos:narrower :Anticipated_Reimbursement ;
+  skos:narrower :Inter-Agency_Reimbursement ;
+  skos:narrower :Payroll_Reimbursement ;
+  skos:narrower :Travel_Reimbursement ;
+  skos:prefLabel "Reimbursement"^^xsd:string ;
+.
+:Reobligation
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Reobligation"^^xsd:string ;
+  rdfs:subClassOf :Obligation ;
+  skos:broader :Obligation ;
+  skos:definition "Obligation of deobligated funds for a different authorized use. (See also Deobligation.)   [GAO]"@en-US ;
+  skos:prefLabel "Reobligation"^^xsd:string ;
+.
+:Research_Engineering_Development_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Research, Engineering and Development Budget"^^xsd:string ;
+  rdfs:subClassOf :Activity_Budget ;
+  skos:altLabel "RE&D Budget"^^xsd:string ;
+  skos:broader :Activity_Budget ;
+  skos:prefLabel "Research, Engineering and Development Budget"^^xsd:string ;
+.
+:Reserve_Funds
+  rdf:type owl:Class ;
+  rdfs:label "Reserve Funds"^^xsd:string ;
+  rdfs:subClassOf :Funds ;
+  skos:broader :Funds ;
+  skos:narrower :Contingency_Funds ;
+  skos:prefLabel "Reserve Funds"^^xsd:string ;
+.
+:Resources
+  rdf:type rdfs:Class ;
+  rdfs:label "Resources"^^xsd:string ;
+  rdfs:subClassOf owl:Class ;
+  skos:narrower :Financial_Resources ;
+  skos:prefLabel "Resources"^^xsd:string ;
+.
+:Revenue
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "Webster's Collegiate dictionary"^^xsd:string ;
+  rdfs:label "Revenue"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:altLabel "Revenues"^^xsd:string ;
+  skos:broader :Collections ;
+  skos:definition "1 : the total income produced by a given source  *a property expected to yield a large annual revenue*;   2 : the gross income returned by an investment;   3 : the yield of sources of income (as taxes) that a political unit (as a nation or state) collects and receives into the treasury for public use    [WEBSTER]"^^xsd:string ;
+  skos:narrower :Government_Revenue ;
+  skos:prefLabel "Revenue"^^xsd:string ;
+.
+:Revenue_Account
+  rdf:type owl:Class ;
+  rdfs:label "Revenue Account"^^xsd:string ;
+  rdfs:subClassOf :Account ;
+  skos:broader :Account ;
+  skos:prefLabel "Revenue Account"^^xsd:string ;
+.
+:Revolving_Fund
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  dcterms:bibliographicCitation "Webster's Collegiate Dictionary"^^xsd:string ;
+  rdfs:label "Revolving Fund"^^xsd:string ;
+  rdfs:subClassOf :Funds ;
+  skos:broader :Funds ;
+  skos:definition " : a fund set up for specified purposes with the proviso that repayments to the fund may be used again for these purposes   [WEBSTER]"^^xsd:string ;
+  skos:definition "A fund established by Congress to finance a cycle of businesslike operations through amounts received by the fund. A revolving fund charges for the sale of products or services and uses the proceeds to finance its spending, usually on a self-sustaining basis. Instead of recording the collections in receipt accounts, the budget records the collections and the outlays of revolving funds in the same account. A revolving fund is a form of permanent appropriation. (See also Account.)  [GAO]"@en-US ;
+  skos:narrower :Franchise_Funds ;
+  skos:prefLabel "Revolving Fund"^^xsd:string ;
+  skos:related :Account ;
+  skos:related :Appropriation ;
+.
+:Role-related_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Role-related Charge"^^xsd:string ;
+  rdfs:subClassOf :Charge ;
+  skos:broader :Charge ;
+  skos:prefLabel "Role-related Charge"^^xsd:string ;
+.
+:Role-related_Charges
+  rdf:type owl:Class ;
+  rdfs:label "Role-related Charges"^^xsd:string ;
+  rdfs:subClassOf :Charges ;
+  skos:broader :Charges ;
+  skos:prefLabel "Role-related Charges"^^xsd:string ;
+.
+:Safety_Grant
+  rdf:type owl:Class ;
+  rdfs:label "Safety Grant"^^xsd:string ;
+  rdfs:subClassOf :Grant ;
+  skos:broader :Grant ;
+  skos:prefLabel "Safety Grant"^^xsd:string ;
+.
+:Safety_Program_Engineering_Standards_Program_Project_Activity_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Safety Program Engineering Standards Program Project Activity Budget"^^xsd:string ;
+  rdfs:label "Safety Programs and Engineering Standards Program, Project and Activity Budget"^^xsd:string ;
+  rdfs:subClassOf :Airport_Program_Project_Activity_Budget ;
+  skos:altLabel "Safety Programs and Engineering Standards PPA Budget"^^xsd:string ;
+  skos:definition "is a type of specific program, project or activity that is association with the Airport Improvement Program (AIP) Program Budget;   720 Safety Programs and Engineering Standards.   [FAA]  [@en-US}"^^xsd:string ;
+  skos:prefLabel "Safety Program Engineering Standards Program Project Activity Budget"^^xsd:string ;
+  skos:prefLabel "Safety Programs and Engineering Standards Program, Project and Activity Budget"^^xsd:string ;
+  skos:related :Airport_Improvement_Program_Budget ;
+.
+:Service_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Service Charge"^^xsd:string ;
+  rdfs:subClassOf :Operations_Charge ;
+  skos:broader :Operations_Charge ;
+  skos:prefLabel "Service Charge"^^xsd:string ;
+.
+:Service_Initiation_Charge
+  rdf:type owl:Class ;
+  vaem:acronym "SIC"^^xsd:string ;
+  rdfs:label "Service Initiation Charge"^^xsd:string ;
+  rdfs:subClassOf :Service_Charge ;
+  skos:broader :Service_Charge ;
+  skos:prefLabel "Service Initiation Charge"^^xsd:string ;
+.
+:Service_Termination_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Service Termination Charge"^^xsd:string ;
+  rdfs:subClassOf :Service_Charge ;
+  skos:broader :Service_Charge ;
+  skos:prefLabel "Service Termination Charge"^^xsd:string ;
+.
+:Social_Insurance_Tax
+  rdf:type owl:Class ;
+  rdfs:label "Social Insurance Tax"^^xsd:string ;
+  rdfs:subClassOf :Tax ;
+  skos:broader :Tax ;
+  skos:prefLabel "Social Insurance Tax"^^xsd:string ;
+.
+:Special_Purpose_Fund
+  rdf:type owl:Class ;
+  rdfs:label "Special Purpose Fund"^^xsd:string ;
+  rdfs:subClassOf :Funds ;
+  skos:broader :Funds ;
+  skos:prefLabel "Special Purpose Fund"^^xsd:string ;
+.
+:Standard_General_Ledger
+  rdf:type owl:Class ;
+  rdfs:label "Standard General Ledger"^^xsd:string ;
+  rdfs:subClassOf :General_Ledger ;
+  skos:broader :General_Ledger ;
+  skos:prefLabel "Standard General Ledger"^^xsd:string ;
+.
+:Sub-Committee_Allocation
+  rdf:type owl:Class ;
+  rdfs:label "Sub-Committee Allocation"^^xsd:string ;
+  rdfs:subClassOf :Committee_Allocation ;
+  skos:broader :Committee_Allocation ;
+  skos:prefLabel "Sub-Committee Allocation"^^xsd:string ;
+.
+:Suballotment
+  rdf:type owl:Class ;
+  rdfs:label "Suballotment"^^xsd:string ;
+  rdfs:subClassOf :Allotment ;
+  skos:broader :Allotment ;
+  skos:narrower :Office_Allotment ;
+  skos:prefLabel "Suballotment"^^xsd:string ;
+.
+:Subsidy
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Subsidy"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Payment ;
+  skos:definition "Generally, a payment or benefit made by the federal government where the benefit exceeds the cost to the beneficiary. Subsidies are designed to support the conduct of an economic enterprise or activity, such as ship operations. They may also refer to (1) provisions in the tax laws for certain tax expenditures and (2) the provision of loans, goods, and services to the public at prices lower than market value. These include interest subsidies.Under credit reform, subsidy means the estimated long-term cost to the government of a direct loan or loan guarantee, calculated on a net present value basis over the life of the loan, excluding administrative costs and any incidental effects on governmental receipts or outlays. (See also Credit Reform and Credit Subsidy Cost under Federal Credit; Tax Expenditure.)    [GAO]"@en-US ;
+  skos:prefLabel "Subsidy"^^xsd:string ;
+.
+:Sunk_Cost
+  rdf:type owl:Class ;
+  rdfs:label "Sunk Cost"^^xsd:string ;
+  rdfs:subClassOf :Cost ;
+  skos:broader :Cost ;
+  skos:prefLabel "Sunk Cost"^^xsd:string ;
+.
+:System_Charge
+  rdf:type owl:Class ;
+  rdfs:label "System Charge"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Charge ;
+  skos:broader :Infrastructure_Charge ;
+  skos:prefLabel "System Charge"^^xsd:string ;
+.
+:System_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "System Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Infrastructure_Expenditure ;
+  skos:broader :Infrastructure_Expenditure ;
+  skos:prefLabel "System Expenditure"^^xsd:string ;
+.
+:Task_Budget
+  rdf:type owl:Class ;
+  rdfs:label "Task Budget"^^xsd:string ;
+  rdfs:subClassOf :Budget ;
+  skos:broader :Project_Budget ;
+  skos:prefLabel "Task Budget"^^xsd:string ;
+.
+:Tax
+  rdf:type owl:Class ;
+  rdfs:label "Tax"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Government_Receipt ;
+  skos:narrower :Excise_Tax ;
+  skos:narrower :Income_Tax ;
+  skos:narrower :Social_Insurance_Tax ;
+  skos:prefLabel "Tax"^^xsd:string ;
+.
+:Taxes
+  rdf:type owl:Class ;
+  rdfs:label "Taxes"^^xsd:string ;
+  rdfs:subClassOf owl:Thing ;
+  skos:broader :Expense ;
+  skos:broader :Revenue ;
+  skos:narrower :Import_Taxes ;
+  skos:prefLabel "Taxes"^^xsd:string ;
+.
+:Transfer_Appropriation_Account
+  rdf:type owl:Class ;
+  rdfs:label "Transfer Appropriation Account"^^xsd:string ;
+  rdfs:subClassOf :Appropriation_Account ;
+  skos:broader :Appropriation_Account ;
+  skos:prefLabel "Transfer Appropriation Account"^^xsd:string ;
+.
+:Transfer_Funds
+  rdf:type owl:Class ;
+  rdfs:label "Transfer Funds"^^xsd:string ;
+  rdfs:subClassOf :Funds ;
+  skos:broader :Funds ;
+  skos:broader :Offsetting_Collection ;
+  skos:prefLabel "Transfer Funds"^^xsd:string ;
+.
+:Transportation_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Charge"^^xsd:string ;
+  rdfs:subClassOf :Activity-related_Charge ;
+  skos:broader :Activity-related_Charge ;
+  skos:prefLabel "Transportation Charge"^^xsd:string ;
+.
+:Transportation_Facility_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Facility Charge"^^xsd:string ;
+  rdfs:subClassOf :Facility_Charge ;
+  rdfs:subClassOf :Transportation_Charge ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Transportation_Charge
+            :Facility_Charge
+          ) ;
+      ]
+    ) ;
+  skos:broader :Facility_Charge ;
+  skos:broader :Transportation_Charge ;
+  skos:prefLabel "Transportation Facility Charge"^^xsd:string ;
+.
+:Transportation_Facility_Charges
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Facility Charges"^^xsd:string ;
+  rdfs:subClassOf :Facility_Charges ;
+  owl:unionOf (
+      :Transportation_Facility_Charge
+    ) ;
+  skos:altLabel "Charges of Transportation Facility"^^xsd:string ;
+  skos:broader :Facility_Charges ;
+  skos:prefLabel "Transportation Facility Charges"^^xsd:string ;
+.
+:Transportation_Facility_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Facility Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Facility_Expenditure ;
+  rdfs:subClassOf :Transportation_Funds_Expenditure ;
+  owl:intersectionOf (
+      [
+        rdf:type owl:Class ;
+        owl:intersectionOf (
+            :Transportation_Funds_Expenditure
+            :Facility_Expenditure
+          ) ;
+      ]
+    ) ;
+  skos:broader :Facility_Expenditure ;
+  skos:broader :Transportation_Funds_Expenditure ;
+  skos:prefLabel "Transportation Facility Expenditure"^^xsd:string ;
+.
+:Transportation_Funds_Expenditure
+  rdf:type owl:Class ;
+  rdfs:label "Transportation Funds Expenditure"^^xsd:string ;
+  rdfs:subClassOf :Funds_Expenditure ;
+  skos:broader :Funds_Expenditure ;
+  skos:prefLabel "Transportation Funds Expenditure"^^xsd:string ;
+.
+:Travel_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Travel Charge"^^xsd:string ;
+  rdfs:subClassOf :Transportation_Charge ;
+  skos:broader :Transportation_Charge ;
+  skos:prefLabel "Travel Charge"^^xsd:string ;
+.
+:Travel_Obligation
+  rdf:type owl:Class ;
+  rdfs:label "Travel Obligation"^^xsd:string ;
+  rdfs:subClassOf :Obligation ;
+  skos:broader :Obligation ;
+  skos:narrower :Employee_Travel_Obligation ;
+  skos:prefLabel "Travel Obligation"^^xsd:string ;
+.
+:Travel_Reimbursement
+  rdf:type owl:Class ;
+  rdfs:label "Travel Reimbursement"^^xsd:string ;
+  rdfs:subClassOf :Reimbursement ;
+  skos:broader :Reimbursement ;
+  skos:narrower :Employee_Travel_Reimbursement ;
+  skos:prefLabel "Travel Reimbursement"^^xsd:string ;
+  skos:related :Account_Payable_Account ;
+.
+:Traveller_Charge
+  rdf:type owl:Class ;
+  rdfs:label "Traveller Charge"^^xsd:string ;
+  rdfs:subClassOf :Role-related_Charge ;
+  skos:broader :Role-related_Charge ;
+  skos:prefLabel "Traveller Charge"^^xsd:string ;
+  skos:related :Travel_Charge ;
+.
+:Traveller_Charges
+  rdf:type owl:Class ;
+  rdfs:label "Traveller Charges"^^xsd:string ;
+  rdfs:subClassOf :Role-related_Charges ;
+  owl:unionOf (
+      :Traveller_Charge
+    ) ;
+  skos:altLabel "Charges of Traveller"^^xsd:string ;
+  skos:broader :Role-related_Charges ;
+  skos:prefLabel "Traveller Charges"^^xsd:string ;
+  skos:related :Travel_Charge ;
+.
+:Treasury_Payment
+  rdf:type owl:Class ;
+  rdfs:label "Treasury Payment"^^xsd:string ;
+  rdfs:subClassOf :Payment ;
+  skos:broader :Payment ;
+  skos:prefLabel "Treasury Payment"^^xsd:string ;
+.
+:Trust_Fund
+  rdf:type owl:Class ;
+  rdfs:label "Trust Fund"^^xsd:string ;
+  rdfs:subClassOf :Funds ;
+  skos:broader :Funds ;
+  skos:narrower :Aviation_Trust_Fund ;
+  skos:prefLabel "Trust Fund"^^xsd:string ;
+.
+:Unliquidated_Obligation
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "Unliquidated Obligation"^^xsd:string ;
+  rdfs:subClassOf :Obligation ;
+  skos:broader :Obligation ;
+  skos:definition "The amount of outstanding obligations or liabilities. (See also Obligation; Undelivered Orders.)   [GAO}"@en-US ;
+  skos:prefLabel "Unliquidated Obligation"^^xsd:string ;
+.
+:User_Fee
+  rdf:type owl:Class ;
+  dcterms:bibliographicCitation "GAO  http://www.gao.gov/new.items/d05734sp.pdf"^^xsd:string ;
+  rdfs:label "User Fee"^^xsd:string ;
+  rdfs:subClassOf :Fee ;
+  skos:altLabel "User Charge"^^xsd:string ;
+  skos:broader :Fee ;
+  skos:definition "A fee assessed to users for goods or services provided by the federal government. User fees generally apply to federal programs or activities that provide special benefits to identifiable recipients above and beyond what is normally available to the public. User fees are normally related to the cost of the goods or services provided. Once collected, they must be deposited into the general fund of the Treasury, unless the agency has specific authority to deposit the fees into a special fund of the Treasury. An agency may not obligate against fees collected without specific statutory authority. An example of a user fee is a fee for entering a national park.From an economic point of view, user fees may also be collected through a tax such as an excise tax. Since these collections result from the government’s sovereign powers, the proceeds are recorded as governmental receipts, not as offsetting receipts or offsetting collections.   [GAO]"@en-US ;
+  skos:prefLabel "User Fee"^^xsd:string ;
+.
+:User_Fees
+  rdf:type owl:Class ;
+  rdfs:label "User Fees"^^xsd:string ;
+  rdfs:subClassOf :Fees ;
+  owl:unionOf (
+      :User_Fee
+    ) ;
+  skos:broader :Fees ;
+  skos:prefLabel "User Fees"^^xsd:string ;
+.
+:termSubject
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "Term Subject"^^xsd:string ;
+  rdfs:subPropertyOf dcterms:subject ;
+  skos:prefLabel "Term Subject"^^xsd:string ;
+.
+:termSubjectFAA
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "FAA Term Subject"^^xsd:string ;
+  rdfs:subPropertyOf :termSubject ;
+  skos:prefLabel "FAA Term Subject"^^xsd:string ;
+.
+:termTopic
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "Term Topic"^^xsd:string ;
+  rdfs:subPropertyOf :termSubject ;
+  skos:prefLabel "Term Topic"^^xsd:string ;
+.
+:termTopicFAA
+  rdf:type owl:AnnotationProperty ;
+  rdfs:label "FAA Term Topic"^^xsd:string ;
+  rdfs:subPropertyOf :termTopic ;
+  skos:prefLabel "FAA Term Topic"^^xsd:string ;
+.
+skos:definition
+  owl:equivalentProperty rdfs:comment ;
+.
